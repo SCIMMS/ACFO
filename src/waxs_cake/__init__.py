@@ -32,6 +32,7 @@ from .solvers import (
     nufft_amplitude,
     nufft_amplitude_chunked,
 )
+from .xray_form_factors import xray_f0, xray_f0_form_factors
 
 __all__ = [
     "BinnedStructure",
@@ -63,4 +64,6 @@ __all__ = [
     "save_odt_measured_contract",
     "validate_odt_measured_contract",
     "water_box_side_nm",
+    "xray_f0",
+    "xray_f0_form_factors",
 ]

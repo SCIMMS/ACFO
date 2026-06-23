@@ -9,6 +9,7 @@ description = "Prepared curved-Ewald Fourier operators for WAXS, high-NA optics,
 requires-python = ">=3.11"
 dependencies = [
   "numpy",
+  "periodictable",
   "scipy",
 ]
 

@@ -18,7 +18,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 from validate_public_waxs_structures import (  # noqa: E402
     ATOMIC_NUMBERS,
-    constant_form_factors,
+    build_form_factors,
     load_structure,
 )
 from waxs_cake import PreparedCakePlan, direct_amplitude, make_cylindrical_histogram  # noqa: E402
@@ -83,15 +83,18 @@ def anisotropy_metric(values: np.ndarray) -> float:
 
 def validate_one(path: Path, args: argparse.Namespace, model: str) -> dict:
     coords, elements, metadata = load_structure(path)
-    missing = [element for element in sorted(set(elements.tolist())) if element not in ATOMIC_NUMBERS]
-    if missing:
-        raise ValueError(f"missing atomic-number entries for {missing}")
+    if model == "atomic_number":
+        missing = [
+            element for element in sorted(set(elements.tolist())) if element not in ATOMIC_NUMBERS
+        ]
+        if missing:
+            raise ValueError(f"missing atomic-number entries for {missing}")
 
     grid = choose_grid(coords, args)
     q_report = np.linspace(args.qmin, args.qmax, args.nq)
     q_solver = np.asarray([q_to_inv_nm(q, args.q_unit) for q in q_report], dtype=np.float64)
     phi = (np.arange(grid["n_phi"]) + 0.5) * (2.0 * np.pi / grid["n_phi"])
-    form_factors = constant_form_factors(elements, model)
+    form_factors = build_form_factors(elements, q_solver, model)
 
     direct_amp, direct_s, direct_times = median_time(
         lambda: direct_amplitude(
@@ -218,7 +221,8 @@ def write_summary(rows: list[dict], output: Path) -> None:
             "- `cake_intensity_rel_l2_vs_direct` is the primary 2D fixed-orientation crystal solver check.",
             "- `ring_rel_l2_vs_direct` verifies the 1D reduction after azimuthal averaging.",
             "- The anisotropy columns are not an error metric; they confirm that these CIF supercells exercise non-isotropic cake-map structure.",
-            "- The `atomic_number` rows are still a lightweight multi-element check, not a final q-dependent WAXS form-factor model.",
+            "- The `atomic_number` rows are a lightweight multi-element path check.",
+            "- The `xray_f0` rows use q-dependent neutral-atom elastic X-ray f0 values from `periodictable`; anomalous dispersion, ionic state, solvent, and Debye-Waller effects are intentionally outside this first validation.",
             "",
             "Source artifacts:",
             "",
@@ -266,7 +270,7 @@ def main() -> None:
     parser.add_argument("--r-dependent-cutoff-bin-size", type=int, default=16)
     parser.add_argument("--r-dependent-analytic-kernel", action="store_true")
     parser.add_argument("--r-dependent-fused-kernel", action="store_true")
-    parser.add_argument("--form-factor-models", default="unit,atomic_number")
+    parser.add_argument("--form-factor-models", default="unit,atomic_number,xray_f0")
     parser.add_argument("--repeats", type=int, default=1)
     parser.add_argument("--output", type=Path, default=Path("benchmark_results/public_waxs_crystal_validation.json"))
     args = parser.parse_args()

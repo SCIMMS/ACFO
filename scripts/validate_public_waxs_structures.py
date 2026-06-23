@@ -19,6 +19,7 @@ sys.path.insert(0, str(ROOT / "src"))
 from waxs_cake import PreparedCakePlan, direct_amplitude, make_cylindrical_histogram  # noqa: E402
 from waxs_cake.metrics import intensity, relative_l2  # noqa: E402
 from waxs_cake.physical_scaling import q_to_inv_nm  # noqa: E402
+from waxs_cake.xray_form_factors import xray_f0_form_factors  # noqa: E402
 
 
 ATOMIC_NUMBERS = {
@@ -46,6 +47,9 @@ ATOMIC_NUMBERS = {
     "Au": 79,
     "Pb": 82,
 }
+
+XRAY_F0_ALIASES = {"xray_f0", "xray", "waasmaier_kirfel", "xray_waasmaier_kirfel"}
+FormFactorDict = dict[str, float | complex | np.ndarray]
 
 
 @dataclass(frozen=True)
@@ -153,23 +157,60 @@ def constant_form_factors(elements: np.ndarray, model: str) -> dict[str, float]:
                 raise ValueError(f"atomic-number model does not know element {element!r}")
             out[element] = float(ATOMIC_NUMBERS[element])
         return out
-    raise ValueError("form-factor model must be unit or atomic_number")
+    raise ValueError("constant form-factor model must be unit or atomic_number")
+
+
+def build_form_factors(
+    elements: np.ndarray,
+    q_solver: np.ndarray,
+    model: str,
+) -> FormFactorDict:
+    model = model.strip()
+    if model in {"unit", "atomic_number"}:
+        return constant_form_factors(elements, model)
+    if model in XRAY_F0_ALIASES:
+        return xray_f0_form_factors(elements, q_solver)
+    valid = sorted({"unit", "atomic_number", *XRAY_F0_ALIASES})
+    raise ValueError(f"form-factor model must be one of {valid}")
+
+
+def atom_form_factor_matrix(
+    elements: np.ndarray,
+    q_solver: np.ndarray,
+    form_factors: FormFactorDict,
+) -> np.ndarray:
+    q_solver = np.asarray(q_solver, dtype=np.float64)
+    out = np.empty((elements.size, q_solver.size), dtype=np.complex128)
+    for i, element in enumerate(elements):
+        value = form_factors[str(element)]
+        arr = np.asarray(value, dtype=np.complex128)
+        if arr.ndim == 0:
+            out[i] = arr
+            continue
+        if arr.shape != (q_solver.size,):
+            raise ValueError(
+                f"form factor for {element!r} must be scalar or shape {(q_solver.size,)}"
+            )
+        out[i] = arr
+    return out
 
 
 def debye_weighted_pdist(
     coords: np.ndarray,
     elements: np.ndarray,
     q_solver: np.ndarray,
-    form_factors: dict[str, float],
+    form_factors: FormFactorDict,
 ) -> np.ndarray:
-    weights = np.asarray([form_factors[str(element)] for element in elements], dtype=np.float64)
+    atom_ff = atom_form_factor_matrix(elements, q_solver, form_factors)
     pair_i, pair_j = np.triu_indices(coords.shape[0], k=1)
     distances = np.linalg.norm(coords[pair_i] - coords[pair_j], axis=1)
-    pair_weights = weights[pair_i] * weights[pair_j]
-    self_term = float(np.sum(weights * weights))
     out = np.empty(q_solver.size, dtype=np.float64)
     for i, q_value in enumerate(q_solver):
-        out[i] = self_term + 2.0 * np.sum(pair_weights * np.sinc((q_value * distances) / np.pi))
+        weights = atom_ff[:, i]
+        self_term = float(np.sum(np.abs(weights) ** 2).real)
+        pair_weights = weights[pair_i] * np.conjugate(weights[pair_j])
+        pair_term = np.sum(pair_weights * np.sinc((q_value * distances) / np.pi))
+        out[i] = self_term + 2.0 * float(np.real(pair_term))
     return out
 
 
@@ -179,7 +220,7 @@ def direct_ring_curve(
     q_solver: np.ndarray,
     wavelength_nm: float,
     phi: np.ndarray,
-    form_factors: dict[str, float],
+    form_factors: FormFactorDict,
 ) -> np.ndarray:
     amp = direct_amplitude(
         coords,
@@ -198,7 +239,7 @@ def rotated_direct_ring_curve(
     q_solver: np.ndarray,
     wavelength_nm: float,
     phi: np.ndarray,
-    form_factors: dict[str, float],
+    form_factors: FormFactorDict,
     *,
     samples: int,
     seed: int,
@@ -221,7 +262,7 @@ def histogram_ring_curve(
     wavelength_nm: float,
     grid: StructureGrid,
     args: argparse.Namespace,
-    form_factors: dict[str, float],
+    form_factors: FormFactorDict,
 ) -> np.ndarray:
     binned = make_cylindrical_histogram(
         coords,
@@ -266,7 +307,7 @@ def validate_one(path: Path, args: argparse.Namespace, model: str) -> dict:
     q_report = np.linspace(args.qmin, args.qmax, args.nq)
     q_solver = np.asarray([q_to_inv_nm(q, args.q_unit) for q in q_report], dtype=np.float64)
     phi = (np.arange(grid.n_phi) + 0.5) * (2.0 * np.pi / grid.n_phi)
-    form_factors = constant_form_factors(elements, model)
+    form_factors = build_form_factors(elements, q_solver, model)
 
     debye, debye_s, debye_times = median_time(
         lambda: debye_weighted_pdist(coords, elements, q_solver, form_factors),
@@ -367,7 +408,7 @@ def write_summary(rows: list[dict], output: Path) -> None:
         "# Public WAXS structure validation",
         "",
         "Initial validation using public RCSB structures converted to the repository NPZ contract.",
-        "The Debye reference, direct WAXS ring average, and histogram ring-average path use the same constant form-factor model per row.",
+        "The Debye reference, direct WAXS ring average, and histogram ring-average path use the same form-factor model per row.",
         "",
         "| structure | atoms | model | n_phi | Debye s | direct s | histogram s | hist/Debye speedup | direct vs Debye L2 | rotated vs Debye L2 | hist vs direct L2 |",
         "|---|---:|---|---:|---:|---:|---:|---:|---:|---:|---:|",
@@ -392,7 +433,8 @@ def write_summary(rows: list[dict], output: Path) -> None:
             "- `histogram_rel_l2_vs_direct_ring` is the primary solver correctness check for the current fixed molecular orientation.",
             "- `direct_ring_rel_l2_vs_debye` is expected to be nonzero for a single anisotropic protein orientation; it measures orientation-average mismatch, not a solver failure.",
             "- If `rotated_ring_rel_l2_vs_debye` is present, it is the direct-ring curve averaged over random molecular orientations.",
-            "- The `atomic_number` rows are a lightweight multi-element path check. They are not a final q-dependent atomic form-factor WAXS model.",
+            "- The `atomic_number` rows are a lightweight multi-element path check.",
+            "- The `xray_f0` rows use q-dependent neutral-atom elastic X-ray f0 values from `periodictable`; anomalous dispersion, ionic state, solvent, and Debye-Waller effects are intentionally outside this first validation.",
             "",
             "Source artifacts:",
             "",
@@ -437,7 +479,7 @@ def main() -> None:
     parser.add_argument("--curve-backend", choices=["r-grouped", "r-dependent"], default="r-dependent")
     parser.add_argument("--r-dependent-margin", type=int, default=16)
     parser.add_argument("--r-dependent-cutoff-bin-size", type=int, default=16)
-    parser.add_argument("--form-factor-models", default="unit,atomic_number")
+    parser.add_argument("--form-factor-models", default="unit,atomic_number,xray_f0")
     parser.add_argument("--orientation-samples", type=int, default=0)
     parser.add_argument("--seed", type=int, default=20260623)
     parser.add_argument("--repeats", type=int, default=1)
