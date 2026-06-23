@@ -9,10 +9,6 @@ from setuptools.command.build_ext import build_ext
 
 
 def _find_msvc_tool(tool: str) -> str | None:
-    found = shutil.which(tool)
-    if found is not None:
-        return found
-
     candidates: list[Path] = []
     vctools = os.environ.get("VCToolsInstallDir")
     if vctools:
@@ -29,7 +25,23 @@ def _find_msvc_tool(tool: str) -> str | None:
         candidates.extend(base.glob(f"**/VC/Tools/MSVC/*/bin/HostX64/x64/{tool}"))
 
     existing = sorted(candidate for candidate in candidates if candidate.exists())
-    return str(existing[-1]) if existing else None
+    if existing:
+        return str(existing[-1])
+
+    found = shutil.which(tool)
+    if found is None:
+        return None
+
+    # Git for Windows also ships a Unix-style link.exe. It accepts completely
+    # different flags from MSVC link.exe and can shadow the Visual Studio linker
+    # on GitHub Actions runners.
+    found_path = Path(found)
+    normalized_parts = {part.lower() for part in found_path.parts}
+    if tool.lower() == "link.exe" and {"git", "usr", "bin"}.issubset(
+        normalized_parts
+    ):
+        return None
+    return found
 
 
 def _find_windows_sdk_tool(tool: str) -> str | None:
