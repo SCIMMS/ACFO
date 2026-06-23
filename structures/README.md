@@ -17,3 +17,9 @@ artifacts and are ignored by git. Recreate the initial public protein set with:
 ```powershell
 .\.venv\Scripts\python.exe scripts\prepare_public_waxs_structures.py --pdb-ids 1CRN,1UBQ --write-xyz
 ```
+
+Recreate the initial COD crystal CIF supercell set with:
+
+```powershell
+.\.venv\Scripts\python.exe scripts\prepare_public_waxs_cif_structures.py --cod-ids nacl=1000041,silicon=1526655,quartz=1011097 --supercell 4,4,4 --write-xyz
+```
