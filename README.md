@@ -27,16 +27,32 @@ and public-data probes are intentionally excluded from Git.
 
 ## Setup
 
+Minimal development setup:
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\python.exe -m pip install --upgrade pip
+.\.venv\Scripts\python.exe -m pip install -e ".[test]"
+```
+
+Broader local benchmark setup:
+
 ```powershell
 python -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt
 ```
+
+`requirements.txt` includes optional benchmark/report dependencies. The CI and
+unit-test path uses the narrower editable install above.
 
 ## Test
 
 ```powershell
 .\.venv\Scripts\python.exe -m pytest -q
 ```
+
+Development details, C++ extension controls, and artifact policy are documented
+in `docs/development.md`.
 
 ## Compare Methods
 
