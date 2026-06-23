@@ -32,10 +32,21 @@ benchmark_results/**
 !benchmark_results/aidt_realtime_projection_summary.md
 !benchmark_results/experimental_use_case_comparison.md
 !benchmark_results/odt_measured_data_contract.md
+!benchmark_results/public_waxs_structure_validation.md
 !benchmark_results/odt_torch_gpu_dynamic_warm_start_update_saturation_summary.md
 !benchmark_results/odt_torch_gpu_realistic_cap128_opt3_summary.md
 !benchmark_results/curved_ewald_prior_art_*.md
 !benchmark_results/curved_ewald_factorization_strategy_sources.md
+
+# Downloaded or generated structure inputs.
+structures/raw/**
+structures/processed/**
+structures/metadata/**
+!structures/
+!structures/README.md
+!structures/raw/
+!structures/processed/
+!structures/metadata/
 
 # Generated report/rendering probes
 docs/*.pdf
