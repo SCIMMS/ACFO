@@ -35,6 +35,8 @@ benchmark_results/**
 !benchmark_results/public_waxs_structure_validation.md
 !benchmark_results/public_waxs_crystal_validation.md
 !benchmark_results/solvent_water_tip3p_8nm_validation_summary.md
+!benchmark_results/solvent_water_tip3p_8nm_traj5_frame_average_summary.md
+!benchmark_results/high_na_publication_readiness_summary.md
 !benchmark_results/odt_torch_gpu_dynamic_warm_start_update_saturation_summary.md
 !benchmark_results/odt_torch_gpu_realistic_cap128_opt3_summary.md
 !benchmark_results/curved_ewald_prior_art_*.md

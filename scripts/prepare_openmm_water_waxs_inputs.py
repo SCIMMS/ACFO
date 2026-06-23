@@ -2,7 +2,9 @@ from __future__ import annotations
 
 import argparse
 import json
+import struct
 from collections import defaultdict
+from collections.abc import Iterator
 from pathlib import Path
 
 import numpy as np
@@ -23,6 +25,108 @@ def load_npz(path: Path) -> tuple[np.ndarray, np.ndarray, np.ndarray | None, dic
             else {}
         )
     return coords, elements, box_vectors, metadata
+
+
+def read_dcd_record(fh, endian: str = "<") -> bytes | None:
+    raw = fh.read(4)
+    if raw == b"":
+        return None
+    if len(raw) != 4:
+        raise ValueError("truncated DCD record marker")
+    n_bytes = struct.unpack(f"{endian}i", raw)[0]
+    payload = fh.read(n_bytes)
+    if len(payload) != n_bytes:
+        raise ValueError("truncated DCD record payload")
+    end = struct.unpack(f"{endian}i", fh.read(4))[0]
+    if end != n_bytes:
+        raise ValueError(f"DCD record marker mismatch: {n_bytes} != {end}")
+    return payload
+
+
+def read_dcd_header(path: Path) -> dict:
+    with path.open("rb") as fh:
+        marker = fh.read(4)
+        if len(marker) != 4:
+            raise ValueError(f"{path} is too small to be a DCD file")
+        little = struct.unpack("<i", marker)[0]
+        big = struct.unpack(">i", marker)[0]
+        if little == 84:
+            endian = "<"
+            n_header = little
+        elif big == 84:
+            endian = ">"
+            n_header = big
+        else:
+            raise ValueError(f"{path} does not look like a DCD file")
+        header = fh.read(n_header)
+        end = struct.unpack(f"{endian}i", fh.read(4))[0]
+        if end != n_header or header[:4] != b"CORD":
+            raise ValueError(f"{path} has an invalid DCD header")
+        ints = struct.unpack(f"{endian}20i", header[4:84])
+        title = read_dcd_record(fh, endian)
+        natoms_record = read_dcd_record(fh, endian)
+        if title is None or natoms_record is None:
+            raise ValueError(f"{path} is missing DCD title or atom-count records")
+        natoms = struct.unpack(f"{endian}i", natoms_record)[0]
+        return {
+            "endian": endian,
+            "frames": int(ints[0]),
+            "first_step": int(ints[1]),
+            "save_interval_steps": int(ints[2]),
+            "last_step": int(ints[3]),
+            "natoms": int(natoms),
+            "data_offset": fh.tell(),
+        }
+
+
+def iter_dcd_frames(path: Path, *, frame_indices: set[int] | None = None) -> Iterator[tuple[int, np.ndarray, np.ndarray]]:
+    header = read_dcd_header(path)
+    endian = header["endian"]
+    natoms = int(header["natoms"])
+    with path.open("rb") as fh:
+        fh.seek(int(header["data_offset"]))
+        frame_index = 0
+        while True:
+            first = read_dcd_record(fh, endian)
+            if first is None:
+                break
+            if len(first) == 48:
+                cell = np.asarray(struct.unpack(f"{endian}6d", first), dtype=np.float64)
+                x_record = read_dcd_record(fh, endian)
+            else:
+                cell = None
+                x_record = first
+            y_record = read_dcd_record(fh, endian)
+            z_record = read_dcd_record(fh, endian)
+            if x_record is None or y_record is None or z_record is None:
+                raise ValueError("truncated DCD coordinate records")
+
+            if frame_indices is None or frame_index in frame_indices:
+                x = np.frombuffer(x_record, dtype=f"{endian}f4", count=natoms)
+                y = np.frombuffer(y_record, dtype=f"{endian}f4", count=natoms)
+                z = np.frombuffer(z_record, dtype=f"{endian}f4", count=natoms)
+                coords_nm = np.column_stack([x, y, z]).astype(np.float64) / 10.0
+                if cell is None:
+                    box_vectors = np.diag(np.ptp(coords_nm, axis=0))
+                else:
+                    # OpenMM DCD stores orthorhombic boxes as A, gamma, B, beta, alpha, C.
+                    box_vectors = np.diag([cell[0], cell[2], cell[5]]) / 10.0
+                yield frame_index, coords_nm, box_vectors
+            frame_index += 1
+
+
+def parse_frame_indices(spec: str | None, *, n_frames: int, max_frames: int) -> list[int]:
+    if spec:
+        out = [int(part.strip()) for part in spec.split(",") if part.strip()]
+    elif max_frames >= n_frames:
+        out = list(range(n_frames))
+    else:
+        out = np.linspace(0, n_frames - 1, max_frames, dtype=int).tolist()
+    if not out:
+        raise ValueError("no DCD frames selected")
+    if min(out) < 0 or max(out) >= n_frames:
+        raise ValueError(f"selected DCD frames must be in [0, {n_frames - 1}]")
+    return sorted(dict.fromkeys(out))
 
 
 def parse_pdb_residue_groups(path: Path, n_atoms: int) -> list[list[int]]:
@@ -103,6 +207,7 @@ def subset_variant(
     metadata: dict,
     center_nm: np.ndarray,
     indices: np.ndarray,
+    subset_name: str,
     variant: str,
     output: Path,
     write_xyz_file: bool,
@@ -124,6 +229,7 @@ def subset_variant(
             "n_atoms": int(coords_sel.shape[0]),
             "source_kind": metadata.get("kind", "openmm_water_box"),
             "structure_id": output.stem,
+            "subset": subset_name,
         }
     )
     write_npz(output, coords_sel, elements_sel, box_vectors, out_metadata)
@@ -132,8 +238,61 @@ def subset_variant(
     return {
         "path": str(output.as_posix()),
         "atoms": int(coords_sel.shape[0]),
+        "subset": subset_name,
         "variant": variant,
     }
+
+
+def derive_inputs_for_snapshot(
+    *,
+    coords: np.ndarray,
+    elements: np.ndarray,
+    box_vectors: np.ndarray | None,
+    residue_groups: list[list[int]],
+    metadata: dict,
+    output_dir: Path,
+    prefix: str,
+    sphere_radius_nm: float,
+    write_xyz_file: bool,
+) -> list[dict]:
+    center_nm = center_from_box(coords, box_vectors)
+    full_indices = np.arange(coords.shape[0], dtype=np.int64)
+    sphere_indices = select_residue_sphere(
+        coords,
+        elements,
+        residue_groups,
+        center_nm,
+        sphere_radius_nm,
+    )
+
+    rows: list[dict] = []
+    for subset_name, indices in (
+        ("full", full_indices),
+        (f"sphere_r{sphere_radius_nm:g}nm".replace(".", "p"), sphere_indices),
+    ):
+        for variant in ("allatom", "oonly"):
+            output = output_dir / f"{prefix}_{subset_name}_{variant}.npz"
+            rows.append(
+                subset_variant(
+                    coords=coords,
+                    elements=elements,
+                    box_vectors=box_vectors,
+                    metadata={
+                        **metadata,
+                        "subset": subset_name,
+                        "sphere_radius_nm": sphere_radius_nm
+                        if subset_name.startswith("sphere")
+                        else None,
+                    },
+                    center_nm=center_nm,
+                    indices=indices,
+                    subset_name=subset_name,
+                    variant=variant,
+                    output=output,
+                    write_xyz_file=write_xyz_file,
+                )
+            )
+    return rows
 
 
 def main() -> None:
@@ -154,46 +313,68 @@ def main() -> None:
     parser.add_argument("--metadata-dir", type=Path, default=Path("structures/metadata"))
     parser.add_argument("--prefix", default="solvent_water_tip3p_8nm")
     parser.add_argument("--sphere-radius-nm", type=float, default=2.5)
+    parser.add_argument("--trajectory-dcd", type=Path)
+    parser.add_argument("--frame-indices")
+    parser.add_argument("--max-frames", type=int, default=5)
     parser.add_argument("--write-xyz", action="store_true")
     args = parser.parse_args()
 
     coords, elements, box_vectors, metadata = load_npz(args.input_npz)
-    center_nm = center_from_box(coords, box_vectors)
     residue_groups = parse_pdb_residue_groups(args.input_pdb, coords.shape[0])
-    full_indices = np.arange(coords.shape[0], dtype=np.int64)
-    sphere_indices = select_residue_sphere(
-        coords,
-        elements,
-        residue_groups,
-        center_nm,
-        args.sphere_radius_nm,
-    )
 
     rows: list[dict] = []
-    for subset_name, indices in (
-        ("full", full_indices),
-        (f"sphere_r{args.sphere_radius_nm:g}nm".replace(".", "p"), sphere_indices),
-    ):
-        for variant in ("allatom", "oonly"):
-            output = args.output_dir / f"{args.prefix}_{subset_name}_{variant}.npz"
-            rows.append(
-                subset_variant(
-                    coords=coords,
+    frame_indices: list[int] | None = None
+    if args.trajectory_dcd is None:
+        rows.extend(
+            derive_inputs_for_snapshot(
+                coords=coords,
+                elements=elements,
+                box_vectors=box_vectors,
+                residue_groups=residue_groups,
+                metadata={
+                    **metadata,
+                    "input_npz": str(args.input_npz.as_posix()),
+                    "input_pdb": str(args.input_pdb.as_posix()),
+                },
+                output_dir=args.output_dir,
+                prefix=args.prefix,
+                sphere_radius_nm=args.sphere_radius_nm,
+                write_xyz_file=args.write_xyz,
+            )
+        )
+    else:
+        dcd_header = read_dcd_header(args.trajectory_dcd)
+        if int(dcd_header["natoms"]) != coords.shape[0]:
+            raise ValueError(
+                f"DCD has {dcd_header['natoms']} atoms but NPZ has {coords.shape[0]}"
+            )
+        frame_indices = parse_frame_indices(
+            args.frame_indices,
+            n_frames=int(dcd_header["frames"]),
+            max_frames=args.max_frames,
+        )
+        for frame_index, frame_coords, frame_box_vectors in iter_dcd_frames(
+            args.trajectory_dcd,
+            frame_indices=set(frame_indices),
+        ):
+            frame_prefix = f"{args.prefix}_frame{frame_index:03d}"
+            rows.extend(
+                derive_inputs_for_snapshot(
+                    coords=frame_coords,
                     elements=elements,
-                    box_vectors=box_vectors,
+                    box_vectors=frame_box_vectors,
+                    residue_groups=residue_groups,
                     metadata={
                         **metadata,
+                        "dcd_frame_index": frame_index,
+                        "dcd_header": dcd_header,
+                        "input_dcd": str(args.trajectory_dcd.as_posix()),
                         "input_npz": str(args.input_npz.as_posix()),
                         "input_pdb": str(args.input_pdb.as_posix()),
-                        "subset": subset_name,
-                        "sphere_radius_nm": args.sphere_radius_nm
-                        if subset_name.startswith("sphere")
-                        else None,
                     },
-                    center_nm=center_nm,
-                    indices=indices,
-                    variant=variant,
-                    output=output,
+                    output_dir=args.output_dir,
+                    prefix=frame_prefix,
+                    sphere_radius_nm=args.sphere_radius_nm,
                     write_xyz_file=args.write_xyz,
                 )
             )
@@ -202,6 +383,10 @@ def main() -> None:
     summary = {
         "input_npz": str(args.input_npz.as_posix()),
         "input_pdb": str(args.input_pdb.as_posix()),
+        "input_dcd": None
+        if args.trajectory_dcd is None
+        else str(args.trajectory_dcd.as_posix()),
+        "frame_indices": frame_indices,
         "source_atoms": int(coords.shape[0]),
         "source_elements": {
             str(element): int(np.sum(elements == element))
