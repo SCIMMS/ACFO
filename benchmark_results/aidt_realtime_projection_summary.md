@@ -95,6 +95,37 @@ It does not assume a fully distributed inverse FFT or solve.
 | 4 | 0.0719 | 13.92 | +28.1 ms |
 | 8 | 0.0660 | 15.14 | +34.0 ms |
 
+## Acquisition-Hardware Boundary
+
+The host-to-GPU transfer term should be treated as an experimental
+hardware and acquisition-pipeline boundary, not as an intrinsic limit of
+the prepared reconstruction operator. High-rate X-ray facilities already
+use detector and control architectures designed around burst acquisition,
+front-end buffering, parallel readout, and online calibration.
+
+For example, the AGIPD detector developed for European XFEL reports
+burst-mode storage of 352 images at up to 6.5 MHz, compatible with the
+4.5 MHz intra-train frame rate, and the European XFEL pulse structure
+contains up to 2700 pulses per train at approximately 4.5 MHz. Detector
+control and calibration processing at European XFEL has also been framed
+around distributed computing and GPU-accelerated near-real-time
+processing. These examples do not prove an end-to-end ODT/aIDT live
+pipeline for this repository, but they justify treating data movement as
+a solvable facility/pipeline engineering layer rather than the core
+algorithmic bottleneck.
+
+The appropriate claim is therefore processing-side feasibility: once a
+frame stack is available on the GPU, the prepared operator can update the
+full public-condition reconstruction at 10 Hz on older hardware, and the
+copy-included path is close enough that current GPUs, overlapped
+acquisition, or multi-GPU processing should make real-time analysis
+practical.
+
+Relevant detector/acquisition references:
+
+- Allahgholi et al., `The Adaptive Gain Integrating Pixel Detector at the European XFEL`, arXiv:1808.00256.
+- Munnich et al., `Integrated Detector Control and Calibration Processing at the European XFEL`, arXiv:1601.01794.
+
 ## Claim Boundary
 
 A defensible manuscript claim is:
@@ -108,4 +139,5 @@ A defensible manuscript claim is:
 
 The claim should not be phrased as a completed end-to-end live microscope
 demonstration until acquisition, preprocessing, and transfer scheduling are
-measured in the target experimental system.
+measured in the target experimental system. The current result is instead
+evidence that the processing side has entered the real-time regime.
