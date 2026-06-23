@@ -21,6 +21,8 @@ Currently curated summaries include:
 - `aidt_torch_gpu_optimization_summary.md`
 - `aidt_public_transfer_torch_gpu_optimized_full700_compare.md`
 - `aidt_public_transfer_real_condition_summary.md`
+- `aidt_10hz_condition_summary.md`
+- `aidt_realtime_projection_summary.md`
 - `experimental_use_case_comparison.md`
 - `odt_measured_data_contract.md`
 - `curved_ewald_prior_art_*.md`

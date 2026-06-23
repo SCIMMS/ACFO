@@ -29,6 +29,7 @@ benchmark_results/**
 !benchmark_results/aidt_public_transfer_torch_gpu_optimized_full700_compare.md
 !benchmark_results/aidt_public_transfer_real_condition_summary.md
 !benchmark_results/aidt_10hz_condition_summary.md
+!benchmark_results/aidt_realtime_projection_summary.md
 !benchmark_results/experimental_use_case_comparison.md
 !benchmark_results/odt_measured_data_contract.md
 !benchmark_results/odt_torch_gpu_dynamic_warm_start_update_saturation_summary.md
