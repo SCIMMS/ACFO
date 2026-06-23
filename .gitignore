@@ -49,6 +49,9 @@ structures/metadata/**
 !structures/processed/
 !structures/metadata/
 
+# Local OpenMM/MD runs and raw trajectories.
+runs/
+
 # Generated report/rendering probes
 docs/*.pdf
 docs/*.png
