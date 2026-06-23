@@ -1,0 +1,40 @@
+# Python and build outputs
+.venv/
+__pycache__/
+*.py[cod]
+*.pyd
+*.so
+*.dll
+*.egg-info/
+build/
+dist/
+
+# Local caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.matplotlib_cache/
+.cupy_cache/
+
+# Local Codex/workspace metadata
+.agents/
+.codex/
+.codex_semantic_layers/
+
+# Generated benchmark/data artifacts. Commit only curated markdown summaries.
+benchmark_results/**
+!benchmark_results/
+!benchmark_results/README.md
+!benchmark_results/aidt_torch_gpu_optimization_summary.md
+!benchmark_results/aidt_public_transfer_torch_gpu_optimized_full700_compare.md
+!benchmark_results/aidt_public_transfer_real_condition_summary.md
+!benchmark_results/experimental_use_case_comparison.md
+!benchmark_results/odt_measured_data_contract.md
+!benchmark_results/odt_torch_gpu_dynamic_warm_start_update_saturation_summary.md
+!benchmark_results/odt_torch_gpu_realistic_cap128_opt3_summary.md
+!benchmark_results/curved_ewald_prior_art_*.md
+!benchmark_results/curved_ewald_factorization_strategy_sources.md
+
+# Generated report/rendering probes
+docs/*.pdf
+docs/*.png

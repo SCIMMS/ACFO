@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68", "wheel", "pybind11>=2.12"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "curved-ewald-operators"
+version = "0.1.0"
+description = "Prepared curved-Ewald Fourier operators for WAXS, high-NA optics, and ODT/aIDT benchmarks."
+requires-python = ">=3.11"
+dependencies = [
+  "numpy",
+  "scipy",
+]
+
+[project.optional-dependencies]
+nufft = ["finufft"]
+numba = ["numba"]
+cpp = ["pybind11>=2.12"]
+gpu = ["torch"]
+optics = ["PyCustomFocus", "psf-generator"]
+test = ["pytest"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]

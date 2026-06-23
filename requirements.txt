@@ -1,0 +1,14 @@
+numpy
+scipy
+finufft
+numba
+pytest
+pybind11
+setuptools
+wheel
+PyCustomFocus
+psf-generator
+pydantic
+tqdm
+gdown
+reportlab
