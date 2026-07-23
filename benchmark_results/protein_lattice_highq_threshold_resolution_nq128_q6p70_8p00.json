@@ -1,0 +1,89 @@
+{
+  "schema": "protein-lattice-q-sampling-case-v1",
+  "generated_at_utc": "2026-07-13T01:24:38.165003+00:00",
+  "label": "resolution_nq128_q6p70_8p00",
+  "axis": "resolution",
+  "contract": {
+    "unit": "structures/processed/protein_nanocrystal_lysozyme_1iee_1x1x1_fixed.npz",
+    "supercell": "structures/processed/protein_nanocrystal_lysozyme_1iee_5x5x5_fixed.npz",
+    "q_min_inv_angstrom": 6.7,
+    "q_max_inv_angstrom": 8.0,
+    "nq": 128,
+    "dq_inv_angstrom": 0.010236220472441104,
+    "nphi": 864,
+    "wavelength_nm": 0.08,
+    "harmonic_margin": 48,
+    "finufft_mode": "skip",
+    "finufft_q_block_size": 2,
+    "finufft_wall_threshold_seconds": 180.0,
+    "finufft_max_process_rss_fraction": 0.75,
+    "finufft_min_available_memory_fraction": 0.2,
+    "memory_sample_interval_seconds": 0.02,
+    "lattice_backend": "separable",
+    "coefficient_backend": "fused_phase"
+  },
+  "atom_count": 1001000,
+  "cell_count": 125,
+  "unit_atom_count": 8008,
+  "unit_structure": "protein_nanocrystal_lysozyme_1iee_1x1x1_fixed",
+  "supercell_shape": [
+    5,
+    5,
+    5
+  ],
+  "repetition_residual_nm": 3.0588864774472313e-12,
+  "target_count": 110592,
+  "maximum_harmonic": 408,
+  "timing_seconds": {
+    "shared_target_preparation": 0.036712199995236006,
+    "factorized": {
+      "plan_setup": 0.004488500002480578,
+      "lattice_setup": 0.053318700003728736,
+      "specific_setup_total": 0.057807200006209314,
+      "first_execute": 1.0048549999992247,
+      "hot_execute": 1.117367099999683,
+      "first_total_excluding_shared": 1.062662200005434,
+      "first_profile": {
+        "backend": "fft",
+        "coefficient_backend": "fused_phase",
+        "coefficient_cache_mib": 0.0,
+        "coefficient_contraction_seconds": 0.9995960000014747,
+        "azimuth_synthesis_seconds": 0.004187500002444722,
+        "total_seconds": 1.0037863000034122
+      },
+      "hot_profile": {
+        "backend": "fft",
+        "coefficient_backend": "fused_phase",
+        "coefficient_cache_mib": 0.0,
+        "coefficient_contraction_seconds": 1.1128355000037118,
+        "azimuth_synthesis_seconds": 0.0035666999974637292,
+        "total_seconds": 1.1164043999960995
+      }
+    },
+    "finufft": {
+      "mode": "skip"
+    }
+  },
+  "speedup_finufft_over_factorized": null,
+  "legacy_comparison": null,
+  "lattice_comparison": null,
+  "cross_error": null,
+  "gates": {
+    "maximum_harmonic_below_nyquist": true,
+    "repetition_residual_le_1e_9_nm": true,
+    "factorized_repeat_l2_le_1e_13": true,
+    "legacy_comparison_l2_le_1e_12": true,
+    "lattice_comparison_l2_le_1e_9": true
+  },
+  "elapsed_seconds": 2.5553970000037225,
+  "claim_boundary": [
+    "Factorized-only profile; FINUFFT timing is intentionally omitted.",
+    "The execute uses prepared coordinates/cutoffs and uniform-phi FFT synthesis."
+  ],
+  "passed": true,
+  "driver_subprocess": {
+    "elapsed_seconds": 4.048470999994606,
+    "stdout_tail": "resolution_nq128_q6p70_8p00: factorized setup 0.058 s; first/hot 1.005/1.117 s; coefficient 1.113 s; synthesis 0.004 s\nwrote C:\\Users\\tnvlaos456\\Documents\\Atomic WAXS Cake-Map Simulator\\benchmark_results\\protein_lattice_highq_threshold_resolution_nq128_q6p70_8p00.json\n",
+    "stderr_tail": ""
+  }
+}

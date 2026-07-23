@@ -1,0 +1,144 @@
+{
+  "schema": "uniaxial-green-tensor-residue-v1",
+  "generated_at_utc": "2026-07-12T17:13:23.844153+00:00",
+  "scope": "homogeneous-bulk vector first-Born complex amplitude at simple anisotropic Maxwell spectral poles",
+  "reference_independence": "The amplitude normalization is obtained from the Cartesian Maxwell wave-operator nullspace and the resolvent limit; no branch-specific scalar pole weight is used by the oracle.",
+  "material": {
+    "name": "5 mol% MgO-doped congruent LiNbO3",
+    "temperature_c": 24.5,
+    "pump_wavelength_um": 1.064,
+    "sh_wavelength_um": 0.532,
+    "n_o_pump": 2.2295711872954573,
+    "n_e_pump": 2.1481542422227045,
+    "n_o_sh": 2.3193932283594694,
+    "n_e_sh": 2.2244389865983383
+  },
+  "object": {
+    "cartesian_shape": [
+      64,
+      64,
+      64
+    ],
+    "half_width_um": 2.0,
+    "domain": "off-axis binary two-carrier hologram inside a superellipsoid",
+    "cylindrical_shape": [
+      64,
+      64,
+      64
+    ]
+  },
+  "cases": [
+    {
+      "name": "extraordinary-pump-to-extraordinary-SH",
+      "outgoing_branch": "extraordinary",
+      "active_cartesian_voxels": 109424,
+      "nonzero_cylindrical_bins": 83327,
+      "voxel_volume_um3": 0.000244140625,
+      "q_samples": 768,
+      "acfo_seconds": 0.014642299996921793,
+      "direct_seconds": 4.564994799999113,
+      "scalar_acfo_vs_direct_complex_l2": 9.897798341713582e-15,
+      "green_field_acfo_vs_direct_complex_l2": 1.095566910482523e-14,
+      "maxwell_pole": {
+        "max_normalized_null_residual": 6.267045352482186e-16,
+        "min_abs_pole_derivative": 37.33809208147115,
+        "max_abs_pole_derivative": 54.580764418938614
+      },
+      "resolvent_limit": {
+        "rows": [
+          {
+            "eta": 1e-05,
+            "residue_complex_l2": 0.00037434269061793074
+          },
+          {
+            "eta": 1e-06,
+            "residue_complex_l2": 3.743430154127215e-05
+          },
+          {
+            "eta": 1e-07,
+            "residue_complex_l2": 3.743490409477152e-06
+          }
+        ],
+        "convergence_order": 0.9999963163568285,
+        "finest_complex_l2": 3.743490409477152e-06
+      },
+      "legacy_scalar_weight_diagnostic": {
+        "weight_formula": "epsilon_perpendicular/(2*kz)",
+        "signed_l2_without_refit": 4.21627540121073,
+        "best_per_branch_gain": [
+          0.19169961027555688,
+          1.308625911392485e-18
+        ],
+        "best_per_branch_gain_l2": 0.010498259542306794,
+        "legacy_to_green_norm_ratio": 5.216207222943591
+      },
+      "green_field_norm": 0.1233893126434582
+    },
+    {
+      "name": "ordinary-pump-to-ordinary-SH-control",
+      "outgoing_branch": "ordinary",
+      "active_cartesian_voxels": 109424,
+      "nonzero_cylindrical_bins": 83327,
+      "voxel_volume_um3": 0.000244140625,
+      "q_samples": 768,
+      "acfo_seconds": 0.014218599993910175,
+      "direct_seconds": 4.87496149999788,
+      "scalar_acfo_vs_direct_complex_l2": 1.0230595849721932e-14,
+      "green_field_acfo_vs_direct_complex_l2": 9.824456155031518e-15,
+      "maxwell_pole": {
+        "max_normalized_null_residual": 8.341178210706922e-16,
+        "min_abs_pole_derivative": 38.94838024024028,
+        "max_abs_pole_derivative": 54.611158467662094
+      },
+      "resolvent_limit": {
+        "rows": [
+          {
+            "eta": 1e-05,
+            "residue_complex_l2": 0.00035190475728368107
+          },
+          {
+            "eta": 1e-06,
+            "residue_complex_l2": 3.519050061947588e-05
+          },
+          {
+            "eta": 1e-07,
+            "residue_complex_l2": 3.5192035437903037e-06
+          }
+        ],
+        "convergence_order": 0.9999903758301121,
+        "finest_complex_l2": 3.5192035437903037e-06
+      },
+      "legacy_scalar_weight_diagnostic": {
+        "weight_formula": "1/(2*kz)",
+        "signed_l2_without_refit": 4.0029004362678514e-14,
+        "best_per_branch_gain": [
+          1.0000000000000002,
+          -2.0754943805015134e-18
+        ],
+        "best_per_branch_gain_l2": 4.002958710061364e-14,
+        "legacy_to_green_norm_ratio": 0.9999999999999999
+      },
+      "green_field_norm": 0.028569613732894763
+    }
+  ],
+  "gates": {
+    "maxwell_pole_residual_le_1e_12": true,
+    "resolvent_limit_l2_le_1e_5": true,
+    "resolvent_first_order_convergence": true,
+    "green_field_acfo_vs_direct_l2_le_1e_8": true,
+    "legacy_ordinary_scalar_weight_matches": true,
+    "legacy_extraordinary_normalization_problem_detected": true
+  },
+  "passed": true,
+  "decision": "PASS for the corrected homogeneous anisotropic Maxwell Green-tensor first-Born amplitude oracle. The earlier scalar extraordinary residue is not a valid dyadic Maxwell amplitude normalization.",
+  "claim_boundary": {
+    "supported": "relative complex vector first-Born amplitudes on ordinary and extraordinary bulk branches after dyadic Green-residue projection",
+    "not_supported": "finite-crystal interfaces, Fresnel coupling, pump depletion, multiple scattering, nonlinear propagation, or publication-grade PyMeep full-amplitude agreement",
+    "pymeep_status": "the finite-radius patterned/point bridge remains failed and is not reclassified by this analytic spectral reference"
+  },
+  "environment": {
+    "python": "3.13.13",
+    "numpy": "2.4.6",
+    "platform": "Windows-10-10.0.19045-SP0"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "schema": "acfo-general-curvature-cpu-package-build-v1",
+  "generated_at_utc": "2026-07-22T04:15:33.186155+00:00",
+  "package_directory": "<local-path-redacted>/general_curvature_cpu_replication_v1_1_20260722",
+  "archive": "<local-path-redacted>/general_curvature_cpu_replication_v1_1_20260722.zip",
+  "archive_bytes": 144819,
+  "archive_sha256": "1309e1570d62930edf509df9f1233ca4df75a29acc8453967a58876a381a6ee2",
+  "packaged_file_count": 44,
+  "_publication": {
+    "source_sha256": "05c7f102dc92a98e64b6d0d0b1c017381cb9262d2cb8d19e2dbafe247bf1e55d",
+    "normalization": "Machine-local absolute paths were replaced with repository-relative paths or a redacted placeholder. Scientific values are unchanged."
+  }
+}

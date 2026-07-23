@@ -1,0 +1,53 @@
+{
+  "schema": "acfo-ncs-fresh-dependency-rerun-v1",
+  "generated_at_utc": "2026-07-12T18:21:28.797451+00:00",
+  "environment": {
+    "python_executable": "C:\\Users\\tnvlaos456\\Documents\\Atomic WAXS Cake-Map Simulator\\.venv_fresh_20260713\\Scripts\\python.exe",
+    "python": "3.13.13 | packaged by Anaconda, Inc. | (main, Apr 14 2026, 06:12:50) [MSC v.1942 64 bit (AMD64)]",
+    "platform": "Windows-10-10.0.19045-SP0",
+    "venv": ".venv_fresh_20260713",
+    "packages": {
+      "numpy": "2.4.6",
+      "scipy": "1.18.0",
+      "finufft": "2.5.1",
+      "numba": "0.66.0",
+      "pybind11": "3.0.4",
+      "torch": "2.12.1+cu126",
+      "pytest": "9.1.1",
+      "reportlab": "5.0.0",
+      "PyMuPDF": "1.28.0",
+      "matplotlib": "3.11.0"
+    },
+    "torch_cuda_version": "12.6",
+    "torch_cuda_available": true,
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER"
+  },
+  "rebuilt_cpp_extensions": [
+    "_cpp_high_na.cp313-win_amd64.pyd",
+    "_cpp_histogram.cp313-win_amd64.pyd",
+    "_cpp_odt.cp313-win_amd64.pyd",
+    "_cpp_solvers.cp313-win_amd64.pyd"
+  ],
+  "suite": {
+    "duration_s": 52.94075239999802,
+    "passed": true,
+    "pytest_stdout_tail": "........................................................................ [ 41%]\n........................................................................ [ 83%]\n............................                                             [100%]\n172 passed in 16.49s\n",
+    "pdf_sha256": "ecb0dde4b292fcc556d588b3a1f701b3d2f54fdbeaa99bde9961d791877dc4b5",
+    "suite_sha256": "44d16dd1c59e7809dde2f14dcc96b9e436fd007d473b015beebd8dd25e98f03a"
+  },
+  "gates": {
+    "isolated_venv": true,
+    "four_cpp_extensions_rebuilt": true,
+    "cuda_torch_available": true,
+    "full_pytest_passed": true,
+    "reduced_suite_passed": true,
+    "pdf_rebuilt": true
+  },
+  "scope": "Fresh dependency install and forced C++ rebuild in an isolated venv, followed by the local reduced GPU suite.",
+  "limitations": [
+    "This used the same physical Windows machine and RTX 2070 SUPER; it is not an independent-machine rerun.",
+    "The optional cuFINUFFT/CuPy baseline extra was not installed in the fresh reduced-suite venv; saved production baseline evidence was schema-checked.",
+    "The 216k WAXS and 256-cubed ODT production workloads were not rerun by the reduced suite."
+  ],
+  "passed": true
+}

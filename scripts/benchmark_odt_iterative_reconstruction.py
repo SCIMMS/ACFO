@@ -122,6 +122,18 @@ def build_context(args: argparse.Namespace) -> ReconstructionContext:
                     cap_radial=args.cap_radial,
                     cap_phi=args.cap_phi,
                     illumination=illumination,
+                    radial_sampling=getattr(
+                        args, "detector_radial_sampling", "uniform_rho"
+                    ),
+                    radial_outer_power=getattr(
+                        args, "detector_radial_outer_power", 2.0
+                    ),
+                    radial_min_fraction=getattr(
+                        args, "detector_radial_min_fraction", 0.0
+                    ),
+                    radial_max_fraction=getattr(
+                        args, "detector_radial_max_fraction", 1.0
+                    ),
                 ),
             )
         )(
@@ -169,6 +181,21 @@ def build_context(args: argparse.Namespace) -> ReconstructionContext:
             n_illum=args.n_illum,
             l_cutoff=l_cutoff,
             adaptive_l_threshold=args.cone_l_prune_threshold,
+        compact_axisymmetric_kernel=bool(
+            getattr(args, "compact_axisymmetric_kernel", False)
+        ),
+        radial_sampling=getattr(
+            args, "detector_radial_sampling", "uniform_rho"
+        ),
+        radial_outer_power=getattr(
+            args, "detector_radial_outer_power", 2.0
+        ),
+        radial_min_fraction=getattr(
+            args, "detector_radial_min_fraction", 0.0
+        ),
+        radial_max_fraction=getattr(
+            args, "detector_radial_max_fraction", 1.0
+        ),
         ),
     )
     build_steps.append(row)
@@ -181,6 +208,8 @@ def build_context(args: argparse.Namespace) -> ReconstructionContext:
     native_prepared_tables = None
     native_prepared_plan = None
     if (
+        not bool(getattr(args, "skip_native_prepared_adjoint", False))
+        and
         decomp.active_l_offsets is not None
         and decomp.active_l_indices is not None
         and hasattr(cpp_odt, "cone_axis_prepare_adjoint_pruned")
@@ -813,6 +842,16 @@ def parser() -> argparse.ArgumentParser:
         default="auto",
     )
     p.add_argument("--native-prepared-gather-threshold", type=int, default=8192)
+    p.add_argument(
+        "--skip-native-prepared-adjoint",
+        action="store_true",
+        help="Skip CPU prepared-adjoint tables when a GPU or streamed backend does not use them.",
+    )
+    p.add_argument(
+        "--compact-axisymmetric-kernel",
+        action="store_true",
+        help="Store one radial kernel row per detector radius for GPU streaming backends.",
+    )
     p.add_argument("--iterations", type=int, default=20)
     p.add_argument("--include-finufft", action="store_true")
     p.add_argument("--finufft-iterations", type=int, default=None)

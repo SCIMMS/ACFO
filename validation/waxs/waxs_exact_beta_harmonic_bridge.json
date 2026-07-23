@@ -1,0 +1,76 @@
+{
+  "schema": "waxs-exact-beta-harmonic-bridge-v1",
+  "generated_at_utc": "2026-07-13T03:50:36.683171+00:00",
+  "structure": "protein_nanocrystal_lysozyme_1iee_1x1x1_fixed",
+  "structure_path": "structures/processed/protein_nanocrystal_lysozyme_1iee_1x1x1_fixed.npz",
+  "atom_count": 8008,
+  "q_inv_angstrom": [
+    5.0,
+    5.65,
+    6.3
+  ],
+  "target_nphi": 720,
+  "target_azimuth_nyquist": 360,
+  "active_targets": 1012,
+  "harmonic_margin": 48,
+  "bessel_backend": "cpp_fused",
+  "atom_chunk_size": 256,
+  "streamed_kernel_upper_bound_mib": 1.37109375,
+  "maximum_harmonic": 350,
+  "direct_ndft_seconds": 0.943465100004687,
+  "exact_coordinate_harmonic": {
+    "complex_l2": 1.0101056434072341e-12,
+    "intensity_l2": 8.831173989148007e-13,
+    "ring_intensity_l2": 1.7580560786631218e-14,
+    "intensity_ncc": 0.9999999999999997,
+    "seconds": 0.10242699999071192
+  },
+  "rz_quantization_sweep": [
+    {
+      "bin_width_nm": 0.1,
+      "n_r": 54,
+      "n_z": 100,
+      "maximum_harmonic": 347,
+      "seconds": 0.09501340000133496,
+      "complex_l2": 0.9066679928640741,
+      "intensity_l2": 0.783069754882619,
+      "ring_intensity_l2": 0.22890727766338206,
+      "intensity_ncc": 0.3417273664246936
+    },
+    {
+      "bin_width_nm": 0.00625,
+      "n_r": 836,
+      "n_z": 1568,
+      "maximum_harmonic": 349,
+      "seconds": 0.0884271999966586,
+      "complex_l2": 0.06634368188107095,
+      "intensity_l2": 0.06200303823426362,
+      "ring_intensity_l2": 0.008009117064026228,
+      "intensity_ncc": 0.9964827433108517
+    },
+    {
+      "bin_width_nm": 0.00078125,
+      "n_r": 6678,
+      "n_z": 12528,
+      "maximum_harmonic": 349,
+      "seconds": 0.08863060000294354,
+      "complex_l2": 0.008154723834879115,
+      "intensity_l2": 0.007786377120645933,
+      "ring_intensity_l2": 0.0010462098931069788,
+      "intensity_ncc": 0.9999446136114551
+    }
+  ],
+  "gates": {
+    "exact_harmonic_complex_l2_le_1e_10": true,
+    "maximum_harmonic_below_target_nyquist": true,
+    "fine_rz_exact_beta_intensity_l2_le_1pct": true,
+    "fine_rz_exact_beta_ring_l2_le_0p5pct": true
+  },
+  "passed": true,
+  "decision": "Exact per-atom beta and coordinates recover the direct NDFT on a 720-azimuth detector grid; source-coordinate precision therefore need not be represented by a 96,000-point detector/output FFT.",
+  "claim_boundary": [
+    "This is a small-case exact-coordinate harmonic reference, not a scalable production implementation.",
+    "The fine R/z threshold is exploratory and uses fixed detector targets.",
+    "Production work remains to accelerate exact-beta/sub-bin source contraction without scaling the output FFT to source-coordinate resolution."
+  ]
+}

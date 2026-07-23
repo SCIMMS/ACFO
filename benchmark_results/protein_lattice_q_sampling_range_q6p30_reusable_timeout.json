@@ -1,0 +1,26 @@
+{
+  "schema": "protein-lattice-q-sampling-timeout-v1",
+  "status": "timeout",
+  "label": "range_q6p30",
+  "axis": "range",
+  "contract": {
+    "q_min_inv_angstrom": 0.05,
+    "q_max_inv_angstrom": 6.3,
+    "nq": 40,
+    "nphi": 720,
+    "finufft_mode": "reusable",
+    "finufft_eps": 1e-6,
+    "finufft_threads": 4
+  },
+  "timeout_seconds": 300,
+  "completed_before_timeout": {
+    "factorized_setup_seconds": 0.293,
+    "factorized_first_execute_seconds": 0.230,
+    "factorized_hot_execute_seconds": 0.239,
+    "coefficient_contraction_seconds": 0.237,
+    "azimuth_synthesis_seconds": 0.001
+  },
+  "finufft_result": null,
+  "interpretation": "The reusable whole-target run did not complete two FINUFFT executions within the 300 s command limit. This is a negative feasibility observation, not a timing estimate. The q-block=2 streamed result is the applicable memory-safe baseline.",
+  "passed": false
+}

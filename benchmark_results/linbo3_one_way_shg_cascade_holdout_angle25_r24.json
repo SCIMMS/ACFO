@@ -1,0 +1,933 @@
+{
+  "schema": "linbo3-one-way-shg-cascade-v2",
+  "generated_at_utc": "2026-07-14T01:35:22.657147+00:00",
+  "scope": "homogeneous lossless bulk 5 mol% MgO:LiNbO3 one-way cascade: 1064-nm pump FDTD, centered Yee-cell pump-field export, local 3m tensor contraction inside a compact C1 interaction window, and 532-nm impressed-current FDTD with branch-resolved surface projection",
+  "claim_boundary": "pump propagation is solved by Maxwell FDTD and feeds the SH source, but the cascade remains undepleted and one-way; it excludes pump back-action, coupled nonlinear time stepping, interfaces, periodic poling, loss, and absolute conversion efficiency",
+  "normalization_contract": "the pump current amplitude and common J=-i omega P prefactor set only a global SH scale; no cascade-source fitting; independently frozen point-source complex gain per SH resolution and monitor shell",
+  "material": {
+    "name": "5 mol% MgO-doped congruent LiNbO3",
+    "temperature_c": 24.5,
+    "pump_wavelength_um": 1.064,
+    "sh_wavelength_um": 0.532,
+    "n_o_pump": 2.2295711872954573,
+    "n_e_pump": 2.1481542422227045,
+    "n_o_sh": 2.3193932283594694,
+    "n_e_sh": 2.2244389865983383,
+    "d22_pm_per_v": 4.08,
+    "d31_pm_per_v": -4.4,
+    "d33_pm_per_v": -25.0
+  },
+  "configuration": {
+    "resolutions": [
+      24.0
+    ],
+    "pump_frequency": 0.5,
+    "sh_frequency": 1.0,
+    "pump_surface_parameter_deg": 25.0,
+    "pump_azimuth_deg": 1.875,
+    "pump_cell_width": 6.0,
+    "pump_pml_width": 0.5,
+    "pump_source_z": -1.5,
+    "pump_beam_sigma": 0.55,
+    "pump_until_after_sources": 6.0,
+    "interaction_half_width": 0.55,
+    "interaction_half_width_um": 0.2926,
+    "interaction_window": "product cos^2 C1 apodization",
+    "sh_cell_width": 5.0,
+    "sh_pml_width": 0.5,
+    "monitor_half_widths": [
+      1.4,
+      1.75
+    ],
+    "sh_until_after_sources": 6.0,
+    "mode_phi_degrees": [
+      -5.625,
+      1.875,
+      9.375
+    ],
+    "mode_parameter_degrees": [
+      15.0,
+      22.5,
+      30.0,
+      37.5,
+      45.0,
+      52.5,
+      60.0,
+      67.5,
+      75.0
+    ],
+    "acfo_grid_n": 96,
+    "pump_dft_contract": "PyMeep default centered-voxel DFT fields; Ex/Ey/Ez are bilinearly interpolated to the same Yee-cell centers before 3m contraction",
+    "sh_source_contract": "three complex P2 component arrays retain the centered pump-DFT coordinate axes and are trilinearly evaluated by amp_func at each electric-current Yee point; exact injected staggered currents are re-exported with get_source"
+  },
+  "reference_only": false,
+  "frozen_holdout": true,
+  "holdout_contract": {
+    "training_case_pump_surface_parameter_deg": 38.0,
+    "holdout_pump_surface_parameter_deg": 25.0,
+    "training_case_pump_azimuth_deg": 1.875,
+    "holdout_pump_azimuth_deg": 1.875,
+    "training_case_pump_beam_sigma": 0.55,
+    "holdout_pump_beam_sigma": 0.55,
+    "frozen_calibration_source_vector": [
+      0.3082213139277428,
+      -0.17230117993820526,
+      -0.935581062780002
+    ],
+    "holdout_nonlinear_source_vector": [
+      0.3414250332976671,
+      -0.3364621812331089,
+      -0.8776230097470926
+    ],
+    "no_holdout_refit": true,
+    "grid_convergence_source": "baseline r20/r24 cascade; the holdout is a single preselected r24 case"
+  },
+  "point_calibration": {
+    "source_files": [
+      {
+        "path": "benchmark_results/linbo3_point_modal_calibration.json",
+        "sha256": "eb64c22c267607a0865c158bfc4f35028fc8b3b49b5297d6fb21ed148ed53456",
+        "schema": "uniaxial-closed-surface-modal-reciprocity-probe-v2",
+        "generated_at_utc": "2026-07-14T00:21:24.880462+00:00",
+        "resolutions": [
+          20.0,
+          24.0
+        ]
+      }
+    ],
+    "contract": "point-source combined ordinary+extraordinary gain is frozen before distributed-source evaluation"
+  },
+  "rows": [
+    {
+      "resolution": 24.0,
+      "pump": {
+        "runtime_s": 373.946062084,
+        "array_shape": [
+          28,
+          28,
+          28
+        ],
+        "field_weighted_l2_norm": 0.5806863720496191,
+        "nonlinear_polarization_weighted_l2_norm_pm_per_v_scale": 0.8176150592675038,
+        "analytic_extraordinary_polarization_residual_l2": 0.11994879317752254,
+        "beam_center_on_source_plane": [
+          -0.7255830016902574,
+          -0.02375312804860918
+        ],
+        "group_tangent": 0.48398113068540993,
+        "source_plane_z": -1.5,
+        "beam_sigma": 0.55,
+        "source_count": 3
+      },
+      "cell_center_source": {
+        "point_count": 21952,
+        "nonzero_bins_by_component": [
+          17576,
+          17576,
+          17576
+        ],
+        "acfo_vs_direct_relative_l2": 0.006206516132550844
+      },
+      "exact_yee_source": {
+        "active_grid_points_by_component": [
+          18954,
+          18954,
+          18954
+        ],
+        "nonzero_bins_by_component": [
+          18954,
+          18954,
+          18954
+        ],
+        "component_integrals": [
+          [
+            0.0015434869163497426,
+            0.0009804130782820918
+          ],
+          [
+            -0.001947397566004569,
+            -0.00048729789332842386
+          ],
+          [
+            -0.0037788660147321214,
+            -0.002725156934742925
+          ]
+        ],
+        "acfo_vs_direct_relative_l2": 0.007981147055908201,
+        "direct_vs_cell_center_direct_relative_l2": 0.02707925233766151,
+        "acfo_vs_cell_center_acfo_relative_l2": 0.025904037220413248
+      },
+      "field_artifact": {
+        "path": "benchmark_results/linbo3_one_way_shg_cascade_holdout_angle25_r24_fields_r24.npz",
+        "sha256": "d237cbd2531a01acea0bc8451b815e5fa4cc8ec97d7dfa063b88d26ecd31865e",
+        "bytes": 2876927
+      },
+      "sample_labels": [
+        {
+          "branch": "ordinary",
+          "surface_parameter_deg": 15.0,
+          "phi_deg": -5.625
+        },
+        {
+          "branch": "extraordinary",
+          "surface_parameter_deg": 15.0,
+          "phi_deg": -5.625
+        },
+        {
+          "branch": "ordinary",
+          "surface_parameter_deg": 22.5,
+          "phi_deg": -5.625
+        },
+        {
+          "branch": "extraordinary",
+          "surface_parameter_deg": 22.5,
+          "phi_deg": -5.625
+        },
+        {
+          "branch": "ordinary",
+          "surface_parameter_deg": 30.0,
+          "phi_deg": -5.625
+        },
+        {
+          "branch": "extraordinary",
+          "surface_parameter_deg": 30.0,
+          "phi_deg": -5.625
+        },
+        {
+          "branch": "ordinary",
+          "surface_parameter_deg": 37.5,
+          "phi_deg": -5.625
+        },
+        {
+          "branch": "extraordinary",
+          "surface_parameter_deg": 37.5,
+          "phi_deg": -5.625
+        },
+        {
+          "branch": "ordinary",
+          "surface_parameter_deg": 45.0,
+          "phi_deg": -5.625
+        },
+        {
+          "branch": "extraordinary",
+          "surface_parameter_deg": 45.0,
+          "phi_deg": -5.625
+        },
+        {
+          "branch": "ordinary",
+          "surface_parameter_deg": 52.5,
+          "phi_deg": -5.625
+        },
+        {
+          "branch": "extraordinary",
+          "surface_parameter_deg": 52.5,
+          "phi_deg": -5.625
+        },
+        {
+          "branch": "ordinary",
+          "surface_parameter_deg": 60.0,
+          "phi_deg": -5.625
+        },
+        {
+          "branch": "extraordinary",
+          "surface_parameter_deg": 60.0,
+          "phi_deg": -5.625
+        },
+        {
+          "branch": "ordinary",
+          "surface_parameter_deg": 67.5,
+          "phi_deg": -5.625
+        },
+        {
+          "branch": "extraordinary",
+          "surface_parameter_deg": 67.5,
+          "phi_deg": -5.625
+        },
+        {
+          "branch": "ordinary",
+          "surface_parameter_deg": 75.0,
+          "phi_deg": -5.625
+        },
+        {
+          "branch": "extraordinary",
+          "surface_parameter_deg": 75.0,
+          "phi_deg": -5.625
+        },
+        {
+          "branch": "ordinary",
+          "surface_parameter_deg": 15.0,
+          "phi_deg": 1.875
+        },
+        {
+          "branch": "extraordinary",
+          "surface_parameter_deg": 15.0,
+          "phi_deg": 1.875
+        },
+        {
+          "branch": "ordinary",
+          "surface_parameter_deg": 22.5,
+          "phi_deg": 1.875
+        },
+        {
+          "branch": "extraordinary",
+          "surface_parameter_deg": 22.5,
+          "phi_deg": 1.875
+        },
+        {
+          "branch": "ordinary",
+          "surface_parameter_deg": 30.0,
+          "phi_deg": 1.875
+        },
+        {
+          "branch": "extraordinary",
+          "surface_parameter_deg": 30.0,
+          "phi_deg": 1.875
+        },
+        {
+          "branch": "ordinary",
+          "surface_parameter_deg": 37.5,
+          "phi_deg": 1.875
+        },
+        {
+          "branch": "extraordinary",
+          "surface_parameter_deg": 37.5,
+          "phi_deg": 1.875
+        },
+        {
+          "branch": "ordinary",
+          "surface_parameter_deg": 45.0,
+          "phi_deg": 1.875
+        },
+        {
+          "branch": "extraordinary",
+          "surface_parameter_deg": 45.0,
+          "phi_deg": 1.875
+        },
+        {
+          "branch": "ordinary",
+          "surface_parameter_deg": 52.5,
+          "phi_deg": 1.875
+        },
+        {
+          "branch": "extraordinary",
+          "surface_parameter_deg": 52.5,
+          "phi_deg": 1.875
+        },
+        {
+          "branch": "ordinary",
+          "surface_parameter_deg": 60.0,
+          "phi_deg": 1.875
+        },
+        {
+          "branch": "extraordinary",
+          "surface_parameter_deg": 60.0,
+          "phi_deg": 1.875
+        },
+        {
+          "branch": "ordinary",
+          "surface_parameter_deg": 67.5,
+          "phi_deg": 1.875
+        },
+        {
+          "branch": "extraordinary",
+          "surface_parameter_deg": 67.5,
+          "phi_deg": 1.875
+        },
+        {
+          "branch": "ordinary",
+          "surface_parameter_deg": 75.0,
+          "phi_deg": 1.875
+        },
+        {
+          "branch": "extraordinary",
+          "surface_parameter_deg": 75.0,
+          "phi_deg": 1.875
+        },
+        {
+          "branch": "ordinary",
+          "surface_parameter_deg": 15.0,
+          "phi_deg": 9.375
+        },
+        {
+          "branch": "extraordinary",
+          "surface_parameter_deg": 15.0,
+          "phi_deg": 9.375
+        },
+        {
+          "branch": "ordinary",
+          "surface_parameter_deg": 22.5,
+          "phi_deg": 9.375
+        },
+        {
+          "branch": "extraordinary",
+          "surface_parameter_deg": 22.5,
+          "phi_deg": 9.375
+        },
+        {
+          "branch": "ordinary",
+          "surface_parameter_deg": 30.0,
+          "phi_deg": 9.375
+        },
+        {
+          "branch": "extraordinary",
+          "surface_parameter_deg": 30.0,
+          "phi_deg": 9.375
+        },
+        {
+          "branch": "ordinary",
+          "surface_parameter_deg": 37.5,
+          "phi_deg": 9.375
+        },
+        {
+          "branch": "extraordinary",
+          "surface_parameter_deg": 37.5,
+          "phi_deg": 9.375
+        },
+        {
+          "branch": "ordinary",
+          "surface_parameter_deg": 45.0,
+          "phi_deg": 9.375
+        },
+        {
+          "branch": "extraordinary",
+          "surface_parameter_deg": 45.0,
+          "phi_deg": 9.375
+        },
+        {
+          "branch": "ordinary",
+          "surface_parameter_deg": 52.5,
+          "phi_deg": 9.375
+        },
+        {
+          "branch": "extraordinary",
+          "surface_parameter_deg": 52.5,
+          "phi_deg": 9.375
+        },
+        {
+          "branch": "ordinary",
+          "surface_parameter_deg": 60.0,
+          "phi_deg": 9.375
+        },
+        {
+          "branch": "extraordinary",
+          "surface_parameter_deg": 60.0,
+          "phi_deg": 9.375
+        },
+        {
+          "branch": "ordinary",
+          "surface_parameter_deg": 67.5,
+          "phi_deg": 9.375
+        },
+        {
+          "branch": "extraordinary",
+          "surface_parameter_deg": 67.5,
+          "phi_deg": 9.375
+        },
+        {
+          "branch": "ordinary",
+          "surface_parameter_deg": 75.0,
+          "phi_deg": 9.375
+        },
+        {
+          "branch": "extraordinary",
+          "surface_parameter_deg": 75.0,
+          "phi_deg": 9.375
+        }
+      ],
+      "sh_runtime_s": 146.21253164899997,
+      "quadrature_points": [
+        29400,
+        44376
+      ],
+      "shells": [
+        {
+          "point_calibration_gain": [
+            -0.39376393965673623,
+            0.08202620316574091
+          ],
+          "fdtd_vs_exact_yee_direct_relative_l2": 0.04246273166642296,
+          "fdtd_vs_exact_yee_acfo_relative_l2": 0.04448610350172713,
+          "fdtd_vs_cell_center_direct_relative_l2": 0.048180772914380755,
+          "fdtd_vs_cell_center_acfo_relative_l2": 0.04928875668019827,
+          "branch_fdtd_vs_exact_yee_direct_relative_l2": {
+            "ordinary": 0.04363660188271579,
+            "extraordinary": 0.042250004566461496
+          },
+          "calibrated_norm": 1.3764350619802188
+        },
+        {
+          "point_calibration_gain": [
+            -0.39849537335352775,
+            0.10569952268908346
+          ],
+          "fdtd_vs_exact_yee_direct_relative_l2": 0.05186131315104982,
+          "fdtd_vs_exact_yee_acfo_relative_l2": 0.053526294062418336,
+          "fdtd_vs_cell_center_direct_relative_l2": 0.055516149312133875,
+          "fdtd_vs_cell_center_acfo_relative_l2": 0.05678857833813503,
+          "branch_fdtd_vs_exact_yee_direct_relative_l2": {
+            "ordinary": 0.05368971499995605,
+            "extraordinary": 0.05152849419849523
+          },
+          "calibrated_norm": 1.3798963902477097
+        }
+      ],
+      "calibrated_inner_outer_relative_l2": 0.011278410579582732,
+      "inner_calibrated_modal_amplitudes": [
+        [
+          0.12281578023535589,
+          0.010128605075242944
+        ],
+        [
+          -0.22748714604874498,
+          -0.010806580969083773
+        ],
+        [
+          0.13045067501926014,
+          0.008209355405395732
+        ],
+        [
+          -0.30685621465910107,
+          0.005197768733956332
+        ],
+        [
+          0.12400410720736992,
+          0.0031460318588409555
+        ],
+        [
+          -0.3540102935073971,
+          0.041177991846200676
+        ],
+        [
+          0.10426557612827206,
+          -0.002324415282383862
+        ],
+        [
+          -0.3466323796988824,
+          0.08065436906071526
+        ],
+        [
+          0.07715499575167188,
+          -0.005513433837298527
+        ],
+        [
+          -0.2893458288916345,
+          0.10366150359997606
+        ],
+        [
+          0.049842087544874396,
+          -0.006058378062237819
+        ],
+        [
+          -0.20562896803850078,
+          0.10264620300489923
+        ],
+        [
+          0.027685194650558083,
+          -0.005247005757375606
+        ],
+        [
+          -0.12222886078532363,
+          0.08379061687496524
+        ],
+        [
+          0.012915661800501948,
+          -0.004398207266731095
+        ],
+        [
+          -0.05797063975631811,
+          0.05871916414924158
+        ],
+        [
+          0.005266823414962646,
+          -0.003468666576302041
+        ],
+        [
+          -0.019682612979706863,
+          0.035308364263921074
+        ],
+        [
+          0.14126689781256954,
+          0.011539698851068493
+        ],
+        [
+          -0.2125625999577308,
+          -0.009935215813567275
+        ],
+        [
+          0.15261509312385207,
+          0.008458279247769514
+        ],
+        [
+          -0.29314371103067716,
+          0.005745597929888592
+        ],
+        [
+          0.14706228678843963,
+          0.0009954073569110155
+        ],
+        [
+          -0.34354156372688033,
+          0.04146339314961532
+        ],
+        [
+          0.12487911399193435,
+          -0.006549422814314533
+        ],
+        [
+          -0.3404052248134429,
+          0.08099148437028292
+        ],
+        [
+          0.09315513993271159,
+          -0.010516726287678874
+        ],
+        [
+          -0.28689858665538664,
+          0.10436074987738499
+        ],
+        [
+          0.06064097134164917,
+          -0.010634209897666518
+        ],
+        [
+          -0.20552998708333364,
+          0.10369731571386509
+        ],
+        [
+          0.03389602985390919,
+          -0.008751064430604596
+        ],
+        [
+          -0.12298266568726694,
+          0.08494327462000119
+        ],
+        [
+          0.015828787167301257,
+          -0.006809360510298557
+        ],
+        [
+          -0.05866452974945643,
+          0.05973940320055375
+        ],
+        [
+          0.006344232205740166,
+          -0.004978258091976454
+        ],
+        [
+          -0.020071981167715088,
+          0.03602319096063841
+        ],
+        [
+          0.1556011603212448,
+          0.012436872197628583
+        ],
+        [
+          -0.1925849234269219,
+          -0.008496435768479133
+        ],
+        [
+          0.16934677443072582,
+          0.008130187264440042
+        ],
+        [
+          -0.27068890339481877,
+          0.0064474579855394445
+        ],
+        [
+          0.16405083687763006,
+          -0.0015415467430611998
+        ],
+        [
+          -0.3211124124116234,
+          0.04061542411532361
+        ],
+        [
+          0.1397692789473959,
+          -0.010910031080873912
+        ],
+        [
+          -0.3207048413489252,
+          0.07876738876960675
+        ],
+        [
+          0.1045633094446472,
+          -0.015498801749802666
+        ],
+        [
+          -0.2717244392806028,
+          0.10155211876115637
+        ],
+        [
+          0.06833859177700055,
+          -0.015092854165450406
+        ],
+        [
+          -0.19542949788364114,
+          0.10108500956060426
+        ],
+        [
+          0.038359629922298626,
+          -0.012080804359313711
+        ],
+        [
+          -0.11734782654313095,
+          0.08296582022088705
+        ],
+        [
+          0.017901813436986158,
+          -0.009002801455766771
+        ],
+        [
+          -0.05615774126620356,
+          0.05838096935132492
+        ],
+        [
+          0.007027562773337269,
+          -0.006322260738187407
+        ],
+        [
+          -0.01921885795409593,
+          0.03518699702192636
+        ]
+      ],
+      "exact_yee_direct_modal_amplitudes": [
+        [
+          0.12409339759070319,
+          0.0016422894056909122
+        ],
+        [
+          -0.23068343593532906,
+          0.0071831325604103016
+        ],
+        [
+          0.1318931837310217,
+          0.0026560377891738205
+        ],
+        [
+          -0.3055193293712791,
+          0.021556498078000884
+        ],
+        [
+          0.12474135524940107,
+          0.0014417670265439012
+        ],
+        [
+          -0.3480904680456846,
+          0.04471749585701532
+        ],
+        [
+          0.10475028472947884,
+          -0.0014229322291919402
+        ],
+        [
+          -0.3422519025268467,
+          0.07109272648943057
+        ],
+        [
+          0.07777520367223295,
+          -0.004498881710137518
+        ],
+        [
+          -0.28943220084185917,
+          0.0908317279210874
+        ],
+        [
+          0.05079513611789454,
+          -0.006392406335589115
+        ],
+        [
+          -0.2086736096719427,
+          0.09552637975315076
+        ],
+        [
+          0.028955512415678092,
+          -0.006546302449305432
+        ],
+        [
+          -0.12595016701570963,
+          0.08365312202087062
+        ],
+        [
+          0.014147810072043644,
+          -0.00533444409590972
+        ],
+        [
+          -0.060886946864489366,
+          0.061030461739798675
+        ],
+        [
+          0.005588921998003864,
+          -0.0035611998012019218
+        ],
+        [
+          -0.020346056961581885,
+          0.036423317807944
+        ],
+        [
+          0.14281584745541756,
+          0.0011548534597962175
+        ],
+        [
+          -0.2155535042535405,
+          0.007123039644419094
+        ],
+        [
+          0.15355424978386042,
+          0.0013734662825040113
+        ],
+        [
+          -0.29142007142832554,
+          0.021650274034157767
+        ],
+        [
+          0.1469064131927307,
+          -0.0009670607592884453
+        ],
+        [
+          -0.3371921167682602,
+          0.044996739854268775
+        ],
+        [
+          0.12473476791580534,
+          -0.004976601342736608
+        ],
+        [
+          -0.33556834491331033,
+          0.0717017299740762
+        ],
+        [
+          0.09353563857198535,
+          -0.00879052168841686
+        ],
+        [
+          -0.28651715797449584,
+          0.09189149987266772
+        ],
+        [
+          0.06155668633688915,
+          -0.010722732601647838
+        ],
+        [
+          -0.20813243329051642,
+          0.0969635492167352
+        ],
+        [
+          0.035215979697205475,
+          -0.010234673870562651
+        ],
+        [
+          -0.1263335848437685,
+          0.085184453636202
+        ],
+        [
+          0.017143322506220617,
+          -0.007990925507053284
+        ],
+        [
+          -0.06129888411071154,
+          0.06232762693314564
+        ],
+        [
+          0.006643292151982863,
+          -0.005156701507655473
+        ],
+        [
+          -0.0204968331739389,
+          0.0372937771278341
+        ],
+        [
+          0.1574317460309715,
+          0.0005219547565803404
+        ],
+        [
+          -0.19544370446188855,
+          0.00690043786250061
+        ],
+        [
+          0.1699755731288901,
+          -0.00014995643870881464
+        ],
+        [
+          -0.26928867005568335,
+          0.02116777288507541
+        ],
+        [
+          0.16332160779222968,
+          -0.003595958473504979
+        ],
+        [
+          -0.31539807382139207,
+          0.04383117820318924
+        ],
+        [
+          0.13931389965472923,
+          -0.008575261864072484
+        ],
+        [
+          -0.3165370605067449,
+          0.06956992144031426
+        ],
+        [
+          0.10498289172771405,
+          -0.012862665023479127
+        ],
+        [
+          -0.2720325313956067,
+          0.08889048754627128
+        ],
+        [
+          0.06942916595877342,
+          -0.01461385315131126
+        ],
+        [
+          -0.19876378388543883,
+          0.09361441676655738
+        ],
+        [
+          0.03987159720869469,
+          -0.013410103105880674
+        ],
+        [
+          -0.12137759476951024,
+          0.08217904681752113
+        ],
+        [
+          0.019409871352898397,
+          -0.010207086159401989
+        ],
+        [
+          -0.059310202561028674,
+          0.060156920831509225
+        ],
+        [
+          0.007433991793502649,
+          -0.00645652275514428
+        ],
+        [
+          -0.020027138523638792,
+          0.036054903674693696
+        ]
+      ]
+    }
+  ],
+  "finest_next_finest_grid_relative_l2": null,
+  "gates": {
+    "pump_field_finite_nonzero": true,
+    "nonlinear_polarization_finite_nonzero": true,
+    "cell_center_acfo_vs_direct_l2_le_3pct": true,
+    "exact_yee_acfo_vs_direct_l2_le_3pct": true,
+    "exact_yee_vs_cell_center_direct_l2_le_5pct": true,
+    "blind_fdtd_vs_exact_yee_direct_l2_le_5pct": true,
+    "blind_fdtd_vs_exact_yee_acfo_l2_le_5pct": true,
+    "ordinary_l2_le_5pct": true,
+    "extraordinary_l2_le_5pct": true,
+    "monitor_invariance_le_5pct": true
+  },
+  "passed": true,
+  "environment": {
+    "meep": "1.33.0",
+    "python": "3.13.14",
+    "numpy": "2.5.1",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43"
+  }
+}

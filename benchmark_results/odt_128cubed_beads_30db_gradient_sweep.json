@@ -1,0 +1,64 @@
+{
+  "schema": "odt-128cubed-30db-gradient-sweep-v1",
+  "problem": "128^3 real beads, 61 illuminations, 128^2 detector, 30 dB complex noise",
+  "rows": [
+    {
+      "lambda": 1000000.0,
+      "object_nrmse": 0.1854235976934433,
+      "data_residual": 0.03164409101009369,
+      "normal_residual": 0.00020290260727051646,
+      "solve_s": 13.20227480000176,
+      "peak_mib": 2484.8017578125,
+      "source": "benchmark_results/odt_128cubed_beads_30db_grad_1e6.json"
+    },
+    {
+      "lambda": 10000000.0,
+      "object_nrmse": 0.18331760168075562,
+      "data_residual": 0.031643886119127274,
+      "normal_residual": 0.0002024945424636826,
+      "solve_s": 13.09204150000005,
+      "peak_mib": 2484.8017578125,
+      "source": "benchmark_results/odt_128cubed_beads_30db_grad_1e7.json"
+    },
+    {
+      "lambda": 100000000.0,
+      "object_nrmse": 0.17111840844154358,
+      "data_residual": 0.03168007731437683,
+      "normal_residual": 0.00014162957086227834,
+      "solve_s": 13.266875900000741,
+      "peak_mib": 2484.8017578125,
+      "source": "benchmark_results/odt_128cubed_beads_30db_grad_1e8.json"
+    },
+    {
+      "lambda": 1000000000.0,
+      "object_nrmse": 0.17678868770599365,
+      "data_residual": 0.03357764706015587,
+      "normal_residual": 4.212571366224438e-05,
+      "solve_s": 13.426134599998477,
+      "peak_mib": 2484.8017578125,
+      "source": "benchmark_results/odt_128cubed_beads_30db_grad_1e9.json"
+    },
+    {
+      "lambda": 10000000000.0,
+      "object_nrmse": 0.2677769660949707,
+      "data_residual": 0.0720038115978241,
+      "normal_residual": 4.279771019355394e-05,
+      "solve_s": 13.255548799999815,
+      "peak_mib": 2484.8017578125,
+      "source": "benchmark_results/odt_128cubed_beads_30db_grad_1e10.json"
+    }
+  ],
+  "best": {
+    "lambda": 100000000.0,
+    "object_nrmse": 0.17111840844154358,
+    "data_residual": 0.03168007731437683,
+    "normal_residual": 0.00014162957086227834,
+    "solve_s": 13.266875900000741,
+    "peak_mib": 2484.8017578125,
+    "source": "benchmark_results/odt_128cubed_beads_30db_grad_1e8.json"
+  },
+  "gate_nrmse_le_5pct": false,
+  "passed": false,
+  "decision": "Quadratic gradient regularization alone is insufficient for the single-axis missing-cone ambiguity.",
+  "next": "Test nonnegative structured priors and/or a second acquisition axis; do not claim physical inverse recovery from this sweep."
+}

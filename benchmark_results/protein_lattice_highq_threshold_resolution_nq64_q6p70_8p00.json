@@ -1,0 +1,864 @@
+{
+  "schema": "protein-lattice-q-sampling-case-v1",
+  "generated_at_utc": "2026-07-13T01:23:26.356779+00:00",
+  "label": "resolution_nq64_q6p70_8p00",
+  "axis": "resolution",
+  "contract": {
+    "unit": "structures/processed/protein_nanocrystal_lysozyme_1iee_1x1x1_fixed.npz",
+    "supercell": "structures/processed/protein_nanocrystal_lysozyme_1iee_5x5x5_fixed.npz",
+    "q_min_inv_angstrom": 6.7,
+    "q_max_inv_angstrom": 8.0,
+    "nq": 64,
+    "dq_inv_angstrom": 0.02063492063492056,
+    "nphi": 864,
+    "wavelength_nm": 0.08,
+    "harmonic_margin": 48,
+    "finufft_eps": 1e-06,
+    "finufft_threads": 4,
+    "finufft_mode": "chunked",
+    "finufft_q_block_size": 2,
+    "finufft_wall_threshold_seconds": 180.0,
+    "finufft_max_process_rss_fraction": 0.75,
+    "finufft_min_available_memory_fraction": 0.2,
+    "memory_sample_interval_seconds": 0.02,
+    "lattice_backend": "separable",
+    "coefficient_backend": "fused_phase"
+  },
+  "atom_count": 1001000,
+  "cell_count": 125,
+  "unit_atom_count": 8008,
+  "unit_structure": "protein_nanocrystal_lysozyme_1iee_1x1x1_fixed",
+  "supercell_shape": [
+    5,
+    5,
+    5
+  ],
+  "repetition_residual_nm": 3.0588864774472313e-12,
+  "target_count": 55296,
+  "maximum_harmonic": 408,
+  "timing_seconds": {
+    "shared_target_preparation": 0.04351519999909215,
+    "factorized": {
+      "plan_setup": 0.002969699999084696,
+      "lattice_setup": 0.02210670000204118,
+      "specific_setup_total": 0.025076400001125876,
+      "first_execute": 0.5045485000009649,
+      "hot_execute": 0.5420445000054315,
+      "first_total_excluding_shared": 0.5296249000020907,
+      "first_profile": {
+        "backend": "fft",
+        "coefficient_backend": "fused_phase",
+        "coefficient_cache_mib": 0.0,
+        "coefficient_contraction_seconds": 0.5005677000008291,
+        "azimuth_synthesis_seconds": 0.00318360000528628,
+        "total_seconds": 0.503754299999855
+      },
+      "hot_profile": {
+        "backend": "fft",
+        "coefficient_backend": "fused_phase",
+        "coefficient_cache_mib": 0.0,
+        "coefficient_contraction_seconds": 0.5392079000012018,
+        "azimuth_synthesis_seconds": 0.0021573999983957037,
+        "total_seconds": 0.5413678999975673
+      }
+    },
+    "finufft": {
+      "mode": "chunked_streaming",
+      "q_block_size": 2,
+      "block_count": 21,
+      "summed_plan_setup": 3.0056294000096386,
+      "summed_execute": 175.94821730000695,
+      "summed_cleanup": 1.0915193000182626,
+      "streamed_wall_excluding_shared": 181.66488460000255,
+      "block_rows": [
+        {
+          "block_index": 0,
+          "q_start_index": 0,
+          "q_stop_index": 2,
+          "q_min_inv_angstrom": 6.7,
+          "q_max_inv_angstrom": 6.720634920634921,
+          "target_count": 1728,
+          "setup_seconds": 0.14746459999878425,
+          "execute_seconds": 7.807401899997785,
+          "cleanup_seconds": 0.030129200000374112,
+          "block_wall_seconds": 8.030419700000493,
+          "cumulative_wall_seconds": 8.03103469999769,
+          "setup_memory": {
+            "rss_before_mib": 137.921875,
+            "rss_after_mib": 220.87890625,
+            "rss_after_delta_mib": 82.95703125,
+            "peak_rss_mib": 220.87890625,
+            "peak_rss_delta_mib": 82.95703125,
+            "rss_samples": 6
+          },
+          "execute_memory": {
+            "rss_before_mib": 220.8828125,
+            "rss_after_mib": 223.265625,
+            "rss_after_delta_mib": 2.3828125,
+            "peak_rss_mib": 2060.72265625,
+            "peak_rss_delta_mib": 1839.83984375,
+            "rss_samples": 209
+          },
+          "physical_memory_after_cleanup": {
+            "total_mib": 8155.34765625,
+            "available_mib": 5100.26953125,
+            "available_fraction": 0.6253895905150426
+          },
+          "peak_process_rss_fraction": 0.2526836062801967
+        },
+        {
+          "block_index": 1,
+          "q_start_index": 2,
+          "q_stop_index": 4,
+          "q_min_inv_angstrom": 6.741269841269841,
+          "q_max_inv_angstrom": 6.761904761904762,
+          "target_count": 1728,
+          "setup_seconds": 0.1294830999977421,
+          "execute_seconds": 8.152791299995442,
+          "cleanup_seconds": 0.031947800001944415,
+          "block_wall_seconds": 8.36019590000069,
+          "cumulative_wall_seconds": 16.391291799998726,
+          "setup_memory": {
+            "rss_before_mib": 145.1328125,
+            "rss_after_mib": 222.9453125,
+            "rss_after_delta_mib": 77.8125,
+            "peak_rss_mib": 223.546875,
+            "peak_rss_delta_mib": 78.4140625,
+            "rss_samples": 5
+          },
+          "execute_memory": {
+            "rss_before_mib": 222.94921875,
+            "rss_after_mib": 225.78515625,
+            "rss_after_delta_mib": 2.8359375,
+            "peak_rss_mib": 2064.91015625,
+            "peak_rss_delta_mib": 1841.9609375,
+            "rss_samples": 209
+          },
+          "physical_memory_after_cleanup": {
+            "total_mib": 8155.34765625,
+            "available_mib": 4982.91796875,
+            "available_fraction": 0.6110000675362073
+          },
+          "peak_process_rss_fraction": 0.2531970730478324
+        },
+        {
+          "block_index": 2,
+          "q_start_index": 4,
+          "q_stop_index": 6,
+          "q_min_inv_angstrom": 6.782539682539682,
+          "q_max_inv_angstrom": 6.803174603174603,
+          "target_count": 1728,
+          "setup_seconds": 0.11188399999809917,
+          "execute_seconds": 9.098008899993147,
+          "cleanup_seconds": 0.06892300000617979,
+          "block_wall_seconds": 9.331709899997804,
+          "cumulative_wall_seconds": 25.72306170000229,
+          "setup_memory": {
+            "rss_before_mib": 146.87890625,
+            "rss_after_mib": 224.19921875,
+            "rss_after_delta_mib": 77.3203125,
+            "peak_rss_mib": 224.19921875,
+            "peak_rss_delta_mib": 77.3203125,
+            "rss_samples": 4
+          },
+          "execute_memory": {
+            "rss_before_mib": 224.203125,
+            "rss_after_mib": 225.8203125,
+            "rss_after_delta_mib": 1.6171875,
+            "peak_rss_mib": 2068.3359375,
+            "peak_rss_delta_mib": 1844.1328125,
+            "rss_samples": 218
+          },
+          "physical_memory_after_cleanup": {
+            "total_mib": 8155.34765625,
+            "available_mib": 4877.99609375,
+            "available_fraction": 0.5981346595336936
+          },
+          "peak_process_rss_fraction": 0.25361713867769853
+        },
+        {
+          "block_index": 3,
+          "q_start_index": 6,
+          "q_stop_index": 8,
+          "q_min_inv_angstrom": 6.8238095238095235,
+          "q_max_inv_angstrom": 6.844444444444445,
+          "target_count": 1728,
+          "setup_seconds": 0.4198277999967104,
+          "execute_seconds": 8.193601999999373,
+          "cleanup_seconds": 0.04599159999634139,
+          "block_wall_seconds": 8.753536100004567,
+          "cumulative_wall_seconds": 34.476652999997896,
+          "setup_memory": {
+            "rss_before_mib": 148.109375,
+            "rss_after_mib": 225.84375,
+            "rss_after_delta_mib": 77.734375,
+            "peak_rss_mib": 225.84375,
+            "peak_rss_delta_mib": 77.734375,
+            "rss_samples": 10
+          },
+          "execute_memory": {
+            "rss_before_mib": 225.84375,
+            "rss_after_mib": 227.58984375,
+            "rss_after_delta_mib": 1.74609375,
+            "peak_rss_mib": 2072.5859375,
+            "peak_rss_delta_mib": 1846.7421875,
+            "rss_samples": 219
+          },
+          "physical_memory_after_cleanup": {
+            "total_mib": 8155.34765625,
+            "available_mib": 4901.53125,
+            "available_fraction": 0.6010205152006759
+          },
+          "peak_process_rss_fraction": 0.2541382691284333
+        },
+        {
+          "block_index": 4,
+          "q_start_index": 8,
+          "q_stop_index": 10,
+          "q_min_inv_angstrom": 6.865079365079366,
+          "q_max_inv_angstrom": 6.885714285714286,
+          "target_count": 1728,
+          "setup_seconds": 0.1679333000065526,
+          "execute_seconds": 8.569011400002637,
+          "cleanup_seconds": 0.06713419999869075,
+          "block_wall_seconds": 8.875850500000524,
+          "cumulative_wall_seconds": 43.352597299999616,
+          "setup_memory": {
+            "rss_before_mib": 149.8828125,
+            "rss_after_mib": 227.65625,
+            "rss_after_delta_mib": 77.7734375,
+            "peak_rss_mib": 227.65625,
+            "peak_rss_delta_mib": 77.7734375,
+            "rss_samples": 6
+          },
+          "execute_memory": {
+            "rss_before_mib": 227.66015625,
+            "rss_after_mib": 230.6640625,
+            "rss_after_delta_mib": 3.00390625,
+            "peak_rss_mib": 2076.8828125,
+            "peak_rss_delta_mib": 1849.22265625,
+            "rss_samples": 217
+          },
+          "physical_memory_after_cleanup": {
+            "total_mib": 8155.34765625,
+            "available_mib": 5020.4921875,
+            "available_fraction": 0.6156073780193115
+          },
+          "peak_process_rss_fraction": 0.25466514734149226
+        },
+        {
+          "block_index": 5,
+          "q_start_index": 10,
+          "q_stop_index": 12,
+          "q_min_inv_angstrom": 6.906349206349207,
+          "q_max_inv_angstrom": 6.926984126984127,
+          "target_count": 1728,
+          "setup_seconds": 0.15395640000497224,
+          "execute_seconds": 8.423528300001635,
+          "cleanup_seconds": 0.04421140000340529,
+          "block_wall_seconds": 8.689008900000772,
+          "cumulative_wall_seconds": 52.04167140000209,
+          "setup_memory": {
+            "rss_before_mib": 151.64453125,
+            "rss_after_mib": 229.23046875,
+            "rss_after_delta_mib": 77.5859375,
+            "peak_rss_mib": 229.23046875,
+            "peak_rss_delta_mib": 77.5859375,
+            "rss_samples": 5
+          },
+          "execute_memory": {
+            "rss_before_mib": 229.23046875,
+            "rss_after_mib": 232.3828125,
+            "rss_after_delta_mib": 3.15234375,
+            "peak_rss_mib": 2146.90234375,
+            "peak_rss_delta_mib": 1917.671875,
+            "rss_samples": 222
+          },
+          "physical_memory_after_cleanup": {
+            "total_mib": 8155.34765625,
+            "available_mib": 5025.91796875,
+            "available_fraction": 0.6162726815083469
+          },
+          "peak_process_rss_fraction": 0.2632508673133857
+        },
+        {
+          "block_index": 6,
+          "q_start_index": 12,
+          "q_stop_index": 14,
+          "q_min_inv_angstrom": 6.947619047619048,
+          "q_max_inv_angstrom": 6.968253968253968,
+          "target_count": 1728,
+          "setup_seconds": 0.14580800000112504,
+          "execute_seconds": 8.407152899999346,
+          "cleanup_seconds": 0.049075599999923725,
+          "block_wall_seconds": 8.660443300002953,
+          "cumulative_wall_seconds": 60.702210000003106,
+          "setup_memory": {
+            "rss_before_mib": 153.4765625,
+            "rss_after_mib": 231.2578125,
+            "rss_after_delta_mib": 77.78125,
+            "peak_rss_mib": 231.2578125,
+            "peak_rss_delta_mib": 77.78125,
+            "rss_samples": 5
+          },
+          "execute_memory": {
+            "rss_before_mib": 231.2578125,
+            "rss_after_mib": 234.28125,
+            "rss_after_delta_mib": 3.0234375,
+            "peak_rss_mib": 2163.9921875,
+            "peak_rss_delta_mib": 1932.734375,
+            "rss_samples": 220
+          },
+          "physical_memory_after_cleanup": {
+            "total_mib": 8155.34765625,
+            "available_mib": 4976.66015625,
+            "available_fraction": 0.6102327412659159
+          },
+          "peak_process_rss_fraction": 0.2653464056607795
+        },
+        {
+          "block_index": 7,
+          "q_start_index": 14,
+          "q_stop_index": 16,
+          "q_min_inv_angstrom": 6.988888888888889,
+          "q_max_inv_angstrom": 7.0095238095238095,
+          "target_count": 1728,
+          "setup_seconds": 0.1170510000010836,
+          "execute_seconds": 8.43549460000213,
+          "cleanup_seconds": 0.043967600002360996,
+          "block_wall_seconds": 8.663766699995904,
+          "cumulative_wall_seconds": 69.3660325000019,
+          "setup_memory": {
+            "rss_before_mib": 155.171875,
+            "rss_after_mib": 232.796875,
+            "rss_after_delta_mib": 77.625,
+            "peak_rss_mib": 232.796875,
+            "peak_rss_delta_mib": 77.625,
+            "rss_samples": 4
+          },
+          "execute_memory": {
+            "rss_before_mib": 232.796875,
+            "rss_after_mib": 235.859375,
+            "rss_after_delta_mib": 3.0625,
+            "peak_rss_mib": 2167.84375,
+            "peak_rss_delta_mib": 1935.046875,
+            "rss_samples": 224
+          },
+          "physical_memory_after_cleanup": {
+            "total_mib": 8155.34765625,
+            "available_mib": 4909.0546875,
+            "available_fraction": 0.6019430310537229
+          },
+          "peak_process_rss_fraction": 0.26581868013175786
+        },
+        {
+          "block_index": 8,
+          "q_start_index": 16,
+          "q_stop_index": 18,
+          "q_min_inv_angstrom": 7.03015873015873,
+          "q_max_inv_angstrom": 7.050793650793651,
+          "target_count": 1728,
+          "setup_seconds": 0.1369078999996418,
+          "execute_seconds": 8.096026500003063,
+          "cleanup_seconds": 0.04043380000075558,
+          "block_wall_seconds": 8.348843200001284,
+          "cumulative_wall_seconds": 77.71493400000327,
+          "setup_memory": {
+            "rss_before_mib": 156.8203125,
+            "rss_after_mib": 234.3671875,
+            "rss_after_delta_mib": 77.546875,
+            "peak_rss_mib": 234.3671875,
+            "peak_rss_delta_mib": 77.546875,
+            "rss_samples": 5
+          },
+          "execute_memory": {
+            "rss_before_mib": 234.37109375,
+            "rss_after_mib": 238.015625,
+            "rss_after_delta_mib": 3.64453125,
+            "peak_rss_mib": 2172.5703125,
+            "peak_rss_delta_mib": 1938.19921875,
+            "rss_samples": 215
+          },
+          "physical_memory_after_cleanup": {
+            "total_mib": 8155.34765625,
+            "available_mib": 4988.86328125,
+            "available_fraction": 0.6117290753910035
+          },
+          "peak_process_rss_fraction": 0.2663982461661228
+        },
+        {
+          "block_index": 9,
+          "q_start_index": 18,
+          "q_stop_index": 20,
+          "q_min_inv_angstrom": 7.071428571428571,
+          "q_max_inv_angstrom": 7.092063492063492,
+          "target_count": 1728,
+          "setup_seconds": 0.11579200000414858,
+          "execute_seconds": 7.5192062000060105,
+          "cleanup_seconds": 0.04395180000574328,
+          "block_wall_seconds": 7.74641469999915,
+          "cumulative_wall_seconds": 85.46141570000327,
+          "setup_memory": {
+            "rss_before_mib": 158.734375,
+            "rss_after_mib": 236.4921875,
+            "rss_after_delta_mib": 77.7578125,
+            "peak_rss_mib": 237.1484375,
+            "peak_rss_delta_mib": 78.4140625,
+            "rss_samples": 4
+          },
+          "execute_memory": {
+            "rss_before_mib": 236.4921875,
+            "rss_after_mib": 239.671875,
+            "rss_after_delta_mib": 3.1796875,
+            "peak_rss_mib": 2176.27734375,
+            "peak_rss_delta_mib": 1939.78515625,
+            "rss_samples": 203
+          },
+          "physical_memory_after_cleanup": {
+            "total_mib": 8155.34765625,
+            "available_mib": 4978.52734375,
+            "available_fraction": 0.6104616937984997
+          },
+          "peak_process_rss_fraction": 0.2668527983699346
+        },
+        {
+          "block_index": 10,
+          "q_start_index": 20,
+          "q_stop_index": 22,
+          "q_min_inv_angstrom": 7.112698412698413,
+          "q_max_inv_angstrom": 7.133333333333334,
+          "target_count": 1728,
+          "setup_seconds": 0.11949420000019018,
+          "execute_seconds": 7.579277100005129,
+          "cleanup_seconds": 0.04633710000052815,
+          "block_wall_seconds": 7.8158777999997255,
+          "cumulative_wall_seconds": 93.27733660000376,
+          "setup_memory": {
+            "rss_before_mib": 160.44921875,
+            "rss_after_mib": 237.99609375,
+            "rss_after_delta_mib": 77.546875,
+            "peak_rss_mib": 237.99609375,
+            "peak_rss_delta_mib": 77.546875,
+            "rss_samples": 4
+          },
+          "execute_memory": {
+            "rss_before_mib": 238.0,
+            "rss_after_mib": 241.2421875,
+            "rss_after_delta_mib": 3.2421875,
+            "peak_rss_mib": 2180.421875,
+            "peak_rss_delta_mib": 1942.421875,
+            "rss_samples": 209
+          },
+          "physical_memory_after_cleanup": {
+            "total_mib": 8155.34765625,
+            "available_mib": 4956.2890625,
+            "available_fraction": 0.6077348595558225
+          },
+          "peak_process_rss_fraction": 0.2673609963554397
+        },
+        {
+          "block_index": 11,
+          "q_start_index": 22,
+          "q_stop_index": 24,
+          "q_min_inv_angstrom": 7.153968253968254,
+          "q_max_inv_angstrom": 7.174603174603175,
+          "target_count": 1728,
+          "setup_seconds": 0.11518529999739258,
+          "execute_seconds": 8.165021500004514,
+          "cleanup_seconds": 0.04886930000066059,
+          "block_wall_seconds": 8.407659400007105,
+          "cumulative_wall_seconds": 101.6850517999992,
+          "setup_memory": {
+            "rss_before_mib": 162.234375,
+            "rss_after_mib": 240.046875,
+            "rss_after_delta_mib": 77.8125,
+            "peak_rss_mib": 240.046875,
+            "peak_rss_delta_mib": 77.8125,
+            "rss_samples": 4
+          },
+          "execute_memory": {
+            "rss_before_mib": 240.046875,
+            "rss_after_mib": 243.4296875,
+            "rss_after_delta_mib": 3.3828125,
+            "peak_rss_mib": 2184.14453125,
+            "peak_rss_delta_mib": 1944.09765625,
+            "rss_samples": 216
+          },
+          "physical_memory_after_cleanup": {
+            "total_mib": 8155.34765625,
+            "available_mib": 4959.71484375,
+            "available_fraction": 0.6081549251856887
+          },
+          "peak_process_rss_fraction": 0.2678174644800263
+        },
+        {
+          "block_index": 12,
+          "q_start_index": 24,
+          "q_stop_index": 26,
+          "q_min_inv_angstrom": 7.195238095238095,
+          "q_max_inv_angstrom": 7.215873015873016,
+          "target_count": 1728,
+          "setup_seconds": 0.09558230000402546,
+          "execute_seconds": 7.444137099999352,
+          "cleanup_seconds": 0.05972270000347635,
+          "block_wall_seconds": 7.668834200005222,
+          "cumulative_wall_seconds": 109.35394539999834,
+          "setup_memory": {
+            "rss_before_mib": 164.0859375,
+            "rss_after_mib": 241.4140625,
+            "rss_after_delta_mib": 77.328125,
+            "peak_rss_mib": 241.7265625,
+            "peak_rss_delta_mib": 77.640625,
+            "rss_samples": 4
+          },
+          "execute_memory": {
+            "rss_before_mib": 241.41796875,
+            "rss_after_mib": 244.79296875,
+            "rss_after_delta_mib": 3.375,
+            "peak_rss_mib": 2208.6328125,
+            "peak_rss_delta_mib": 1967.21484375,
+            "rss_samples": 200
+          },
+          "physical_memory_after_cleanup": {
+            "total_mib": 8155.34765625,
+            "available_mib": 4961.1328125,
+            "available_fraction": 0.6083287949959981
+          },
+          "peak_process_rss_fraction": 0.270820191314269
+        },
+        {
+          "block_index": 13,
+          "q_start_index": 26,
+          "q_stop_index": 28,
+          "q_min_inv_angstrom": 7.2365079365079366,
+          "q_max_inv_angstrom": 7.257142857142857,
+          "target_count": 1728,
+          "setup_seconds": 0.11482330000580987,
+          "execute_seconds": 7.722171800000069,
+          "cleanup_seconds": 0.04647750000003725,
+          "block_wall_seconds": 7.9612934999968274,
+          "cumulative_wall_seconds": 117.31530719999864,
+          "setup_memory": {
+            "rss_before_mib": 165.30078125,
+            "rss_after_mib": 242.97265625,
+            "rss_after_delta_mib": 77.671875,
+            "peak_rss_mib": 242.97265625,
+            "peak_rss_delta_mib": 77.671875,
+            "rss_samples": 4
+          },
+          "execute_memory": {
+            "rss_before_mib": 242.97265625,
+            "rss_after_mib": 246.5859375,
+            "rss_after_delta_mib": 3.61328125,
+            "peak_rss_mib": 2212.109375,
+            "peak_rss_delta_mib": 1969.13671875,
+            "rss_samples": 212
+          },
+          "physical_memory_after_cleanup": {
+            "total_mib": 8155.34765625,
+            "available_mib": 4959.9453125,
+            "available_fraction": 0.6081831850171163
+          },
+          "peak_process_rss_fraction": 0.27124648368665305
+        },
+        {
+          "block_index": 14,
+          "q_start_index": 28,
+          "q_stop_index": 30,
+          "q_min_inv_angstrom": 7.277777777777778,
+          "q_max_inv_angstrom": 7.298412698412698,
+          "target_count": 1728,
+          "setup_seconds": 0.09803310000279453,
+          "execute_seconds": 8.161658499993791,
+          "cleanup_seconds": 0.0569517000039923,
+          "block_wall_seconds": 8.39182790000632,
+          "cumulative_wall_seconds": 125.70720509999956,
+          "setup_memory": {
+            "rss_before_mib": 167.0703125,
+            "rss_after_mib": 244.875,
+            "rss_after_delta_mib": 77.8046875,
+            "peak_rss_mib": 244.875,
+            "peak_rss_delta_mib": 77.8046875,
+            "rss_samples": 4
+          },
+          "execute_memory": {
+            "rss_before_mib": 244.875,
+            "rss_after_mib": 248.3515625,
+            "rss_after_delta_mib": 3.4765625,
+            "peak_rss_mib": 2357.515625,
+            "peak_rss_delta_mib": 2112.640625,
+            "rss_samples": 215
+          },
+          "physical_memory_after_cleanup": {
+            "total_mib": 8155.34765625,
+            "available_mib": 4878.9453125,
+            "available_fraction": 0.5982510517207603
+          },
+          "peak_process_rss_fraction": 0.28907604241657003
+        },
+        {
+          "block_index": 15,
+          "q_start_index": 30,
+          "q_stop_index": 32,
+          "q_min_inv_angstrom": 7.319047619047619,
+          "q_max_inv_angstrom": 7.339682539682539,
+          "target_count": 1728,
+          "setup_seconds": 0.12435869999899296,
+          "execute_seconds": 8.690998400001263,
+          "cleanup_seconds": 0.05457809999643359,
+          "block_wall_seconds": 8.97728410000127,
+          "cumulative_wall_seconds": 134.68454850000126,
+          "setup_memory": {
+            "rss_before_mib": 168.8359375,
+            "rss_after_mib": 246.609375,
+            "rss_after_delta_mib": 77.7734375,
+            "peak_rss_mib": 246.609375,
+            "peak_rss_delta_mib": 77.7734375,
+            "rss_samples": 5
+          },
+          "execute_memory": {
+            "rss_before_mib": 246.609375,
+            "rss_after_mib": 250.046875,
+            "rss_after_delta_mib": 3.4375,
+            "peak_rss_mib": 2422.2890625,
+            "peak_rss_delta_mib": 2175.6796875,
+            "rss_samples": 230
+          },
+          "physical_memory_after_cleanup": {
+            "total_mib": 8155.34765625,
+            "available_mib": 4938.125,
+            "available_fraction": 0.6055076016551639
+          },
+          "peak_process_rss_fraction": 0.2970184919883378
+        },
+        {
+          "block_index": 16,
+          "q_start_index": 32,
+          "q_stop_index": 34,
+          "q_min_inv_angstrom": 7.360317460317461,
+          "q_max_inv_angstrom": 7.380952380952381,
+          "target_count": 1728,
+          "setup_seconds": 0.21087409999745432,
+          "execute_seconds": 8.438060899999982,
+          "cleanup_seconds": 0.057677199998579454,
+          "block_wall_seconds": 8.803503600000113,
+          "cumulative_wall_seconds": 143.48811379999825,
+          "setup_memory": {
+            "rss_before_mib": 170.6875,
+            "rss_after_mib": 248.0234375,
+            "rss_after_delta_mib": 77.3359375,
+            "peak_rss_mib": 248.75,
+            "peak_rss_delta_mib": 78.0625,
+            "rss_samples": 6
+          },
+          "execute_memory": {
+            "rss_before_mib": 248.0234375,
+            "rss_after_mib": 251.3984375,
+            "rss_after_delta_mib": 3.375,
+            "peak_rss_mib": 2426.2578125,
+            "peak_rss_delta_mib": 2178.234375,
+            "rss_samples": 226
+          },
+          "physical_memory_after_cleanup": {
+            "total_mib": 8155.34765625,
+            "available_mib": 4935.55078125,
+            "available_fraction": 0.6051919537075222
+          },
+          "peak_process_rss_fraction": 0.29750513586512684
+        },
+        {
+          "block_index": 17,
+          "q_start_index": 34,
+          "q_stop_index": 36,
+          "q_min_inv_angstrom": 7.401587301587302,
+          "q_max_inv_angstrom": 7.4222222222222225,
+          "target_count": 1728,
+          "setup_seconds": 0.12754290000157198,
+          "execute_seconds": 9.780037600001378,
+          "cleanup_seconds": 0.057558699998480733,
+          "block_wall_seconds": 10.056958499997563,
+          "cumulative_wall_seconds": 153.54517920000217,
+          "setup_memory": {
+            "rss_before_mib": 172.3515625,
+            "rss_after_mib": 250.109375,
+            "rss_after_delta_mib": 77.7578125,
+            "peak_rss_mib": 250.109375,
+            "peak_rss_delta_mib": 77.7578125,
+            "rss_samples": 5
+          },
+          "execute_memory": {
+            "rss_before_mib": 250.109375,
+            "rss_after_mib": 253.58984375,
+            "rss_after_delta_mib": 3.48046875,
+            "peak_rss_mib": 2430.1796875,
+            "peak_rss_delta_mib": 2180.0703125,
+            "rss_samples": 248
+          },
+          "physical_memory_after_cleanup": {
+            "total_mib": 8155.34765625,
+            "available_mib": 4853.69921875,
+            "available_fraction": 0.5951554027289417
+          },
+          "peak_process_rss_fraction": 0.2979860319795916
+        },
+        {
+          "block_index": 18,
+          "q_start_index": 36,
+          "q_stop_index": 38,
+          "q_min_inv_angstrom": 7.442857142857143,
+          "q_max_inv_angstrom": 7.463492063492064,
+          "target_count": 1728,
+          "setup_seconds": 0.10111579999647802,
+          "execute_seconds": 9.444071199999598,
+          "cleanup_seconds": 0.06825270000263117,
+          "block_wall_seconds": 9.715611499996157,
+          "cumulative_wall_seconds": 163.26089050000155,
+          "setup_memory": {
+            "rss_before_mib": 174.3125,
+            "rss_after_mib": 251.8359375,
+            "rss_after_delta_mib": 77.5234375,
+            "peak_rss_mib": 251.8359375,
+            "peak_rss_delta_mib": 77.5234375,
+            "rss_samples": 4
+          },
+          "execute_memory": {
+            "rss_before_mib": 251.83984375,
+            "rss_after_mib": 255.515625,
+            "rss_after_delta_mib": 3.67578125,
+            "peak_rss_mib": 2434.3984375,
+            "peak_rss_delta_mib": 2182.55859375,
+            "rss_samples": 242
+          },
+          "physical_memory_after_cleanup": {
+            "total_mib": 8155.34765625,
+            "available_mib": 4964.41796875,
+            "available_fraction": 0.6087316173388915
+          },
+          "peak_process_rss_fraction": 0.2985033305887768
+        },
+        {
+          "block_index": 19,
+          "q_start_index": 38,
+          "q_stop_index": 40,
+          "q_min_inv_angstrom": 7.484126984126984,
+          "q_max_inv_angstrom": 7.504761904761905,
+          "target_count": 1728,
+          "setup_seconds": 0.1396591999946395,
+          "execute_seconds": 8.87034510000376,
+          "cleanup_seconds": 0.06678280000051018,
+          "block_wall_seconds": 9.17468799999915,
+          "cumulative_wall_seconds": 172.43563390000054,
+          "setup_memory": {
+            "rss_before_mib": 176.203125,
+            "rss_after_mib": 253.93359375,
+            "rss_after_delta_mib": 77.73046875,
+            "peak_rss_mib": 253.93359375,
+            "peak_rss_delta_mib": 77.73046875,
+            "rss_samples": 5
+          },
+          "execute_memory": {
+            "rss_before_mib": 253.93359375,
+            "rss_after_mib": 257.23828125,
+            "rss_after_delta_mib": 3.3046875,
+            "peak_rss_mib": 2438.4921875,
+            "peak_rss_delta_mib": 2184.55859375,
+            "rss_samples": 239
+          },
+          "physical_memory_after_cleanup": {
+            "total_mib": 8155.34765625,
+            "available_mib": 4967.19921875,
+            "available_fraction": 0.6090726512367987
+          },
+          "peak_process_rss_fraction": 0.29900530183176394
+        },
+        {
+          "block_index": 20,
+          "q_start_index": 40,
+          "q_stop_index": 42,
+          "q_min_inv_angstrom": 7.525396825396825,
+          "q_max_inv_angstrom": 7.546031746031746,
+          "target_count": 1728,
+          "setup_seconds": 0.11285240000142949,
+          "execute_seconds": 8.950214099997538,
+          "cleanup_seconds": 0.06254549999721348,
+          "block_wall_seconds": 9.229059900004358,
+          "cumulative_wall_seconds": 181.66481229999772,
+          "setup_memory": {
+            "rss_before_mib": 178.31640625,
+            "rss_after_mib": 255.828125,
+            "rss_after_delta_mib": 77.51171875,
+            "peak_rss_mib": 255.828125,
+            "peak_rss_delta_mib": 77.51171875,
+            "rss_samples": 4
+          },
+          "execute_memory": {
+            "rss_before_mib": 255.83203125,
+            "rss_after_mib": 258.9453125,
+            "rss_after_delta_mib": 3.11328125,
+            "peak_rss_mib": 2442.57421875,
+            "peak_rss_delta_mib": 2186.7421875,
+            "rss_samples": 235
+          },
+          "physical_memory_after_cleanup": {
+            "total_mib": 8155.34765625,
+            "available_mib": 4940.69921875,
+            "available_fraction": 0.6058232496028056
+          },
+          "peak_process_rss_fraction": 0.29950583613417003
+        }
+      ],
+      "completed_nq": 42,
+      "completion_fraction": 0.65625,
+      "censored": true,
+      "stop_reasons": [
+        "wall_time_threshold"
+      ],
+      "stop_contract": {
+        "wall_threshold_seconds": 180.0,
+        "max_process_rss_fraction": 0.75,
+        "min_available_memory_fraction": 0.2,
+        "initial_physical_memory": {
+          "total_mib": 8155.34765625,
+          "available_mib": 5099.640625,
+          "available_fraction": 0.6253124747038585
+        }
+      }
+    }
+  },
+  "speedup_finufft_over_factorized": {
+    "first_total_excluding_shared": 343.00669133812517,
+    "hot_execute": null,
+    "first_total_is_lower_bound": true
+  },
+  "cross_error": {
+    "complex_l2": 1.6884624427846284e-06,
+    "intensity_l2": 8.82378574713679e-07,
+    "factorized_first_hot_complex_l2": 0.0,
+    "completed_nq": 42
+  },
+  "legacy_comparison": null,
+  "lattice_comparison": null,
+  "gates": {
+    "maximum_harmonic_below_nyquist": true,
+    "repetition_residual_le_1e_9_nm": true,
+    "cross_complex_l2_le_2e_6": true,
+    "cross_intensity_l2_le_5e_6": true,
+    "factorized_repeat_l2_le_1e_13": true,
+    "lattice_comparison_l2_le_1e_9": true,
+    "censored_stop_has_reason": true
+  },
+  "elapsed_seconds": 183.12670240000443,
+  "claim_boundary": [
+    "This is a single-process exploratory scaling case, not a 10/30 timing claim.",
+    "Setup and execute are reported separately; streamed chunking also reports cleanup and wall total.",
+    "The factorized execute uses prepared coordinates/cutoffs and uniform-phi FFT synthesis.",
+    "FINUFFT eps=1e-6 is a practical timing baseline; direct NDFT correctness is separate.",
+    "A censored chunked row reports a measured lower bound, not an extrapolated complete runtime."
+  ],
+  "passed": true,
+  "driver_subprocess": {
+    "elapsed_seconds": 184.79974490000313,
+    "stdout_tail": "resolution_nq64_q6p70_8p00: factorized setup 0.025 s; first/hot 0.505/0.542 s; coefficient 0.539 s; synthesis 0.002 s\nresolution_nq64_q6p70_8p00: chunk 1 q[0:2] setup 0.147 s execute 7.807 s\nresolution_nq64_q6p70_8p00: chunk 2 q[2:4] setup 0.129 s execute 8.153 s\nresolution_nq64_q6p70_8p00: chunk 3 q[4:6] setup 0.112 s execute 9.098 s\nresolution_nq64_q6p70_8p00: chunk 4 q[6:8] setup 0.420 s execute 8.194 s\nresolution_nq64_q6p70_8p00: chunk 5 q[8:10] setup 0.168 s execute 8.569 s\nresolution_nq64_q6p70_8p00: chunk 6 q[10:12] setup 0.154 s execute 8.424 s\nresolution_nq64_q6p70_8p00: chunk 7 q[12:14] setup 0.146 s execute 8.407 s\nresolution_nq64_q6p70_8p00: chunk 8 q[14:16] setup 0.117 s execute 8.435 s\nresolution_nq64_q6p70_8p00: chunk 9 q[16:18] setup 0.137 s execute 8.096 s\nresolution_nq64_q6p70_8p00: chunk 10 q[18:20] setup 0.116 s execute 7.519 s\nresolution_nq64_q6p70_8p00: chunk 11 q[20:22] setup 0.119 s execute 7.579 s\nresolution_nq64_q6p70_8p00: chunk 12 q[22:24] setup 0.115 s execute 8.165 s\nresolution_nq64_q6p70_8p00: chunk 13 q[24:26] setup 0.096 s execute 7.444 s\nresolution_nq64_q6p70_8p00: chunk 14 q[26:28] setup 0.115 s execute 7.722 s\nresolution_nq64_q6p70_8p00: chunk 15 q[28:30] setup 0.098 s execute 8.162 s\nresolution_nq64_q6p70_8p00: chunk 16 q[30:32] setup 0.124 s execute 8.691 s\nresolution_nq64_q6p70_8p00: chunk 17 q[32:34] setup 0.211 s execute 8.438 s\nresolution_nq64_q6p70_8p00: chunk 18 q[34:36] setup 0.128 s execute 9.780 s\nresolution_nq64_q6p70_8p00: chunk 19 q[36:38] setup 0.101 s execute 9.444 s\nresolution_nq64_q6p70_8p00: chunk 20 q[38:40] setup 0.140 s execute 8.870 s\nresolution_nq64_q6p70_8p00: chunk 21 q[40:42] setup 0.113 s execute 8.950 s\nresolution_nq64_q6p70_8p00: stopping after 42/64 q rows: wall_time_threshold\nresolution_nq64_q6p70_8p00: FINUFFT mode chunked; setup sum 3.006 s; execute sum 175.948 s; wall 181.665 s; first-total speedup 343.007x; cross L2 1.688e-06\nwrote C:\\Users\\tnvlaos456\\Documents\\Atomic WAXS Cake-Map Simulator\\benchmark_results\\protein_lattice_highq_threshold_resolution_nq64_q6p70_8p00.json\n",
+    "stderr_tail": ""
+  }
+}

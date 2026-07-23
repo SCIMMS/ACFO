@@ -1,0 +1,293 @@
+{
+  "schema": "protein-lattice-q-sampling-decision-v1",
+  "generated_at_utc": "2026-07-13T03:51:01.731346+00:00",
+  "contract": {
+    "atom_count": 1001000,
+    "supercell": [
+      5,
+      5,
+      5
+    ],
+    "unit_atom_count": 8008,
+    "finufft_eps": 1e-06,
+    "finufft_threads": 4,
+    "range_sweep": "fixed dq about 0.160 A^-1; physical minimum FFT-friendly nphi; q-block=2 streamed FINUFFT",
+    "resolution_sweep": "fixed q=5.0-6.3 A^-1 and nphi=768; reusable FINUFFT"
+  },
+  "fixed_dq_range_sweep": {
+    "rows": [
+      {
+        "label": "range_q2p13_chunked",
+        "q_max_inv_angstrom": 2.13,
+        "nq": 14,
+        "dq_inv_angstrom": 0.16000000000000003,
+        "nphi": 320,
+        "target_count": 4480,
+        "factorized_setup_seconds": 0.06108899999526329,
+        "factorized_first_execute_seconds": 0.05212710000341758,
+        "factorized_first_total_seconds": 0.11321609999868087,
+        "factorized_hot_seconds": 0.04131050000432879,
+        "coefficient_fraction_of_hot": 0.9951210058784111,
+        "chunked_finufft_setup_sum_seconds": 0.8905301000049803,
+        "chunked_finufft_execute_sum_seconds": 4.225669499996002,
+        "chunked_finufft_cleanup_sum_seconds": 0.20277059999352787,
+        "chunked_finufft_streamed_wall_seconds": 5.3195435000016005,
+        "first_total_speedup": 46.98575114372939,
+        "cross_complex_l2": 6.88810169054315e-07
+      },
+      {
+        "label": "range_q4p06_chunked",
+        "q_max_inv_angstrom": 4.06,
+        "nq": 26,
+        "dq_inv_angstrom": 0.1604,
+        "nphi": 512,
+        "target_count": 13312,
+        "factorized_setup_seconds": 0.14953170000080718,
+        "factorized_first_execute_seconds": 0.10551280000072438,
+        "factorized_first_total_seconds": 0.25504450000153156,
+        "factorized_hot_seconds": 0.10270069999387488,
+        "coefficient_fraction_of_hot": 0.9954607158638747,
+        "chunked_finufft_setup_sum_seconds": 1.3822389999768347,
+        "chunked_finufft_execute_sum_seconds": 16.004632800002582,
+        "chunked_finufft_cleanup_sum_seconds": 0.33817289998114575,
+        "chunked_finufft_streamed_wall_seconds": 17.725986999997986,
+        "first_total_speedup": 69.50154580824734,
+        "cross_complex_l2": 7.221201627729029e-07
+      },
+      {
+        "label": "range_q6p30_chunked",
+        "q_max_inv_angstrom": 6.3,
+        "nq": 40,
+        "dq_inv_angstrom": 0.1602564102564103,
+        "nphi": 720,
+        "target_count": 28800,
+        "factorized_setup_seconds": 0.31909680000535445,
+        "factorized_first_execute_seconds": 0.19151960000453983,
+        "factorized_first_total_seconds": 0.5106164000098943,
+        "factorized_hot_seconds": 0.21596370000042953,
+        "coefficient_fraction_of_hot": 0.9887943658542023,
+        "chunked_finufft_setup_sum_seconds": 2.2308276999901864,
+        "chunked_finufft_execute_sum_seconds": 49.681402599977446,
+        "chunked_finufft_cleanup_sum_seconds": 0.5656012999970699,
+        "chunked_finufft_streamed_wall_seconds": 52.48086940000212,
+        "first_total_speedup": 102.77944343147848,
+        "cross_complex_l2": 7.499313244732579e-07
+      },
+      {
+        "label": "range_q8p06_chunked",
+        "q_max_inv_angstrom": 8.06,
+        "nq": 51,
+        "dq_inv_angstrom": 0.1602,
+        "nphi": 864,
+        "target_count": 44064,
+        "factorized_setup_seconds": 0.429322999996657,
+        "factorized_first_execute_seconds": 0.39156329999968875,
+        "factorized_first_total_seconds": 0.8208862999963458,
+        "factorized_hot_seconds": 0.39441449999867473,
+        "coefficient_fraction_of_hot": 0.9903574874860366,
+        "chunked_finufft_setup_sum_seconds": 2.9427241000157665,
+        "chunked_finufft_execute_sum_seconds": 117.65099290000944,
+        "chunked_finufft_cleanup_sum_seconds": 0.7311644000146771,
+        "chunked_finufft_streamed_wall_seconds": 121.327131799997,
+        "first_total_speedup": 147.80016647925189,
+        "cross_complex_l2": 7.571649271056226e-07
+      }
+    ],
+    "effective_exponent_vs_qmax": {
+      "factorized_first_total": 1.4722901786680092,
+      "chunked_finufft_streamed_wall": 2.3054729041354416,
+      "speedup": 0.8331827254674314
+    },
+    "reusable_whole_plan_negative_control": {
+      "schema": "protein-lattice-q-sampling-timeout-v1",
+      "status": "timeout",
+      "label": "range_q6p30",
+      "axis": "range",
+      "contract": {
+        "q_min_inv_angstrom": 0.05,
+        "q_max_inv_angstrom": 6.3,
+        "nq": 40,
+        "nphi": 720,
+        "finufft_mode": "reusable",
+        "finufft_eps": 1e-06,
+        "finufft_threads": 4
+      },
+      "timeout_seconds": 300,
+      "completed_before_timeout": {
+        "factorized_setup_seconds": 0.293,
+        "factorized_first_execute_seconds": 0.23,
+        "factorized_hot_execute_seconds": 0.239,
+        "coefficient_contraction_seconds": 0.237,
+        "azimuth_synthesis_seconds": 0.001
+      },
+      "finufft_result": null,
+      "interpretation": "The reusable whole-target run did not complete two FINUFFT executions within the 300 s command limit. This is a negative feasibility observation, not a timing estimate. The q-block=2 streamed result is the applicable memory-safe baseline.",
+      "passed": false
+    }
+  },
+  "fixed_range_resolution_sweep": {
+    "rows": [
+      {
+        "nq": 32,
+        "dq_inv_angstrom": 0.041935483870967794,
+        "target_count": 24576,
+        "factorized_setup_seconds": 0.2799773999940953,
+        "factorized_first_total_seconds": 0.5408155999903101,
+        "factorized_hot_seconds": 0.2389672999997856,
+        "finufft_setup_seconds": 0.2692218999945908,
+        "finufft_first_total_seconds": 91.58565209999506,
+        "finufft_hot_seconds": 75.11504820000118,
+        "first_total_speedup": 169.3472823299402,
+        "hot_speedup": 314.3319115212356,
+        "cross_complex_l2": 5.054860420575636e-07,
+        "timing_source": "single local first/hot case"
+      },
+      {
+        "nq": 128,
+        "dq_inv_angstrom": 0.010236220472441104,
+        "target_count": 98304,
+        "factorized_setup_seconds": 1.055416500006686,
+        "factorized_first_total_seconds": 2.2901898000054643,
+        "factorized_hot_seconds": 1.1703610000040499,
+        "finufft_setup_seconds": 0.5236685999989277,
+        "finufft_first_total_seconds": 108.13264850000269,
+        "finufft_hot_seconds": 82.43998009999632,
+        "first_total_speedup": 47.21558383490516,
+        "hot_speedup": 70.43978746703884,
+        "cross_complex_l2": 3.600713513221942e-07,
+        "timing_source": "single local first/hot case"
+      },
+      {
+        "nq": 512,
+        "dq_inv_angstrom": 0.002544031311154882,
+        "target_count": 393216,
+        "factorized_setup_seconds": 0.20257179999316577,
+        "factorized_first_total_seconds": 3.3451888499912457,
+        "factorized_hot_seconds": 3.14261704999808,
+        "finufft_setup_seconds": 1.5237363000051118,
+        "finufft_first_total_seconds": 108.46915484999772,
+        "finufft_hot_seconds": 106.94541854999261,
+        "first_total_speedup": 32.425420421415545,
+        "hot_speedup": 33.479878176092924,
+        "cross_complex_l2": 3.155502734745625e-07,
+        "timing_source": "prepared fused 10/30 AB/BA paired medians"
+      }
+    ],
+    "interpretation": "Increasing Nq at fixed q range reduces the factorized advantage; dense radial sampling is relatively favorable to reusable FINUFFT."
+  },
+  "exact_optimization_profile_nq512": {
+    "coefficient_backend": "fused_phase",
+    "legacy_seconds": 13.91255960000126,
+    "prepared_hot_seconds": 3.14261704999808,
+    "legacy_over_prepared_speedup": 4.427061706423873,
+    "legacy_vs_prepared_complex_l2": 4.8106151422818794e-14,
+    "coefficient_contraction_seconds": 3.6317995999997947,
+    "azimuth_synthesis_seconds": 0.01667029999953229,
+    "coefficient_fraction_of_hot": 0.9954301697498023,
+    "direct_lattice_seconds": 4.258723500002816,
+    "separable_lattice_seconds": 0.20921719999751076,
+    "direct_over_separable_lattice_speedup": 20.35551331369259,
+    "lattice_complex_l2": 1.6112807452798642e-10,
+    "lattice_intensity_l2": 1.281888566690927e-10,
+    "prepared_abba_status": "complete; local timing gate PASS",
+    "prepared_abba_factorized_median_seconds": 3.14261704999808,
+    "prepared_abba_finufft_median_seconds": 106.94541854999261,
+    "prepared_abba_paired_speedup_median": 33.479878176092924,
+    "prepared_abba_paired_speedup_p05": 24.242784431238654,
+    "prepared_abba_order_speedup_median_gap": 0.020352234045513055
+  },
+  "contraction_backend_decision": {
+    "schema": "exact-beta-contraction-optimization-decision-v1",
+    "generated_at_utc": "2026-07-13T00:35:05.758143+00:00",
+    "contract": {
+      "unit": "structures/processed/protein_nanocrystal_lysozyme_1iee_1x1x1_fixed.npz",
+      "unit_structure": "protein_nanocrystal_lysozyme_1iee_1x1x1_fixed",
+      "atom_count": 8008,
+      "q_min_inv_angstrom": 5.0,
+      "q_max_inv_angstrom": 6.3,
+      "nq": 512,
+      "nphi": 768,
+      "harmonic_margin": 48,
+      "warmup_pairs": 2,
+      "measured_pairs": 10,
+      "hardware_threads": 4
+    },
+    "backend_comparison": {
+      "baseline_coefficient_median_seconds": 4.32275689999733,
+      "fused_phase_coefficient_median_seconds": 3.5925793000023987,
+      "cached_phase_coefficient_median_seconds": 3.1413568499992834,
+      "baseline_over_fused_paired_median": 1.2094026536840599,
+      "baseline_over_fused_paired_p05": 1.160511554329276,
+      "fused_over_cached_paired_median": 1.169462555992638,
+      "fused_over_cached_paired_p05": 1.022720027698247,
+      "cached_phase_setup_seconds": 0.22461180000391323,
+      "cached_phase_mib": 42.8895263671875,
+      "fused_vs_baseline_complex_l2": 0.0,
+      "cached_vs_fused_complex_l2": 1.2535515482450155e-14
+    },
+    "selected_low_memory_full_path": {
+      "backend": "fused_phase",
+      "specific_setup_seconds": 0.2123312999974587,
+      "first_execute_seconds": 3.559575799998129,
+      "first_total_seconds": 3.7719070999955875,
+      "hot_execute_seconds": 3.6518217000048026,
+      "coefficient_seconds": 3.6317995999997947,
+      "synthesis_seconds": 0.01667029999953229,
+      "legacy_unprepared_seconds": 14.515064100000018,
+      "legacy_over_selected_speedup": 3.9747461109563287,
+      "legacy_vs_selected_complex_l2": 4.8106151422818794e-14,
+      "direct_lattice_seconds": 4.258723500002816,
+      "separable_lattice_seconds": 0.20921719999751076,
+      "lattice_complex_l2": 1.6112807452798642e-10
+    },
+    "unpaired_finufft_projection": {
+      "first_total_finufft_over_selected": 21.8300579566498,
+      "abba_finufft_median_over_selected_hot": 27.105542776052744,
+      "status": "exploratory; optimized factorized and saved FINUFFT receipts are not paired"
+    },
+    "decision": {
+      "recommended_backend": "fused_phase",
+      "reason": "It gives a robust exact speedup without a source-by-harmonic cache; cached_phase is optional only when 42.89 MiB extra setup memory is acceptable for repeated hot execution.",
+      "default_policy": "Keep the legacy baseline as the API default and expose fused_phase/cached_phase through explicit prepared-plan flags until optimized 10/30 AB/BA and independent reruns are complete.",
+      "remaining_exact_bottleneck": "Miller Bessel recurrence plus source/q axial phase and harmonic accumulation. Further cache-based acceleration increases working memory; approximation-based tables require a separate error sweep."
+    },
+    "gates": {
+      "backend_benchmark_pass": true,
+      "full_profile_pass": true,
+      "baseline_over_fused_p05_ge_1_1": true,
+      "fused_vs_baseline_complex_l2_le_1e_12": true,
+      "cached_vs_fused_complex_l2_le_1e_12": true,
+      "legacy_vs_selected_complex_l2_le_1e_12": true
+    },
+    "claim_boundary": [
+      "The backend A/B is a local same-machine 2-warmup/10-measured ABC/CBA comparison.",
+      "The optimized factorized-to-FINUFFT ratios combine separate local receipts and are not a paired timing claim.",
+      "The current publication timing receipt remains the legacy 10/30 AB/BA result until the optimized protocol is rerun.",
+      "The repeated-lattice path remains a standard crystallographic specialization and does not apply to dense disorder."
+    ],
+    "passed": true
+  },
+  "gates": {
+    "all_range_cases_pass": true,
+    "range_speedup_increases_monotonically": true,
+    "resolution_hot_speedup_decreases_monotonically": true,
+    "optimized_profile_pass": true,
+    "legacy_vs_prepared_complex_l2_le_1e_12": true,
+    "separable_lattice_complex_l2_le_1e_9": true,
+    "prepared_abba_decision_pass": true
+  },
+  "decision": [
+    "The earlier fixed-dq observation is reproduced: widening q range makes q-blocked FINUFFT increasingly unfavorable.",
+    "The current Nq=512 narrow-band condition is relatively FINUFFT-favorable because dense radial sampling reduces the factorized speedup.",
+    "Prepared geometry plus FFT azimuth synthesis removes an exact-path bottleneck without relaxing accuracy.",
+    "After optimization, the Nq=512 hot path is coefficient-contraction limited; this is the next exact optimization target.",
+    "The prepared fused Nq=512 path passes its local 10/30 AB/BA gate; independent-machine replication is the remaining publication timing gate."
+  ],
+  "claim_boundary": [
+    "Range and resolution sweeps are exploratory local scaling probes, not independent-machine timing claims.",
+    "The Nq=512 optimized row uses same-machine prepared fused 10/30 AB/BA paired medians; setup-based first-total is derived separately.",
+    "The separable lattice factor is a standard crystallographic specialization, not ACFO novelty.",
+    "Dense disordered sources cannot use the perfect-lattice factorization."
+  ],
+  "passed": true
+}

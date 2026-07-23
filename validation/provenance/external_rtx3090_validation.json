@@ -1,0 +1,165 @@
+{
+  "schema": "external-acfo-ncs-v14-validation-v1",
+  "generated_at_utc": "2026-07-14T15:00:00.594711+00:00",
+  "mode": "full",
+  "run_dir": "benchmark_results/external_acfo_ncs_v14_20260714T091255Z_margin32_amended_v2",
+  "files": {
+    "manifest": {
+      "path": "manifest_verification.json",
+      "bytes": 359,
+      "sha256": "acdf018db521b9f59ca3cc71b3904307af04713425849becc888c3d1e659f23e"
+    },
+    "environment": {
+      "path": "environment.json",
+      "bytes": 2831,
+      "sha256": "e1fee1180846fc947d85631142953acdaa4bdde5dc6640924901d9d857f9bf24"
+    },
+    "build_ext": {
+      "path": "build_ext_receipt.json",
+      "bytes": 427,
+      "sha256": "b32c5eb4afff9a342e8b0fa4d6862101cfc14986f9508dcbda9dcb16711a51da"
+    },
+    "pytest": {
+      "path": "pytest_receipt.json",
+      "bytes": 411,
+      "sha256": "74778817b7314a9baa95406e7c60d50777ad93c5cafe77404a5ac463cb9fe7df"
+    },
+    "odt_probe": {
+      "path": "odt_banded_cartesian_final_packed_probe.json",
+      "bytes": 18180,
+      "sha256": "3222778554069961f8ff6c891e5ab9b96a1441265c2a9a483700c12574181d31"
+    },
+    "waxs_prepared": {
+      "path": "waxs_prepared_1m_abba.json",
+      "bytes": 11324,
+      "sha256": "798b9360564dac18d4ad58859bf92248739c14d07eb53c1b12edb77b664a6b24"
+    },
+    "waxs_detector": {
+      "path": "waxs_detector_nq512_abba.json",
+      "bytes": 6903,
+      "sha256": "45e393afc50f89bc73efbbbad4fc47f5c6443a01047b37f21484c7f269d6fb7c"
+    },
+    "odt_scale": {
+      "path": "odt_banded_cartesian_final_packed_full_timing.json",
+      "bytes": 9411,
+      "sha256": "29690de4251abec93aceb487ac2b14329f7d4032c174c1b6b7db2858a045e68c"
+    },
+    "odt_direct_c64": {
+      "path": "odt_cufinufft_matched_error_direct_subset_c64.json",
+      "bytes": 14946,
+      "sha256": "d965a87ca3cc48b84e5961cfabe2c72ad939ccc0523dbf5c92be69024aba1270"
+    },
+    "odt_direct_c128": {
+      "path": "odt_cufinufft_matched_error_direct_subset_c128.json",
+      "bytes": 16124,
+      "sha256": "31bfd3c3b47dfeb9a594b37a766073a3056eb278cf18905f96be3ced316ca649"
+    },
+    "odt_same_dtype": {
+      "path": "odt_same_dtype_abba30.json",
+      "bytes": 7430,
+      "sha256": "fba4eac2b68152584379a44fd0d1684d3f3fdd366b25e25affd352b1f70b625b"
+    },
+    "odt_matched_full": {
+      "path": "odt_cufinufft_matched_c128_full_pair5.json",
+      "bytes": 6895,
+      "sha256": "8f1319851cf165f0c8c82653b9121ca6add994951efe7f541af301590cb2e6db"
+    },
+    "odt_temporal": {
+      "path": "odt_banded_cartesian_temporal_warm_start.json",
+      "bytes": 61170,
+      "sha256": "6d7154c528edb29c45c704a207bbc7202c8a1065f266ce57407affb785340b37"
+    }
+  },
+  "quick_gates": {
+    "release_manifest_verified": true,
+    "environment_schema": true,
+    "cuda_available": true,
+    "gpu_baseline_packages_present": true,
+    "cpp_extensions_rebuilt": true,
+    "pytest_passed": true,
+    "odt_integrated_probe_passed": true
+  },
+  "package_smoke_pass": true,
+  "machine": {
+    "reference_fingerprint": "8b7f62c066d537e1220371c39c073d15bee0fea1549e0c86645f7848830a511e",
+    "measured_fingerprint": "2daf5a9db463c0d6d476ad2de4e328e779689a1a9def13ed661d852cf4a13efc",
+    "fingerprints_differ": true,
+    "allow_reference_machine": false
+  },
+  "waxs_prepared_gates": {
+    "schema": true,
+    "complete_and_internal_pass": true,
+    "prepared_fused_contract": true,
+    "warmup_10_measured_30": true,
+    "balanced_15_ab_15_ba": true,
+    "order_gap_le_10pct": true,
+    "complex_l2_le_2e_6": true,
+    "legacy_l2_le_1e_12": true,
+    "paired_median_ge_3": true,
+    "paired_p05_ge_3": true
+  },
+  "waxs_detector_gates": {
+    "same_binned_detector_contract": true,
+    "warmup_10_repeat_30_abba": true,
+    "complex_l2_le_1e_6": true,
+    "intensity_row_median_le_1e_3": true,
+    "intensity_row_p99_le_5e_3": true,
+    "speedup_gt_1": true,
+    "whole_process_memory_ratio_ge_4": true,
+    "all_finite": true
+  },
+  "odt_scale_gates": {
+    "schema": true,
+    "external_accuracy_anchor_hash": true,
+    "z64_128_256_present": true,
+    "all_integrated_timings_finite": true
+  },
+  "odt_direct_gates": {
+    "c64_audit_passed": true,
+    "c128_audit_passed": true,
+    "literal_direct_dot_le_1e_12": true,
+    "acfo_worst_direct_l2_le_2e_6": true,
+    "c128_strict_directional_match": true
+  },
+  "odt_same_dtype_gates": {
+    "same_dtype_complex64_eps_1e_6": true,
+    "warmup_5_repeat_30_abba": true,
+    "same_dtype_speedup_ge_3": true,
+    "same_dtype_pair_times_finite": true
+  },
+  "odt_matched_full_gates": {
+    "complex128_eps_1e_7": true,
+    "warmup_2_pair_count_5": true,
+    "matched_speedup_ge_3": true,
+    "matched_pair_finite": true,
+    "external_accuracy_audit_hash": true
+  },
+  "odt_temporal_gates": {
+    "schema": true,
+    "all_frozen_sequence_gates": true
+  },
+  "performance_gates": {
+    "waxs_prepared_speed": true,
+    "waxs_detector_speed": true,
+    "waxs_detector_memory": true,
+    "odt_same_dtype_speed": true,
+    "odt_matched_error_speed": true,
+    "odt_temporal_10hz_and_tracking": true
+  },
+  "functional_correctness_pass": true,
+  "performance_replication_pass": true,
+  "independent_machine_replication_pass": true,
+  "publication_replication_pass": true,
+  "execution_pass": true,
+  "passed": true,
+  "claim_boundary": [
+    "publication_replication_pass additionally requires a machine fingerprint different from the local RTX 2070 SUPER reference.",
+    "allow_reference_machine can validate the full runner locally, but never converts that run into independent replication.",
+    "ODT matched complex128 timing is a separate-process comparison on memory-limited GPUs; the receipt must preserve that caveat.",
+    "GPU-resident hot timings exclude acquisition, host transfer and hologram demodulation exactly as in the frozen local protocol."
+  ],
+  "_publication": {
+    "source_sha256": "bb9a3575ed3107384d726ab66e668bf41da5049beb359a950cd231f6ff57ebbb",
+    "normalization": "Machine-local absolute paths were replaced with repository-relative paths or a redacted placeholder. Scientific values are unchanged."
+  }
+}

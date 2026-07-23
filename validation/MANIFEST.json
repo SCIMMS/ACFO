@@ -1,0 +1,273 @@
+{
+  "schema": "acfo-validation-release-manifest-v1",
+  "generated_at_utc": "2026-07-23T12:10:53.722350+00:00",
+  "repository": "https://github.com/SCIMMS/ACFO",
+  "license": "ACFO Citation-Required License 1.0",
+  "files": [
+    {
+      "path": "claim_metrics.csv",
+      "bytes": 2261,
+      "sha256": "052d5db778f2c10c9d34c4b2d28ce1aed5fd46fd6a971deb4f3ed0feeb7e115a"
+    },
+    {
+      "path": "evidence_architecture.csv",
+      "bytes": 2001,
+      "sha256": "280534c6e23fcc68a608cb9246ab91109b139d7fc621c00aa29cf3fc80fc68fa"
+    },
+    {
+      "path": "general_curvature/independent_cpu_gaussian_validation.json",
+      "bytes": 24974,
+      "sha256": "76fb022b372bbda1c17b1e1120ebe8f2abac297178d321be3042546a162b20df"
+    },
+    {
+      "path": "general_curvature/independent_cpu_hardware.json",
+      "bytes": 1592,
+      "sha256": "ba002429353818e955e9f990388679578dd253bee606cccc001052288653170a"
+    },
+    {
+      "path": "general_curvature/independent_cpu_nonlinear_oracle.json",
+      "bytes": 21953,
+      "sha256": "232d7b53d5381585cfdea0fe3353cd2a9797fd657e4b2b5b1c2f9d1fbc68bc2b"
+    },
+    {
+      "path": "general_curvature/independent_cpu_replication_summary.json",
+      "bytes": 4534,
+      "sha256": "4c8b5d903d1f473f7ed81101802a1b86a7aff7160f9cfb24d48fa823905fd35c"
+    },
+    {
+      "path": "general_curvature/independent_cpu_return_manifest.json",
+      "bytes": 1707,
+      "sha256": "4b67dc420983cab27e00b6792bea96b4759f603ad7871c9752ac8fdfc1939f31"
+    },
+    {
+      "path": "general_curvature/replication_package_v1_1/build_receipt.json",
+      "bytes": 734,
+      "sha256": "231e5432cc36bfe358fe629dff1d71c11dfe278975e2eebf3c13a397917a312f"
+    },
+    {
+      "path": "general_curvature/replication_package_v1_1/general_curvature_cpu_replication_v1_1_20260722.zip",
+      "bytes": 144819,
+      "sha256": "1309e1570d62930edf509df9f1233ca4df75a29acc8453967a58876a381a6ee2"
+    },
+    {
+      "path": "general_curvature/replication_package_v1_1/general_curvature_cpu_replication_v1_1_20260722.zip.sha256",
+      "bytes": 119,
+      "sha256": "78ca70769627aa6b047d3ee005e148ae40016e2bef6b9bbeb3116581e1e3e358"
+    },
+    {
+      "path": "headline_metrics.json",
+      "bytes": 2645,
+      "sha256": "fe5d6f6e44b3f327d94ee75e0e447a522903827fcd2b29cbd47cea8f831c2c53"
+    },
+    {
+      "path": "high_na_si/high_na_pupil_spectrum_option_matrix_eps1e-12.csv",
+      "bytes": 9981,
+      "sha256": "fbe4f744420d8207acb3e131d699e534a2e9397f134171c29fce5e12072b9d02"
+    },
+    {
+      "path": "high_na_si/high_na_pupil_spectrum_option_matrix_eps1e-12.json",
+      "bytes": 35961,
+      "sha256": "e896d8c1c4175f5fe9eb0727eb83e217b53cbfefd70c87b89d804e489fa3ea45"
+    },
+    {
+      "path": "high_na_si/high_na_si_source_data.csv",
+      "bytes": 1217,
+      "sha256": "90a75deb90579bfc211a3c4ddb440a12d6dc492dae30a167a7f7137be0d25fb6"
+    },
+    {
+      "path": "INPUTS.md",
+      "bytes": 2725,
+      "sha256": "7f5c544c2e6ff6a0b848716cbdf3841c2c31393c7a0be9681d04926098632bb9"
+    },
+    {
+      "path": "odt_aidt/aidt_10hz_full700_opt_repeat.json",
+      "bytes": 15821,
+      "sha256": "4b87a1b061a3a6653dd42e8c9b29867d5f857b98c2f3d1766b701a2962cda18f"
+    },
+    {
+      "path": "odt_aidt/aidt_10hz_full700_opt_repeat.md",
+      "bytes": 1050,
+      "sha256": "b914d4b9749e07aef23b9e729e79761a75539ba9c3507399c9f5a4997e1ecdc0"
+    },
+    {
+      "path": "odt_aidt/aidt_diatom_public_contract_summary.md",
+      "bytes": 2454,
+      "sha256": "a378aaaffc6faa83d066b04014f688000d37ab1d5e090189751fe18e897e0b62"
+    },
+    {
+      "path": "odt_aidt/aidt_diatom_public_contract_validation.json",
+      "bytes": 1293,
+      "sha256": "11ea6356e386dc0694972b3429168eecf052cab3f85cf3af2b379c27e08b6704"
+    },
+    {
+      "path": "odt_aidt/aidt_diatom_public_contract_validation.md",
+      "bytes": 1304,
+      "sha256": "c9f764d6d5d1504df8a5a6193380d788122054c450955b1f0f3a0f192197f82e"
+    },
+    {
+      "path": "odt_aidt/odt_banded_cartesian_final_packed_full_timing_external_rtx3090.json",
+      "bytes": 9411,
+      "sha256": "29690de4251abec93aceb487ac2b14329f7d4032c174c1b6b7db2858a045e68c"
+    },
+    {
+      "path": "odt_aidt/odt_banded_cartesian_final_packed_probe_external_rtx3090.json",
+      "bytes": 18180,
+      "sha256": "3222778554069961f8ff6c891e5ab9b96a1441265c2a9a483700c12574181d31"
+    },
+    {
+      "path": "odt_aidt/odt_banded_cartesian_temporal_warm_start_external_rtx3090.json",
+      "bytes": 61170,
+      "sha256": "6d7154c528edb29c45c704a207bbc7202c8a1065f266ce57407affb785340b37"
+    },
+    {
+      "path": "odt_aidt/odt_cufinufft_matched_c128_full_pair5_external_rtx3090.json",
+      "bytes": 6906,
+      "sha256": "8174db773b2e506f99d7ea0a249a98a7a611675256d05b8135e25d1d828ce874"
+    },
+    {
+      "path": "odt_aidt/odt_cufinufft_matched_error_direct_subset_c128_external_rtx3090.json",
+      "bytes": 16124,
+      "sha256": "31bfd3c3b47dfeb9a594b37a766073a3056eb278cf18905f96be3ced316ca649"
+    },
+    {
+      "path": "odt_aidt/odt_cufinufft_matched_error_direct_subset_c64_external_rtx3090.json",
+      "bytes": 14946,
+      "sha256": "d965a87ca3cc48b84e5961cfabe2c72ad939ccc0523dbf5c92be69024aba1270"
+    },
+    {
+      "path": "odt_aidt/odt_same_dtype_abba30_external_rtx3090.json",
+      "bytes": 7311,
+      "sha256": "fb7291954460dcdee3a0d4f48d73364ba9f68ef05ceeb5952a14f75e0eacac9c"
+    },
+    {
+      "path": "provenance/external_rtx3090_curation_manifest.json",
+      "bytes": 2977,
+      "sha256": "369ca148aaf0f7abdc85d60652cbb7b0156bc681e9997f59ebb0890d120b44e2"
+    },
+    {
+      "path": "provenance/external_rtx3090_manifest_verification.json",
+      "bytes": 359,
+      "sha256": "acdf018db521b9f59ca3cc71b3904307af04713425849becc888c3d1e659f23e"
+    },
+    {
+      "path": "provenance/external_rtx3090_pytest_receipt.json",
+      "bytes": 553,
+      "sha256": "c55591bc7dc68b4d507f60983ec3afa804d22cafc28e89ec4562e60bcf43989b"
+    },
+    {
+      "path": "provenance/external_rtx3090_validation.json",
+      "bytes": 6214,
+      "sha256": "d7f2bd426a46b4a1cf2a18fc747147c2f9ea4e585675d61fbe0db3ed01bdfe51"
+    },
+    {
+      "path": "README.md",
+      "bytes": 2770,
+      "sha256": "28cbad99ad87db085bcf846b46f692f17ea53265ad8f81da3d7f7251be5c9df9"
+    },
+    {
+      "path": "waxs/waxs_custom_geometry_close_wide_q_20260722.json",
+      "bytes": 6835,
+      "sha256": "c4ff1abb5511b3623409aad862ce3f79a8bcdc5ce299fe27b079d6cd6844ad06"
+    },
+    {
+      "path": "waxs/waxs_custom_geometry_close_wide_q_20260722.md",
+      "bytes": 1010,
+      "sha256": "2d7619ab704c105bb2bfb9dd0f28dd1f9316e81049b47d0e7780680faa60a390"
+    },
+    {
+      "path": "waxs/waxs_custom_geometry_long_distance_narrow_q_20260722.json",
+      "bytes": 6870,
+      "sha256": "56bb1043d5381341385b2a9ae1f4d8ca1ac91b6d47ffc3220cb21899c07bf04c"
+    },
+    {
+      "path": "waxs/waxs_custom_geometry_long_distance_narrow_q_20260722.md",
+      "bytes": 1022,
+      "sha256": "902a46ca321733208ad741772f4a053af21ea7709dddf91b5aa6155957b9c813"
+    },
+    {
+      "path": "waxs/waxs_custom_geometry_validation_20260722.csv",
+      "bytes": 525,
+      "sha256": "363f99153376ce8ab266d9746feb4e841012535d510d69d0f2bdd5cf217c0f27"
+    },
+    {
+      "path": "waxs/waxs_custom_geometry_validation_20260722.json",
+      "bytes": 3065,
+      "sha256": "4493c0e36bf07741f072b8967ee0cc41b2f8ebb1ce1354f81192e332ee84cc21"
+    },
+    {
+      "path": "waxs/waxs_detector_nq512_abba_external_rtx3090.json",
+      "bytes": 6903,
+      "sha256": "45e393afc50f89bc73efbbbad4fc47f5c6443a01047b37f21484c7f269d6fb7c"
+    },
+    {
+      "path": "waxs/waxs_detector_sampling_audit.json",
+      "bytes": 7419,
+      "sha256": "a1dee70d2b7d44358ab0e1fa5fad607d19a5c7b2d12f8142c6a03ac945e88e5d"
+    },
+    {
+      "path": "waxs/waxs_direct_finufft_triad.json",
+      "bytes": 2090,
+      "sha256": "f862f1ca9b46c3ee55480b7732cca561a12c18079c48455cd1379bfa5d488450"
+    },
+    {
+      "path": "waxs/waxs_direct_reference_sweep.json",
+      "bytes": 115299,
+      "sha256": "02f5013147f293ef775ab25defe48c256ec86eded13009d7964e2b50635776e5"
+    },
+    {
+      "path": "waxs/waxs_direct_reference_sweep.md",
+      "bytes": 2343,
+      "sha256": "e62dada1d644f55c6e77c3ac6d60565918ae088c9a57f5c777175e41f33558cd"
+    },
+    {
+      "path": "waxs/waxs_exact_beta_harmonic_bridge.json",
+      "bytes": 2764,
+      "sha256": "879179d83e410b1ae7c10d87560e137b8aa26c11f05b2d90dd1626de49490d5e"
+    },
+    {
+      "path": "waxs/waxs_exact_beta_harmonic_bridge.md",
+      "bytes": 965,
+      "sha256": "0fb805a075d7ccf1c34d72c0c301ad38117cb40c94535500e4d53b2c1ddb93c5"
+    },
+    {
+      "path": "waxs/waxs_highq_hot_reuse_sweep_216k_20260722.csv",
+      "bytes": 2519,
+      "sha256": "c07a639d35446ad89ef8fcfc279b844119d92367e2fc138ecb01193d608b2331"
+    },
+    {
+      "path": "waxs/waxs_highq_hot_reuse_sweep_216k_20260722.json",
+      "bytes": 19694,
+      "sha256": "c7bbf36f7dddd8e4ddf7134c705ad02037f7c59981f074ee8e47a050f2b7d442"
+    },
+    {
+      "path": "waxs/waxs_highq_hot_reuse_sweep_216k_20260722.md",
+      "bytes": 2938,
+      "sha256": "fdea2779a3e02d3cb10d1deea62e348fbf1999eca4273491bfe08fab1d86274c"
+    },
+    {
+      "path": "waxs/waxs_prepared_1m_abba_external_rtx3090.json",
+      "bytes": 11324,
+      "sha256": "798b9360564dac18d4ad58859bf92248739c14d07eb53c1b12edb77b664a6b24"
+    },
+    {
+      "path": "waxs/waxs_setup_apply_break_even.json",
+      "bytes": 8789,
+      "sha256": "68d25631dbb42e63051f8d4ce60c0ab270366ce5a7de44c39d7b1ad2e7fa631d"
+    },
+    {
+      "path": "waxs/waxs_setup_apply_break_even.md",
+      "bytes": 2569,
+      "sha256": "82d53d5752f841e4f7c5e61ee405383c6686b10cfe4f36ccb0a7b33b0842c517"
+    },
+    {
+      "path": "waxs/waxs_source_discretization_convergence.json",
+      "bytes": 9194,
+      "sha256": "f25d6e0f2b2b248f7419634716a321c40c9ec7fe48b9e8a6351eda41c7ce869f"
+    },
+    {
+      "path": "waxs/waxs_source_discretization_convergence.md",
+      "bytes": 2009,
+      "sha256": "26284b8992ea6664daa0662aed6d2e23de5330ffab8b39b6ebd40d1064b23bd1"
+    }
+  ]
+}

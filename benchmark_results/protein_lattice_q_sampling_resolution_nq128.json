@@ -1,0 +1,87 @@
+{
+  "schema": "protein-lattice-q-sampling-case-v1",
+  "generated_at_utc": "2026-07-12T23:44:53.186823+00:00",
+  "label": "resolution_nq128",
+  "axis": "resolution",
+  "contract": {
+    "unit": "structures/processed/protein_nanocrystal_lysozyme_1iee_1x1x1_fixed.npz",
+    "supercell": "structures/processed/protein_nanocrystal_lysozyme_1iee_5x5x5_fixed.npz",
+    "q_min_inv_angstrom": 5.0,
+    "q_max_inv_angstrom": 6.3,
+    "nq": 128,
+    "dq_inv_angstrom": 0.010236220472441104,
+    "nphi": 768,
+    "wavelength_nm": 0.08,
+    "harmonic_margin": 48,
+    "finufft_eps": 1e-06,
+    "finufft_threads": 4,
+    "finufft_mode": "reusable",
+    "finufft_q_block_size": 2
+  },
+  "atom_count": 1001000,
+  "cell_count": 125,
+  "unit_atom_count": 8008,
+  "unit_structure": "protein_nanocrystal_lysozyme_1iee_1x1x1_fixed",
+  "supercell_shape": [
+    5,
+    5,
+    5
+  ],
+  "repetition_residual_nm": 3.0588864774472313e-12,
+  "target_count": 98304,
+  "maximum_harmonic": 350,
+  "timing_seconds": {
+    "shared_target_preparation": 0.047159399997326545,
+    "factorized": {
+      "plan_setup": 0.010950900003081188,
+      "lattice_setup": 1.0444656000036048,
+      "specific_setup_total": 1.055416500006686,
+      "first_execute": 1.2347732999987784,
+      "hot_execute": 1.1703610000040499,
+      "first_total_excluding_shared": 2.2901898000054643,
+      "first_profile": {
+        "backend": "fft",
+        "coefficient_contraction_seconds": 1.2271223999996437,
+        "azimuth_synthesis_seconds": 0.006663699998171069,
+        "total_seconds": 1.2337891999995918
+      },
+      "hot_profile": {
+        "backend": "fft",
+        "coefficient_contraction_seconds": 1.1613598999974784,
+        "azimuth_synthesis_seconds": 0.008027500000025611,
+        "total_seconds": 1.169390300005034
+      }
+    },
+    "finufft": {
+      "mode": "reusable",
+      "plan_setup": 0.5236685999989277,
+      "first_execute": 107.60897990000376,
+      "hot_execute": 82.43998009999632,
+      "first_total_excluding_shared": 108.13264850000269
+    }
+  },
+  "speedup_finufft_over_factorized": {
+    "first_total_excluding_shared": 47.21558383490516,
+    "hot_execute": 70.43978746703884
+  },
+  "cross_error": {
+    "complex_l2": 3.600713513221942e-07,
+    "intensity_l2": 1.1685092936974203e-07,
+    "factorized_first_hot_complex_l2": 0.0
+  },
+  "gates": {
+    "maximum_harmonic_below_nyquist": true,
+    "repetition_residual_le_1e_9_nm": true,
+    "cross_complex_l2_le_2e_6": true,
+    "cross_intensity_l2_le_5e_6": true,
+    "factorized_repeat_l2_le_1e_13": true
+  },
+  "elapsed_seconds": 195.19710209999903,
+  "claim_boundary": [
+    "This is a single-process exploratory scaling case, not a 10/30 timing claim.",
+    "Setup and execute are reported separately; streamed chunking also reports cleanup and wall total.",
+    "The factorized execute uses prepared coordinates/cutoffs and uniform-phi FFT synthesis.",
+    "FINUFFT eps=1e-6 is a practical timing baseline; direct NDFT correctness is separate."
+  ],
+  "passed": true
+}

@@ -1,0 +1,271 @@
+{
+  "schema": "odt-banded-cartesian-final-packed-full-timing-v1",
+  "generated_at_utc": "2026-07-14T04:01:44.248655+00:00",
+  "device": {
+    "name": "NVIDIA GeForce RTX 2070 SUPER",
+    "torch": "2.12.1+cu126",
+    "cuda": "12.6",
+    "dtype": "complex64"
+  },
+  "detector": {
+    "variant": "banded_inner96_outer64",
+    "camera_shape": [
+      121,
+      320,
+      320
+    ],
+    "camera_input_mib": 94.53125,
+    "bands": [
+      {
+        "name": "inner",
+        "cap_radial": 96,
+        "cap_phi": 128,
+        "min_fraction": 0.0,
+        "max_fraction": 0.75,
+        "sampling": "outer_power",
+        "outer_power": 2.0,
+        "samples_per_view": 12288,
+        "ring_h_cutoff": 28,
+        "ring_h_modes": 57,
+        "q_samples": 1486848,
+        "ring_axial_lowrank_rank": 16,
+        "axis_l_modes": 1,
+        "ring_adaptive_l_active_fraction": 0.5046875
+      },
+      {
+        "name": "outer",
+        "cap_radial": 64,
+        "cap_phi": 256,
+        "min_fraction": 0.75,
+        "max_fraction": 1.0,
+        "sampling": "outer_power",
+        "outer_power": 2.0,
+        "samples_per_view": 16384,
+        "ring_h_cutoff": 28,
+        "ring_h_modes": 57,
+        "q_samples": 1982464,
+        "ring_axial_lowrank_rank": 16,
+        "axis_l_modes": 1,
+        "ring_adaptive_l_active_fraction": 0.5046875
+      }
+    ],
+    "pixel_q_count": 3469312,
+    "mode_q_count": 1103520
+  },
+  "candidate": {
+    "h_cutoff": 28,
+    "prune_axis_l0": true,
+    "axial_lowrank_rank": 16,
+    "ring_adaptive_l_packed_threshold": 1e-06,
+    "radial_block_size": 32,
+    "illumination_block_size": 4,
+    "forward_mode": "auto",
+    "adjoint_mode": "auto",
+    "context_build_s": 34.876538200012874,
+    "plan_build_s": 0.47231769998325035,
+    "total_plan_remap_camera_build_s": 35.834193899994716
+  },
+  "problem": {
+    "full_object_shape": [
+      256,
+      256,
+      256
+    ],
+    "selected_slices": [
+      64,
+      128,
+      256
+    ],
+    "camera_data": "deterministic GPU-resident complex synthetic timing payload; data values do not affect linear hot-path timing"
+  },
+  "preprocessing_timing": {
+    "cached_cartesian_remap_plus_mode_reduction": {
+      "count": 30,
+      "median_s": 0.0024863500002538785,
+      "mean_s": 0.0027935966674704103,
+      "p05_s": 0.0024048050079727547,
+      "p95_s": 0.004251750002731567,
+      "min_s": 0.0023982999846339226,
+      "max_s": 0.004570499993860722
+    },
+    "preprocessed_mode_mib": 8.419189453125
+  },
+  "cases": [
+    {
+      "selected_n_z": 64,
+      "object_shape": [
+        256,
+        64,
+        256
+      ],
+      "object_mib": 32.0,
+      "data_adjoint_timing": {
+        "count": 30,
+        "median_s": 0.04678779999085236,
+        "mean_s": 0.048712220005108976,
+        "p05_s": 0.04460176001448417,
+        "p95_s": 0.06255891501059518,
+        "min_s": 0.04453359998296946,
+        "max_s": 0.06896260002395138
+      },
+      "normal_pair_timing": {
+        "count": 30,
+        "median_s": 0.07942659998661838,
+        "mean_s": 0.07935694333573337,
+        "p05_s": 0.07798320998990675,
+        "p95_s": 0.08077731499943183,
+        "min_s": 0.07788150000851601,
+        "max_s": 0.08097539999289438
+      },
+      "normal_pairs_per_second": 12.590240551257107,
+      "integrated_steady_remap_mode_normal_pair_timing": {
+        "count": 30,
+        "median_s": 0.08151124999858439,
+        "mean_s": 0.08120535000149781,
+        "p05_s": 0.07964878500060876,
+        "p95_s": 0.08232464000175241,
+        "min_s": 0.07939440000336617,
+        "max_s": 0.0827761999971699
+      },
+      "integrated_steady_updates_per_second": 12.268245181093004,
+      "integrated_new_frame_first_update_timing": {
+        "count": 30,
+        "median_s": 0.12493580000591464,
+        "mean_s": 0.12513781999781107,
+        "p05_s": 0.12298433499381645,
+        "p95_s": 0.1278176049949252,
+        "min_s": 0.1225548000074923,
+        "max_s": 0.13140870002098382
+      },
+      "integrated_new_frame_first_updates_per_second": 8.004110910985151,
+      "memory": {
+        "baseline_allocated_mib": 215.380859375,
+        "peak_allocated_mib": 874.119140625,
+        "incremental_peak_mib": 658.73828125
+      }
+    },
+    {
+      "selected_n_z": 128,
+      "object_shape": [
+        256,
+        128,
+        256
+      ],
+      "object_mib": 64.0,
+      "data_adjoint_timing": {
+        "count": 30,
+        "median_s": 0.06069129999377765,
+        "mean_s": 0.060647596667210264,
+        "p05_s": 0.05922580000624293,
+        "p95_s": 0.0623509999961243,
+        "min_s": 0.05900649999966845,
+        "max_s": 0.06414779997430742
+      },
+      "normal_pair_timing": {
+        "count": 30,
+        "median_s": 0.10184239999216516,
+        "mean_s": 0.10184964666550514,
+        "p05_s": 0.1008027500094613,
+        "p95_s": 0.10323408999538515,
+        "min_s": 0.100538200000301,
+        "max_s": 0.1036745999881532
+      },
+      "normal_pairs_per_second": 9.819093030770397,
+      "integrated_steady_remap_mode_normal_pair_timing": {
+        "count": 30,
+        "median_s": 0.10371404999750666,
+        "mean_s": 0.10374980666577661,
+        "p05_s": 0.10232857500814134,
+        "p95_s": 0.10517138001305285,
+        "min_s": 0.10204830000293441,
+        "max_s": 0.1053890000039246
+      },
+      "integrated_steady_updates_per_second": 9.641895191866872,
+      "integrated_new_frame_first_update_timing": {
+        "count": 30,
+        "median_s": 0.1632256500015501,
+        "mean_s": 0.1633170933375368,
+        "p05_s": 0.16119517000188352,
+        "p95_s": 0.16575116500462173,
+        "min_s": 0.16104740000446327,
+        "max_s": 0.16701810000813566
+      },
+      "integrated_new_frame_first_updates_per_second": 6.126488085607277,
+      "memory": {
+        "baseline_allocated_mib": 287.50634765625,
+        "peak_allocated_mib": 1206.31689453125,
+        "incremental_peak_mib": 918.810546875
+      }
+    },
+    {
+      "selected_n_z": 256,
+      "object_shape": [
+        256,
+        256,
+        256
+      ],
+      "object_mib": 128.0,
+      "data_adjoint_timing": {
+        "count": 30,
+        "median_s": 0.09217800000624266,
+        "mean_s": 0.09194446666127382,
+        "p05_s": 0.0901393299922347,
+        "p95_s": 0.09336322498566005,
+        "min_s": 0.08985540000139736,
+        "max_s": 0.09431209997273982
+      },
+      "normal_pair_timing": {
+        "count": 30,
+        "median_s": 0.14860764998593368,
+        "mean_s": 0.14864401666757962,
+        "p05_s": 0.14686397500627207,
+        "p95_s": 0.14995105000270997,
+        "min_s": 0.1463557000097353,
+        "max_s": 0.15052240001386963
+      },
+      "normal_pairs_per_second": 6.729128682774097,
+      "integrated_steady_remap_mode_normal_pair_timing": {
+        "count": 30,
+        "median_s": 0.1501497499848483,
+        "mean_s": 0.15011436333103725,
+        "p05_s": 0.14910513999784597,
+        "p95_s": 0.15101356500235852,
+        "min_s": 0.14862199997878633,
+        "max_s": 0.15146339999046177
+      },
+      "integrated_steady_updates_per_second": 6.660017749619366,
+      "integrated_new_frame_first_update_timing": {
+        "count": 30,
+        "median_s": 0.23992445001204032,
+        "mean_s": 0.24018662333061608,
+        "p05_s": 0.23783931500947803,
+        "p95_s": 0.24244279999111312,
+        "min_s": 0.23729609997826628,
+        "max_s": 0.2440935000195168
+      },
+      "integrated_new_frame_first_updates_per_second": 4.1679787114227675,
+      "memory": {
+        "baseline_allocated_mib": 415.50732421875,
+        "peak_allocated_mib": 1996.3583984375,
+        "incremental_peak_mib": 1580.85107421875
+      }
+    }
+  ],
+  "memory": {
+    "allocated_after_plan_remap_camera_build_mib": 142.9609375,
+    "peak_during_plan_remap_camera_build_mib": 238.9609375
+  },
+  "accuracy_anchor": {
+    "path": "benchmark_results\\odt_banded_cartesian_final_packed_probe.json",
+    "sha256": "9fd96dcb98ff6a0ee5c74954f5f00469710a074a9a878ae301de4177e0926fd3",
+    "role": "The separate frozen small probe supplies direct Cartesian-camera, H36 operator and reconstruction-difference validation."
+  },
+  "claim_boundary": [
+    "This run is a timing and memory scale-up of a separately accuracy-validated operator path; it does not repeat the direct Cartesian cuFINUFFT reference at 64/128/256 z.",
+    "All hot timings start with the complex camera tensor resident on the RTX 2070 SUPER GPU and exclude acquisition, host-to-device transfer and hologram demodulation.",
+    "The steady integrated row includes cached Cartesian remap, angular-mode reduction and one forward/adjoint normal pair.",
+    "The new-frame first-update row additionally includes the one-time data adjoint that forms the right-hand side for that frame.",
+    "A normal pair is one iterative solver core application, not a converged reconstruction. Total reconstruction latency depends on the chosen iteration or warm-start update count.",
+    "The synthetic camera values are used only because linear operator timing is data-independent; accuracy remains anchored to the physical direct-camera probe."
+  ]
+}

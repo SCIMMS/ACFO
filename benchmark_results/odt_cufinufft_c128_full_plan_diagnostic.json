@@ -1,0 +1,70 @@
+{
+  "schema": "odt-cufinufft-c128-full-plan-diagnostic-v1",
+  "generated_at_utc": "2026-07-14T05:19:11.406470+00:00",
+  "problem": {
+    "object_shape": [
+      256,
+      256,
+      256
+    ],
+    "ring_q_samples": 7864320,
+    "axis_q_samples": 65536,
+    "dtype": "complex128",
+    "eps": 1e-07,
+    "acfo_plan_present": false
+  },
+  "context_build_s": 23.77423809998436,
+  "stages": [
+    {
+      "stage": "copy_forward_points",
+      "status": "ok",
+      "elapsed_s": 0.22993649999261834
+    },
+    {
+      "stage": "make_forward_plan",
+      "status": "ok",
+      "elapsed_s": 0.007368399994447827
+    },
+    {
+      "stage": "forward_setpts",
+      "status": "ok",
+      "elapsed_s": 0.5641655999934301
+    }
+  ],
+  "memory_snapshots": [
+    {
+      "label": "initial_after_cpu_context",
+      "free_mib": 7123.0,
+      "total_mib": 8191.5625,
+      "used_mib": 1068.5625,
+      "cupy_pool_used_mib": 0.0,
+      "cupy_pool_total_mib": 0.0
+    },
+    {
+      "label": "after_forward_point_arrays",
+      "free_mib": 6559.0,
+      "total_mib": 8191.5625,
+      "used_mib": 1632.5625,
+      "cupy_pool_used_mib": 564.0,
+      "cupy_pool_total_mib": 564.0
+    },
+    {
+      "label": "after_forward_plan_constructor",
+      "free_mib": 6559.0,
+      "total_mib": 8191.5625,
+      "used_mib": 1632.5625,
+      "cupy_pool_used_mib": 564.0,
+      "cupy_pool_total_mib": 564.0
+    },
+    {
+      "label": "after_forward_setpts",
+      "free_mib": 5143.0,
+      "total_mib": 8191.5625,
+      "used_mib": 3048.5625,
+      "cupy_pool_used_mib": 564.0,
+      "cupy_pool_total_mib": 564.0
+    }
+  ],
+  "forward_setpts_succeeded_without_acfo_plan": true,
+  "interpretation": "If this succeeds while the mixed-resident benchmark fails at the same forward setpts call, the 8 GB failure is co-residency pressure rather than an invalid complex128 cuFINUFFT geometry."
+}

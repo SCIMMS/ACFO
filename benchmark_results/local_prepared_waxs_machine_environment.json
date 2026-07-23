@@ -1,0 +1,31 @@
+{
+  "schema": "prepared-waxs-machine-environment-v1",
+  "passed": true,
+  "generated_at_utc": "2026-07-13T03:29:06.417829+00:00",
+  "machine": {
+    "hostname": "DESKTOP-KMB20P7",
+    "platform": "Windows-10-10.0.19045-SP0",
+    "machine": "AMD64",
+    "processor": "Intel64 Family 6 Model 158 Stepping 9, GenuineIntel",
+    "processor_identifier": "Intel64 Family 6 Model 158 Stepping 9, GenuineIntel",
+    "cpu_count": 4,
+    "total_physical_memory_bytes": 8551501824
+  },
+  "machine_fingerprint_sha256": "8b7f62c066d537e1220371c39c073d15bee0fea1549e0c86645f7848830a511e",
+  "runtime": {
+    "python": "3.13.13 | packaged by Anaconda, Inc. | (main, Apr 14 2026, 06:12:50) [MSC v.1942 64 bit (AMD64)]",
+    "executable": "C:\\Users\\tnvlaos456\\Documents\\Atomic WAXS Cake-Map Simulator\\.venv\\Scripts\\python.exe",
+    "packages": {
+      "numpy": "2.4.6",
+      "scipy": "1.17.1",
+      "finufft": "2.5.1",
+      "pybind11": "3.0.4"
+    }
+  },
+  "source_sha256": {
+    "benchmark_driver": "5f919a2b682250dd7bea9f048c4f7ec009531829647da17e3797dcf871e2d147",
+    "cpp_solvers": "da716af3a62fb401fe79e71a37323351e7eb6a58b65e2e6cd5194369436a36b4",
+    "exact_harmonic": "f71d2823df280ee81b5911eeafcdedbae92b0f83e54681bd0e043ed9c1d54a14",
+    "manifest": null
+  }
+}

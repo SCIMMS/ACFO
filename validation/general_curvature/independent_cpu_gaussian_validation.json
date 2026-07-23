@@ -1,0 +1,610 @@
+{
+  "schema": "acfo-stage3-gaussian-validation-v1",
+  "generated_at_utc": "2026-07-22T04:20:45.882292+00:00",
+  "passed": true,
+  "phantom": {
+    "type": "shifted rotated anisotropic Gaussian mixture",
+    "components": 3,
+    "complex_coefficients": true,
+    "half_width": 4.5
+  },
+  "error_decomposition": {
+    "operator": "ACFO minus direct bin-center sum",
+    "histogram_placement": "direct bin-center sum minus Cartesian voxel sum",
+    "voxel_quadrature": "Cartesian voxel sum minus analytic transform",
+    "object_discretization": "direct bin-center sum minus analytic transform",
+    "total": "ACFO minus analytic transform"
+  },
+  "acceptance": {
+    "operator_error_max": 1e-12,
+    "closure_max": 1e-12,
+    "finest_total_max": 0.02
+  },
+  "convergence": {
+    "sphere": {
+      "coarsest_total_relative_l2": 0.05098694278089039,
+      "finest_total_relative_l2": 0.009337604521731754,
+      "finest_below_coarsest": true,
+      "empirical_resolution_doubling_order": 2.449003443270371,
+      "finest_dominant_error": "histogram_placement"
+    },
+    "ellipsoid": {
+      "coarsest_total_relative_l2": 0.05599640464605324,
+      "finest_total_relative_l2": 0.0102628216552648,
+      "finest_below_coarsest": true,
+      "empirical_resolution_doubling_order": 2.4479067598434234,
+      "finest_dominant_error": "histogram_placement"
+    },
+    "paraboloid": {
+      "coarsest_total_relative_l2": 0.052122566607857745,
+      "finest_total_relative_l2": 0.009351635042696725,
+      "finest_below_coarsest": true,
+      "empirical_resolution_doubling_order": 2.478617593120882,
+      "finest_dominant_error": "histogram_placement"
+    },
+    "spline": {
+      "coarsest_total_relative_l2": 0.04919909961892296,
+      "finest_total_relative_l2": 0.009096805245049884,
+      "finest_below_coarsest": true,
+      "empirical_resolution_doubling_order": 2.435200041683444,
+      "finest_dominant_error": "histogram_placement"
+    }
+  },
+  "environment": {
+    "python": "3.14.6",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "platform": "Windows-11-10.0.26200-SP0"
+  },
+  "levels": [
+    {
+      "n_xyz": 12,
+      "n_r": 24,
+      "n_z": 12,
+      "n_phi": 64,
+      "n_voxels": 1728,
+      "n_nonzero_histogram_sources": 1728,
+      "voxel_volume": 0.421875,
+      "families": {
+        "sphere": {
+          "operator": {
+            "relative_l2": 1.8095478709398666e-15,
+            "relative_linf": 5.973642669938858e-15,
+            "phase_rms_rad": 1.4032570796243677e-15,
+            "max_absolute_error": 2.487519042106764e-14,
+            "phase_mask_count": 1280,
+            "phase_threshold": 0.004164157750219472
+          },
+          "histogram_placement": {
+            "relative_l2": 0.05121857345666454,
+            "relative_linf": 0.08610901738201425,
+            "phase_rms_rad": 0.15451036554318417,
+            "max_absolute_error": 0.36613339253269367,
+            "phase_mask_count": 1280,
+            "phase_threshold": 0.004251975038901891
+          },
+          "voxel_quadrature": {
+            "relative_l2": 0.0027547461724273027,
+            "relative_linf": 0.008317143433615122,
+            "phase_rms_rad": 0.009209643740825252,
+            "max_absolute_error": 0.035366209275398165,
+            "phase_mask_count": 1280,
+            "phase_threshold": 0.004252206248176476
+          },
+          "object_discretization": {
+            "relative_l2": 0.05098694278089032,
+            "relative_linf": 0.08613272230740612,
+            "phase_rms_rad": 0.15870656520052986,
+            "max_absolute_error": 0.36625409996800157,
+            "phase_mask_count": 1280,
+            "phase_threshold": 0.004252206248176476
+          },
+          "total": {
+            "relative_l2": 0.05098694278089039,
+            "relative_linf": 0.0861327223074068,
+            "phase_rms_rad": 0.15870656520052986,
+            "max_absolute_error": 0.36625409996800445,
+            "phase_mask_count": 1280,
+            "phase_threshold": 0.004252206248176476
+          },
+          "decomposition_closure_relative_l2": 1.2725726349581332e-18
+        },
+        "ellipsoid": {
+          "operator": {
+            "relative_l2": 1.7056710596350479e-15,
+            "relative_linf": 4.325435913725181e-15,
+            "phase_rms_rad": 1.6232490156255135e-15,
+            "max_absolute_error": 1.7776054015095464e-14,
+            "phase_mask_count": 1280,
+            "phase_threshold": 0.004109656083145213
+          },
+          "histogram_placement": {
+            "relative_l2": 0.056299813305611665,
+            "relative_linf": 0.08354342794393589,
+            "phase_rms_rad": 0.19871684252118738,
+            "max_absolute_error": 0.3505588877127995,
+            "phase_mask_count": 1280,
+            "phase_threshold": 0.004196127646905412
+          },
+          "voxel_quadrature": {
+            "relative_l2": 0.0030667287469539253,
+            "relative_linf": 0.007816750106174886,
+            "phase_rms_rad": 0.010464249855433476,
+            "max_absolute_error": 0.03280033658368219,
+            "phase_mask_count": 1280,
+            "phase_threshold": 0.004196160314472812
+          },
+          "object_discretization": {
+            "relative_l2": 0.05599640464605321,
+            "relative_linf": 0.08532734707838434,
+            "phase_rms_rad": 0.20311393981308234,
+            "max_absolute_error": 0.35804722754956403,
+            "phase_mask_count": 1280,
+            "phase_threshold": 0.004196160314472812
+          },
+          "total": {
+            "relative_l2": 0.05599640464605324,
+            "relative_linf": 0.08532734707838487,
+            "phase_rms_rad": 0.20311393981308234,
+            "max_absolute_error": 0.35804722754956625,
+            "phase_mask_count": 1280,
+            "phase_threshold": 0.004196160314472812
+          },
+          "decomposition_closure_relative_l2": 1.5465004833640309e-18
+        },
+        "paraboloid": {
+          "operator": {
+            "relative_l2": 1.8128380559211332e-15,
+            "relative_linf": 4.386647224044162e-15,
+            "phase_rms_rad": 1.6791452408426154e-15,
+            "max_absolute_error": 1.8663638269685067e-14,
+            "phase_mask_count": 1280,
+            "phase_threshold": 0.0042546476423692406
+          },
+          "histogram_placement": {
+            "relative_l2": 0.05206779321333985,
+            "relative_linf": 0.08423244183446402,
+            "phase_rms_rad": 0.17653490363270666,
+            "max_absolute_error": 0.36542622834862065,
+            "phase_mask_count": 1280,
+            "phase_threshold": 0.004338307431081799
+          },
+          "voxel_quadrature": {
+            "relative_l2": 0.0028302654860891258,
+            "relative_linf": 0.007679460428851843,
+            "phase_rms_rad": 0.007205901549400026,
+            "max_absolute_error": 0.033318818659239725,
+            "phase_mask_count": 1280,
+            "phase_threshold": 0.004338692668310451
+          },
+          "object_discretization": {
+            "relative_l2": 0.05212256660785779,
+            "relative_linf": 0.08491353905800983,
+            "phase_rms_rad": 0.17761059648231609,
+            "max_absolute_error": 0.3684137493512804,
+            "phase_mask_count": 1280,
+            "phase_threshold": 0.004338692668310451
+          },
+          "total": {
+            "relative_l2": 0.052122566607857745,
+            "relative_linf": 0.0849135390580108,
+            "phase_rms_rad": 0.17761059648231609,
+            "max_absolute_error": 0.3684137493512846,
+            "phase_mask_count": 1280,
+            "phase_threshold": 0.004338692668310451
+          },
+          "decomposition_closure_relative_l2": 1.1492357920001335e-18
+        },
+        "spline": {
+          "operator": {
+            "relative_l2": 1.7410471322321053e-15,
+            "relative_linf": 5.352238344784278e-15,
+            "phase_rms_rad": 1.373495506818305e-15,
+            "max_absolute_error": 2.4907687159542948e-14,
+            "phase_mask_count": 1280,
+            "phase_threshold": 0.004653695436380431
+          },
+          "histogram_placement": {
+            "relative_l2": 0.04949082112985843,
+            "relative_linf": 0.08468733331497359,
+            "phase_rms_rad": 0.18112648837390735,
+            "max_absolute_error": 0.3987280493617964,
+            "phase_mask_count": 1280,
+            "phase_threshold": 0.004708237156067083
+          },
+          "voxel_quadrature": {
+            "relative_l2": 0.003192093718025731,
+            "relative_linf": 0.008477306136829356,
+            "phase_rms_rad": 0.01012892381654443,
+            "max_absolute_error": 0.03993493600030253,
+            "phase_mask_count": 1280,
+            "phase_threshold": 0.004710804984003895
+          },
+          "object_discretization": {
+            "relative_l2": 0.04919909961892295,
+            "relative_linf": 0.08314954390766013,
+            "phase_rms_rad": 0.1859608592087247,
+            "max_absolute_error": 0.391701285857856,
+            "phase_mask_count": 1280,
+            "phase_threshold": 0.004710804984003895
+          },
+          "total": {
+            "relative_l2": 0.04919909961892296,
+            "relative_linf": 0.08314954390766038,
+            "phase_rms_rad": 0.18596085920872485,
+            "max_absolute_error": 0.39170128585785724,
+            "phase_mask_count": 1280,
+            "phase_threshold": 0.004710804984003895
+          },
+          "decomposition_closure_relative_l2": 1.1949018604700156e-18
+        }
+      }
+    },
+    {
+      "n_xyz": 18,
+      "n_r": 36,
+      "n_z": 18,
+      "n_phi": 96,
+      "n_voxels": 5832,
+      "n_nonzero_histogram_sources": 5832,
+      "voxel_volume": 0.125,
+      "families": {
+        "sphere": {
+          "operator": {
+            "relative_l2": 3.1258149423055222e-15,
+            "relative_linf": 6.699916832972953e-15,
+            "phase_rms_rad": 2.75117257485889e-15,
+            "max_absolute_error": 2.842517866562357e-14,
+            "phase_mask_count": 1920,
+            "phase_threshold": 0.0042426166434980156
+          },
+          "histogram_placement": {
+            "relative_l2": 0.021455707084071875,
+            "relative_linf": 0.03199106217270168,
+            "phase_rms_rad": 0.07349722628991703,
+            "max_absolute_error": 0.1360486227427969,
+            "phase_mask_count": 1920,
+            "phase_threshold": 0.004252707272060777
+          },
+          "voxel_quadrature": {
+            "relative_l2": 6.976399826487317e-07,
+            "relative_linf": 2.389224093701944e-06,
+            "phase_rms_rad": 3.4428643868916435e-06,
+            "max_absolute_error": 1.0160672122098382e-05,
+            "phase_mask_count": 1920,
+            "phase_threshold": 0.004252707876537063
+          },
+          "object_discretization": {
+            "relative_l2": 0.021455759362671578,
+            "relative_linf": 0.0319912265697843,
+            "phase_rms_rad": 0.07349484472859409,
+            "max_absolute_error": 0.13604934121340348,
+            "phase_mask_count": 1920,
+            "phase_threshold": 0.004252707876537063
+          },
+          "total": {
+            "relative_l2": 0.021455759362671696,
+            "relative_linf": 0.03199122656978431,
+            "phase_rms_rad": 0.07349484472859373,
+            "max_absolute_error": 0.1360493412134035,
+            "phase_mask_count": 1920,
+            "phase_threshold": 0.004252707876537063
+          },
+          "decomposition_closure_relative_l2": 1.5182639842509695e-19
+        },
+        "ellipsoid": {
+          "operator": {
+            "relative_l2": 3.2137011707558813e-15,
+            "relative_linf": 7.774407968725765e-15,
+            "phase_rms_rad": 2.6776473638660082e-15,
+            "max_absolute_error": 3.2637535769130114e-14,
+            "phase_mask_count": 1920,
+            "phase_threshold": 0.004198073461081751
+          },
+          "histogram_placement": {
+            "relative_l2": 0.023479885379795506,
+            "relative_linf": 0.0324052569338758,
+            "phase_rms_rad": 0.061675910742094754,
+            "max_absolute_error": 0.13594775245137125,
+            "phase_mask_count": 1920,
+            "phase_threshold": 0.004195237603848596
+          },
+          "voxel_quadrature": {
+            "relative_l2": 7.382678245381828e-07,
+            "relative_linf": 2.1155118485545754e-06,
+            "phase_rms_rad": 7.804718135303589e-06,
+            "max_absolute_error": 8.875076198365962e-06,
+            "phase_mask_count": 1920,
+            "phase_threshold": 0.0041952382372284335
+          },
+          "object_discretization": {
+            "relative_l2": 0.023479950595099396,
+            "relative_linf": 0.032405421933029664,
+            "phase_rms_rad": 0.06167529209515331,
+            "max_absolute_error": 0.13594846518696696,
+            "phase_mask_count": 1920,
+            "phase_threshold": 0.0041952382372284335
+          },
+          "total": {
+            "relative_l2": 0.0234799505950995,
+            "relative_linf": 0.032405421933029074,
+            "phase_rms_rad": 0.06167529209515252,
+            "max_absolute_error": 0.1359484651869645,
+            "phase_mask_count": 1920,
+            "phase_threshold": 0.0041952382372284335
+          },
+          "decomposition_closure_relative_l2": 1.4276434885972836e-19
+        },
+        "paraboloid": {
+          "operator": {
+            "relative_l2": 3.1532912246102895e-15,
+            "relative_linf": 1.0250188004510238e-14,
+            "phase_rms_rad": 1.886783320514371e-15,
+            "max_absolute_error": 4.441114137554713e-14,
+            "phase_mask_count": 1920,
+            "phase_threshold": 0.004332714810304509
+          },
+          "histogram_placement": {
+            "relative_l2": 0.02070893613706536,
+            "relative_linf": 0.029739299897349317,
+            "phase_rms_rad": 0.02983863417717866,
+            "max_absolute_error": 0.12898169568835832,
+            "phase_mask_count": 1920,
+            "phase_threshold": 0.004337079088396917
+          },
+          "voxel_quadrature": {
+            "relative_l2": 1.0906804216345247e-06,
+            "relative_linf": 3.0048841320934255e-06,
+            "phase_rms_rad": 3.3716169082448433e-06,
+            "max_absolute_error": 1.3032421918414094e-05,
+            "phase_mask_count": 1920,
+            "phase_threshold": 0.004337079682781226
+          },
+          "object_discretization": {
+            "relative_l2": 0.020709034923679617,
+            "relative_linf": 0.029739699855056718,
+            "phase_rms_rad": 0.02983955837814149,
+            "max_absolute_error": 0.12898344801337827,
+            "phase_mask_count": 1920,
+            "phase_threshold": 0.004337079682781226
+          },
+          "total": {
+            "relative_l2": 0.020709034923679773,
+            "relative_linf": 0.029739699855055545,
+            "phase_rms_rad": 0.029839558378141614,
+            "max_absolute_error": 0.1289834480133732,
+            "phase_mask_count": 1920,
+            "phase_threshold": 0.004337079682781226
+          },
+          "decomposition_closure_relative_l2": 2.465430065874045e-19
+        },
+        "spline": {
+          "operator": {
+            "relative_l2": 3.2998390094273065e-15,
+            "relative_linf": 8.490096934601858e-15,
+            "phase_rms_rad": 1.9725569246790614e-15,
+            "max_absolute_error": 3.9972693093032676e-14,
+            "phase_mask_count": 1920,
+            "phase_threshold": 0.004708155089504546
+          },
+          "histogram_placement": {
+            "relative_l2": 0.019152749726306886,
+            "relative_linf": 0.029207593227167043,
+            "phase_rms_rad": 0.03499472453825888,
+            "max_absolute_error": 0.1376141070589415,
+            "phase_mask_count": 1920,
+            "phase_threshold": 0.004711586675034273
+          },
+          "voxel_quadrature": {
+            "relative_l2": 9.657720095250335e-07,
+            "relative_linf": 2.7677986967161447e-06,
+            "phase_rms_rad": 2.4292160677838552e-06,
+            "max_absolute_error": 1.3040727390341242e-05,
+            "phase_mask_count": 1920,
+            "phase_threshold": 0.004711588095555293
+          },
+          "object_discretization": {
+            "relative_l2": 0.019152677616103828,
+            "relative_linf": 0.029207649993319183,
+            "phase_rms_rad": 0.03499437378303127,
+            "max_absolute_error": 0.13761441600766827,
+            "phase_mask_count": 1920,
+            "phase_threshold": 0.004711588095555293
+          },
+          "total": {
+            "relative_l2": 0.01915267761610397,
+            "relative_linf": 0.029207649993320393,
+            "phase_rms_rad": 0.03499437378303101,
+            "max_absolute_error": 0.137614416007674,
+            "phase_mask_count": 1920,
+            "phase_threshold": 0.004711588095555293
+          },
+          "decomposition_closure_relative_l2": 2.3466768682298548e-19
+        }
+      }
+    },
+    {
+      "n_xyz": 24,
+      "n_r": 48,
+      "n_z": 24,
+      "n_phi": 128,
+      "n_voxels": 13824,
+      "n_nonzero_histogram_sources": 13824,
+      "voxel_volume": 0.052734375,
+      "families": {
+        "sphere": {
+          "operator": {
+            "relative_l2": 4.9841174304069906e-15,
+            "relative_linf": 1.758812264140834e-14,
+            "phase_rms_rad": 1.0784480230752758e-14,
+            "max_absolute_error": 7.460799916997573e-14,
+            "phase_mask_count": 2560,
+            "phase_threshold": 0.004241953543940129
+          },
+          "histogram_placement": {
+            "relative_l2": 0.009337604747727051,
+            "relative_linf": 0.01768556771203167,
+            "phase_rms_rad": 0.031494262251107116,
+            "max_absolute_error": 0.07520830672320604,
+            "phase_mask_count": 2560,
+            "phase_threshold": 0.004252524315181643
+          },
+          "voxel_quadrature": {
+            "relative_l2": 2.9787257832031874e-08,
+            "relative_linf": 3.454880261014836e-08,
+            "phase_rms_rad": 5.276031469333641e-08,
+            "max_absolute_error": 1.4691961996289233e-07,
+            "phase_mask_count": 2560,
+            "phase_threshold": 0.00425252422264082
+          },
+          "object_discretization": {
+            "relative_l2": 0.009337604521731683,
+            "relative_linf": 0.017685560178553515,
+            "phase_rms_rad": 0.03149424981424728,
+            "max_absolute_error": 0.07520827305027074,
+            "phase_mask_count": 2560,
+            "phase_threshold": 0.00425252422264082
+          },
+          "total": {
+            "relative_l2": 0.009337604521731754,
+            "relative_linf": 0.01768556017855384,
+            "phase_rms_rad": 0.03149424981425523,
+            "max_absolute_error": 0.07520827305027213,
+            "phase_mask_count": 2560,
+            "phase_threshold": 0.00425252422264082
+          },
+          "decomposition_closure_relative_l2": 4.0717848666457395e-20
+        },
+        "ellipsoid": {
+          "operator": {
+            "relative_l2": 4.8537306533377375e-15,
+            "relative_linf": 1.0944214626453604e-14,
+            "phase_rms_rad": 2.7321643423580762e-15,
+            "max_absolute_error": 4.5801989841181656e-14,
+            "phase_mask_count": 2560,
+            "phase_threshold": 0.0041850412665036954
+          },
+          "histogram_placement": {
+            "relative_l2": 0.010262822383798033,
+            "relative_linf": 0.017763911087080635,
+            "phase_rms_rad": 0.04932310354824221,
+            "max_absolute_error": 0.07452667728341456,
+            "phase_mask_count": 2560,
+            "phase_threshold": 0.004195398013313433
+          },
+          "voxel_quadrature": {
+            "relative_l2": 2.9709669896754793e-08,
+            "relative_linf": 3.51653816646541e-08,
+            "phase_rms_rad": 5.8181423137481576e-08,
+            "max_absolute_error": 1.4753276940288049e-07,
+            "phase_mask_count": 2560,
+            "phase_threshold": 0.004195397928843486
+          },
+          "object_discretization": {
+            "relative_l2": 0.010262821655264699,
+            "relative_linf": 0.017763898420236627,
+            "phase_rms_rad": 0.04932307202903095,
+            "max_absolute_error": 0.07452662264044681,
+            "phase_mask_count": 2560,
+            "phase_threshold": 0.004195397928843486
+          },
+          "total": {
+            "relative_l2": 0.0102628216552648,
+            "relative_linf": 0.01776389842023699,
+            "phase_rms_rad": 0.04932307202903096,
+            "max_absolute_error": 0.07452662264044833,
+            "phase_mask_count": 2560,
+            "phase_threshold": 0.004195397928843486
+          },
+          "decomposition_closure_relative_l2": 1.3777316126080148e-20
+        },
+        "paraboloid": {
+          "operator": {
+            "relative_l2": 4.9635042228598325e-15,
+            "relative_linf": 1.9700560913513702e-14,
+            "phase_rms_rad": 2.466419002338577e-15,
+            "max_absolute_error": 8.526524122886353e-14,
+            "phase_mask_count": 2560,
+            "phase_threshold": 0.0043280616020620714
+          },
+          "histogram_placement": {
+            "relative_l2": 0.00935163417359646,
+            "relative_linf": 0.016334533083626212,
+            "phase_rms_rad": 0.02595725184276151,
+            "max_absolute_error": 0.07087625797635883,
+            "phase_mask_count": 2560,
+            "phase_threshold": 0.00433904401267554
+          },
+          "voxel_quadrature": {
+            "relative_l2": 2.944045174675657e-08,
+            "relative_linf": 3.396184646134376e-08,
+            "phase_rms_rad": 3.977312868346524e-08,
+            "max_absolute_error": 1.4736194290252104e-07,
+            "phase_mask_count": 2560,
+            "phase_threshold": 0.0043390439053498505
+          },
+          "object_discretization": {
+            "relative_l2": 0.009351635042696758,
+            "relative_linf": 0.016334534437144072,
+            "phase_rms_rad": 0.025957251404301034,
+            "max_absolute_error": 0.07087626209621724,
+            "phase_mask_count": 2560,
+            "phase_threshold": 0.0043390439053498505
+          },
+          "total": {
+            "relative_l2": 0.009351635042696725,
+            "relative_linf": 0.016334534437142816,
+            "phase_rms_rad": 0.025957251404301235,
+            "max_absolute_error": 0.07087626209621178,
+            "phase_mask_count": 2560,
+            "phase_threshold": 0.0043390439053498505
+          },
+          "decomposition_closure_relative_l2": 4.7923802959383285e-20
+        },
+        "spline": {
+          "operator": {
+            "relative_l2": 4.942681815026894e-15,
+            "relative_linf": 1.7936866726985373e-14,
+            "phase_rms_rad": 2.815525146416725e-15,
+            "max_absolute_error": 8.438052880404454e-14,
+            "phase_mask_count": 2560,
+            "phase_threshold": 0.004704307061449984
+          },
+          "histogram_placement": {
+            "relative_l2": 0.009096805110150217,
+            "relative_linf": 0.016429492509427514,
+            "phase_rms_rad": 0.020274026194750133,
+            "max_absolute_error": 0.07741341231334925,
+            "phase_mask_count": 2560,
+            "phase_threshold": 0.004711856575541099
+          },
+          "voxel_quadrature": {
+            "relative_l2": 2.957825715281787e-08,
+            "relative_linf": 2.8460322074565e-08,
+            "phase_rms_rad": 5.1939951456341344e-08,
+            "max_absolute_error": 1.341009537739211e-07,
+            "phase_mask_count": 2560,
+            "phase_threshold": 0.004711856507546946
+          },
+          "object_discretization": {
+            "relative_l2": 0.009096805245049928,
+            "relative_linf": 0.016429484799214987,
+            "phase_rms_rad": 0.020274021568025477,
+            "max_absolute_error": 0.07741337486682476,
+            "phase_mask_count": 2560,
+            "phase_threshold": 0.004711856507546946
+          },
+          "total": {
+            "relative_l2": 0.009096805245049884,
+            "relative_linf": 0.016429484799215528,
+            "phase_rms_rad": 0.020274021568025276,
+            "max_absolute_error": 0.07741337486682731,
+            "phase_mask_count": 2560,
+            "phase_threshold": 0.004711856507546946
+          },
+          "decomposition_closure_relative_l2": 1.960294994616245e-20
+        }
+      }
+    }
+  ]
+}

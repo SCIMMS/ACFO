@@ -174,6 +174,7 @@ def validate_one(path: Path, args: argparse.Namespace, model: str) -> dict:
         "histogram_cake_s": cake_s,
         "direct_cake_times": direct_times,
         "histogram_cake_times": cake_times,
+        "cake_amplitude_rel_l2_vs_direct": relative_l2(cake_amp, direct_amp),
         "cake_intensity_rel_l2_vs_direct": relative_l2(cake_i, direct_i),
         "ring_rel_l2_vs_direct": relative_l2(cake_ring, direct_ring),
         "direct_anisotropy": anisotropy_metric(direct_i),
@@ -202,14 +203,15 @@ def write_summary(rows: list[dict], output: Path) -> None:
         "Initial 2D cake-map validation using public COD CIF structures converted to finite supercell NPZ inputs.",
         "The comparison is direct 2D WAXS cake intensity versus the cylindrical-histogram cake path on the same fixed crystal orientation.",
         "",
-        "| structure | atoms | model | n_phi | direct cake s | histogram cake s | speedup | 2D intensity L2 | ring L2 | direct anisotropy | histogram anisotropy |",
-        "|---|---:|---|---:|---:|---:|---:|---:|---:|---:|---:|",
+        "| structure | atoms | model | n_phi | direct cake s | histogram cake s | speedup | complex amplitude L2 | 2D intensity L2 | ring L2 | direct anisotropy | histogram anisotropy |",
+        "|---|---:|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|",
     ]
     for row in rows:
         lines.append(
             "| {structure_id} | {atoms} | {form_factor_model} | {n_phi} | "
             "{direct_cake_s:.4f} | {histogram_cake_s:.4f} | "
-            "{speedup_histogram_vs_direct:.2f}x | {cake_intensity_rel_l2_vs_direct:.3e} | "
+            "{speedup_histogram_vs_direct:.2f}x | {cake_amplitude_rel_l2_vs_direct:.3e} | "
+            "{cake_intensity_rel_l2_vs_direct:.3e} | "
             "{ring_rel_l2_vs_direct:.3e} | {direct_anisotropy:.3f} | "
             "{histogram_anisotropy:.3f} |".format(**row)
         )
@@ -218,7 +220,8 @@ def write_summary(rows: list[dict], output: Path) -> None:
             "",
             "Interpretation:",
             "",
-            "- `cake_intensity_rel_l2_vs_direct` is the primary 2D fixed-orientation crystal solver check.",
+            "- `cake_amplitude_rel_l2_vs_direct` is the primary complex fixed-orientation solver check.",
+            "- `cake_intensity_rel_l2_vs_direct` is the corresponding detector-intensity check.",
             "- `ring_rel_l2_vs_direct` verifies the 1D reduction after azimuthal averaging.",
             "- The anisotropy columns are not an error metric; they confirm that these CIF supercells exercise non-isotropic cake-map structure.",
             "- The `atomic_number` rows are a lightweight multi-element path check.",
@@ -234,11 +237,12 @@ def write_summary(rows: list[dict], output: Path) -> None:
 
 
 def print_table(rows: list[dict]) -> None:
-    print("structure\tmodel\tatoms\tn_phi\tdirect_s\thist_s\tcake_l2\tring_l2\tanisotropy")
+    print("structure\tmodel\tatoms\tn_phi\tdirect_s\thist_s\tamp_l2\tcake_l2\tring_l2\tanisotropy")
     for row in rows:
         print(
             f"{row['structure_id']}\t{row['form_factor_model']}\t{row['atoms']}\t"
             f"{row['n_phi']}\t{row['direct_cake_s']:.4f}\t{row['histogram_cake_s']:.4f}\t"
+            f"{row['cake_amplitude_rel_l2_vs_direct']:.3e}\t"
             f"{row['cake_intensity_rel_l2_vs_direct']:.3e}\t{row['ring_rel_l2_vs_direct']:.3e}\t"
             f"{row['direct_anisotropy']:.3f}"
         )

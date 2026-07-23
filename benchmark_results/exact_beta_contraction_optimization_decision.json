@@ -1,0 +1,71 @@
+{
+  "schema": "exact-beta-contraction-optimization-decision-v1",
+  "generated_at_utc": "2026-07-13T00:35:05.758143+00:00",
+  "contract": {
+    "unit": "structures/processed/protein_nanocrystal_lysozyme_1iee_1x1x1_fixed.npz",
+    "unit_structure": "protein_nanocrystal_lysozyme_1iee_1x1x1_fixed",
+    "atom_count": 8008,
+    "q_min_inv_angstrom": 5.0,
+    "q_max_inv_angstrom": 6.3,
+    "nq": 512,
+    "nphi": 768,
+    "harmonic_margin": 48,
+    "warmup_pairs": 2,
+    "measured_pairs": 10,
+    "hardware_threads": 4
+  },
+  "backend_comparison": {
+    "baseline_coefficient_median_seconds": 4.32275689999733,
+    "fused_phase_coefficient_median_seconds": 3.5925793000023987,
+    "cached_phase_coefficient_median_seconds": 3.1413568499992834,
+    "baseline_over_fused_paired_median": 1.2094026536840599,
+    "baseline_over_fused_paired_p05": 1.160511554329276,
+    "fused_over_cached_paired_median": 1.169462555992638,
+    "fused_over_cached_paired_p05": 1.022720027698247,
+    "cached_phase_setup_seconds": 0.22461180000391323,
+    "cached_phase_mib": 42.8895263671875,
+    "fused_vs_baseline_complex_l2": 0.0,
+    "cached_vs_fused_complex_l2": 1.2535515482450155e-14
+  },
+  "selected_low_memory_full_path": {
+    "backend": "fused_phase",
+    "specific_setup_seconds": 0.2123312999974587,
+    "first_execute_seconds": 3.559575799998129,
+    "first_total_seconds": 3.7719070999955875,
+    "hot_execute_seconds": 3.6518217000048026,
+    "coefficient_seconds": 3.6317995999997947,
+    "synthesis_seconds": 0.01667029999953229,
+    "legacy_unprepared_seconds": 14.515064100000018,
+    "legacy_over_selected_speedup": 3.9747461109563287,
+    "legacy_vs_selected_complex_l2": 4.8106151422818794e-14,
+    "direct_lattice_seconds": 4.258723500002816,
+    "separable_lattice_seconds": 0.20921719999751076,
+    "lattice_complex_l2": 1.6112807452798642e-10
+  },
+  "unpaired_finufft_projection": {
+    "first_total_finufft_over_selected": 21.8300579566498,
+    "abba_finufft_median_over_selected_hot": 27.105542776052744,
+    "status": "exploratory; optimized factorized and saved FINUFFT receipts are not paired"
+  },
+  "decision": {
+    "recommended_backend": "fused_phase",
+    "reason": "It gives a robust exact speedup without a source-by-harmonic cache; cached_phase is optional only when 42.89 MiB extra setup memory is acceptable for repeated hot execution.",
+    "default_policy": "Keep the legacy baseline as the API default and expose fused_phase/cached_phase through explicit prepared-plan flags until optimized 10/30 AB/BA and independent reruns are complete.",
+    "remaining_exact_bottleneck": "Miller Bessel recurrence plus source/q axial phase and harmonic accumulation. Further cache-based acceleration increases working memory; approximation-based tables require a separate error sweep."
+  },
+  "gates": {
+    "backend_benchmark_pass": true,
+    "full_profile_pass": true,
+    "baseline_over_fused_p05_ge_1_1": true,
+    "fused_vs_baseline_complex_l2_le_1e_12": true,
+    "cached_vs_fused_complex_l2_le_1e_12": true,
+    "legacy_vs_selected_complex_l2_le_1e_12": true
+  },
+  "claim_boundary": [
+    "The backend A/B is a local same-machine 2-warmup/10-measured ABC/CBA comparison.",
+    "The optimized factorized-to-FINUFFT ratios combine separate local receipts and are not a paired timing claim.",
+    "The current publication timing receipt remains the legacy 10/30 AB/BA result until the optimized protocol is rerun.",
+    "The repeated-lattice path remains a standard crystallographic specialization and does not apply to dense disorder."
+  ],
+  "passed": true
+}

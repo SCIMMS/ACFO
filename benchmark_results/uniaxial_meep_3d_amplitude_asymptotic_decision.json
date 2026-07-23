@@ -1,0 +1,458 @@
+{
+  "schema": "uniaxial-meep-3d-amplitude-asymptotic-decision-v1",
+  "generated_at_utc": "2026-07-12T18:17:10.985624+00:00",
+  "scope": "actual-uniaxial 3-D PyMeep patterned/point-source amplitude bridge with far-radius raw-field diagnostics",
+  "small_source_single_component_resolution_sweep": {
+    "8": {
+      "configuration": {
+        "resolutions": [
+          8.0
+        ],
+        "cell_width": 10.0,
+        "pml_width": 1.0,
+        "source_shape": [
+          64,
+          64,
+          64
+        ],
+        "source_half_width": 0.25,
+        "angles_deg": [
+          10.0,
+          12.0,
+          14.0,
+          16.0,
+          18.0,
+          20.0,
+          22.0,
+          24.0,
+          26.0,
+          28.0,
+          30.0,
+          32.0,
+          34.0,
+          36.0,
+          38.0,
+          40.0,
+          42.0,
+          44.0,
+          46.0,
+          48.0,
+          50.0,
+          52.0,
+          54.0,
+          56.0,
+          58.0,
+          60.0,
+          62.0,
+          64.0,
+          66.0,
+          68.0,
+          70.0
+        ],
+        "radii": [
+          2.5,
+          2.875,
+          3.25,
+          3.625,
+          4.0
+        ],
+        "observation_azimuth": 0.7853981633974483,
+        "observation_azimuth_deg": 45.0,
+        "source_vector_mode": "x",
+        "source_vector": [
+          [
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ],
+        "until_after_sources": 12.0
+      },
+      "ordinary_calibration_l2": 0.0633778163171531,
+      "extraordinary_complex_l2": 0.12046136675516449,
+      "intensity_ncc": 0.9611742127338212,
+      "peak_error_deg": 0.0,
+      "forced_sphere_wrong_to_correct_ratio": 1.049602665285829,
+      "extraordinary_radial_ratio_scatter": 0.013826675528638496,
+      "ordinary_radial_ratio_scatter": 0.013944261857960782,
+      "pattern_runtime_s": 25.41339722600003,
+      "point_runtime_s": 24.575129557000082
+    },
+    "12": {
+      "configuration": {
+        "resolutions": [
+          12.0
+        ],
+        "cell_width": 10.0,
+        "pml_width": 1.0,
+        "source_shape": [
+          64,
+          64,
+          64
+        ],
+        "source_half_width": 0.25,
+        "angles_deg": [
+          10.0,
+          12.0,
+          14.0,
+          16.0,
+          18.0,
+          20.0,
+          22.0,
+          24.0,
+          26.0,
+          28.0,
+          30.0,
+          32.0,
+          34.0,
+          36.0,
+          38.0,
+          40.0,
+          42.0,
+          44.0,
+          46.0,
+          48.0,
+          50.0,
+          52.0,
+          54.0,
+          56.0,
+          58.0,
+          60.0,
+          62.0,
+          64.0,
+          66.0,
+          68.0,
+          70.0
+        ],
+        "radii": [
+          2.5,
+          2.875,
+          3.25,
+          3.625,
+          4.0
+        ],
+        "observation_azimuth": 0.7853981633974483,
+        "observation_azimuth_deg": 45.0,
+        "source_vector_mode": "x",
+        "source_vector": [
+          [
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ],
+        "until_after_sources": 12.0
+      },
+      "ordinary_calibration_l2": 0.0356157952291864,
+      "extraordinary_complex_l2": 0.07481649776145806,
+      "intensity_ncc": 0.9992158314940346,
+      "peak_error_deg": 0.0,
+      "forced_sphere_wrong_to_correct_ratio": 0.973787616998416,
+      "extraordinary_radial_ratio_scatter": 0.004581674484067018,
+      "ordinary_radial_ratio_scatter": 0.00658293489148569,
+      "pattern_runtime_s": 104.356479715,
+      "point_runtime_s": 104.58550966800001
+    },
+    "16": {
+      "configuration": {
+        "resolutions": [
+          16.0
+        ],
+        "cell_width": 10.0,
+        "pml_width": 1.0,
+        "source_shape": [
+          64,
+          64,
+          64
+        ],
+        "source_half_width": 0.25,
+        "angles_deg": [
+          10.0,
+          12.0,
+          14.0,
+          16.0,
+          18.0,
+          20.0,
+          22.0,
+          24.0,
+          26.0,
+          28.0,
+          30.0,
+          32.0,
+          34.0,
+          36.0,
+          38.0,
+          40.0,
+          42.0,
+          44.0,
+          46.0,
+          48.0,
+          50.0,
+          52.0,
+          54.0,
+          56.0,
+          58.0,
+          60.0,
+          62.0,
+          64.0,
+          66.0,
+          68.0,
+          70.0
+        ],
+        "radii": [
+          2.5,
+          2.875,
+          3.25,
+          3.625,
+          4.0
+        ],
+        "observation_azimuth": 0.7853981633974483,
+        "observation_azimuth_deg": 45.0,
+        "source_vector_mode": "x",
+        "source_vector": [
+          [
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ],
+        "until_after_sources": 12.0
+      },
+      "ordinary_calibration_l2": 0.05423294747085062,
+      "extraordinary_complex_l2": 0.0499230691244916,
+      "intensity_ncc": 0.9920409800752835,
+      "peak_error_deg": 2.0,
+      "forced_sphere_wrong_to_correct_ratio": 1.0586960470283515,
+      "extraordinary_radial_ratio_scatter": 0.005216516864638133,
+      "ordinary_radial_ratio_scatter": 0.006954793357282887,
+      "pattern_runtime_s": 301.08615297700004,
+      "point_runtime_s": 297.2841154140001
+    }
+  },
+  "grid_convergence": {
+    "calibrated_field_l2_8_to_12": 0.08734591919663849,
+    "calibrated_field_l2_12_to_16": 0.0667022503568729,
+    "extraordinary_error_empirical_order": 1.2644835339314409
+  },
+  "reference_separability": {
+    "half_width_0p25_sphere_vs_ellipse_l2": 0.01838969284687784,
+    "half_width_0p8_sphere_vs_ellipse_l2": 0.2621485677316433,
+    "interpretation": "The small source supports an accuracy check but is intrinsically too broadband for a 5x forced-sphere residual gate. The larger source is more discriminative analytically but its current Yee/FDTD bridge is not numerically stable."
+  },
+  "large_source_controls": {
+    "r8_c16": {
+      "configuration": {
+        "resolutions": [
+          8.0
+        ],
+        "cell_width": 16.0,
+        "pml_width": 1.5,
+        "source_shape": [
+          64,
+          64,
+          64
+        ],
+        "source_half_width": 0.8,
+        "angles_deg": [
+          10.0,
+          12.0,
+          14.0,
+          16.0,
+          18.0,
+          20.0,
+          22.0,
+          24.0,
+          26.0,
+          28.0,
+          30.0,
+          32.0,
+          34.0,
+          36.0,
+          38.0,
+          40.0,
+          42.0,
+          44.0,
+          46.0,
+          48.0,
+          50.0,
+          52.0,
+          54.0,
+          56.0,
+          58.0,
+          60.0,
+          62.0,
+          64.0,
+          66.0,
+          68.0,
+          70.0
+        ],
+        "radii": [
+          4.0,
+          4.625,
+          5.25,
+          5.875,
+          6.5
+        ],
+        "observation_azimuth": 0.7853981633974483,
+        "observation_azimuth_deg": 45.0,
+        "source_vector_mode": "x",
+        "source_vector": [
+          [
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ],
+        "until_after_sources": 18.0
+      },
+      "ordinary_calibration_l2": 0.9931085768620335,
+      "extraordinary_complex_l2": 1.0111159434342747,
+      "intensity_ncc": 0.2900673747638796,
+      "peak_error_deg": 42.0,
+      "forced_sphere_wrong_to_correct_ratio": 0.9949781468757242,
+      "extraordinary_radial_ratio_scatter": 0.16447258664213246,
+      "ordinary_radial_ratio_scatter": 0.18995072066065408,
+      "pattern_runtime_s": 105.36241826199999,
+      "point_runtime_s": 97.38556070399999
+    },
+    "r12_c14": {
+      "configuration": {
+        "resolutions": [
+          12.0
+        ],
+        "cell_width": 14.0,
+        "pml_width": 1.5,
+        "source_shape": [
+          64,
+          64,
+          64
+        ],
+        "source_half_width": 0.8,
+        "angles_deg": [
+          10.0,
+          12.0,
+          14.0,
+          16.0,
+          18.0,
+          20.0,
+          22.0,
+          24.0,
+          26.0,
+          28.0,
+          30.0,
+          32.0,
+          34.0,
+          36.0,
+          38.0,
+          40.0,
+          42.0,
+          44.0,
+          46.0,
+          48.0,
+          50.0,
+          52.0,
+          54.0,
+          56.0,
+          58.0,
+          60.0,
+          62.0,
+          64.0,
+          66.0,
+          68.0,
+          70.0
+        ],
+        "radii": [
+          3.5,
+          4.0,
+          4.5,
+          5.0,
+          5.5
+        ],
+        "observation_azimuth": 0.7853981633974483,
+        "observation_azimuth_deg": 45.0,
+        "source_vector_mode": "x",
+        "source_vector": [
+          [
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ],
+        "until_after_sources": 16.0
+      },
+      "ordinary_calibration_l2": 0.7633318290938321,
+      "extraordinary_complex_l2": 0.9107860588544858,
+      "intensity_ncc": 0.6728028803138357,
+      "peak_error_deg": 0.0,
+      "forced_sphere_wrong_to_correct_ratio": 1.0235414953271242,
+      "extraordinary_radial_ratio_scatter": 0.12036574150285385,
+      "ordinary_radial_ratio_scatter": 0.13114814917605339,
+      "pattern_runtime_s": 284.457165807,
+      "point_runtime_s": 283.54465729799995
+    }
+  },
+  "multicomponent_representation_diagnostic": {
+    "matched_geometry": "cell 10, PML 1, source half-width 0.25, radius 2.5-4.0, resolution 12",
+    "nonlinear_multicomponent_extraordinary_l2": 1.126159140953702,
+    "single_ex_extraordinary_l2": 0.07481649776145806,
+    "l2_improvement_factor": 15.05228358248341,
+    "nonlinear_multicomponent_intensity_ncc": -0.2093902705829989,
+    "single_ex_intensity_ncc": 0.9992158314940346,
+    "nonlinear_multicomponent_peak_error_deg": 28.0,
+    "single_ex_peak_error_deg": 0.0,
+    "interpretation": "Using one Ex Yee source at 45-deg azimuth removes component-wise source staggering while exciting both ordinary and extraordinary branches. The matched-geometry improvement identifies the multi-component Yee source/reference contract as a dominant failure mode."
+  },
+  "gates": {
+    "single_component_finest_extraordinary_l2_le_5pct": true,
+    "single_component_finest_intensity_ncc_ge_0_98": true,
+    "single_component_finest_peak_error_le_2deg": true,
+    "single_component_finest_radial_scatter_le_5pct": true,
+    "ordinary_calibration_l2_le_5pct": false,
+    "grid_12_to_16_l2_le_2pct": false,
+    "forced_sphere_ratio_ge_5": false,
+    "large_source_negative_control_bridge_pass": false
+  },
+  "scoped_single_component_amplitude_pass": true,
+  "publication_full_amplitude_pass": false,
+  "decision": "The single-Ex/45-deg bridge reaches 4.992% extraordinary complex L2 at resolution 16 with NCC 0.992 and 2-deg peak error, but the 12-to-16 field change is 6.67%, ordinary calibration is 5.42%, and the forced-sphere ratio is 1.06. Therefore this is a scoped representation diagnostic, not a publication-grade full nonlinear-source amplitude PASS.",
+  "claim_boundary": {
+    "supported": "single-component homogeneous anisotropic Maxwell amplitude-shape correspondence and identification of multi-component Yee source staggering as a dominant mismatch",
+    "not_supported": "grid-converged full nonlinear-source complex amplitude or a discriminative 3-D forced-sphere negative-control gate",
+    "next_valid_route": "Use a component-aware Yee-grid source oracle or collocated current injection, then repeat the same fixed 8/12/16 grid protocol; do not spend more compute on brute-force domain enlargement with the current source contract."
+  }
+}

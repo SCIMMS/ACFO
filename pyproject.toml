@@ -18,8 +18,20 @@ nufft = ["finufft"]
 numba = ["numba"]
 cpp = ["pybind11>=2.12"]
 gpu = ["torch"]
+gpu-baseline = ["torch", "cupy-cuda12x[ctk]", "cufinufft"]
 optics = ["PyCustomFocus", "psf-generator"]
 test = ["pytest"]
+report = ["reportlab", "PyMuPDF", "matplotlib"]
+reproduce = [
+  "finufft",
+  "numba",
+  "pybind11>=2.12",
+  "torch",
+  "pytest",
+  "reportlab",
+  "PyMuPDF",
+  "matplotlib",
+]
 
 [tool.pytest.ini_options]
 pythonpath = ["src"]

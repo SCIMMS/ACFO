@@ -1,0 +1,131 @@
+{
+  "schema": "uniaxial-vector-born-direct-v1",
+  "generated_at_utc": "2026-07-12T06:39:07.914325+00:00",
+  "material": {
+    "name": "5 mol% MgO-doped congruent LiNbO3",
+    "temperature_c": 24.5,
+    "pump_wavelength_um": 1.064,
+    "sh_wavelength_um": 0.532,
+    "n_o_pump": 2.2295711872954573,
+    "n_e_pump": 2.1481542422227045,
+    "n_o_sh": 2.3193932283594694,
+    "n_e_sh": 2.2244389865983383,
+    "d22_pm_per_v": 4.08,
+    "d31_pm_per_v": -4.4,
+    "d33_pm_per_v": -25.0,
+    "sellmeier_reference": "Gayer et al., Applied Physics B 91, 343-348 (2008), DOI 10.1007/s00340-008-2998-2",
+    "nonlinear_reference": "Shoji/Eckardt values summarized for 5 mol% MgO:LiNbO3 at 1064 nm; d31 magnitude independently measured as 4.5 pm/V by Chen et al., Optics Communications 274, 213-217 (2007), DOI 10.1016/j.optcom.2007.02.003"
+  },
+  "object": {
+    "cartesian_shape": [
+      64,
+      64,
+      64
+    ],
+    "half_width_um": 2.0,
+    "domain": "off-axis binary two-carrier hologram inside a superellipsoid",
+    "cylindrical_shape": [
+      64,
+      64,
+      64
+    ]
+  },
+  "metric_gate": {
+    "vector_complex_l2_max": 1e-08
+  },
+  "cases": [
+    {
+      "name": "extraordinary-pump-to-extraordinary-SH",
+      "pump_polarization": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0
+        ]
+      ],
+      "pump_index": 2.1481542422227045,
+      "outgoing_branch": "extraordinary",
+      "nonlinear_polarization_pm_per_v": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          -25.0,
+          0.0
+        ]
+      ],
+      "active_cartesian_voxels": 109424,
+      "nonzero_cylindrical_bins": 83327,
+      "voxel_volume_um3": 0.000244140625,
+      "q_samples": 768,
+      "acfo_seconds": 0.01748930010944605,
+      "direct_seconds": 4.872479200013913,
+      "scalar_complex_l2": 9.897798341713582e-15,
+      "vector_complex_l2": 1.092636931734131e-14,
+      "vector_norm": 0.6436242238448517,
+      "passed": true
+    },
+    {
+      "name": "ordinary-pump-to-ordinary-SH-control",
+      "pump_polarization": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "pump_index": 2.2295711872954573,
+      "outgoing_branch": "ordinary",
+      "nonlinear_polarization_pm_per_v": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          4.08,
+          0.0
+        ],
+        [
+          -4.4,
+          0.0
+        ]
+      ],
+      "active_cartesian_voxels": 109424,
+      "nonzero_cylindrical_bins": 83327,
+      "voxel_volume_um3": 0.000244140625,
+      "q_samples": 768,
+      "acfo_seconds": 0.013874799944460392,
+      "direct_seconds": 5.077255500014871,
+      "scalar_complex_l2": 1.0230595849721932e-14,
+      "vector_complex_l2": 9.830492907097843e-15,
+      "vector_norm": 0.02856961373289476,
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "scope": "vector first-Born source/projection and direct exponent-sum gate; not full-wave Maxwell/FDTD",
+  "environment": {
+    "python": "3.13.13",
+    "numpy": "2.4.6",
+    "platform": "Windows-10-10.0.19045-SP0"
+  }
+}

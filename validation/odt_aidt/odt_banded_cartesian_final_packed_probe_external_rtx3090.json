@@ -1,0 +1,572 @@
+{
+  "schema": "odt-banded-cartesian-final-packed-integration-v1",
+  "generated_at_utc": "2026-07-14T09:14:34.781567+00:00",
+  "device": {
+    "name": "NVIDIA GeForce RTX 3090",
+    "torch": "2.12.1+cu126",
+    "cuda": "12.6",
+    "dtype": "complex64"
+  },
+  "detector": {
+    "variant": "banded_inner96_outer64",
+    "camera_shape_per_view": [
+      320,
+      320
+    ],
+    "bands": [
+      {
+        "name": "inner",
+        "cap_radial": 96,
+        "cap_phi": 128,
+        "min_fraction": 0.0,
+        "max_fraction": 0.75,
+        "sampling": "outer_power",
+        "outer_power": 2.0,
+        "samples_per_view": 12288,
+        "ring_h_cutoff": 28,
+        "ring_h_modes": 57,
+        "q_samples": 1486848,
+        "ring_axial_lowrank_rank": 16,
+        "axis_l_modes": 1,
+        "ring_adaptive_l_active_fraction": 0.5046875
+      },
+      {
+        "name": "outer",
+        "cap_radial": 64,
+        "cap_phi": 256,
+        "min_fraction": 0.75,
+        "max_fraction": 1.0,
+        "sampling": "outer_power",
+        "outer_power": 2.0,
+        "samples_per_view": 16384,
+        "ring_h_cutoff": 28,
+        "ring_h_modes": 57,
+        "q_samples": 1982464,
+        "ring_axial_lowrank_rank": 16,
+        "axis_l_modes": 1,
+        "ring_adaptive_l_active_fraction": 0.5046875
+      }
+    ],
+    "views": 121
+  },
+  "candidate": {
+    "h_cutoff": 28,
+    "prune_axis_l0": true,
+    "axial_lowrank_rank": 16,
+    "ring_adaptive_l_packed_threshold": 1e-06,
+    "radial_block_size": 32,
+    "illumination_block_size": 4,
+    "forward_mode": "auto",
+    "adjoint_mode": "auto",
+    "context_build_s": 19.497128399962094,
+    "plan_build_s": 0.21720600000116974,
+    "total_build_s": 19.775504100020044,
+    "mode_q_count": 1103520,
+    "bands": [
+      {
+        "name": "inner",
+        "cap_radial": 96,
+        "cap_phi": 128,
+        "min_fraction": 0.0,
+        "max_fraction": 0.75,
+        "sampling": "outer_power",
+        "outer_power": 2.0,
+        "samples_per_view": 12288,
+        "ring_h_cutoff": 28,
+        "ring_h_modes": 57,
+        "q_samples": 1486848,
+        "ring_axial_lowrank_rank": 16,
+        "axis_l_modes": 1,
+        "ring_adaptive_l_active_fraction": 0.5046875
+      },
+      {
+        "name": "outer",
+        "cap_radial": 64,
+        "cap_phi": 256,
+        "min_fraction": 0.75,
+        "max_fraction": 1.0,
+        "sampling": "outer_power",
+        "outer_power": 2.0,
+        "samples_per_view": 16384,
+        "ring_h_cutoff": 28,
+        "ring_h_modes": 57,
+        "q_samples": 1982464,
+        "ring_axial_lowrank_rank": 16,
+        "axis_l_modes": 1,
+        "ring_adaptive_l_active_fraction": 0.5046875
+      }
+    ]
+  },
+  "reference": {
+    "h_cutoff": 36,
+    "axial_lowrank_rank": 0,
+    "ring_adaptive_l_packed_threshold": 0.0,
+    "context_build_s": 19.815400000021327,
+    "plan_build_s": 0.04035119997570291,
+    "total_build_s": 19.918307800020557,
+    "bands": [
+      {
+        "name": "inner",
+        "cap_radial": 96,
+        "cap_phi": 128,
+        "min_fraction": 0.0,
+        "max_fraction": 0.75,
+        "sampling": "outer_power",
+        "outer_power": 2.0,
+        "samples_per_view": 12288,
+        "ring_h_cutoff": 36,
+        "ring_h_modes": 73,
+        "q_samples": 1486848,
+        "ring_axial_lowrank_rank": 0,
+        "axis_l_modes": 37,
+        "ring_adaptive_l_active_fraction": 1.0
+      },
+      {
+        "name": "outer",
+        "cap_radial": 64,
+        "cap_phi": 256,
+        "min_fraction": 0.75,
+        "max_fraction": 1.0,
+        "sampling": "outer_power",
+        "outer_power": 2.0,
+        "samples_per_view": 16384,
+        "ring_h_cutoff": 36,
+        "ring_h_modes": 73,
+        "q_samples": 1982464,
+        "ring_axial_lowrank_rank": 0,
+        "axis_l_modes": 37,
+        "ring_adaptive_l_active_fraction": 1.0
+      }
+    ]
+  },
+  "problem": {
+    "full_object_shape": [
+      256,
+      256,
+      256
+    ],
+    "selected_slices": [
+      1,
+      8
+    ],
+    "reconstruction_iterations": 8,
+    "noise": "none"
+  },
+  "cases": [
+    {
+      "selected_n_z": 1,
+      "object_shape": [
+        256,
+        1,
+        256
+      ],
+      "pixel_q_samples": 3469312,
+      "mode_q_samples": 1103520,
+      "operator_errors_vs_h36": {
+        "physical_forward_rel_l2": 3.179349619131244e-07,
+        "physical_adjoint_rel_l2": 1.175167909650554e-07,
+        "stress_forward_rel_l2": 9.033021797222318e-07,
+        "stress_adjoint_rel_l2": 8.55257269449794e-07,
+        "worst_rel_l2": 9.033021797222318e-07
+      },
+      "candidate_pixel_to_direct_mode_rel_l2": 1.77320430339023e-07,
+      "cartesian_camera": {
+        "generation_total_s": 2.3550803000107408,
+        "direct_cufinufft_total_s": 0.7452036999748088,
+        "camera_shape": [
+          121,
+          320,
+          320
+        ],
+        "active_pixels_per_view": 79900,
+        "camera_input_mib": 94.53125,
+        "blocks": [
+          {
+            "group": "ring",
+            "view_start": 0,
+            "view_stop": 8,
+            "direct_cufinufft_s": 0.15987989999121055
+          },
+          {
+            "group": "ring",
+            "view_start": 8,
+            "view_stop": 16,
+            "direct_cufinufft_s": 0.03943429997889325
+          },
+          {
+            "group": "ring",
+            "view_start": 16,
+            "view_stop": 24,
+            "direct_cufinufft_s": 0.03185189998475835
+          },
+          {
+            "group": "ring",
+            "view_start": 24,
+            "view_stop": 32,
+            "direct_cufinufft_s": 0.034043600026052445
+          },
+          {
+            "group": "ring",
+            "view_start": 32,
+            "view_stop": 40,
+            "direct_cufinufft_s": 0.03202230000169948
+          },
+          {
+            "group": "ring",
+            "view_start": 40,
+            "view_stop": 48,
+            "direct_cufinufft_s": 0.036071799986530095
+          },
+          {
+            "group": "ring",
+            "view_start": 48,
+            "view_stop": 56,
+            "direct_cufinufft_s": 0.03436089999740943
+          },
+          {
+            "group": "ring",
+            "view_start": 56,
+            "view_stop": 64,
+            "direct_cufinufft_s": 0.03689170000143349
+          },
+          {
+            "group": "ring",
+            "view_start": 64,
+            "view_stop": 72,
+            "direct_cufinufft_s": 0.03884039999684319
+          },
+          {
+            "group": "ring",
+            "view_start": 72,
+            "view_stop": 80,
+            "direct_cufinufft_s": 0.04252780001843348
+          },
+          {
+            "group": "ring",
+            "view_start": 80,
+            "view_stop": 88,
+            "direct_cufinufft_s": 0.039970099984202534
+          },
+          {
+            "group": "ring",
+            "view_start": 88,
+            "view_stop": 96,
+            "direct_cufinufft_s": 0.03591289999894798
+          },
+          {
+            "group": "ring",
+            "view_start": 96,
+            "view_stop": 104,
+            "direct_cufinufft_s": 0.037402700050733984
+          },
+          {
+            "group": "ring",
+            "view_start": 104,
+            "view_stop": 112,
+            "direct_cufinufft_s": 0.0410845999722369
+          },
+          {
+            "group": "ring",
+            "view_start": 112,
+            "view_stop": 120,
+            "direct_cufinufft_s": 0.07032050000270829
+          },
+          {
+            "group": "axis",
+            "view_start": 0,
+            "view_stop": 1,
+            "direct_cufinufft_s": 0.0345882999827154
+          }
+        ]
+      },
+      "remap_timing": {
+        "count": 20,
+        "median_s": 0.001188249996630475,
+        "mean_s": 0.001320849999319762,
+        "min_s": 0.001184099994134158,
+        "max_s": 0.002504599979147315,
+        "output_q_count": 3469312
+      },
+      "mode_reduction_timing": {
+        "count": 20,
+        "median_s": 0.000528050004504621,
+        "mean_s": 0.0005283950013108552,
+        "p05_s": 0.000519514997722581,
+        "p95_s": 0.0005323699704604224,
+        "min_s": 0.0005178999854251742,
+        "max_s": 0.0005564999883063138
+      },
+      "final_packed_mode_pair_timing": {
+        "count": 20,
+        "median_s": 0.025957999983802438,
+        "mean_s": 0.026161785010481255,
+        "p05_s": 0.024660595032037234,
+        "p95_s": 0.030428985017351806,
+        "min_s": 0.02457690000301227,
+        "max_s": 0.030614899995271116
+      },
+      "integrated_remap_mode_update_timing": {
+        "count": 20,
+        "median_s": 0.02664284998900257,
+        "mean_s": 0.02677882999414578,
+        "p05_s": 0.025622634953469968,
+        "p95_s": 0.0282161149836611,
+        "min_s": 0.025575799983926117,
+        "max_s": 0.029584400006569922
+      },
+      "integrated_updates_per_second": 37.53352214244243,
+      "remapped_pixel_vs_candidate_ideal_rel_l2": 0.0035936988424509764,
+      "remapped_pixel_vs_h36_reference_rel_l2": 0.003593702567741275,
+      "remapped_mode_vs_candidate_ideal_rel_l2": 0.003132147714495659,
+      "mode_vs_pixel_adjoint_rel_l2": 8.252889927007345e-08,
+      "ideal_reconstruction": {
+        "solver": "real-subspace CG on final packed banded mode operator",
+        "iterations": 8,
+        "rhs_adjoint_s": 0.01886700000613928,
+        "update_timing": {
+          "count": 8,
+          "median_s": 0.026594650000333786,
+          "mean_s": 0.026639587500540074,
+          "p05_s": 0.025552754997625014,
+          "p95_s": 0.02812464501184877,
+          "min_s": 0.025432599999476224,
+          "max_s": 0.028240600018762052
+        },
+        "object_nrmse": 0.013732466846704483,
+        "data_residual": 0.0034816802944988012
+      },
+      "remapped_reconstruction": {
+        "solver": "real-subspace CG on final packed banded mode operator",
+        "iterations": 8,
+        "rhs_adjoint_s": 0.018743499997071922,
+        "update_timing": {
+          "count": 8,
+          "median_s": 0.026988550001988187,
+          "mean_s": 0.02689236248988891,
+          "p05_s": 0.025799759989604355,
+          "p95_s": 0.02809130496752914,
+          "min_s": 0.025715199997648597,
+          "max_s": 0.02814159996341914
+        },
+        "object_nrmse": 0.013994474895298481,
+        "data_residual": 0.004609438590705395
+      },
+      "remap_vs_ideal_reconstruction_rel_l2": 0.0009585241787135601
+    },
+    {
+      "selected_n_z": 8,
+      "object_shape": [
+        256,
+        8,
+        256
+      ],
+      "pixel_q_samples": 3469312,
+      "mode_q_samples": 1103520,
+      "operator_errors_vs_h36": {
+        "physical_forward_rel_l2": 3.1918904142003157e-07,
+        "physical_adjoint_rel_l2": 1.4222720778889197e-07,
+        "stress_forward_rel_l2": 8.40314157812827e-07,
+        "stress_adjoint_rel_l2": 8.127818773573381e-07,
+        "worst_rel_l2": 8.40314157812827e-07
+      },
+      "candidate_pixel_to_direct_mode_rel_l2": 1.7714657474243722e-07,
+      "cartesian_camera": {
+        "generation_total_s": 2.198626100027468,
+        "direct_cufinufft_total_s": 0.6279997999663465,
+        "camera_shape": [
+          121,
+          320,
+          320
+        ],
+        "active_pixels_per_view": 79900,
+        "camera_input_mib": 94.53125,
+        "blocks": [
+          {
+            "group": "ring",
+            "view_start": 0,
+            "view_stop": 8,
+            "direct_cufinufft_s": 0.03675229998771101
+          },
+          {
+            "group": "ring",
+            "view_start": 8,
+            "view_stop": 16,
+            "direct_cufinufft_s": 0.03631589998258278
+          },
+          {
+            "group": "ring",
+            "view_start": 16,
+            "view_stop": 24,
+            "direct_cufinufft_s": 0.03730069997254759
+          },
+          {
+            "group": "ring",
+            "view_start": 24,
+            "view_stop": 32,
+            "direct_cufinufft_s": 0.03616899996995926
+          },
+          {
+            "group": "ring",
+            "view_start": 32,
+            "view_stop": 40,
+            "direct_cufinufft_s": 0.03802089998498559
+          },
+          {
+            "group": "ring",
+            "view_start": 40,
+            "view_stop": 48,
+            "direct_cufinufft_s": 0.037462899985257536
+          },
+          {
+            "group": "ring",
+            "view_start": 48,
+            "view_stop": 56,
+            "direct_cufinufft_s": 0.037775900040287524
+          },
+          {
+            "group": "ring",
+            "view_start": 56,
+            "view_stop": 64,
+            "direct_cufinufft_s": 0.03847319999476895
+          },
+          {
+            "group": "ring",
+            "view_start": 64,
+            "view_stop": 72,
+            "direct_cufinufft_s": 0.03793789999326691
+          },
+          {
+            "group": "ring",
+            "view_start": 72,
+            "view_stop": 80,
+            "direct_cufinufft_s": 0.04282709996914491
+          },
+          {
+            "group": "ring",
+            "view_start": 80,
+            "view_stop": 88,
+            "direct_cufinufft_s": 0.0379215000430122
+          },
+          {
+            "group": "ring",
+            "view_start": 88,
+            "view_stop": 96,
+            "direct_cufinufft_s": 0.03672580001875758
+          },
+          {
+            "group": "ring",
+            "view_start": 96,
+            "view_stop": 104,
+            "direct_cufinufft_s": 0.037256000039633363
+          },
+          {
+            "group": "ring",
+            "view_start": 104,
+            "view_stop": 112,
+            "direct_cufinufft_s": 0.0451251000049524
+          },
+          {
+            "group": "ring",
+            "view_start": 112,
+            "view_stop": 120,
+            "direct_cufinufft_s": 0.04669079999439418
+          },
+          {
+            "group": "axis",
+            "view_start": 0,
+            "view_stop": 1,
+            "direct_cufinufft_s": 0.04524479998508468
+          }
+        ]
+      },
+      "remap_timing": {
+        "count": 20,
+        "median_s": 0.0009624999947845936,
+        "mean_s": 0.0009684600052423775,
+        "min_s": 0.0009602000354789197,
+        "max_s": 0.0010015000007115304,
+        "output_q_count": 3469312
+      },
+      "mode_reduction_timing": {
+        "count": 20,
+        "median_s": 0.00047740002628415823,
+        "mean_s": 0.0004776750021846965,
+        "p05_s": 0.0004634950339095667,
+        "p95_s": 0.0004908750095637515,
+        "min_s": 0.00046339997788891196,
+        "max_s": 0.0004960999940522015
+      },
+      "final_packed_mode_pair_timing": {
+        "count": 20,
+        "median_s": 0.028778350009815767,
+        "mean_s": 0.02971652000269387,
+        "p05_s": 0.02609700500033796,
+        "p95_s": 0.03644641498103738,
+        "min_s": 0.02549859997816384,
+        "max_s": 0.03704329999163747
+      },
+      "integrated_remap_mode_update_timing": {
+        "count": 20,
+        "median_s": 0.028558500023791566,
+        "mean_s": 0.029211595005472192,
+        "p05_s": 0.026555164967430756,
+        "p95_s": 0.0333912000322016,
+        "min_s": 0.026470899989362806,
+        "max_s": 0.03376170003321022
+      },
+      "integrated_updates_per_second": 35.015844640541985,
+      "remapped_pixel_vs_candidate_ideal_rel_l2": 0.0036083830054849386,
+      "remapped_pixel_vs_h36_reference_rel_l2": 0.0036083811428397894,
+      "remapped_mode_vs_candidate_ideal_rel_l2": 0.003147379495203495,
+      "mode_vs_pixel_adjoint_rel_l2": 9.388280375333125e-08,
+      "ideal_reconstruction": {
+        "solver": "real-subspace CG on final packed banded mode operator",
+        "iterations": 8,
+        "rhs_adjoint_s": 0.020845200051553547,
+        "update_timing": {
+          "count": 8,
+          "median_s": 0.027104999986477196,
+          "mean_s": 0.027837037494464312,
+          "p05_s": 0.02645442499779165,
+          "p95_s": 0.03086658001411706,
+          "min_s": 0.026342600001953542,
+          "max_s": 0.03227260004496202
+        },
+        "object_nrmse": 0.06845360994338989,
+        "data_residual": 0.0040885768830776215
+      },
+      "remapped_reconstruction": {
+        "solver": "real-subspace CG on final packed banded mode operator",
+        "iterations": 8,
+        "rhs_adjoint_s": 0.02014659997075796,
+        "update_timing": {
+          "count": 8,
+          "median_s": 0.026079350005602464,
+          "mean_s": 0.02602817500155652,
+          "p05_s": 0.025572954973904417,
+          "p95_s": 0.02645825500076171,
+          "min_s": 0.025549399957526475,
+          "max_s": 0.026539699989371
+        },
+        "object_nrmse": 0.06850090622901917,
+        "data_residual": 0.005061378236860037
+      },
+      "remap_vs_ideal_reconstruction_rel_l2": 0.0009151652338914573
+    }
+  ],
+  "gpu_peak_allocated_mib": 834.3740234375,
+  "gates": {
+    "all_operator_errors_le_2e-6": true,
+    "all_pixel_to_mode_equivalence_le_2e-6": true,
+    "all_mode_vs_pixel_adjoint_equivalence_le_2e-6": true,
+    "all_remap_reconstruction_difference_le_2e-3": true,
+    "all_integrated_timings_finite": true
+  },
+  "passed": true,
+  "claim_boundary": [
+    "This is the first single-run integration of Cartesian camera remap, angular-mode reduction and the final H28/rank16/adaptive-L packed operator.",
+    "The H36 structured comparison isolates operator approximation; the remap-vs-ideal rows isolate detector interpolation.",
+    "The integrated hot timing includes cached remap, mode reduction and one forward/adjoint normal-operator application; camera acquisition and hologram demodulation remain excluded.",
+    "The default run is a z=1/z=8 probe. Full 256-z publication timing is a separate follow-up after this gate passes."
+  ]
+}

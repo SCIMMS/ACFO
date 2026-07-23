@@ -1,0 +1,52 @@
+{
+  "schema": "acfo-odt-128cubed-gate-v1",
+  "sources": {
+    "full_dot": "benchmark_results/odt_128cubed_gpu_complex128_lowmem.json",
+    "independent_subset": "benchmark_results/odt_128cubed_independent_subset.json",
+    "inverse_control": "benchmark_results/odt_128cubed_cg_adjoint_range_iter200.json",
+    "beads_inverse": "benchmark_results/odt_128cubed_cg_reconstruction_iter100.json"
+  },
+  "problem": {
+    "object_shape": [
+      128,
+      128,
+      128
+    ],
+    "object_bins": 2097152,
+    "illumination_count": 61,
+    "detector_shape": [
+      128,
+      128
+    ],
+    "total_q_samples": 999424,
+    "dtype": "complex128",
+    "low_memory_adjoint": true
+  },
+  "metrics": {
+    "forward_complex_l2_vs_direct_subset": 4.155469832851293e-12,
+    "adjoint_selected_object_l2_vs_direct_subset": 3.895135138117014e-12,
+    "independent_subset_dot_error": 3.825812888764126e-16,
+    "full_forward_adjoint_dot_error": 9.688469427452783e-16,
+    "in_range_inverse_nrmse": 0.009973177686333656,
+    "in_range_inverse_data_residual": 0.00014013641339261085,
+    "in_range_inverse_converged_iteration": 157,
+    "beads_inverse_nrmse_after_100_cg": 0.18584924936294556,
+    "beads_data_residual_after_100_cg": 0.0017369844717904925,
+    "complex128_low_memory_gpu_peak_mib": 4981.66357421875
+  },
+  "gates": {
+    "scale_pass": true,
+    "forward_complex_l2_pass": true,
+    "adjoint_independent_subset_pass": true,
+    "full_forward_adjoint_dot_pass": true,
+    "noiseless_in_range_inverse_pass": true
+  },
+  "minimum_odt_128cubed_numerical_gate_pass": true,
+  "pass_scope": "in-range real-object numerical inverse control plus independent sparse-support direct subset",
+  "limitations": [
+    "The independent Cartesian exponent reference covers 2,048 active object bins and 2,048 detector nodes while the structured forward and adjoint execute at full 128-cubed scale.",
+    "The <=1% inverse result uses a seeded real object generated in the adjoint range; it proves numerical inverse readiness on observable components.",
+    "The unconstrained real beads phantom remains at 18.6% NRMSE after 100 CG iterations despite a 0.174% data residual, exposing missing-cone/null-space ambiguity.",
+    "This gate does not prove physical-phantom recovery, 30 dB robustness, 256-cubed production performance, or independent full-wave accuracy."
+  ]
+}

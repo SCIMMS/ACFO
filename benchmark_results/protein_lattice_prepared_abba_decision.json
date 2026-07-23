@@ -1,0 +1,140 @@
+{
+  "schema": "protein-lattice-prepared-abba-decision-v1",
+  "generated_at_utc": "2026-07-13T03:51:01.401520+00:00",
+  "contract": {
+    "unit": "structures/processed/protein_nanocrystal_lysozyme_1iee_1x1x1_fixed.npz",
+    "supercell": "structures/processed/protein_nanocrystal_lysozyme_1iee_5x5x5_fixed.npz",
+    "nq": 512,
+    "q_min_inv_angstrom": 5.0,
+    "q_max_inv_angstrom": 6.3,
+    "wavelength_nm": 0.08,
+    "target_nphi": 768,
+    "harmonic_margin": 48,
+    "finufft_eps": 1e-06,
+    "finufft_threads": 4,
+    "warmup_pairs_requested": 10,
+    "measured_pairs_requested": 30,
+    "factorized_backend": "prepared_fused",
+    "lattice_backend": "separable",
+    "coefficient_backend": "fused_phase",
+    "synthesis_backend": "fft"
+  },
+  "prepared_receipt": {
+    "path": "benchmark_results/protein_lattice_prepared_finufft_512_abba.json",
+    "warmup_pairs": 10,
+    "measured_pairs": 30,
+    "elapsed_seconds": 4276.653917600008
+  },
+  "prepared_measured_summary": {
+    "factorized_seconds": {
+      "count": 30,
+      "mean": 3.286079136666376,
+      "median": 3.14261704999808,
+      "std": 0.3461338190034781,
+      "cv": 0.10533337896257118,
+      "p05": 3.0079156499959936,
+      "p95": 3.914004255004692,
+      "min": 2.9967988999997033,
+      "max": 4.503576799994335
+    },
+    "finufft_seconds": {
+      "count": 30,
+      "mean": 106.67957482333101,
+      "median": 106.94541854999261,
+      "std": 12.025465000464798,
+      "cv": 0.11272509306847002,
+      "p05": 86.20446911999825,
+      "p95": 121.78427300498879,
+      "min": 76.2270251000009,
+      "max": 132.18927040000563
+    },
+    "paired_speedup": {
+      "count": 30,
+      "mean": 32.77973652793064,
+      "median": 33.479878176092924,
+      "std": 4.926091762331266,
+      "cv": 0.1502785648729632,
+      "p05": 24.242784431238654,
+      "p95": 39.65110663909018,
+      "min": 23.606505855550814,
+      "max": 43.788134221520195
+    }
+  },
+  "accuracy": {
+    "prepared_vs_finufft": {
+      "complex_l2": 3.155502734745625e-07,
+      "intensity_l2": 1.1463118112622622e-07
+    },
+    "prepared_vs_legacy": {
+      "legacy_seconds": 14.316112400003476,
+      "prepared_seconds": 3.7690520999894943,
+      "legacy_vs_prepared_complex_l2": 4.8106151422818794e-14,
+      "legacy_vs_prepared_intensity_l2": 5.3006452644114175e-14
+    }
+  },
+  "setup": {
+    "prepared_plan_seconds": 0.004202099997201003,
+    "separable_lattice_seconds": 0.19836969999596477,
+    "finufft_plan_seconds": 1.5237363000051118,
+    "prepared_first_total_using_measured_median_seconds": 3.3451888499912457,
+    "finufft_first_total_using_measured_median_seconds": 108.46915484999772,
+    "first_total_speedup_using_measured_medians": 32.425420421415545
+  },
+  "order_groups": {
+    "AB": {
+      "count": 15,
+      "factorized_median_seconds": 3.1510978000005707,
+      "finufft_median_seconds": 107.57712499999616,
+      "paired_speedup_median": 33.729252936493204
+    },
+    "BA": {
+      "count": 15,
+      "factorized_median_seconds": 3.1147300000011455,
+      "finufft_median_seconds": 105.85272009999608,
+      "paired_speedup_median": 33.04970247160298
+    },
+    "relative_gap": {
+      "factorized_median_relative_gap": 0.011608298587272131,
+      "finufft_median_relative_gap": 0.016158985630076197,
+      "paired_speedup_median_relative_gap": 0.020352234045513055
+    }
+  },
+  "legacy_comparison": {
+    "legacy_factorized_median_seconds": 13.91255960000126,
+    "prepared_factorized_median_seconds": 3.14261704999808,
+    "legacy_over_prepared_factorized_median": 4.427061706423873,
+    "legacy_finufft_median_seconds": 98.98460929999783,
+    "prepared_run_finufft_median_seconds": 106.94541854999261,
+    "legacy_paired_speedup_median": 7.138390611793449,
+    "prepared_paired_speedup_median": 33.479878176092924,
+    "paired_speedup_median_improvement": 4.690115741324141,
+    "legacy_paired_speedup_p05": 5.816636770754343,
+    "prepared_paired_speedup_p05": 24.242784431238654,
+    "paired_speedup_p05_improvement": 4.167835363750018
+  },
+  "gates": {
+    "legacy_receipt_pass": true,
+    "prepared_receipt_pass": true,
+    "core_contracts_match": true,
+    "prepared_backend_is_fused_fft_separable": true,
+    "balanced_15_15_order_groups": true,
+    "order_speedup_median_gap_le_10pct": true,
+    "prepared_factorized_median_improvement_ge_3": true,
+    "prepared_paired_speedup_median_ge_3": true,
+    "prepared_paired_speedup_p05_ge_3": true,
+    "prepared_vs_legacy_complex_l2_le_1e_12": true,
+    "prepared_vs_finufft_complex_l2_le_2e_6": true
+  },
+  "local_prepared_timing_gate_pass": true,
+  "independent_machine_replication_complete": false,
+  "publication_timing_ready": false,
+  "decision": "The same-machine prepared fused 10/30 AB/BA gate passes. The remaining publication timing gate is independent-machine replication.",
+  "claim_boundary": [
+    "The 33.480x median and 24.243x p05 are same-machine hot-execution results for the tested 1.001M-atom exact repeated crystal.",
+    "Setup is reported separately; the first-total ratio based on measured medians is not a paired statistic.",
+    "The repeated-crystal lattice factor is a standard crystallographic specialization, not an ACFO novelty claim.",
+    "Dense disordered sources cannot use this perfect-lattice specialization.",
+    "Independent-machine replication remains required before publication-level timing is final."
+  ],
+  "passed": true
+}

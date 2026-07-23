@@ -271,6 +271,124 @@ class BinnedStructure:
         return float(self.z_edges[-1])
 
 
+@dataclass(frozen=True)
+class SparseBinnedStructure(BinnedStructure):
+    """Sparse cylindrical bins without allocating the dense 4-D histogram.
+
+    ``hist`` is an empty dtype marker.  The active arrays are sorted in C-order
+    over ``(element, R, z, beta)`` and are consumed by sparse-source solvers.
+    Dense FFT methods intentionally reject this representation.
+    """
+
+    active_e: np.ndarray
+    active_r: np.ndarray
+    active_z: np.ndarray
+    active_beta: np.ndarray
+    active_values: np.ndarray
+
+    @property
+    def sparse_storage_nbytes(self) -> int:
+        return int(
+            self.active_e.nbytes
+            + self.active_r.nbytes
+            + self.active_z.nbytes
+            + self.active_beta.nbytes
+            + self.active_values.nbytes
+        )
+
+
+def make_sparse_cylindrical_histogram_from_flat_indices(
+    flat_indices: np.ndarray,
+    *,
+    n_elements: int = 1,
+    n_r: int = 32,
+    n_z: int = 32,
+    n_phi: int = 180,
+    r_max: float,
+    z_range: tuple[float, float],
+    element_order: Iterable[str] | None = None,
+    atom_weights: np.ndarray | None = None,
+    value_dtype: np.dtype | str = np.float32,
+) -> SparseBinnedStructure:
+    """Aggregate flat atom-bin indices into a sparse cylindrical structure."""
+
+    flat = np.asarray(flat_indices)
+    if flat.ndim != 1 or not np.issubdtype(flat.dtype, np.integer):
+        raise ValueError("flat_indices must be a one-dimensional integer array")
+    n_elements = int(n_elements)
+    if n_elements <= 0:
+        raise ValueError("n_elements must be positive")
+    n_bins = n_elements * int(n_r) * int(n_z) * int(n_phi)
+    flat64 = np.ascontiguousarray(flat, dtype=np.int64)
+    if flat64.size and (
+        flat64.min(initial=0) < 0 or flat64.max(initial=0) >= n_bins
+    ):
+        raise ValueError("flat_indices contain an out-of-range bin")
+
+    out_dtype = _normalize_hist_dtype(value_dtype)
+    if out_dtype is None or out_dtype.kind not in {"f", "c"}:
+        raise ValueError("value_dtype must be float32, float64, complex64, or complex128")
+    if atom_weights is None:
+        unique, counts = np.unique(flat64, return_counts=True)
+        values = counts.astype(out_dtype, copy=False)
+    else:
+        weights = np.asarray(atom_weights)
+        if weights.shape != flat64.shape:
+            raise ValueError("atom_weights must have one entry per flat index")
+        if np.iscomplexobj(weights) and out_dtype.kind != "c":
+            raise ValueError("complex atom_weights require a complex value_dtype")
+        order = np.argsort(flat64, kind="stable")
+        sorted_flat = flat64[order]
+        starts = np.r_[0, np.flatnonzero(np.diff(sorted_flat)) + 1]
+        unique = sorted_flat[starts]
+        values = np.add.reduceat(weights[order], starts).astype(out_dtype, copy=False)
+
+    work = unique.copy()
+    active_beta = np.ascontiguousarray(work % n_phi, dtype=np.intp)
+    work //= n_phi
+    active_z = np.ascontiguousarray(work % n_z, dtype=np.intp)
+    work //= n_z
+    active_r = np.ascontiguousarray(work % n_r, dtype=np.intp)
+    work //= n_r
+    active_e = np.ascontiguousarray(work, dtype=np.intp)
+
+    if element_order is None:
+        ordered_elements = tuple(str(i) for i in range(n_elements))
+    else:
+        ordered_elements = tuple(str(e) for e in element_order)
+        if len(ordered_elements) != n_elements:
+            raise ValueError("element_order must have n_elements entries")
+    (
+        r_edges,
+        z_edges,
+        beta_edges,
+        r_centers,
+        z_centers,
+        beta_centers,
+    ) = _regular_axes(
+        n_r=n_r,
+        n_z=n_z,
+        n_phi=n_phi,
+        r_max=r_max,
+        z_range=z_range,
+    )
+    return SparseBinnedStructure(
+        hist=np.empty(0, dtype=out_dtype),
+        r_centers=r_centers,
+        z_centers=z_centers,
+        beta_centers=beta_centers,
+        elements=ordered_elements,
+        r_edges=r_edges,
+        z_edges=z_edges,
+        beta_edges=beta_edges,
+        active_e=active_e,
+        active_r=active_r,
+        active_z=active_z,
+        active_beta=active_beta,
+        active_values=np.ascontiguousarray(values, dtype=out_dtype),
+    )
+
+
 def make_cylindrical_histogram(
     coords: np.ndarray,
     elements: Iterable[str] | None = None,

@@ -1,0 +1,97 @@
+{
+  "schema": "uniaxial-meep-3d-amplitude-gate-decision-v1",
+  "generated_at_utc": "2026-07-12T10:09:16.954542+00:00",
+  "scope": "actual-uniaxial 3-D patterned-to-point-source complex-amplitude bridge; finite-radius DFT-field observation",
+  "cases": [
+    {
+      "resolution": 12.0,
+      "source_half_width": 0.8,
+      "ordinary_calibration_l2": 0.3183850391929232,
+      "extraordinary_complex_l2": 1.8679024828899826,
+      "intensity_ncc": -0.23181716597974464,
+      "peak_error_deg": 28.0,
+      "forced_sphere_wrong_to_correct_ratio": 1.0055879652396482,
+      "extraordinary_radial_ratio_scatter": 0.13910520620698236,
+      "ordinary_radial_ratio_scatter": 0.137365593273354,
+      "algorithm_complex_l2": 4.0184528420764767e-16,
+      "representation_complex_l2": 0.006321912125925715
+    },
+    {
+      "resolution": 12.0,
+      "source_half_width": 0.4,
+      "ordinary_calibration_l2": 0.10330438378506052,
+      "extraordinary_complex_l2": 0.9777057533359802,
+      "intensity_ncc": -0.2667817784228302,
+      "peak_error_deg": 30.0,
+      "forced_sphere_wrong_to_correct_ratio": 1.0006122405836482,
+      "extraordinary_radial_ratio_scatter": 0.07400996220444747,
+      "ordinary_radial_ratio_scatter": 0.030339369825061895,
+      "algorithm_complex_l2": 3.7168400072388966e-16,
+      "representation_complex_l2": 0.0022087874875568775
+    },
+    {
+      "resolution": 16.0,
+      "source_half_width": 0.4,
+      "ordinary_calibration_l2": 0.08950323485025263,
+      "extraordinary_complex_l2": 0.9476196112542599,
+      "intensity_ncc": -0.23521646393764117,
+      "peak_error_deg": 30.0,
+      "forced_sphere_wrong_to_correct_ratio": 1.0031122046299112,
+      "extraordinary_radial_ratio_scatter": 0.05932532213633645,
+      "ordinary_radial_ratio_scatter": 0.03289540559163964,
+      "algorithm_complex_l2": 3.7168400072388966e-16,
+      "representation_complex_l2": 0.0022087874875568775
+    },
+    {
+      "resolution": 12.0,
+      "source_half_width": 0.25,
+      "ordinary_calibration_l2": 0.023512399721792594,
+      "extraordinary_complex_l2": 0.9893056265546044,
+      "intensity_ncc": -0.2050207771330025,
+      "peak_error_deg": 28.0,
+      "forced_sphere_wrong_to_correct_ratio": 1.0019441132352855,
+      "extraordinary_radial_ratio_scatter": 0.08288143580875386,
+      "ordinary_radial_ratio_scatter": 0.01129988719828875,
+      "algorithm_complex_l2": 2.7979122295830475e-16,
+      "representation_complex_l2": 0.0010419214934869836
+    }
+  ],
+  "diagnostics": {
+    "source_shrink_h08_to_h025_at_r12": {
+      "ordinary_calibration_l2_before": 0.3183850391929232,
+      "ordinary_calibration_l2_after": 0.023512399721792594,
+      "ordinary_radial_scatter_before": 0.137365593273354,
+      "ordinary_radial_scatter_after": 0.01129988719828875,
+      "interpretation": "large improvement confirms finite-distance/near-field contamination"
+    },
+    "grid_change_h04_r12_to_r16": {
+      "ordinary_calibration_l2_before": 0.10330438378506052,
+      "ordinary_calibration_l2_after": 0.08950323485025263,
+      "extraordinary_complex_l2_before": 0.9777057533359802,
+      "extraordinary_complex_l2_after": 0.9476196112542599,
+      "extraordinary_radial_scatter_before": 0.07400996220444747,
+      "extraordinary_radial_scatter_after": 0.05932532213633645,
+      "interpretation": "Yee-grid resampling contributes but does not explain the dominant mismatch"
+    },
+    "meep_near_to_far_constraint": {
+      "supported_here": false,
+      "reason": "Meep requires near-to-far surfaces to lie in a homogeneous material with isotropic epsilon and mu; this probe intentionally uses an actual uniaxial background",
+      "official_documentation": "https://meep.readthedocs.io/en/master/Python_User_Interface/#near-to-far-field-spectra"
+    }
+  },
+  "gates": {
+    "ordinary_control_can_reach_5pct": true,
+    "extraordinary_complex_l2_le_5pct": false,
+    "intensity_ncc_ge_0_98": false,
+    "peak_error_le_2deg": false,
+    "forced_sphere_ratio_ge_5": false,
+    "acfo_algorithm_error_negligible": true
+  },
+  "passed": false,
+  "decision": "FAIL for publication-grade full complex amplitude/NCC/peak. Do not extend the separately passed 3-D phase-curvature gate to a full-amplitude Maxwell validation claim.",
+  "claim_boundary": {
+    "supported": "actual-uniaxial 3-D phase curvature and ellipse-versus-sphere dispersion discrimination",
+    "not_supported": "actual-uniaxial full angle-resolved complex amplitude, NCC, and peak",
+    "next_valid_route": "an independent anisotropic far-field/Green-tensor reference or a much larger-domain asymptotic-field extraction; Meep isotropic near-to-far cannot be used for this background"
+  }
+}

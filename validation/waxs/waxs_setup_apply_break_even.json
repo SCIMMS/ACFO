@@ -1,0 +1,204 @@
+{
+  "schema": "waxs-external-setup-apply-break-even-summary-v1",
+  "scope": "Deterministic setup/apply/reuse accounting from two frozen external WAXS receipts; no new timing measurements.",
+  "reuse_counts": [
+    1,
+    10,
+    100
+  ],
+  "sources": {
+    "prepared_1m": {
+      "path": "reports/acfo_ncs_external_validation_20260714_rtx3090/receipts/waxs_prepared_1m_abba.json",
+      "sha256": "798b9360564dac18d4ad58859bf92248739c14d07eb53c1b12edb77b664a6b24",
+      "schema": "protein-lattice-prepared-finufft-512-abba-v1"
+    },
+    "detector_active": {
+      "path": "reports/acfo_ncs_external_validation_20260714_rtx3090/receipts/waxs_detector_nq512_abba.json",
+      "sha256": "45e393afc50f89bc73efbbbad4fc47f5c6443a01047b37f21484c7f269d6fb7c",
+      "schema": null
+    }
+  },
+  "formula_definitions": {
+    "reusable_plan": "T_method(K) = S_method + K * H_method",
+    "measured_first_plus_cached": "T_method(K) = S_method + F_method + (K - 1) * H_method",
+    "break_even": "smallest positive integer K for which T_FINUFFT(K) >= T_ACFO(K)"
+  },
+  "cases": [
+    {
+      "case_id": "prepared_1m_reusable_plan",
+      "label": "Prepared 1M repeated-crystal WAXS",
+      "workload": {
+        "atom_count": 1001000,
+        "target_count": 393216,
+        "nq": 512,
+        "n_phi": 768,
+        "q_min_inv_angstrom": 5.0,
+        "q_max_inv_angstrom": 6.3
+      },
+      "plan_policy": {
+        "acfo": "prepared plan and separable lattice are built once and reused",
+        "finufft": "full reusable FINUFFT plans are built once and reused"
+      },
+      "protocol": {
+        "formula": "T_method(K) = S_method + K * H_method",
+        "setup_included_once": true,
+        "first_call_measured_separately": false,
+        "hot_statistic": "median of the 30 measured alternating AB/BA pairs",
+        "warmup_pairs": 10,
+        "measured_pairs": 30,
+        "interpretation": "Setup-inclusive totals use separately measured setup and hot medians; they are not paired timing statistics."
+      },
+      "setup_s": {
+        "acfo_prepared_plan": 0.0029053999460302293,
+        "acfo_separable_lattice": 0.076138699951116,
+        "acfo_total": 0.07904409989714622,
+        "finufft_plan": 0.6315647000446916,
+        "finufft_total": 0.6315647000446916
+      },
+      "apply_s": {
+        "acfo_hot_median": 0.6409952499961946,
+        "finufft_hot_median": 17.577265350002563,
+        "paired_hot_speedup_median": 27.447289590840832,
+        "paired_hot_speedup_p05": 26.906839525249865
+      },
+      "break_even_repeat": 1,
+      "total_time_model": [
+        {
+          "repeat_count": 1,
+          "acfo_total_s": 0.7200393498933408,
+          "finufft_total_s": 18.208830050047254,
+          "speedup_finufft_over_acfo": 25.288659644427103,
+          "modeled_from_measured_setup_and_hot_medians": true,
+          "paired_statistic": false
+        },
+        {
+          "repeat_count": 10,
+          "acfo_total_s": 6.488996599859092,
+          "finufft_total_s": 176.40421820007032,
+          "speedup_finufft_over_acfo": 27.18513031797565,
+          "modeled_from_measured_setup_and_hot_medians": true,
+          "paired_statistic": false
+        },
+        {
+          "repeat_count": 100,
+          "acfo_total_s": 64.17856909951661,
+          "finufft_total_s": 1758.358099700301,
+          "speedup_finufft_over_acfo": 27.397901267847757,
+          "modeled_from_measured_setup_and_hot_medians": true,
+          "paired_statistic": false
+        }
+      ],
+      "memory": {
+        "available": false,
+        "reason": "The frozen prepared-1M receipt did not record RSS by setup/apply stage."
+      },
+      "claim_boundary": [
+        "This is a same-machine 10-warmup/30-pair AB/BA result, not an independent-machine replication.",
+        "The finite lattice factor is a standard crystallographic specialization and not an ACFO novelty claim.",
+        "The timing claim applies only to the tested 1,001,000-atom exact repeated crystal.",
+        "FINUFFT eps=1e-6 is a practical timing baseline; direct NDFT correctness is established separately.",
+        "Prepared and FINUFFT plan setup are excluded from paired hot execution and reported separately."
+      ]
+    },
+    {
+      "case_id": "detector_active_q_blocked",
+      "label": "Detector-active WAXS with memory-safe q-blocked FINUFFT",
+      "workload": {
+        "atom_count": 216216,
+        "full_polar_target_count": 1152000,
+        "active_detector_target_count": 1015326,
+        "nq": 512,
+        "n_phi": 2250,
+        "q_min_inv_angstrom": 0.05,
+        "q_max_inv_angstrom": 6.3,
+        "detector_label": "EIGER2_X_4M_15p5keV_100mm"
+      },
+      "plan_policy": {
+        "acfo": "sparse representation and prepared plan are built once and reused",
+        "finufft": "memory_safe_q_blocked_setup_per_evaluation",
+        "finufft_q_block_size": 8,
+        "interpretation": "FINUFFT plan construction is embedded in every first/cached evaluation, so its separately reported setup is zero."
+      },
+      "protocol": {
+        "formula": "T_method(K) = S_method + F_method + (K - 1) * H_method",
+        "setup_included_once": true,
+        "first_call_measured_separately": true,
+        "cached_statistic": "median of 30 measured alternating AB/BA calls",
+        "warmups_per_method": 10,
+        "measured_repeats_per_method": 30,
+        "interpretation": "K=1 sums measured setup and first call. K>1 adds measured cached medians and is a model, not a directly timed K-call workflow."
+      },
+      "setup_s": {
+        "acfo_sparse_build": 0.02010399999562651,
+        "acfo_plan": 0.0017365000094287097,
+        "acfo_total": 0.02184050000505522,
+        "finufft_separate": 0.0,
+        "finufft_total": 0.0
+      },
+      "apply_s": {
+        "acfo_first": 11.87635269999737,
+        "acfo_cached_median": 12.277774200047133,
+        "finufft_first": 25.029075799975544,
+        "finufft_cached_median": 30.299071149987867,
+        "cached_speedup_finufft_over_acfo": 2.467798369338927
+      },
+      "break_even_repeat": 1,
+      "frozen_receipt_break_even_repeat": 1,
+      "total_time_model": [
+        {
+          "repeat_count": 1,
+          "acfo_total_s": 11.898193200002424,
+          "finufft_total_s": 25.029075799975544,
+          "speedup_finufft_over_acfo": 2.103603074790418,
+          "modeled_from_measured_first_and_cached_medians": false,
+          "paired_statistic": false
+        },
+        {
+          "repeat_count": 10,
+          "acfo_total_s": 122.39816100042663,
+          "finufft_total_s": 297.72071614986635,
+          "speedup_finufft_over_acfo": 2.4323953376131904,
+          "modeled_from_measured_first_and_cached_medians": true,
+          "paired_statistic": false
+        },
+        {
+          "repeat_count": 100,
+          "acfo_total_s": 1227.3978390046686,
+          "finufft_total_s": 3024.6371196487744,
+          "speedup_finufft_over_acfo": 2.464267919928503,
+          "modeled_from_measured_first_and_cached_medians": true,
+          "paired_statistic": false
+        }
+      ],
+      "memory": {
+        "available": true,
+        "acfo_first_peak_rss_mib": 114.08984375,
+        "finufft_first_peak_rss_mib": 621.828125,
+        "whole_process_peak_ratio_finufft_over_acfo": 5.450337247920019,
+        "acfo_first_incremental_peak_rss_mib": 18.26171875,
+        "finufft_first_incremental_peak_rss_mib": 491.2421875,
+        "incremental_peak_ratio_finufft_over_acfo": 26.900106951871656
+      },
+      "claim_boundary": [
+        "The baseline is memory-safe q-blocked FINUFFT with plan setup inside every evaluation, not a reusable whole-target FINUFFT plan.",
+        "The accuracy domain is the same-binned source on active detector nodes."
+      ]
+    }
+  ],
+  "gates": {
+    "prepared_receipt_passed": true,
+    "prepared_protocol_is_10_warmup_30_measured": true,
+    "prepared_break_even_is_finite": true,
+    "detector_plan_policy_is_q_blocked_setup_per_evaluation": true,
+    "detector_protocol_is_10_warmup_30_measured": true,
+    "detector_break_even_matches_frozen_receipt": true,
+    "detector_total_models_match_frozen_receipt": true,
+    "all_requested_totals_are_positive_and_finite": true
+  },
+  "passed": true,
+  "claim_boundary": [
+    "Prepared-1M totals combine separately measured setup with hot medians and are not paired statistics.",
+    "Detector-active totals preserve the frozen q-blocked FINUFFT policy; they must not be described as reusable whole-plan FINUFFT totals.",
+    "K=10 and K=100 rows are modeled from measured stage values rather than directly timed K-call workflows."
+  ]
+}

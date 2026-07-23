@@ -1,0 +1,748 @@
+{
+  "schema": "uniaxial-closed-surface-modal-reciprocity-probe-v2",
+  "generated_at_utc": "2026-07-14T00:21:24.880462+00:00",
+  "scope": "homogeneous lossless uniaxial medium; point electric-current source; six-face reciprocity projection onto analytic ordinary and extraordinary plane-wave modes",
+  "normalization_contract": "Euclidean-unit electric eigenvectors and one common complex least-squares gain across both branches per shell; no angle- or branch-dependent fitting for the combined gate",
+  "configuration": {
+    "resolutions": [
+      20.0,
+      24.0
+    ],
+    "frequency": 1.0,
+    "n_ordinary": 2.3193932283594694,
+    "n_extraordinary": 2.2244389865983383,
+    "epsilon_perpendicular": 5.379584947759762,
+    "epsilon_parallel": 4.9481288050986425,
+    "source_vector": [
+      0.3082213139277428,
+      -0.17230117993820526,
+      -0.935581062780002
+    ],
+    "cell_width": 5.0,
+    "pml_width": 0.5,
+    "monitor_half_widths": [
+      1.4,
+      1.75
+    ],
+    "until_after_sources": 6.0,
+    "mode_phi_degrees": [
+      -5.625,
+      1.875,
+      9.375
+    ],
+    "mode_parameter_degrees": [
+      15.0,
+      22.5,
+      30.0,
+      37.5,
+      45.0,
+      52.5,
+      60.0,
+      67.5,
+      75.0
+    ],
+    "ordinary_mode_count": 27,
+    "extraordinary_mode_count": 27
+  },
+  "rows": [
+    {
+      "resolution": 20.0,
+      "runtime_s": 92.124738211,
+      "quadrature_points": [
+        20184,
+        31104
+      ],
+      "combined": [
+        {
+          "gain": [
+            -0.3972718435989229,
+            0.123186168170823
+          ],
+          "relative_l2": 0.05569297663263664,
+          "complex_correlation": 0.9984479417344686
+        },
+        {
+          "gain": [
+            -0.3881690677370313,
+            0.1542946102734522
+          ],
+          "relative_l2": 0.06222344974153931,
+          "complex_correlation": 0.9980622437013947
+        }
+      ],
+      "branches": [
+        {
+          "ordinary": {
+            "gain": [
+              -0.39023395823099055,
+              0.137173148217482
+            ],
+            "relative_l2": 0.06798800796189983,
+            "complex_correlation": 0.9976861384089551
+          },
+          "extraordinary": {
+            "gain": [
+              -0.3976088413364433,
+              0.12251642429406921
+            ],
+            "relative_l2": 0.054394495952706574,
+            "complex_correlation": 0.9985195234996916
+          }
+        },
+        {
+          "ordinary": {
+            "gain": [
+              -0.3801991233519451,
+              0.16412401472108662
+            ],
+            "relative_l2": 0.06101167802408088,
+            "complex_correlation": 0.9981370522852488
+          },
+          "extraordinary": {
+            "gain": [
+              -0.3885538834503809,
+              0.15382001357596511
+            ],
+            "relative_l2": 0.06190801531443049,
+            "complex_correlation": 0.9980818591878268
+          }
+        }
+      ],
+      "inner_outer_raw_relative_l2": 0.0848358384542916,
+      "inner_outer_shared_calibration_relative_l2": 0.033129664492715157,
+      "reference_norm": 4.496390645459132,
+      "surface_raw_norms": [
+        10.793610057848548,
+        10.743512225613614
+      ],
+      "sample_labels": [
+        {
+          "branch": "ordinary",
+          "surface_parameter_deg": 15.0,
+          "phi_deg": -5.625
+        },
+        {
+          "branch": "extraordinary",
+          "surface_parameter_deg": 15.0,
+          "phi_deg": -5.625
+        },
+        {
+          "branch": "ordinary",
+          "surface_parameter_deg": 22.5,
+          "phi_deg": -5.625
+        },
+        {
+          "branch": "extraordinary",
+          "surface_parameter_deg": 22.5,
+          "phi_deg": -5.625
+        },
+        {
+          "branch": "ordinary",
+          "surface_parameter_deg": 30.0,
+          "phi_deg": -5.625
+        },
+        {
+          "branch": "extraordinary",
+          "surface_parameter_deg": 30.0,
+          "phi_deg": -5.625
+        },
+        {
+          "branch": "ordinary",
+          "surface_parameter_deg": 37.5,
+          "phi_deg": -5.625
+        },
+        {
+          "branch": "extraordinary",
+          "surface_parameter_deg": 37.5,
+          "phi_deg": -5.625
+        },
+        {
+          "branch": "ordinary",
+          "surface_parameter_deg": 45.0,
+          "phi_deg": -5.625
+        },
+        {
+          "branch": "extraordinary",
+          "surface_parameter_deg": 45.0,
+          "phi_deg": -5.625
+        },
+        {
+          "branch": "ordinary",
+          "surface_parameter_deg": 52.5,
+          "phi_deg": -5.625
+        },
+        {
+          "branch": "extraordinary",
+          "surface_parameter_deg": 52.5,
+          "phi_deg": -5.625
+        },
+        {
+          "branch": "ordinary",
+          "surface_parameter_deg": 60.0,
+          "phi_deg": -5.625
+        },
+        {
+          "branch": "extraordinary",
+          "surface_parameter_deg": 60.0,
+          "phi_deg": -5.625
+        },
+        {
+          "branch": "ordinary",
+          "surface_parameter_deg": 67.5,
+          "phi_deg": -5.625
+        },
+        {
+          "branch": "extraordinary",
+          "surface_parameter_deg": 67.5,
+          "phi_deg": -5.625
+        },
+        {
+          "branch": "ordinary",
+          "surface_parameter_deg": 75.0,
+          "phi_deg": -5.625
+        },
+        {
+          "branch": "extraordinary",
+          "surface_parameter_deg": 75.0,
+          "phi_deg": -5.625
+        },
+        {
+          "branch": "ordinary",
+          "surface_parameter_deg": 15.0,
+          "phi_deg": 1.875
+        },
+        {
+          "branch": "extraordinary",
+          "surface_parameter_deg": 15.0,
+          "phi_deg": 1.875
+        },
+        {
+          "branch": "ordinary",
+          "surface_parameter_deg": 22.5,
+          "phi_deg": 1.875
+        },
+        {
+          "branch": "extraordinary",
+          "surface_parameter_deg": 22.5,
+          "phi_deg": 1.875
+        },
+        {
+          "branch": "ordinary",
+          "surface_parameter_deg": 30.0,
+          "phi_deg": 1.875
+        },
+        {
+          "branch": "extraordinary",
+          "surface_parameter_deg": 30.0,
+          "phi_deg": 1.875
+        },
+        {
+          "branch": "ordinary",
+          "surface_parameter_deg": 37.5,
+          "phi_deg": 1.875
+        },
+        {
+          "branch": "extraordinary",
+          "surface_parameter_deg": 37.5,
+          "phi_deg": 1.875
+        },
+        {
+          "branch": "ordinary",
+          "surface_parameter_deg": 45.0,
+          "phi_deg": 1.875
+        },
+        {
+          "branch": "extraordinary",
+          "surface_parameter_deg": 45.0,
+          "phi_deg": 1.875
+        },
+        {
+          "branch": "ordinary",
+          "surface_parameter_deg": 52.5,
+          "phi_deg": 1.875
+        },
+        {
+          "branch": "extraordinary",
+          "surface_parameter_deg": 52.5,
+          "phi_deg": 1.875
+        },
+        {
+          "branch": "ordinary",
+          "surface_parameter_deg": 60.0,
+          "phi_deg": 1.875
+        },
+        {
+          "branch": "extraordinary",
+          "surface_parameter_deg": 60.0,
+          "phi_deg": 1.875
+        },
+        {
+          "branch": "ordinary",
+          "surface_parameter_deg": 67.5,
+          "phi_deg": 1.875
+        },
+        {
+          "branch": "extraordinary",
+          "surface_parameter_deg": 67.5,
+          "phi_deg": 1.875
+        },
+        {
+          "branch": "ordinary",
+          "surface_parameter_deg": 75.0,
+          "phi_deg": 1.875
+        },
+        {
+          "branch": "extraordinary",
+          "surface_parameter_deg": 75.0,
+          "phi_deg": 1.875
+        },
+        {
+          "branch": "ordinary",
+          "surface_parameter_deg": 15.0,
+          "phi_deg": 9.375
+        },
+        {
+          "branch": "extraordinary",
+          "surface_parameter_deg": 15.0,
+          "phi_deg": 9.375
+        },
+        {
+          "branch": "ordinary",
+          "surface_parameter_deg": 22.5,
+          "phi_deg": 9.375
+        },
+        {
+          "branch": "extraordinary",
+          "surface_parameter_deg": 22.5,
+          "phi_deg": 9.375
+        },
+        {
+          "branch": "ordinary",
+          "surface_parameter_deg": 30.0,
+          "phi_deg": 9.375
+        },
+        {
+          "branch": "extraordinary",
+          "surface_parameter_deg": 30.0,
+          "phi_deg": 9.375
+        },
+        {
+          "branch": "ordinary",
+          "surface_parameter_deg": 37.5,
+          "phi_deg": 9.375
+        },
+        {
+          "branch": "extraordinary",
+          "surface_parameter_deg": 37.5,
+          "phi_deg": 9.375
+        },
+        {
+          "branch": "ordinary",
+          "surface_parameter_deg": 45.0,
+          "phi_deg": 9.375
+        },
+        {
+          "branch": "extraordinary",
+          "surface_parameter_deg": 45.0,
+          "phi_deg": 9.375
+        },
+        {
+          "branch": "ordinary",
+          "surface_parameter_deg": 52.5,
+          "phi_deg": 9.375
+        },
+        {
+          "branch": "extraordinary",
+          "surface_parameter_deg": 52.5,
+          "phi_deg": 9.375
+        },
+        {
+          "branch": "ordinary",
+          "surface_parameter_deg": 60.0,
+          "phi_deg": 9.375
+        },
+        {
+          "branch": "extraordinary",
+          "surface_parameter_deg": 60.0,
+          "phi_deg": 9.375
+        },
+        {
+          "branch": "ordinary",
+          "surface_parameter_deg": 67.5,
+          "phi_deg": 9.375
+        },
+        {
+          "branch": "extraordinary",
+          "surface_parameter_deg": 67.5,
+          "phi_deg": 9.375
+        },
+        {
+          "branch": "ordinary",
+          "surface_parameter_deg": 75.0,
+          "phi_deg": 9.375
+        },
+        {
+          "branch": "extraordinary",
+          "surface_parameter_deg": 75.0,
+          "phi_deg": 9.375
+        }
+      ]
+    },
+    {
+      "resolution": 24.0,
+      "runtime_s": 174.981630802,
+      "quadrature_points": [
+        29400,
+        44376
+      ],
+      "combined": [
+        {
+          "gain": [
+            -0.39376393965673623,
+            0.08202620316574091
+          ],
+          "relative_l2": 0.03612416388192929,
+          "complex_correlation": 0.9993473093893993
+        },
+        {
+          "gain": [
+            -0.39849537335352775,
+            0.10569952268908346
+          ],
+          "relative_l2": 0.04191934153618839,
+          "complex_correlation": 0.9991209980803991
+        }
+      ],
+      "branches": [
+        {
+          "ordinary": {
+            "gain": [
+              -0.38958270559336744,
+              0.09133792367955043
+            ],
+            "relative_l2": 0.04421587198652463,
+            "complex_correlation": 0.999022000090324
+          },
+          "extraordinary": {
+            "gain": [
+              -0.393964182353264,
+              0.0815802573046053
+            ],
+            "relative_l2": 0.035240209213309816,
+            "complex_correlation": 0.9993788709266382
+          }
+        },
+        {
+          "ordinary": {
+            "gain": [
+              -0.3940035621383603,
+              0.11279787805734064
+            ],
+            "relative_l2": 0.04107554111255553,
+            "complex_correlation": 0.9991560438301471
+          },
+          "extraordinary": {
+            "gain": [
+              -0.3987110066193572,
+              0.10535876002637246
+            ],
+            "relative_l2": 0.041709873955529476,
+            "complex_correlation": 0.9991297645524402
+          }
+        }
+      ],
+      "inner_outer_raw_relative_l2": 0.06373050300196109,
+      "inner_outer_shared_calibration_relative_l2": 0.024466278625533685,
+      "reference_norm": 4.496390645459132,
+      "surface_raw_norms": [
+        11.17172658133185,
+        10.89669434548445
+      ],
+      "sample_labels": [
+        {
+          "branch": "ordinary",
+          "surface_parameter_deg": 15.0,
+          "phi_deg": -5.625
+        },
+        {
+          "branch": "extraordinary",
+          "surface_parameter_deg": 15.0,
+          "phi_deg": -5.625
+        },
+        {
+          "branch": "ordinary",
+          "surface_parameter_deg": 22.5,
+          "phi_deg": -5.625
+        },
+        {
+          "branch": "extraordinary",
+          "surface_parameter_deg": 22.5,
+          "phi_deg": -5.625
+        },
+        {
+          "branch": "ordinary",
+          "surface_parameter_deg": 30.0,
+          "phi_deg": -5.625
+        },
+        {
+          "branch": "extraordinary",
+          "surface_parameter_deg": 30.0,
+          "phi_deg": -5.625
+        },
+        {
+          "branch": "ordinary",
+          "surface_parameter_deg": 37.5,
+          "phi_deg": -5.625
+        },
+        {
+          "branch": "extraordinary",
+          "surface_parameter_deg": 37.5,
+          "phi_deg": -5.625
+        },
+        {
+          "branch": "ordinary",
+          "surface_parameter_deg": 45.0,
+          "phi_deg": -5.625
+        },
+        {
+          "branch": "extraordinary",
+          "surface_parameter_deg": 45.0,
+          "phi_deg": -5.625
+        },
+        {
+          "branch": "ordinary",
+          "surface_parameter_deg": 52.5,
+          "phi_deg": -5.625
+        },
+        {
+          "branch": "extraordinary",
+          "surface_parameter_deg": 52.5,
+          "phi_deg": -5.625
+        },
+        {
+          "branch": "ordinary",
+          "surface_parameter_deg": 60.0,
+          "phi_deg": -5.625
+        },
+        {
+          "branch": "extraordinary",
+          "surface_parameter_deg": 60.0,
+          "phi_deg": -5.625
+        },
+        {
+          "branch": "ordinary",
+          "surface_parameter_deg": 67.5,
+          "phi_deg": -5.625
+        },
+        {
+          "branch": "extraordinary",
+          "surface_parameter_deg": 67.5,
+          "phi_deg": -5.625
+        },
+        {
+          "branch": "ordinary",
+          "surface_parameter_deg": 75.0,
+          "phi_deg": -5.625
+        },
+        {
+          "branch": "extraordinary",
+          "surface_parameter_deg": 75.0,
+          "phi_deg": -5.625
+        },
+        {
+          "branch": "ordinary",
+          "surface_parameter_deg": 15.0,
+          "phi_deg": 1.875
+        },
+        {
+          "branch": "extraordinary",
+          "surface_parameter_deg": 15.0,
+          "phi_deg": 1.875
+        },
+        {
+          "branch": "ordinary",
+          "surface_parameter_deg": 22.5,
+          "phi_deg": 1.875
+        },
+        {
+          "branch": "extraordinary",
+          "surface_parameter_deg": 22.5,
+          "phi_deg": 1.875
+        },
+        {
+          "branch": "ordinary",
+          "surface_parameter_deg": 30.0,
+          "phi_deg": 1.875
+        },
+        {
+          "branch": "extraordinary",
+          "surface_parameter_deg": 30.0,
+          "phi_deg": 1.875
+        },
+        {
+          "branch": "ordinary",
+          "surface_parameter_deg": 37.5,
+          "phi_deg": 1.875
+        },
+        {
+          "branch": "extraordinary",
+          "surface_parameter_deg": 37.5,
+          "phi_deg": 1.875
+        },
+        {
+          "branch": "ordinary",
+          "surface_parameter_deg": 45.0,
+          "phi_deg": 1.875
+        },
+        {
+          "branch": "extraordinary",
+          "surface_parameter_deg": 45.0,
+          "phi_deg": 1.875
+        },
+        {
+          "branch": "ordinary",
+          "surface_parameter_deg": 52.5,
+          "phi_deg": 1.875
+        },
+        {
+          "branch": "extraordinary",
+          "surface_parameter_deg": 52.5,
+          "phi_deg": 1.875
+        },
+        {
+          "branch": "ordinary",
+          "surface_parameter_deg": 60.0,
+          "phi_deg": 1.875
+        },
+        {
+          "branch": "extraordinary",
+          "surface_parameter_deg": 60.0,
+          "phi_deg": 1.875
+        },
+        {
+          "branch": "ordinary",
+          "surface_parameter_deg": 67.5,
+          "phi_deg": 1.875
+        },
+        {
+          "branch": "extraordinary",
+          "surface_parameter_deg": 67.5,
+          "phi_deg": 1.875
+        },
+        {
+          "branch": "ordinary",
+          "surface_parameter_deg": 75.0,
+          "phi_deg": 1.875
+        },
+        {
+          "branch": "extraordinary",
+          "surface_parameter_deg": 75.0,
+          "phi_deg": 1.875
+        },
+        {
+          "branch": "ordinary",
+          "surface_parameter_deg": 15.0,
+          "phi_deg": 9.375
+        },
+        {
+          "branch": "extraordinary",
+          "surface_parameter_deg": 15.0,
+          "phi_deg": 9.375
+        },
+        {
+          "branch": "ordinary",
+          "surface_parameter_deg": 22.5,
+          "phi_deg": 9.375
+        },
+        {
+          "branch": "extraordinary",
+          "surface_parameter_deg": 22.5,
+          "phi_deg": 9.375
+        },
+        {
+          "branch": "ordinary",
+          "surface_parameter_deg": 30.0,
+          "phi_deg": 9.375
+        },
+        {
+          "branch": "extraordinary",
+          "surface_parameter_deg": 30.0,
+          "phi_deg": 9.375
+        },
+        {
+          "branch": "ordinary",
+          "surface_parameter_deg": 37.5,
+          "phi_deg": 9.375
+        },
+        {
+          "branch": "extraordinary",
+          "surface_parameter_deg": 37.5,
+          "phi_deg": 9.375
+        },
+        {
+          "branch": "ordinary",
+          "surface_parameter_deg": 45.0,
+          "phi_deg": 9.375
+        },
+        {
+          "branch": "extraordinary",
+          "surface_parameter_deg": 45.0,
+          "phi_deg": 9.375
+        },
+        {
+          "branch": "ordinary",
+          "surface_parameter_deg": 52.5,
+          "phi_deg": 9.375
+        },
+        {
+          "branch": "extraordinary",
+          "surface_parameter_deg": 52.5,
+          "phi_deg": 9.375
+        },
+        {
+          "branch": "ordinary",
+          "surface_parameter_deg": 60.0,
+          "phi_deg": 9.375
+        },
+        {
+          "branch": "extraordinary",
+          "surface_parameter_deg": 60.0,
+          "phi_deg": 9.375
+        },
+        {
+          "branch": "ordinary",
+          "surface_parameter_deg": 67.5,
+          "phi_deg": 9.375
+        },
+        {
+          "branch": "extraordinary",
+          "surface_parameter_deg": 67.5,
+          "phi_deg": 9.375
+        },
+        {
+          "branch": "ordinary",
+          "surface_parameter_deg": 75.0,
+          "phi_deg": 9.375
+        },
+        {
+          "branch": "extraordinary",
+          "surface_parameter_deg": 75.0,
+          "phi_deg": 9.375
+        }
+      ]
+    }
+  ],
+  "gates": {
+    "combined_shape_l2_le_5pct": true,
+    "ordinary_shape_l2_le_5pct": true,
+    "extraordinary_shape_l2_le_5pct": true,
+    "shared_calibration_monitor_invariance_le_5pct": true
+  },
+  "passed": true,
+  "environment": {
+    "meep": "1.33.0",
+    "python": "3.13.14",
+    "numpy": "2.5.1",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43"
+  }
+}

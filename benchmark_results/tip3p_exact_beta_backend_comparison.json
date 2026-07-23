@@ -1,0 +1,91 @@
+{
+  "schema": "tip3p-exact-beta-backend-comparison-v1",
+  "generated_at_utc": "2026-07-12T20:49:59.787803+00:00",
+  "source": {
+    "input_npz": "runs/water_tip3p_8nm/water_tip3p_8nm_final.npz",
+    "trajectory_dcd": "runs/water_tip3p_8nm/water_tip3p_8nm_trajectory.dcd",
+    "frame_index": 0,
+    "source_metadata": {
+      "box_nm_requested": 8.0,
+      "equilibration_ps": 200.0,
+      "final_box_vectors_nm": [
+        [
+          7.991819567547597,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          7.991819567547597,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          7.991819567547597
+        ]
+      ],
+      "friction_per_ps": 1.0,
+      "input_source": "seed_tip3p_water",
+      "kind": "openmm_tip3p_water_box",
+      "n_atoms": 50430,
+      "n_waters": 16810,
+      "nonbonded_cutoff_nm": 1.0,
+      "openmm_platform": "CUDA",
+      "openmm_version": "8.2.0.dev-5377094",
+      "pressure_bar": 1.0,
+      "production_ps": 200.0,
+      "report_interval_ps": 10.0,
+      "seed": 20260623,
+      "temperature_k": 300.0,
+      "timestep_fs": 2.0,
+      "water_ff": "tip3p.xml",
+      "water_model": "tip3p"
+    }
+  },
+  "atom_count": 50430,
+  "q_inv_angstrom": [
+    5.0,
+    5.185714285714286,
+    5.371428571428571,
+    5.557142857142857,
+    5.742857142857143,
+    5.928571428571429,
+    6.114285714285714,
+    6.3
+  ],
+  "nq": 8,
+  "target_nphi": 768,
+  "target_nyquist": 384,
+  "active_targets": 2720,
+  "maximum_harmonic": 374,
+  "direct_ndft_seconds": 14.202171400000225,
+  "backends": {
+    "cpp_miller": {
+      "seconds": 18.317262500000652,
+      "direct_over_backend_speedup": 0.7753435536559963,
+      "complex_l2_vs_direct": 2.3808982038519538e-12,
+      "intensity_l2_vs_direct": 2.008288773599345e-12
+    },
+    "cpp_fused": {
+      "seconds": 0.6070709999985411,
+      "direct_over_backend_speedup": 23.394580535117566,
+      "complex_l2_vs_direct": 2.380846129883452e-12,
+      "intensity_l2_vs_direct": 2.0087426190393596e-12
+    }
+  },
+  "fused_over_cpp_miller_speedup": 30.17317990818977,
+  "gates": {
+    "cpp_fused_complex_l2_vs_direct_le_1e_9": true,
+    "cpp_fused_vs_cpp_miller_complex_l2_le_1e_12": true,
+    "maximum_harmonic_below_target_nyquist": true,
+    "cpp_fused_speedup_vs_cpp_miller_ge_10": true,
+    "cpp_fused_speedup_vs_direct_ge_10": true
+  },
+  "passed": true,
+  "claim_boundary": [
+    "Direct NDFT is the correctness oracle; neither optimized backend is treated as truth.",
+    "Timings are one local CPU run for frame 0 and are not hardware-independent.",
+    "The comparison measures eight high-q rows, not the Nq=512 production workload."
+  ]
+}

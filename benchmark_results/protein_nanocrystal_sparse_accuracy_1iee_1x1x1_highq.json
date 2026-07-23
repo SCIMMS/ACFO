@@ -1,0 +1,29 @@
+{
+  "structure_path": "structures/processed/protein_nanocrystal_lysozyme_1iee_1x1x1_fixed.npz",
+  "structure_id": "protein_nanocrystal_lysozyme_1iee_1x1x1_fixed",
+  "atoms": 8008,
+  "qmin": 0.05,
+  "qmax": 6.3,
+  "q_unit": "inv_angstrom",
+  "nq": 8,
+  "bin_width_nm": 0.1,
+  "n_r": 54,
+  "n_z": 100,
+  "n_phi": 750,
+  "active_flat_bins": 8008,
+  "sparse_structure_storage_mib": 0.274932861328125,
+  "dense_sparse_source_s": 0.10904040000241366,
+  "direct_sparse_source_s": 0.02296550000028219,
+  "exact_atom_direct_s": 3.62310300000172,
+  "sparse_vs_dense_complex_l2": 0.0,
+  "sparse_vs_dense_intensity_l2": 0.0,
+  "sparse_vs_dense_ring_l2": 0.0,
+  "sparse_vs_exact_atom_complex_l2": 0.015083667522398161,
+  "sparse_vs_exact_atom_intensity_l2": 0.00021633991719175317,
+  "sparse_vs_exact_atom_ring_l2": 7.061713070531226e-05,
+  "all_finite": true,
+  "error_contract": {
+    "sparse_vs_dense": "representation/operator identity on the same bins",
+    "sparse_vs_exact_atom": "end-to-end cylindrical discretization plus operator error"
+  }
+}

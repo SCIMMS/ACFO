@@ -1,0 +1,176 @@
+{
+  "schema": "waxs-detector-sampling-audit-v1",
+  "generated_at_utc": "2026-07-21T23:50:41.853811+00:00",
+  "benchmark_grid": {
+    "qmin_inv_angstrom": 0.05,
+    "qmax_inv_angstrom": 6.3,
+    "Nq": 256,
+    "dq_inv_angstrom": 0.024509803921568627,
+    "Nphi": 2160,
+    "dphi_deg": 0.16666666666666666,
+    "polar_targets": 552960
+  },
+  "detector_definitions": [
+    {
+      "name": "EIGER2 X 4M",
+      "pixel_pitch_um": 75.0,
+      "pixel_array": [
+        2068,
+        2162
+      ],
+      "active_area_mm": [
+        155.1,
+        162.15
+      ],
+      "representative_distance_mm": 100.0,
+      "source": "https://media.dectris.com/TechnicalSpecifications_EIGER2_X_4M_print.pdf",
+      "distance_note": "representative WAXS geometry for sampling audit; not a vendor limit"
+    },
+    {
+      "name": "AGIPD 1M",
+      "pixel_pitch_um": 200.0,
+      "pixel_array": [
+        1024,
+        1024
+      ],
+      "active_area_mm": [
+        204.8,
+        204.8
+      ],
+      "representative_distance_mm": 125.0,
+      "source": "https://www.xfel.eu/facility/instruments/spb_sfx/instrument_parameters_for_2026_01/index_eng.html",
+      "distance_note": "official approximate minimum SPB/SFX sample-detector distance"
+    }
+  ],
+  "detector_geometry_rows": [
+    {
+      "detector": "EIGER2 X 4M",
+      "wavelength_angstrom": 1.0,
+      "photon_energy_keV": 12.39842,
+      "sample_detector_distance_mm": 100.0,
+      "qmax_two_theta_deg": 60.17713120558772,
+      "qmax_radius_mm": 174.44835112405278,
+      "detector_half_side_mm": 77.55,
+      "detector_half_corner_mm": 112.19250476301882,
+      "qmax_at_corner_inv_angstrom": 5.140097409283221,
+      "qmax_full_azimuth_inv_angstrom": 4.069800028464394,
+      "requested_qmax_reaches_corner": false,
+      "requested_qmax_has_full_azimuth": false,
+      "radial_pixels_per_Nq_bin_center": 5.201141931107692,
+      "radial_pixels_per_Nq_bin_at_qmax": 24.304350242405793,
+      "azimuthal_pixels_per_Nphi_bin_at_qmax": 6.765995781755271,
+      "raw_detector_pixels": 4471016,
+      "polar_target_fraction_of_raw_pixels": 0.12367658715602897
+    },
+    {
+      "detector": "AGIPD 1M",
+      "wavelength_angstrom": 1.0,
+      "photon_energy_keV": 12.39842,
+      "sample_detector_distance_mm": 125.0,
+      "qmax_two_theta_deg": 60.17713120558772,
+      "qmax_radius_mm": 218.06043890506592,
+      "detector_half_side_mm": 102.4,
+      "detector_half_corner_mm": 144.81546878700493,
+      "qmax_at_corner_inv_angstrom": 5.231169448164951,
+      "qmax_full_azimuth_inv_angstrom": 4.228251000311221,
+      "requested_qmax_reaches_corner": false,
+      "requested_qmax_has_full_azimuth": false,
+      "radial_pixels_per_Nq_bin_center": 2.43803528020673,
+      "radial_pixels_per_Nq_bin_at_qmax": 11.392664176127711,
+      "azimuthal_pixels_per_Nphi_bin_at_qmax": 3.1715605226977828,
+      "raw_detector_pixels": 1048576,
+      "polar_target_fraction_of_raw_pixels": 0.52734375
+    },
+    {
+      "detector": "EIGER2 X 4M",
+      "wavelength_angstrom": 0.8,
+      "photon_energy_keV": 15.498024999999998,
+      "sample_detector_distance_mm": 100.0,
+      "qmax_two_theta_deg": 47.29022991946141,
+      "qmax_radius_mm": 108.33189128292396,
+      "detector_half_side_mm": 77.55,
+      "detector_half_corner_mm": 112.19250476301882,
+      "qmax_at_corner_inv_angstrom": 6.425121761604025,
+      "qmax_full_azimuth_inv_angstrom": 5.087250035580492,
+      "requested_qmax_reaches_corner": true,
+      "requested_qmax_has_full_azimuth": false,
+      "radial_pixels_per_Nq_bin_center": 4.160913544886154,
+      "radial_pixels_per_Nq_bin_at_qmax": 9.872938666951796,
+      "azimuthal_pixels_per_Nphi_bin_at_qmax": 4.201662639554594,
+      "raw_detector_pixels": 4471016,
+      "polar_target_fraction_of_raw_pixels": 0.12367658715602897
+    },
+    {
+      "detector": "AGIPD 1M",
+      "wavelength_angstrom": 0.8,
+      "photon_energy_keV": 15.498024999999998,
+      "sample_detector_distance_mm": 125.0,
+      "qmax_two_theta_deg": 47.29022991946141,
+      "qmax_radius_mm": 135.41486410365493,
+      "detector_half_side_mm": 102.4,
+      "detector_half_corner_mm": 144.81546878700493,
+      "qmax_at_corner_inv_angstrom": 6.538961810206189,
+      "qmax_full_azimuth_inv_angstrom": 5.285313750389026,
+      "requested_qmax_reaches_corner": true,
+      "requested_qmax_has_full_azimuth": false,
+      "radial_pixels_per_Nq_bin_center": 1.9504282241653843,
+      "radial_pixels_per_Nq_bin_at_qmax": 4.627940000133655,
+      "azimuthal_pixels_per_Nphi_bin_at_qmax": 1.9695293622912156,
+      "raw_detector_pixels": 1048576,
+      "polar_target_fraction_of_raw_pixels": 0.52734375
+    }
+  ],
+  "nanocrystal_sampling_rows": [
+    {
+      "structure_path": "structures/processed/protein_nanocrystal_lysozyme_1iee_3x3x3_fixed.npz",
+      "structure_id": "protein_nanocrystal_lysozyme_1iee_3x3x3_fixed",
+      "atoms": 216216,
+      "supercell": [
+        3,
+        3,
+        3
+      ],
+      "extent_nm": [
+        27.37843168,
+        29.4858125,
+        31.40041945
+      ],
+      "maximum_extent_nm": 31.40041945,
+      "finite_size_fringe_period_2pi_over_D_inv_angstrom": 0.02000987699283611,
+      "nyquist_step_pi_over_D_inv_angstrom": 0.010004938496418056,
+      "current_dq_over_fringe_period": 1.2248852869182338,
+      "current_dq_over_nyquist_step": 2.4497705738364677,
+      "Nq_needed_for_one_sample_per_fringe": 314,
+      "Nq_needed_for_two_samples_per_fringe": 626
+    },
+    {
+      "structure_path": "structures/processed/protein_nanocrystal_lysozyme_1iee_5x5x5_fixed.npz",
+      "structure_id": "protein_nanocrystal_lysozyme_1iee_5x5x5_fixed",
+      "atoms": 1001000,
+      "supercell": [
+        5,
+        5,
+        5
+      ],
+      "extent_nm": [
+        46.0596293,
+        49.74580902,
+        53.01502005
+      ],
+      "maximum_extent_nm": 53.01502005,
+      "finite_size_fringe_period_2pi_over_D_inv_angstrom": 0.011851707876850245,
+      "nyquist_step_pi_over_D_inv_angstrom": 0.005925853938425122,
+      "current_dq_over_fringe_period": 2.0680398282042747,
+      "current_dq_over_nyquist_step": 4.136079656408549,
+      "Nq_needed_for_one_sample_per_fringe": 529,
+      "Nq_needed_for_two_samples_per_fringe": 1056
+    }
+  ],
+  "decision": {
+    "Nq256_detector_realism": "realistic, not artificially dense: for the representative 15.5-keV geometries, one radial q bin spans about 2-10 detector pixels",
+    "Nphi2160_detector_realism": "realistic at the outer WAXS ring: about 2 AGIPD pixels or 4 EIGER pixels per azimuthal bin",
+    "qmax_geometry_caveat": "at 12.4 keV and the representative distances q=6.3 inverse angstrom lies outside both detector corners; 15.5 keV reaches the corners but not full azimuth, so a detector mask/partial-arc contract is required",
+    "nanocrystal_resolution_caveat": "Nq=256 is marginal or coarse for coherent finite-domain fringes: the 3x3x3 and 5x5x5 structures have 2pi/D periods of about 0.0200 and 0.0119 inverse angstrom",
+    "recommended_benchmark_contract": "retain Nq=256 as a minimum detector-realistic case, add Nq=512 and preferably Nq near 1024 for coherent single-domain speckles, and benchmark the actual masked detector nodes or radial-dependent polar occupancy rather than a full rectangular q-phi grid alone"
+  }
+}

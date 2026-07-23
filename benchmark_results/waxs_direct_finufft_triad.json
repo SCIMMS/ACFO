@@ -1,0 +1,62 @@
+{
+  "schema": "waxs-direct-finufft-triad-v1",
+  "generated_at_utc": "2026-07-13T03:48:40.332587+00:00",
+  "structure": "protein_nanocrystal_lysozyme_1iee_1x1x1_fixed",
+  "structure_path": "structures/processed/protein_nanocrystal_lysozyme_1iee_1x1x1_fixed.npz",
+  "atom_count": 8008,
+  "same_binned_source_count": 8008,
+  "q_range_inv_angstrom": [
+    0.05,
+    6.3
+  ],
+  "nq": 8,
+  "nphi": 750,
+  "active_targets": 4948,
+  "direct_oracle": "complex128 explicit nonuniform phase sum on active curved-Ewald targets",
+  "comparison_contract": "ACFO and FINUFFT use the same binned sources, form factors, and active detector targets",
+  "timings_s": {
+    "acfo": 0.026987400007783435,
+    "direct": 4.293940899995505
+  },
+  "acfo": {
+    "complex_l2_vs_direct": 1.3642581209355848e-07,
+    "intensity_l2_vs_direct": 2.6886657147515044e-07,
+    "masked_ring_intensity_l2_vs_direct": 3.4758703693076755e-07
+  },
+  "finufft_sweep": [
+    {
+      "eps": 0.0001,
+      "seconds": 0.452707599994028,
+      "complex_l2_vs_direct": 7.559397395057593e-06,
+      "intensity_l2_vs_direct": 6.556881951044112e-06,
+      "complex_l2_vs_acfo": 7.604315615845237e-06
+    },
+    {
+      "eps": 1e-06,
+      "seconds": 0.47753640000883024,
+      "complex_l2_vs_direct": 1.9627364422734394e-07,
+      "intensity_l2_vs_direct": 3.350604254164923e-08,
+      "complex_l2_vs_acfo": 2.3828420752775336e-07
+    },
+    {
+      "eps": 1e-08,
+      "seconds": 0.719736400002148,
+      "complex_l2_vs_direct": 7.614450820218785e-09,
+      "intensity_l2_vs_direct": 1.5193868575020993e-08,
+      "complex_l2_vs_acfo": 1.4321755329262217e-07
+    },
+    {
+      "eps": 1e-10,
+      "seconds": 5.491277399996761,
+      "complex_l2_vs_direct": 3.762995940338053e-12,
+      "intensity_l2_vs_direct": 6.284045627742712e-12,
+      "complex_l2_vs_acfo": 1.3642564458864093e-07
+    }
+  ],
+  "gates": {
+    "acfo_complex_l2_le_2e_6": true,
+    "finufft_eps_1e_6_complex_l2_le_2e_6": true,
+    "finufft_error_decreases_from_1e_4_to_1e_10": true
+  },
+  "passed": true
+}

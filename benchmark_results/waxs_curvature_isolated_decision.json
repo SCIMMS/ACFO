@@ -1,0 +1,205 @@
+{
+  "schema": "waxs-curvature-isolated-decision-v1",
+  "generated_at_utc": "2026-07-12T11:50:31.326367+00:00",
+  "configuration": {
+    "structure_path": "structures/processed/protein_nanocrystal_lysozyme_1iee_3x3x3_fixed.npz",
+    "structure_id": "protein_nanocrystal_lysozyme_1iee_3x3x3_fixed",
+    "atoms": 216216,
+    "elements": [
+      "C",
+      "N",
+      "O",
+      "S"
+    ],
+    "source_mode": "same_binned",
+    "source_count": 216216,
+    "qmin": 0.05,
+    "qmax": 6.3,
+    "q_unit": "inv_angstrom",
+    "nq": 256,
+    "n_phi": 2160,
+    "targets": 552960,
+    "reference_wavelength_nm": 0.1,
+    "curvature_scales": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0,
+      1.25
+    ],
+    "curvature_definition": "q_z=-scale*q^2/(2*k_ref), q_perp=sqrt(q^2-q_z^2); scale=0 planar and scale=1 physical Ewald at reference wavelength",
+    "r_dependent_margin": 32,
+    "finufft_eps": 1e-06,
+    "finufft_threads": 4,
+    "finufft_q_block_size": 8,
+    "repeats": 1,
+    "grid": {
+      "n_r": 167,
+      "n_z": 317,
+      "n_phi": 2160
+    }
+  },
+  "replication": {
+    "forward_sweep": "waxs_curvature_isolated_216k_nq256.json",
+    "reverse_repeat2": "waxs_curvature_isolated_216k_nq256_reverse_repeat2.json",
+    "cached_samples_per_shared_curvature": 3
+  },
+  "robust_rows": [
+    {
+      "curvature_scale": 0.0,
+      "max_abs_qz_over_q": 0.0,
+      "dqperp_dq_at_qmax": 1.0,
+      "acfo_cached_samples_s": [
+        12.660545699998693,
+        9.949066299999686,
+        10.911462500000198
+      ],
+      "finufft_cached_samples_s": [
+        32.508785300000454,
+        27.592670800000633,
+        27.846038800000315
+      ],
+      "paired_speedup_samples": [
+        2.5677238620136107,
+        2.7733929966876896,
+        2.5519987627689513
+      ],
+      "acfo_cached_median_s": 10.911462500000198,
+      "finufft_cached_median_s": 27.846038800000315,
+      "robust_warm_speedup": 2.5519987627689513,
+      "paired_speedup_min": 2.5519987627689513,
+      "paired_speedup_max": 2.7733929966876896,
+      "complex_l2_max": 8.801463909614905e-07
+    },
+    {
+      "curvature_scale": 0.5,
+      "max_abs_qz_over_q": 0.25066903536973517,
+      "dqperp_dq_at_qmax": 0.9031655760605867,
+      "acfo_cached_samples_s": [
+        12.47124149999945,
+        13.391293599999699,
+        15.285019099999772
+      ],
+      "finufft_cached_samples_s": [
+        33.85627449999993,
+        30.95131489999949,
+        26.44303310000032
+      ],
+      "paired_speedup_samples": [
+        2.7147477257979022,
+        2.3113013443301837,
+        1.7299967325523797
+      ],
+      "acfo_cached_median_s": 13.391293599999699,
+      "finufft_cached_median_s": 30.95131489999949,
+      "robust_warm_speedup": 2.3113013443301837,
+      "paired_speedup_min": 1.7299967325523797,
+      "paired_speedup_max": 2.7147477257979022,
+      "complex_l2_max": 8.081721092871257e-07
+    },
+    {
+      "curvature_scale": 1.0,
+      "max_abs_qz_over_q": 0.5013380707394703,
+      "dqperp_dq_at_qmax": 0.5747696295311632,
+      "acfo_cached_samples_s": [
+        10.242326300000059,
+        12.215029999999388,
+        12.310970300000918
+      ],
+      "finufft_cached_samples_s": [
+        25.16814610000074,
+        30.613207799999145,
+        29.69015860000036
+      ],
+      "paired_speedup_samples": [
+        2.4572685308805866,
+        2.5061917817639974,
+        2.411683066118529
+      ],
+      "acfo_cached_median_s": 12.215029999999388,
+      "finufft_cached_median_s": 29.69015860000036,
+      "robust_warm_speedup": 2.4306251069380793,
+      "paired_speedup_min": 2.411683066118529,
+      "paired_speedup_max": 2.5061917817639974,
+      "complex_l2_max": 7.006753876416557e-07
+    },
+    {
+      "curvature_scale": 1.25,
+      "max_abs_qz_over_q": 0.6266725884243379,
+      "dqperp_dq_at_qmax": 0.2753338991924747,
+      "acfo_cached_samples_s": [
+        10.712164500000654,
+        13.690256500000032,
+        24.398808899999494
+      ],
+      "finufft_cached_samples_s": [
+        24.163168600000063,
+        29.443962499999543,
+        29.875257699999565
+      ],
+      "paired_speedup_samples": [
+        2.2556756479979923,
+        2.150723947356244,
+        1.224455579878745
+      ],
+      "acfo_cached_median_s": 13.690256500000032,
+      "finufft_cached_median_s": 29.443962499999543,
+      "robust_warm_speedup": 2.150723947356244,
+      "paired_speedup_min": 1.224455579878745,
+      "paired_speedup_max": 2.2556756479979923,
+      "complex_l2_max": 6.804633860126646e-07
+    }
+  ],
+  "accuracy": {
+    "maximum_complex_l2": 8.801463909614905e-07,
+    "gate": 1e-06,
+    "passed": true
+  },
+  "curvature_only_test": {
+    "speedup_monotonic_non_decreasing": false,
+    "pearson_abs_qz_fraction_vs_speedup": -0.767132514302747,
+    "planar_speedup": 2.5519987627689513,
+    "physical_ewald_speedup": 2.4306251069380793,
+    "strongest_curvature_speedup": 2.150723947356244,
+    "physical_to_planar_speedup_ratio": 0.952439766977324,
+    "strongest_to_planar_speedup_ratio": 0.8427605760367536,
+    "hypothesis_supported": false
+  },
+  "previous_fixed_dq_qmax_sweep": [
+    {
+      "qmax_inv_angstrom": 2.1333333333333333,
+      "nq": 14,
+      "n_phi": 720,
+      "targets": 10080,
+      "speedup": 24.702153702440057
+    },
+    {
+      "qmax_inv_angstrom": 4.056410256410256,
+      "nq": 26,
+      "n_phi": 1280,
+      "targets": 33280,
+      "speedup": 30.522606481281933
+    },
+    {
+      "qmax_inv_angstrom": 6.3,
+      "nq": 40,
+      "n_phi": 2000,
+      "targets": 80000,
+      "speedup": 55.14252669165295
+    },
+    {
+      "qmax_inv_angstrom": 8.062820512820513,
+      "nq": 51,
+      "n_phi": 2500,
+      "targets": 127500,
+      "speedup": 76.42723185029188
+    }
+  ],
+  "decision": "Curvature magnitude alone does not increase FINUFFT/ACFO speedup under the fixed 216k-protein, Nq=256, Nphi=2160, 552960-target production contract. The earlier high-q speedup growth is therefore dominated by the coupled growth of q range, target count, angular bandwidth, and baseline cost rather than by curvature alone.",
+  "claim_boundary": {
+    "supported": "ACFO is advantageous for structured axisymmetric curved manifolds with many targets and reusable geometry; the fixed-dq high-q regime remains favorable.",
+    "not_supported": "speedup increases monotonically with curvature when target count and all other workload variables are fixed",
+    "physics_note": "Strong curvature still makes planar FFT references physically inadequate, but FINUFFT already supports nonuniform targets and is not penalized by curvature magnitude alone in this controlled test."
+  }
+}

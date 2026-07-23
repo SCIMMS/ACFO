@@ -1,0 +1,44 @@
+{
+  "schema": "acfo-general-curvature-independent-cpu-return-review-v1",
+  "status": "accepted",
+  "run_id": "run_20260722T042028Z_27524",
+  "package_id": "general-curvature-cpu-replication-v1.1",
+  "started_at_utc": "2026-07-22T04:20:28.5505280Z",
+  "ended_at_utc": "2026-07-22T04:20:52.7415448Z",
+  "return_zip": "run_20260722T042028Z_27524_return_bundle.zip",
+  "return_zip_bytes": 27639,
+  "return_zip_sha256": "be7f80a2b1477cf8baa42fcb4ea30b5f896e825dd3838f2a800d2dec5c68d61f",
+  "integrity": {
+    "provided_hash_matches": true,
+    "package_files_verified": 43,
+    "package_mismatches": 0,
+    "problem_log_signatures": 0
+  },
+  "environment": {
+    "cpu": "12th Gen Intel(R) Core(TM) i5-12400F",
+    "physical_cores": 6,
+    "logical_processors": 12,
+    "display_controller_metadata_only": "AMD Radeon RX 6600 XT",
+    "python": "3.14.6",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "threads": 1,
+    "gpu_required": false,
+    "gpu_used": false
+  },
+  "scientific_status": {
+    "curve_family_checks_passed": true,
+    "nonlinear_oracle_checks_passed": true,
+    "nonlinear_frozen_gates_passed": 10,
+    "nonlinear_frozen_gates_total": 10
+  },
+  "headline_metrics": {
+    "max_curve_operator_relative_l2": 4.9841174304069906e-15,
+    "max_green_acfo_vs_direct_relative_l2": 4.5906782410430936e-15,
+    "selected_mode_voxel_vs_analytic_green_relative_l2": 7.1513592477420856e-13,
+    "finest_histogram_vs_analytic_green_relative_l2": 0.01810029518111759,
+    "wrong_d33_gain_aligned_relative_l2": 0.29744307049651875,
+    "empirical_resolution_order": 1.610206857647875
+  },
+  "claim_role": "independent CPU correctness reproduction for general-curvature extension 2; no performance claim"
+}

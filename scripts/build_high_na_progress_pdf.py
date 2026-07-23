@@ -450,7 +450,7 @@ def build_story(styles: dict[str, ParagraphStyle]) -> list[Any]:
                 ["Aberration correction demo", "benchmark_results/high_na_aberration_correction_summary.md"],
                 ["Multi-trap demo", "benchmark_results/high_na_multitrap_phase_mask_summary.md"],
                 ["External package rollup", "benchmark_results/high_na_external_package_comparison.md"],
-                ["Semantic layer", "C:/Users/tnvlaos456/.codex/skills/high-na-benchmark-semantic-layer/references/semantic-layer.md"],
+                ["Publication validation", "validation/high_na_si/"],
             ],
             styles,
             col_widths=[2.15 * inch, 4.75 * inch],

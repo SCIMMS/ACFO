@@ -1,0 +1,379 @@
+{
+  "schema": "protein-lattice-prepared-finufft-512-abba-v1",
+  "status": "complete",
+  "created_at_utc": "2026-07-14T09:14:36.052682+00:00",
+  "updated_at_utc": "2026-07-14T09:26:58.555602+00:00",
+  "contract": {
+    "unit": "structures/processed/protein_nanocrystal_lysozyme_1iee_1x1x1_fixed.npz",
+    "supercell": "structures/processed/protein_nanocrystal_lysozyme_1iee_5x5x5_fixed.npz",
+    "nq": 512,
+    "q_min_inv_angstrom": 5.0,
+    "q_max_inv_angstrom": 6.3,
+    "wavelength_nm": 0.08,
+    "target_nphi": 768,
+    "harmonic_margin": 48,
+    "finufft_eps": 1e-06,
+    "finufft_threads": 4,
+    "warmup_pairs_requested": 10,
+    "measured_pairs_requested": 30,
+    "factorized_backend": "prepared_fused",
+    "lattice_backend": "separable",
+    "coefficient_backend": "fused_phase",
+    "synthesis_backend": "fft"
+  },
+  "unit_structure": "protein_nanocrystal_lysozyme_1iee_1x1x1_fixed",
+  "supercell": [
+    5,
+    5,
+    5
+  ],
+  "atom_count": 1001000,
+  "cell_count": 125,
+  "repetition_residual_nm": 3.0588864774472313e-12,
+  "target_count": 393216,
+  "lattice_setup_seconds": 0.076138699951116,
+  "finufft_setup_seconds": 0.6315647000446916,
+  "prepared_plan_setup_seconds": 0.0029053999460302293,
+  "factorized_backend": "prepared_fused",
+  "lattice_backend": "separable",
+  "legacy_comparison": {
+    "legacy_seconds": 5.931698699947447,
+    "prepared_seconds": 0.6348484000191092,
+    "legacy_vs_prepared_complex_l2": 4.81061514228189e-14,
+    "legacy_vs_prepared_intensity_l2": 5.300645264411422e-14
+  },
+  "warmup_pairs_completed": 10,
+  "warmup_pairs": [
+    {
+      "pair_index": 1,
+      "order": "AB",
+      "factorized_seconds": 0.6390846000285819,
+      "finufft_seconds": 18.043492900033016
+    },
+    {
+      "pair_index": 2,
+      "order": "BA",
+      "finufft_seconds": 18.15395400003763,
+      "factorized_seconds": 0.6326315000187606
+    },
+    {
+      "pair_index": 3,
+      "order": "AB",
+      "factorized_seconds": 0.6538940999889746,
+      "finufft_seconds": 18.010713900031988
+    },
+    {
+      "pair_index": 4,
+      "order": "BA",
+      "finufft_seconds": 18.150902899971697,
+      "factorized_seconds": 0.6617594999843277
+    },
+    {
+      "pair_index": 5,
+      "order": "AB",
+      "factorized_seconds": 0.6599657000042498,
+      "finufft_seconds": 18.192639100016095
+    },
+    {
+      "pair_index": 6,
+      "order": "BA",
+      "finufft_seconds": 18.067325999960303,
+      "factorized_seconds": 0.6608265999821015
+    },
+    {
+      "pair_index": 7,
+      "order": "AB",
+      "factorized_seconds": 0.6623601000173949,
+      "finufft_seconds": 18.09070050000446
+    },
+    {
+      "pair_index": 8,
+      "order": "BA",
+      "finufft_seconds": 18.383319700020365,
+      "factorized_seconds": 0.6633038999862038
+    },
+    {
+      "pair_index": 9,
+      "order": "AB",
+      "factorized_seconds": 0.6554591999738477,
+      "finufft_seconds": 18.22026360000018
+    },
+    {
+      "pair_index": 10,
+      "order": "BA",
+      "finufft_seconds": 17.70076199999312,
+      "factorized_seconds": 0.6420069999876432
+    }
+  ],
+  "measured_pairs_completed": 30,
+  "measured_pairs": [
+    {
+      "pair_index": 1,
+      "order": "AB",
+      "factorized_seconds": 0.6545631000190042,
+      "finufft_seconds": 17.588664799986873,
+      "paired_speedup": 26.87084682817625
+    },
+    {
+      "pair_index": 2,
+      "order": "BA",
+      "finufft_seconds": 18.041235599957872,
+      "factorized_seconds": 0.6384167000069283,
+      "paired_speedup": 28.259341586399735
+    },
+    {
+      "pair_index": 3,
+      "order": "AB",
+      "factorized_seconds": 0.6538743000128306,
+      "finufft_seconds": 17.73612050001975,
+      "paired_speedup": 27.12466371544458
+    },
+    {
+      "pair_index": 4,
+      "order": "BA",
+      "finufft_seconds": 17.540338399994653,
+      "factorized_seconds": 0.6471053000423126,
+      "paired_speedup": 27.10584876811816
+    },
+    {
+      "pair_index": 5,
+      "order": "AB",
+      "factorized_seconds": 0.6466774999862537,
+      "finufft_seconds": 17.565865900018252,
+      "paired_speedup": 27.16325510071349
+    },
+    {
+      "pair_index": 6,
+      "order": "BA",
+      "finufft_seconds": 17.465992900019046,
+      "factorized_seconds": 0.6329110999940895,
+      "paired_speedup": 27.596281531769872
+    },
+    {
+      "pair_index": 7,
+      "order": "AB",
+      "factorized_seconds": 0.6399680000031367,
+      "finufft_seconds": 17.138388900028076,
+      "paired_speedup": 26.780071659745605
+    },
+    {
+      "pair_index": 8,
+      "order": "BA",
+      "finufft_seconds": 18.05412059999071,
+      "factorized_seconds": 0.6415405999869108,
+      "paired_speedup": 28.141820798806908
+    },
+    {
+      "pair_index": 9,
+      "order": "AB",
+      "factorized_seconds": 0.6496695000096224,
+      "finufft_seconds": 17.72464959998615,
+      "paired_speedup": 27.282563826258777
+    },
+    {
+      "pair_index": 10,
+      "order": "BA",
+      "finufft_seconds": 17.27507259999402,
+      "factorized_seconds": 0.6341260999906808,
+      "paired_speedup": 27.242330193076576
+    },
+    {
+      "pair_index": 11,
+      "order": "AB",
+      "factorized_seconds": 0.638165200012736,
+      "finufft_seconds": 17.19908220000798,
+      "paired_speedup": 26.950830599450946
+    },
+    {
+      "pair_index": 12,
+      "order": "BA",
+      "finufft_seconds": 17.564518500003032,
+      "factorized_seconds": 0.6404499000054784,
+      "paired_speedup": 27.425281040488546
+    },
+    {
+      "pair_index": 13,
+      "order": "AB",
+      "factorized_seconds": 0.6485795000335202,
+      "finufft_seconds": 17.644765700038988,
+      "paired_speedup": 27.205247312206236
+    },
+    {
+      "pair_index": 14,
+      "order": "BA",
+      "finufft_seconds": 17.564553100033663,
+      "factorized_seconds": 0.6448128999909386,
+      "paired_speedup": 27.239766915768115
+    },
+    {
+      "pair_index": 15,
+      "order": "AB",
+      "factorized_seconds": 0.6435049999854527,
+      "finufft_seconds": 17.676630699948873,
+      "paired_speedup": 27.469298141193118
+    },
+    {
+      "pair_index": 16,
+      "order": "BA",
+      "finufft_seconds": 17.276947600010317,
+      "factorized_seconds": 0.6397527999943122,
+      "paired_speedup": 27.005661562034458
+    },
+    {
+      "pair_index": 17,
+      "order": "AB",
+      "factorized_seconds": 0.6444177000084892,
+      "finufft_seconds": 17.608364299987443,
+      "paired_speedup": 27.32445787841563
+    },
+    {
+      "pair_index": 18,
+      "order": "BA",
+      "finufft_seconds": 17.326282800000627,
+      "factorized_seconds": 0.5805215999716893,
+      "paired_speedup": 29.846060509799447
+    },
+    {
+      "pair_index": 19,
+      "order": "AB",
+      "factorized_seconds": 0.6056966999894939,
+      "finufft_seconds": 17.08143810002366,
+      "paired_speedup": 28.201306198828465
+    },
+    {
+      "pair_index": 20,
+      "order": "BA",
+      "finufft_seconds": 16.711513100017328,
+      "factorized_seconds": 0.5786851000157185,
+      "paired_speedup": 28.878422996485313
+    },
+    {
+      "pair_index": 21,
+      "order": "AB",
+      "factorized_seconds": 0.610042100015562,
+      "finufft_seconds": 17.26536690001376,
+      "paired_speedup": 28.301926866315167
+    },
+    {
+      "pair_index": 22,
+      "order": "BA",
+      "finufft_seconds": 17.620602999988478,
+      "factorized_seconds": 0.6158815000089817,
+      "paired_speedup": 28.610378781846034
+    },
+    {
+      "pair_index": 23,
+      "order": "AB",
+      "factorized_seconds": 0.6375674000009894,
+      "finufft_seconds": 17.436563599971123,
+      "paired_speedup": 27.348580871518937
+    },
+    {
+      "pair_index": 24,
+      "order": "BA",
+      "finufft_seconds": 17.777402299980167,
+      "factorized_seconds": 0.6459160000085831,
+      "paired_speedup": 27.522777419577682
+    },
+    {
+      "pair_index": 25,
+      "order": "AB",
+      "factorized_seconds": 0.6489215000183322,
+      "finufft_seconds": 17.52257869997993,
+      "paired_speedup": 27.0026169567273
+    },
+    {
+      "pair_index": 26,
+      "order": "BA",
+      "finufft_seconds": 17.728799399978016,
+      "factorized_seconds": 0.6415606000227854,
+      "paired_speedup": 27.633865607314988
+    },
+    {
+      "pair_index": 27,
+      "order": "AB",
+      "factorized_seconds": 0.6484784000203945,
+      "finufft_seconds": 17.886299100006,
+      "paired_speedup": 27.58195045423792
+    },
+    {
+      "pair_index": 28,
+      "order": "BA",
+      "finufft_seconds": 17.86351079994347,
+      "factorized_seconds": 0.6327231000177562,
+      "paired_speedup": 28.232746361626692
+    },
+    {
+      "pair_index": 29,
+      "order": "AB",
+      "factorized_seconds": 0.6425693000201136,
+      "finufft_seconds": 17.734911200008355,
+      "paired_speedup": 27.599997695895556
+    },
+    {
+      "pair_index": 30,
+      "order": "BA",
+      "finufft_seconds": 17.971357700007502,
+      "factorized_seconds": 0.6343681999715045,
+      "paired_speedup": 28.329537484405375
+    }
+  ],
+  "measured_summary": {
+    "factorized_seconds": {
+      "count": 30,
+      "mean": 0.63538222333882,
+      "median": 0.6409952499961946,
+      "std": 0.018950451457348187,
+      "cv": 0.02982527801575397,
+      "p05": 0.5918503949797014,
+      "p95": 0.6519821400113869,
+      "min": 0.5786851000157185,
+      "max": 0.6545631000190042
+    },
+    "finufft_seconds": {
+      "count": 30,
+      "mean": 17.553064619998135,
+      "median": 17.577265350002563,
+      "std": 0.3005652936590411,
+      "cv": 0.017123237461144438,
+      "p05": 17.107065960025647,
+      "p95": 18.009790544980206,
+      "min": 16.711513100017328,
+      "max": 18.05412059999071
+    },
+    "paired_speedup": {
+      "count": 30,
+      "mean": 27.64259118875486,
+      "median": 27.447289590840832,
+      "std": 0.6914651292491834,
+      "cv": 0.02501448306808787,
+      "p05": 26.906839525249865,
+      "p95": 28.757803099897636,
+      "min": 26.780071659745605,
+      "max": 29.846060509799447
+    }
+  },
+  "cross_error": {
+    "complex_l2": 3.155502734436038e-07,
+    "intensity_l2": 1.1463118116324094e-07
+  },
+  "elapsed_this_run_seconds": 734.9866009000107,
+  "gates": {
+    "warmup_count_matches_request": true,
+    "measured_count_matches_request": true,
+    "cross_complex_l2_le_2e_6": true,
+    "cross_intensity_l2_le_5e_6": true,
+    "paired_speedup_median_ge_3": true,
+    "paired_speedup_p05_ge_3": true,
+    "legacy_comparison_l2_le_1e_12": true
+  },
+  "local_timing_gate_pass": true,
+  "passed": true,
+  "claim_boundary": [
+    "This is a same-machine 10-warmup/30-pair AB/BA result, not an independent-machine replication.",
+    "The finite lattice factor is a standard crystallographic specialization and not an ACFO novelty claim.",
+    "The timing claim applies only to the tested 1,001,000-atom exact repeated crystal.",
+    "FINUFFT eps=1e-6 is a practical timing baseline; direct NDFT correctness is established separately.",
+    "Prepared and FINUFFT plan setup are excluded from paired hot execution and reported separately."
+  ]
+}

@@ -137,7 +137,13 @@ def resolve_pupil_spectrum_required_h_abs(
     absolute_threshold: float = 0.0,
     max_available_h_abs: int | None = None,
 ) -> np.ndarray:
-    """Resolve manual and pupil-spectrum harmonic requirements for a plan."""
+    """Resolve manual and pupil-spectrum harmonic requirements for a plan.
+
+    In adaptive mode every significant pupil harmonic is marked as required.
+    This is intentional even when a harmonic lies inside the *global*
+    geometric cutoff: a rho-dependent plan may otherwise remove that harmonic
+    at small radii where its local geometric cutoff is lower.
+    """
     if pupil_spectrum not in {"off", "warn", "adaptive"}:
         raise ValueError("pupil_spectrum must be 'off', 'warn', or 'adaptive'")
     if nphi <= 0:
@@ -154,15 +160,16 @@ def resolve_pupil_spectrum_required_h_abs(
             "pupil_spectrum_pupils is required when pupil_spectrum is 'warn' or 'adaptive'"
         )
 
-    extra = extra_pupil_h_abs(
+    significant = significant_pupil_h_abs(
         pupil_spectrum_pupils,
-        geometric_h_cutoff=geometric_h_cutoff,
         relative_threshold=relative_threshold,
         absolute_threshold=absolute_threshold,
     )
+    significant = _sanitize_required_h_abs(significant, n_half=n_half)
+    extra = np.ascontiguousarray(significant[significant > geometric_h_cutoff])
     extra = _sanitize_required_h_abs(extra, n_half=n_half)
     if max_available_h_abs is not None:
-        unavailable = extra[extra > int(max_available_h_abs)]
+        unavailable = significant[significant > int(max_available_h_abs)]
         if unavailable.size:
             values = " ".join(str(int(value)) for value in unavailable[:16])
             raise ValueError(
@@ -179,7 +186,10 @@ def resolve_pupil_spectrum_required_h_abs(
                 stacklevel=2,
             )
             return manual
-        return np.ascontiguousarray(np.union1d(manual, extra).astype(np.int64, copy=False))
+    if pupil_spectrum == "adaptive":
+        return np.ascontiguousarray(
+            np.union1d(manual, significant).astype(np.int64, copy=False)
+        )
     return manual
 
 

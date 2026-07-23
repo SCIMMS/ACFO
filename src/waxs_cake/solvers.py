@@ -9,7 +9,7 @@ from scipy import fft as scipy_fft
 from scipy import special
 
 from .geometry import ewald_ring
-from .histogram import BinnedStructure
+from .histogram import BinnedStructure, SparseBinnedStructure
 
 FormFactors = (
     Mapping[str, complex | float | np.ndarray | Callable[[np.ndarray], np.ndarray]]
@@ -269,6 +269,8 @@ class PreparedCakePlan:
         harmonic_bandlimit_margin: int | None = None,
         analytic_kernel_table_dx: float | None = None,
         complex_dtype: np.dtype | str | None = None,
+        q_perp: np.ndarray | None = None,
+        q_z: np.ndarray | None = None,
     ) -> None:
         self.binned = binned
         self.q = np.asarray(q, dtype=float)
@@ -293,7 +295,15 @@ class PreparedCakePlan:
         if analytic_kernel_table_dx is not None and analytic_kernel_table_dx <= 0:
             raise ValueError("analytic_kernel_table_dx must be positive")
 
-        self.q_perp, self.q_z = ewald_ring(self.q, self.wavelength)
+        if (q_perp is None) != (q_z is None):
+            raise ValueError("q_perp and q_z must be provided together")
+        if q_perp is None:
+            self.q_perp, self.q_z = ewald_ring(self.q, self.wavelength)
+        else:
+            self.q_perp = np.asarray(q_perp, dtype=float)
+            self.q_z = np.asarray(q_z, dtype=float)
+            if self.q_perp.shape != self.q.shape or self.q_z.shape != self.q.shape:
+                raise ValueError("q_perp and q_z must have the same shape as q")
         self.circular_backend = circular_backend
         self.harmonic_bandlimit_margin = harmonic_bandlimit_margin
         self.analytic_kernel_table_dx = analytic_kernel_table_dx
@@ -366,6 +376,15 @@ class PreparedCakePlan:
             dict[str, float | int],
         ] = {}
         self._last_adaptive_profile_stats: dict[str, float | int] | None = None
+        self._sparse_only = isinstance(binned, SparseBinnedStructure)
+        if self._sparse_only:
+            self._sparse_flat_cache = (
+                np.ascontiguousarray(binned.active_e, dtype=np.intp),
+                np.ascontiguousarray(binned.active_r, dtype=np.intp),
+                np.ascontiguousarray(binned.active_z, dtype=np.intp),
+                np.ascontiguousarray(binned.active_beta, dtype=np.intp),
+                np.ascontiguousarray(binned.active_values, dtype=self.complex_dtype),
+            )
 
         if cache_kernel_fft:
             self.precompute_circular_kernels()
@@ -395,6 +414,11 @@ class PreparedCakePlan:
 
     @property
     def hhat(self) -> np.ndarray:
+        if self._sparse_only:
+            raise RuntimeError(
+                "dense FFT methods are unavailable for SparseBinnedStructure; "
+                "use a sparse-source solver"
+            )
         if self._hhat is None:
             self._hhat = scipy_fft.fft(
                 self.binned.hist,
@@ -405,6 +429,8 @@ class PreparedCakePlan:
 
     @property
     def has_real_histogram(self) -> bool:
+        if self._sparse_only:
+            return not np.iscomplexobj(self.binned.active_values)
         return not np.iscomplexobj(self.binned.hist)
 
     @property
@@ -838,6 +864,10 @@ class PreparedCakePlan:
         self,
     ) -> tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray]:
         if self._sparse_rz_cache is None:
+            if self._sparse_only:
+                raise RuntimeError(
+                    "sparse RZ FFT requires a dense histogram; use a sparse-source solver"
+                )
             active = np.nonzero(np.any(self.binned.hist != 0, axis=-1))
             if active[0].size == 0:
                 hhat_active = np.empty((0, self.binned.n_phi), dtype=self.complex_dtype)
