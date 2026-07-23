@@ -10,6 +10,7 @@ authors:
   - family-names: Kim
     given-names: Minsu
     affiliation: Pohang University of Science and Technology (POSTECH)
+    orcid: "https://orcid.org/0009-0002-3129-6839"
 repository-code: "https://github.com/SCIMMS/ACFO"
 url: "https://github.com/SCIMMS/ACFO"
 keywords:
