@@ -1,11 +1,15 @@
 # Axisymmetric Curved-Fourier Operator (ACFO)
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22239163.svg)](https://doi.org/10.5281/zenodo.22239163)
+
 Prepared forward-adjoint operators for repeated curved Fourier inference.
 ACFO applies analytic, symmetry and dimensional contractions first, selects the
 lowest eligible FFT/NUFFT representation, and uses SO(2) geometry factorization
 when the workload contains repeated complete rotational orbits.
 
 ## Version 0.2.0 manuscript release
+
+Archived release: [Zenodo DOI 10.5281/zenodo.22239163](https://doi.org/10.5281/zenodo.22239163).
 
 The manuscript-facing code, figures, source data, normalized external evidence
 and numerical audits are in [`validation/ncs_v0_2_0`](validation/ncs_v0_2_0/README.md).

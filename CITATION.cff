@@ -4,7 +4,8 @@ message: >-
 title: "ACFO: Geometry factorization and representation dispatch for repeated curved Fourier inference"
 type: software
 version: 0.2.0
-date-released: 2026-09-01
+date-released: 2026-09-02
+doi: "10.5281/zenodo.22239163"
 authors:
   - family-names: Kim
     given-names: Minsu
@@ -14,6 +15,7 @@ authors:
     given-names: Jongcheol
     affiliation: Pohang University of Science and Technology (POSTECH)
 repository-code: "https://github.com/SCIMMS/ACFO"
+repository-artifact: "https://doi.org/10.5281/zenodo.22239163"
 url: "https://github.com/SCIMMS/ACFO"
 keywords:
   - Fourier operator
