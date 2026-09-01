@@ -19,7 +19,7 @@ import numpy as np
 
 from .geometry import ewald_ring
 from .histogram import BinnedStructure, make_cylindrical_histogram
-from .solvers import PreparedCakePlan
+from .solvers import PreparedCakePlan, _cpp_solver_module
 
 
 ArrayLike = Any
@@ -763,6 +763,10 @@ class SurfaceNormalCylindricalPlan:
             )
             for binned in self.binned_components
         )  # type: ignore[assignment]
+        self._sparse_half_surface_cache: dict[
+            int,
+            tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray, np.ndarray],
+        ] = {}
 
     @classmethod
     def from_sources(
@@ -912,3 +916,163 @@ class SurfaceNormalCylindricalPlan:
         **kwargs: Any,
     ) -> np.ndarray:
         return self.amplitude(q_indices=q_indices, method="r-dependent", **kwargs)
+
+    def _sparse_half_surface_data(
+        self,
+        max_cutoff: int,
+    ) -> tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray, np.ndarray]:
+        """Return radius-grouped union profiles for the three real components."""
+
+        max_cutoff = int(max_cutoff)
+        cached = self._sparse_half_surface_cache.get(max_cutoff + 1)
+        if cached is not None:
+            return cached
+        if not all(plan.has_real_histogram for plan in self.component_plans):
+            raise ValueError(
+                "surface sparse-RZ Miller contraction requires real component histograms"
+            )
+
+        active_mask = np.logical_or.reduce(
+            [np.any(plan.binned.hist != 0, axis=-1) for plan in self.component_plans]
+        )
+        active = np.nonzero(active_mask)
+        if active[0].size:
+            order = np.lexsort((active[2], active[0], active[1]))
+            active_e = np.ascontiguousarray(active[0][order], dtype=np.int64)
+            active_r = np.ascontiguousarray(active[1][order], dtype=np.int64)
+            active_z = np.ascontiguousarray(active[2][order], dtype=np.int64)
+            active_hhat = np.ascontiguousarray(
+                np.stack(
+                    [
+                        plan.hhat_half_modes(max_cutoff)[active_e, active_r, active_z]
+                        for plan in self.component_plans
+                    ],
+                    axis=0,
+                ),
+                dtype=self.component_plans[0].complex_dtype,
+            )
+        else:
+            active_e = np.empty(0, dtype=np.int64)
+            active_r = np.empty(0, dtype=np.int64)
+            active_z = np.empty(0, dtype=np.int64)
+            active_hhat = np.empty(
+                (3, 0, max_cutoff + 1),
+                dtype=self.component_plans[0].complex_dtype,
+            )
+
+        n_r = self.binned_components[0].r_centers.size
+        r_counts = np.bincount(active_r, minlength=n_r).astype(np.int64, copy=False)
+        r_starts = np.empty(n_r, dtype=np.int64)
+        if n_r:
+            r_starts[0] = 0
+            if n_r > 1:
+                np.cumsum(r_counts[:-1], out=r_starts[1:])
+        cached = (
+            active_e,
+            active_z,
+            np.ascontiguousarray(active_hhat),
+            np.ascontiguousarray(r_starts),
+            np.ascontiguousarray(r_counts),
+        )
+        self._sparse_half_surface_cache[max_cutoff + 1] = cached
+        return cached
+
+    def circular_fft_sparse_rz_adaptive_miller(
+        self,
+        q_indices: np.ndarray | None = None,
+        *,
+        margin: int = 16,
+        cutoff_bin_size: int = 8,
+        q_block_size: int | None = None,
+        extra_order: int = 64,
+        moment_order: int = 2,
+    ) -> np.ndarray:
+        """Evaluate surface-normal amplitude with sparse-RZ fused Miller contraction.
+
+        This path is specialized for real surface-normal weights. It contracts the
+        union of active ``(element, R, z)`` profiles, shares each Miller kernel among
+        the three normal components, combines them in harmonic space, and performs
+        one inverse FFT.
+        """
+
+        indices = (
+            np.arange(self.q.size, dtype=np.intp)
+            if q_indices is None
+            else np.asarray(q_indices, dtype=np.intp)
+        )
+        if indices.ndim != 1 or np.any(indices < 0) or np.any(indices >= self.q.size):
+            raise ValueError("q_indices must be a one-dimensional in-range index array")
+        margin = int(margin)
+        cutoff_bin_size = int(cutoff_bin_size)
+        extra_order = int(extra_order)
+        if margin < 0 or cutoff_bin_size <= 0 or extra_order < 0:
+            raise ValueError(
+                "margin and extra_order must be non-negative and cutoff_bin_size positive"
+            )
+        block_size = self.component_plans[0].q_block_size if q_block_size is None else int(q_block_size)
+        if block_size <= 0:
+            raise ValueError("q_block_size must be positive")
+
+        cpp_solvers = _cpp_solver_module(required=True)
+        complex_dtype = self.component_plans[0].complex_dtype
+        func_name = (
+            "surface_normal_sparse_rz_half_modes_miller64"
+            if complex_dtype == np.dtype("complex64")
+            else "surface_normal_sparse_rz_half_modes_miller"
+        )
+        contract = getattr(cpp_solvers, func_name)
+        ahat = np.zeros((indices.size, self.phi.size), dtype=complex_dtype)
+        base_plan = self.component_plans[0]
+
+        for start in range(0, indices.size, block_size):
+            local = slice(start, min(start + block_size, indices.size))
+            sel = indices[local]
+            cutoffs = base_plan._r_dependent_cutoff_matrix(
+                sel,
+                margin=margin,
+                cutoff_bin_size=cutoff_bin_size,
+            )
+            max_cutoff = int(np.max(cutoffs)) if cutoffs.size else 0
+            if max_cutoff >= base_plan.n_half:
+                raise ValueError(
+                    "surface sparse-RZ Miller contraction requires all cutoffs < n_phi / 2"
+                )
+            active_e, active_z, active_hhat, r_starts, r_counts = (
+                self._sparse_half_surface_data(max_cutoff)
+            )
+            ahat[local] = contract(
+                active_e,
+                active_z,
+                active_hhat,
+                r_starts,
+                r_counts,
+                np.ascontiguousarray(base_plan.z_phase[sel], dtype=complex_dtype),
+                np.ascontiguousarray(self.q_perp[sel], dtype=np.float64),
+                np.ascontiguousarray(self.q_z[sel], dtype=np.float64),
+                np.ascontiguousarray(base_plan.binned.r_centers, dtype=np.float64),
+                np.ascontiguousarray(base_plan.form_factors[:, sel], dtype=complex_dtype),
+                cutoffs,
+                int(self.phi.size),
+                max_cutoff,
+                extra_order,
+                float(self.phi[0]),
+            )
+
+        out = np.fft.ifft(ahat, axis=-1)
+        q_norm2 = self.q_norm2[indices]
+        low = q_norm2 < self.q_switch * self.q_switch
+        if np.any(low):
+            if self.low_q_moments is None:
+                raise ValueError("low_q_moments is required for low-q cylindrical targets")
+            q_xyz = q_grid_from_cylindrical(
+                self.q_perp[indices[low]],
+                self.q_z[indices[low]],
+                self.phi,
+            )
+            out[low] = moment_expansion_amplitude(
+                self.low_q_moments,
+                q_xyz,
+                phase_sign=self.phase_sign,
+                order=moment_order,
+            ).reshape(int(np.count_nonzero(low)), self.phi.size)
+        return out

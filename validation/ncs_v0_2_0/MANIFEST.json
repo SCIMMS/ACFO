@@ -1,0 +1,229 @@
+{
+  "schema": "acfo-ncs-release-v0.2.0-manifest",
+  "created_utc": "2026-09-01T13:21:20.763897+00:00",
+  "repository": "https://github.com/SCIMMS/ACFO",
+  "version": "0.2.0",
+  "license": "ACFO Citation-Required License 1.0",
+  "files": [
+    {
+      "path": "audits/FAIRNESS_CLAIM_AUDIT.json",
+      "bytes": 1546,
+      "sha256": "7fd14237df75e5baf017502ee0bf410ec864f134f2105a813317c18eb2536ca0"
+    },
+    {
+      "path": "audits/FIGURE_AUDIT.json",
+      "bytes": 1500,
+      "sha256": "439614734cb33818a7a3816501586fd84f1f966bf23fb467d8612f74eaa8eae7"
+    },
+    {
+      "path": "audits/FINAL_RELEASE_QA_RECEIPT.json",
+      "bytes": 7591,
+      "sha256": "910d1e08fac9cb56231fa082cb1ee47bb906b3f8b3270ceb1dad9790ba51cba1"
+    },
+    {
+      "path": "audits/MAIN_AUDIT.json",
+      "bytes": 1479,
+      "sha256": "964f65828fd86e87e062be9775a0d5f5336e703669a236b93fa1822c185a98c9"
+    },
+    {
+      "path": "audits/MANUSCRIPT_BUILD_RECEIPT.json",
+      "bytes": 10649,
+      "sha256": "f680b7a40152d3dbca4d5dbfee8a0a7b7bf67d2886f36644fb03fba81cc68deb"
+    },
+    {
+      "path": "audits/NUMERICAL_AUDIT.json",
+      "bytes": 26533,
+      "sha256": "da2dbfe394234da10755692143f06bcdc91e4367e37a5e057e8f7def0c5c2009"
+    },
+    {
+      "path": "audits/SI_AUDIT.json",
+      "bytes": 1540,
+      "sha256": "263f66f901fcf085177e9f98b1d226e29dd705c37b229fc1ebe57e908d426aa9"
+    },
+    {
+      "path": "audits/STRUCTURE_AUDIT.json",
+      "bytes": 1137,
+      "sha256": "f7a7178d90b1ad5dbf859b7a7b479ffc0b77e0ad3f653eebdd3350fbe327c129"
+    },
+    {
+      "path": "evidence/comparator_fairness_ledger.csv",
+      "bytes": 15713,
+      "sha256": "2545488da57ba2115f613c4a130a1cc2ee6140a0c66518282c485fe534a8cba3"
+    },
+    {
+      "path": "evidence/numagsans_condensed_evidence.json",
+      "bytes": 7295,
+      "sha256": "4fb92510b6719d54dc6d9f3d2ba827a6fd52481380208a737a1c2ec06fe85706"
+    },
+    {
+      "path": "evidence/numagsans_environment.json",
+      "bytes": 3000,
+      "sha256": "4eb6fb9e79d0c7cbfb4a67629b67d960a906f2cd101c65ff189af0e60b0ce8d1"
+    },
+    {
+      "path": "evidence/numagsans_external_audit.json",
+      "bytes": 2513,
+      "sha256": "ce97df7772df8d144ce4863b81afbd9be7578e86cbfb2a7c4890509aeb45fd52"
+    },
+    {
+      "path": "evidence/numagsans_protocol.json",
+      "bytes": 10264,
+      "sha256": "f58011f1e0934638860ca87b67bb94e40d44c75c9a3cff587ab742e3dc4259c8"
+    },
+    {
+      "path": "evidence/numagsans_timing_and_accuracy.json",
+      "bytes": 238007,
+      "sha256": "11991c42c0bc267a6d4840432676e551518f9d1b08065218b4555e4f677c1ebe"
+    },
+    {
+      "path": "evidence/odt_native_representation_aggregate.json",
+      "bytes": 10272,
+      "sha256": "1d7c52b5977e7941246c0c656cf44dfc8a23ff517d3bb0c71cc236ecd91e22f3"
+    },
+    {
+      "path": "evidence/uob_atomic_decoration_summary.json",
+      "bytes": 118479,
+      "sha256": "c2a9f70d5c84799622d3787c9d0d550ba5dba56be04cb3cab8b0969cb687518a"
+    },
+    {
+      "path": "evidence/uob_estimator_sensitivity_summary.json",
+      "bytes": 92715,
+      "sha256": "ff1abec558db2cd3785080d3c277748f7013e6d1afd32b606c3ea2797a2758c7"
+    },
+    {
+      "path": "evidence/uob_native_grid_summary.json",
+      "bytes": 77789,
+      "sha256": "ebd6c446b1477a11ebe3b0e7e15082b62134be668a8462d3665e23f0c7ae275a"
+    },
+    {
+      "path": "evidence/waxs_external_audit.json",
+      "bytes": 1173,
+      "sha256": "a6c7fd0df21b5ae5a89e4765819d823027526c788d34245583fe556455118061"
+    },
+    {
+      "path": "evidence/waxs_external_summary.json",
+      "bytes": 1007,
+      "sha256": "e1881dd8fe1c201342c9cf07b30031003f5fcc58312d0e13c09da062a6df70b3"
+    },
+    {
+      "path": "evidence/waxs_frontier.csv",
+      "bytes": 968,
+      "sha256": "3a005ff311facd9b5addf95299e72d9e2703b60163265018e984564b9f0a8832"
+    },
+    {
+      "path": "evidence/waxs_protocol.json",
+      "bytes": 3619,
+      "sha256": "fdb1a008aa05e9f4dd9a18fd5e9ed52b08187bb8250b42dcb2edda7533ec4152"
+    },
+    {
+      "path": "evidence/waxs_timing_and_accuracy.json",
+      "bytes": 24527,
+      "sha256": "9421f6114a1beac97d6fe01117228a3e221aa1b1c14d977a738c540d3185b6e4"
+    },
+    {
+      "path": "figures/Figure_1_geometry_factorization_and_dispatch.pdf",
+      "bytes": 29734,
+      "sha256": "6a1b4fa6ba8e4e076b869575172f72311f17dc40a6d2d5b83da44115bf571c34"
+    },
+    {
+      "path": "figures/Figure_1_geometry_factorization_and_dispatch.png",
+      "bytes": 190178,
+      "sha256": "662c9ba4fe2ca80b83ccf73f283e35e65466cb5001a96efa9e331d2258a1336f"
+    },
+    {
+      "path": "figures/Figure_1_geometry_factorization_and_dispatch.svg",
+      "bytes": 72817,
+      "sha256": "0393d6b258ff7a4a0268e42b53dca30b357a8cbb320d9dacc50501bdfe10de83"
+    },
+    {
+      "path": "figures/Figure_2_waxs_and_uob_measured_ranking.pdf",
+      "bytes": 28862,
+      "sha256": "9db0f9ee9dbe83d53187e79fdfe12e75d1918678b6739d08d6c7cac8b0962e21"
+    },
+    {
+      "path": "figures/Figure_2_waxs_and_uob_measured_ranking.png",
+      "bytes": 172829,
+      "sha256": "77fb86336fa6867c07afabc46837f290db05708d2e5c67a66ad63ee5ca052368"
+    },
+    {
+      "path": "figures/Figure_2_waxs_and_uob_measured_ranking.svg",
+      "bytes": 80195,
+      "sha256": "25430a3ecb9fc716015795f19b4fee47c7712f35b5102e920da70e8da8ea8a62"
+    },
+    {
+      "path": "figures/Figure_3_odt_native_representations.pdf",
+      "bytes": 19234,
+      "sha256": "830c9c608899288ce137711a12688ea83b2f23329a2b98d230cdd60c5f3bb65d"
+    },
+    {
+      "path": "figures/Figure_3_odt_native_representations.png",
+      "bytes": 136467,
+      "sha256": "4830ef2d216b36283a077541344690cf975c3e56deab768e5a6afbfa53782e24"
+    },
+    {
+      "path": "figures/Figure_3_odt_native_representations.svg",
+      "bytes": 46928,
+      "sha256": "9bdb1b03823c180ef9d491ad64e08a109399b8d9f4651ac2160db8629d705abc"
+    },
+    {
+      "path": "figures/Figure_4_numagsans_affine_type2.pdf",
+      "bytes": 24020,
+      "sha256": "b553f6cbefc49e4135602d2a496d7740fac21a911432a66f4118dfab3e9bc05e"
+    },
+    {
+      "path": "figures/Figure_4_numagsans_affine_type2.png",
+      "bytes": 137259,
+      "sha256": "db424458783cd322c24e2912fb7bb9c15296306b08dc4095f54610c8045744f4"
+    },
+    {
+      "path": "figures/Figure_4_numagsans_affine_type2.svg",
+      "bytes": 56413,
+      "sha256": "1e76fcde03262efa0c5a78863027ef7693b54fdaaa5a7058be7416b9e9ce1a92"
+    },
+    {
+      "path": "figures/Supplementary_Figure_1_high_na_accuracy_control.pdf",
+      "bytes": 16715,
+      "sha256": "af298a6473a8bc3e23dd59df7f3708a43bb3f91b568ede661ef1afb638f013c2"
+    },
+    {
+      "path": "figures/Supplementary_Figure_1_high_na_accuracy_control.png",
+      "bytes": 84128,
+      "sha256": "38c9db672795a42b3c729700e144d34d596335d5f8cd66fcb0471f4232cbc4d0"
+    },
+    {
+      "path": "figures/Supplementary_Figure_1_high_na_accuracy_control.svg",
+      "bytes": 40166,
+      "sha256": "fe1cbc0e9694ba6cc1e85170a436b00a0e3de01b03f0d30802b21abfb9873c0d"
+    },
+    {
+      "path": "PROVENANCE.json",
+      "bytes": 21279,
+      "sha256": "6829655769fbf2468090978d7c70ad1cb15f699e3191ddcdc4034d759d89540b"
+    },
+    {
+      "path": "README.md",
+      "bytes": 1248,
+      "sha256": "3e2625a4fe785d74252f66946f5a270ca161ada6fa7aa73d16159119d86de603"
+    },
+    {
+      "path": "source_data/figure2_uob_adapter_sensitivity.csv",
+      "bytes": 341,
+      "sha256": "1db15379cfbaf5f6b4570cf8ce515cd884bed4bb8f3a32500620116a770653c9"
+    },
+    {
+      "path": "source_data/figure2_uob_native_grid.csv",
+      "bytes": 1766,
+      "sha256": "21b4ea98632d6369258a6f96496e9c501857219c9a62a2db6ff571e5bb2e7d3d"
+    },
+    {
+      "path": "source_data/figure2_waxs.csv",
+      "bytes": 231,
+      "sha256": "c094399146dc8bd5cc1595cd14e614814fe5356295f417b3f0ae73e8a566d9b5"
+    },
+    {
+      "path": "source_data/figure_source_data.json",
+      "bytes": 65303,
+      "sha256": "d71f9fc08ee7f41e4bf211f0fbd7709923e4b088d6ecca601728bcb34c2af135"
+    }
+  ]
+}

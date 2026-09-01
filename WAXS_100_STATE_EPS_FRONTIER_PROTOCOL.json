@@ -1,0 +1,100 @@
+{
+  "schema": "waxs-affine-library-eps-frontier-protocol-v1",
+  "frozen_at_utc": "2026-08-25T00:00:00+09:00",
+  "status": "prospective-before-external-execution",
+  "purpose": "Choose the loosest accuracy-qualified FINUFFT Type-3 tolerance without timing, then retime only the selected fused n_trans=8 comparator against ACFO.",
+  "environment": {
+    "independent_machine_required": true,
+    "preferred_workstation_gpu": "NVIDIA GeForce RTX 3090",
+    "gpu_used_by_timed_workload": false,
+    "omp_threads": 4,
+    "mkl_threads": 1,
+    "openblas_threads": 1
+  },
+  "problem": {
+    "unit_structure": "structures/processed/protein_nanocrystal_lysozyme_1iee_1x1x1_fixed.npz",
+    "supercell_structure": "structures/processed/protein_nanocrystal_lysozyme_1iee_3x3x3_fixed.npz",
+    "q_range_inv_angstrom": [6.7, 8.0],
+    "nq": 16,
+    "nphi": 864,
+    "wavelength_nm": 0.08,
+    "occupancy_range": [0.7, 1.0],
+    "occupancy_count": 10,
+    "b_iso_range_angstrom2": [5.0, 23.0],
+    "b_count": 10,
+    "truth": {
+      "subdomain_occupancy": 0.915,
+      "b_iso_angstrom2": 12.4
+    },
+    "intensity_noise_relative_l2": 0.01,
+    "noise_seed": 2026072611,
+    "top_k": 5
+  },
+  "acfo": {
+    "coefficient_backend": "fused_phase",
+    "synthesis_backend": "fft",
+    "harmonic_cutoff_rule": "ceil(abs(q_perp) * R_max) + harmonic_margin",
+    "harmonic_margin": 48,
+    "nested_validation_margin": 64,
+    "miller_downward_recurrence_extra_order": 32
+  },
+  "finufft": {
+    "plan_type": 3,
+    "dtype": "complex128",
+    "isign": 1,
+    "threads": 4,
+    "source_basis_count": 2,
+    "element_channel_count": 4,
+    "n_trans": 8,
+    "epsilon_candidates_loose_to_tight": [
+      0.001,
+      0.0003,
+      0.0001,
+      0.00003,
+      0.00001,
+      0.000003,
+      0.000001
+    ],
+    "accuracy_reference_epsilon": 1e-12,
+    "observation_epsilon": 1e-6
+  },
+  "accuracy_selection": {
+    "uses_timing": false,
+    "rule": "first passing row in epsilon_candidates_loose_to_tight",
+    "gates": {
+      "maximum_acfo_vs_candidate_intensity_relative_l2": 5e-6,
+      "maximum_candidate_vs_reference_intensity_relative_l2": 5e-6,
+      "maximum_acfo_vs_reference_intensity_relative_l2": 5e-6,
+      "same_top1": true,
+      "top_k_jaccard_min": 1.0,
+      "spearman_min": 0.999
+    }
+  },
+  "final_timing": {
+    "eligible_finufft_variant": "single fused Type-3 plan",
+    "n_trans": 8,
+    "warmups": 10,
+    "samples_per_arm": 30,
+    "ordering": "ABBA",
+    "setup_scoring_observation_and_epsilon_selection_excluded": true,
+    "bootstrap_samples": 10000,
+    "bootstrap_seed": 20260825,
+    "speed_sign_is_integrity_gate": false
+  },
+  "smoke_overrides": {
+    "nq": 2,
+    "occupancy_count": 2,
+    "b_count": 2,
+    "warmups": 1,
+    "samples_per_arm": 4,
+    "bootstrap_samples": 400
+  },
+  "claim_boundary": [
+    "The 100-state occupancy/B-factor library is manufactured and is not a crystallographic refinement benchmark.",
+    "Both timed arms evaluate the same two occupancy bases, retain four element channels for q-dependent form factors, apply the same exact finite-lattice factor, and synthesize all 100 candidates outside the Fourier kernel.",
+    "The epsilon frontier contains no timing measurements; the selected tolerance is therefore accuracy-first.",
+    "The old fixed-epsilon 8.221x receipt remains historical evidence and is not overwritten by this prospective closure.",
+    "The timed workload is CPU-only; the RTX 3090 identifies the independent validation workstation.",
+    "Performance sign is reported but is not an integrity gate."
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "schema": "numagsans-example3-strongest-baseline-audit-v1",
+  "created_utc": "2026-08-25T11:06:56.085553+00:00",
+  "verdict": "PASS_STRONGEST_BASELINE_VALIDATED",
+  "integrity_passed": true,
+  "acfo_positive_claim_eligible": true,
+  "required_speed_lower_95": 1.0,
+  "checks": {
+    "schema": true,
+    "prospective_protocol_status": true,
+    "full_workload": true,
+    "rtx3090": true,
+    "source_archive_md5": true,
+    "output_archive_md5": true,
+    "source_topology": true,
+    "affine_shape": true,
+    "affine_counts": true,
+    "affine_spacing": true,
+    "affine_residual": true,
+    "proper_lattice_invariance": true,
+    "gpu_miller_margin": true,
+    "packing_centers_excluded_from_qR": true,
+    "accuracy_finished_before_timing": true,
+    "production_gpu_arms_accuracy_before_timing": true,
+    "type2_largest_passing_eps": true,
+    "type3_largest_passing_eps": true,
+    "complete_fft_frontier": true,
+    "fft_qualification_accuracy_only": true,
+    "screen_on_rtx3090": true,
+    "screen_only_qualified_fft": true,
+    "screen_fixed_samples": true,
+    "fft_selected_by_frozen_screen_rule": true,
+    "confirmation_arms": true,
+    "confirmation_10_warmup_30_abba": true,
+    "screen_samples_not_reused": true,
+    "strongest_frozen_before_orientation2": true,
+    "heldout_orientation_count": true,
+    "heldout_accuracy": true,
+    "full_ensemble_method_agreement": true,
+    "archive_oracle_performed": true,
+    "archive_accuracy": true,
+    "all_prefixes_reported": true,
+    "runner_gates_exclude_performance_sign": true,
+    "runner_gates": true,
+    "result_claim_eligibility_separate": true,
+    "result_verdict_matches_signed_outcome": true
+  },
+  "selected": {
+    "type2_eps": 0.003,
+    "type3_eps": 0.01,
+    "fft_pad": null,
+    "strongest_baseline": "affine_type2"
+  },
+  "confirmation_speed_ratios": {
+    "affine_type2": {
+      "point": 1.3645225531278875,
+      "lower_95": 1.2484675338166964,
+      "upper_95": 1.513622889682302
+    },
+    "projected_type3": {
+      "point": 3.0012999987379634,
+      "lower_95": 2.9759905715443082,
+      "upper_95": 3.0296179244459713
+    }
+  },
+  "full_speed_ratio": {
+    "point": 1.6867360971899616,
+    "lower_95": 1.6839781422992472,
+    "upper_95": 1.6897096673977714
+  },
+  "worst_errors": {
+    "heldout_amplitude": 0.0003772122620875065,
+    "heldout_output": 0.0008481554209074953,
+    "full_ensemble": 0.0015995226567611098,
+    "acfo_archive": 1.4338360742361166e-05,
+    "selected_archive": 0.002820386539959549
+  }
+}

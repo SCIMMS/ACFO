@@ -1,0 +1,57 @@
+{
+  "schema": "acfo-ncs-figure-audit-v1",
+  "created_utc": "2026-09-01T12:12:39.028539+00:00",
+  "items": {
+    "Figure_1_geometry_factorization_and_dispatch.png": {
+      "width_px": 2178,
+      "height_px": 1594,
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "bytes": 190178,
+      "sha256": "662c9ba4fe2ca80b83ccf73f283e35e65466cb5001a96efa9e331d2258a1336f"
+    },
+    "Figure_2_waxs_and_uob_measured_ranking.png": {
+      "width_px": 2180,
+      "height_px": 1039,
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "bytes": 172829,
+      "sha256": "77fb86336fa6867c07afabc46837f290db05708d2e5c67a66ad63ee5ca052368"
+    },
+    "Figure_3_odt_native_representations.png": {
+      "width_px": 2176,
+      "height_px": 1084,
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "bytes": 136467,
+      "sha256": "4830ef2d216b36283a077541344690cf975c3e56deab768e5a6afbfa53782e24"
+    },
+    "Figure_4_numagsans_affine_type2.png": {
+      "width_px": 2236,
+      "height_px": 1010,
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "bytes": 137259,
+      "sha256": "db424458783cd322c24e2912fb7bb9c15296306b08dc4095f54610c8045744f4"
+    },
+    "Supplementary_Figure_1_high_na_accuracy_control.png": {
+      "width_px": 1984,
+      "height_px": 1084,
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "bytes": 84128,
+      "sha256": "38c9db672795a42b3c729700e144d34d596335d5f8cd66fcb0471f4232cbc4d0"
+    }
+  },
+  "passed": true
+}

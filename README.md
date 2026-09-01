@@ -1,8 +1,21 @@
 # Axisymmetric Curved-Fourier Operator (ACFO)
 
-Prepared operators for fast Fourier evaluation on finite axisymmetric curved
-manifolds, with validation in WAXS and extensions to ODT/aIDT processing cores
-and general-curvature uniaxial crystal optics.
+Prepared forward-adjoint operators for repeated curved Fourier inference.
+ACFO applies analytic, symmetry and dimensional contractions first, selects the
+lowest eligible FFT/NUFFT representation, and uses SO(2) geometry factorization
+when the workload contains repeated complete rotational orbits.
+
+## Version 0.2.0 manuscript release
+
+The manuscript-facing code, figures, source data, normalized external evidence
+and numerical audits are in [`validation/ncs_v0_2_0`](validation/ncs_v0_2_0/README.md).
+The NuMagSANS headline is explicitly limited to the shared 800-orientation
+Fourier backbone; its five packing reductions are excluded from the speed
+ratio. Recompute the headline intervals and validate all public hashes with:
+
+```bash
+python scripts/verify_ncs_release_v020.py
+```
 
 This repository is evolving from an atomistic WAXS cake-map solver prototype
 into a broader curved-Ewald operator testbed. The current Python package name is

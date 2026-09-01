@@ -1,0 +1,233 @@
+{
+  "schema": "acfo-ncs-storyline-build-receipt-v1",
+  "created_utc": "2026-09-01T12:12:39.437542+00:00",
+  "builder": {
+    "path": "scripts/build_acfo_ncs_review_response_revision_20260902.py",
+    "sha256": "b29da1998871d00c8ceae44e95692bce2d083743a6b45118e4728aac6807e5ba"
+  },
+  "inputs": [
+    {
+      "path": "reports/acfo_ncs_manuscript_evidence_revision_20260825/ACFO_NCS_manuscript_evidence_revision_20260826_review_hardened_v2_master.docx",
+      "bytes": 1858936,
+      "sha256": "21caf2d9c7cc669edca7eb9bfebc40cc2c82e6fb4149794bea0fbf562ca3b9ef"
+    },
+    {
+      "path": "reports/acfo_ncs_manuscript_evidence_revision_20260825/ACFO_NCS_Supplementary_Information_evidence_revision_20260826_review_hardened_v2_master.docx",
+      "bytes": 3795626,
+      "sha256": "246d354b813b5b8029c7f4fc8cad781b62c0d3ce6c42b9f9e4a305d0d2a05a1b"
+    },
+    {
+      "path": "reports/acfo_ncs_manuscript_evidence_revision_20260825/figures_review_hardened_v2/source_data/figure_source_data.json",
+      "bytes": 21896,
+      "sha256": "c998b5250678e035686c246fff93113306bc888eacfe32a5ccf8ec3cf3350340"
+    },
+    {
+      "path": "reports/uob100dy_scatty_native_grid_external_request_v1_score_return/unpacked/evidence/summary.json",
+      "bytes": 77788,
+      "sha256": "514003a6879dc5e7bfa903fa3c281c44fff9de9b1e6c5ff6f37194392e94a19b"
+    },
+    {
+      "path": "reports/uob100dy_nd_estimator_sensitivity_external_request_v1_score_return/unpacked/evidence/summary.json",
+      "bytes": 92714,
+      "sha256": "08ab3cc1c35d440f5204b95836a30a3ccd830c3c24e3511aa6b2994a1b76f42c"
+    },
+    {
+      "path": "reports/uob100dy_atomic_decoration_external_request_v4_score_return/unpacked/evidence/summary.json",
+      "bytes": 118478,
+      "sha256": "af61ae874b79762c875c74c8ffeced72768d7d199ffef85dc3058880cea021f1"
+    },
+    {
+      "path": "reports/acfo_full_calculation_fairness_audit_20260901/comparison_ledger.csv",
+      "bytes": 15759,
+      "sha256": "6d8937516897ffd66e7d06dff0e45e888c6c87631724ce827efb2448b379ff8b"
+    },
+    {
+      "path": "reports/waxs_100_state_eps_frontier_external_request_v1/WAXS_100_STATE_EPS_FRONTIER_PROTOCOL.json",
+      "bytes": 3571,
+      "sha256": "e6405008f5a6d9c5202575b0c22889fc4694a74229d4bfb43e80c8138315bb93"
+    },
+    {
+      "path": "benchmark_results/external_validation/waxs_100_state_eps_frontier_external_request_v1_162d3bbfd821_20260825_195415_c9eea9a53a20492fa2212737e6ccc746/return/waxs_100_state_eps_frontier_external_return.zip",
+      "bytes": 17283,
+      "sha256": "ccf647933bb3b5565298c4a59d6623abae7807a73e6145eb80ff79e225d32130"
+    },
+    {
+      "path": "reports/odt_native_representation_external_rtx3090_20260806/odt_native_representation_external_return/evidence/aggregate.json",
+      "bytes": 10272,
+      "sha256": "1d7c52b5977e7941246c0c656cf44dfc8a23ff517d3bb0c71cc236ecd91e22f3"
+    },
+    {
+      "path": "benchmark_results/numagsans_example3_strongest_baseline_external_evidence_20260825.json",
+      "bytes": 7479,
+      "sha256": "bf2b949d026b5df8f29001c966fe591fde3183ea619085111ccda5d31f6571ce"
+    },
+    {
+      "path": "benchmark_results/external_validation/numagsans_example3_strongest_baseline_438e2555ef28_20260825_200600_bd7dfd67307e42ea832c037c4628ded2/return/numagsans_example3_strongest_baseline_external_return.zip",
+      "bytes": 171881,
+      "sha256": "657fce873703669e4702946e130b2c9eabcb9dd6241ebee6c7d596a661a3face"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "reports/acfo_ncs_manuscript_final_hardening_r3_20260902/ACFO_NCS_manuscript_final_hardening_r3_20260902_master.docx",
+      "bytes": 2442624,
+      "sha256": "9d400841e13739e1b76874183fdec25df49ec1f9e824b2d192fabc3ab1695bc5"
+    },
+    {
+      "path": "reports/acfo_ncs_manuscript_final_hardening_r3_20260902/ACFO_NCS_Supplementary_Information_final_hardening_r3_20260902_master.docx",
+      "bytes": 3864085,
+      "sha256": "ef3328c5674383575c9f655b3b7763ceb2b1858de879977b8bef43fad7f03a68"
+    },
+    {
+      "path": "reports/acfo_ncs_manuscript_final_hardening_r3_20260902/REVISION_NOTES.md",
+      "bytes": 3995,
+      "sha256": "a834c86fa46b3166ff38ac68d0f28ed3eecc1599bc93eef3cce0a84dc41d07b6"
+    },
+    {
+      "path": "reports/acfo_ncs_manuscript_final_hardening_r3_20260902/CPC_FALLBACK_MAP.md",
+      "bytes": 1881,
+      "sha256": "2a51fb4f2ba231e59326bce850eff3225d3f3c692db4144f61c1ec5141628d1a"
+    },
+    {
+      "path": "reports/acfo_ncs_manuscript_final_hardening_r3_20260902/figures/source_data/figure_source_data.json",
+      "bytes": 67129,
+      "sha256": "ddbc804fd19177c72891603589c0fa09151aa0a48d982b316d014e480d0b6ae4"
+    },
+    {
+      "path": "reports/acfo_ncs_manuscript_final_hardening_r3_20260902/figures/Figure_1_geometry_factorization_and_dispatch.png",
+      "bytes": 190178,
+      "sha256": "662c9ba4fe2ca80b83ccf73f283e35e65466cb5001a96efa9e331d2258a1336f"
+    },
+    {
+      "path": "reports/acfo_ncs_manuscript_final_hardening_r3_20260902/figures/Figure_2_waxs_and_uob_measured_ranking.png",
+      "bytes": 172829,
+      "sha256": "77fb86336fa6867c07afabc46837f290db05708d2e5c67a66ad63ee5ca052368"
+    },
+    {
+      "path": "reports/acfo_ncs_manuscript_final_hardening_r3_20260902/figures/Figure_3_odt_native_representations.png",
+      "bytes": 136467,
+      "sha256": "4830ef2d216b36283a077541344690cf975c3e56deab768e5a6afbfa53782e24"
+    },
+    {
+      "path": "reports/acfo_ncs_manuscript_final_hardening_r3_20260902/figures/Figure_4_numagsans_affine_type2.png",
+      "bytes": 137259,
+      "sha256": "db424458783cd322c24e2912fb7bb9c15296306b08dc4095f54610c8045744f4"
+    },
+    {
+      "path": "reports/acfo_ncs_manuscript_final_hardening_r3_20260902/figures/Supplementary_Figure_1_high_na_accuracy_control.png",
+      "bytes": 84128,
+      "sha256": "38c9db672795a42b3c729700e144d34d596335d5f8cd66fcb0471f4232cbc4d0"
+    },
+    {
+      "path": "reports/acfo_ncs_manuscript_final_hardening_r3_20260902/figures/Figure_1_geometry_factorization_and_dispatch.pdf",
+      "bytes": 29734,
+      "sha256": "6a1b4fa6ba8e4e076b869575172f72311f17dc40a6d2d5b83da44115bf571c34"
+    },
+    {
+      "path": "reports/acfo_ncs_manuscript_final_hardening_r3_20260902/figures/Figure_2_waxs_and_uob_measured_ranking.pdf",
+      "bytes": 28862,
+      "sha256": "9db0f9ee9dbe83d53187e79fdfe12e75d1918678b6739d08d6c7cac8b0962e21"
+    },
+    {
+      "path": "reports/acfo_ncs_manuscript_final_hardening_r3_20260902/figures/Figure_3_odt_native_representations.pdf",
+      "bytes": 19234,
+      "sha256": "830c9c608899288ce137711a12688ea83b2f23329a2b98d230cdd60c5f3bb65d"
+    },
+    {
+      "path": "reports/acfo_ncs_manuscript_final_hardening_r3_20260902/figures/Figure_4_numagsans_affine_type2.pdf",
+      "bytes": 24020,
+      "sha256": "b553f6cbefc49e4135602d2a496d7740fac21a911432a66f4118dfab3e9bc05e"
+    },
+    {
+      "path": "reports/acfo_ncs_manuscript_final_hardening_r3_20260902/figures/Supplementary_Figure_1_high_na_accuracy_control.pdf",
+      "bytes": 16715,
+      "sha256": "af298a6473a8bc3e23dd59df7f3708a43bb3f91b568ede661ef1afb638f013c2"
+    },
+    {
+      "path": "reports/acfo_ncs_manuscript_final_hardening_r3_20260902/figures/Figure_1_geometry_factorization_and_dispatch.svg",
+      "bytes": 75086,
+      "sha256": "bfb3124963410705a0285f504f700d384ec2d3ccd05ba2058f8c4e6a5af5f08b"
+    },
+    {
+      "path": "reports/acfo_ncs_manuscript_final_hardening_r3_20260902/figures/Figure_2_waxs_and_uob_measured_ranking.svg",
+      "bytes": 82551,
+      "sha256": "0ec6e5c1a413d397bef68848c30fcf8b6cb066fa7c1fb21e6d0ba8a93792c0bb"
+    },
+    {
+      "path": "reports/acfo_ncs_manuscript_final_hardening_r3_20260902/figures/Figure_3_odt_native_representations.svg",
+      "bytes": 48447,
+      "sha256": "987cb232aea65aebd8a954798780503d69a9c9bf029534db06214e35da0cdd10"
+    },
+    {
+      "path": "reports/acfo_ncs_manuscript_final_hardening_r3_20260902/figures/Figure_4_numagsans_affine_type2.svg",
+      "bytes": 58297,
+      "sha256": "829758a7d944246c5acbc81f1410fc0ee6df3c832872881ac9505da6e2c36aa9"
+    },
+    {
+      "path": "reports/acfo_ncs_manuscript_final_hardening_r3_20260902/figures/Supplementary_Figure_1_high_na_accuracy_control.svg",
+      "bytes": 41542,
+      "sha256": "dec3c6a7954990704dcbb563d8ac68660166f683af0ceb7eac41fb7bbe897f1a"
+    },
+    {
+      "path": "reports/acfo_ncs_manuscript_final_hardening_r3_20260902/figures/source_data/figure2_uob_adapter_sensitivity.csv",
+      "bytes": 347,
+      "sha256": "2d5dcf21d69cbba7ea78a9e9b5f9d736075010b76e6cef09a061b25e3839c452"
+    },
+    {
+      "path": "reports/acfo_ncs_manuscript_final_hardening_r3_20260902/figures/source_data/figure2_uob_native_grid.csv",
+      "bytes": 1790,
+      "sha256": "84c0f176c10fd82b3629a2c70b692de45a9470273c468c45011742759443e020"
+    },
+    {
+      "path": "reports/acfo_ncs_manuscript_final_hardening_r3_20260902/figures/source_data/figure2_waxs.csv",
+      "bytes": 233,
+      "sha256": "b3d19a137fc53410ff28bb0ef2b37e8a2d20485735bfe7442f97dd796c57c30b"
+    },
+    {
+      "path": "reports/acfo_ncs_manuscript_final_hardening_r3_20260902/FAIRNESS_CLAIM_AUDIT.json",
+      "bytes": 1605,
+      "sha256": "4b1329fe990a5def3cfc136043486eb325c1237289577326d8eefaa4a579a973"
+    },
+    {
+      "path": "reports/acfo_ncs_manuscript_final_hardening_r3_20260902/FIGURE_AUDIT.json",
+      "bytes": 1557,
+      "sha256": "47c49043645612e1f9fac27d43857b4ab66bb6d82eb9e8c90e1d14aaa38205ec"
+    },
+    {
+      "path": "reports/acfo_ncs_manuscript_final_hardening_r3_20260902/MAIN_AUDIT.json",
+      "bytes": 1539,
+      "sha256": "6b43693e7369b5c42f21dde4787d04a4422a86bdf508a4400d44948227c6bc4b"
+    },
+    {
+      "path": "reports/acfo_ncs_manuscript_final_hardening_r3_20260902/NUMERICAL_AUDIT.json",
+      "bytes": 27292,
+      "sha256": "0c712f1210b776d2c36e74af3c60416c565d7118c4d505e26684a6fefe98455a"
+    },
+    {
+      "path": "reports/acfo_ncs_manuscript_final_hardening_r3_20260902/SI_AUDIT.json",
+      "bytes": 1607,
+      "sha256": "8fb80bd6f67129e38895338c1354239b64506acad67b2ba95598f6556aac977b"
+    },
+    {
+      "path": "reports/acfo_ncs_manuscript_final_hardening_r3_20260902/STRUCTURE_AUDIT.json",
+      "bytes": 1232,
+      "sha256": "d1c62eac2676cee5783dc508023a6e7c7cf6a64e6a3d69a54566c7669ff65b8c"
+    }
+  ],
+  "audits": {
+    "main": true,
+    "si": true,
+    "numerical": true,
+    "figures": true,
+    "structure": true,
+    "fairness": true
+  },
+  "submission_blockers": [
+    "GitHub release URL and commit",
+    "Zenodo DOI",
+    "verified acknowledgements/funding/author contributions",
+    "final competing-interest confirmation"
+  ],
+  "new_calculation_performed": false,
+  "uob_author_code_fitting_performed": false
+}

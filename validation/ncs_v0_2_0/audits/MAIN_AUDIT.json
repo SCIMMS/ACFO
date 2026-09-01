@@ -1,0 +1,60 @@
+{
+  "schema": "acfo-ncs-main-audit-v1",
+  "abstract_words": 150,
+  "main_words_introduction_results_discussion": 1516,
+  "reference_count": 27,
+  "figure_count": 4,
+  "table_count": 1,
+  "display_items": 5,
+  "discouraged_phrase_hits": {
+    "rather than": 0,
+    "not a": 0,
+    "does not": 0,
+    "we do not claim": 0,
+    "not intended to": 0
+  },
+  "internal_term_hits": {
+    "gate": 0,
+    "closure": 0,
+    "selected-baseline": 0,
+    "anchor": 0,
+    "hero": 0,
+    "lane": 0,
+    "systems envelope": 0,
+    "frozen protocol": 0
+  },
+  "unfair_ratio_hits": {
+    "8.221-fold": 0,
+    "38.2-fold": 0,
+    "81.241-fold": 0,
+    "2.952-fold": 0,
+    "2.993-fold": 0,
+    "3.141-fold": 0,
+    "6.639-fold": 0,
+    "100.556-fold": 0,
+    "166-fold": 0,
+    "168-fold": 0
+  },
+  "review_response_checks": {
+    "waxs_noise_seed_disclosed": true,
+    "uob_claim_softened": true,
+    "uob_undefined_competitive_removed": true,
+    "uob_comparators_disambiguated": true,
+    "odt_common_reference_boundary": true,
+    "odt_representation_boundary": true,
+    "numag_external_execution_defined": true,
+    "numag_abba_naming": true,
+    "numag_abstract_scope": true,
+    "numag_orientation_record_scope": true,
+    "independent_analysis_contract_language": true,
+    "closest_prior_methods_named": true
+  },
+  "release_blocker_mentions": 4,
+  "review_markup": {
+    "comment_parts": [],
+    "insertions": 0,
+    "deletions": 0,
+    "track_revisions": false
+  },
+  "passed": true
+}

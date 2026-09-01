@@ -123,6 +123,61 @@ class PreparedAxisymmetricOperator:
             raise ValueError("data values must contain only finite values")
         return array
 
+    def _phase_offsets(self, values: "ArrayLike | None") -> "NDArray[np.float64] | None":
+        if values is None:
+            return None
+        offsets = np.asarray(values, dtype=np.float64)
+        expected = (self.manifold.n_u,)
+        if offsets.shape != expected or not np.all(np.isfinite(offsets)):
+            raise ValueError(f"phase_offsets must be finite with shape {expected}")
+        return offsets
+
+    def _angles(self, values: "ArrayLike") -> "NDArray[np.float64]":
+        angles = np.asarray(values, dtype=np.float64)
+        if angles.ndim != 1 or angles.size == 0 or not np.all(np.isfinite(angles)):
+            raise ValueError("angles must be a non-empty finite one-dimensional array")
+        return angles
+
+    def _data_at_angles_array(
+        self,
+        values: "ArrayLike",
+        n_angles: int,
+    ) -> "NDArray[np.complexfloating]":
+        array = np.asarray(values, dtype=self.complex_dtype)
+        expected = (self.manifold.n_u, n_angles)
+        if array.shape != expected:
+            raise ValueError(f"data values must have shape {expected}")
+        if not np.all(np.isfinite(array)):
+            raise ValueError("data values must contain only finite values")
+        return array
+
+    def _mode_mask(self, values: "ArrayLike") -> "NDArray[np.bool_]":
+        mask = np.asarray(values)
+        if mask.shape != self.data_shape or mask.dtype != np.bool_:
+            raise ValueError(
+                f"mode_mask must be a Boolean array with shape {self.data_shape}"
+            )
+        return mask
+
+    def _offset_phase(
+        self,
+        phase_offsets: "ArrayLike | None",
+        *,
+        sign: float,
+        subtract_grid_origin: bool = False,
+    ) -> "NDArray[np.complexfloating] | None":
+        offsets = self._phase_offsets(phase_offsets)
+        if offsets is None and not subtract_grid_origin:
+            return None
+        if offsets is None:
+            offsets = np.zeros(self.manifold.n_u, dtype=np.float64)
+        if subtract_grid_origin:
+            offsets = offsets - self.phi[0]
+        phase = np.exp(
+            sign * 1j * offsets[:, None] * self.angular_modes[None, :]
+        )
+        return phase.astype(self.complex_dtype, copy=False)
+
     def _radial_weights(self, values: "ArrayLike | None") -> "NDArray[np.float64]":
         if values is None:
             weights = self.manifold.resolved_data_weights
@@ -173,18 +228,157 @@ class PreparedAxisymmetricOperator:
     def apply_prepared_object(
         self,
         object_fourier: "ArrayLike",
+        *,
+        phase_offsets: "ArrayLike | None" = None,
     ) -> "NDArray[np.complexfloating]":
-        """Apply geometry to a reusable azimuth-transformed object."""
+        """Apply geometry with an optional starting azimuth per target orbit."""
+
+        data_fourier = self.apply_prepared_object_fourier(object_fourier)
+        phase = self._offset_phase(phase_offsets, sign=1.0)
+        if phase is not None:
+            data_fourier = data_fourier * phase
 
         return np.fft.ifft(
-            self.apply_prepared_object_fourier(object_fourier),
+            data_fourier,
             axis=-1,
         ).astype(self.complex_dtype, copy=False)
 
-    def forward(self, object_values: "ArrayLike") -> "NDArray[np.complexfloating]":
+    def forward(
+        self,
+        object_values: "ArrayLike",
+        *,
+        phase_offsets: "ArrayLike | None" = None,
+    ) -> "NDArray[np.complexfloating]":
         """Apply the unweighted point-evaluation forward operator."""
 
-        return self.apply_prepared_object(self.prepare_object(object_values))
+        return self.apply_prepared_object(
+            self.prepare_object(object_values),
+            phase_offsets=phase_offsets,
+        )
+
+    def apply_prepared_object_mode_mask(
+        self,
+        object_fourier: "ArrayLike",
+        mode_mask: "ArrayLike",
+        *,
+        phase_offsets: "ArrayLike | None" = None,
+    ) -> "NDArray[np.complexfloating]":
+        """Apply a fixed per-orbit Fourier-mode mask before the final IFFT."""
+
+        mask = self._mode_mask(mode_mask)
+        data_fourier = self.apply_prepared_object_fourier(object_fourier)
+        data_fourier = np.where(mask, data_fourier, 0.0)
+        phase = self._offset_phase(phase_offsets, sign=1.0)
+        if phase is not None:
+            data_fourier *= phase
+        return np.fft.ifft(data_fourier, axis=-1).astype(
+            self.complex_dtype, copy=False
+        )
+
+    def forward_mode_mask(
+        self,
+        object_values: "ArrayLike",
+        mode_mask: "ArrayLike",
+        *,
+        phase_offsets: "ArrayLike | None" = None,
+    ) -> "NDArray[np.complexfloating]":
+        """Apply the forward operator with one frozen per-orbit mode mask."""
+
+        return self.apply_prepared_object_mode_mask(
+            self.prepare_object(object_values),
+            mode_mask,
+            phase_offsets=phase_offsets,
+        )
+
+    def apply_prepared_object_at_angles(
+        self,
+        object_fourier: "ArrayLike",
+        angles: "ArrayLike",
+        *,
+        phase_offsets: "ArrayLike | None" = None,
+    ) -> "NDArray[np.complexfloating]":
+        """Evaluate a prepared object at arbitrary physical azimuths.
+
+        ``angles`` are expressed in the local Cartesian frame used by the
+        cylindrical template.  ``phase_offsets`` supplies one additional
+        starting azimuth for every meridional target orbit.  Unlike the FFT
+        path, the angles need not be uniform or span a complete revolution.
+        """
+
+        angle_array = self._angles(angles)
+        data_fourier = self.apply_prepared_object_fourier(object_fourier)
+        offset_phase = self._offset_phase(
+            phase_offsets,
+            sign=1.0,
+            subtract_grid_origin=True,
+        )
+        assert offset_phase is not None
+        modes = self.angular_modes.astype(np.float64, copy=False)
+        angular_basis = np.exp(1j * angle_array[:, None] * modes[None, :])
+        angular_basis /= self.phi.size
+        result = (data_fourier * offset_phase) @ angular_basis.T
+        return result.astype(self.complex_dtype, copy=False)
+
+    def forward_at_angles(
+        self,
+        object_values: "ArrayLike",
+        angles: "ArrayLike",
+        *,
+        phase_offsets: "ArrayLike | None" = None,
+    ) -> "NDArray[np.complexfloating]":
+        """Apply the forward operator at arbitrary physical azimuths."""
+
+        return self.apply_prepared_object_at_angles(
+            self.prepare_object(object_values),
+            angles,
+            phase_offsets=phase_offsets,
+        )
+
+    def apply_prepared_object_at_angles_mode_mask(
+        self,
+        object_fourier: "ArrayLike",
+        angles: "ArrayLike",
+        mode_mask: "ArrayLike",
+        *,
+        phase_offsets: "ArrayLike | None" = None,
+    ) -> "NDArray[np.complexfloating]":
+        """Evaluate a prepared object at arbitrary angles with a frozen mask."""
+
+        angle_array = self._angles(angles)
+        mask = self._mode_mask(mode_mask)
+        data_fourier = np.where(
+            mask,
+            self.apply_prepared_object_fourier(object_fourier),
+            0.0,
+        )
+        offset_phase = self._offset_phase(
+            phase_offsets,
+            sign=1.0,
+            subtract_grid_origin=True,
+        )
+        assert offset_phase is not None
+        modes = self.angular_modes.astype(np.float64, copy=False)
+        angular_basis = np.exp(1j * angle_array[:, None] * modes[None, :])
+        angular_basis /= self.phi.size
+        result = (data_fourier * offset_phase) @ angular_basis.T
+        return result.astype(self.complex_dtype, copy=False)
+
+    def forward_at_angles_mode_mask(
+        self,
+        object_values: "ArrayLike",
+        angles: "ArrayLike",
+        mode_mask: "ArrayLike",
+        *,
+        phase_offsets: "ArrayLike | None" = None,
+    ) -> "NDArray[np.complexfloating]":
+        """Apply the fixed-mask forward operator at arbitrary angles."""
+
+        return self.apply_prepared_object_at_angles_mode_mask(
+            self.prepare_object(object_values),
+            angles,
+            mode_mask,
+            phase_offsets=phase_offsets,
+        )
 
     def geometry_derivatives(
         self,
@@ -258,6 +452,8 @@ class PreparedAxisymmetricOperator:
         self,
         object_values: "ArrayLike",
         max_h: int,
+        *,
+        phase_offsets: "ArrayLike | None" = None,
     ) -> "NDArray[np.complexfloating]":
         """Apply the forward operator after retaining modes ``|h| <= max_h``."""
 
@@ -266,14 +462,31 @@ class PreparedAxisymmetricOperator:
             raise ValueError("max_h must be in [0, n_phi // 2]")
         data_fft = self.forward_fourier(object_values).copy()
         data_fft[..., np.abs(self.angular_modes) > max_h] = 0.0
+        phase = self._offset_phase(phase_offsets, sign=1.0)
+        if phase is not None:
+            data_fft *= phase
         return np.fft.ifft(data_fft, axis=-1).astype(self.complex_dtype, copy=False)
 
     def _adjoint_core(
         self,
         data_values: "ArrayLike",
+        *,
+        phase_offsets: "ArrayLike | None" = None,
     ) -> "NDArray[np.complexfloating]":
         data = self._data_array(data_values)
         data_fft = np.fft.fft(data, axis=-1)
+        phase = self._offset_phase(phase_offsets, sign=-1.0)
+        if phase is not None:
+            data_fft *= phase
+        return self._adjoint_from_data_fourier(data_fft)
+
+    def _adjoint_from_data_fourier(
+        self,
+        data_fourier: "ArrayLike",
+    ) -> "NDArray[np.complexfloating]":
+        data_fft = np.asarray(data_fourier, dtype=self.complex_dtype)
+        if data_fft.shape != self.data_shape or not np.all(np.isfinite(data_fft)):
+            raise ValueError(f"data Fourier values must be finite with shape {self.data_shape}")
         histogram_fft = np.einsum(
             "ej,jz,jrh,jh->erzh",
             np.conj(self.form_factors),
@@ -287,22 +500,95 @@ class PreparedAxisymmetricOperator:
     def adjoint_euclidean(
         self,
         data_values: "ArrayLike",
+        *,
+        phase_offsets: "ArrayLike | None" = None,
     ) -> "NDArray[np.complexfloating]":
         """Apply the adjoint for Euclidean object and data inner products."""
 
-        return self._adjoint_core(data_values)
+        return self._adjoint_core(data_values, phase_offsets=phase_offsets)
+
+    def adjoint_mode_mask_euclidean(
+        self,
+        data_values: "ArrayLike",
+        mode_mask: "ArrayLike",
+        *,
+        phase_offsets: "ArrayLike | None" = None,
+    ) -> "NDArray[np.complexfloating]":
+        """Apply the Euclidean adjoint of ``forward_mode_mask``."""
+
+        data = self._data_array(data_values)
+        mask = self._mode_mask(mode_mask)
+        data_fourier = np.fft.fft(data, axis=-1)
+        phase = self._offset_phase(phase_offsets, sign=-1.0)
+        if phase is not None:
+            data_fourier *= phase
+        data_fourier = np.where(mask, data_fourier, 0.0)
+        return self._adjoint_from_data_fourier(data_fourier)
+
+    def adjoint_at_angles_euclidean(
+        self,
+        data_values: "ArrayLike",
+        angles: "ArrayLike",
+        *,
+        phase_offsets: "ArrayLike | None" = None,
+    ) -> "NDArray[np.complexfloating]":
+        """Apply the Euclidean adjoint of ``forward_at_angles``."""
+
+        angle_array = self._angles(angles)
+        data = self._data_at_angles_array(data_values, angle_array.size)
+        modes = self.angular_modes.astype(np.float64, copy=False)
+        angular_adjoint = np.exp(-1j * angle_array[:, None] * modes[None, :])
+        data_fourier = data @ angular_adjoint
+        offset_phase = self._offset_phase(
+            phase_offsets,
+            sign=-1.0,
+            subtract_grid_origin=True,
+        )
+        assert offset_phase is not None
+        data_fourier *= offset_phase
+        return self._adjoint_from_data_fourier(data_fourier)
+
+    def adjoint_at_angles_mode_mask_euclidean(
+        self,
+        data_values: "ArrayLike",
+        angles: "ArrayLike",
+        mode_mask: "ArrayLike",
+        *,
+        phase_offsets: "ArrayLike | None" = None,
+    ) -> "NDArray[np.complexfloating]":
+        """Apply the Euclidean adjoint of the fixed-mask arbitrary-angle path."""
+
+        angle_array = self._angles(angles)
+        data = self._data_at_angles_array(data_values, angle_array.size)
+        mask = self._mode_mask(mode_mask)
+        modes = self.angular_modes.astype(np.float64, copy=False)
+        angular_adjoint = np.exp(-1j * angle_array[:, None] * modes[None, :])
+        data_fourier = data @ angular_adjoint
+        offset_phase = self._offset_phase(
+            phase_offsets,
+            sign=-1.0,
+            subtract_grid_origin=True,
+        )
+        assert offset_phase is not None
+        data_fourier *= offset_phase
+        data_fourier = np.where(mask, data_fourier, 0.0)
+        return self._adjoint_from_data_fourier(data_fourier)
 
     def adjoint_weighted(
         self,
         data_values: "ArrayLike",
         *,
         data_weights: "ArrayLike | None" = None,
+        phase_offsets: "ArrayLike | None" = None,
     ) -> "NDArray[np.complexfloating]":
         """Apply ``A^H W`` for explicit radial data-space weights ``W``."""
 
         data = self._data_array(data_values)
         weights = self._radial_weights(data_weights)
-        return self._adjoint_core(data * weights[:, None])
+        return self._adjoint_core(
+            data * weights[:, None],
+            phase_offsets=phase_offsets,
+        )
 
     def data_inner_product(
         self,
@@ -328,21 +614,56 @@ class PreparedAxisymmetricOperator:
         *,
         weighted: bool = False,
         data_weights: "ArrayLike | None" = None,
+        phase_offsets: "ArrayLike | None" = None,
     ) -> float:
         """Return the normalized forward-adjoint dot-product mismatch."""
 
         object_array = self._object_array(object_values)
         data_array = self._data_array(data_values)
-        forward = self.forward(object_array)
+        forward = self.forward(object_array, phase_offsets=phase_offsets)
         if weighted:
-            adjoint = self.adjoint_weighted(data_array, data_weights=data_weights)
+            adjoint = self.adjoint_weighted(
+                data_array,
+                data_weights=data_weights,
+                phase_offsets=phase_offsets,
+            )
         else:
-            adjoint = self.adjoint_euclidean(data_array)
+            adjoint = self.adjoint_euclidean(
+                data_array,
+                phase_offsets=phase_offsets,
+            )
         left = self.data_inner_product(
             forward,
             data_array,
             weighted=weighted,
             data_weights=data_weights,
         )
+        right = complex(np.vdot(object_array, adjoint))
+        return normalized_adjoint_error(left, right)
+
+    def adjoint_test_at_angles(
+        self,
+        object_values: "ArrayLike",
+        data_values: "ArrayLike",
+        angles: "ArrayLike",
+        *,
+        phase_offsets: "ArrayLike | None" = None,
+    ) -> float:
+        """Return the Euclidean dot-product mismatch for arbitrary angles."""
+
+        object_array = self._object_array(object_values)
+        angle_array = self._angles(angles)
+        data_array = self._data_at_angles_array(data_values, angle_array.size)
+        forward = self.forward_at_angles(
+            object_array,
+            angle_array,
+            phase_offsets=phase_offsets,
+        )
+        adjoint = self.adjoint_at_angles_euclidean(
+            data_array,
+            angle_array,
+            phase_offsets=phase_offsets,
+        )
+        left = complex(np.vdot(forward, data_array))
         right = complex(np.vdot(object_array, adjoint))
         return normalized_adjoint_error(left, right)

@@ -1,0 +1,240 @@
+{
+  "schema": "numagsans-example3-ensemble-dispatch-protocol-v2",
+  "frozen_utc": "2026-08-24T20:52:35+09:00",
+  "status": "PROSPECTIVE_REFROZEN_V2_BEFORE_PUBLIC_ORIENTATIONS_2_THROUGH_800",
+  "revision_from_v1": {
+    "reason": "The first external preflight stopped before the full benchmark and exposed an archive member suffix error, a package import-path error, and an unstated CUDA execution warm-up contract.",
+    "evidence_seen_between_v1_and_v2": [
+      "test collection failures",
+      "the official source ZIP central directory",
+      "a two-update GPU smoke that repeated public orientation 1 twice"
+    ],
+    "evidence_still_unseen": [
+      "any timing for public source orientations 2 through 800",
+      "any five-hierarchy result using public source orientations 2 through 800",
+      "any full archived-output comparison"
+    ],
+    "unchanged_scientific_contracts": [
+      "qR-adaptive H=ceil(qR)+4 cutoff",
+      "GPU Miller recurrence margin 64",
+      "cold crossover threshold K=50",
+      "all accuracy, dispatch, false-GO, and speed gates"
+    ]
+  },
+  "v1_clerical_corrections": [
+    {
+      "corrected_utc": "2026-08-24T20:55:00+09:00",
+      "scope": "source ZIP member filename template only",
+      "before": "Orientation_{index}/m_{index}.txt and n_{index}.txt",
+      "after": "Orientation_{index}/m_1.txt and n_1.txt",
+      "evidence": "IronVortexRemanence.zip central directory tail SHA256 1e5eecfd62635826dc4834fbbc3bf97177ffdea1591aabb53a03424ba38e6a28",
+      "scientific_impact": "none; no timing, accuracy, cutoff, dispatch, or gate value changed and no orientation beyond 1 was evaluated before this correction"
+    }
+  ],
+  "purpose": "Prospectively test ACFO dispatch and crossover on the complete NuMagSANS Example 3 ensemble without adapting the rule after seeing the 800-orientation result.",
+  "prior_evidence_boundary": {
+    "seen_before_freeze": [
+      "orientation 1 source geometry and accuracy",
+      "orientation 1 RTX 3090 ACFO versus projected 2-D type-3 timing",
+      "a two-update implementation smoke that repeated orientation 1 and is excluded from the full result",
+      "the four public 800-position structure tables",
+      "the public output archive member topology"
+    ],
+    "not_seen_before_freeze": [
+      "ACFO or projected type-3 timings for orientations 2 through 800",
+      "ACFO versus projected type-3 ensemble outputs for any packing hierarchy",
+      "ACFO predictions versus the five archived Example 3 SANS2D outputs"
+    ]
+  },
+  "dataset": {
+    "doi": "10.5281/zenodo.17931156",
+    "source_archive": {
+      "name": "IronVortexRemanence.zip",
+      "bytes": 269857730,
+      "md5": "be8de42af0f11b41bf49320b03167c52",
+      "url": "https://zenodo.org/api/records/17931156/files/IronVortexRemanence.zip/content",
+      "magnetic_member_template": "IronVortexRemanence/MagData/Orientation_{index}/m_1.txt",
+      "nuclear_member_template": "IronVortexRemanence/NucData/Orientation_{index}/n_1.txt"
+    },
+    "output_archive": {
+      "name": "NuMagSANS_IVR40.zip",
+      "bytes": 794054325,
+      "md5": "8f7ea2974951796571586b7653df3a3d",
+      "url": "https://zenodo.org/api/records/17931156/files/NuMagSANS_IVR40.zip/content",
+      "sans2d_member_template": "NuMagSANS_Output_IVR40_{archive_index}/SANS_1/SANS2D.csv"
+    },
+    "orientation_count": 800,
+    "sources_per_orientation": 4224,
+    "source_coordinate_scale": 1000000000.0,
+    "source_coordinate_unit_after_scale": "nm",
+    "upstream_coordinate_contract": "beam +x; detector q=(0,qy,qz); P=+z",
+    "acfo_coordinate_permutation": "(x,y,z)_upstream -> (y,z,x)_ACFO; P -> (0,1,0)",
+    "provenance_caveat": "The distributed archive contains a complete 1..800 orientation set. Ancillary setup scripts contain stale or mixed generation counts; the archive member audit, not those constants, defines this benchmark."
+  },
+  "upstream_contract": {
+    "repository": "https://github.com/AdamsMP92/NuMagSANS",
+    "audited_commit": "cb082fc3a5e8e7794fb298da3eb6dde823a823e3",
+    "dilute_kernel": "src/gpu_kernels/AtomisticNuMagSANS_DiluteKernel.h",
+    "packed_kernel": "src/gpu_kernels/AtomisticNuMagSANS_StructKernel.h",
+    "dilute_algebra": "form twelve observables per orientation and sum them incoherently",
+    "packed_algebra": "translate each orientation by its structure center, coherently sum four complex amplitudes, then form twelve observables",
+    "normalization": "The kernel factor 1/(W*N_avg) cancels the W*N_avg part of the later micromagnetic scaling; physical output factors are therefore applied after the dilute or coherent aggregate."
+  },
+  "packing_hierarchy": [
+    {
+      "id": "dilute",
+      "archive_index": 1,
+      "structure_member": null,
+      "aggregation": "incoherent_observable_sum"
+    },
+    {
+      "id": "packing_0p5_percent",
+      "archive_index": 2,
+      "structure_member": "IronVortexRemanence/StructData05.csv",
+      "local_structure_file": "inputs/numagsans_example3_reduced/StructData05.csv",
+      "aggregation": "coherent_translated_amplitude_sum"
+    },
+    {
+      "id": "packing_5_percent",
+      "archive_index": 3,
+      "structure_member": "IronVortexRemanence/StructData5.csv",
+      "local_structure_file": "inputs/numagsans_example3_reduced/StructData5.csv",
+      "aggregation": "coherent_translated_amplitude_sum"
+    },
+    {
+      "id": "packing_10_percent",
+      "archive_index": 4,
+      "structure_member": "IronVortexRemanence/StructData10.csv",
+      "local_structure_file": "inputs/numagsans_example3_reduced/StructData10.csv",
+      "aggregation": "coherent_translated_amplitude_sum"
+    },
+    {
+      "id": "ordered",
+      "archive_index": 5,
+      "structure_member": "IronVortexRemanence/StructDataOrdered.csv",
+      "local_structure_file": "inputs/numagsans_example3_reduced/StructDataOrdered.csv",
+      "aggregation": "coherent_translated_amplitude_sum"
+    }
+  ],
+  "workload": {
+    "dtype": "complex64",
+    "q_nodes": 1000,
+    "theta_nodes_upstream": 1000,
+    "unique_theta": 999,
+    "q_max_inverse_nm": 2.0,
+    "targets": 999000,
+    "fourier_channels": 4,
+    "detector_observables": 12,
+    "polarization_acfo": [0.0, 1.0, 0.0],
+    "acfo_n_r": 384,
+    "acfo_n_z": 41,
+    "source_deposition": "linear",
+    "streaming_required": true,
+    "naive_orientation_library_bytes_complex64": 25574400000,
+    "maximum_allowed_resident_bytes": 4294967296,
+    "prefix_orientation_counts": [1, 16, 32, 49, 50, 64, 128, 256, 400, 800]
+  },
+  "harmonic_support": {
+    "selection_rule": "for each q and internal particle radius R_i retain |h| <= ceil(q R_i) + 4, capped strictly below angular Nyquist",
+    "mode_padding": 4,
+    "expected_particle_radius_nm": 19.874606914351894,
+    "expected_qR_max": 39.74921382870379,
+    "minimum_required_global_max_h": 44,
+    "production_tier_ceiling": 48,
+    "miller_recurrence_margin": 64,
+    "required_kernel_backend": "gpu_miller_downward_recurrence",
+    "packing_centers_must_not_enter_qR": true,
+    "reason": "Fourier translation is an exact object-level phase and does not enlarge the internal particle bandwidth."
+  },
+  "factorization": {
+    "stage_a": "stream one orientation at a time and evaluate its four internal-particle Fourier amplitudes",
+    "stage_b_dilute": "form the five primitive observables per orientation, sum, apply physical factors, and derive the remaining seven observables",
+    "stage_b_packed": "multiply each orientation amplitude by exp(-i q dot center_k), sum coherently for each of four structure tables, then contract observables",
+    "common_reduction_policy": "ACFO and projected type-3 use the identical streaming reduction implementation; reduction is timed separately and added equally to both workflow models.",
+    "forbidden_implementations": [
+      "including packing-center radius in the ACFO harmonic cutoff",
+      "materializing the 800 x 4 x 999000 complex amplitude library",
+      "comparing streamed ACFO against an unfactorized 3379200-source baseline",
+      "tuning mode padding, Miller margin, radial grid, or dispatch threshold after inspecting orientations 2..800"
+    ]
+  },
+  "baseline_dispatch": {
+    "eligible": "projected 2-D cuFINUFFT type-3 with n_trans=4",
+    "projection": "q along the ACFO orbit axis is identically zero, so the third source coordinate is eliminated exactly",
+    "plan_reuse": "construct one type-3 plan, reuse fixed targets, and include per-orientation setpts plus execute in the streamed orientation cost",
+    "eps": 0.003,
+    "n_trans": 4,
+    "ineligible": [
+      "type-2 NUFFT or Cartesian FFT because the back-rotated active sites are non-Cartesian",
+      "analytic h=0 reduction because individual orientation amplitudes are not axisymmetric",
+      "full 3-D type-3 as the primary baseline because exact planar projection is available"
+    ]
+  },
+  "prospective_dispatch": {
+    "qualification_gates": [
+      "complete 999-point rings",
+      "q_axis exactly zero",
+      "qR-adaptive support below Nyquist",
+      "GPU Miller recurrence with margin 64",
+      "held-out amplitude and output errors <= 0.003"
+    ],
+    "warm_process_orientation_threshold": 37,
+    "cold_process_orientation_threshold_including_one_jit": 50,
+    "frozen_primary_rule": "select projected type-3 for K < 50 and ACFO for K >= 50 on the fixed RTX 3090 cold-process workload, provided all qualification gates pass",
+    "full_800_orientation_prediction": "ACFO_GO",
+    "packing_invariance_prediction": "The selected Fourier backend is identical for all five packing cases because packing changes only the exact common reduction stage.",
+    "prediction_source": "orientation-1 external pilot only"
+  },
+  "crossover": {
+    "primary_axis": "number K of streamed orientations in archive order",
+    "fourier_total_candidate": "J_acfo + S_acfo + cumulative_sum_{i<=K}(map_i + H2D_i + amplitude_i)",
+    "fourier_total_baseline": "S_type3_plan + cumulative_sum_{i<=K}(H2D_i + setpts_i + execute_i)",
+    "workflow_total_candidate": "fourier_total_candidate + common_five_case_reduction(K)",
+    "workflow_total_baseline": "fourier_total_baseline + common_five_case_reduction(K)",
+    "reported_crossovers": [
+      "first strict warm-process favorable integer K",
+      "first strict cold-process favorable integer K including one GPU Miller JIT",
+      "first persistent favorable integer K for each definition"
+    ],
+    "no_extrapolation_for_primary_verdict": true,
+    "expected_from_prior_pilot": {
+      "warm_process_first_integer": 37,
+      "cold_process_first_integer": 50
+    }
+  },
+  "accuracy": {
+    "held_out_orientation_indices": [53, 106, 159, 212, 265, 318, 371, 424, 477, 530, 583, 636, 689, 742, 795, 800],
+    "direct_targets_per_held_out_orientation": 32,
+    "direct_target_rule": "unique evenly spaced flattened detector indices including both endpoints",
+    "amplitude_relative_l2_max": 0.003,
+    "worst_twelve_output_relative_l2_max": 0.003,
+    "acfo_vs_projected_type3_full_ensemble_worst_output_relative_l2_max": 0.003,
+    "archived_output_radial_indices": [1, 16, 64, 128, 256, 400, 600, 799, 999],
+    "archived_output_worst_relative_l2_max": 0.01,
+    "archived_output_gate_is_secondary": true,
+    "secondary_reason": "The public files are single-precision and include upstream physical scaling and CSV formatting; the direct and projected-type3 gates isolate operator accuracy more cleanly."
+  },
+  "timing_and_statistics": {
+    "pre_timing_warmups_per_arm": 10,
+    "warmup_contract": "repeat orientation 1 for each Fourier arm after plan construction; exclude these executions from setup, per-orientation timing, reductions, and all gates; matches the prior orientation-1 pilot and was fixed before any public orientation 2 timing",
+    "orientation_order": "public archive order 1..800",
+    "paired_order": "AB for odd orientation index and BA for even orientation index",
+    "data_decompression_excluded": true,
+    "aggregation_timed_separately": true,
+    "bootstrap_resamples": 10000,
+    "bootstrap_seed": 20260824,
+    "primary_speedup": "ratio of total projected-type3 Fourier time to total ACFO Fourier time at K=800",
+    "required_full_800_lower_95_speedup": 1.5,
+    "dispatch_score": "fraction of frozen prefix decisions whose sign matches measured setup-inclusive cumulative time",
+    "required_dispatch_score": 1.0,
+    "false_go_count_must_equal": 0,
+    "unfavorable_result_policy": "preserve and report; do not refit the threshold"
+  },
+  "external_machine": {
+    "host_label": "POSTECH validation machine",
+    "gpu_required": "NVIDIA GeForce RTX 3090",
+    "conda_environment": "acfo-ncs-gpu",
+    "working_directory": "/path/to/ACFO",
+    "source_and_output_archives_are_acquired_by_checksum_before_run": true
+  }
+}

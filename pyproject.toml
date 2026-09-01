@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "curved-ewald-operators"
-version = "0.1.0"
-description = "Prepared curved-Ewald Fourier operators for WAXS, high-NA optics, and ODT/aIDT benchmarks."
+version = "0.2.0"
+description = "Geometry factorization and representation dispatch for repeated curved Fourier inference."
 requires-python = ">=3.11"
 dependencies = [
   "numpy",

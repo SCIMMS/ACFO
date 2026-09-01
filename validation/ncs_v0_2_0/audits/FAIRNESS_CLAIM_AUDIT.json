@@ -1,0 +1,59 @@
+{
+  "schema": "acfo-ncs-fairness-claim-audit-v1",
+  "created_utc": "2026-09-01T12:12:39.426539+00:00",
+  "required_rows": {
+    "waxs_100state_accuracy": {
+      "present": true,
+      "fairness_status": "fair",
+      "eligible_transform": "type-3",
+      "used_transform": "type-3",
+      "numerical_status": "pass",
+      "passed": true
+    },
+    "odt_native_type12": {
+      "present": true,
+      "fairness_status": "fair",
+      "eligible_transform": "type-2 forward + type-1 adjoint",
+      "used_transform": "type-2/type-1",
+      "numerical_status": "pass",
+      "passed": true
+    },
+    "numagsans_example3_affine_type2": {
+      "present": true,
+      "fairness_status": "fair",
+      "eligible_transform": "rotated-lattice 3-D type-2",
+      "used_transform": "affine type-2",
+      "numerical_status": "pass",
+      "passed": true
+    },
+    "crystal_uob_atomic": {
+      "present": true,
+      "fairness_status": "fair",
+      "eligible_transform": "contracted type-2",
+      "used_transform": "ACFO/type-2",
+      "numerical_status": "pass",
+      "passed": true
+    }
+  },
+  "unfair_ledger_row_count": 6,
+  "unfair_ledger_ids": [
+    "waxs_early_166x",
+    "odt_early_type3_38x",
+    "odt_local_81x",
+    "magnetic_example2_type3",
+    "numagsans_example3_pilot",
+    "numagsans_example3_800"
+  ],
+  "superseded_token_hits": {
+    "166-168": 0,
+    "38.2": 0,
+    "81.241": 0,
+    "3.141": 0,
+    "2.993": 0
+  },
+  "checks": {
+    "required_rows_pass": true,
+    "superseded_publication_hits_zero": true
+  },
+  "passed": true
+}

@@ -1,0 +1,6 @@
+adapter,best_J_over_T,source_interval_recovered
+bilinear_experiment_to_native,0.13413167796828418,True
+nearest_experiment_to_native,0.13413167796828418,True
+bilinear_native_prediction_to_measured,0.12759804718979337,False
+nearest_native_prediction_to_measured,0.12759804718979337,False
+parent_exact_q_measured_grid,0.12759804718979337,False

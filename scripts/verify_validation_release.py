@@ -17,18 +17,22 @@ from typing import Any
 
 SCHEMA = "acfo-validation-release-manifest-v1"
 WINDOWS_PATH = re.compile(r"^[A-Za-z]:[\\/]")
+TEXT_SUFFIXES = {".json", ".csv", ".md", ".txt", ".cff"}
 SECRET_PATTERN = re.compile(
     r"(?i)(github_pat_[A-Za-z0-9_]+|ghp_[A-Za-z0-9]+|"
     r"(?:api[_-]?key|password|secret)\s*[:=]\s*[^\s,;]+)"
 )
 
 
+def normalized_payload(path: Path) -> bytes:
+    data = path.read_bytes()
+    if path.suffix.lower() in TEXT_SUFFIXES:
+        data = data.replace(b"\r\n", b"\n")
+    return data
+
+
 def sha256(path: Path) -> str:
-    digest = hashlib.sha256()
-    with path.open("rb") as stream:
-        for block in iter(lambda: stream.read(1024 * 1024), b""):
-            digest.update(block)
-    return digest.hexdigest()
+    return hashlib.sha256(normalized_payload(path)).hexdigest()
 
 
 def iter_strings(value: Any):
@@ -54,7 +58,7 @@ def inventory(root: Path) -> list[dict[str, Any]]:
         entries.append(
             {
                 "path": path.relative_to(root).as_posix(),
-                "bytes": path.stat().st_size,
+                "bytes": len(normalized_payload(path)),
                 "sha256": sha256(path),
             }
         )

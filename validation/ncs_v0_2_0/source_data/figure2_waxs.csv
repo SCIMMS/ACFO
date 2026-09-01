@@ -1,0 +1,2 @@
+ratio,ci95_lower,ci95_upper,comparator,candidate_ranking_preserved,noise_relative_l2,noise_seed,realization_count
+8.279468832309261,8.165543844352424,8.395671149353307,strongest eligible fused FINUFFT Type-3,True,0.01,2026072611,1
