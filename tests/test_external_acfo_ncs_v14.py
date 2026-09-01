@@ -2,7 +2,6 @@ from __future__ import annotations
 
 import hashlib
 import json
-import shutil
 from pathlib import Path
 
 from scripts.run_external_acfo_ncs_validation_v14 import (
@@ -94,7 +93,8 @@ def test_full_validator_accepts_frozen_local_artifacts_as_synthetic_external(
         "odt_temporal": "benchmark_results/odt_banded_cartesian_temporal_warm_start.json",
     }
     for name, source in sources.items():
-        shutil.copy2(ROOT / source, tmp_path / FILES[name])
+        payload = (ROOT / source).read_bytes().replace(b"\r\n", b"\n")
+        (tmp_path / FILES[name]).write_bytes(payload.replace(b"\n", b"\r\n"))
     result = evaluate_run(tmp_path, mode="full")
     assert result["package_smoke_pass"]
     assert result["functional_correctness_pass"]
