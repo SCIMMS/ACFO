@@ -1,0 +1,80 @@
+{
+  "schema": "acfo-ncs-external-validation-curation-v1",
+  "curated_local_date": "2026-07-15",
+  "timezone": "Asia/Seoul",
+  "status": "publication_replication_pass",
+  "source_package": {
+    "path": "package/external_acfo_ncs_v14_20260714T091255Z_margin32_amended_v2_return_package.zip",
+    "bytes": 93401,
+    "sha256": "1a558be711da3b4fe1623e3a1a31fb013fd82cb783c7e235a8a59a49e9acdca4",
+    "canonical": true
+  },
+  "run": {
+    "receipt_generated_at_utc": "2026-07-14T15:00:00.608768+00:00",
+    "steps_completed": 13,
+    "steps_planned": 13,
+    "steps_passed": true,
+    "machine_fingerprint_sha256": "2daf5a9db463c0d6d476ad2de4e328e779689a1a9def13ed661d852cf4a13efc",
+    "independent_from_local_reference": true
+  },
+  "machine": {
+    "gpu": "NVIDIA GeForce RTX 3090",
+    "gpu_memory_mib": 24576,
+    "driver": "591.86",
+    "cpu_logical_count": 16,
+    "physical_memory_bytes": 68638613504,
+    "python": "3.11.8",
+    "torch": "2.12.1+cu126",
+    "cuda_runtime": "12.6",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "finufft": "2.5.1",
+    "cupy": "14.1.1",
+    "cufinufft": "2.5.1"
+  },
+  "changed_conditions": {
+    "nphi_min": 2250,
+    "realized_n_phi": 2250,
+    "r_dependent_margin": 32
+  },
+  "validation": {
+    "package_smoke_pass": true,
+    "functional_correctness_pass": true,
+    "performance_replication_pass": true,
+    "independent_machine_replication_pass": true,
+    "publication_replication_pass": true,
+    "execution_pass": true
+  },
+  "headline_metrics": {
+    "waxs_prepared": {
+      "atom_count": 1001000,
+      "complex_l2": 3.1555027344360378e-7,
+      "paired_speedup_median": 27.447289590840832,
+      "paired_speedup_p05": 26.906839525249865
+    },
+    "waxs_detector": {
+      "active_targets": 1015326,
+      "complex_l2": 7.028044488415519e-7,
+      "intensity_l2": 2.144055677279908e-7,
+      "acfo_median_s": 12.277774200047133,
+      "finufft_median_s": 30.299071149987867,
+      "speedup_finufft_over_acfo": 2.467798369338927,
+      "peak_rss_ratio": 5.450337247920019
+    },
+    "odt": {
+      "same_dtype_pair_speedup": 35.20515355340489,
+      "matched_complex128_pair_speedup": 169.4790368807763,
+      "full_256cubed_steady_hz": 17.94723155122928,
+      "full_256cubed_first_update_hz": 10.887861556262479,
+      "temporal_warm_1_update_hz": 30.27825721233094,
+      "temporal_warm_1_mean_object_l2": 0.037604610568710735
+    }
+  },
+  "provenance_notes": [
+    "The canonical ZIP and extracted receipts are preserved byte-for-byte.",
+    "The actual WAXS command in steps.json records both --nphi-min 2250 and --r-dependent-margin 32.",
+    "The original amendment_receipt.json describes only the nphi change and omits margin 32; this sidecar records the complete final condition without altering the original receipt.",
+    "ODT matched complex128 timing is a separate-process comparison on a memory-limited GPU.",
+    "GPU-resident hot timings exclude acquisition, host transfer and hologram demodulation."
+  ]
+}

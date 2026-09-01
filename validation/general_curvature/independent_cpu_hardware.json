@@ -1,0 +1,36 @@
+﻿{
+    "schema":  "acfo-general-curvature-windows-hardware-v1",
+    "generated_at_utc":  "2026-07-22T04:20:28.9106874Z",
+    "cpu":  [
+                {
+                    "Name":  "12th Gen Intel(R) Core(TM) i5-12400F",
+                    "Manufacturer":  "GenuineIntel",
+                    "NumberOfCores":  6,
+                    "NumberOfLogicalProcessors":  12,
+                    "MaxClockSpeed":  2500
+                }
+            ],
+    "computer":  [
+                     {
+                         "Manufacturer":  "Gigabyte Technology Co., Ltd.",
+                         "Model":  "B660M DS3H DDR4",
+                         "TotalPhysicalMemory":  17014030336
+                     }
+                 ],
+    "operating_system":  [
+                             {
+                                 "Caption":  "Microsoft Windows 11 Education",
+                                 "Version":  "10.0.26200",
+                                 "OSArchitecture":  "64비트",
+                                 "BuildNumber":  "26200"
+                             }
+                         ],
+    "display_controllers_metadata_only":  [
+                                              {
+                                                  "Name":  "AMD Radeon RX 6600 XT",
+                                                  "AdapterRAM":  4293918720,
+                                                  "DriverVersion":  "32.0.21030.2001"
+                                              }
+                                          ],
+    "gpu_used":  false
+}

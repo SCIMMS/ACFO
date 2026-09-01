@@ -152,6 +152,10 @@ def build_exact_cone_factorization(
     cap_phi: int,
     illumination_na: float,
     n_illum: int,
+    radial_sampling: str = "uniform_rho",
+    radial_outer_power: float = 2.0,
+    radial_min_fraction: float = 0.0,
+    radial_max_fraction: float = 1.0,
 ) -> ShiftedAxisFactorization:
     illumination, _ = cone_illumination_directions(
         n_illum=n_illum,
@@ -163,6 +167,10 @@ def build_exact_cone_factorization(
         cap_radial=cap_radial,
         cap_phi=cap_phi,
         illumination=illumination,
+        radial_sampling=radial_sampling,
+        radial_outer_power=radial_outer_power,
+        radial_min_fraction=radial_min_fraction,
+        radial_max_fraction=radial_max_fraction,
     )
     return ShiftedAxisFactorization(
         base_q=base_q,
@@ -188,6 +196,11 @@ def build_cone_axis_decomposition(
     n_illum: int,
     l_cutoff: int,
     adaptive_l_threshold: float | None = None,
+    compact_axisymmetric_kernel: bool = False,
+    radial_sampling: str = "uniform_rho",
+    radial_outer_power: float = 2.0,
+    radial_min_fraction: float = 0.0,
+    radial_max_fraction: float = 1.0,
 ) -> ConeAxisDecomposition:
     illumination, illumination_phi = cone_illumination_directions(
         n_illum=n_illum,
@@ -199,6 +212,10 @@ def build_cone_axis_decomposition(
         cap_radial=cap_radial,
         cap_phi=cap_phi,
         illumination=illumination,
+        radial_sampling=radial_sampling,
+        radial_outer_power=radial_outer_power,
+        radial_min_fraction=radial_min_fraction,
+        radial_max_fraction=radial_max_fraction,
     )
     l_values = np.arange(-int(l_cutoff), int(l_cutoff) + 1, dtype=np.int64)
     source_slots = np.mod(
@@ -217,12 +234,23 @@ def build_cone_axis_decomposition(
         )
     cos_alpha = math.sqrt(max(1.0 - float(illumination_na) ** 2, 0.0))
     axial_phase = np.exp(1j * float(k) * (1.0 - cos_alpha) * plan.z_axis)
+    kernel_q = base_q
+    if compact_axisymmetric_kernel:
+        radial_indices = np.arange(0, base_q.count, cap_phi, dtype=np.intp)
+        kernel_q = QSamples(
+            qx=np.ascontiguousarray(base_q.qx[radial_indices]),
+            qy=np.ascontiguousarray(base_q.qy[radial_indices]),
+            qz=np.ascontiguousarray(base_q.qz[radial_indices]),
+            q_perp=np.ascontiguousarray(base_q.q_perp[radial_indices]),
+            phi=np.ascontiguousarray(base_q.phi[radial_indices]),
+            illumination_index=np.ascontiguousarray(base_q.illumination_index[radial_indices]),
+        )
     factorization = ShiftedAxisFactorization(
         base_q=base_q,
         illumination=illumination,
         phase=np.empty((0, 0, 0, 0), dtype=np.complex128),
         beta_twiddle=np.empty((0, 0), dtype=np.complex128),
-        kernel=build_structured_kernel(plan, base_q),
+        kernel=build_structured_kernel(plan, kernel_q),
         cap_radial=cap_radial,
         cap_phi=cap_phi,
     )

@@ -1,0 +1,75 @@
+{
+  "schema": "protein-nanocrystal-lattice-factorization-v1",
+  "generated_at_utc": "2026-07-13T03:50:54.752448+00:00",
+  "unit_structure": "protein_nanocrystal_lysozyme_1iee_1x1x1_fixed",
+  "unit_atom_count": 8008,
+  "q_inv_angstrom": [
+    5.0,
+    5.65,
+    6.3
+  ],
+  "target_nphi": 720,
+  "active_targets": 1012,
+  "unit_harmonic": {
+    "complex_l2": 1.0101056434072341e-12,
+    "intensity_l2": 8.831173989148007e-13,
+    "seconds": 0.08269970001128968,
+    "direct_seconds": 0.9518791000009514,
+    "maximum_harmonic": 350
+  },
+  "supercells": [
+    {
+      "label": "3x3x3",
+      "structure_path": "structures/processed/protein_nanocrystal_lysozyme_1iee_3x3x3_fixed.npz",
+      "atom_count": 216216,
+      "cell_count": 27,
+      "repetition_residual_nm": 1.5223378113660146e-12,
+      "lattice_factor_seconds": 0.0017260000022361055,
+      "factorized_full_target_seconds": 0.08442570001352578,
+      "direct_subset_targets": 64,
+      "direct_subset_seconds": 1.472914400001173,
+      "subset_complex_l2": 3.681842267173203e-11,
+      "subset_intensity_l2": 2.826976930353405e-11
+    },
+    {
+      "label": "5x5x5",
+      "structure_path": "structures/processed/protein_nanocrystal_lysozyme_1iee_5x5x5_fixed.npz",
+      "atom_count": 1001000,
+      "cell_count": 125,
+      "repetition_residual_nm": 3.0588864774472313e-12,
+      "lattice_factor_seconds": 0.010388800001237541,
+      "factorized_full_target_seconds": 0.09308850001252722,
+      "direct_subset_targets": 64,
+      "direct_subset_seconds": 6.823724600006244,
+      "subset_complex_l2": 2.4284498525317208e-11,
+      "subset_intensity_l2": 1.2567804479511013e-11
+    }
+  ],
+  "sparse_defect_control": {
+    "base_supercell": "5x5x5",
+    "defect_model": "sparse independent positional displacement with exact old/new delta correction",
+    "defect_count": 1001,
+    "defect_fraction": 0.001,
+    "requested_rms_nm": 0.02,
+    "realized_rms_nm": 0.02,
+    "correction_full_target_seconds": 0.19579200001317076,
+    "factorized_plus_correction_seconds": 0.288880500025698,
+    "direct_modified_subset_targets": 64,
+    "direct_modified_subset_seconds": 6.805211999992025,
+    "subset_complex_l2": 2.425223093751544e-11,
+    "subset_intensity_l2": 1.2561148460784933e-11
+  },
+  "gates": {
+    "unit_harmonic_complex_l2_le_1e_10": true,
+    "all_repetition_residual_le_1e_9_nm": true,
+    "all_supercell_subset_complex_l2_le_1e_9": true,
+    "sparse_defect_delta_subset_complex_l2_le_1e_9": true
+  },
+  "passed": true,
+  "decision": "Perfect repeated protein nanocrystals admit an exact unit-cell structure-factor times finite lattice-sum control.",
+  "claim_boundary": [
+    "This is the standard exact specialization for ordered repeated crystals, not an ACFO novelty claim.",
+    "It is a validation/control path for perfect crystals and does not cover arbitrary atom-wise disorder.",
+    "Sparse vacancy/substitution defects can be represented as explicit delta-scatterer corrections to the perfect background; dense disorder needs a separate contract."
+  ]
+}

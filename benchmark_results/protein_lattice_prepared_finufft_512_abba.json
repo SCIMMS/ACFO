@@ -1,0 +1,379 @@
+{
+  "schema": "protein-lattice-prepared-finufft-512-abba-v1",
+  "status": "complete",
+  "created_at_utc": "2026-07-13T01:49:11.109838+00:00",
+  "updated_at_utc": "2026-07-13T03:00:48.002062+00:00",
+  "contract": {
+    "unit": "structures/processed/protein_nanocrystal_lysozyme_1iee_1x1x1_fixed.npz",
+    "supercell": "structures/processed/protein_nanocrystal_lysozyme_1iee_5x5x5_fixed.npz",
+    "nq": 512,
+    "q_min_inv_angstrom": 5.0,
+    "q_max_inv_angstrom": 6.3,
+    "wavelength_nm": 0.08,
+    "target_nphi": 768,
+    "harmonic_margin": 48,
+    "finufft_eps": 1e-06,
+    "finufft_threads": 4,
+    "warmup_pairs_requested": 10,
+    "measured_pairs_requested": 30,
+    "factorized_backend": "prepared_fused",
+    "lattice_backend": "separable",
+    "coefficient_backend": "fused_phase",
+    "synthesis_backend": "fft"
+  },
+  "unit_structure": "protein_nanocrystal_lysozyme_1iee_1x1x1_fixed",
+  "supercell": [
+    5,
+    5,
+    5
+  ],
+  "atom_count": 1001000,
+  "cell_count": 125,
+  "repetition_residual_nm": 3.0588864774472313e-12,
+  "target_count": 393216,
+  "lattice_setup_seconds": 0.19836969999596477,
+  "finufft_setup_seconds": 1.5237363000051118,
+  "prepared_plan_setup_seconds": 0.004202099997201003,
+  "factorized_backend": "prepared_fused",
+  "lattice_backend": "separable",
+  "legacy_comparison": {
+    "legacy_seconds": 14.316112400003476,
+    "prepared_seconds": 3.7690520999894943,
+    "legacy_vs_prepared_complex_l2": 4.8106151422818794e-14,
+    "legacy_vs_prepared_intensity_l2": 5.3006452644114175e-14
+  },
+  "warmup_pairs_completed": 10,
+  "warmup_pairs": [
+    {
+      "pair_index": 1,
+      "order": "AB",
+      "factorized_seconds": 3.8331053000001702,
+      "finufft_seconds": 110.93172399999457
+    },
+    {
+      "pair_index": 2,
+      "order": "BA",
+      "finufft_seconds": 86.13890320000064,
+      "factorized_seconds": 3.9223045999970054
+    },
+    {
+      "pair_index": 3,
+      "order": "AB",
+      "factorized_seconds": 4.1100046999927144,
+      "finufft_seconds": 88.62864159999299
+    },
+    {
+      "pair_index": 4,
+      "order": "BA",
+      "finufft_seconds": 88.11675899999682,
+      "factorized_seconds": 3.4286244999966584
+    },
+    {
+      "pair_index": 5,
+      "order": "AB",
+      "factorized_seconds": 3.363047299993923,
+      "finufft_seconds": 92.57338479999453
+    },
+    {
+      "pair_index": 6,
+      "order": "BA",
+      "finufft_seconds": 87.96895860000222,
+      "factorized_seconds": 3.5257301999954507
+    },
+    {
+      "pair_index": 7,
+      "order": "AB",
+      "factorized_seconds": 2.9867015999916475,
+      "finufft_seconds": 80.02733289999014
+    },
+    {
+      "pair_index": 8,
+      "order": "BA",
+      "finufft_seconds": 94.58344060000672,
+      "factorized_seconds": 3.334112599986838
+    },
+    {
+      "pair_index": 9,
+      "order": "AB",
+      "factorized_seconds": 4.057163999998011,
+      "finufft_seconds": 95.64578289999918
+    },
+    {
+      "pair_index": 10,
+      "order": "BA",
+      "finufft_seconds": 94.83135370000673,
+      "factorized_seconds": 3.0792205999896396
+    }
+  ],
+  "measured_pairs_completed": 30,
+  "measured_pairs": [
+    {
+      "pair_index": 1,
+      "order": "AB",
+      "factorized_seconds": 3.209165000007488,
+      "finufft_seconds": 76.2270251000009,
+      "paired_speedup": 23.752915509119365
+    },
+    {
+      "pair_index": 2,
+      "order": "BA",
+      "finufft_seconds": 111.01387850000174,
+      "factorized_seconds": 3.0554818000091473,
+      "paired_speedup": 36.332691786830274
+    },
+    {
+      "pair_index": 3,
+      "order": "AB",
+      "factorized_seconds": 3.134136299995589,
+      "finufft_seconds": 105.71207599999616,
+      "paired_speedup": 33.729252936493204
+    },
+    {
+      "pair_index": 4,
+      "order": "BA",
+      "finufft_seconds": 118.80362759999116,
+      "factorized_seconds": 3.306581199998618,
+      "paired_speedup": 35.92944507155633
+    },
+    {
+      "pair_index": 5,
+      "order": "AB",
+      "factorized_seconds": 3.1510978000005707,
+      "finufft_seconds": 111.91850699999486,
+      "paired_speedup": 35.517306698628836
+    },
+    {
+      "pair_index": 6,
+      "order": "BA",
+      "finufft_seconds": 132.18927040000563,
+      "factorized_seconds": 3.0188376999867614,
+      "paired_speedup": 43.788134221520195
+    },
+    {
+      "pair_index": 7,
+      "order": "AB",
+      "factorized_seconds": 3.2010107999958564,
+      "finufft_seconds": 107.57712499999616,
+      "paired_speedup": 33.6072358769097
+    },
+    {
+      "pair_index": 8,
+      "order": "BA",
+      "finufft_seconds": 102.89059730000736,
+      "factorized_seconds": 3.6948846000013873,
+      "paired_speedup": 27.84676882735897
+    },
+    {
+      "pair_index": 9,
+      "order": "AB",
+      "factorized_seconds": 3.3796223000099417,
+      "finufft_seconds": 115.24781679999433,
+      "paired_speedup": 34.10079783165572
+    },
+    {
+      "pair_index": 10,
+      "order": "BA",
+      "finufft_seconds": 105.85272009999608,
+      "factorized_seconds": 4.0504011000011815,
+      "paired_speedup": 26.1338858761334
+    },
+    {
+      "pair_index": 11,
+      "order": "AB",
+      "factorized_seconds": 4.503576799994335,
+      "finufft_seconds": 106.31371209998906,
+      "paired_speedup": 23.606505855550814
+    },
+    {
+      "pair_index": 12,
+      "order": "BA",
+      "finufft_seconds": 121.11759319998964,
+      "factorized_seconds": 3.161226099997293,
+      "paired_speedup": 38.313486403295656
+    },
+    {
+      "pair_index": 13,
+      "order": "AB",
+      "factorized_seconds": 3.1269189000013284,
+      "finufft_seconds": 115.65524820001156,
+      "paired_speedup": 36.98696765047614
+    },
+    {
+      "pair_index": 14,
+      "order": "BA",
+      "finufft_seconds": 97.28319929999998,
+      "factorized_seconds": 3.7472970000089845,
+      "paired_speedup": 25.960899096006198
+    },
+    {
+      "pair_index": 15,
+      "order": "AB",
+      "factorized_seconds": 3.4178790000005392,
+      "finufft_seconds": 84.9052859999938,
+      "paired_speedup": 24.8415131138289
+    },
+    {
+      "pair_index": 16,
+      "order": "BA",
+      "finufft_seconds": 87.79235960000369,
+      "factorized_seconds": 2.9967988999997033,
+      "paired_speedup": 29.295379012589862
+    },
+    {
+      "pair_index": 17,
+      "order": "AB",
+      "factorized_seconds": 3.12050150000141,
+      "finufft_seconds": 95.36023710000154,
+      "paired_speedup": 30.55926654736697
+    },
+    {
+      "pair_index": 18,
+      "order": "BA",
+      "finufft_seconds": 92.04627770000661,
+      "factorized_seconds": 3.0147956000000704,
+      "paired_speedup": 30.53151520454802
+    },
+    {
+      "pair_index": 19,
+      "order": "AB",
+      "factorized_seconds": 3.10752269999648,
+      "finufft_seconds": 106.02296190000197,
+      "paired_speedup": 34.11816167911567
+    },
+    {
+      "pair_index": 20,
+      "order": "BA",
+      "finufft_seconds": 116.67473549999704,
+      "factorized_seconds": 3.5968875999969896,
+      "paired_speedup": 32.43769293766497
+    },
+    {
+      "pair_index": 21,
+      "order": "AB",
+      "factorized_seconds": 3.646722999998019,
+      "finufft_seconds": 112.86343829998805,
+      "paired_speedup": 30.949276460002405
+    },
+    {
+      "pair_index": 22,
+      "order": "BA",
+      "finufft_seconds": 102.00962709999294,
+      "factorized_seconds": 3.2315067000017734,
+      "paired_speedup": 31.56720272309414
+    },
+    {
+      "pair_index": 23,
+      "order": "AB",
+      "factorized_seconds": 3.1224841000075685,
+      "finufft_seconds": 113.80275569998776,
+      "paired_speedup": 36.4462242416901
+    },
+    {
+      "pair_index": 24,
+      "order": "BA",
+      "finufft_seconds": 100.06825929999468,
+      "factorized_seconds": 3.0278111999941757,
+      "paired_speedup": 33.04970247160298
+    },
+    {
+      "pair_index": 25,
+      "order": "AB",
+      "factorized_seconds": 3.130115599997225,
+      "finufft_seconds": 116.42157179999049,
+      "paired_speedup": 37.194016668296115
+    },
+    {
+      "pair_index": 26,
+      "order": "BA",
+      "finufft_seconds": 103.88409609999508,
+      "factorized_seconds": 3.1147300000011455,
+      "paired_speedup": 33.352520475276144
+    },
+    {
+      "pair_index": 27,
+      "order": "AB",
+      "factorized_seconds": 3.1011476999992738,
+      "finufft_seconds": 113.87258140000631,
+      "paired_speedup": 36.71949626908547
+    },
+    {
+      "pair_index": 28,
+      "order": "BA",
+      "finufft_seconds": 122.3297382999881,
+      "factorized_seconds": 3.002286599992658,
+      "paired_speedup": 40.745523195649355
+    },
+    {
+      "pair_index": 29,
+      "order": "AB",
+      "factorized_seconds": 3.169728499997291,
+      "finufft_seconds": 95.61425460000464,
+      "paired_speedup": 30.16480894186564
+    },
+    {
+      "pair_index": 30,
+      "order": "BA",
+      "finufft_seconds": 108.91666770000302,
+      "factorized_seconds": 3.04121799999848,
+      "paired_speedup": 35.813502254707636
+    }
+  ],
+  "measured_summary": {
+    "factorized_seconds": {
+      "count": 30,
+      "mean": 3.286079136666376,
+      "median": 3.14261704999808,
+      "std": 0.3461338190034781,
+      "cv": 0.10533337896257118,
+      "p05": 3.0079156499959936,
+      "p95": 3.914004255004692,
+      "min": 2.9967988999997033,
+      "max": 4.503576799994335
+    },
+    "finufft_seconds": {
+      "count": 30,
+      "mean": 106.67957482333101,
+      "median": 106.94541854999261,
+      "std": 12.025465000464798,
+      "cv": 0.11272509306847002,
+      "p05": 86.20446911999825,
+      "p95": 121.78427300498879,
+      "min": 76.2270251000009,
+      "max": 132.18927040000563
+    },
+    "paired_speedup": {
+      "count": 30,
+      "mean": 32.77973652793064,
+      "median": 33.479878176092924,
+      "std": 4.926091762331266,
+      "cv": 0.1502785648729632,
+      "p05": 24.242784431238654,
+      "p95": 39.65110663909018,
+      "min": 23.606505855550814,
+      "max": 43.788134221520195
+    }
+  },
+  "cross_error": {
+    "complex_l2": 3.155502734745625e-07,
+    "intensity_l2": 1.1463118112622622e-07
+  },
+  "elapsed_this_run_seconds": 4276.653917600008,
+  "gates": {
+    "warmup_count_matches_request": true,
+    "measured_count_matches_request": true,
+    "cross_complex_l2_le_2e_6": true,
+    "cross_intensity_l2_le_5e_6": true,
+    "paired_speedup_median_ge_3": true,
+    "paired_speedup_p05_ge_3": true,
+    "legacy_comparison_l2_le_1e_12": true
+  },
+  "local_timing_gate_pass": true,
+  "passed": true,
+  "claim_boundary": [
+    "This is a same-machine 10-warmup/30-pair AB/BA result, not an independent-machine replication.",
+    "The finite lattice factor is a standard crystallographic specialization and not an ACFO novelty claim.",
+    "The timing claim applies only to the tested 1,001,000-atom exact repeated crystal.",
+    "FINUFFT eps=1e-6 is a practical timing baseline; direct NDFT correctness is established separately.",
+    "Prepared and FINUFFT plan setup are excluded from paired hot execution and reported separately."
+  ]
+}

@@ -383,10 +383,63 @@ def make_cylindrical_object(
     )
 
 
-def detector_directions(*, detector_na: float, cap_radial: int, cap_phi: int) -> np.ndarray:
+def detector_radial_nodes(
+    *,
+    detector_na: float,
+    cap_radial: int,
+    sampling: str = "uniform_rho",
+    outer_power: float = 2.0,
+    min_fraction: float = 0.0,
+    max_fraction: float = 1.0,
+) -> np.ndarray:
     if detector_na <= 0.0 or detector_na >= 1.0:
         raise ValueError("detector_na must be in (0, 1)")
-    radial = (np.arange(cap_radial, dtype=float) + 0.5) * detector_na / float(cap_radial)
+    if cap_radial <= 0:
+        raise ValueError("cap_radial must be positive")
+    if not (0.0 <= min_fraction < max_fraction <= 1.0):
+        raise ValueError("require 0 <= min_fraction < max_fraction <= 1")
+    if sampling not in {"uniform_rho", "uniform_theta", "outer_power"}:
+        raise ValueError(
+            "sampling must be uniform_rho, uniform_theta, or outer_power"
+        )
+    if outer_power <= 0.0:
+        raise ValueError("outer_power must be positive")
+
+    unit = (np.arange(cap_radial, dtype=float) + 0.5) / float(cap_radial)
+    rho_min = float(detector_na) * float(min_fraction)
+    rho_max = float(detector_na) * float(max_fraction)
+    if sampling == "uniform_rho":
+        radial = rho_min + (rho_max - rho_min) * unit
+    elif sampling == "uniform_theta":
+        theta_min = np.arcsin(rho_min)
+        theta_max = np.arcsin(rho_max)
+        radial = np.sin(theta_min + (theta_max - theta_min) * unit)
+    else:
+        warped = 1.0 - (1.0 - unit) ** float(outer_power)
+        radial = rho_min + (rho_max - rho_min) * warped
+    return np.ascontiguousarray(radial)
+
+
+def detector_directions(
+    *,
+    detector_na: float,
+    cap_radial: int,
+    cap_phi: int,
+    radial_sampling: str = "uniform_rho",
+    radial_outer_power: float = 2.0,
+    radial_min_fraction: float = 0.0,
+    radial_max_fraction: float = 1.0,
+) -> np.ndarray:
+    radial = detector_radial_nodes(
+        detector_na=detector_na,
+        cap_radial=cap_radial,
+        sampling=radial_sampling,
+        outer_power=radial_outer_power,
+        min_fraction=radial_min_fraction,
+        max_fraction=radial_max_fraction,
+    )
+    if cap_phi <= 0:
+        raise ValueError("cap_phi must be positive")
     phi = np.linspace(0.0, 2.0 * np.pi, cap_phi, endpoint=False, dtype=float)
     rr, pp = np.meshgrid(radial, phi, indexing="ij")
     sx = rr.ravel() * np.cos(pp.ravel())
@@ -423,6 +476,10 @@ def ewald_cap_q_samples(
     geometry: str,
     n_illum: int,
     illumination_na: float,
+    radial_sampling: str = "uniform_rho",
+    radial_outer_power: float = 2.0,
+    radial_min_fraction: float = 0.0,
+    radial_max_fraction: float = 1.0,
 ) -> QSamples:
     if k <= 0.0:
         raise ValueError("k must be positive")
@@ -430,6 +487,10 @@ def ewald_cap_q_samples(
         detector_na=detector_na,
         cap_radial=cap_radial,
         cap_phi=cap_phi,
+        radial_sampling=radial_sampling,
+        radial_outer_power=radial_outer_power,
+        radial_min_fraction=radial_min_fraction,
+        radial_max_fraction=radial_max_fraction,
     )
     illum = illumination_directions(
         mode=geometry,

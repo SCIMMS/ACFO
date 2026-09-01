@@ -1,0 +1,208 @@
+{
+  "schema": "odt-cufinufft-only-production-timing-v1",
+  "generated_at_utc": "2026-07-14T11:38:48.753911+00:00",
+  "device": {
+    "id": 0,
+    "name": "NVIDIA GeForce RTX 3090",
+    "cupy": "14.1.1",
+    "cufinufft": "2.5.1"
+  },
+  "problem": {
+    "object_shape": [
+      256,
+      256,
+      256
+    ],
+    "object_bins": 16777216,
+    "ring_q_samples": 7864320,
+    "axis_q_samples": 65536,
+    "total_q_samples": 7929856,
+    "ring_illum": 120,
+    "detector_shape": [
+      256,
+      256
+    ]
+  },
+  "cufinufft": {
+    "dtype": "complex128",
+    "eps": 1e-07,
+    "plan_mode": "plan",
+    "context_build_s": 11.392320799990557,
+    "operator_setup_s": 1.2075922000221908,
+    "forward_timing": {
+      "count": 1,
+      "median_s": 5.988928199978545,
+      "q1_s": 5.988928199978545,
+      "q3_s": 5.988928199978545,
+      "min_s": 5.988928199978545,
+      "max_s": 5.988928199978545,
+      "mean_s": 5.988928199978545,
+      "std_s": 0.0
+    },
+    "adjoint_timing": {
+      "count": 1,
+      "median_s": 2.4161906000226736,
+      "q1_s": 2.4161906000226736,
+      "q3_s": 2.4161906000226736,
+      "min_s": 2.4161906000226736,
+      "max_s": 2.4161906000226736,
+      "mean_s": 2.4161906000226736,
+      "std_s": 0.0
+    },
+    "pair_timing": {
+      "count": 5,
+      "median_s": 8.647328899998683,
+      "q1_s": 8.645644199976232,
+      "q3_s": 8.693623700004537,
+      "min_s": 8.450035899993964,
+      "max_s": 8.717636400018819,
+      "mean_s": 8.630853819998446,
+      "std_s": 0.10566051512582686
+    },
+    "forward_median_s": 5.988928199978545,
+    "adjoint_median_s": 2.4161906000226736,
+    "pair_median_s": 8.647328899998683
+  },
+  "memory_snapshots": [
+    {
+      "label": "after_all_forward_adjoint_plans",
+      "free_mib": 16315.0,
+      "used_mib": 8260.375,
+      "total_mib": 24575.375,
+      "cupy_pool_used_mib": 2532.0,
+      "cupy_pool_total_mib": 2532.0
+    },
+    {
+      "label": "after_coeff_forward_and_residual",
+      "free_mib": 15939.0,
+      "used_mib": 8636.375,
+      "total_mib": 24575.375,
+      "cupy_pool_used_mib": 2909.0,
+      "cupy_pool_total_mib": 2909.0
+    },
+    {
+      "label": "after_timed_execution",
+      "free_mib": 15939.0,
+      "used_mib": 8636.375,
+      "total_mib": 24575.375,
+      "cupy_pool_used_mib": 2909.0,
+      "cupy_pool_total_mib": 2909.0
+    }
+  ],
+  "acfo_reference": {
+    "path": "benchmark_results/external_acfo_ncs_v14_20260714T091255Z_full/odt_same_dtype_abba30.json",
+    "sha256": "fba4eac2b68152584379a44fd0d1684d3f3fdd366b25e25affd352b1f70b625b",
+    "pair_median_s": 0.05102300000726245,
+    "device_name": "NVIDIA GeForce RTX 3090",
+    "dtype": "complex64",
+    "pair_protocol": {
+      "method_order": "alternating_ab_ba",
+      "warmups_per_backend": 5,
+      "measured_repeats_per_backend": 30,
+      "ours_times_s": [
+        0.050761899969074875,
+        0.05023039999650791,
+        0.05041480000363663,
+        0.050233200017828494,
+        0.05034479999449104,
+        0.05034449999220669,
+        0.05065419996390119,
+        0.05043260002275929,
+        0.05096369999228045,
+        0.05070310004521161,
+        0.05129609996220097,
+        0.050621200003661215,
+        0.05108230002224445,
+        0.050773900002241135,
+        0.0513924999977462,
+        0.051179600006435066,
+        0.05090169998584315,
+        0.05072409997228533,
+        0.05143410002347082,
+        0.05091260001063347,
+        0.051532399957068264,
+        0.05113470001379028,
+        0.058384900039527565,
+        0.05166029999963939,
+        0.0704367000143975,
+        0.05268590000923723,
+        0.05702139995992184,
+        0.0532099999836646,
+        0.05369150004116818,
+        0.05310389999067411
+      ],
+      "cufinufft_times_s": [
+        1.7573164000059478,
+        1.7728673999663442,
+        1.7738071999629028,
+        1.7721432000398636,
+        1.7721450999961235,
+        1.7733611000003293,
+        1.7730107000097632,
+        1.7872894000029191,
+        1.7862812000093982,
+        1.7882163999602199,
+        1.7860924999695271,
+        1.78893069998594,
+        1.7865781000000425,
+        1.7888788999989629,
+        1.7873106999904849,
+        1.804480799997691,
+        1.8091195999877527,
+        1.8036144000361674,
+        1.809037500002887,
+        1.803982299985364,
+        1.8044545999728143,
+        1.816994299995713,
+        1.8162177000194788,
+        1.81847000005655,
+        1.8827649999875575,
+        1.8315858999849297,
+        1.8661857999977656,
+        1.8365972000174224,
+        1.8824284999864176,
+        1.882123399991542
+      ],
+      "ours_distribution": {
+        "count": 30,
+        "median_s": 0.05102300000726245,
+        "q1_s": 0.0506664249842288,
+        "q3_s": 0.05162832498899661,
+        "min_s": 0.05023039999650791,
+        "max_s": 0.0704367000143975,
+        "mean_s": 0.05227543333312497,
+        "std_s": 0.003911250497077177
+      },
+      "cufinufft_distribution": {
+        "count": 30,
+        "median_s": 1.7962725500110537,
+        "q1_s": 1.7861396749794949,
+        "q3_s": 1.8168001500016544,
+        "min_s": 1.7573164000059478,
+        "max_s": 1.8827649999875575,
+        "mean_s": 1.8054095333306275,
+        "std_s": 0.0346701638587429
+      }
+    },
+    "candidate": {
+      "h_cutoff": 28,
+      "axial_lowrank_rank": 16,
+      "ring_adaptive_l_packed_threshold": 1e-06
+    }
+  },
+  "accuracy_audit": {
+    "path": "benchmark_results/external_acfo_ncs_v14_20260714T091255Z_full/odt_cufinufft_matched_error_direct_subset_c128.json",
+    "sha256": "31bfd3c3b47dfeb9a594b37a766073a3056eb278cf18905f96be3ced316ca649"
+  },
+  "speedup_acfo_vs_matched_cufinufft": 169.4790368807763,
+  "claim_boundary": [
+    "This process contains only the cuFINUFFT plans and data; the ACFO plan is deliberately absent because the matched complex128 cuFINUFFT and ACFO plans cannot coexist on the 8 GB RTX 2070 SUPER.",
+    "The linked ACFO timing is the frozen 30-repeat alternating AB/BA result from the same 256-cubed geometry and GPU, but the mixed-precision speedup is therefore a separate-process comparison rather than a co-resident AB/BA measurement.",
+    "The linked small direct-sum audit, not cross-backend agreement, selects complex128 eps=1e-7 as the first direction-wise cuFINUFFT match to the complex64 ACFO error.",
+    "Camera acquisition, transfer, remap and reconstruction iteration count are outside this raw full-q forward/adjoint pair timing."
+  ],
+  "_publication": {
+    "source_sha256": "8f1319851cf165f0c8c82653b9121ca6add994951efe7f541af301590cb2e6db",
+    "normalization": "Machine-local absolute paths were replaced with repository-relative paths or a redacted placeholder. Scientific values are unchanged."
+  }
+}

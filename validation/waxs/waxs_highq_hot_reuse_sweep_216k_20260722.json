@@ -1,0 +1,527 @@
+{
+  "schema": "waxs-highq-hot-reuse-sweep-v1",
+  "generated_at_utc": "2026-07-22T00:05:44.974891+00:00",
+  "contract": {
+    "unit": "structures/processed/protein_nanocrystal_lysozyme_1iee_1x1x1_fixed.npz",
+    "supercell": "structures/processed/protein_nanocrystal_lysozyme_1iee_3x3x3_fixed.npz",
+    "atom_count": 216216,
+    "cell_count": 27,
+    "supercell_shape": [
+      3,
+      3,
+      3
+    ],
+    "nq": 16,
+    "bands": [
+      {
+        "label": "low",
+        "q_min_inv_angstrom": 0.05,
+        "q_max_inv_angstrom": 1.35,
+        "nphi": 240
+      },
+      {
+        "label": "mid",
+        "q_min_inv_angstrom": 3.35,
+        "q_max_inv_angstrom": 4.65,
+        "nphi": 576
+      },
+      {
+        "label": "high",
+        "q_min_inv_angstrom": 6.7,
+        "q_max_inv_angstrom": 8.0,
+        "nphi": 864
+      }
+    ],
+    "wavelength_nm": 0.08,
+    "harmonic_margin": 48,
+    "finufft_eps": 1e-06,
+    "finufft_threads": 4,
+    "warmup_pairs": 1,
+    "measured_pairs": 4,
+    "repeat_counts": [
+      1,
+      10,
+      100
+    ],
+    "break_even_limit": 1000,
+    "factorized_backend": "prepared_fused",
+    "lattice_backend": "separable",
+    "target_geometry": "full uniform polar rings per q band"
+  },
+  "runtime": {
+    "python": "3.13.13 | packaged by Anaconda, Inc. | (main, Apr 14 2026, 06:12:50) [MSC v.1942 64 bit (AMD64)]",
+    "executable": "python",
+    "platform": "Windows-10-10.0.19045-SP0",
+    "processor": "Intel64 Family 6 Model 158 Stepping 9, GenuineIntel",
+    "cpu_count": 4
+  },
+  "source": {
+    "driver_path": "scripts/benchmark_waxs_highq_hot_reuse_sweep.py",
+    "driver_sha256": "5d1e6cc8776c5080eacfdf85ca53125f032d070c3bd712d773a03fa7580bac28",
+    "child_script_path": "scripts/benchmark_protein_lattice_finufft_512_abba.py",
+    "child_script_sha256": "5f919a2b682250dd7bea9f048c4f7ec009531829647da17e3797dcf871e2d147",
+    "unit_path": "structures/processed/protein_nanocrystal_lysozyme_1iee_1x1x1_fixed.npz",
+    "unit_sha256": "bbb52722463406b0c94f061932c1986edf44fe5902a148347b19bf01a465eb6c",
+    "supercell_path": "structures/processed/protein_nanocrystal_lysozyme_1iee_3x3x3_fixed.npz",
+    "supercell_sha256": "963a7c033cddc6661f1694c6586a2a65bafb6826639244696bc60e0bba050562"
+  },
+  "child_receipts": [
+    {
+      "label": "low",
+      "json_path": "benchmark_results/waxs_highq_hot_reuse_sweep_216k_20260722_children/low.json",
+      "json_sha256": "e07496b086129a1f7dc1a12a01ebc9d0d884958c8c65ad4c1e57556b7532e412",
+      "markdown_path": "benchmark_results/waxs_highq_hot_reuse_sweep_216k_20260722_children/low.md",
+      "command": [
+        "python",
+        "scripts/benchmark_protein_lattice_finufft_512_abba.py",
+        "--unit",
+        "structures\\processed\\protein_nanocrystal_lysozyme_1iee_1x1x1_fixed.npz",
+        "--supercell",
+        "structures\\processed\\protein_nanocrystal_lysozyme_1iee_3x3x3_fixed.npz",
+        "--nq",
+        "16",
+        "--q-min",
+        "0.05",
+        "--q-max",
+        "1.35",
+        "--wavelength-nm",
+        "0.08",
+        "--target-nphi",
+        "240",
+        "--harmonic-margin",
+        "48",
+        "--finufft-eps",
+        "1e-06",
+        "--finufft-threads",
+        "4",
+        "--warmup-pairs",
+        "1",
+        "--measured-pairs",
+        "4",
+        "--factorized-backend",
+        "prepared_fused",
+        "--lattice-backend",
+        "separable",
+        "--output",
+        "benchmark_results/waxs_highq_hot_reuse_sweep_216k_20260722_children/low.json",
+        "--summary-md",
+        "benchmark_results/waxs_highq_hot_reuse_sweep_216k_20260722_children/low.md",
+        "--resume"
+      ],
+      "validation": {
+        "checks": {
+          "schema_is_prepared_abba": true,
+          "status_complete": true,
+          "contract_matches": true,
+          "warmup_count_matches": true,
+          "measured_count_matches": true,
+          "complex_l2_le_2e_6": true,
+          "intensity_l2_le_5e_6": true,
+          "repeat_determinism_l2_le_1e_12": true
+        },
+        "passed": true,
+        "contract_mismatches": {}
+      }
+    },
+    {
+      "label": "mid",
+      "json_path": "benchmark_results/waxs_highq_hot_reuse_sweep_216k_20260722_children/mid.json",
+      "json_sha256": "95baf9fece30aa3b1573da81cf7dfb646e73b5a9cf4f67480659dfd7631a9fd3",
+      "markdown_path": "benchmark_results/waxs_highq_hot_reuse_sweep_216k_20260722_children/mid.md",
+      "command": [
+        "python",
+        "scripts/benchmark_protein_lattice_finufft_512_abba.py",
+        "--unit",
+        "structures\\processed\\protein_nanocrystal_lysozyme_1iee_1x1x1_fixed.npz",
+        "--supercell",
+        "structures\\processed\\protein_nanocrystal_lysozyme_1iee_3x3x3_fixed.npz",
+        "--nq",
+        "16",
+        "--q-min",
+        "3.35",
+        "--q-max",
+        "4.65",
+        "--wavelength-nm",
+        "0.08",
+        "--target-nphi",
+        "576",
+        "--harmonic-margin",
+        "48",
+        "--finufft-eps",
+        "1e-06",
+        "--finufft-threads",
+        "4",
+        "--warmup-pairs",
+        "1",
+        "--measured-pairs",
+        "4",
+        "--factorized-backend",
+        "prepared_fused",
+        "--lattice-backend",
+        "separable",
+        "--output",
+        "benchmark_results/waxs_highq_hot_reuse_sweep_216k_20260722_children/mid.json",
+        "--summary-md",
+        "benchmark_results/waxs_highq_hot_reuse_sweep_216k_20260722_children/mid.md",
+        "--resume"
+      ],
+      "validation": {
+        "checks": {
+          "schema_is_prepared_abba": true,
+          "status_complete": true,
+          "contract_matches": true,
+          "warmup_count_matches": true,
+          "measured_count_matches": true,
+          "complex_l2_le_2e_6": true,
+          "intensity_l2_le_5e_6": true,
+          "repeat_determinism_l2_le_1e_12": true
+        },
+        "passed": true,
+        "contract_mismatches": {}
+      }
+    },
+    {
+      "label": "high",
+      "json_path": "benchmark_results/waxs_highq_hot_reuse_sweep_216k_20260722_children/high.json",
+      "json_sha256": "3aa77cb2da1e14fac4ac4a44b0a1538f1036174251ae09189bf848a5764de711",
+      "markdown_path": "benchmark_results/waxs_highq_hot_reuse_sweep_216k_20260722_children/high.md",
+      "command": [
+        "python",
+        "scripts/benchmark_protein_lattice_finufft_512_abba.py",
+        "--unit",
+        "structures\\processed\\protein_nanocrystal_lysozyme_1iee_1x1x1_fixed.npz",
+        "--supercell",
+        "structures\\processed\\protein_nanocrystal_lysozyme_1iee_3x3x3_fixed.npz",
+        "--nq",
+        "16",
+        "--q-min",
+        "6.7",
+        "--q-max",
+        "8.0",
+        "--wavelength-nm",
+        "0.08",
+        "--target-nphi",
+        "864",
+        "--harmonic-margin",
+        "48",
+        "--finufft-eps",
+        "1e-06",
+        "--finufft-threads",
+        "4",
+        "--warmup-pairs",
+        "1",
+        "--measured-pairs",
+        "4",
+        "--factorized-backend",
+        "prepared_fused",
+        "--lattice-backend",
+        "separable",
+        "--output",
+        "benchmark_results/waxs_highq_hot_reuse_sweep_216k_20260722_children/high.json",
+        "--summary-md",
+        "benchmark_results/waxs_highq_hot_reuse_sweep_216k_20260722_children/high.md",
+        "--resume"
+      ],
+      "validation": {
+        "checks": {
+          "schema_is_prepared_abba": true,
+          "status_complete": true,
+          "contract_matches": true,
+          "warmup_count_matches": true,
+          "measured_count_matches": true,
+          "complex_l2_le_2e_6": true,
+          "intensity_l2_le_5e_6": true,
+          "repeat_determinism_l2_le_1e_12": true
+        },
+        "passed": true,
+        "contract_mismatches": {}
+      }
+    }
+  ],
+  "bands": [
+    {
+      "label": "low",
+      "atom_count": 216216,
+      "cell_count": 27,
+      "supercell_shape": [
+        3,
+        3,
+        3
+      ],
+      "q_min_inv_angstrom": 0.05,
+      "q_max_inv_angstrom": 1.35,
+      "q_center_inv_angstrom": 0.7000000000000001,
+      "q_width_inv_angstrom": 1.3,
+      "nq": 16,
+      "nphi": 240,
+      "target_count": 3840,
+      "acfo_setup_seconds": 0.028622100013308227,
+      "acfo_hot_median_seconds": 0.08889260000432841,
+      "acfo_hot_cv": 0.39069162378636635,
+      "acfo_hot_microseconds_per_target": 23.149114584460524,
+      "finufft_setup_seconds": 0.4423293999861926,
+      "finufft_hot_median_seconds": 0.8872183500207029,
+      "finufft_hot_cv": 0.13585221349342044,
+      "finufft_hot_microseconds_per_target": 231.0464453178914,
+      "paired_speedup_median": 10.665534104093595,
+      "paired_speedup_p05": 7.041413857114941,
+      "paired_speedup_p95": 13.76521103937041,
+      "paired_speedup_cv": 0.30500065469159365,
+      "ab_count": 2,
+      "ba_count": 2,
+      "ab_ba_speedup_median_relative_gap": 0.029349031471138255,
+      "break_even_repeat": 1,
+      "complex_l2_vs_finufft": 1.6205456021900444e-07,
+      "intensity_l2_vs_finufft": 2.4835404468911634e-07,
+      "legacy_vs_prepared_complex_l2": 8.562384449007984e-16,
+      "setup_hot_totals": {
+        "1": {
+          "repeat_count": 1,
+          "acfo_total_seconds": 0.11751470001763664,
+          "finufft_total_seconds": 1.3295477500068955,
+          "finufft_over_acfo": 11.313884559185842,
+          "model": "method-specific setup plus K times measured hot median",
+          "paired_statistic": false
+        },
+        "10": {
+          "repeat_count": 10,
+          "acfo_total_seconds": 0.9175481000565924,
+          "finufft_total_seconds": 9.314512900193222,
+          "finufft_over_acfo": 10.15152546184633,
+          "model": "method-specific setup plus K times measured hot median",
+          "paired_statistic": false
+        },
+        "100": {
+          "repeat_count": 100,
+          "acfo_total_seconds": 8.91788210044615,
+          "finufft_total_seconds": 89.16416440205649,
+          "finufft_over_acfo": 9.998356492916152,
+          "model": "method-specific setup plus K times measured hot median",
+          "paired_statistic": false
+        }
+      },
+      "receipt_validation": {
+        "checks": {
+          "schema_is_prepared_abba": true,
+          "status_complete": true,
+          "contract_matches": true,
+          "warmup_count_matches": true,
+          "measured_count_matches": true,
+          "complex_l2_le_2e_6": true,
+          "intensity_l2_le_5e_6": true,
+          "repeat_determinism_l2_le_1e_12": true
+        },
+        "passed": true,
+        "contract_mismatches": {}
+      },
+      "child_local_timing_gate_pass": true
+    },
+    {
+      "label": "mid",
+      "atom_count": 216216,
+      "cell_count": 27,
+      "supercell_shape": [
+        3,
+        3,
+        3
+      ],
+      "q_min_inv_angstrom": 3.35,
+      "q_max_inv_angstrom": 4.65,
+      "q_center_inv_angstrom": 4.0,
+      "q_width_inv_angstrom": 1.3000000000000003,
+      "nq": 16,
+      "nphi": 576,
+      "target_count": 9216,
+      "acfo_setup_seconds": 0.008609900018200278,
+      "acfo_hot_median_seconds": 0.15702559999772348,
+      "acfo_hot_cv": 0.054057950299645524,
+      "acfo_hot_microseconds_per_target": 17.03836805530854,
+      "finufft_setup_seconds": 0.21884679998038337,
+      "finufft_hot_median_seconds": 4.36937035000301,
+      "finufft_hot_cv": 0.06363226198511265,
+      "finufft_hot_microseconds_per_target": 474.10702582497936,
+      "paired_speedup_median": 27.875831858743226,
+      "paired_speedup_p05": 25.270696933613955,
+      "paired_speedup_p95": 31.8796754307495,
+      "paired_speedup_cv": 0.11500423374467215,
+      "ab_count": 2,
+      "ba_count": 2,
+      "ab_ba_speedup_median_relative_gap": 0.029086275946131935,
+      "break_even_repeat": 1,
+      "complex_l2_vs_finufft": 6.477237712177545e-07,
+      "intensity_l2_vs_finufft": 3.8488959066958367e-07,
+      "legacy_vs_prepared_complex_l2": 2.402465638533254e-14,
+      "setup_hot_totals": {
+        "1": {
+          "repeat_count": 1,
+          "acfo_total_seconds": 0.16563550001592375,
+          "finufft_total_seconds": 4.588217149983393,
+          "finufft_over_acfo": 27.700687048019862,
+          "model": "method-specific setup plus K times measured hot median",
+          "paired_statistic": false
+        },
+        "10": {
+          "repeat_count": 10,
+          "acfo_total_seconds": 1.578865899995435,
+          "finufft_total_seconds": 43.91255030001048,
+          "finufft_over_acfo": 27.812716900236712,
+          "model": "method-specific setup plus K times measured hot median",
+          "paired_statistic": false
+        },
+        "100": {
+          "repeat_count": 100,
+          "acfo_total_seconds": 15.711169899790548,
+          "finufft_total_seconds": 437.15588180028135,
+          "finufft_over_acfo": 27.82452768244262,
+          "model": "method-specific setup plus K times measured hot median",
+          "paired_statistic": false
+        }
+      },
+      "receipt_validation": {
+        "checks": {
+          "schema_is_prepared_abba": true,
+          "status_complete": true,
+          "contract_matches": true,
+          "warmup_count_matches": true,
+          "measured_count_matches": true,
+          "complex_l2_le_2e_6": true,
+          "intensity_l2_le_5e_6": true,
+          "repeat_determinism_l2_le_1e_12": true
+        },
+        "passed": true,
+        "contract_mismatches": {}
+      },
+      "child_local_timing_gate_pass": true
+    },
+    {
+      "label": "high",
+      "atom_count": 216216,
+      "cell_count": 27,
+      "supercell_shape": [
+        3,
+        3,
+        3
+      ],
+      "q_min_inv_angstrom": 6.7,
+      "q_max_inv_angstrom": 8.0,
+      "q_center_inv_angstrom": 7.35,
+      "q_width_inv_angstrom": 1.2999999999999998,
+      "nq": 16,
+      "nphi": 864,
+      "target_count": 13824,
+      "acfo_setup_seconds": 0.015252200071699917,
+      "acfo_hot_median_seconds": 0.20483209998928942,
+      "acfo_hot_cv": 0.20791544371901446,
+      "acfo_hot_microseconds_per_target": 14.817136862651145,
+      "finufft_setup_seconds": 0.43675059999804944,
+      "finufft_hot_median_seconds": 16.847418149991427,
+      "finufft_hot_cv": 0.03620155420791148,
+      "finufft_hot_microseconds_per_target": 1218.7079101556299,
+      "paired_speedup_median": 82.67989103853137,
+      "paired_speedup_p05": 61.920049707876885,
+      "paired_speedup_p95": 84.8096090083583,
+      "paired_speedup_cv": 0.1625653100397735,
+      "ab_count": 2,
+      "ba_count": 2,
+      "ab_ba_speedup_median_relative_gap": 0.1924022919736088,
+      "break_even_repeat": 1,
+      "complex_l2_vs_finufft": 6.998597039965561e-07,
+      "intensity_l2_vs_finufft": 2.112838347762087e-07,
+      "legacy_vs_prepared_complex_l2": 3.1012020623536644e-14,
+      "setup_hot_totals": {
+        "1": {
+          "repeat_count": 1,
+          "acfo_total_seconds": 0.22008430006098934,
+          "finufft_total_seconds": 17.284168749989476,
+          "finufft_over_acfo": 78.5343104673969,
+          "model": "method-specific setup plus K times measured hot median",
+          "paired_statistic": false
+        },
+        "10": {
+          "repeat_count": 10,
+          "acfo_total_seconds": 2.063573199964594,
+          "finufft_total_seconds": 168.91093209991232,
+          "finufft_over_acfo": 81.85361784249302,
+          "model": "method-specific setup plus K times measured hot median",
+          "paired_statistic": false
+        },
+        "100": {
+          "repeat_count": 100,
+          "acfo_total_seconds": 20.49846219900064,
+          "finufft_total_seconds": 1685.1785655991407,
+          "finufft_over_acfo": 82.2099994252885,
+          "model": "method-specific setup plus K times measured hot median",
+          "paired_statistic": false
+        }
+      },
+      "receipt_validation": {
+        "checks": {
+          "schema_is_prepared_abba": true,
+          "status_complete": true,
+          "contract_matches": true,
+          "warmup_count_matches": true,
+          "measured_count_matches": true,
+          "complex_l2_le_2e_6": true,
+          "intensity_l2_le_5e_6": true,
+          "repeat_determinism_l2_le_1e_12": true
+        },
+        "passed": true,
+        "contract_mismatches": {}
+      },
+      "child_local_timing_gate_pass": true
+    }
+  ],
+  "assessment": {
+    "integrity_gates": {
+      "all_child_receipts_valid": true,
+      "q_centers_strictly_increasing": true,
+      "equal_q_window_widths": true,
+      "fixed_nq_across_bands": true,
+      "fixed_atomic_workload_across_bands": true,
+      "nphi_strictly_increases_with_q": true,
+      "ab_ba_groups_balanced": true,
+      "all_break_even_repeats_observed": true
+    },
+    "integrity_passed": true,
+    "trend_tests": {
+      "high_over_low_paired_median_gt_1": true,
+      "high_over_low_paired_p05_gt_1": true,
+      "log_paired_median_slope_vs_q_gt_0": true,
+      "finufft_per_target_growth_exceeds_acfo": true,
+      "paired_median_monotonic_nondecreasing": true,
+      "all_setup_hot_endpoint_ratios_gt_1": true
+    },
+    "trend_supported": true,
+    "trend_summary": {
+      "low_band": "low",
+      "high_band": "high",
+      "paired_speedup_endpoint_ratio": 7.752062881388899,
+      "paired_p05_endpoint_ratio": 8.793695550973794,
+      "log_paired_speedup_slope_per_inv_angstrom": 0.3080056189017267,
+      "acfo_hot_per_target_endpoint_growth": 0.6400735893630054,
+      "finufft_hot_per_target_endpoint_growth": 5.274731270930562,
+      "finufft_vs_acfo_per_target_growth_ratio": 8.240820053487786,
+      "setup_hot_speedup_endpoint_ratio_by_repeat": {
+        "1": 6.941409915980998,
+        "10": 8.063184016050897,
+        "100": 8.222351291788245
+      }
+    }
+  },
+  "passed": true,
+  "conclusion": "The tested hot-reuse advantage increases from the lowest to the highest q band.",
+  "claim_boundary": [
+    "The paired timing claim applies only to the tested finite 216,216-atom exact repeated 1IEE crystal and full uniform polar target rings.",
+    "The separable finite lattice factor is a crystallographic specialization; dense disordered WAXS cannot use that perfect-lattice specialization.",
+    "Prepared ACFO and reusable FINUFFT plan setup are excluded from paired hot timing and are reported separately through setup + K-hot totals.",
+    "Setup + K-hot totals use measured hot medians and are not paired statistics or fully executed K-frame workflows.",
+    "FINUFFT eps=1e-6 is a practical timing baseline; direct-NDFT correctness is established separately.",
+    "Equal q-window width and fixed Nq are held across bands while Nphi increases to meet the band-specific harmonic support; the trend is workload-specific, not a universal asymptotic claim.",
+    "The 6.70-8.00 inverse-angstrom band is a computational extension and may require a custom chamber or detector geometry; it is not evidence for the tested EIGER active region.",
+    "This sweep does not measure detector acquisition, pixel remapping, background correction, or end-to-end XFEL throughput."
+  ],
+  "_publication": {
+    "source_sha256": "5b94ee60bcdd8d5f8d8b2a58d5343e95d35d84d8d9da89b21491473ccebddd03",
+    "normalization": "Machine-local absolute paths were replaced with repository-relative paths or a redacted placeholder. Scientific values are unchanged."
+  }
+}

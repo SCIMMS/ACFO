@@ -1,0 +1,59 @@
+{
+  "schema": "acfo-manuscript-headline-metrics-v1",
+  "prepared_on": "2026-07-23",
+  "waxs": {
+    "role": "validation",
+    "prepared_1001000_atoms": {
+      "complex_l2_vs_finufft": 3.1555027344360378e-7,
+      "acfo_median_s": 0.6410,
+      "finufft_median_s": 17.5773,
+      "paired_speedup_median": 27.447289590840832,
+      "paired_speedup_p05": 26.906839525249865
+    },
+    "detector_aware": {
+      "active_targets": 1015326,
+      "complex_l2": 7.028044488415519e-7,
+      "intensity_l2": 2.144055677279908e-7,
+      "acfo_median_s": 12.277774200047133,
+      "finufft_median_s": 30.299071149987867,
+      "speedup": 2.467798369338927,
+      "peak_rss_reduction_ratio": 5.450337247920019
+    },
+    "boundary": "Tested structured and repeated cake-map workloads; custom detector geometries are accuracy probes rather than universal performance claims."
+  },
+  "odt_aidt": {
+    "role": "extension_1",
+    "odt_same_dtype_pair_speedup": 35.20515355340489,
+    "odt_matched_error_pair_speedup": 169.4790368807763,
+    "odt_256cubed_steady_hz": 17.94723155122928,
+    "odt_256cubed_first_update_hz": 10.887861556262479,
+    "odt_temporal_one_update_hz": 30.27825721233094,
+    "odt_temporal_one_update_mean_object_l2": 0.037604610568710735,
+    "aidt_public_core_hz": 10.30904984982328,
+    "boundary": "GPU-resident processing core only; no end-to-end acquisition-to-reconstruction claim."
+  },
+  "general_curvature": {
+    "role": "extension_2",
+    "independent_cpu": "12th Gen Intel(R) Core(TM) i5-12400F",
+    "max_curve_operator_relative_l2": 4.9841174304069906e-15,
+    "max_green_acfo_vs_direct_relative_l2": 4.590678241043094e-15,
+    "selected_mode_voxel_vs_analytic_green_relative_l2": 7.151359247742086e-13,
+    "finest_histogram_vs_analytic_green_relative_l2": 0.01810029518111759,
+    "wrong_d33_gain_aligned_relative_l2": 0.29744307049651875,
+    "package_files_verified": 43,
+    "nonlinear_gates_passed": 10,
+    "boundary": "CPU correctness for tested finite axisymmetric curves and a prescribed homogeneous-bulk undepleted uniaxial nonlinear-optics problem; no GPU performance or general PDE-solver claim."
+  },
+  "high_na_si": {
+    "role": "prior_art_and_supplementary_validation",
+    "snapshot_date": "2026-06-20",
+    "finufft_eps": 1e-12,
+    "adaptive_sparse_field_l2_small_vortex": 4.3052285525497385e-10,
+    "adaptive_sparse_field_l2_representative_vortex": 4.034728804921065e-8,
+    "local_auto_thread_speedup_range": [
+      1.4635133744922006,
+      2.584868803661492
+    ],
+    "boundary": "Scalar structured-grid benchmark and cutoff-safety validation; no universal Debye-Wolf replacement claim."
+  }
+}

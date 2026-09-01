@@ -1,0 +1,2027 @@
+{
+  "schema": "acfo-ncs-validation-release-candidate-v1",
+  "generated_at_utc": "2026-07-13T04:06:36.024335+00:00",
+  "archive_prefix": "ACFO_NCS_validation_release_candidate",
+  "environment": {
+    "python": "3.13.13 | packaged by Anaconda, Inc. | (main, Apr 14 2026, 06:12:50) [MSC v.1942 64 bit (AMD64)]",
+    "platform": "Windows-10-10.0.19045-SP0",
+    "numpy": "2.4.6"
+  },
+  "file_count": 401,
+  "payload_bytes": 50353306,
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 20603,
+      "sha256": "2aaf9889ddb33d316388da96ceccc14ca596435f991f4727ec117e120126d424"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 179,
+      "sha256": "b76d99777e54925f24d50119c73c2705975ca6d15209c346fb287d89ad9df2b8"
+    },
+    {
+      "path": "pyproject.toml",
+      "bytes": 935,
+      "sha256": "c9503fad1e2b8e0d85891e3c8d5efbac35a5786bc1192405dc7a33a3fe2a3188"
+    },
+    {
+      "path": "setup.py",
+      "bytes": 6722,
+      "sha256": "f2eec2c52d561814217e1641ed238e94dd3a6b61b2c365e69923c07a7d299507"
+    },
+    {
+      "path": ".gitattributes",
+      "bytes": 206,
+      "sha256": "1b16435937656e6448220b66d8fb2a8e92527070a05b3d69235c62c3bdec3cb7"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 1709,
+      "sha256": "c663e0a123dfe0c221be14cb12cec290eac8133202edf19245346324b87de162"
+    },
+    {
+      "path": "structures/processed/protein_nanocrystal_lysozyme_1iee_1x1x1_fixed.npz",
+      "bytes": 337672,
+      "sha256": "bbb52722463406b0c94f061932c1986edf44fe5902a148347b19bf01a465eb6c"
+    },
+    {
+      "path": "structures/processed/protein_nanocrystal_lysozyme_1iee_1x1x1_fixed.json",
+      "bytes": 1639,
+      "sha256": "1fc47dc9be636441588b89accee50059e86954d940a6c8298d1097990a7969fd"
+    },
+    {
+      "path": "structures/processed/protein_nanocrystal_lysozyme_1iee_3x3x3_fixed.npz",
+      "bytes": 5130031,
+      "sha256": "963a7c033cddc6661f1694c6586a2a65bafb6826639244696bc60e0bba050562"
+    },
+    {
+      "path": "structures/processed/protein_nanocrystal_lysozyme_1iee_3x3x3_fixed.json",
+      "bytes": 1653,
+      "sha256": "28b9a0b90cd5ff26f7fe788fb1299592ebd96d0d8d07ec57accec0ab985d11f6"
+    },
+    {
+      "path": "structures/processed/protein_nanocrystal_lysozyme_1iee_5x5x5_fixed.npz",
+      "bytes": 23079492,
+      "sha256": "64a66f70237c09939b96b216fa9bff34fa730c22f039d58a2801be9a4d02fffe"
+    },
+    {
+      "path": "structures/processed/protein_nanocrystal_lysozyme_1iee_5x5x5_fixed.json",
+      "bytes": 1659,
+      "sha256": "d22ccf2af62f86ef5b7dc5c50cfc4478d9d236d60462c02ec1ee5adfc0746f6e"
+    },
+    {
+      "path": "runs/water_tip3p_8nm/water_tip3p_8nm_final.npz",
+      "bytes": 1152257,
+      "sha256": "7c06dd753d5830c934404f63eca413438c711148d0f494d3e49d76bd1df39d9a"
+    },
+    {
+      "path": "runs/water_tip3p_8nm/water_tip3p_8nm_trajectory.dcd",
+      "bytes": 12105076,
+      "sha256": "613e3976b002c37652eabb88459e8cae39b68f68199dce228e96f3bf19b0fe15"
+    },
+    {
+      "path": "benchmark_results/acfo_ncs_reduced_release_suite.json",
+      "bytes": 58915,
+      "sha256": "e3eb980ff86d61a9e48d5eb064401bd321747741f54ff7ba3c34ec0387193771"
+    },
+    {
+      "path": "benchmark_results/acfo_ncs_fresh_dependency_rerun.json",
+      "bytes": 2396,
+      "sha256": "7dd525fdfe4f88a7dd519da6b032312b8fead85a8f690ac22f9b29b6b3791a4a"
+    },
+    {
+      "path": "benchmark_results/local_prepared_waxs_machine_environment.json",
+      "bytes": 1296,
+      "sha256": "c05f8e07b7869d424e52609488a7170c61c6c71e34d64dbfccd24333acf2cf57"
+    },
+    {
+      "path": "benchmark_results/high_na_harmonic_support_risk.json",
+      "bytes": 15365,
+      "sha256": "84c1faf6528e849a256839c89df3c551496b0f1a6776ec664057887d6631f369"
+    },
+    {
+      "path": "benchmark_results/waxs_detector_aware_decision.json",
+      "bytes": 6718,
+      "sha256": "d6005d2ff6012aafccadf02ba63ef970dc65432dfcd69e9466eb38905ab7daf1"
+    },
+    {
+      "path": "benchmark_results/waxs_curvature_isolated_decision.json",
+      "bytes": 6796,
+      "sha256": "38bb258e6238e07539204893848d94928e0efc4a2da92258548ba2bbd7a5cf5c"
+    },
+    {
+      "path": "benchmark_results/waxs_direct_finufft_triad.json",
+      "bytes": 2090,
+      "sha256": "f862f1ca9b46c3ee55480b7732cca561a12c18079c48455cd1379bfa5d488450"
+    },
+    {
+      "path": "benchmark_results/waxs_direct_reference_sweep.json",
+      "bytes": 115299,
+      "sha256": "02f5013147f293ef775ab25defe48c256ec86eded13009d7964e2b50635776e5"
+    },
+    {
+      "path": "benchmark_results/waxs_direct_reference_sweep.md",
+      "bytes": 2343,
+      "sha256": "e62dada1d644f55c6e77c3ac6d60565918ae088c9a57f5c777175e41f33558cd"
+    },
+    {
+      "path": "benchmark_results/waxs_source_discretization_convergence.json",
+      "bytes": 9194,
+      "sha256": "f25d6e0f2b2b248f7419634716a321c40c9ec7fe48b9e8a6351eda41c7ce869f"
+    },
+    {
+      "path": "benchmark_results/waxs_source_discretization_convergence.md",
+      "bytes": 2009,
+      "sha256": "26284b8992ea6664daa0662aed6d2e23de5330ffab8b39b6ebd40d1064b23bd1"
+    },
+    {
+      "path": "benchmark_results/waxs_exact_beta_harmonic_bridge.json",
+      "bytes": 2764,
+      "sha256": "879179d83e410b1ae7c10d87560e137b8aa26c11f05b2d90dd1626de49490d5e"
+    },
+    {
+      "path": "benchmark_results/waxs_exact_beta_harmonic_bridge.md",
+      "bytes": 965,
+      "sha256": "0fb805a075d7ccf1c34d72c0c301ad38117cb40c94535500e4d53b2c1ddb93c5"
+    },
+    {
+      "path": "benchmark_results/protein_nanocrystal_lattice_factorization.json",
+      "bytes": 3111,
+      "sha256": "a70d8ae17f2515d0541fdf7a5cc3abf1eff88738da23f149406aa9c6924781f6"
+    },
+    {
+      "path": "benchmark_results/protein_nanocrystal_lattice_factorization.md",
+      "bytes": 1117,
+      "sha256": "385f76c964582c2cbed62481bb80386d48190da1f3d8b9a1e0961c5eca038998"
+    },
+    {
+      "path": "benchmark_results/protein_lattice_finufft_512.json",
+      "bytes": 4958,
+      "sha256": "9ea6b386fd80c0a9feebc8140c53b4fab9d379557f21d377c869c251d5b782a6"
+    },
+    {
+      "path": "benchmark_results/protein_lattice_finufft_512.md",
+      "bytes": 915,
+      "sha256": "f8af47eb377ac65a8da0122f1181d608eefc417aad9c0fe38cdb96ad04f34314"
+    },
+    {
+      "path": "benchmark_results/protein_lattice_finufft_512_3x3.json",
+      "bytes": 2875,
+      "sha256": "44f1b35ba036520eeec18208317d9a7ca2540c9806cbbe7a571ba36df5bd7972"
+    },
+    {
+      "path": "benchmark_results/protein_lattice_finufft_512_5x5.json",
+      "bytes": 2858,
+      "sha256": "867c9a0693cb64f1170a380dde53ced8eb179c4f8a1ff6d0f2549813af3e3774"
+    },
+    {
+      "path": "benchmark_results/protein_lattice_finufft_512_abba.json",
+      "bytes": 10564,
+      "sha256": "d60143c250c3e2a9d2ee5329cf65f08203528fdc7490cc05912130e809af95f6"
+    },
+    {
+      "path": "benchmark_results/protein_lattice_finufft_512_abba.md",
+      "bytes": 1976,
+      "sha256": "9642cf27296eec1be9f522542ec0d4c803cd700c5871df4af1589bd03e7ae93d"
+    },
+    {
+      "path": "benchmark_results/protein_lattice_prepared_finufft_512_abba.json",
+      "bytes": 11287,
+      "sha256": "474156b3b9d7a019b7659e0d86a805339c028d0d137aa6706ba875e7c6c12f3b"
+    },
+    {
+      "path": "benchmark_results/protein_lattice_prepared_finufft_512_abba.md",
+      "bytes": 2116,
+      "sha256": "59439d62e61afbe61e36a06a1c09f151983f5a9927097a264ea99fe1147f408a"
+    },
+    {
+      "path": "benchmark_results/protein_lattice_prepared_abba_decision.json",
+      "bytes": 5535,
+      "sha256": "58364024103efa4573b4a3cd927f0537d7cea10533229a22a699f4bf8bb9d175"
+    },
+    {
+      "path": "benchmark_results/protein_lattice_prepared_abba_decision.md",
+      "bytes": 881,
+      "sha256": "3bdb010be330402e7071e558b7dc5525f5acfea51d6ce0f44c18cc1864c33236"
+    },
+    {
+      "path": "benchmark_results/protein_lattice_q_sampling_decision.json",
+      "bytes": 14071,
+      "sha256": "b8a42fef74079373c7314cc07683283769d564d4d19ee1eabd03190700f1cbd3"
+    },
+    {
+      "path": "benchmark_results/protein_lattice_q_sampling_decision.md",
+      "bytes": 1319,
+      "sha256": "c37e35b7b15d1a4884b28fe899aa724dcb94a695276cf12b4e3b06d28d9a20b3"
+    },
+    {
+      "path": "benchmark_results/protein_lattice_q_sampling_range_q2p13_chunked.json",
+      "bytes": 3157,
+      "sha256": "066af9bab91e6cf0275194a10fc272725d8b01f601799771c6769f3381636930"
+    },
+    {
+      "path": "benchmark_results/protein_lattice_q_sampling_range_q4p06_chunked.json",
+      "bytes": 3146,
+      "sha256": "a31242a48dc9d278acde8e6d8423839995a66d35074f01754ee61817353c739d"
+    },
+    {
+      "path": "benchmark_results/protein_lattice_q_sampling_range_q6p30_chunked.json",
+      "bytes": 3153,
+      "sha256": "88c04a2c660f14c14ea9cdcebd67a409146ecee96df1299ce122825eecc1a4f9"
+    },
+    {
+      "path": "benchmark_results/protein_lattice_q_sampling_range_q8p06_chunked.json",
+      "bytes": 3136,
+      "sha256": "f4fb34f5fd68fc74ada8ac8f66b3a24132fdebd4b6db05302fddf319ef9ad607"
+    },
+    {
+      "path": "benchmark_results/protein_lattice_q_sampling_range_q6p30_reusable_timeout.json",
+      "bytes": 907,
+      "sha256": "118600f5b17aa230c6cdd7770bf78e8c8b79981b07c290eaa8b6ed13dd93b1ed"
+    },
+    {
+      "path": "benchmark_results/protein_lattice_q_sampling_resolution_nq32.json",
+      "bytes": 3093,
+      "sha256": "c45571326bd9013dca977f35c15e7ffd5d29691feaaad6c47cbc68cce6a8c9d2"
+    },
+    {
+      "path": "benchmark_results/protein_lattice_q_sampling_resolution_nq128.json",
+      "bytes": 3090,
+      "sha256": "dc69670e80eee5ca9072179519c8d5805bdea61ac57eb117c645d20b7c9dcee6"
+    },
+    {
+      "path": "benchmark_results/protein_lattice_q_sampling_resolution_nq512_optimized_profile.json",
+      "bytes": 2917,
+      "sha256": "afed85b5803371a3dcd30499b6aa560bf6f768c6d089fa3d41e05abfe6687be2"
+    },
+    {
+      "path": "benchmark_results/protein_lattice_q_sampling_resolution_nq512_fused_phase_profile.json",
+      "bytes": 3135,
+      "sha256": "7dee9d15ddc2f7b6ae1fa1f9ad3bf748a276e49ea93a56a40f24c6c348e4cc9e"
+    },
+    {
+      "path": "benchmark_results/exact_beta_contraction_backends_nq512.json",
+      "bytes": 14376,
+      "sha256": "5a732908df6bbad657e47ffe6f2c6a82b227bd2385ada4996573487d64a208c9"
+    },
+    {
+      "path": "benchmark_results/exact_beta_contraction_backends_nq512.md",
+      "bytes": 394,
+      "sha256": "d4ff3545b810926a123feefe9af02a55428de233ee9193e5e8f39d6e2a81b5f4"
+    },
+    {
+      "path": "benchmark_results/exact_beta_contraction_optimization_decision.json",
+      "bytes": 3646,
+      "sha256": "6c41fd40e47da46d79504be2c84a43c818e0f534faae3a53f6910aa6c1386e18"
+    },
+    {
+      "path": "benchmark_results/exact_beta_contraction_optimization_decision.md",
+      "bytes": 572,
+      "sha256": "c4be291b8b7faa971928148666453550079055887a11c488162f0037b124ef6a"
+    },
+    {
+      "path": "benchmark_results/protein_lattice_highq_threshold_strategy.json",
+      "bytes": 16821,
+      "sha256": "5eff28105edd9ba8ad0324bcce6683fa90ab54b6521ac3d7336b4311474ba487"
+    },
+    {
+      "path": "benchmark_results/protein_lattice_highq_threshold_strategy.md",
+      "bytes": 1412,
+      "sha256": "3ef0614850195e0a9c833880c230a48261a81bb79a0e3c344549a8ae8d0c210f"
+    },
+    {
+      "path": "benchmark_results/protein_lattice_highq_threshold_strategy.png",
+      "bytes": 159508,
+      "sha256": "4026dad1e10775c3212ac39bc629e8333f9e48c25c16dffe894957b8bd353264"
+    },
+    {
+      "path": "benchmark_results/protein_lattice_highq_threshold_qblock1_nq8_q6p70_8p00.json",
+      "bytes": 16338,
+      "sha256": "5e8c48c7611e08c5c092e9de216ac39a5adb9d388844648a02c0f7581e4f2acc"
+    },
+    {
+      "path": "benchmark_results/protein_lattice_highq_threshold_qblock2_nq8_q6p70_8p00.json",
+      "bytes": 10655,
+      "sha256": "7e8463ec1576ece502441fe93e47dc82ef06b1ba97bd6abbd24247a096d9efa1"
+    },
+    {
+      "path": "benchmark_results/protein_lattice_highq_threshold_qblock4_nq8_q6p70_8p00.json",
+      "bytes": 7763,
+      "sha256": "f3318d574e039dddf6d2c6db86983cd6937adad19f38f518725f1d08813c72bf"
+    },
+    {
+      "path": "benchmark_results/protein_lattice_highq_threshold_window1_nq16.json",
+      "bytes": 16248,
+      "sha256": "a9f7966ac65a1c6b6e36ea536e3b4adf4f730092759d2fdbcf63ef867ba6532c"
+    },
+    {
+      "path": "benchmark_results/protein_lattice_highq_threshold_window2_nq16.json",
+      "bytes": 16207,
+      "sha256": "22d26ef045faff6fe2bc5296a490a9a39edc798b651a4f331ac7be8a277846de"
+    },
+    {
+      "path": "benchmark_results/protein_lattice_highq_threshold_window3_nq16.json",
+      "bytes": 16289,
+      "sha256": "ba626ed3fe49e986964c019177327fbcc6b3f5a279d0b456d87fe6a86079be12"
+    },
+    {
+      "path": "benchmark_results/protein_lattice_highq_threshold_window4_nq16.json",
+      "bytes": 16251,
+      "sha256": "4d19492ac46f9e737727c26fefe8831ebfccffdff5e1b0ee60646a36e63404a7"
+    },
+    {
+      "path": "benchmark_results/protein_lattice_highq_threshold_window5_nq16.json",
+      "bytes": 16217,
+      "sha256": "cd0c50d1d2a4636a2b4c6d764008731d5224e716238bf2325d310e4afc300f19"
+    },
+    {
+      "path": "benchmark_results/protein_lattice_highq_threshold_resolution_nq32_q6p70_8p00.json",
+      "bytes": 27989,
+      "sha256": "b544ce16925606e3c18c3f2e448b21b01e1c45327b4b5214da06d3465862dfdf"
+    },
+    {
+      "path": "benchmark_results/protein_lattice_highq_threshold_resolution_nq64_q6p70_8p00.json",
+      "bytes": 35358,
+      "sha256": "a194228ed4681e8f08a33253bf02cb78e74158b0fa1eb5d75b02c3f0f78dd523"
+    },
+    {
+      "path": "benchmark_results/protein_lattice_highq_threshold_resolution_nq128_q6p70_8p00.json",
+      "bytes": 3318,
+      "sha256": "47907a4b5103e63b18caf77e5d43af29667bb0b5250c7c5341ef929935ae1533"
+    },
+    {
+      "path": "benchmark_results/protein_lattice_highq_threshold_resolution_nq256_q6p70_8p00.json",
+      "bytes": 3311,
+      "sha256": "27e319300d2d759b372f88ae30b2b821287a063f418faff73ff049fe632c1ace"
+    },
+    {
+      "path": "benchmark_results/protein_lattice_highq_threshold_resolution_nq512_q6p70_8p00.json",
+      "bytes": 3312,
+      "sha256": "5fc614999abe69b38259a1ec13dc31bc0be1afc026e492a66b3ea21a37f7e302"
+    },
+    {
+      "path": "benchmark_results/protein_nanocrystal_sparse_accuracy_1iee_1x1x1_highq.json",
+      "bytes": 1069,
+      "sha256": "32d62a6a00321211e98a3d22d2d21dffc40bd978f9cad9a3ab0a3a92b2cf9d6a"
+    },
+    {
+      "path": "benchmark_results/tip3p_dense_highq_exact_beta_20frames.json",
+      "bytes": 19045,
+      "sha256": "320b65aaca75da079e7938199d214593c78dfd31869894c33b093d4205df4ab4"
+    },
+    {
+      "path": "benchmark_results/tip3p_dense_highq_exact_beta_20frames.md",
+      "bytes": 2307,
+      "sha256": "1b27cefae1952356b66243027ab989d0cb797f626e55f96b465dd1fc29590330"
+    },
+    {
+      "path": "benchmark_results/tip3p_exact_beta_backend_comparison.json",
+      "bytes": 2740,
+      "sha256": "1b33ffc1bf5ca5d312b518429ed03e283d46435c41228250b14c72e79c798236"
+    },
+    {
+      "path": "benchmark_results/tip3p_exact_beta_backend_comparison.md",
+      "bytes": 692,
+      "sha256": "39f6c5389dc084161fb91c8314f8fd019170ae22641d79bc1f8f79090011f1df"
+    },
+    {
+      "path": "benchmark_results/tip3p_exact_beta_factorized_q_scaling.json",
+      "bytes": 6023,
+      "sha256": "c15cf4e2be90e0438d7f754576e6dae8fee41d6b4ed5f320454d3298019f2f5b"
+    },
+    {
+      "path": "benchmark_results/tip3p_exact_beta_factorized_q_scaling.md",
+      "bytes": 1057,
+      "sha256": "958796e368ff329d75db3a080ef4dd907626e460b1442ac228ebbc51622e8d10"
+    },
+    {
+      "path": "benchmark_results/tip3p_exact_beta_finufft_512.json",
+      "bytes": 3546,
+      "sha256": "a7b9d5a993749d65aa4ebf8ee46d2ab52c858feb82b0f904bb84b415551e2659"
+    },
+    {
+      "path": "benchmark_results/tip3p_exact_beta_finufft_512.md",
+      "bytes": 681,
+      "sha256": "e7d6551dfbd20eaa07252be722c5a2a7350fa7fa7a1e32efb399309726b3f89b"
+    },
+    {
+      "path": "benchmark_results/protein_nanocrystal_detector_eiger4m_216k_nq256_repeat2.json",
+      "bytes": 4409,
+      "sha256": "656e810e885ee6426cebbe7e66fbf7ba8cfacb5e2dd64f8bc54b6ea9898d47c4"
+    },
+    {
+      "path": "benchmark_results/protein_nanocrystal_detector_eiger4m_216k_nq512_w10_r30_alternating.json",
+      "bytes": 6875,
+      "sha256": "6a46d3f3d191a81e7a934f53a10c3ccd762289d515bb1bad9ec98f080b228959"
+    },
+    {
+      "path": "benchmark_results/protein_nanocrystal_detector_eiger4m_216k_nq1024_first.json",
+      "bytes": 4301,
+      "sha256": "a154c4df76bb7c9e5a7cf91122cee16e16aa4747b41d29bdd46b8fc78bb51012"
+    },
+    {
+      "path": "benchmark_results/odt_128cubed_gate_decision.json",
+      "bytes": 2402,
+      "sha256": "6ab219bdebc0b3294e97fb35a72122e76794129dd3eab8554f1bfcaa075b8fd8"
+    },
+    {
+      "path": "benchmark_results/odt_256cubed_streaming_decision.json",
+      "bytes": 9061,
+      "sha256": "b130c5ca689b48fc8fbc323026cd72e8f5433c0436ae3d971594e0c0097b1def"
+    },
+    {
+      "path": "benchmark_results/odt_streaming_256cubed_first.json",
+      "bytes": 3805,
+      "sha256": "d1f1f39d88b06c50ad7a306c4750ce944774891eab3bdd5d8b211067a1652f56"
+    },
+    {
+      "path": "benchmark_results/odt_streaming_256cubed_r16_i4_repeat2.json",
+      "bytes": 3948,
+      "sha256": "e82317e864c4706ce321e57c053fb4ada64acba6bba3c1c3328a7e3454f62369"
+    },
+    {
+      "path": "benchmark_results/odt_torch_256cubed_100pair.json",
+      "bytes": 2365,
+      "sha256": "65861d91c2f485b2cfcd48f8401fdbabc4f8ba714e1866d3b3cb2a57ff8749e5"
+    },
+    {
+      "path": "benchmark_results/odt_cufinufft_256cubed_100pair.json",
+      "bytes": 2479,
+      "sha256": "6f3c4617a67cf77eaa274e953114a802e808767a53505118793b3cf564c38998"
+    },
+    {
+      "path": "benchmark_results/odt_cufinufft_gpu_256cubed_plan_pair2.json",
+      "bytes": 4157,
+      "sha256": "0a8914aa1c8ba70d8344cb4698477f33c4b87b6cc4aca5e57cc6bbd6faeabb6d"
+    },
+    {
+      "path": "benchmark_results/odt_128cubed_beads_30db_gradient_sweep.json",
+      "bytes": 2455,
+      "sha256": "d13227fd2fffedb75ac15cb0e7ffcf8f5a1dcee577a29d51057ba57bf9f07145"
+    },
+    {
+      "path": "benchmark_results/odt_128cubed_beads_30db_nonnegative_fista.json",
+      "bytes": 11798,
+      "sha256": "768e39383f98cfe19f0fafc4d6879b204e6b8599dac38102c38c812f7200d610"
+    },
+    {
+      "path": "benchmark_results/odt_128cubed_beads_30db_grad_1e6.json",
+      "bytes": 30234,
+      "sha256": "d2020a505610a2e97c018ab3a5978df4434d12e4bb7ea704ba8423aa0dca0b15"
+    },
+    {
+      "path": "benchmark_results/odt_128cubed_beads_30db_grad_1e7.json",
+      "bytes": 30236,
+      "sha256": "c78706cfa5b5e5221e129ed65d4a0e4609af7830cbfb2a79890985de6431d75e"
+    },
+    {
+      "path": "benchmark_results/odt_128cubed_beads_30db_grad_1e8.json",
+      "bytes": 30230,
+      "sha256": "773af5e66811cd1c27d5075a6647281cab930773e3375ef2f968a8c93f0e9c2e"
+    },
+    {
+      "path": "benchmark_results/odt_128cubed_beads_30db_grad_1e9.json",
+      "bytes": 30268,
+      "sha256": "42d6ee6c4b25804382636c064caa13d8eb72ab1f608fb655201b01f01c752eff"
+    },
+    {
+      "path": "benchmark_results/odt_128cubed_beads_30db_grad_1e10.json",
+      "bytes": 30153,
+      "sha256": "b30ca5f0fcc112d5b7e0dc6d3b5397d4fb811d386979e48e61a3aa76683afbe9"
+    },
+    {
+      "path": "benchmark_results/odt_128cubed_beads_30db_angle60_grad1e8.json",
+      "bytes": 30340,
+      "sha256": "582fba054b23148c09c395bf86f21d6bd30f2c25509e5810a667299d105328ec"
+    },
+    {
+      "path": "benchmark_results/odt_128cubed_beads_30db_angle70_grad1e8.json",
+      "bytes": 30329,
+      "sha256": "b36e174b467d8bec3fb1f991e68ec373f2baa3c6eab36fa9c08b56f0eb6c2a99"
+    },
+    {
+      "path": "benchmark_results/odt_128cubed_beads_30db_angle80_grad1e8.json",
+      "bytes": 30293,
+      "sha256": "b22fe9d43c42fa27d1ec3700816c3ddac4957db13673e9effed604f644b36bfb"
+    },
+    {
+      "path": "benchmark_results/uniaxial_vector_born_direct_64cubed.json",
+      "bytes": 3398,
+      "sha256": "9f1302a661cfc1197cf4d492e45d8e88310b3bc8d9064ecc567df105a79d7470"
+    },
+    {
+      "path": "benchmark_results/uniaxial_green_tensor_residue_64cubed.json",
+      "bytes": 5476,
+      "sha256": "668a25e6e4a41ff3e3dd53331f952eea295f46d6a732c3c7f09dc4e8228d557e"
+    },
+    {
+      "path": "benchmark_results/uniaxial_meep_dispersion_highres_decision.json",
+      "bytes": 11999,
+      "sha256": "1d0ff243cc3c32184b1f894d47d261ea95019ed12df45df8159dce2ee5af450a"
+    },
+    {
+      "path": "benchmark_results/uniaxial_meep_3d_phase_gate_decision.json",
+      "bytes": 15860,
+      "sha256": "6c979c287de828ac5c99c285c705feec8b926588c982f3b2a287d26365d8c6b3"
+    },
+    {
+      "path": "benchmark_results/uniaxial_meep_3d_amplitude_gate_decision.json",
+      "bytes": 4768,
+      "sha256": "31432fbf2806702bebb06d67d72e5e47b73b8ca34f591a8ef8b0780ff9978ecb"
+    },
+    {
+      "path": "benchmark_results/uniaxial_meep_3d_amplitude_asymptotic_decision.json",
+      "bytes": 12435,
+      "sha256": "2175d349162f8bc7ce92bf43dc1a9962f12fff58c52aeab4696bf490bc44050c"
+    },
+    {
+      "path": "benchmark_results/uniaxial_meep_3d_amplitude_asymptotic_decision.md",
+      "bytes": 1104,
+      "sha256": "438b6e35889390174c2eb3f48589c88e6920e3ece0780dfe917431b8b2766d2f"
+    },
+    {
+      "path": "benchmark_results/uniaxial_meep_3d_amplitude_asymptotic_c10_r12_h025.json",
+      "bytes": 10528,
+      "sha256": "804ecd87d221b902d0def9531fbc336d7a6af9f8048af58cea4c4a2d85716399"
+    },
+    {
+      "path": "benchmark_results/uniaxial_meep_3d_amplitude_asymptotic_c10_r12_h025.npz",
+      "bytes": 19367,
+      "sha256": "68731345d1f42f575e15d7387ae5243e56708401ce1bfe864a1167083a482167"
+    },
+    {
+      "path": "benchmark_results/uniaxial_meep_3d_amplitude_asymptotic_c10_r16_h025.json",
+      "bytes": 10819,
+      "sha256": "b9a0db2710f809ef6b3d8a49b9222e3d18ebc89301b6d011b3a23c0ad272e2ed"
+    },
+    {
+      "path": "benchmark_results/uniaxial_meep_3d_amplitude_asymptotic_c10_r16_h025.npz",
+      "bytes": 19362,
+      "sha256": "7a64ce5420837ca8cc46dfefdeb1e94bdd14ff45c44f3bb2cd19b4174f841236"
+    },
+    {
+      "path": "benchmark_results/uniaxial_meep_component_aware_amplitude_decision.json",
+      "bytes": 12139,
+      "sha256": "5af7b6b38fef00f3f8c9fe46eb6387a5169e75295b1d531ebc44f1ee6cbcaa37"
+    },
+    {
+      "path": "benchmark_results/uniaxial_meep_component_aware_amplitude_decision.md",
+      "bytes": 1049,
+      "sha256": "e0fb3080aabef7098897ac4a7169e89f19f92f4827b904c4592531fb2f49e5a4"
+    },
+    {
+      "path": "benchmark_results/pymeep_yee_sources_nonlinear_c10_r12_h025.json",
+      "bytes": 674,
+      "sha256": "230047ba1f8789464165a27d954bbfb027a3fcbf6017c3ede026871c2ba7d579"
+    },
+    {
+      "path": "benchmark_results/pymeep_yee_sources_nonlinear_c10_r12_h025.npz",
+      "bytes": 4201,
+      "sha256": "7b487a89c036d56ea4675b2c6632ba16b03eaa22d343828e534d117e39b106e3"
+    },
+    {
+      "path": "benchmark_results/pymeep_yee_sources_nonlinear_c10_r16_h025.json",
+      "bytes": 676,
+      "sha256": "c047b5b393c1f2e58cd8236c93d83f726c226a5b07ef0837e000052d248232d7"
+    },
+    {
+      "path": "benchmark_results/pymeep_yee_sources_nonlinear_c10_r16_h025.npz",
+      "bytes": 6087,
+      "sha256": "b62fc80e75b80b4673a1a8e55c7f6c3cda149e3f40bfb0d339b7b5330c74c558"
+    },
+    {
+      "path": "benchmark_results/pymeep_yee_sources_singlex_c10_r16_h025.json",
+      "bytes": 615,
+      "sha256": "c8ef8dd15e9c8ac3e2b9898a70c85da1e20588f74dbcfeffc0d708cca0e1842d"
+    },
+    {
+      "path": "benchmark_results/pymeep_yee_sources_singlex_c10_r16_h025.npz",
+      "bytes": 3800,
+      "sha256": "c013cd08d43cb1cb739390377c92b44e098f1a67fdb7c44a4b54c4d2bbff14fe"
+    },
+    {
+      "path": "benchmark_results/uniaxial_meep_3d_amplitude_singlex_phi45_c10_r8_h025.json",
+      "bytes": 10748,
+      "sha256": "bee32855cdf11cc1318309bb134fb1c142d5edcbcf7593f439f5f15c60e388ff"
+    },
+    {
+      "path": "benchmark_results/uniaxial_meep_3d_amplitude_singlex_phi45_c10_r8_h025.npz",
+      "bytes": 19190,
+      "sha256": "a93fcc67584b66d4d9f1b5184597be22ab655ea95e6e8fbd74c3955797666fad"
+    },
+    {
+      "path": "benchmark_results/uniaxial_meep_3d_amplitude_singlex_phi45_c10_r12_h025.json",
+      "bytes": 10784,
+      "sha256": "a7d706fda3d672d147cd9b00939e92811758f82ba3c3021e512f5ca9348d20aa"
+    },
+    {
+      "path": "benchmark_results/uniaxial_meep_3d_amplitude_singlex_phi45_c10_r12_h025.npz",
+      "bytes": 19164,
+      "sha256": "30fcfefd4107f7afccf49382ba82d84787f2283a2b7e31480e31f103536cc260"
+    },
+    {
+      "path": "benchmark_results/uniaxial_meep_3d_amplitude_singlex_phi45_c10_r16_h025.json",
+      "bytes": 10739,
+      "sha256": "ce4d6e652e0499b82d22acd4f1bb0791ece7d04f89dd118ac8f64a9ed9b2b6f3"
+    },
+    {
+      "path": "benchmark_results/uniaxial_meep_3d_amplitude_singlex_phi45_c10_r16_h025.npz",
+      "bytes": 19179,
+      "sha256": "7e4fd3813ebf6ae8c101b1caba6f91caf1e0bfb2007542885da508d9d167e221"
+    },
+    {
+      "path": "benchmark_results/uniaxial_meep_3d_amplitude_singlex_phi45_c14_r12_h08.json",
+      "bytes": 10733,
+      "sha256": "26811fe742a6c30cbefce55118faa294415a3e31248bd49699f73990482e7d15"
+    },
+    {
+      "path": "benchmark_results/uniaxial_meep_3d_amplitude_singlex_phi45_c14_r12_h08.npz",
+      "bytes": 19211,
+      "sha256": "62b373cb4074013820739b1bfdedaec03855061c95e618daa407c30781b8124e"
+    },
+    {
+      "path": "docs/ACFO_NCS_validation_execution_update_ko.pdf",
+      "bytes": 628063,
+      "sha256": "dc5e0799a0fdeae7da1860f414cecef49cb17dc1416c4ca2997fd24c2fde70af"
+    },
+    {
+      "path": "docs/acfo_ncs_validation_execution_update_source_notes.md",
+      "bytes": 5237,
+      "sha256": "1f63f4d46ec03a1cab8e07b8ae5340eb96446061eff93c6ba2c2079365bafc9a"
+    },
+    {
+      "path": "docs/acfo_ncs_high_na_harmonic_cutoff_ko.md",
+      "bytes": 3201,
+      "sha256": "fc2dd769504f46cc1523735eb16cfe7e70c958fdf4aa8ac49e257a954c868c14"
+    },
+    {
+      "path": "docs/acfo_ncs_waxs_detector_aware_ko.md",
+      "bytes": 1695,
+      "sha256": "ad20a311913a87f9b873db52d34fcca18766f6aedc650829145f11cb292fd52a"
+    },
+    {
+      "path": "docs/acfo_ncs_waxs_direct_reference_ko.md",
+      "bytes": 8307,
+      "sha256": "b99ee0635e5659c87e4e6d1831e11e3ecb6b7b87eba29cf9669f98266bf5850f"
+    },
+    {
+      "path": "docs/acfo_ncs_odt_256cubed_streaming_ko.md",
+      "bytes": 2116,
+      "sha256": "f006ded02596a83a87368c4ab36eb50d9c78c73e3c44ad64e96644b823f58b0b"
+    },
+    {
+      "path": "docs/acfo_ncs_odt_operator_vs_missing_cone_ko.md",
+      "bytes": 2811,
+      "sha256": "8efc82df578c4dfa475ae1f860ac42c88b7bc346af2422f6413a79c777099a0f"
+    },
+    {
+      "path": "docs/acfo_ncs_odt_regularized_inverse_ko.md",
+      "bytes": 1077,
+      "sha256": "2daa2dc3d215862845d037dd40f59b10d9a7bb3b21e946dd010055c93e0101e7"
+    },
+    {
+      "path": "docs/acfo_ncs_anisotropic_green_reference_ko.md",
+      "bytes": 4036,
+      "sha256": "c09885ced45f41f7d41167e882167e85187e11f125a1f2abfa490a40f64f5722"
+    },
+    {
+      "path": "docs/acfo_ncs_external_rerun_handoff_ko.md",
+      "bytes": 10085,
+      "sha256": "dfce8d07f0c01b0a9771ac06f56b3c64e77d24b2af0b1d164bfd4b9a3bd1c4a5"
+    },
+    {
+      "path": "docs/acfo_ncs_step5_fullwave_backend_audit_ko.md",
+      "bytes": 13945,
+      "sha256": "274d043fecfd059ca0d7dc47d6849d549040654f9d8448dd1ff60a2ec19ace37"
+    },
+    {
+      "path": "src/waxs_cake/__init__.py",
+      "bytes": 6643,
+      "sha256": "b8061c3008d77d9e602c98801d4b8e5b52754b45f58cb6d548d991ec6dbb30c0"
+    },
+    {
+      "path": "src/waxs_cake/_cpp_high_na.cp313-win_amd64.pyd",
+      "bytes": 261632,
+      "sha256": "830357b19a4c57cb273e1fcd9c528224056cb7268882724526df2bedb15343db"
+    },
+    {
+      "path": "src/waxs_cake/_cpp_high_na.cpp",
+      "bytes": 73766,
+      "sha256": "4e9cb6af7d9450a0f34c8177646aeb99744aa1eec634359f09d4020c7575fc5a"
+    },
+    {
+      "path": "src/waxs_cake/_cpp_histogram.cp313-win_amd64.pyd",
+      "bytes": 322048,
+      "sha256": "2837c3c69bcc26f413499fe2530d8bc5bf3b9bd294a228a1c96bef98e7b8f700"
+    },
+    {
+      "path": "src/waxs_cake/_cpp_histogram.cpp",
+      "bytes": 41415,
+      "sha256": "7cb1476e34692464ff0ef1b50fffdab42fdc24f83202e3f7a16bbc1c44280f0d"
+    },
+    {
+      "path": "src/waxs_cake/_cpp_odt.cp313-win_amd64.pyd",
+      "bytes": 433664,
+      "sha256": "aebbcdd3f4c95972b91fc561869888a9fd40b5da13670d0df1c334f3d37ac380"
+    },
+    {
+      "path": "src/waxs_cake/_cpp_odt.cpp",
+      "bytes": 190971,
+      "sha256": "062f8f53bcbae8424d33961d5331a97e2e5c5dd2425379fa2afeee4863b0e986"
+    },
+    {
+      "path": "src/waxs_cake/_cpp_solvers.cp313-win_amd64.pyd",
+      "bytes": 651264,
+      "sha256": "11454acee0ed6e426dea6833cab2b8ed599a857c63197bbdaaa95c251afafd1e"
+    },
+    {
+      "path": "src/waxs_cake/_cpp_solvers.cpp",
+      "bytes": 209868,
+      "sha256": "da716af3a62fb401fe79e71a37323351e7eb6a58b65e2e6cd5194369436a36b4"
+    },
+    {
+      "path": "src/waxs_cake/_numba_histogram.py",
+      "bytes": 3986,
+      "sha256": "cab743a7489b400438fd7c7a5387794fe81478fca6dae174535eb02f36de3447"
+    },
+    {
+      "path": "src/waxs_cake/anisotropic_born.py",
+      "bytes": 6733,
+      "sha256": "7259d1dac9ce8d8399ae86ae6bf52dcf943955982721df18fff27831e1bfa9c4"
+    },
+    {
+      "path": "src/waxs_cake/anisotropic_green.py",
+      "bytes": 8551,
+      "sha256": "21b8f573797d6bca63e82df5133dd047d49554044e60c057ed3c873d3ed7999b"
+    },
+    {
+      "path": "src/waxs_cake/axisymmetric_calibration.py",
+      "bytes": 11682,
+      "sha256": "d0ed22cd4897ec28e36814fccf6adb9fbce178e35aa958edd54c77f4a820cef2"
+    },
+    {
+      "path": "src/waxs_cake/axisymmetric_inverse.py",
+      "bytes": 6436,
+      "sha256": "3859aced255b8b1b28de4478b86fba0f8c4363536af68e7052c13763d6e42e88"
+    },
+    {
+      "path": "src/waxs_cake/axisymmetric_manifold.py",
+      "bytes": 9436,
+      "sha256": "8a4b374134deb89276f5958f80f570d392431271151d495097cfd9095061552e"
+    },
+    {
+      "path": "src/waxs_cake/axisymmetric_operator.py",
+      "bytes": 13893,
+      "sha256": "178b3dd8d96e5b165d783288b14296b8e8a65ef19653e838f2d3d3cdd14b16ce"
+    },
+    {
+      "path": "src/waxs_cake/axisymmetric_pde.py",
+      "bytes": 9324,
+      "sha256": "779e6fb5647554276727d00700c8db0fa7f1821f077a0cb12e8886191e8881fc"
+    },
+    {
+      "path": "src/waxs_cake/axisymmetric_validation.py",
+      "bytes": 21104,
+      "sha256": "42cc6120ffea165827c8f30405ae73da188aa28da8cc45eccb35a3b49352d441"
+    },
+    {
+      "path": "src/waxs_cake/crystal_lattice.py",
+      "bytes": 5537,
+      "sha256": "cff80f635420ff993d9f294970a3231329e71ad3ef067cc6c63c5be7e0e1dc53"
+    },
+    {
+      "path": "src/waxs_cake/exact_harmonic.py",
+      "bytes": 20064,
+      "sha256": "f71d2823df280ee81b5911eeafcdedbae92b0f83e54681bd0e043ed9c1d54a14"
+    },
+    {
+      "path": "src/waxs_cake/fullwave_gate.py",
+      "bytes": 8636,
+      "sha256": "062fa49f7ee728f4bc7c541f1e791fc368f60aa2f5b426a541973e6d9fea682b"
+    },
+    {
+      "path": "src/waxs_cake/geometry.py",
+      "bytes": 997,
+      "sha256": "0e10930012c574c83038f7cb79a9cc06d359598d7133b6658329111a71075bf1"
+    },
+    {
+      "path": "src/waxs_cake/histogram.py",
+      "bytes": 39010,
+      "sha256": "5cc57dbe8deca80a7fd32b80136d32ab883af2977c148d8bd1c8518447ba3f4d"
+    },
+    {
+      "path": "src/waxs_cake/metrics.py",
+      "bytes": 716,
+      "sha256": "b1f383c6a5ae895bcffb376a34f0bf51f7799251f465364c82e2490c1bdf4a10"
+    },
+    {
+      "path": "src/waxs_cake/odt_double_manifold.py",
+      "bytes": 11784,
+      "sha256": "07558d15942a0b7c62345a5e577a35034ce2a5e715671bdb9e8c2a559aff6689"
+    },
+    {
+      "path": "src/waxs_cake/odt_measured_contract.py",
+      "bytes": 22639,
+      "sha256": "42f4ab3ce19ec07abe599aa64e8a1d1c1ed62431cdc05f7aff149c8665174a03"
+    },
+    {
+      "path": "src/waxs_cake/physical_scaling.py",
+      "bytes": 5015,
+      "sha256": "fbdebe7fb187a3022579fa468e26c9d594aff25282c8ad90101eb65caa73ca66"
+    },
+    {
+      "path": "src/waxs_cake/presets.py",
+      "bytes": 1456,
+      "sha256": "eb1764f36d4e470e1f7e950388590f9854bcf150d5bf0e0e5bf312dc3b7fd431"
+    },
+    {
+      "path": "src/waxs_cake/solvers.py",
+      "bytes": 134325,
+      "sha256": "e9c203b7b30d15fb8eed92caf7d4253ac50a1b0509bd38e1450316314a904f0c"
+    },
+    {
+      "path": "src/waxs_cake/surface_normal.py",
+      "bytes": 33107,
+      "sha256": "fe8dbd3d40e0f73c073c08cbe06abb3757b2ccb72f1db7f35d08cb4e6509b651"
+    },
+    {
+      "path": "src/waxs_cake/vector_born.py",
+      "bytes": 6186,
+      "sha256": "253ffbf17792202dfcb0c1ecf6fb0d340828edc232b7480dfe1f9aa0fec94208"
+    },
+    {
+      "path": "src/waxs_cake/xray_form_factors.py",
+      "bytes": 2092,
+      "sha256": "57948d8feaf41bebabe608926fca15aa9c5a1461474a06fdb166a186e6b78879"
+    },
+    {
+      "path": "tests/test_aidt_public_measured_adapter.py",
+      "bytes": 1553,
+      "sha256": "e09a7b91065f7d2fd747e4cdb19ac5d7786fda244c4ea8c48754cbf7c0d4fc17"
+    },
+    {
+      "path": "tests/test_anisotropic_born.py",
+      "bytes": 3202,
+      "sha256": "3de48bf65b7645f18b52e20a1af628762fff41507135c7029579fe5227046bc2"
+    },
+    {
+      "path": "tests/test_anisotropic_green.py",
+      "bytes": 4467,
+      "sha256": "feba2c26950f952faf3ea94fcbd20d3991bc196e5f15096ecb41b69a5c63d083"
+    },
+    {
+      "path": "tests/test_axisymmetric_adjoint.py",
+      "bytes": 3309,
+      "sha256": "a1e06cdf3712acbb0335563ad97d0ad0e38140f5be34f66a38ae944865d7b630"
+    },
+    {
+      "path": "tests/test_axisymmetric_calibration.py",
+      "bytes": 3724,
+      "sha256": "09d15e57c9143ae33c84940b7eaaab6c2c3ac5eaa022f283adfa66034783818f"
+    },
+    {
+      "path": "tests/test_axisymmetric_finufft.py",
+      "bytes": 2644,
+      "sha256": "2af226692b99df3876d6f0cdc55896dac25a8c04fd994cf70201aa1a28605732"
+    },
+    {
+      "path": "tests/test_axisymmetric_gaussian.py",
+      "bytes": 2138,
+      "sha256": "c8b3f68532cffb3d9dffe445159c8bf3724ead8f5fe2a7c357a2f805b55f3c56"
+    },
+    {
+      "path": "tests/test_axisymmetric_harmonic_cutoff.py",
+      "bytes": 2126,
+      "sha256": "53c78f229e536ca626818e81fcef4c49435b4898721591f8b43246ec9ed16889"
+    },
+    {
+      "path": "tests/test_axisymmetric_inverse.py",
+      "bytes": 2175,
+      "sha256": "62f3d9b476f9ba3412a761aea684f43fb2882fcf1876521b3b1ba2e687c0b102"
+    },
+    {
+      "path": "tests/test_axisymmetric_manifold.py",
+      "bytes": 4268,
+      "sha256": "3e67253555e6c06ecfd6059f27cd7eb8b8c943719dfb8512139b97ab32a6ea42"
+    },
+    {
+      "path": "tests/test_axisymmetric_pde.py",
+      "bytes": 6895,
+      "sha256": "4856966a31c157bdb9fb15fd086924b7221d019100a2da948fe98a39f9900f5a"
+    },
+    {
+      "path": "tests/test_axisymmetric_validation.py",
+      "bytes": 3228,
+      "sha256": "0e4f0f3cb71f1a0d40fbf247674886ee87e0ca552fb954e17b93e996f34806f4"
+    },
+    {
+      "path": "tests/test_crystal_lattice.py",
+      "bytes": 2080,
+      "sha256": "aa68f27dd08c2f4dbb1972fadc57767b04608535ef2190a2845e21c51f7e4bb5"
+    },
+    {
+      "path": "tests/test_exact_harmonic.py",
+      "bytes": 7955,
+      "sha256": "faa4b0742f0fc4c0854fe816e54f4d357cc8b35a3b5bb6f51e41fcbb2e8b312d"
+    },
+    {
+      "path": "tests/test_external_prepared_waxs_validation.py",
+      "bytes": 2927,
+      "sha256": "d7e468ee514f710d494b45c7392f37488e2aec3c5732f300d3fc2ce4bf8f5ecc"
+    },
+    {
+      "path": "tests/test_fullwave_gate.py",
+      "bytes": 2725,
+      "sha256": "3d65d84fbc28328349259d9a6f75977f87cbecf8b4fef6bc3744322c57e9d66f"
+    },
+    {
+      "path": "tests/test_giwaxs_dwba_multilayer.py",
+      "bytes": 5541,
+      "sha256": "81be3759f08eb18bac0e803076661448a15a46a21d47582631d6770d64080e46"
+    },
+    {
+      "path": "tests/test_high_na_pupil_spectrum.py",
+      "bytes": 2913,
+      "sha256": "fe8d5a436402fa4f562293df84e12b33324fc161f88c66c90adfd9abaa581cd9"
+    },
+    {
+      "path": "tests/test_highq_threshold_strategy.py",
+      "bytes": 2612,
+      "sha256": "7f56acdfd5c98012ed5bf416e9ff2cc692f8ea904eaf3cbaba9933de879479b5"
+    },
+    {
+      "path": "tests/test_histogram.py",
+      "bytes": 14827,
+      "sha256": "c141b919eb63fc2bb6f3692902a0ced5f351e1beb4614d4bfcd048b843245eb4"
+    },
+    {
+      "path": "tests/test_odt_double_manifold.py",
+      "bytes": 3340,
+      "sha256": "53d3c1c4e48843d9f310f0feda9dc4c1afb541104befd09fae4792b3d174d043"
+    },
+    {
+      "path": "tests/test_odt_ewald_operator.py",
+      "bytes": 28781,
+      "sha256": "0223ce58db369cd763857562c2f935d7d2aa85c474489f84c27356421ed5a69a"
+    },
+    {
+      "path": "tests/test_odt_measured_contract.py",
+      "bytes": 8619,
+      "sha256": "c92b6e32bc05222e5a87d34198b7a2cc6699e4c7a09d8ec2136224c4f44a3be4"
+    },
+    {
+      "path": "tests/test_odt_torch_low_memory.py",
+      "bytes": 2230,
+      "sha256": "2f6296a51a1dcf0a7badca92749a88287311b957e8d3a5b3d60b13cccc0e7d80"
+    },
+    {
+      "path": "tests/test_odt_torch_streaming.py",
+      "bytes": 2051,
+      "sha256": "8b30b7f1b6c14eb32380550f264dfe1ad3f0b28aa1bdb830083187f7967bc58c"
+    },
+    {
+      "path": "tests/test_physical_scaling.py",
+      "bytes": 1409,
+      "sha256": "8be844693818da840890af59951691a4dbd8a3da747c18dd970043005679c9a6"
+    },
+    {
+      "path": "tests/test_prepare_protein_nanocrystal_waxs.py",
+      "bytes": 2322,
+      "sha256": "de455eb9df44ab4e8d94fc49114b862ae393b80044f1027866aac981a7a3b674"
+    },
+    {
+      "path": "tests/test_prepared_abba_summary.py",
+      "bytes": 1786,
+      "sha256": "1a355226c7add86a2e822bcbed6aea05c96a9b2e0340195780bf6daab2ae76a0"
+    },
+    {
+      "path": "tests/test_presets.py",
+      "bytes": 1392,
+      "sha256": "d9d8d2b0b398b91dd7102cf2577b3291f03240de9ac6bdc2ab394876fb75c1b9"
+    },
+    {
+      "path": "tests/test_public_waxs_validation_form_factors.py",
+      "bytes": 780,
+      "sha256": "efdc61105679eaa4776e13c07b6a9d204a4b46672a8fed3020935a05cc5027a7"
+    },
+    {
+      "path": "tests/test_solvers.py",
+      "bytes": 33464,
+      "sha256": "4281fd7cd2411169fce416b2b64c6b436eacaa3b6904260715399fe817e08c45"
+    },
+    {
+      "path": "tests/test_surface_normal.py",
+      "bytes": 8070,
+      "sha256": "b9ffd04535c15728707d4737e43c4df177c678bfc891251d667436347f01b481"
+    },
+    {
+      "path": "tests/test_vector_born.py",
+      "bytes": 2302,
+      "sha256": "9bac7bcf25b70e3c839d1aa22c10ce05e6f6a5337fc743e9eaba5d1b609582d0"
+    },
+    {
+      "path": "tests/test_waxs_detector_mask.py",
+      "bytes": 1216,
+      "sha256": "8c50e0e15c48ccbdaecb449262e3b3a2dd8238b6a8038095a0cf03e1a4e2021a"
+    },
+    {
+      "path": "tests/test_xray_form_factors.py",
+      "bytes": 923,
+      "sha256": "da5d1bc36fd92d2e63d30b36098b8042345c7ee26a7e5e1f40bd7f2a72f4f668"
+    },
+    {
+      "path": "scripts/assess_waxs_detector_sampling.py",
+      "bytes": 7612,
+      "sha256": "295361596a064980d95e07706175589996ab2e13a5d1e43e9a149d9a9466b3d2"
+    },
+    {
+      "path": "scripts/benchmark_aidt_public_measured_adapter.py",
+      "bytes": 23681,
+      "sha256": "6a5662b84cf3d353e999092a6e1b910fc646a26de66a31ec35a26c18ae34cb8e"
+    },
+    {
+      "path": "scripts/benchmark_aidt_public_measured_update_loop.py",
+      "bytes": 20714,
+      "sha256": "472a62dd2306eaba65926c57420150c8b78582df7aec81d3b241e8bea6dea8d0"
+    },
+    {
+      "path": "scripts/benchmark_aidt_transfer_prepared_compare.py",
+      "bytes": 45849,
+      "sha256": "f71749e43507b212f44013f4442a44cf3c938c934a1d98905dc2072be175baa5"
+    },
+    {
+      "path": "scripts/benchmark_aidt_transfer_torch_gpu.py",
+      "bytes": 38645,
+      "sha256": "0001dc2de9062e5834ed1c996647a2b8dc9f1fa1f90adc04008f0f51833e24d5"
+    },
+    {
+      "path": "scripts/benchmark_algorithm_scaling.py",
+      "bytes": 10681,
+      "sha256": "fe951f1ec0a702036eef1800d83a170d30d1d870779ff7a7da588de3acb4161c"
+    },
+    {
+      "path": "scripts/benchmark_axisymmetric_crossover.py",
+      "bytes": 29830,
+      "sha256": "902c8ae686ea3823a46347a5f1bf2bbd3560d32aca3e338b151c8af93322595a"
+    },
+    {
+      "path": "scripts/benchmark_binning_frontier.py",
+      "bytes": 7994,
+      "sha256": "06e0b883a54796438ebcaf07af3f9061e037e4cd62cb979fe99648d6e6b7e29b"
+    },
+    {
+      "path": "scripts/benchmark_bottleneck.py",
+      "bytes": 7637,
+      "sha256": "88a3eda0cd06b0aaa0a65dde41694ec3417fd67a5d9e8cddf8f153ce5efe0295"
+    },
+    {
+      "path": "scripts/benchmark_debye_curve.py",
+      "bytes": 14868,
+      "sha256": "ca00f9cae95c0c27faf1978b1f7f863155525b5936caa8d81486ea371fafb744"
+    },
+    {
+      "path": "scripts/benchmark_exact_beta_contraction_backends.py",
+      "bytes": 12070,
+      "sha256": "33202b22524f0b5d9b085ced5078c3c263abcf39abbbd71bfa37a238594c224a"
+    },
+    {
+      "path": "scripts/benchmark_giwaxs_dwba_multilayer.py",
+      "bytes": 41139,
+      "sha256": "9388948c725878104d25e722fa56b8d2fe6eed759cf55c17af0cd48e2c2af2b8"
+    },
+    {
+      "path": "scripts/benchmark_giwaxs_prepared_operator.py",
+      "bytes": 44734,
+      "sha256": "6f5fcecc1ca322488b2bbda07062d20f555ca7ea9373a2f392640e986a389397"
+    },
+    {
+      "path": "scripts/benchmark_giwaxs_real_atomic_layers.py",
+      "bytes": 23242,
+      "sha256": "14ffba990e993ff3225184969cfdefd8a30c0829bff978e70fdd3c7cf9e5748e"
+    },
+    {
+      "path": "scripts/benchmark_harmonic_bandlimit.py",
+      "bytes": 6982,
+      "sha256": "7834ebe4e79c202345cb6c80e4953ed835ba4d8197b4073220fb831f6c8cab6c"
+    },
+    {
+      "path": "scripts/benchmark_high_na_backpropagation.py",
+      "bytes": 41467,
+      "sha256": "c033557d618a97d681cd97c47cd8649ece6b6a722487974027974e6fde23a4a4"
+    },
+    {
+      "path": "scripts/benchmark_high_na_build_cache.py",
+      "bytes": 15898,
+      "sha256": "71c8c0d785de8a88d825fd7a2b791ede91d0a231be6fe27153aa2d4d7d2222da"
+    },
+    {
+      "path": "scripts/benchmark_high_na_cartesian_interpolation_adapter.py",
+      "bytes": 20594,
+      "sha256": "37a724937d9e87e7dc79b8da2c0a9270080b43f9f64918f4ab03fadeee280ba9"
+    },
+    {
+      "path": "scripts/benchmark_high_na_cylindrical_backprop_design.py",
+      "bytes": 19864,
+      "sha256": "918d8394197b112571225227ee6689437cce4cfff7b9a2d4c022110ec0ab301b"
+    },
+    {
+      "path": "scripts/benchmark_high_na_debye_wolf.py",
+      "bytes": 86291,
+      "sha256": "7097eaf8ba668d9beb118013630acc5b1bb55e35446d2243d2f959755fbd0609"
+    },
+    {
+      "path": "scripts/benchmark_high_na_gpu_cufinufft_baseline.py",
+      "bytes": 24722,
+      "sha256": "0b2e21d68fef907fd4af81c7f614341264277a07cd0cd955f6a05667455b3b74"
+    },
+    {
+      "path": "scripts/benchmark_high_na_gpu_dense_baseline.py",
+      "bytes": 23384,
+      "sha256": "5c75eb281d0916abdac446cd8120d6a244c268306e14341ca5093aa2ef7f0234"
+    },
+    {
+      "path": "scripts/benchmark_high_na_inverse_design_loop.py",
+      "bytes": 29237,
+      "sha256": "1b97088c1e17dcf153659865c2a671d662c640d72aeaecdafc534f809e0e80d8"
+    },
+    {
+      "path": "scripts/benchmark_high_na_positive_modes.py",
+      "bytes": 15289,
+      "sha256": "fe1fcb870b3a93f742c316968ba20dae93d1a04ddc37c96b754fc21278437158"
+    },
+    {
+      "path": "scripts/benchmark_high_na_positive_rho_dependent.py",
+      "bytes": 18379,
+      "sha256": "e7e766cb513a84cbc0c4cc7f4971fb65ac7098be7487d7bfc6b142ae87163fa9"
+    },
+    {
+      "path": "scripts/benchmark_high_na_psf_generator_baseline.py",
+      "bytes": 13778,
+      "sha256": "704c74e60dab3286489033b1924dcb7d25713d70f5943ce971aae60b1f0b8d57"
+    },
+    {
+      "path": "scripts/benchmark_high_na_psf_generator_matched_cartesian.py",
+      "bytes": 21441,
+      "sha256": "8e5553bf91ae0135aa571d48a4b89263a8639b0035e5d57b9399cad0c01094ca"
+    },
+    {
+      "path": "scripts/benchmark_high_na_pupil_spectrum_adaptive.py",
+      "bytes": 20128,
+      "sha256": "b73a00201ce09ef7e558083eb53df2c565fe351d8944a285bd1e646ebfb34047"
+    },
+    {
+      "path": "scripts/benchmark_high_na_pyfocus_vectorial_package.py",
+      "bytes": 23123,
+      "sha256": "33be36137f94f964117c659bc19c6e54d04842705454d3cc112598b2c3083cee"
+    },
+    {
+      "path": "scripts/benchmark_high_na_pyfocus_zstack_repeat.py",
+      "bytes": 14580,
+      "sha256": "c528c57d96eb6d336682a4d95e2f300c4c03b123e955371a8ce2729f42d1e18f"
+    },
+    {
+      "path": "scripts/benchmark_high_na_rho_dependent_cutoff.py",
+      "bytes": 20163,
+      "sha256": "1af9a518505cd80d91907271af541db92353f4b6cc03a2fadc2ac66caac5af0b"
+    },
+    {
+      "path": "scripts/benchmark_high_na_torch_gpu.py",
+      "bytes": 42992,
+      "sha256": "5f057d0d15f51bdc3926a995a6a01ea1f05fefa9af609d41d6059e26df891ae2"
+    },
+    {
+      "path": "scripts/benchmark_high_na_vectorial_backpropagation.py",
+      "bytes": 31806,
+      "sha256": "b681f34664f8416317e3761c7a698ea2e3b1a4493117375c4f81eca5d272eae3"
+    },
+    {
+      "path": "scripts/benchmark_high_na_workload_matrix.py",
+      "bytes": 35358,
+      "sha256": "e4de245cf069f289318e7141020822f91fefd5d7d3ef2d9b1597e48a4795aa33"
+    },
+    {
+      "path": "scripts/benchmark_histogram_backends.py",
+      "bytes": 12510,
+      "sha256": "18b9031129cfce874275bf27232865d5a7c79bc7ec5dbeb8781ff801769aa319"
+    },
+    {
+      "path": "scripts/benchmark_kernels.py",
+      "bytes": 9336,
+      "sha256": "2fa5a02a7fc43fd7f1a452ec42003412cd2f2ca3c70a2000cfcc75aa7c1c0255"
+    },
+    {
+      "path": "scripts/benchmark_matrix.py",
+      "bytes": 10919,
+      "sha256": "35471ec5bd6b31cd09dc3fa5d8941d94fd3c5eeb7f8e2308517a17a8820c2e7e"
+    },
+    {
+      "path": "scripts/benchmark_mri_radial_prepared.py",
+      "bytes": 14913,
+      "sha256": "93d76a289f5397f7f3fafba9dfb37b6d23746a3801e291659da66afdcf2c44b4"
+    },
+    {
+      "path": "scripts/benchmark_mri_stack_of_stars_prepared.py",
+      "bytes": 19742,
+      "sha256": "ec5eeb42e0d73f4ef8ba75c763d815144a66b70d8f95ae260496878dd3c52e34"
+    },
+    {
+      "path": "scripts/benchmark_odt_128cubed_cg_reconstruction.py",
+      "bytes": 10306,
+      "sha256": "a8a38ea509b8828bd342ae56a2fd163bf5e1b68ad4dee655d86733d95f8583c6"
+    },
+    {
+      "path": "scripts/benchmark_odt_128cubed_nonnegative_fista.py",
+      "bytes": 7927,
+      "sha256": "cd1c4a7b4f4d5e10a95620a5427d49422b0a9d497a1ccf70508c64f6228804f3"
+    },
+    {
+      "path": "scripts/benchmark_odt_build_amortization.py",
+      "bytes": 16131,
+      "sha256": "d52b349ad0a6a33fbeab4abdf5eead538ed1d1b5a0837a679e196d1061ecd152"
+    },
+    {
+      "path": "scripts/benchmark_odt_cone_axis_decomposition.py",
+      "bytes": 37748,
+      "sha256": "73dec75fe7bc6b9c5cc3115a1f1aade9e86305c99a896c49725b818b77d42481"
+    },
+    {
+      "path": "scripts/benchmark_odt_cone_cmd_intensity.py",
+      "bytes": 20160,
+      "sha256": "9785b9c4a4d29c933a453da1695126bba490685475a0f80dceb2801f2a385c85"
+    },
+    {
+      "path": "scripts/benchmark_odt_cone_illumination.py",
+      "bytes": 24885,
+      "sha256": "816dcb197a17799bde4ea875531062e4dcb90f8c926bbdc7968f2ceb9fc8ca78"
+    },
+    {
+      "path": "scripts/benchmark_odt_cufinufft_gpu_baseline.py",
+      "bytes": 28135,
+      "sha256": "09e610278cb10f5092dd94fceab6e004ac579caea8ef48c21530a74abc60e91a"
+    },
+    {
+      "path": "scripts/benchmark_odt_cufinufft_pair_workflow.py",
+      "bytes": 5463,
+      "sha256": "32156c374dea36f69a50d0a6a42fe7e7bbacf4616e040b42940ed4220e1724b0"
+    },
+    {
+      "path": "scripts/benchmark_odt_curved_ewald_importance.py",
+      "bytes": 25533,
+      "sha256": "c7b4e4663c0506d30cd9ca85f58d5795dce6f2d48fdb29e5fc0764eb3f284007"
+    },
+    {
+      "path": "scripts/benchmark_odt_detector_transport.py",
+      "bytes": 32477,
+      "sha256": "7edf9e42594d98854ff83d84d36a13abe689540d01f5284a6d4276074ae977d6"
+    },
+    {
+      "path": "scripts/benchmark_odt_ewald_cap_operator.py",
+      "bytes": 42594,
+      "sha256": "f14996356b3ea1a7420ba13310fff4f581b1ac003ee2bf1a9756be8c94caf7b7"
+    },
+    {
+      "path": "scripts/benchmark_odt_experimental_envelope.py",
+      "bytes": 36001,
+      "sha256": "92fc1c5694f1a06c40a77f2abf022190d8ea6d1058857b7f54e61e12d27d4c01"
+    },
+    {
+      "path": "scripts/benchmark_odt_gpu_reconstruction_compare.py",
+      "bytes": 22131,
+      "sha256": "1886c9f772df8c1690fbba97b137d089bf94b2c34cdac388848a383152151b4d"
+    },
+    {
+      "path": "scripts/benchmark_odt_gpu_warm_start_dynamic.py",
+      "bytes": 40211,
+      "sha256": "f5a0ae9cea884ac1c3487b684d7ff8490446490d4329796ae41bfdf957a4c1ea"
+    },
+    {
+      "path": "scripts/benchmark_odt_iterative_reconstruction.py",
+      "bytes": 32226,
+      "sha256": "aba0b5c7001ce8fd0592d6ebafba0ce42085fe870b56ba91796011113f368219"
+    },
+    {
+      "path": "scripts/benchmark_odt_pattern_intensity_reconstruction.py",
+      "bytes": 23072,
+      "sha256": "089fd077f910343ebe68d53f5eaf8dfe791f057db8e04e51e5260c48502f4cc9"
+    },
+    {
+      "path": "scripts/benchmark_odt_pattern_layer_gpu.py",
+      "bytes": 27181,
+      "sha256": "e966b512b200337d3cc35eb7bbab688e0a449d6600e4f09f05da90d96fc52084"
+    },
+    {
+      "path": "scripts/benchmark_odt_plane_detector_ellipse.py",
+      "bytes": 34307,
+      "sha256": "5b5729c370db2753d6e778550070479b336fdeea659af1bbb2426dfa635d7315"
+    },
+    {
+      "path": "scripts/benchmark_odt_realistic_geometry_reconstruction.py",
+      "bytes": 23131,
+      "sha256": "25df76970362b7c2acaa55371ac8bf78803026488ec5e640328f2080ef45bfc5"
+    },
+    {
+      "path": "scripts/benchmark_odt_same_direction_finufft.py",
+      "bytes": 22136,
+      "sha256": "9d17a5d00161b2a1c2645f12506f3fa6b05c6463758b2789bd5e505d154a1977"
+    },
+    {
+      "path": "scripts/benchmark_odt_same_direction_qradial_finufft.py",
+      "bytes": 12644,
+      "sha256": "7870d2d31c6e9bee94976b75fa8adab16b912d8961c07570d049befe9f2cd641"
+    },
+    {
+      "path": "scripts/benchmark_odt_same_direction_torch_gpu.py",
+      "bytes": 32433,
+      "sha256": "639a82de5623e68e1f3514dcb64384ebb720466bcbbef8dfc5cf38e51ad793f9"
+    },
+    {
+      "path": "scripts/benchmark_odt_same_direction_zperp.py",
+      "bytes": 35279,
+      "sha256": "f8be0214de7a611d76df9b971f70f267e0f862457207c9ec0fd9e20b8b143216"
+    },
+    {
+      "path": "scripts/benchmark_odt_shift_factorization.py",
+      "bytes": 23528,
+      "sha256": "36fdd1b820f2fef98802daa5e08645df2eb10f34bf206dc5ae43243e05c95327"
+    },
+    {
+      "path": "scripts/benchmark_odt_torch_gpu_reconstruction.py",
+      "bytes": 38271,
+      "sha256": "5502741c486e4a6b49aa2f050c12d056ca1c97782c0daff673391152ebc00f25"
+    },
+    {
+      "path": "scripts/benchmark_odt_torch_pair_workflow.py",
+      "bytes": 5829,
+      "sha256": "928cab6c6f1cd9520587937f7a3eb078bee8f06e93b678082322630368a03654"
+    },
+    {
+      "path": "scripts/benchmark_one_shot_breakdown.py",
+      "bytes": 9164,
+      "sha256": "5cac02ce5509b29c6d6a8d540f28ba10649c9009e061e31be071755861fedf4c"
+    },
+    {
+      "path": "scripts/benchmark_physical_scaling.py",
+      "bytes": 55069,
+      "sha256": "8a73bcf93e0c6f34f9ca747864fe2e132e0afbd2816973a95087af4f7f122c32"
+    },
+    {
+      "path": "scripts/benchmark_precomputed_sparse.py",
+      "bytes": 8038,
+      "sha256": "ad6dd729d94c07dab3da1cd2caa058ee7bbe42a6d64b45c574e57caaa02a81df"
+    },
+    {
+      "path": "scripts/benchmark_projected_gradient_rawkernel.py",
+      "bytes": 31605,
+      "sha256": "97c864486f108695e80eb7a3783e3e0bbfc25ce00a9b92ef8e68e49778b80d7b"
+    },
+    {
+      "path": "scripts/benchmark_protein_lattice_finufft_512.py",
+      "bytes": 14959,
+      "sha256": "b8a8674061392a3864aca1544c828acb142ad397e63b59eee944e18abb04e265"
+    },
+    {
+      "path": "scripts/benchmark_protein_lattice_finufft_512_abba.py",
+      "bytes": 20703,
+      "sha256": "5f919a2b682250dd7bea9f048c4f7ec009531829647da17e3797dcf871e2d147"
+    },
+    {
+      "path": "scripts/benchmark_protein_lattice_highq_threshold_strategy.py",
+      "bytes": 25122,
+      "sha256": "711619a935cc6acbfdaf280926c5f5521eba86d9b980950263a9f042d70348df"
+    },
+    {
+      "path": "scripts/benchmark_protein_lattice_q_sampling_case.py",
+      "bytes": 29939,
+      "sha256": "4f0169a6c2d571c412dbcf63c36e37b6ffc807db8fbd02869ade316139537e95"
+    },
+    {
+      "path": "scripts/benchmark_protein_nanocrystal_finufft_fair.py",
+      "bytes": 26316,
+      "sha256": "4041234bde5be310a6ba354a3eec34941739d223ac02796eace0a03ded08b7fc"
+    },
+    {
+      "path": "scripts/benchmark_protein_nanocrystal_sparse_memory.py",
+      "bytes": 11317,
+      "sha256": "b47d0634445b8d988f6e95f2b8cca145753075a4881622b1d176123200101c4b"
+    },
+    {
+      "path": "scripts/benchmark_reuse.py",
+      "bytes": 5653,
+      "sha256": "e8e02193ca934469e6a9b07d487926af329a1d293c12f274bccf0a071db0d325"
+    },
+    {
+      "path": "scripts/benchmark_sparse_source_projection_sweep.py",
+      "bytes": 10750,
+      "sha256": "e6af60cb7b836a570131c50e84ca79a36465cfba20fa5c327a117a3280da2d37"
+    },
+    {
+      "path": "scripts/benchmark_surface_normal_cylindrical.py",
+      "bytes": 10738,
+      "sha256": "d4802cf3eeebc295ae6f080c517ace9b1aa11302560ec81054587525e469debf"
+    },
+    {
+      "path": "scripts/benchmark_surface_normal_gpu_vs_raster.py",
+      "bytes": 20467,
+      "sha256": "9c6bdc3a0642330d95c64595d50d6da8faff9253ca81be2dddcc4ffff0f39a54"
+    },
+    {
+      "path": "scripts/benchmark_tip3p_exact_beta_backends.py",
+      "bytes": 9730,
+      "sha256": "12fc3415b54cce6f2eb71f9bc29a98ec56cb2579b70f236463f2d01cce3653a1"
+    },
+    {
+      "path": "scripts/benchmark_tip3p_exact_beta_finufft_512.py",
+      "bytes": 10882,
+      "sha256": "d4e204c3aec025efbab415b8341876aba0c698a398d531a76f69602622b8522f"
+    },
+    {
+      "path": "scripts/benchmark_tip3p_exact_beta_scaling.py",
+      "bytes": 11151,
+      "sha256": "c744ebc30290bdc8d15ebcbbbe3bfedf757110eee4feea74eb004519aa049330"
+    },
+    {
+      "path": "scripts/benchmark_waxs_curvature_isolated.py",
+      "bytes": 16054,
+      "sha256": "01a8e225c79f64014c90628eebd7f2d8e739a31b55b6cd6d542cfef39870e979"
+    },
+    {
+      "path": "scripts/build_acfo_ncs_execution_update_pdf.py",
+      "bytes": 69019,
+      "sha256": "549225908c6763bd616d6ea70d0a21ba890c8a710dd9cb8a8e738774924fd585"
+    },
+    {
+      "path": "scripts/build_acfo_ncs_release_candidate.py",
+      "bytes": 18694,
+      "sha256": "e0fc376d9d324592f2df197e5a7a67d7f57b3a8c37df2a68d1d4038ba9ac3e76"
+    },
+    {
+      "path": "scripts/build_acfo_ncs_validation_execution_plan_pdf.py",
+      "bytes": 73362,
+      "sha256": "72fef3885134579a259e63d0b622368a420db63027efed99e95df7db33673583"
+    },
+    {
+      "path": "scripts/build_acfo_ncs_validation_progress_summary_pdf.py",
+      "bytes": 35511,
+      "sha256": "ac392edcd56a7e2fa4d486f2b9d0cd67dfa9465a57484e3ecef3e2d1c0366865"
+    },
+    {
+      "path": "scripts/build_acfo_pde_extension_results_pdf.py",
+      "bytes": 24233,
+      "sha256": "31bdca8e7fbff1b6a89cec0eadb45fc4a8985e276ad70c46a7f4d65f61880f58"
+    },
+    {
+      "path": "scripts/build_acfo_validation_report_pdf.py",
+      "bytes": 34764,
+      "sha256": "f918cca69b994aa16d85c876541f66c3292ba33f393bd972e13143e0514823b4"
+    },
+    {
+      "path": "scripts/build_aidt_realtime_analysis_report.py",
+      "bytes": 13562,
+      "sha256": "150c90aa1e299275da2f62bc00a04e0041290489decf12410626a472c8eec2c6"
+    },
+    {
+      "path": "scripts/build_aidt_realtime_projection_summary.py",
+      "bytes": 10080,
+      "sha256": "77470fd72c4133866138a090abce2beec89250070996e448ed1fb54db73370fd"
+    },
+    {
+      "path": "scripts/build_counsel_next_step_pdfs.py",
+      "bytes": 10455,
+      "sha256": "f30bade2d9b584439541b5120d9325fc73a16f0ff9e91e4978bc3cb8f8dcaeb2"
+    },
+    {
+      "path": "scripts/build_cross_domain_algorithm_progress_pdf.py",
+      "bytes": 31485,
+      "sha256": "5b10532e046f62b1f6ca819543ee9541bc6fedc1019f69a00951f068dc80c38b"
+    },
+    {
+      "path": "scripts/build_curved_ewald_factorization_strategy_pdf.py",
+      "bytes": 28244,
+      "sha256": "5d6148f6e748268e43b64ec21c5d2fff39100c7c9fe4f2efee5ad0f95fb95d19"
+    },
+    {
+      "path": "scripts/build_factorization_patent_counsel_package_pdf.py",
+      "bytes": 10330,
+      "sha256": "cd510790388ca94d61a73ef98307e25b4d0ff48dbe9f71d49771673d387255dc"
+    },
+    {
+      "path": "scripts/build_geometry_aware_fourier_theory_pdf.py",
+      "bytes": 34637,
+      "sha256": "ed146feb56ee364809315d0bf4d2f0c79d8d618190aada4cce28b46e6b5a6cdc"
+    },
+    {
+      "path": "scripts/build_giwaxs_dwba_waxs_patent_memo_pdf.py",
+      "bytes": 10732,
+      "sha256": "9ac4dccaed4a139d3e4a895626750398a3b556bd8cbdb34e1200cc87580c9ce2"
+    },
+    {
+      "path": "scripts/build_high_na_decision_report.py",
+      "bytes": 26825,
+      "sha256": "16ffb11887f9b7aead4468cdbd746762b3448f48edbf8e9abc738214d414a441"
+    },
+    {
+      "path": "scripts/build_high_na_progress_pdf.py",
+      "bytes": 19851,
+      "sha256": "d6e9d7efb862a87e2c71db137bd3db35f264a47f9a48aafbf135241966578cb8"
+    },
+    {
+      "path": "scripts/build_ip_team_intake_disclosure_pdf.py",
+      "bytes": 8715,
+      "sha256": "737d474bfb4e876b6a902db6c045b3b1e9df78b2a8a8653f21ae2b81e6cb2994"
+    },
+    {
+      "path": "scripts/build_manuscript_direction_pdf.py",
+      "bytes": 24014,
+      "sha256": "1e1e1f174c3599ca170833ce07365bc4b82ca43e09d70bf6dbd5fa7fe346dc6d"
+    },
+    {
+      "path": "scripts/build_manuscript_skeleton_pdf.py",
+      "bytes": 33195,
+      "sha256": "fb7d443a646758e5b6a6421dee8d5fd724d6812c9b0ab5ebcca7c0b371467635"
+    },
+    {
+      "path": "scripts/build_odt_cone_axis_optimization_pdf.py",
+      "bytes": 19872,
+      "sha256": "9b8fd7e2a56faad235a4cb3c81c2bae9340b94daa9d42a85f8e6279dc4e94cbc"
+    },
+    {
+      "path": "scripts/build_paper_strategy_pdf.py",
+      "bytes": 34619,
+      "sha256": "e60931a9239be36878c404acaaffffd12ee755f5f1e7a89cc185a0e9aeea436c"
+    },
+    {
+      "path": "scripts/build_patent_attorney_disclosure_packet_pdf.py",
+      "bytes": 25102,
+      "sha256": "549aef73243385f769c0f7ee07bff7234d838c88c2d32c0ecbc11a1ec2556aef"
+    },
+    {
+      "path": "scripts/build_patent_meeting_algorithm_overview_pdf.py",
+      "bytes": 10069,
+      "sha256": "be39fe28b7e17730469e458ca7e13d375a65a619cbf2f5218a2fd0f4f374c1cd"
+    },
+    {
+      "path": "scripts/build_projected_gradient_optimizer_progress_pdf.py",
+      "bytes": 18333,
+      "sha256": "735965a4cb10680191fad41ec8bf0faaa29fbed30674c9b4142890895e01e86e"
+    },
+    {
+      "path": "scripts/build_projected_gradient_theory_implementation_package.py",
+      "bytes": 23741,
+      "sha256": "76a70270c9a6675be05ee5629827667fc6904f1a50ff7ab5e19d73df38d66522"
+    },
+    {
+      "path": "scripts/build_provisional_package_pdf.py",
+      "bytes": 35496,
+      "sha256": "42b0389290f4f9c148710a9a9d56a3217c5b5ab50e2c741e3205dfc5b659bf21"
+    },
+    {
+      "path": "scripts/collect_prepared_waxs_machine_environment.py",
+      "bytes": 3906,
+      "sha256": "95d5da81ca8059e1b7f6d88e14b14bc5bcbfdcebceef10e64ba96987cc4677f6"
+    },
+    {
+      "path": "scripts/compare_giwaxs_dwba_speed.py",
+      "bytes": 27049,
+      "sha256": "a6340f24b8ce917a6a033e9d915afabd60e93239ab368294fed280cf9ee019af"
+    },
+    {
+      "path": "scripts/compare_methods.py",
+      "bytes": 9771,
+      "sha256": "ee90fd1acf80029bf2081dca1f621220878f63790a48212caf3bf7a89e6655c4"
+    },
+    {
+      "path": "scripts/convert_aidt_annular_to_contract.py",
+      "bytes": 10799,
+      "sha256": "213d9877bdda8a590e4e2ae40710aee347500b7acafc00004a2a40c0f9d7751f"
+    },
+    {
+      "path": "scripts/convert_odtbrain_hl60_to_contract.py",
+      "bytes": 8374,
+      "sha256": "9720144f5cd21c8636738d67693c8f17c269a08b7ef2050e42654f4ac5fd38db"
+    },
+    {
+      "path": "scripts/demo_high_na_aberration_correction.py",
+      "bytes": 31586,
+      "sha256": "d0ea764c803c118ac5b9d10c5de8ad0b9a62c5e7aa08ad95a2d04fd225dd5608"
+    },
+    {
+      "path": "scripts/demo_high_na_multitrap_phase_mask.py",
+      "bytes": 29815,
+      "sha256": "cf486600d61fdab2e74e799c8d3d59ec43df9c8598f68c24b8c84ae0b51a742e"
+    },
+    {
+      "path": "scripts/demo_high_na_phase_mask_self_consistency.py",
+      "bytes": 29498,
+      "sha256": "51e07254514220d72c3b91be4e8b2f6510c26feb7a85c8476a4d53b20baf2573"
+    },
+    {
+      "path": "scripts/demo_high_na_physical_intensity_shaping.py",
+      "bytes": 31146,
+      "sha256": "b6aabc4f2d17d5278adfcf89f064b7b80d48869138c6d7c70e1a203d8e0d351a"
+    },
+    {
+      "path": "scripts/estimate_odt_256cubed_memory.py",
+      "bytes": 8122,
+      "sha256": "dfc4ce27a59e9eec9bf0accc770a280cbbd80152b53741372d11fafc40c53e3c"
+    },
+    {
+      "path": "scripts/estimate_protein_nanocrystal_waxs_grid.py",
+      "bytes": 6130,
+      "sha256": "6b3154705f89375283c2efe3641ee922595fd2e6152027fcb17437b1086a45d1"
+    },
+    {
+      "path": "scripts/evaluate_high_na_phase_mask_constraints.py",
+      "bytes": 23592,
+      "sha256": "c5ca76974da275f0a2aadd85887f05c27a8cfe2fb4e1df415eb93c0a6880e13f"
+    },
+    {
+      "path": "scripts/export_pymeep_yee_sources.py",
+      "bytes": 7180,
+      "sha256": "051d9e756c26085351d04ca83b22e5e06290a3c254326cb7b31fd7dbf2c59ee6"
+    },
+    {
+      "path": "scripts/generate_openmm_tip3p_water_box.py",
+      "bytes": 13432,
+      "sha256": "2c396cea02c0d76664e3785e63c6f8fc49102ebb1d03c27728db874e6439f519"
+    },
+    {
+      "path": "scripts/inspect_pymeep_source_api.py",
+      "bytes": 995,
+      "sha256": "fe625e74c94b41ce3fd5c94897ba14ae9f94477903f59134bb421b3f69c67933"
+    },
+    {
+      "path": "scripts/make_odt_measured_contract_fixture.py",
+      "bytes": 5515,
+      "sha256": "9d1b211b625f1b0aa4b9e9dd5909485121c3fb16377c72786dbcc03c6fdf2a06"
+    },
+    {
+      "path": "scripts/merge_protein_lattice_finufft_512.py",
+      "bytes": 6213,
+      "sha256": "d35d3e9d149ec4cab4f06c8a7549c5caa6160172df3295ce8023cc8b8741bb77"
+    },
+    {
+      "path": "scripts/optimize_projected_gradient_shape.py",
+      "bytes": 67743,
+      "sha256": "c5aad4dfc901113eff7b31ff4355970b484df96e901170c75086eff4f39848f1"
+    },
+    {
+      "path": "scripts/plot_high_na_external_package_comparison.py",
+      "bytes": 13586,
+      "sha256": "acdf491d6b9bd050b92240f9b6a5498e337d7dc6781c1e4a3ecf21cbdef8be47"
+    },
+    {
+      "path": "scripts/plot_high_na_gpu_comparison.py",
+      "bytes": 13256,
+      "sha256": "378cd5929084dbb8a3c75480104c783343db7eb61a8bda38b1a211d36206e8f8"
+    },
+    {
+      "path": "scripts/plot_high_na_pupil_spectrum_option_matrix.py",
+      "bytes": 9903,
+      "sha256": "a582e0ba713dad9c11166ba43ff2bab59805304ca494f13bba76ec5556f98230"
+    },
+    {
+      "path": "scripts/plot_protein_lattice_highq_threshold_strategy.py",
+      "bytes": 4935,
+      "sha256": "67941c9aea3755551c7e830051428c046b9cb236204e194dcf90d3257e63e57d"
+    },
+    {
+      "path": "scripts/prepare_openmm_water_waxs_inputs.py",
+      "bytes": 14836,
+      "sha256": "e9ce946fc568ce271683e4aa69ab920a28177b3d960bb7734c0f3f5b6a9ff4e0"
+    },
+    {
+      "path": "scripts/prepare_protein_nanocrystal_waxs.py",
+      "bytes": 16953,
+      "sha256": "394b14815fb387a3b3970647931a61b83dbae2dcaf4c66942ba23448cc54bc9c"
+    },
+    {
+      "path": "scripts/prepare_public_waxs_cif_structures.py",
+      "bytes": 18387,
+      "sha256": "805f10917168ee7d03032ec51f5fea91d2732b1c5dd6eb841cc5b8979ac66197"
+    },
+    {
+      "path": "scripts/prepare_public_waxs_structures.py",
+      "bytes": 9037,
+      "sha256": "2edbb1262b283074d3261b0fb0da2692c8870722274efb4d2150285792e903ad"
+    },
+    {
+      "path": "scripts/probe_pymeep_yee_source_export.py",
+      "bytes": 1743,
+      "sha256": "69a9082f99211eeb7b42e80888d8673ea9c8a3e1a5c056555e282d7880646344"
+    },
+    {
+      "path": "scripts/probe_uniaxial_meep_3d_phase.py",
+      "bytes": 13013,
+      "sha256": "8ffa53b55bb3f116de4efb23efaf70ad22c29fc3818b4e3b8946dce98e2674de"
+    },
+    {
+      "path": "scripts/probe_uniaxial_meep_dispersion.py",
+      "bytes": 9345,
+      "sha256": "3c7ed7675d1c8c4801ce65899760ec5844f657251779d905d576f57fae491284"
+    },
+    {
+      "path": "scripts/profile_odt_cone_axis_bottleneck.py",
+      "bytes": 26484,
+      "sha256": "0d73d8a9c7812bd417ac7e0c5081952cc913ac2e4f6092bdd8ef2d84dc679ef6"
+    },
+    {
+      "path": "scripts/profile_odt_cone_axis_execute_only.py",
+      "bytes": 38564,
+      "sha256": "eaab3964d008995d93cbd6139545fd033bfde74a2a0bd97fab9f4a767d8c5e59"
+    },
+    {
+      "path": "scripts/reconstruct_aidt_public_transfer_function.py",
+      "bytes": 24549,
+      "sha256": "c6a7633aa1bdba5468676228a8f5a2b9043c1c714720c279c8443ba290758ca6"
+    },
+    {
+      "path": "scripts/run_acfo_ncs_reduced_release_suite.py",
+      "bytes": 15427,
+      "sha256": "a99e5e91261c23771e07303364d0814f38f16100728207782ddb404975f42b7f"
+    },
+    {
+      "path": "scripts/run_uniaxial_meep_3d_amplitude_gate.py",
+      "bytes": 21707,
+      "sha256": "60de9d9af777ef60f4b4a08b8727fcffa9e6ee7875054078af99f25838f3688c"
+    },
+    {
+      "path": "scripts/run_uniaxial_meep_fullwave.py",
+      "bytes": 17242,
+      "sha256": "f2597ceec279b5ea62e49c36cf5411ebd65840b97eb5b95dd7e8b286e9d71f14"
+    },
+    {
+      "path": "scripts/summarize_acfo_clean_source_rerun.py",
+      "bytes": 3946,
+      "sha256": "15e4f668c5404d02378991e65e2ff782f8e5fe01841fc35490a5cc7709287528"
+    },
+    {
+      "path": "scripts/summarize_acfo_fresh_dependency_rerun.py",
+      "bytes": 3505,
+      "sha256": "17d1e003310f16055fbd0a8e83bc848cb2f68554cfc305793796e100bcd8a94a"
+    },
+    {
+      "path": "scripts/summarize_acfo_validation_program.py",
+      "bytes": 13055,
+      "sha256": "3fbc2c30aed047aadb836c86c5d7395fd2c8f781fc720a3f89580420f8c3d94f"
+    },
+    {
+      "path": "scripts/summarize_exact_beta_contraction_optimization.py",
+      "bytes": 7796,
+      "sha256": "ea3aec628a8a7b1b1b5b61278764931f62ac4bd03afaf3bfdb3095fde133a521"
+    },
+    {
+      "path": "scripts/summarize_odt_128cubed_gate.py",
+      "bytes": 5455,
+      "sha256": "59d23128c95e58c35a8dc51f7ed53d40248ded3ebf5eae2474bbb06cb3f24c24"
+    },
+    {
+      "path": "scripts/summarize_odt_256_streaming.py",
+      "bytes": 10072,
+      "sha256": "dce6f5927c382294d69a8d6aff23a85ba050d775bb49159bfe7304b2caa22637"
+    },
+    {
+      "path": "scripts/summarize_odt_256cubed_memory_gate.py",
+      "bytes": 5826,
+      "sha256": "5b6fe396e12b47fb2f8f4cad5dfe7d497753e7c8cc993413c61a559142470729"
+    },
+    {
+      "path": "scripts/summarize_odt_reconstruction_checkpoints.py",
+      "bytes": 11361,
+      "sha256": "ec108eeb45ff5150bfb1521fbd777cbff8f31e2bb52c72f8da5fe0dc7da18dab"
+    },
+    {
+      "path": "scripts/summarize_odt_regularized_inverse.py",
+      "bytes": 3072,
+      "sha256": "a3cff3a44963079b544cf9da222a7b7c9602f948ca85b9f787142790e8e3cdb3"
+    },
+    {
+      "path": "scripts/summarize_protein_lattice_prepared_abba.py",
+      "bytes": 10226,
+      "sha256": "5862b1787a33b6b53ebfd67230e5134ce788d725cb1dbcb417963ad8f0114a09"
+    },
+    {
+      "path": "scripts/summarize_protein_lattice_q_sampling.py",
+      "bytes": 15415,
+      "sha256": "3d1d833e1281dba9954cf8534ef4fabd45f87a8f8976d5869d607294b3e72907"
+    },
+    {
+      "path": "scripts/summarize_protein_nanocrystal_w3a_gate.py",
+      "bytes": 7078,
+      "sha256": "c1ce3aa6642af47e27dfb7213b2dc59a7f1b0c3a7d53ddbdc5747ca83a42f640"
+    },
+    {
+      "path": "scripts/summarize_pymeep_component_aware_amplitude.py",
+      "bytes": 15127,
+      "sha256": "d7c4225d1f29d11432abe6c69c6920027e0ebfeed86cf5800b822334e1b08675"
+    },
+    {
+      "path": "scripts/summarize_uniaxial_meep_3d_amplitude_asymptotic.py",
+      "bytes": 10095,
+      "sha256": "23a5b9456211f3e55aed94d065fe365f31384632c3f47f8c0f690ce7e5f868e0"
+    },
+    {
+      "path": "scripts/summarize_uniaxial_meep_3d_amplitude_gate.py",
+      "bytes": 6026,
+      "sha256": "4c71fb49f861ba1780c4c4b77ffeae5a883a0a2d0db5b58994c1b31ad293537e"
+    },
+    {
+      "path": "scripts/summarize_uniaxial_meep_3d_phase_gate.py",
+      "bytes": 6795,
+      "sha256": "aa5f42896416f106cdb5f77a9d8960f69d438c970d864d82dc8c26ea82393be2"
+    },
+    {
+      "path": "scripts/summarize_uniaxial_meep_dispersion_highres.py",
+      "bytes": 4072,
+      "sha256": "88a5c4b2f4848e0049ccfc20c6e26aa877392d92deeedb9b0b868d00dc21b468"
+    },
+    {
+      "path": "scripts/summarize_uniaxial_meep_fullwave_gate.py",
+      "bytes": 2850,
+      "sha256": "79934e8efcc130885fd92e0f86b8f04bc7550caf026a8d7e48decbce54e888bb"
+    },
+    {
+      "path": "scripts/summarize_waxs_curvature_isolated.py",
+      "bytes": 8296,
+      "sha256": "131c23dd8afe96e8b134cc8fc7f6ca7ed3bc8706485edaeacbd49e08dd8616e0"
+    },
+    {
+      "path": "scripts/summarize_waxs_detector_aware.py",
+      "bytes": 12311,
+      "sha256": "92103b92357235dc2162622a4897046cc5617d45c827dd530c41156bf03dfb1f"
+    },
+    {
+      "path": "scripts/sweep_high_na_debye_wolf_regimes.py",
+      "bytes": 16975,
+      "sha256": "8fb2c8540c0552aa5df3f56e964839cd5c4b1053afbe3da4f4fd999e0e902558"
+    },
+    {
+      "path": "scripts/sweep_odt_gpu_noise_motion_update_error.py",
+      "bytes": 19473,
+      "sha256": "d50666d9c2e6fd392d0128eed3c32ba022db74e655be1f2cfa53c2f332977f05"
+    },
+    {
+      "path": "scripts/sweep_odt_illumination_transition.py",
+      "bytes": 10428,
+      "sha256": "aec12aaf38aad2097c88fce8f1ba64f8742d88ee1996a888e096b7cdbb938b21"
+    },
+    {
+      "path": "scripts/sweep_odt_pattern_intensity_robustness.py",
+      "bytes": 27930,
+      "sha256": "505302c50dbb26c634f01bbbf79ebbd3f74a95b0a2801bbe66500d7ece1fa151"
+    },
+    {
+      "path": "scripts/sweep_protein_nanocrystal_sparse_accuracy.py",
+      "bytes": 6815,
+      "sha256": "64f2ffdf4a7b54cddd470a8e1ecbe10c0af517f16443cd3e17fc482c7b438bc3"
+    },
+    {
+      "path": "scripts/validate_axisymmetric_adjoint.py",
+      "bytes": 8830,
+      "sha256": "fbf535ff471f9cd8aa2374265dce49a33a5be5945f810c7d45e20eb1df850ca6"
+    },
+    {
+      "path": "scripts/validate_axisymmetric_anisotropic_born.py",
+      "bytes": 15092,
+      "sha256": "bd4061df153f79bb6d4ec57d8c325a39fa76836986edc78b58e1bc9fd149dff7"
+    },
+    {
+      "path": "scripts/validate_axisymmetric_calibration.py",
+      "bytes": 15575,
+      "sha256": "13285cca61ed168a5d411aab090b7961d5ba3482999b330d92a08938ef242d9c"
+    },
+    {
+      "path": "scripts/validate_axisymmetric_gaussian_mixture.py",
+      "bytes": 12320,
+      "sha256": "794dd57ce80009c8e39a0f7dc7fae38ec0cbf55823d845521381662963e176d7"
+    },
+    {
+      "path": "scripts/validate_axisymmetric_harmonic_cutoff.py",
+      "bytes": 14751,
+      "sha256": "43ee268c6796f4b10c69fe31e4347b02d119667c1542405b649a50a54e67492b"
+    },
+    {
+      "path": "scripts/validate_axisymmetric_inverse_reconstruction.py",
+      "bytes": 23064,
+      "sha256": "e4d1bb2266c92c1f38a75a60be39176d4d7e873a39eb7136dbd2db04df93316d"
+    },
+    {
+      "path": "scripts/validate_axisymmetric_manifold_discrete.py",
+      "bytes": 9422,
+      "sha256": "de4c4b82de1161b4af4d888a2fd0425eae3b7efd1bd54859db80fe261a1a70e2"
+    },
+    {
+      "path": "scripts/validate_axisymmetric_pde_extension.py",
+      "bytes": 32668,
+      "sha256": "cab67a5ec7c32675c75e3d6ec2920c62c6800a5c568fb0f6bacdd68d1d1146ad"
+    },
+    {
+      "path": "scripts/validate_external_prepared_waxs_abba.py",
+      "bytes": 7792,
+      "sha256": "0db66d1f806f6fc0869a1ef877514e92cdbb3477eb6455706184f0730c5ad0b7"
+    },
+    {
+      "path": "scripts/validate_high_na_harmonic_support_risk.py",
+      "bytes": 12561,
+      "sha256": "d2c161cb05c088396eabbc2125757af9e2994b024228b9138768fcc9b366ff0c"
+    },
+    {
+      "path": "scripts/validate_high_na_si_correspondence.py",
+      "bytes": 7505,
+      "sha256": "162a98a6ce7311f5398dcf2bcc71aaabe0a0f5d8a639b8377662e1efbe525197"
+    },
+    {
+      "path": "scripts/validate_odt_128cubed_independent_subset.py",
+      "bytes": 10130,
+      "sha256": "ff1e368dc0f1c20b870edefa9a0cc843037b1ff06c0d1ef8a66aa3f69a7364be"
+    },
+    {
+      "path": "scripts/validate_odt_double_manifold.py",
+      "bytes": 18215,
+      "sha256": "c6e8ffc7f14eef39de2a7580ce76f4d61396f8c2c97ac46bcbf905488b5a4709"
+    },
+    {
+      "path": "scripts/validate_odt_measured_contract.py",
+      "bytes": 2990,
+      "sha256": "5ccae6579fbb40fae7c1af33bdc6618397c5389b1a20e302d23934d702edfceb"
+    },
+    {
+      "path": "scripts/validate_protein_nanocrystal_lattice_factorization.py",
+      "bytes": 15500,
+      "sha256": "66a06f939e10e6b21728404e2908bf01cbe2df708024359a549f918692595046"
+    },
+    {
+      "path": "scripts/validate_protein_nanocrystal_sparse_accuracy.py",
+      "bytes": 7818,
+      "sha256": "6024e42f16abdc03a5f737b823da2b3d8e79b07f2e495a676a9ae3a95a8cfd5b"
+    },
+    {
+      "path": "scripts/validate_public_waxs_crystals.py",
+      "bytes": 12779,
+      "sha256": "b1c3c0920201890343e92979955f865b0ac53aecf1711f0a66c894806da28ecc"
+    },
+    {
+      "path": "scripts/validate_public_waxs_structures.py",
+      "bytes": 18481,
+      "sha256": "e307baeb14ea2a376f0989c4b5a37c29343e96297d51d896c043b079fc30aa5e"
+    },
+    {
+      "path": "scripts/validate_tip3p_dense_highq_exact_beta.py",
+      "bytes": 17283,
+      "sha256": "a05bd8668f2317fa36d13c83f2aefda7e36ae8a4b67c0fdfaf9de066f2fd70a1"
+    },
+    {
+      "path": "scripts/validate_uniaxial_green_tensor_residue.py",
+      "bytes": 12587,
+      "sha256": "276b3dbe5aee9bdcf4cdab991caedc4f2603a24dadfbd760749e7486b9aa94e6"
+    },
+    {
+      "path": "scripts/validate_uniaxial_vector_born_direct.py",
+      "bytes": 11117,
+      "sha256": "858e68a653482e9c36133cf36970159aa325946336b2e12d85b0dbbc87a7c9ea"
+    },
+    {
+      "path": "scripts/validate_waxs_direct_finufft_triad.py",
+      "bytes": 10405,
+      "sha256": "6a5a6dc6567db70c60118c329110cf362ef409c94ebc641694e0ea6f8f75a562"
+    },
+    {
+      "path": "scripts/validate_waxs_direct_reference_sweep.py",
+      "bytes": 20617,
+      "sha256": "79752a26ddd5ee24283fd7e750462a4e7f05edc0b282902e6a0df675d7c8c59e"
+    },
+    {
+      "path": "scripts/validate_waxs_exact_beta_harmonic_bridge.py",
+      "bytes": 12395,
+      "sha256": "811f61e958cc230386c421b9df244c79a15fd8b78b0ce0dc4982f501f80734a2"
+    },
+    {
+      "path": "scripts/validate_waxs_source_discretization_convergence.py",
+      "bytes": 11724,
+      "sha256": "016c5aa2c8ea2a6b3d71efdeba76fb11d00b20749d977d9f4e701fa797f91e01"
+    },
+    {
+      "path": "scripts/enable_wsl2_features.ps1",
+      "bytes": 1430,
+      "sha256": "585895872d8008b266f61806e4c4b4682787036a9f15f1e0027da80846a093e7"
+    },
+    {
+      "path": "scripts/resume_pymeep_after_reboot.ps1",
+      "bytes": 792,
+      "sha256": "9d94a7de2f5033f03e3d85a0935a4c8b5fc8386bb3d4a209a7fdadee5e009595"
+    },
+    {
+      "path": "scripts/run_external_prepared_waxs_validation.ps1",
+      "bytes": 4467,
+      "sha256": "4cbe2ab198b11ea4b158b037141c25e69aff5394025900d3f7e67cee2ad6fce0"
+    }
+  ],
+  "limitations": [
+    "A same-machine fresh-dependency receipt is included; this packaging command does not rerun that workflow.",
+    "Independent-machine rerun remains external work.",
+    "Production WAXS and ODT rows are included as immutable evidence and are not rerun by the reduced suite."
+  ],
+  "zip": "docs/ACFO_NCS_validation_release_candidate_2026-07-13_v13.zip",
+  "zip_bytes": 43409817,
+  "zip_sha256": "22e6ba67fb7c2e7ce4848464c401e605f8cf700247bb00212c364beecefd47f9"
+}

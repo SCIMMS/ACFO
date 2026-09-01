@@ -257,7 +257,10 @@ def cufinufft_adjoint(op: CuFinufftComposite, residual_parts: list[Any], *, eps:
 
 
 def synchronize_cupy(cp: Any) -> None:
-    cp.cuda.Stream.null.synchronize()
+    # cuFINUFFT may enqueue setup/execute work on a plan-owned stream.  A
+    # current-stream sync can therefore return while device work is still in
+    # flight and contaminate the next backend's timing.
+    cp.cuda.runtime.deviceSynchronize()
 
 
 def timed_cupy(cp: Any, func, *, repeats: int, warmups: int) -> tuple[Any, float, list[float]]:
@@ -292,6 +295,72 @@ def timed_torch(torch: Any, device: Any, func, *, repeats: int, warmups: int) ->
     if value is None:
         raise RuntimeError("timed torch function did not run")
     return value, float(median(times)), times
+
+
+def timed_alternating_backend_pairs(
+    torch: Any,
+    device: Any,
+    cp: Any,
+    ours_func,
+    cufinufft_func,
+    *,
+    repeats: int,
+    warmups: int,
+) -> tuple[Any, Any, list[float], list[float]]:
+    ours_value = None
+    cufinufft_value = None
+    ours_times: list[float] = []
+    cufinufft_times: list[float] = []
+    total = max(0, warmups) + max(1, repeats)
+    for pair_index in range(total):
+        order = (("ours", ours_func), ("cufinufft", cufinufft_func))
+        if pair_index % 2:
+            order = tuple(reversed(order))
+        for label, func in order:
+            if label == "ours":
+                synchronize(torch, device)
+                start = time.perf_counter()
+                ours_value = func()
+                synchronize(torch, device)
+                elapsed = time.perf_counter() - start
+                if pair_index >= warmups:
+                    ours_times.append(elapsed)
+            else:
+                synchronize_cupy(cp)
+                start = time.perf_counter()
+                cufinufft_value = func()
+                synchronize_cupy(cp)
+                elapsed = time.perf_counter() - start
+                if pair_index >= warmups:
+                    cufinufft_times.append(elapsed)
+        if (pair_index + 1) % 5 == 0 or pair_index + 1 == total:
+            print(f"pair protocol: completed {pair_index + 1}/{total}", flush=True)
+    return ours_value, cufinufft_value, ours_times, cufinufft_times
+
+
+def timing_distribution(times: list[float]) -> dict[str, float | int | None]:
+    if not times:
+        return {
+            "count": 0,
+            "median_s": None,
+            "q1_s": None,
+            "q3_s": None,
+            "min_s": None,
+            "max_s": None,
+            "mean_s": None,
+            "std_s": None,
+        }
+    values = np.asarray(times, dtype=np.float64)
+    return {
+        "count": int(values.size),
+        "median_s": float(np.median(values)),
+        "q1_s": float(np.quantile(values, 0.25)),
+        "q3_s": float(np.quantile(values, 0.75)),
+        "min_s": float(np.min(values)),
+        "max_s": float(np.max(values)),
+        "mean_s": float(np.mean(values)),
+        "std_s": float(np.std(values, ddof=1)) if values.size > 1 else 0.0,
+    }
 
 
 def median_time(func, *, repeats: int, warmups: int) -> tuple[Any, float, list[float]]:
@@ -355,6 +424,7 @@ def write_summary(path: Path, summary: dict[str, Any]) -> None:
         f"- cupy: `{summary['cupy_version']}`",
         f"- cufinufft: `{summary['cufinufft_version']}`",
         f"- dtype: `{summary['dtype']}`",
+        f"- cuFINUFFT dtype: `{summary.get('cufinufft_dtype', summary['dtype'])}`",
         f"- eps: `{summary['eps']}`",
         f"- cuFINUFFT mode: `{summary['cufinufft_plan_mode']}`",
         f"- total q samples: `{summary['total_q_samples']}`",
@@ -362,6 +432,12 @@ def write_summary(path: Path, summary: dict[str, Any]) -> None:
         f"- cap: `{summary['cap_radial']} x {summary['cap_phi']}`",
         f"- total illuminations: `{summary['total_illumination_count']}`",
         f"- axis included: `{summary['axis_illumination_included']}`",
+        f"- axis L=0 pruning: `{summary['prune_axis_l0']}`",
+        f"- axial low-rank requested: `{summary['axial_lowrank_rank_requested']}`",
+        f"- ring/axis L modes: `{summary['ring_l_modes']}` / `{summary['axis_l_modes']}`",
+        f"- ring adaptive-L threshold/active fraction: "
+        f"`{summary['ring_adaptive_l_packed_threshold']}` / "
+        f"`{summary['ring_adaptive_l_active_fraction']:.6f}`",
         "",
         "## Hot Timings",
         "",
@@ -374,6 +450,14 @@ def write_summary(path: Path, summary: dict[str, Any]) -> None:
         f"| cuFINUFFT forward | {1000.0 * summary['cufinufft_forward_s']:.3f} | 1.000x |",
         f"| ours adjoint | {1000.0 * summary['ours_adjoint_s']:.3f} | {summary['cufinufft_adjoint_s'] / summary['ours_adjoint_s']:.3f}x |",
         f"| cuFINUFFT adjoint | {1000.0 * summary['cufinufft_adjoint_s']:.3f} | 1.000x |",
+        "",
+        "## Interleaved forward-adjoint pair",
+        "",
+        f"- protocol: `{summary['pair_timing_protocol']['method_order']}`",
+        f"- measured repeats per backend: `{summary['pair_timing_protocol']['measured_repeats_per_backend']}`",
+        f"- ACFO median: `{1000.0 * summary['ours_forward_adjoint_pair_s']:.3f}` ms",
+        f"- cuFINUFFT median: `{1000.0 * summary['cufinufft_forward_adjoint_pair_s']:.3f}` ms",
+        f"- ACFO speedup: `{summary['ours_speedup_vs_cufinufft_pair']:.3f}x`",
         "",
         "## Accuracy",
         "",
@@ -408,22 +492,57 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
 
     ctx = build_composite_context(args)
     start = time.perf_counter()
-    torch_plan = TorchCompositeOdtPlan.from_context(ctx, torch=torch, device=device, dtype=args.dtype)
-    torch_setup_s = time.perf_counter() - start
-    start = time.perf_counter()
-    cu_op = make_cufinufft_composite(
+    torch_plan = TorchCompositeOdtPlan.from_context(
         ctx,
+        torch=torch,
+        device=device,
         dtype=args.dtype,
-        plan_mode=args.cufinufft_plan_mode,
-        eps=args.cufinufft_eps,
+        low_memory_adjoint=args.low_memory_adjoint,
+        radial_block_size=args.radial_block_size,
+        illumination_block_size=args.illumination_block_size,
+        prune_axis_l0=args.prune_axis_l0,
+        axial_lowrank_rank=args.axial_lowrank_rank,
+        ring_adaptive_l_packed_threshold=args.ring_adaptive_l_packed_threshold,
     )
-    cu_setup_s = time.perf_counter() - start
-    cp = cu_op.cp
+    torch_setup_s = time.perf_counter() - start
 
     _, _, np_complex, _ = torch_dtypes(torch, args.dtype)
     true_coeff_np = np.ascontiguousarray(ctx.ring.obj.coeff.astype(np_complex, copy=False))
     true_coeff_t = torch.as_tensor(true_coeff_np, dtype=torch_plan.complex_dtype, device=device)
-    coeff_gpu = cp.asarray(true_coeff_np.ravel())
+    # Initialize PyTorch FFT/cuBLAS/index kernels before cuFINUFFT creates its
+    # plans.  On Windows, letting cuFINUFFT be the first executable CUDA path
+    # can leave the later packed PyTorch path in a severely degraded context.
+    with torch.inference_mode() if hasattr(torch, "inference_mode") else torch.no_grad():
+        prime_forward_t = torch_plan.forward(true_coeff_t)
+        torch_plan.adjoint(
+            prime_forward_t
+            * complex(args.residual_scale_real, args.residual_scale_imag)
+        )
+        synchronize(torch, device)
+
+    cufinufft_dtype = (
+        args.dtype
+        if getattr(args, "cufinufft_dtype", "same") == "same"
+        else args.cufinufft_dtype
+    )
+    start = time.perf_counter()
+    cu_op = make_cufinufft_composite(
+        ctx,
+        dtype=cufinufft_dtype,
+        plan_mode=args.cufinufft_plan_mode,
+        eps=args.cufinufft_eps,
+    )
+    cp = cu_op.cp
+    synchronize_cupy(cp)
+    cu_setup_s = time.perf_counter() - start
+
+    cu_np_complex = (
+        np.complex64 if cufinufft_dtype == "complex64" else np.complex128
+    )
+    cu_coeff_np = np.ascontiguousarray(
+        true_coeff_np.astype(cu_np_complex, copy=False)
+    )
+    coeff_gpu = cp.asarray(cu_coeff_np.ravel())
 
     with torch.inference_mode() if hasattr(torch, "inference_mode") else torch.no_grad():
         ours_forward_t, ours_forward_s, ours_forward_times = timed_torch(
@@ -443,7 +562,10 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
         )
 
     residual_np = to_numpy(torch, device, residual_t).astype(np_complex, copy=False)
-    ring_residual_np, axis_residual_np = split_residual(ctx, residual_np)
+    cu_residual_np = np.ascontiguousarray(
+        residual_np.astype(cu_np_complex, copy=False)
+    )
+    ring_residual_np, axis_residual_np = split_residual(ctx, cu_residual_np)
     residual_parts_gpu = [cp.asarray(ring_residual_np)]
     if axis_residual_np is not None:
         residual_parts_gpu.append(cp.asarray(axis_residual_np))
@@ -460,6 +582,27 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
         repeats=args.repeats,
         warmups=args.warmups,
     )
+
+    pair_ours_times: list[float] = []
+    pair_cufinufft_times: list[float] = []
+    if args.pair_repeats > 0:
+        _, _, pair_ours_times, pair_cufinufft_times = timed_alternating_backend_pairs(
+            torch,
+            device,
+            cp,
+            lambda: (torch_plan.forward(true_coeff_t), torch_plan.adjoint(residual_t)),
+            lambda: (
+                cufinufft_forward(cu_op, coeff_gpu, eps=args.cufinufft_eps),
+                cufinufft_adjoint(cu_op, residual_parts_gpu, eps=args.cufinufft_eps),
+            ),
+            repeats=args.pair_repeats,
+            warmups=args.pair_warmups,
+        )
+        ours_pair_s = float(median(pair_ours_times))
+        cufinufft_pair_s = float(median(pair_cufinufft_times))
+    else:
+        ours_pair_s = float(ours_forward_s + ours_adjoint_s)
+        cufinufft_pair_s = float(cu_forward_s + cu_adjoint_s)
 
     ours_forward_np = to_numpy(torch, device, ours_forward_t).astype(np.complex128, copy=False)
     ours_adjoint_np = to_numpy(torch, device, ours_adjoint_t).astype(np.complex128, copy=False)
@@ -502,8 +645,32 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
         "cupy_version": getattr(cp, "__version__", None),
         "cufinufft_version": getattr(cu_op.cufinufft, "__version__", None),
         "dtype": args.dtype,
+        "cufinufft_dtype": cufinufft_dtype,
         "eps": float(args.cufinufft_eps),
         "cufinufft_plan_mode": args.cufinufft_plan_mode,
+        "low_memory_adjoint": bool(args.low_memory_adjoint),
+        "radial_block_size": int(args.radial_block_size),
+        "illumination_block_size": int(args.illumination_block_size),
+        "prune_axis_l0": bool(args.prune_axis_l0),
+        "axial_lowrank_rank_requested": int(args.axial_lowrank_rank),
+        "ring_axial_lowrank_rank": int(torch_plan.ring.axial_lowrank_rank),
+        "axis_axial_lowrank_rank": (
+            None
+            if torch_plan.axis is None
+            else int(torch_plan.axis.axial_lowrank_rank)
+        ),
+        "ring_l_modes": int(torch_plan.ring.n_l),
+        "axis_l_modes": (
+            None if torch_plan.axis is None else int(torch_plan.axis.n_l)
+        ),
+        "ring_adaptive_l_packed_threshold": float(
+            args.ring_adaptive_l_packed_threshold
+        ),
+        "ring_adaptive_l_active_fraction": float(
+            torch_plan.ring.adaptive_l_active_fraction
+        ),
+        "skip_native_prepared_adjoint": bool(args.skip_native_prepared_adjoint),
+        "compact_axisymmetric_kernel": bool(args.compact_axisymmetric_kernel),
         "cap_radial": int(args.cap_radial),
         "cap_phi": int(args.cap_phi),
         "ring_illum": int(args.ring_illum),
@@ -519,6 +686,18 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
         "ours_adjoint_s": float(ours_adjoint_s),
         "cufinufft_forward_s": float(cu_forward_s),
         "cufinufft_adjoint_s": float(cu_adjoint_s),
+        "ours_forward_adjoint_pair_s": ours_pair_s,
+        "cufinufft_forward_adjoint_pair_s": cufinufft_pair_s,
+        "ours_speedup_vs_cufinufft_pair": float(cufinufft_pair_s / ours_pair_s),
+        "pair_timing_protocol": {
+            "method_order": "alternating_ab_ba" if args.pair_repeats > 0 else "sum_of_separate_medians",
+            "warmups_per_backend": int(args.pair_warmups),
+            "measured_repeats_per_backend": int(args.pair_repeats),
+            "ours_times_s": pair_ours_times,
+            "cufinufft_times_s": pair_cufinufft_times,
+            "ours_distribution": timing_distribution(pair_ours_times),
+            "cufinufft_distribution": timing_distribution(pair_cufinufft_times),
+        },
         "ours_speedup_vs_cufinufft_forward": float(cu_forward_s / ours_forward_s),
         "ours_speedup_vs_cufinufft_adjoint": float(cu_adjoint_s / ours_adjoint_s),
         "cufinufft_forward_rel_l2_vs_ours": rel_l2(cu_forward_np, ours_forward_np),
@@ -579,6 +758,20 @@ def parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(description="Compare ODT structured GPU operator against cuFINUFFT type-3 GPU baseline.")
     p.add_argument("--device", default="cuda")
     p.add_argument("--dtype", choices=["complex64", "complex128"], default="complex64")
+    p.add_argument(
+        "--cufinufft-dtype",
+        choices=["same", "complex64", "complex128"],
+        default="same",
+        help="cuFINUFFT precision; 'same' preserves the legacy same-dtype protocol.",
+    )
+    p.add_argument("--low-memory-adjoint", action="store_true")
+    p.add_argument("--radial-block-size", type=int, default=0)
+    p.add_argument("--illumination-block-size", type=int, default=0)
+    p.add_argument("--prune-axis-l0", action="store_true")
+    p.add_argument("--axial-lowrank-rank", type=int, default=0)
+    p.add_argument("--ring-adaptive-l-packed-threshold", type=float, default=0.0)
+    p.add_argument("--skip-native-prepared-adjoint", action="store_true")
+    p.add_argument("--compact-axisymmetric-kernel", action="store_true")
     p.add_argument("--n-beta", type=int, default=384)
     p.add_argument("--n-r", type=int, default=16)
     p.add_argument("--n-z", type=int, default=15)
@@ -613,6 +806,8 @@ def parser() -> argparse.ArgumentParser:
     p.add_argument("--cufinufft-plan-mode", choices=["plan", "simple"], default="plan")
     p.add_argument("--repeats", type=int, default=5)
     p.add_argument("--warmups", type=int, default=1)
+    p.add_argument("--pair-repeats", type=int, default=0)
+    p.add_argument("--pair-warmups", type=int, default=0)
     p.add_argument("--include-cpu-finufft", action="store_true")
     p.add_argument("--cpu-repeats", type=int, default=1)
     p.add_argument("--cpu-warmups", type=int, default=0)

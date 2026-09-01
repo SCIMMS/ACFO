@@ -252,6 +252,238 @@ void validate_r_dependent_half_miller_shapes(
     }
 }
 
+void validate_giwaxs_half_miller_shapes(
+    const py::buffer_info& hhat,
+    const py::buffer_info& z_phase,
+    const py::buffer_info& q_perp,
+    const py::buffer_info& q_phi,
+    const py::buffer_info& r_centers,
+    const py::buffer_info& form_factors,
+    const py::buffer_info& cutoffs,
+    std::int64_t n_phi,
+    std::int64_t max_cutoff
+) {
+    if (hhat.ndim != 4) {
+        throw std::invalid_argument("hhat must have shape (n_elements, n_r, n_z, n_modes)");
+    }
+    if (z_phase.ndim != 2) {
+        throw std::invalid_argument("z_phase must have shape (n_q, n_z)");
+    }
+    if (q_perp.ndim != 1) {
+        throw std::invalid_argument("q_perp must have shape (n_q,)");
+    }
+    if (q_phi.ndim != 1) {
+        throw std::invalid_argument("q_phi must have shape (n_q,)");
+    }
+    if (r_centers.ndim != 1) {
+        throw std::invalid_argument("r_centers must have shape (n_r,)");
+    }
+    if (form_factors.ndim != 2) {
+        throw std::invalid_argument("form_factors must have shape (n_elements, n_q)");
+    }
+    if (cutoffs.ndim != 2) {
+        throw std::invalid_argument("cutoffs must have shape (n_q, n_r)");
+    }
+    if (n_phi <= 0) {
+        throw std::invalid_argument("n_phi must be positive");
+    }
+    if (max_cutoff < 0) {
+        throw std::invalid_argument("max_cutoff must be non-negative");
+    }
+    const py::ssize_t n_phi_ss = static_cast<py::ssize_t>(n_phi);
+    const py::ssize_t expected_n_h = static_cast<py::ssize_t>(max_cutoff) + 1;
+    if (hhat.shape[0] != form_factors.shape[0] || hhat.shape[1] != r_centers.shape[0] ||
+        hhat.shape[2] != z_phase.shape[1] || hhat.shape[3] < expected_n_h ||
+        hhat.shape[3] > n_phi_ss || z_phase.shape[0] != q_perp.shape[0] ||
+        z_phase.shape[0] != q_phi.shape[0] || z_phase.shape[0] != form_factors.shape[1] ||
+        cutoffs.shape[0] != z_phase.shape[0] || cutoffs.shape[1] != hhat.shape[1]) {
+        throw std::invalid_argument("inconsistent GIWAXS Miller half-spectrum contraction shapes");
+    }
+    if (max_cutoff >= n_phi_ss / 2) {
+        throw std::invalid_argument("GIWAXS Miller contraction requires max_cutoff < n_phi / 2");
+    }
+}
+
+void validate_giwaxs_qz_reduced_shapes(
+    const py::buffer_info& hhat,
+    const py::buffer_info& z_phase_groups,
+    const py::buffer_info& qz_group,
+    const py::buffer_info& q_perp,
+    const py::buffer_info& q_phi,
+    const py::buffer_info& r_centers,
+    const py::buffer_info& form_factors,
+    const py::buffer_info& cutoffs,
+    const py::buffer_info& group_cutoffs,
+    std::int64_t n_phi,
+    std::int64_t max_cutoff
+) {
+    if (hhat.ndim != 4) {
+        throw std::invalid_argument("hhat must have shape (n_elements, n_r, n_z, n_modes)");
+    }
+    if (z_phase_groups.ndim != 2) {
+        throw std::invalid_argument("z_phase_groups must have shape (n_qz_groups, n_z)");
+    }
+    if (qz_group.ndim != 1) {
+        throw std::invalid_argument("qz_group must have shape (n_q,)");
+    }
+    if (q_perp.ndim != 1) {
+        throw std::invalid_argument("q_perp must have shape (n_q,)");
+    }
+    if (q_phi.ndim != 1) {
+        throw std::invalid_argument("q_phi must have shape (n_q,)");
+    }
+    if (r_centers.ndim != 1) {
+        throw std::invalid_argument("r_centers must have shape (n_r,)");
+    }
+    if (form_factors.ndim != 2) {
+        throw std::invalid_argument("form_factors must have shape (n_elements, n_q)");
+    }
+    if (cutoffs.ndim != 2) {
+        throw std::invalid_argument("cutoffs must have shape (n_q, n_r)");
+    }
+    if (group_cutoffs.ndim != 2) {
+        throw std::invalid_argument("group_cutoffs must have shape (n_qz_groups, n_r)");
+    }
+    if (n_phi <= 0) {
+        throw std::invalid_argument("n_phi must be positive");
+    }
+    if (max_cutoff < 0) {
+        throw std::invalid_argument("max_cutoff must be non-negative");
+    }
+    const py::ssize_t n_phi_ss = static_cast<py::ssize_t>(n_phi);
+    const py::ssize_t expected_n_h = static_cast<py::ssize_t>(max_cutoff) + 1;
+    if (hhat.shape[0] != form_factors.shape[0] || hhat.shape[1] != r_centers.shape[0] ||
+        hhat.shape[2] != z_phase_groups.shape[1] || hhat.shape[3] < expected_n_h ||
+        hhat.shape[3] > n_phi_ss || qz_group.shape[0] != q_perp.shape[0] ||
+        qz_group.shape[0] != q_phi.shape[0] || qz_group.shape[0] != form_factors.shape[1] ||
+        cutoffs.shape[0] != qz_group.shape[0] || cutoffs.shape[1] != hhat.shape[1] ||
+        group_cutoffs.shape[0] != z_phase_groups.shape[0] ||
+        group_cutoffs.shape[1] != hhat.shape[1]) {
+        throw std::invalid_argument("inconsistent GIWAXS qz-reduced contraction shapes");
+    }
+    if (max_cutoff >= n_phi_ss / 2) {
+        throw std::invalid_argument("GIWAXS qz-reduced contraction requires max_cutoff < n_phi / 2");
+    }
+}
+
+void validate_giwaxs_qz_reduced_kernel_shapes(
+    const py::buffer_info& hhat,
+    const py::buffer_info& z_phase_groups,
+    const py::buffer_info& qz_group,
+    const py::buffer_info& kernel_pos,
+    const py::buffer_info& kernel_neg,
+    const py::buffer_info& form_factors,
+    const py::buffer_info& cutoffs,
+    const py::buffer_info& group_cutoffs,
+    std::int64_t max_cutoff
+) {
+    if (hhat.ndim != 4) {
+        throw std::invalid_argument("hhat must have shape (n_elements, n_r, n_z, n_modes)");
+    }
+    if (z_phase_groups.ndim != 2) {
+        throw std::invalid_argument("z_phase_groups must have shape (n_qz_groups, n_z)");
+    }
+    if (qz_group.ndim != 1) {
+        throw std::invalid_argument("qz_group must have shape (n_q,)");
+    }
+    if (kernel_pos.ndim != 3 || kernel_neg.ndim != 3) {
+        throw std::invalid_argument("kernel_pos and kernel_neg must have shape (n_q, n_r, n_h)");
+    }
+    if (form_factors.ndim != 2) {
+        throw std::invalid_argument("form_factors must have shape (n_elements, n_q)");
+    }
+    if (cutoffs.ndim != 2) {
+        throw std::invalid_argument("cutoffs must have shape (n_q, n_r)");
+    }
+    if (group_cutoffs.ndim != 2) {
+        throw std::invalid_argument("group_cutoffs must have shape (n_qz_groups, n_r)");
+    }
+    if (max_cutoff < 0) {
+        throw std::invalid_argument("max_cutoff must be non-negative");
+    }
+    const py::ssize_t expected_n_h = static_cast<py::ssize_t>(max_cutoff) + 1;
+    if (hhat.shape[0] != form_factors.shape[0] ||
+        hhat.shape[1] != kernel_pos.shape[1] ||
+        hhat.shape[2] != z_phase_groups.shape[1] ||
+        hhat.shape[3] < expected_n_h ||
+        qz_group.shape[0] != kernel_pos.shape[0] ||
+        qz_group.shape[0] != form_factors.shape[1] ||
+        cutoffs.shape[0] != qz_group.shape[0] ||
+        cutoffs.shape[1] != hhat.shape[1] ||
+        group_cutoffs.shape[0] != z_phase_groups.shape[0] ||
+        group_cutoffs.shape[1] != hhat.shape[1] ||
+        kernel_pos.shape[0] != kernel_neg.shape[0] ||
+        kernel_pos.shape[1] != kernel_neg.shape[1] ||
+        kernel_pos.shape[2] != kernel_neg.shape[2] ||
+        kernel_pos.shape[2] != expected_n_h) {
+        throw std::invalid_argument("inconsistent GIWAXS precomputed kernel shapes");
+    }
+}
+
+void validate_giwaxs_sparse_profile_qz_shapes(
+    const py::buffer_info& profile_e,
+    const py::buffer_info& profile_r,
+    const py::buffer_info& profile_z,
+    const py::buffer_info& active_hhat,
+    const py::buffer_info& r_profile_starts,
+    const py::buffer_info& r_profile_counts,
+    const py::buffer_info& z_phase_groups,
+    const py::buffer_info& qz_group,
+    const py::buffer_info& q_perp,
+    const py::buffer_info& q_phi,
+    const py::buffer_info& r_centers,
+    const py::buffer_info& form_factors,
+    const py::buffer_info& cutoffs,
+    std::int64_t n_phi,
+    std::int64_t max_cutoff
+) {
+    if (profile_e.ndim != 1 || profile_r.ndim != 1 || profile_z.ndim != 1) {
+        throw std::invalid_argument("profile_e, profile_r, and profile_z must be one-dimensional");
+    }
+    if (active_hhat.ndim != 2) {
+        throw std::invalid_argument("active_hhat must have shape (n_profiles, n_modes)");
+    }
+    if (r_profile_starts.ndim != 1 || r_profile_counts.ndim != 1) {
+        throw std::invalid_argument("r_profile_starts and r_profile_counts must be one-dimensional");
+    }
+    if (z_phase_groups.ndim != 2) {
+        throw std::invalid_argument("z_phase_groups must have shape (n_qz_groups, n_z)");
+    }
+    if (qz_group.ndim != 1 || q_perp.ndim != 1 || q_phi.ndim != 1) {
+        throw std::invalid_argument("qz_group, q_perp, and q_phi must be one-dimensional");
+    }
+    if (r_centers.ndim != 1) {
+        throw std::invalid_argument("r_centers must have shape (n_r,)");
+    }
+    if (form_factors.ndim != 2) {
+        throw std::invalid_argument("form_factors must have shape (n_elements, n_q)");
+    }
+    if (cutoffs.ndim != 2) {
+        throw std::invalid_argument("cutoffs must have shape (n_q, n_r)");
+    }
+    if (n_phi <= 0) {
+        throw std::invalid_argument("n_phi must be positive");
+    }
+    if (max_cutoff < 0) {
+        throw std::invalid_argument("max_cutoff must be non-negative");
+    }
+    const py::ssize_t n_profiles = profile_e.shape[0];
+    const py::ssize_t expected_n_h = static_cast<py::ssize_t>(max_cutoff) + 1;
+    const py::ssize_t n_phi_ss = static_cast<py::ssize_t>(n_phi);
+    if (profile_r.shape[0] != n_profiles || profile_z.shape[0] != n_profiles ||
+        active_hhat.shape[0] != n_profiles || active_hhat.shape[1] < expected_n_h ||
+        active_hhat.shape[1] > n_phi_ss || r_profile_starts.shape[0] != r_centers.shape[0] ||
+        r_profile_counts.shape[0] != r_centers.shape[0] ||
+        qz_group.shape[0] != q_perp.shape[0] || qz_group.shape[0] != q_phi.shape[0] ||
+        qz_group.shape[0] != form_factors.shape[1] || cutoffs.shape[0] != qz_group.shape[0] ||
+        cutoffs.shape[1] != r_centers.shape[0]) {
+        throw std::invalid_argument("inconsistent GIWAXS sparse profile qz-reduced shapes");
+    }
+    if (max_cutoff >= n_phi_ss / 2) {
+        throw std::invalid_argument("GIWAXS sparse profile contraction requires max_cutoff < n_phi / 2");
+    }
+}
+
 void validate_r_dependent_half_z_reduced_shapes(
     const py::buffer_info& z_pos,
     const py::buffer_info& z_neg,
@@ -325,6 +557,75 @@ void validate_sparse_rz_shapes(
     if (z_phase.shape[0] != khat.shape[0] || z_phase.shape[0] != form_factors.shape[1] ||
         active_hhat.shape[1] != khat.shape[2]) {
         throw std::invalid_argument("inconsistent sparse circular contraction shapes");
+    }
+}
+
+void validate_surface_sparse_rz_half_miller_shapes(
+    const py::buffer_info& active_e,
+    const py::buffer_info& active_z,
+    const py::buffer_info& active_hhat,
+    const py::buffer_info& r_profile_starts,
+    const py::buffer_info& r_profile_counts,
+    const py::buffer_info& z_phase,
+    const py::buffer_info& q_perp,
+    const py::buffer_info& q_z,
+    const py::buffer_info& r_centers,
+    const py::buffer_info& form_factors,
+    const py::buffer_info& cutoffs,
+    std::int64_t n_phi,
+    std::int64_t max_cutoff
+) {
+    if (active_e.ndim != 1 || active_z.ndim != 1) {
+        throw std::invalid_argument("active_e and active_z must be one-dimensional");
+    }
+    if (active_hhat.ndim != 3 || active_hhat.shape[0] != 3) {
+        throw std::invalid_argument(
+            "active_hhat must have shape (3, n_active, n_modes)"
+        );
+    }
+    if (r_profile_starts.ndim != 1 || r_profile_counts.ndim != 1) {
+        throw std::invalid_argument(
+            "r_profile_starts and r_profile_counts must be one-dimensional"
+        );
+    }
+    if (z_phase.ndim != 2) {
+        throw std::invalid_argument("z_phase must have shape (n_q, n_z)");
+    }
+    if (q_perp.ndim != 1 || q_z.ndim != 1) {
+        throw std::invalid_argument("q_perp and q_z must have shape (n_q,)");
+    }
+    if (r_centers.ndim != 1) {
+        throw std::invalid_argument("r_centers must have shape (n_r,)");
+    }
+    if (form_factors.ndim != 2) {
+        throw std::invalid_argument("form_factors must have shape (n_elements, n_q)");
+    }
+    if (cutoffs.ndim != 2) {
+        throw std::invalid_argument("cutoffs must have shape (n_q, n_r)");
+    }
+    if (n_phi <= 0 || max_cutoff < 0) {
+        throw std::invalid_argument("n_phi must be positive and max_cutoff non-negative");
+    }
+
+    const py::ssize_t n_active = active_e.shape[0];
+    const py::ssize_t n_q = z_phase.shape[0];
+    const py::ssize_t n_r = r_centers.shape[0];
+    const py::ssize_t expected_n_h = static_cast<py::ssize_t>(max_cutoff) + 1;
+    const py::ssize_t n_phi_ss = static_cast<py::ssize_t>(n_phi);
+    if (active_z.shape[0] != n_active || active_hhat.shape[1] != n_active ||
+        active_hhat.shape[2] < expected_n_h || active_hhat.shape[2] > n_phi_ss ||
+        r_profile_starts.shape[0] != n_r || r_profile_counts.shape[0] != n_r ||
+        q_perp.shape[0] != n_q || q_z.shape[0] != n_q ||
+        form_factors.shape[1] != n_q || cutoffs.shape[0] != n_q ||
+        cutoffs.shape[1] != n_r) {
+        throw std::invalid_argument(
+            "inconsistent surface sparse-RZ half-spectrum Miller shapes"
+        );
+    }
+    if (max_cutoff >= n_phi_ss / 2) {
+        throw std::invalid_argument(
+            "surface sparse-RZ Miller contraction requires max_cutoff < n_phi / 2"
+        );
     }
 }
 
@@ -887,7 +1188,10 @@ void fill_miller_kernel_row(
     if (m < max_cutoff) {
         m = max_cutoff;
     }
-    values.assign(static_cast<std::size_t>(m + 1), 0.0);
+    // Every entry from 0 through m is overwritten by the backward recurrence.
+    // Reusing the existing allocation without zero-filling avoids an O(m)
+    // scratch clear for every source/q pair.
+    values.resize(static_cast<std::size_t>(m + 1));
 
     double b_next = 0.0;
     double b_curr = 1.0;
@@ -920,6 +1224,63 @@ void fill_miller_kernel_row(
     for (py::ssize_t n = 0; n <= max_cutoff; ++n) {
         const double jn = values[static_cast<std::size_t>(n)] * scale;
         row[n] = static_cast<ScalarT>(jn) * i_power<ComplexT>(n);
+    }
+}
+
+void fill_miller_bessel_row(
+    double x,
+    py::ssize_t max_cutoff,
+    py::ssize_t extra_order,
+    double* row,
+    std::vector<double>& values
+) {
+    const py::ssize_t n_h = max_cutoff + 1;
+    constexpr double tiny = 1.0e-300;
+    constexpr double threshold = 1.0e100;
+    constexpr double inv_threshold = 1.0e-100;
+
+    if (std::abs(x) < tiny) {
+        std::fill(row, row + n_h, 0.0);
+        row[0] = 1.0;
+        return;
+    }
+
+    py::ssize_t m = static_cast<py::ssize_t>(std::ceil(std::abs(x))) + extra_order;
+    m = std::max(m, max_cutoff + extra_order);
+    if (m < max_cutoff) {
+        m = max_cutoff;
+    }
+    values.resize(static_cast<std::size_t>(m + 1));
+
+    double b_next = 0.0;
+    double b_curr = 1.0;
+    values[static_cast<std::size_t>(m)] = b_curr;
+    for (py::ssize_t n = m; n > 0; --n) {
+        const double b_prev = (2.0 * static_cast<double>(n) / x) * b_curr - b_next;
+        values[static_cast<std::size_t>(n - 1)] = b_prev;
+        b_next = b_curr;
+        b_curr = b_prev;
+
+        if (std::abs(b_curr) > threshold || std::abs(b_next) > threshold) {
+            for (py::ssize_t k = n - 1; k <= m; ++k) {
+                values[static_cast<std::size_t>(k)] *= inv_threshold;
+            }
+            b_curr *= inv_threshold;
+            b_next *= inv_threshold;
+        }
+    }
+
+    double denom = values[0];
+    for (py::ssize_t n = 2; n <= m; n += 2) {
+        denom += 2.0 * values[static_cast<std::size_t>(n)];
+    }
+    if (denom == 0.0 || !std::isfinite(denom)) {
+        std::fill(row, row + n_h, 0.0);
+        return;
+    }
+    const double scale = 1.0 / denom;
+    for (py::ssize_t n = 0; n <= max_cutoff; ++n) {
+        row[n] = values[static_cast<std::size_t>(n)] * scale;
     }
 }
 
@@ -1114,6 +1475,623 @@ void r_dependent_half_modes_miller_worker(
                     out_row[h] += coeff * ComplexT{pos_re[h], pos_im[h]};
                     out_row[n_phi - h] += coeff * ComplexT{neg_re[h], neg_im[h]};
                 }
+            }
+        }
+    }
+}
+
+template <typename ComplexT>
+void surface_sparse_rz_half_modes_miller_worker(
+    const std::int64_t* active_e,
+    const std::int64_t* active_z,
+    const ComplexT* active_hhat,
+    const std::int64_t* r_profile_starts,
+    const std::int64_t* r_profile_counts,
+    const ComplexT* z_phase,
+    const double* q_perp,
+    const double* q_z,
+    const double* r_centers,
+    const ComplexT* form_factors,
+    const std::int64_t* cutoffs,
+    ComplexT* out,
+    py::ssize_t n_elements,
+    py::ssize_t n_q,
+    py::ssize_t n_active,
+    py::ssize_t n_r,
+    py::ssize_t n_z,
+    py::ssize_t n_phi,
+    py::ssize_t n_hhat,
+    py::ssize_t max_cutoff,
+    py::ssize_t extra_order,
+    double phi_offset,
+    py::ssize_t begin,
+    py::ssize_t end
+) {
+    using ScalarT = typename ComplexT::value_type;
+    std::vector<ComplexT> kernel(static_cast<std::size_t>(max_cutoff + 1));
+    std::vector<double> miller_values;
+    std::vector<ComplexT> fx(static_cast<std::size_t>(n_phi));
+    std::vector<ComplexT> fy(static_cast<std::size_t>(n_phi));
+    std::vector<ComplexT> fz(static_cast<std::size_t>(n_phi));
+    const ComplexT phi_plus{
+        static_cast<ScalarT>(std::cos(phi_offset)),
+        static_cast<ScalarT>(std::sin(phi_offset))
+    };
+    const ComplexT phi_minus = std::conj(phi_plus);
+
+    for (py::ssize_t b = begin; b < end; ++b) {
+        std::fill(fx.begin(), fx.end(), ComplexT{});
+        std::fill(fy.begin(), fy.end(), ComplexT{});
+        std::fill(fz.begin(), fz.end(), ComplexT{});
+        const ComplexT* phase_row = z_phase + b * n_z;
+
+        for (py::ssize_t r = 0; r < n_r; ++r) {
+            const py::ssize_t count = static_cast<py::ssize_t>(r_profile_counts[r]);
+            if (count <= 0) {
+                continue;
+            }
+            py::ssize_t cutoff = static_cast<py::ssize_t>(cutoffs[b * n_r + r]);
+            if (cutoff < 0) {
+                continue;
+            }
+            if (cutoff > max_cutoff) {
+                cutoff = max_cutoff;
+            }
+            fill_miller_kernel_row<ComplexT>(
+                q_perp[b] * r_centers[r],
+                n_phi,
+                cutoff,
+                extra_order,
+                kernel.data(),
+                miller_values
+            );
+
+            const py::ssize_t start = static_cast<py::ssize_t>(r_profile_starts[r]);
+            const py::ssize_t stop = start + count;
+            for (py::ssize_t c = start; c < stop; ++c) {
+                const py::ssize_t e = static_cast<py::ssize_t>(active_e[c]);
+                const py::ssize_t z = static_cast<py::ssize_t>(active_z[c]);
+                const ComplexT coeff = phase_row[z] * form_factors[e * n_q + b];
+                if (coeff == ComplexT{}) {
+                    continue;
+                }
+                const ComplexT* hx = active_hhat + c * n_hhat;
+                const ComplexT* hy = active_hhat + (n_active + c) * n_hhat;
+                const ComplexT* hz = active_hhat + (2 * n_active + c) * n_hhat;
+
+                const ComplexT coeff0 = coeff * kernel[0];
+                fx[0] += coeff0 * hx[0];
+                fy[0] += coeff0 * hy[0];
+                fz[0] += coeff0 * hz[0];
+                WAXS_IVDEP
+                for (py::ssize_t h = 1; h <= cutoff; ++h) {
+                    const ComplexT harmonic_coeff = coeff * kernel[h];
+                    fx[h] += harmonic_coeff * hx[h];
+                    fy[h] += harmonic_coeff * hy[h];
+                    fz[h] += harmonic_coeff * hz[h];
+                    fx[n_phi - h] += harmonic_coeff * std::conj(hx[h]);
+                    fy[n_phi - h] += harmonic_coeff * std::conj(hy[h]);
+                    fz[n_phi - h] += harmonic_coeff * std::conj(hz[h]);
+                }
+            }
+        }
+
+        ComplexT* out_row = out + b * n_phi;
+        const ScalarT qp = static_cast<ScalarT>(q_perp[b]);
+        const ScalarT qz = static_cast<ScalarT>(q_z[b]);
+        const ScalarT q_norm2 = qp * qp + qz * qz;
+        if (q_norm2 <= static_cast<ScalarT>(0)) {
+            std::fill(out_row, out_row + n_phi, ComplexT{});
+            continue;
+        }
+        const ComplexT inv_i_q_norm2{
+            static_cast<ScalarT>(0),
+            static_cast<ScalarT>(-1) / q_norm2
+        };
+        const ComplexT sin_scale{
+            static_cast<ScalarT>(0),
+            static_cast<ScalarT>(-0.5) * qp
+        };
+        const ScalarT cos_scale = static_cast<ScalarT>(0.5) * qp;
+        for (py::ssize_t h = 0; h < n_phi; ++h) {
+            const py::ssize_t previous = h == 0 ? n_phi - 1 : h - 1;
+            const py::ssize_t next = h + 1 == n_phi ? 0 : h + 1;
+            const ComplexT fx_previous = phi_plus * fx[previous];
+            const ComplexT fx_next = phi_minus * fx[next];
+            const ComplexT fy_previous = phi_plus * fy[previous];
+            const ComplexT fy_next = phi_minus * fy[next];
+            const ComplexT numerator =
+                cos_scale * (fx_previous + fx_next)
+                + sin_scale * (fy_previous - fy_next)
+                + qz * fz[h];
+            out_row[h] = inv_i_q_norm2 * numerator;
+        }
+    }
+}
+
+template <typename ComplexT>
+void giwaxs_half_modes_miller_worker(
+    const ComplexT* hhat,
+    const ComplexT* z_phase,
+    const double* q_perp,
+    const double* q_phi,
+    const double* r_centers,
+    const ComplexT* form_factors,
+    const std::int64_t* cutoffs,
+    ComplexT* out,
+    py::ssize_t n_elements,
+    py::ssize_t n_q,
+    py::ssize_t n_r,
+    py::ssize_t n_z,
+    py::ssize_t n_phi,
+    py::ssize_t n_hhat,
+    py::ssize_t max_cutoff,
+    py::ssize_t extra_order,
+    py::ssize_t begin,
+    py::ssize_t end
+) {
+    using ScalarT = typename ComplexT::value_type;
+    const ScalarT inv_n_phi =
+        static_cast<ScalarT>(1) / static_cast<ScalarT>(n_phi);
+    std::vector<ComplexT> kernel(static_cast<std::size_t>(max_cutoff + 1));
+    std::vector<double> miller_values;
+    std::vector<ScalarT> angular_re(static_cast<std::size_t>(max_cutoff + 1));
+    std::vector<ScalarT> angular_im(static_cast<std::size_t>(max_cutoff + 1));
+    std::vector<ScalarT> zsum_pos_re(static_cast<std::size_t>(max_cutoff + 1));
+    std::vector<ScalarT> zsum_pos_im(static_cast<std::size_t>(max_cutoff + 1));
+    std::vector<ScalarT> zsum_neg_re(static_cast<std::size_t>(max_cutoff + 1));
+    std::vector<ScalarT> zsum_neg_im(static_cast<std::size_t>(max_cutoff + 1));
+    ScalarT* const ang_re = angular_re.data();
+    ScalarT* const ang_im = angular_im.data();
+    ScalarT* const pos_re = zsum_pos_re.data();
+    ScalarT* const pos_im = zsum_pos_im.data();
+    ScalarT* const neg_re = zsum_neg_re.data();
+    ScalarT* const neg_im = zsum_neg_im.data();
+
+    for (py::ssize_t b = begin; b < end; ++b) {
+        const ScalarT base_re = static_cast<ScalarT>(std::cos(q_phi[b]));
+        const ScalarT base_im = static_cast<ScalarT>(std::sin(q_phi[b]));
+        ang_re[0] = static_cast<ScalarT>(1);
+        ang_im[0] = static_cast<ScalarT>(0);
+        for (py::ssize_t h = 1; h <= max_cutoff; ++h) {
+            const ScalarT prev_re = ang_re[h - 1];
+            const ScalarT prev_im = ang_im[h - 1];
+            ang_re[h] = prev_re * base_re - prev_im * base_im;
+            ang_im[h] = prev_re * base_im + prev_im * base_re;
+        }
+
+        ComplexT acc{};
+        const ComplexT* phase_row = z_phase + b * n_z;
+
+        for (py::ssize_t r = 0; r < n_r; ++r) {
+            py::ssize_t cutoff = static_cast<py::ssize_t>(cutoffs[b * n_r + r]);
+            if (cutoff < 0) {
+                continue;
+            }
+            if (cutoff > max_cutoff) {
+                cutoff = max_cutoff;
+            }
+
+            fill_miller_kernel_row<ComplexT>(
+                q_perp[b] * r_centers[r],
+                n_phi,
+                cutoff,
+                extra_order,
+                kernel.data(),
+                miller_values
+            );
+            const std::size_t n_active_h = static_cast<std::size_t>(cutoff + 1);
+
+            for (py::ssize_t e = 0; e < n_elements; ++e) {
+                const ComplexT ff = form_factors[e * n_q + b];
+                if (ff == ComplexT{}) {
+                    continue;
+                }
+
+                std::fill_n(pos_re, n_active_h, ScalarT{});
+                std::fill_n(pos_im, n_active_h, ScalarT{});
+                std::fill_n(neg_re, n_active_h, ScalarT{});
+                std::fill_n(neg_im, n_active_h, ScalarT{});
+
+                for (py::ssize_t z = 0; z < n_z; ++z) {
+                    const ComplexT phase = phase_row[z];
+                    const ScalarT pr = phase.real();
+                    const ScalarT pi = phase.imag();
+                    const ComplexT* hhat_row =
+                        hhat + (((e * n_r + r) * n_z + z) * n_hhat);
+                    const ComplexT h0 = hhat_row[0];
+                    pos_re[0] += pr * h0.real() - pi * h0.imag();
+                    pos_im[0] += pr * h0.imag() + pi * h0.real();
+                    WAXS_IVDEP
+                    for (py::ssize_t h = 1; h <= cutoff; ++h) {
+                        const ComplexT value = hhat_row[h];
+                        const ScalarT vr = value.real();
+                        const ScalarT vi = value.imag();
+                        const ScalarT pr_vr = pr * vr;
+                        const ScalarT pi_vi = pi * vi;
+                        const ScalarT pr_vi = pr * vi;
+                        const ScalarT pi_vr = pi * vr;
+                        pos_re[h] += pr_vr - pi_vi;
+                        pos_im[h] += pr_vi + pi_vr;
+                        neg_re[h] += pr_vr + pi_vi;
+                        neg_im[h] += pi_vr - pr_vi;
+                    }
+                }
+
+                ComplexT coeff = ff * (kernel[0] * inv_n_phi);
+                acc += coeff * ComplexT{pos_re[0], pos_im[0]};
+                WAXS_IVDEP
+                for (py::ssize_t h = 1; h <= cutoff; ++h) {
+                    coeff = ff * (kernel[h] * inv_n_phi);
+                    const ComplexT angular{ang_re[h], ang_im[h]};
+                    const ComplexT pos{pos_re[h], pos_im[h]};
+                    const ComplexT neg{neg_re[h], neg_im[h]};
+                    acc += coeff * (pos * angular + neg * std::conj(angular));
+                }
+            }
+        }
+
+        out[b] = acc;
+    }
+}
+
+template <typename ComplexT>
+void giwaxs_z_reduce_half_modes_worker(
+    const ComplexT* hhat,
+    const ComplexT* z_phase_groups,
+    const std::int64_t* group_cutoffs,
+    ComplexT* z_pos,
+    ComplexT* z_neg,
+    py::ssize_t n_elements,
+    py::ssize_t n_groups,
+    py::ssize_t n_r,
+    py::ssize_t n_z,
+    py::ssize_t n_hhat,
+    py::ssize_t max_cutoff,
+    py::ssize_t begin,
+    py::ssize_t end
+) {
+    using ScalarT = typename ComplexT::value_type;
+    const py::ssize_t n_h = max_cutoff + 1;
+    const py::ssize_t tasks_per_group = n_elements * n_r;
+
+    for (py::ssize_t task = begin; task < end; ++task) {
+        const py::ssize_t g = task / tasks_per_group;
+        const py::ssize_t rem = task - g * tasks_per_group;
+        const py::ssize_t e = rem / n_r;
+        const py::ssize_t r = rem - e * n_r;
+
+        ComplexT* pos_row = z_pos + (((g * n_elements + e) * n_r + r) * n_h);
+        ComplexT* neg_row = z_neg + (((g * n_elements + e) * n_r + r) * n_h);
+        std::fill(pos_row, pos_row + n_h, ComplexT{});
+        std::fill(neg_row, neg_row + n_h, ComplexT{});
+
+        py::ssize_t cutoff = static_cast<py::ssize_t>(group_cutoffs[g * n_r + r]);
+        if (cutoff < 0) {
+            continue;
+        }
+        if (cutoff > max_cutoff) {
+            cutoff = max_cutoff;
+        }
+
+        const ComplexT* phase_row = z_phase_groups + g * n_z;
+        for (py::ssize_t z = 0; z < n_z; ++z) {
+            const ComplexT phase = phase_row[z];
+            const ScalarT pr = phase.real();
+            const ScalarT pi = phase.imag();
+            const ComplexT* hhat_row =
+                hhat + (((e * n_r + r) * n_z + z) * n_hhat);
+            const ComplexT h0 = hhat_row[0];
+            pos_row[0] += phase * h0;
+            WAXS_IVDEP
+            for (py::ssize_t h = 1; h <= cutoff; ++h) {
+                const ComplexT value = hhat_row[h];
+                const ScalarT vr = value.real();
+                const ScalarT vi = value.imag();
+                const ScalarT pr_vr = pr * vr;
+                const ScalarT pi_vi = pi * vi;
+                const ScalarT pr_vi = pr * vi;
+                const ScalarT pi_vr = pi * vr;
+                pos_row[h] += ComplexT{pr_vr - pi_vi, pr_vi + pi_vr};
+                neg_row[h] += ComplexT{pr_vr + pi_vi, pi_vr - pr_vi};
+            }
+        }
+    }
+}
+
+template <typename ComplexT>
+void giwaxs_qz_reduced_miller_contract_worker(
+    const ComplexT* z_pos,
+    const ComplexT* z_neg,
+    const std::int64_t* qz_group,
+    const double* q_perp,
+    const double* q_phi,
+    const double* r_centers,
+    const ComplexT* form_factors,
+    const std::int64_t* cutoffs,
+    ComplexT* out,
+    py::ssize_t n_elements,
+    py::ssize_t n_q,
+    py::ssize_t n_r,
+    py::ssize_t n_phi,
+    py::ssize_t max_cutoff,
+    py::ssize_t extra_order,
+    py::ssize_t begin,
+    py::ssize_t end
+) {
+    using ScalarT = typename ComplexT::value_type;
+    const py::ssize_t n_h = max_cutoff + 1;
+    const ScalarT inv_n_phi =
+        static_cast<ScalarT>(1) / static_cast<ScalarT>(n_phi);
+    std::vector<ComplexT> kernel(static_cast<std::size_t>(max_cutoff + 1));
+    std::vector<double> miller_values;
+    std::vector<ScalarT> angular_re(static_cast<std::size_t>(max_cutoff + 1));
+    std::vector<ScalarT> angular_im(static_cast<std::size_t>(max_cutoff + 1));
+    ScalarT* const ang_re = angular_re.data();
+    ScalarT* const ang_im = angular_im.data();
+
+    for (py::ssize_t b = begin; b < end; ++b) {
+        const py::ssize_t g = static_cast<py::ssize_t>(qz_group[b]);
+        const ScalarT base_re = static_cast<ScalarT>(std::cos(q_phi[b]));
+        const ScalarT base_im = static_cast<ScalarT>(std::sin(q_phi[b]));
+        ang_re[0] = static_cast<ScalarT>(1);
+        ang_im[0] = static_cast<ScalarT>(0);
+        for (py::ssize_t h = 1; h <= max_cutoff; ++h) {
+            const ScalarT prev_re = ang_re[h - 1];
+            const ScalarT prev_im = ang_im[h - 1];
+            ang_re[h] = prev_re * base_re - prev_im * base_im;
+            ang_im[h] = prev_re * base_im + prev_im * base_re;
+        }
+
+        ComplexT acc{};
+        for (py::ssize_t r = 0; r < n_r; ++r) {
+            py::ssize_t cutoff = static_cast<py::ssize_t>(cutoffs[b * n_r + r]);
+            if (cutoff < 0) {
+                continue;
+            }
+            if (cutoff > max_cutoff) {
+                cutoff = max_cutoff;
+            }
+
+            fill_miller_kernel_row<ComplexT>(
+                q_perp[b] * r_centers[r],
+                n_phi,
+                cutoff,
+                extra_order,
+                kernel.data(),
+                miller_values
+            );
+
+            for (py::ssize_t e = 0; e < n_elements; ++e) {
+                const ComplexT ff = form_factors[e * n_q + b];
+                if (ff == ComplexT{}) {
+                    continue;
+                }
+                const ComplexT* pos_row =
+                    z_pos + (((g * n_elements + e) * n_r + r) * n_h);
+                const ComplexT* neg_row =
+                    z_neg + (((g * n_elements + e) * n_r + r) * n_h);
+
+                ComplexT coeff = ff * (kernel[0] * inv_n_phi);
+                acc += coeff * pos_row[0];
+                WAXS_IVDEP
+                for (py::ssize_t h = 1; h <= cutoff; ++h) {
+                    coeff = ff * (kernel[h] * inv_n_phi);
+                    const ComplexT angular{ang_re[h], ang_im[h]};
+                    acc += coeff * (pos_row[h] * angular + neg_row[h] * std::conj(angular));
+                }
+            }
+        }
+        out[b] = acc;
+    }
+}
+
+template <typename ComplexT>
+void giwaxs_qz_reduced_kernel_contract_worker(
+    const ComplexT* z_pos,
+    const ComplexT* z_neg,
+    const std::int64_t* qz_group,
+    const ComplexT* kernel_pos,
+    const ComplexT* kernel_neg,
+    const ComplexT* form_factors,
+    const std::int64_t* cutoffs,
+    ComplexT* out,
+    py::ssize_t n_elements,
+    py::ssize_t n_q,
+    py::ssize_t n_r,
+    py::ssize_t max_cutoff,
+    py::ssize_t begin,
+    py::ssize_t end
+) {
+    const py::ssize_t n_h = max_cutoff + 1;
+    for (py::ssize_t b = begin; b < end; ++b) {
+        const py::ssize_t g = static_cast<py::ssize_t>(qz_group[b]);
+        ComplexT acc{};
+        for (py::ssize_t r = 0; r < n_r; ++r) {
+            py::ssize_t cutoff = static_cast<py::ssize_t>(cutoffs[b * n_r + r]);
+            if (cutoff < 0) {
+                continue;
+            }
+            if (cutoff > max_cutoff) {
+                cutoff = max_cutoff;
+            }
+            const ComplexT* kpos_row = kernel_pos + ((b * n_r + r) * n_h);
+            const ComplexT* kneg_row = kernel_neg + ((b * n_r + r) * n_h);
+            for (py::ssize_t e = 0; e < n_elements; ++e) {
+                const ComplexT ff = form_factors[e * n_q + b];
+                if (ff == ComplexT{}) {
+                    continue;
+                }
+                const ComplexT* pos_row =
+                    z_pos + (((g * n_elements + e) * n_r + r) * n_h);
+                const ComplexT* neg_row =
+                    z_neg + (((g * n_elements + e) * n_r + r) * n_h);
+                acc += ff * pos_row[0] * kpos_row[0];
+                WAXS_IVDEP
+                for (py::ssize_t h = 1; h <= cutoff; ++h) {
+                    acc += ff * (pos_row[h] * kpos_row[h] + neg_row[h] * kneg_row[h]);
+                }
+            }
+        }
+        out[b] = acc;
+    }
+}
+
+template <typename ComplexT>
+void giwaxs_sparse_profile_qz_miller_worker(
+    const std::int64_t* profile_e,
+    const std::int64_t* profile_z,
+    const ComplexT* active_hhat,
+    const std::int64_t* r_profile_starts,
+    const std::int64_t* r_profile_counts,
+    const ComplexT* z_phase_groups,
+    const std::int64_t* qz_group,
+    const double* q_perp,
+    const double* q_phi,
+    const double* r_centers,
+    const ComplexT* form_factors,
+    const std::int64_t* cutoffs,
+    ComplexT* out,
+    py::ssize_t n_elements,
+    py::ssize_t n_q,
+    py::ssize_t n_r,
+    py::ssize_t n_z,
+    py::ssize_t n_phi,
+    py::ssize_t n_hhat,
+    py::ssize_t max_cutoff,
+    py::ssize_t extra_order,
+    py::ssize_t begin,
+    py::ssize_t end
+) {
+    using ScalarT = typename ComplexT::value_type;
+    const ScalarT inv_n_phi =
+        static_cast<ScalarT>(1) / static_cast<ScalarT>(n_phi);
+    std::vector<ComplexT> kernel(static_cast<std::size_t>(max_cutoff + 1));
+    std::vector<double> miller_values;
+    std::vector<ScalarT> angular_re(static_cast<std::size_t>(max_cutoff + 1));
+    std::vector<ScalarT> angular_im(static_cast<std::size_t>(max_cutoff + 1));
+    ScalarT* const ang_re = angular_re.data();
+    ScalarT* const ang_im = angular_im.data();
+
+    for (py::ssize_t b = begin; b < end; ++b) {
+        const py::ssize_t g = static_cast<py::ssize_t>(qz_group[b]);
+        const ComplexT* phase_row = z_phase_groups + g * n_z;
+        const ScalarT base_re = static_cast<ScalarT>(std::cos(q_phi[b]));
+        const ScalarT base_im = static_cast<ScalarT>(std::sin(q_phi[b]));
+        ang_re[0] = static_cast<ScalarT>(1);
+        ang_im[0] = static_cast<ScalarT>(0);
+        for (py::ssize_t h = 1; h <= max_cutoff; ++h) {
+            const ScalarT prev_re = ang_re[h - 1];
+            const ScalarT prev_im = ang_im[h - 1];
+            ang_re[h] = prev_re * base_re - prev_im * base_im;
+            ang_im[h] = prev_re * base_im + prev_im * base_re;
+        }
+
+        ComplexT acc{};
+        for (py::ssize_t r = 0; r < n_r; ++r) {
+            py::ssize_t cutoff = static_cast<py::ssize_t>(cutoffs[b * n_r + r]);
+            if (cutoff < 0) {
+                continue;
+            }
+            if (cutoff > max_cutoff) {
+                cutoff = max_cutoff;
+            }
+
+            const py::ssize_t start = static_cast<py::ssize_t>(r_profile_starts[r]);
+            const py::ssize_t count = static_cast<py::ssize_t>(r_profile_counts[r]);
+            if (count <= 0) {
+                continue;
+            }
+
+            fill_miller_kernel_row<ComplexT>(
+                q_perp[b] * r_centers[r],
+                n_phi,
+                cutoff,
+                extra_order,
+                kernel.data(),
+                miller_values
+            );
+
+            for (py::ssize_t local_p = 0; local_p < count; ++local_p) {
+                const py::ssize_t p = start + local_p;
+                const py::ssize_t e = static_cast<py::ssize_t>(profile_e[p]);
+                const py::ssize_t z = static_cast<py::ssize_t>(profile_z[p]);
+                const ComplexT ff = form_factors[e * n_q + b];
+                if (ff == ComplexT{}) {
+                    continue;
+                }
+                const ComplexT phase = phase_row[z];
+                const ComplexT* hhat_row = active_hhat + p * n_hhat;
+                ComplexT coeff = ff * (kernel[0] * inv_n_phi);
+                acc += coeff * (phase * hhat_row[0]);
+                WAXS_IVDEP
+                for (py::ssize_t h = 1; h <= cutoff; ++h) {
+                    coeff = ff * (kernel[h] * inv_n_phi);
+                    const ComplexT angular{ang_re[h], ang_im[h]};
+                    const ComplexT value = hhat_row[h];
+                    const ComplexT pos = phase * value;
+                    const ComplexT neg = phase * std::conj(value);
+                    acc += coeff * (pos * angular + neg * std::conj(angular));
+                }
+            }
+        }
+        out[b] = acc;
+    }
+}
+
+template <typename ComplexT>
+void giwaxs_sparse_profile_z_reduce_worker(
+    const std::int64_t* profile_e,
+    const std::int64_t* profile_z,
+    const ComplexT* active_hhat,
+    const std::int64_t* r_profile_starts,
+    const std::int64_t* r_profile_counts,
+    const ComplexT* z_phase_groups,
+    ComplexT* z_pos,
+    ComplexT* z_neg,
+    py::ssize_t n_elements,
+    py::ssize_t n_groups,
+    py::ssize_t n_r,
+    py::ssize_t n_z,
+    py::ssize_t n_hhat,
+    py::ssize_t max_cutoff,
+    py::ssize_t begin,
+    py::ssize_t end
+) {
+    const py::ssize_t n_h = max_cutoff + 1;
+    const py::ssize_t tasks_per_group = n_elements * n_r;
+
+    for (py::ssize_t task = begin; task < end; ++task) {
+        const py::ssize_t g = task / tasks_per_group;
+        const py::ssize_t rem = task - g * tasks_per_group;
+        const py::ssize_t e = rem / n_r;
+        const py::ssize_t r = rem - e * n_r;
+
+        ComplexT* pos_row = z_pos + (((g * n_elements + e) * n_r + r) * n_h);
+        ComplexT* neg_row = z_neg + (((g * n_elements + e) * n_r + r) * n_h);
+        std::fill(pos_row, pos_row + n_h, ComplexT{});
+        std::fill(neg_row, neg_row + n_h, ComplexT{});
+
+        const py::ssize_t start = static_cast<py::ssize_t>(r_profile_starts[r]);
+        const py::ssize_t count = static_cast<py::ssize_t>(r_profile_counts[r]);
+        if (count <= 0) {
+            continue;
+        }
+        const ComplexT* phase_row = z_phase_groups + g * n_z;
+        for (py::ssize_t local_p = 0; local_p < count; ++local_p) {
+            const py::ssize_t p = start + local_p;
+            if (static_cast<py::ssize_t>(profile_e[p]) != e) {
+                continue;
+            }
+            const py::ssize_t z = static_cast<py::ssize_t>(profile_z[p]);
+            const ComplexT phase = phase_row[z];
+            const ComplexT* hhat_row = active_hhat + p * n_hhat;
+            pos_row[0] += phase * hhat_row[0];
+            WAXS_IVDEP
+            for (py::ssize_t h = 1; h <= max_cutoff; ++h) {
+                const ComplexT value = hhat_row[h];
+                pos_row[h] += phase * value;
+                neg_row[h] += phase * std::conj(value);
             }
         }
     }
@@ -2222,6 +3200,831 @@ Complex64Array circular_contract_r_dependent_half_modes_miller64(
 }
 
 template <typename ComplexT>
+TypedComplexArray<ComplexT> surface_normal_sparse_rz_half_modes_miller_impl(
+    py::array_t<std::int64_t, py::array::c_style | py::array::forcecast> active_e,
+    py::array_t<std::int64_t, py::array::c_style | py::array::forcecast> active_z,
+    TypedComplexArray<ComplexT> active_hhat,
+    py::array_t<std::int64_t, py::array::c_style | py::array::forcecast> r_profile_starts,
+    py::array_t<std::int64_t, py::array::c_style | py::array::forcecast> r_profile_counts,
+    TypedComplexArray<ComplexT> z_phase,
+    py::array_t<double, py::array::c_style | py::array::forcecast> q_perp,
+    py::array_t<double, py::array::c_style | py::array::forcecast> q_z,
+    py::array_t<double, py::array::c_style | py::array::forcecast> r_centers,
+    TypedComplexArray<ComplexT> form_factors,
+    py::array_t<std::int64_t, py::array::c_style | py::array::forcecast> cutoffs,
+    std::int64_t n_phi,
+    std::int64_t max_cutoff,
+    std::int64_t extra_order,
+    double phi_offset
+) {
+    const py::buffer_info e_info = active_e.request();
+    const py::buffer_info z_info = active_z.request();
+    const py::buffer_info hhat_info = active_hhat.request();
+    const py::buffer_info start_info = r_profile_starts.request();
+    const py::buffer_info count_info = r_profile_counts.request();
+    const py::buffer_info z_phase_info = z_phase.request();
+    const py::buffer_info q_perp_info = q_perp.request();
+    const py::buffer_info q_z_info = q_z.request();
+    const py::buffer_info r_info = r_centers.request();
+    const py::buffer_info ff_info = form_factors.request();
+    const py::buffer_info cutoff_info = cutoffs.request();
+    validate_surface_sparse_rz_half_miller_shapes(
+        e_info,
+        z_info,
+        hhat_info,
+        start_info,
+        count_info,
+        z_phase_info,
+        q_perp_info,
+        q_z_info,
+        r_info,
+        ff_info,
+        cutoff_info,
+        n_phi,
+        max_cutoff
+    );
+    if (extra_order < 0) {
+        throw std::invalid_argument("extra_order must be non-negative");
+    }
+
+    const py::ssize_t n_elements = ff_info.shape[0];
+    const py::ssize_t n_q = z_phase_info.shape[0];
+    const py::ssize_t n_active = e_info.shape[0];
+    const py::ssize_t n_r = r_info.shape[0];
+    const py::ssize_t n_z = z_phase_info.shape[1];
+    const py::ssize_t n_phi_ss = static_cast<py::ssize_t>(n_phi);
+    const py::ssize_t n_hhat = hhat_info.shape[2];
+    TypedComplexArray<ComplexT> out({n_q, n_phi_ss});
+    ComplexT* out_ptr = out.mutable_data();
+
+    const auto work_per_q =
+        n_r * (static_cast<py::ssize_t>(max_cutoff + extra_order + 1))
+        + n_active * (6 * static_cast<py::ssize_t>(max_cutoff) + 3)
+        + n_phi_ss;
+    {
+        py::gil_scoped_release release;
+        run_parallel_dynamic(n_q, work_per_q, [&](py::ssize_t begin, py::ssize_t end) {
+            surface_sparse_rz_half_modes_miller_worker<ComplexT>(
+                static_cast<const std::int64_t*>(e_info.ptr),
+                static_cast<const std::int64_t*>(z_info.ptr),
+                static_cast<const ComplexT*>(hhat_info.ptr),
+                static_cast<const std::int64_t*>(start_info.ptr),
+                static_cast<const std::int64_t*>(count_info.ptr),
+                static_cast<const ComplexT*>(z_phase_info.ptr),
+                static_cast<const double*>(q_perp_info.ptr),
+                static_cast<const double*>(q_z_info.ptr),
+                static_cast<const double*>(r_info.ptr),
+                static_cast<const ComplexT*>(ff_info.ptr),
+                static_cast<const std::int64_t*>(cutoff_info.ptr),
+                out_ptr,
+                n_elements,
+                n_q,
+                n_active,
+                n_r,
+                n_z,
+                n_phi_ss,
+                n_hhat,
+                static_cast<py::ssize_t>(max_cutoff),
+                static_cast<py::ssize_t>(extra_order),
+                phi_offset,
+                begin,
+                end
+            );
+        });
+    }
+    return out;
+}
+
+ComplexArray surface_normal_sparse_rz_half_modes_miller(
+    py::array_t<std::int64_t, py::array::c_style | py::array::forcecast> active_e,
+    py::array_t<std::int64_t, py::array::c_style | py::array::forcecast> active_z,
+    ComplexArray active_hhat,
+    py::array_t<std::int64_t, py::array::c_style | py::array::forcecast> r_profile_starts,
+    py::array_t<std::int64_t, py::array::c_style | py::array::forcecast> r_profile_counts,
+    ComplexArray z_phase,
+    py::array_t<double, py::array::c_style | py::array::forcecast> q_perp,
+    py::array_t<double, py::array::c_style | py::array::forcecast> q_z,
+    py::array_t<double, py::array::c_style | py::array::forcecast> r_centers,
+    ComplexArray form_factors,
+    py::array_t<std::int64_t, py::array::c_style | py::array::forcecast> cutoffs,
+    std::int64_t n_phi,
+    std::int64_t max_cutoff,
+    std::int64_t extra_order,
+    double phi_offset
+) {
+    return surface_normal_sparse_rz_half_modes_miller_impl<Complex128>(
+        active_e, active_z, active_hhat, r_profile_starts, r_profile_counts,
+        z_phase, q_perp, q_z, r_centers, form_factors, cutoffs,
+        n_phi, max_cutoff, extra_order, phi_offset
+    );
+}
+
+Complex64Array surface_normal_sparse_rz_half_modes_miller64(
+    py::array_t<std::int64_t, py::array::c_style | py::array::forcecast> active_e,
+    py::array_t<std::int64_t, py::array::c_style | py::array::forcecast> active_z,
+    Complex64Array active_hhat,
+    py::array_t<std::int64_t, py::array::c_style | py::array::forcecast> r_profile_starts,
+    py::array_t<std::int64_t, py::array::c_style | py::array::forcecast> r_profile_counts,
+    Complex64Array z_phase,
+    py::array_t<double, py::array::c_style | py::array::forcecast> q_perp,
+    py::array_t<double, py::array::c_style | py::array::forcecast> q_z,
+    py::array_t<double, py::array::c_style | py::array::forcecast> r_centers,
+    Complex64Array form_factors,
+    py::array_t<std::int64_t, py::array::c_style | py::array::forcecast> cutoffs,
+    std::int64_t n_phi,
+    std::int64_t max_cutoff,
+    std::int64_t extra_order,
+    double phi_offset
+) {
+    return surface_normal_sparse_rz_half_modes_miller_impl<Complex64>(
+        active_e, active_z, active_hhat, r_profile_starts, r_profile_counts,
+        z_phase, q_perp, q_z, r_centers, form_factors, cutoffs,
+        n_phi, max_cutoff, extra_order, phi_offset
+    );
+}
+
+template <typename ComplexT>
+TypedComplexArray<ComplexT> giwaxs_contract_half_modes_miller_impl(
+    TypedComplexArray<ComplexT> hhat,
+    TypedComplexArray<ComplexT> z_phase,
+    py::array_t<double, py::array::c_style | py::array::forcecast> q_perp,
+    py::array_t<double, py::array::c_style | py::array::forcecast> q_phi,
+    py::array_t<double, py::array::c_style | py::array::forcecast> r_centers,
+    TypedComplexArray<ComplexT> form_factors,
+    py::array_t<std::int64_t, py::array::c_style | py::array::forcecast> cutoffs,
+    std::int64_t n_phi,
+    std::int64_t max_cutoff,
+    std::int64_t extra_order
+) {
+    const py::buffer_info hhat_info = hhat.request();
+    const py::buffer_info z_phase_info = z_phase.request();
+    const py::buffer_info q_perp_info = q_perp.request();
+    const py::buffer_info q_phi_info = q_phi.request();
+    const py::buffer_info r_info = r_centers.request();
+    const py::buffer_info ff_info = form_factors.request();
+    const py::buffer_info cutoff_info = cutoffs.request();
+    validate_giwaxs_half_miller_shapes(
+        hhat_info,
+        z_phase_info,
+        q_perp_info,
+        q_phi_info,
+        r_info,
+        ff_info,
+        cutoff_info,
+        n_phi,
+        max_cutoff
+    );
+    if (extra_order < 0) {
+        throw std::invalid_argument("extra_order must be non-negative");
+    }
+
+    const py::ssize_t n_elements = hhat_info.shape[0];
+    const py::ssize_t n_r = hhat_info.shape[1];
+    const py::ssize_t n_z = hhat_info.shape[2];
+    const py::ssize_t n_hhat = hhat_info.shape[3];
+    const py::ssize_t n_q = z_phase_info.shape[0];
+    const py::ssize_t n_phi_ss = static_cast<py::ssize_t>(n_phi);
+    TypedComplexArray<ComplexT> out({n_q});
+    ComplexT* out_ptr = out.mutable_data();
+
+    const auto work_per_q =
+        static_cast<py::ssize_t>(max_cutoff + 1)
+        + n_r
+              * (
+                  static_cast<py::ssize_t>(max_cutoff + extra_order + 1)
+                  + n_elements * n_z * (2 * static_cast<py::ssize_t>(max_cutoff) + 1)
+                  + n_elements * (2 * static_cast<py::ssize_t>(max_cutoff) + 1)
+              );
+    {
+        py::gil_scoped_release release;
+        run_parallel_dynamic(n_q, work_per_q, [&](py::ssize_t begin, py::ssize_t end) {
+            giwaxs_half_modes_miller_worker<ComplexT>(
+                static_cast<const ComplexT*>(hhat_info.ptr),
+                static_cast<const ComplexT*>(z_phase_info.ptr),
+                static_cast<const double*>(q_perp_info.ptr),
+                static_cast<const double*>(q_phi_info.ptr),
+                static_cast<const double*>(r_info.ptr),
+                static_cast<const ComplexT*>(ff_info.ptr),
+                static_cast<const std::int64_t*>(cutoff_info.ptr),
+                out_ptr,
+                n_elements,
+                n_q,
+                n_r,
+                n_z,
+                n_phi_ss,
+                n_hhat,
+                static_cast<py::ssize_t>(max_cutoff),
+                static_cast<py::ssize_t>(extra_order),
+                begin,
+                end
+            );
+        });
+    }
+    return out;
+}
+
+ComplexArray giwaxs_contract_half_modes_miller(
+    ComplexArray hhat,
+    ComplexArray z_phase,
+    py::array_t<double, py::array::c_style | py::array::forcecast> q_perp,
+    py::array_t<double, py::array::c_style | py::array::forcecast> q_phi,
+    py::array_t<double, py::array::c_style | py::array::forcecast> r_centers,
+    ComplexArray form_factors,
+    py::array_t<std::int64_t, py::array::c_style | py::array::forcecast> cutoffs,
+    std::int64_t n_phi,
+    std::int64_t max_cutoff,
+    std::int64_t extra_order
+) {
+    return giwaxs_contract_half_modes_miller_impl<Complex128>(
+        hhat,
+        z_phase,
+        q_perp,
+        q_phi,
+        r_centers,
+        form_factors,
+        cutoffs,
+        n_phi,
+        max_cutoff,
+        extra_order
+    );
+}
+
+Complex64Array giwaxs_contract_half_modes_miller64(
+    Complex64Array hhat,
+    Complex64Array z_phase,
+    py::array_t<double, py::array::c_style | py::array::forcecast> q_perp,
+    py::array_t<double, py::array::c_style | py::array::forcecast> q_phi,
+    py::array_t<double, py::array::c_style | py::array::forcecast> r_centers,
+    Complex64Array form_factors,
+    py::array_t<std::int64_t, py::array::c_style | py::array::forcecast> cutoffs,
+    std::int64_t n_phi,
+    std::int64_t max_cutoff,
+    std::int64_t extra_order
+) {
+    return giwaxs_contract_half_modes_miller_impl<Complex64>(
+        hhat,
+        z_phase,
+        q_perp,
+        q_phi,
+        r_centers,
+        form_factors,
+        cutoffs,
+        n_phi,
+        max_cutoff,
+        extra_order
+    );
+}
+
+template <typename ComplexT>
+TypedComplexArray<ComplexT> giwaxs_contract_half_modes_miller_qz_reduced_impl(
+    TypedComplexArray<ComplexT> hhat,
+    TypedComplexArray<ComplexT> z_phase_groups,
+    py::array_t<std::int64_t, py::array::c_style | py::array::forcecast> qz_group,
+    py::array_t<double, py::array::c_style | py::array::forcecast> q_perp,
+    py::array_t<double, py::array::c_style | py::array::forcecast> q_phi,
+    py::array_t<double, py::array::c_style | py::array::forcecast> r_centers,
+    TypedComplexArray<ComplexT> form_factors,
+    py::array_t<std::int64_t, py::array::c_style | py::array::forcecast> cutoffs,
+    py::array_t<std::int64_t, py::array::c_style | py::array::forcecast> group_cutoffs,
+    std::int64_t n_phi,
+    std::int64_t max_cutoff,
+    std::int64_t extra_order
+) {
+    const py::buffer_info hhat_info = hhat.request();
+    const py::buffer_info z_phase_info = z_phase_groups.request();
+    const py::buffer_info qz_group_info = qz_group.request();
+    const py::buffer_info q_perp_info = q_perp.request();
+    const py::buffer_info q_phi_info = q_phi.request();
+    const py::buffer_info r_info = r_centers.request();
+    const py::buffer_info ff_info = form_factors.request();
+    const py::buffer_info cutoff_info = cutoffs.request();
+    const py::buffer_info group_cutoff_info = group_cutoffs.request();
+    validate_giwaxs_qz_reduced_shapes(
+        hhat_info,
+        z_phase_info,
+        qz_group_info,
+        q_perp_info,
+        q_phi_info,
+        r_info,
+        ff_info,
+        cutoff_info,
+        group_cutoff_info,
+        n_phi,
+        max_cutoff
+    );
+    if (extra_order < 0) {
+        throw std::invalid_argument("extra_order must be non-negative");
+    }
+
+    const py::ssize_t n_elements = hhat_info.shape[0];
+    const py::ssize_t n_r = hhat_info.shape[1];
+    const py::ssize_t n_z = hhat_info.shape[2];
+    const py::ssize_t n_hhat = hhat_info.shape[3];
+    const py::ssize_t n_groups = z_phase_info.shape[0];
+    const py::ssize_t n_q = qz_group_info.shape[0];
+    const py::ssize_t n_phi_ss = static_cast<py::ssize_t>(n_phi);
+    const py::ssize_t n_h = static_cast<py::ssize_t>(max_cutoff) + 1;
+
+    const auto* qz_ptr = static_cast<const std::int64_t*>(qz_group_info.ptr);
+    for (py::ssize_t b = 0; b < n_q; ++b) {
+        if (qz_ptr[b] < 0 || qz_ptr[b] >= n_groups) {
+            throw std::invalid_argument("qz_group contains an out-of-range group index");
+        }
+    }
+
+    std::vector<ComplexT> z_pos(
+        static_cast<std::size_t>(n_groups * n_elements * n_r * n_h)
+    );
+    std::vector<ComplexT> z_neg(
+        static_cast<std::size_t>(n_groups * n_elements * n_r * n_h)
+    );
+    TypedComplexArray<ComplexT> out({n_q});
+    ComplexT* out_ptr = out.mutable_data();
+
+    const py::ssize_t z_tasks = n_groups * n_elements * n_r;
+    const auto z_work_per_task =
+        n_z * (2 * static_cast<py::ssize_t>(max_cutoff) + 1);
+    const auto contract_work_per_q =
+        n_r
+        * (
+            static_cast<py::ssize_t>(max_cutoff + extra_order + 1)
+            + n_elements * (2 * static_cast<py::ssize_t>(max_cutoff) + 1)
+        );
+
+    {
+        py::gil_scoped_release release;
+        run_parallel_dynamic(z_tasks, z_work_per_task, [&](py::ssize_t begin, py::ssize_t end) {
+            giwaxs_z_reduce_half_modes_worker<ComplexT>(
+                static_cast<const ComplexT*>(hhat_info.ptr),
+                static_cast<const ComplexT*>(z_phase_info.ptr),
+                static_cast<const std::int64_t*>(group_cutoff_info.ptr),
+                z_pos.data(),
+                z_neg.data(),
+                n_elements,
+                n_groups,
+                n_r,
+                n_z,
+                n_hhat,
+                static_cast<py::ssize_t>(max_cutoff),
+                begin,
+                end
+            );
+        });
+        run_parallel_dynamic(n_q, contract_work_per_q, [&](py::ssize_t begin, py::ssize_t end) {
+            giwaxs_qz_reduced_miller_contract_worker<ComplexT>(
+                z_pos.data(),
+                z_neg.data(),
+                static_cast<const std::int64_t*>(qz_group_info.ptr),
+                static_cast<const double*>(q_perp_info.ptr),
+                static_cast<const double*>(q_phi_info.ptr),
+                static_cast<const double*>(r_info.ptr),
+                static_cast<const ComplexT*>(ff_info.ptr),
+                static_cast<const std::int64_t*>(cutoff_info.ptr),
+                out_ptr,
+                n_elements,
+                n_q,
+                n_r,
+                n_phi_ss,
+                static_cast<py::ssize_t>(max_cutoff),
+                static_cast<py::ssize_t>(extra_order),
+                begin,
+                end
+            );
+        });
+    }
+    return out;
+}
+
+ComplexArray giwaxs_contract_half_modes_miller_qz_reduced(
+    ComplexArray hhat,
+    ComplexArray z_phase_groups,
+    py::array_t<std::int64_t, py::array::c_style | py::array::forcecast> qz_group,
+    py::array_t<double, py::array::c_style | py::array::forcecast> q_perp,
+    py::array_t<double, py::array::c_style | py::array::forcecast> q_phi,
+    py::array_t<double, py::array::c_style | py::array::forcecast> r_centers,
+    ComplexArray form_factors,
+    py::array_t<std::int64_t, py::array::c_style | py::array::forcecast> cutoffs,
+    py::array_t<std::int64_t, py::array::c_style | py::array::forcecast> group_cutoffs,
+    std::int64_t n_phi,
+    std::int64_t max_cutoff,
+    std::int64_t extra_order
+) {
+    return giwaxs_contract_half_modes_miller_qz_reduced_impl<Complex128>(
+        hhat,
+        z_phase_groups,
+        qz_group,
+        q_perp,
+        q_phi,
+        r_centers,
+        form_factors,
+        cutoffs,
+        group_cutoffs,
+        n_phi,
+        max_cutoff,
+        extra_order
+    );
+}
+
+Complex64Array giwaxs_contract_half_modes_miller_qz_reduced64(
+    Complex64Array hhat,
+    Complex64Array z_phase_groups,
+    py::array_t<std::int64_t, py::array::c_style | py::array::forcecast> qz_group,
+    py::array_t<double, py::array::c_style | py::array::forcecast> q_perp,
+    py::array_t<double, py::array::c_style | py::array::forcecast> q_phi,
+    py::array_t<double, py::array::c_style | py::array::forcecast> r_centers,
+    Complex64Array form_factors,
+    py::array_t<std::int64_t, py::array::c_style | py::array::forcecast> cutoffs,
+    py::array_t<std::int64_t, py::array::c_style | py::array::forcecast> group_cutoffs,
+    std::int64_t n_phi,
+    std::int64_t max_cutoff,
+    std::int64_t extra_order
+) {
+    return giwaxs_contract_half_modes_miller_qz_reduced_impl<Complex64>(
+        hhat,
+        z_phase_groups,
+        qz_group,
+        q_perp,
+        q_phi,
+        r_centers,
+        form_factors,
+        cutoffs,
+        group_cutoffs,
+        n_phi,
+        max_cutoff,
+        extra_order
+    );
+}
+
+template <typename ComplexT>
+TypedComplexArray<ComplexT> giwaxs_contract_half_modes_kernel_qz_reduced_impl(
+    TypedComplexArray<ComplexT> hhat,
+    TypedComplexArray<ComplexT> z_phase_groups,
+    py::array_t<std::int64_t, py::array::c_style | py::array::forcecast> qz_group,
+    TypedComplexArray<ComplexT> kernel_pos,
+    TypedComplexArray<ComplexT> kernel_neg,
+    TypedComplexArray<ComplexT> form_factors,
+    py::array_t<std::int64_t, py::array::c_style | py::array::forcecast> cutoffs,
+    py::array_t<std::int64_t, py::array::c_style | py::array::forcecast> group_cutoffs,
+    std::int64_t max_cutoff
+) {
+    const py::buffer_info hhat_info = hhat.request();
+    const py::buffer_info z_phase_info = z_phase_groups.request();
+    const py::buffer_info qz_group_info = qz_group.request();
+    const py::buffer_info kernel_pos_info = kernel_pos.request();
+    const py::buffer_info kernel_neg_info = kernel_neg.request();
+    const py::buffer_info ff_info = form_factors.request();
+    const py::buffer_info cutoff_info = cutoffs.request();
+    const py::buffer_info group_cutoff_info = group_cutoffs.request();
+    validate_giwaxs_qz_reduced_kernel_shapes(
+        hhat_info,
+        z_phase_info,
+        qz_group_info,
+        kernel_pos_info,
+        kernel_neg_info,
+        ff_info,
+        cutoff_info,
+        group_cutoff_info,
+        max_cutoff
+    );
+
+    const py::ssize_t n_elements = hhat_info.shape[0];
+    const py::ssize_t n_r = hhat_info.shape[1];
+    const py::ssize_t n_z = hhat_info.shape[2];
+    const py::ssize_t n_hhat = hhat_info.shape[3];
+    const py::ssize_t n_groups = z_phase_info.shape[0];
+    const py::ssize_t n_q = qz_group_info.shape[0];
+    const py::ssize_t n_h = static_cast<py::ssize_t>(max_cutoff) + 1;
+
+    const auto* qz_ptr = static_cast<const std::int64_t*>(qz_group_info.ptr);
+    for (py::ssize_t b = 0; b < n_q; ++b) {
+        if (qz_ptr[b] < 0 || qz_ptr[b] >= n_groups) {
+            throw std::invalid_argument("qz_group contains an out-of-range group index");
+        }
+    }
+
+    std::vector<ComplexT> z_pos(
+        static_cast<std::size_t>(n_groups * n_elements * n_r * n_h)
+    );
+    std::vector<ComplexT> z_neg(
+        static_cast<std::size_t>(n_groups * n_elements * n_r * n_h)
+    );
+    TypedComplexArray<ComplexT> out({n_q});
+    ComplexT* out_ptr = out.mutable_data();
+
+    const py::ssize_t z_tasks = n_groups * n_elements * n_r;
+    const auto z_work_per_task =
+        n_z * (2 * static_cast<py::ssize_t>(max_cutoff) + 1);
+    const auto contract_work_per_q =
+        n_r * n_elements * (2 * static_cast<py::ssize_t>(max_cutoff) + 1);
+
+    {
+        py::gil_scoped_release release;
+        run_parallel_dynamic(z_tasks, z_work_per_task, [&](py::ssize_t begin, py::ssize_t end) {
+            giwaxs_z_reduce_half_modes_worker<ComplexT>(
+                static_cast<const ComplexT*>(hhat_info.ptr),
+                static_cast<const ComplexT*>(z_phase_info.ptr),
+                static_cast<const std::int64_t*>(group_cutoff_info.ptr),
+                z_pos.data(),
+                z_neg.data(),
+                n_elements,
+                n_groups,
+                n_r,
+                n_z,
+                n_hhat,
+                static_cast<py::ssize_t>(max_cutoff),
+                begin,
+                end
+            );
+        });
+        run_parallel_dynamic(n_q, contract_work_per_q, [&](py::ssize_t begin, py::ssize_t end) {
+            giwaxs_qz_reduced_kernel_contract_worker<ComplexT>(
+                z_pos.data(),
+                z_neg.data(),
+                static_cast<const std::int64_t*>(qz_group_info.ptr),
+                static_cast<const ComplexT*>(kernel_pos_info.ptr),
+                static_cast<const ComplexT*>(kernel_neg_info.ptr),
+                static_cast<const ComplexT*>(ff_info.ptr),
+                static_cast<const std::int64_t*>(cutoff_info.ptr),
+                out_ptr,
+                n_elements,
+                n_q,
+                n_r,
+                static_cast<py::ssize_t>(max_cutoff),
+                begin,
+                end
+            );
+        });
+    }
+    return out;
+}
+
+ComplexArray giwaxs_contract_half_modes_kernel_qz_reduced(
+    ComplexArray hhat,
+    ComplexArray z_phase_groups,
+    py::array_t<std::int64_t, py::array::c_style | py::array::forcecast> qz_group,
+    ComplexArray kernel_pos,
+    ComplexArray kernel_neg,
+    ComplexArray form_factors,
+    py::array_t<std::int64_t, py::array::c_style | py::array::forcecast> cutoffs,
+    py::array_t<std::int64_t, py::array::c_style | py::array::forcecast> group_cutoffs,
+    std::int64_t max_cutoff
+) {
+    return giwaxs_contract_half_modes_kernel_qz_reduced_impl<Complex128>(
+        hhat,
+        z_phase_groups,
+        qz_group,
+        kernel_pos,
+        kernel_neg,
+        form_factors,
+        cutoffs,
+        group_cutoffs,
+        max_cutoff
+    );
+}
+
+Complex64Array giwaxs_contract_half_modes_kernel_qz_reduced64(
+    Complex64Array hhat,
+    Complex64Array z_phase_groups,
+    py::array_t<std::int64_t, py::array::c_style | py::array::forcecast> qz_group,
+    Complex64Array kernel_pos,
+    Complex64Array kernel_neg,
+    Complex64Array form_factors,
+    py::array_t<std::int64_t, py::array::c_style | py::array::forcecast> cutoffs,
+    py::array_t<std::int64_t, py::array::c_style | py::array::forcecast> group_cutoffs,
+    std::int64_t max_cutoff
+) {
+    return giwaxs_contract_half_modes_kernel_qz_reduced_impl<Complex64>(
+        hhat,
+        z_phase_groups,
+        qz_group,
+        kernel_pos,
+        kernel_neg,
+        form_factors,
+        cutoffs,
+        group_cutoffs,
+        max_cutoff
+    );
+}
+
+template <typename ComplexT>
+TypedComplexArray<ComplexT> giwaxs_contract_sparse_profiles_miller_qz_reduced_impl(
+    py::array_t<std::int64_t, py::array::c_style | py::array::forcecast> profile_e,
+    py::array_t<std::int64_t, py::array::c_style | py::array::forcecast> profile_r,
+    py::array_t<std::int64_t, py::array::c_style | py::array::forcecast> profile_z,
+    TypedComplexArray<ComplexT> active_hhat,
+    py::array_t<std::int64_t, py::array::c_style | py::array::forcecast> r_profile_starts,
+    py::array_t<std::int64_t, py::array::c_style | py::array::forcecast> r_profile_counts,
+    TypedComplexArray<ComplexT> z_phase_groups,
+    py::array_t<std::int64_t, py::array::c_style | py::array::forcecast> qz_group,
+    py::array_t<double, py::array::c_style | py::array::forcecast> q_perp,
+    py::array_t<double, py::array::c_style | py::array::forcecast> q_phi,
+    py::array_t<double, py::array::c_style | py::array::forcecast> r_centers,
+    TypedComplexArray<ComplexT> form_factors,
+    py::array_t<std::int64_t, py::array::c_style | py::array::forcecast> cutoffs,
+    std::int64_t n_phi,
+    std::int64_t max_cutoff,
+    std::int64_t extra_order
+) {
+    const py::buffer_info profile_e_info = profile_e.request();
+    const py::buffer_info profile_r_info = profile_r.request();
+    const py::buffer_info profile_z_info = profile_z.request();
+    const py::buffer_info hhat_info = active_hhat.request();
+    const py::buffer_info r_starts_info = r_profile_starts.request();
+    const py::buffer_info r_counts_info = r_profile_counts.request();
+    const py::buffer_info z_phase_info = z_phase_groups.request();
+    const py::buffer_info qz_group_info = qz_group.request();
+    const py::buffer_info q_perp_info = q_perp.request();
+    const py::buffer_info q_phi_info = q_phi.request();
+    const py::buffer_info r_info = r_centers.request();
+    const py::buffer_info ff_info = form_factors.request();
+    const py::buffer_info cutoff_info = cutoffs.request();
+    validate_giwaxs_sparse_profile_qz_shapes(
+        profile_e_info,
+        profile_r_info,
+        profile_z_info,
+        hhat_info,
+        r_starts_info,
+        r_counts_info,
+        z_phase_info,
+        qz_group_info,
+        q_perp_info,
+        q_phi_info,
+        r_info,
+        ff_info,
+        cutoff_info,
+        n_phi,
+        max_cutoff
+    );
+    if (extra_order < 0) {
+        throw std::invalid_argument("extra_order must be non-negative");
+    }
+
+    const py::ssize_t n_profiles = profile_e_info.shape[0];
+    const py::ssize_t n_elements = ff_info.shape[0];
+    const py::ssize_t n_q = qz_group_info.shape[0];
+    const py::ssize_t n_r = r_info.shape[0];
+    const py::ssize_t n_z = z_phase_info.shape[1];
+    const py::ssize_t n_hhat = hhat_info.shape[1];
+    const py::ssize_t n_phi_ss = static_cast<py::ssize_t>(n_phi);
+
+    const auto* qz_ptr = static_cast<const std::int64_t*>(qz_group_info.ptr);
+    const py::ssize_t n_groups = z_phase_info.shape[0];
+    for (py::ssize_t b = 0; b < n_q; ++b) {
+        if (qz_ptr[b] < 0 || qz_ptr[b] >= n_groups) {
+            throw std::invalid_argument("qz_group contains an out-of-range group index");
+        }
+    }
+    const auto* starts = static_cast<const std::int64_t*>(r_starts_info.ptr);
+    const auto* counts = static_cast<const std::int64_t*>(r_counts_info.ptr);
+    for (py::ssize_t r = 0; r < n_r; ++r) {
+        if (starts[r] < 0 || counts[r] < 0 || starts[r] + counts[r] > n_profiles) {
+            throw std::invalid_argument("invalid R profile starts/counts");
+        }
+    }
+
+    const py::ssize_t n_h = static_cast<py::ssize_t>(max_cutoff) + 1;
+    std::vector<ComplexT> z_pos(
+        static_cast<std::size_t>(n_groups * n_elements * n_r * n_h)
+    );
+    std::vector<ComplexT> z_neg(
+        static_cast<std::size_t>(n_groups * n_elements * n_r * n_h)
+    );
+    TypedComplexArray<ComplexT> out({n_q});
+    ComplexT* out_ptr = out.mutable_data();
+    const py::ssize_t z_tasks = n_groups * n_elements * n_r;
+    const auto z_work_per_task =
+        std::max<py::ssize_t>(1, n_profiles / std::max<py::ssize_t>(1, n_r))
+        * (2 * static_cast<py::ssize_t>(max_cutoff) + 1);
+    const auto contract_work_per_q =
+        n_r
+        * (
+            static_cast<py::ssize_t>(max_cutoff + extra_order + 1)
+            + n_elements * (2 * static_cast<py::ssize_t>(max_cutoff) + 1)
+        );
+    {
+        py::gil_scoped_release release;
+        run_parallel_dynamic(z_tasks, z_work_per_task, [&](py::ssize_t begin, py::ssize_t end) {
+            giwaxs_sparse_profile_z_reduce_worker<ComplexT>(
+                static_cast<const std::int64_t*>(profile_e_info.ptr),
+                static_cast<const std::int64_t*>(profile_z_info.ptr),
+                static_cast<const ComplexT*>(hhat_info.ptr),
+                static_cast<const std::int64_t*>(r_starts_info.ptr),
+                static_cast<const std::int64_t*>(r_counts_info.ptr),
+                static_cast<const ComplexT*>(z_phase_info.ptr),
+                z_pos.data(),
+                z_neg.data(),
+                n_elements,
+                n_groups,
+                n_r,
+                n_z,
+                n_hhat,
+                static_cast<py::ssize_t>(max_cutoff),
+                begin,
+                end
+            );
+        });
+        run_parallel_dynamic(n_q, contract_work_per_q, [&](py::ssize_t begin, py::ssize_t end) {
+            giwaxs_qz_reduced_miller_contract_worker<ComplexT>(
+                z_pos.data(),
+                z_neg.data(),
+                static_cast<const std::int64_t*>(qz_group_info.ptr),
+                static_cast<const double*>(q_perp_info.ptr),
+                static_cast<const double*>(q_phi_info.ptr),
+                static_cast<const double*>(r_info.ptr),
+                static_cast<const ComplexT*>(ff_info.ptr),
+                static_cast<const std::int64_t*>(cutoff_info.ptr),
+                out_ptr,
+                n_elements,
+                n_q,
+                n_r,
+                n_phi_ss,
+                static_cast<py::ssize_t>(max_cutoff),
+                static_cast<py::ssize_t>(extra_order),
+                begin,
+                end
+            );
+        });
+    }
+    return out;
+}
+
+ComplexArray giwaxs_contract_sparse_profiles_miller_qz_reduced(
+    py::array_t<std::int64_t, py::array::c_style | py::array::forcecast> profile_e,
+    py::array_t<std::int64_t, py::array::c_style | py::array::forcecast> profile_r,
+    py::array_t<std::int64_t, py::array::c_style | py::array::forcecast> profile_z,
+    ComplexArray active_hhat,
+    py::array_t<std::int64_t, py::array::c_style | py::array::forcecast> r_profile_starts,
+    py::array_t<std::int64_t, py::array::c_style | py::array::forcecast> r_profile_counts,
+    ComplexArray z_phase_groups,
+    py::array_t<std::int64_t, py::array::c_style | py::array::forcecast> qz_group,
+    py::array_t<double, py::array::c_style | py::array::forcecast> q_perp,
+    py::array_t<double, py::array::c_style | py::array::forcecast> q_phi,
+    py::array_t<double, py::array::c_style | py::array::forcecast> r_centers,
+    ComplexArray form_factors,
+    py::array_t<std::int64_t, py::array::c_style | py::array::forcecast> cutoffs,
+    std::int64_t n_phi,
+    std::int64_t max_cutoff,
+    std::int64_t extra_order
+) {
+    return giwaxs_contract_sparse_profiles_miller_qz_reduced_impl<Complex128>(
+        profile_e,
+        profile_r,
+        profile_z,
+        active_hhat,
+        r_profile_starts,
+        r_profile_counts,
+        z_phase_groups,
+        qz_group,
+        q_perp,
+        q_phi,
+        r_centers,
+        form_factors,
+        cutoffs,
+        n_phi,
+        max_cutoff,
+        extra_order
+    );
+}
+
+Complex64Array giwaxs_contract_sparse_profiles_miller_qz_reduced64(
+    py::array_t<std::int64_t, py::array::c_style | py::array::forcecast> profile_e,
+    py::array_t<std::int64_t, py::array::c_style | py::array::forcecast> profile_r,
+    py::array_t<std::int64_t, py::array::c_style | py::array::forcecast> profile_z,
+    Complex64Array active_hhat,
+    py::array_t<std::int64_t, py::array::c_style | py::array::forcecast> r_profile_starts,
+    py::array_t<std::int64_t, py::array::c_style | py::array::forcecast> r_profile_counts,
+    Complex64Array z_phase_groups,
+    py::array_t<std::int64_t, py::array::c_style | py::array::forcecast> qz_group,
+    py::array_t<double, py::array::c_style | py::array::forcecast> q_perp,
+    py::array_t<double, py::array::c_style | py::array::forcecast> q_phi,
+    py::array_t<double, py::array::c_style | py::array::forcecast> r_centers,
+    Complex64Array form_factors,
+    py::array_t<std::int64_t, py::array::c_style | py::array::forcecast> cutoffs,
+    std::int64_t n_phi,
+    std::int64_t max_cutoff,
+    std::int64_t extra_order
+) {
+    return giwaxs_contract_sparse_profiles_miller_qz_reduced_impl<Complex64>(
+        profile_e,
+        profile_r,
+        profile_z,
+        active_hhat,
+        r_profile_starts,
+        r_profile_counts,
+        z_phase_groups,
+        qz_group,
+        q_perp,
+        q_phi,
+        r_centers,
+        form_factors,
+        cutoffs,
+        n_phi,
+        max_cutoff,
+        extra_order
+    );
+}
+
+template <typename ComplexT>
 TypedComplexArray<ComplexT> circular_contract_r_dependent_half_z_reduced_impl(
     TypedComplexArray<ComplexT> z_pos,
     TypedComplexArray<ComplexT> z_neg,
@@ -2401,6 +4204,417 @@ Complex64Array analytic_kernel_hat_modes_miller64(
         n_phi,
         max_cutoff,
         extra_order
+    );
+}
+
+ComplexArray exact_beta_harmonic_coefficients_miller(
+    py::array_t<double, py::array::c_style | py::array::forcecast> radius,
+    py::array_t<double, py::array::c_style | py::array::forcecast> beta,
+    py::array_t<double, py::array::c_style | py::array::forcecast> z,
+    ComplexArray coefficients,
+    py::array_t<double, py::array::c_style | py::array::forcecast> q_perp,
+    py::array_t<double, py::array::c_style | py::array::forcecast> q_z,
+    py::array_t<std::int64_t, py::array::c_style | py::array::forcecast> cutoffs,
+    std::int64_t extra_order
+) {
+    const py::buffer_info radius_info = radius.request();
+    const py::buffer_info beta_info = beta.request();
+    const py::buffer_info z_info = z.request();
+    const py::buffer_info coeff_info = coefficients.request();
+    const py::buffer_info q_perp_info = q_perp.request();
+    const py::buffer_info q_z_info = q_z.request();
+    const py::buffer_info cutoff_info = cutoffs.request();
+
+    if (radius_info.ndim != 1 || beta_info.ndim != 1 || z_info.ndim != 1) {
+        throw std::invalid_argument("radius, beta, and z must be one-dimensional");
+    }
+    if (q_perp_info.ndim != 1 || q_z_info.ndim != 1 || cutoff_info.ndim != 1) {
+        throw std::invalid_argument("q_perp, q_z, and cutoffs must be one-dimensional");
+    }
+    const py::ssize_t n_source = radius_info.shape[0];
+    const py::ssize_t n_q = q_perp_info.shape[0];
+    if (beta_info.shape[0] != n_source || z_info.shape[0] != n_source) {
+        throw std::invalid_argument("radius, beta, and z must have equal length");
+    }
+    if (q_z_info.shape[0] != n_q || cutoff_info.shape[0] != n_q) {
+        throw std::invalid_argument("q_perp, q_z, and cutoffs must have equal length");
+    }
+    if (coeff_info.ndim != 2 || coeff_info.shape[0] != n_source ||
+        coeff_info.shape[1] != n_q) {
+        throw std::invalid_argument("coefficients must have shape (n_source, n_q)");
+    }
+    if (extra_order < 0) {
+        throw std::invalid_argument("extra_order must be non-negative");
+    }
+
+    const auto* cutoff_ptr = static_cast<const std::int64_t*>(cutoff_info.ptr);
+    py::ssize_t max_cutoff = 0;
+    for (py::ssize_t iq = 0; iq < n_q; ++iq) {
+        if (cutoff_ptr[iq] < 0) {
+            throw std::invalid_argument("cutoffs must be non-negative");
+        }
+        max_cutoff = std::max(max_cutoff, static_cast<py::ssize_t>(cutoff_ptr[iq]));
+    }
+
+    ComplexArray out({n_q, static_cast<py::ssize_t>(2), max_cutoff + 1});
+    auto* out_ptr = out.mutable_data();
+    std::fill(out_ptr, out_ptr + n_q * 2 * (max_cutoff + 1), Complex128{});
+
+    const auto* radius_ptr = static_cast<const double*>(radius_info.ptr);
+    const auto* beta_ptr = static_cast<const double*>(beta_info.ptr);
+    const auto* z_ptr = static_cast<const double*>(z_info.ptr);
+    const auto* coeff_ptr = static_cast<const Complex128*>(coeff_info.ptr);
+    const auto* q_perp_ptr = static_cast<const double*>(q_perp_info.ptr);
+    const auto* q_z_ptr = static_cast<const double*>(q_z_info.ptr);
+    const py::ssize_t n_h = max_cutoff + 1;
+    const py::ssize_t work_per_q =
+        std::max<py::ssize_t>(1, n_source * std::max<py::ssize_t>(1, n_h));
+
+    {
+        py::gil_scoped_release release;
+        run_parallel_dynamic(n_q, work_per_q, [&](py::ssize_t begin, py::ssize_t end) {
+            std::vector<Complex128> kernel(static_cast<std::size_t>(n_h));
+            std::vector<double> miller_values;
+            for (py::ssize_t iq = begin; iq < end; ++iq) {
+                const py::ssize_t cutoff = static_cast<py::ssize_t>(cutoff_ptr[iq]);
+                Complex128* positive = out_ptr + (iq * 2) * n_h;
+                Complex128* negative = positive + n_h;
+                for (py::ssize_t source = 0; source < n_source; ++source) {
+                    const Complex128 coefficient = coeff_ptr[source * n_q + iq];
+                    if (coefficient == Complex128{}) {
+                        continue;
+                    }
+                    fill_miller_kernel_row<Complex128>(
+                        q_perp_ptr[iq] * radius_ptr[source],
+                        1,
+                        cutoff,
+                        static_cast<py::ssize_t>(extra_order),
+                        kernel.data(),
+                        miller_values
+                    );
+                    const double axial_angle = q_z_ptr[iq] * z_ptr[source];
+                    const Complex128 axial_phase{
+                        std::cos(axial_angle), std::sin(axial_angle)
+                    };
+                    const Complex128 beta_step{
+                        std::cos(beta_ptr[source]), -std::sin(beta_ptr[source])
+                    };
+                    const Complex128 axial = coefficient * axial_phase;
+                    Complex128 beta_phase{1.0, 0.0};
+                    for (py::ssize_t h = 0; h <= cutoff; ++h) {
+                        const Complex128 term = axial * kernel[static_cast<std::size_t>(h)];
+                        positive[h] += term * beta_phase;
+                        negative[h] += term * std::conj(beta_phase);
+                        beta_phase *= beta_step;
+                    }
+                }
+            }
+        });
+    }
+    return out;
+}
+
+ComplexArray exact_beta_harmonic_coefficients_factorized_miller_impl(
+    py::array_t<double, py::array::c_style | py::array::forcecast> radius,
+    py::array_t<double, py::array::c_style | py::array::forcecast> beta,
+    py::array_t<double, py::array::c_style | py::array::forcecast> z,
+    py::array_t<std::int64_t, py::array::c_style | py::array::forcecast> element_indices,
+    ComplexArray atom_weights,
+    ComplexArray form_factors,
+    py::array_t<double, py::array::c_style | py::array::forcecast> q_perp,
+    py::array_t<double, py::array::c_style | py::array::forcecast> q_z,
+    py::array_t<std::int64_t, py::array::c_style | py::array::forcecast> cutoffs,
+    std::int64_t extra_order,
+    bool fused_angular_phase,
+    const Complex128* cached_angular_phase,
+    py::ssize_t cached_angular_stride
+) {
+    const py::buffer_info radius_info = radius.request();
+    const py::buffer_info beta_info = beta.request();
+    const py::buffer_info z_info = z.request();
+    const py::buffer_info element_info = element_indices.request();
+    const py::buffer_info weight_info = atom_weights.request();
+    const py::buffer_info ff_info = form_factors.request();
+    const py::buffer_info q_perp_info = q_perp.request();
+    const py::buffer_info q_z_info = q_z.request();
+    const py::buffer_info cutoff_info = cutoffs.request();
+
+    if (radius_info.ndim != 1 || beta_info.ndim != 1 || z_info.ndim != 1 ||
+        element_info.ndim != 1 || weight_info.ndim != 1) {
+        throw std::invalid_argument(
+            "radius, beta, z, element_indices, and atom_weights must be one-dimensional"
+        );
+    }
+    if (q_perp_info.ndim != 1 || q_z_info.ndim != 1 || cutoff_info.ndim != 1) {
+        throw std::invalid_argument("q_perp, q_z, and cutoffs must be one-dimensional");
+    }
+    if (ff_info.ndim != 2) {
+        throw std::invalid_argument("form_factors must have shape (n_elements, n_q)");
+    }
+    const py::ssize_t n_source = radius_info.shape[0];
+    const py::ssize_t n_q = q_perp_info.shape[0];
+    const py::ssize_t n_elements = ff_info.shape[0];
+    if (beta_info.shape[0] != n_source || z_info.shape[0] != n_source ||
+        element_info.shape[0] != n_source || weight_info.shape[0] != n_source) {
+        throw std::invalid_argument("all per-source arrays must have equal length");
+    }
+    if (q_z_info.shape[0] != n_q || cutoff_info.shape[0] != n_q ||
+        ff_info.shape[1] != n_q) {
+        throw std::invalid_argument("all q-dependent arrays must have equal length");
+    }
+    if (extra_order < 0) {
+        throw std::invalid_argument("extra_order must be non-negative");
+    }
+
+    const auto* element_ptr = static_cast<const std::int64_t*>(element_info.ptr);
+    for (py::ssize_t source = 0; source < n_source; ++source) {
+        if (element_ptr[source] < 0 || element_ptr[source] >= n_elements) {
+            throw std::invalid_argument("element_indices contains an out-of-range value");
+        }
+    }
+    const auto* cutoff_ptr = static_cast<const std::int64_t*>(cutoff_info.ptr);
+    py::ssize_t max_cutoff = 0;
+    for (py::ssize_t iq = 0; iq < n_q; ++iq) {
+        if (cutoff_ptr[iq] < 0) {
+            throw std::invalid_argument("cutoffs must be non-negative");
+        }
+        max_cutoff = std::max(max_cutoff, static_cast<py::ssize_t>(cutoff_ptr[iq]));
+    }
+
+    ComplexArray out({n_q, static_cast<py::ssize_t>(2), max_cutoff + 1});
+    auto* out_ptr = out.mutable_data();
+    std::fill(out_ptr, out_ptr + n_q * 2 * (max_cutoff + 1), Complex128{});
+
+    const auto* radius_ptr = static_cast<const double*>(radius_info.ptr);
+    const auto* beta_ptr = static_cast<const double*>(beta_info.ptr);
+    const auto* z_ptr = static_cast<const double*>(z_info.ptr);
+    const auto* weight_ptr = static_cast<const Complex128*>(weight_info.ptr);
+    const auto* ff_ptr = static_cast<const Complex128*>(ff_info.ptr);
+    const auto* q_perp_ptr = static_cast<const double*>(q_perp_info.ptr);
+    const auto* q_z_ptr = static_cast<const double*>(q_z_info.ptr);
+    const py::ssize_t n_h = max_cutoff + 1;
+    if (cached_angular_phase != nullptr && cached_angular_stride < n_h) {
+        throw std::invalid_argument(
+            "cached angular phase has fewer modes than the maximum cutoff"
+        );
+    }
+    std::vector<double> angular_step_re;
+    std::vector<double> angular_step_im;
+    if (fused_angular_phase && cached_angular_phase == nullptr) {
+        angular_step_re.resize(static_cast<std::size_t>(n_source));
+        angular_step_im.resize(static_cast<std::size_t>(n_source));
+        for (py::ssize_t source = 0; source < n_source; ++source) {
+            // i * exp(-i beta) = sin(beta) + i cos(beta).  Combining i^h
+            // with the beta phase removes one complex multiply per mode.
+            angular_step_re[static_cast<std::size_t>(source)] =
+                std::sin(beta_ptr[source]);
+            angular_step_im[static_cast<std::size_t>(source)] =
+                std::cos(beta_ptr[source]);
+        }
+    }
+    const py::ssize_t work_per_q =
+        std::max<py::ssize_t>(1, n_source * std::max<py::ssize_t>(1, n_h));
+
+    {
+        py::gil_scoped_release release;
+        run_parallel_dynamic(n_q, work_per_q, [&](py::ssize_t begin, py::ssize_t end) {
+            std::vector<Complex128> kernel(static_cast<std::size_t>(n_h));
+            std::vector<double> bessel(static_cast<std::size_t>(n_h));
+            std::vector<double> miller_values;
+            for (py::ssize_t iq = begin; iq < end; ++iq) {
+                const py::ssize_t cutoff = static_cast<py::ssize_t>(cutoff_ptr[iq]);
+                Complex128* positive = out_ptr + (iq * 2) * n_h;
+                Complex128* negative = positive + n_h;
+                for (py::ssize_t source = 0; source < n_source; ++source) {
+                    const py::ssize_t element = static_cast<py::ssize_t>(element_ptr[source]);
+                    const Complex128 coefficient =
+                        weight_ptr[source] * ff_ptr[element * n_q + iq];
+                    if (coefficient == Complex128{}) {
+                        continue;
+                    }
+                    const double axial_angle = q_z_ptr[iq] * z_ptr[source];
+                    const Complex128 axial_phase{
+                        std::cos(axial_angle), std::sin(axial_angle)
+                    };
+                    const Complex128 axial = coefficient * axial_phase;
+                    if (fused_angular_phase) {
+                        fill_miller_bessel_row(
+                            q_perp_ptr[iq] * radius_ptr[source],
+                            cutoff,
+                            static_cast<py::ssize_t>(extra_order),
+                            bessel.data(),
+                            miller_values
+                        );
+                        const double axial_re = axial.real();
+                        const double axial_im = axial.imag();
+                        if (cached_angular_phase != nullptr) {
+                            const Complex128* phase_row =
+                                cached_angular_phase + source * cached_angular_stride;
+                            WAXS_IVDEP
+                            for (py::ssize_t h = 0; h <= cutoff; ++h) {
+                                const double jn = bessel[static_cast<std::size_t>(h)];
+                                const double term_re = axial_re * jn;
+                                const double term_im = axial_im * jn;
+                                const double phase_re = phase_row[h].real();
+                                const double phase_im = phase_row[h].imag();
+                                const double parity = (h & 1) ? -1.0 : 1.0;
+                                positive[h] += Complex128{
+                                    term_re * phase_re - term_im * phase_im,
+                                    term_re * phase_im + term_im * phase_re
+                                };
+                                negative[h] += Complex128{
+                                    parity * (term_re * phase_re + term_im * phase_im),
+                                    parity * (term_im * phase_re - term_re * phase_im)
+                                };
+                            }
+                        } else {
+                            const double step_re =
+                                angular_step_re[static_cast<std::size_t>(source)];
+                            const double step_im =
+                                angular_step_im[static_cast<std::size_t>(source)];
+                            double phase_re = 1.0;
+                            double phase_im = 0.0;
+                            double parity = 1.0;
+                            for (py::ssize_t h = 0; h <= cutoff; ++h) {
+                                const double jn = bessel[static_cast<std::size_t>(h)];
+                                const double term_re = axial_re * jn;
+                                const double term_im = axial_im * jn;
+                                positive[h] += Complex128{
+                                    term_re * phase_re - term_im * phase_im,
+                                    term_re * phase_im + term_im * phase_re
+                                };
+                                negative[h] += Complex128{
+                                    parity * (term_re * phase_re + term_im * phase_im),
+                                    parity * (term_im * phase_re - term_re * phase_im)
+                                };
+                                const double next_re =
+                                    phase_re * step_re - phase_im * step_im;
+                                phase_im = phase_re * step_im + phase_im * step_re;
+                                phase_re = next_re;
+                                parity = -parity;
+                            }
+                        }
+                    } else {
+                        fill_miller_kernel_row<Complex128>(
+                            q_perp_ptr[iq] * radius_ptr[source],
+                            1,
+                            cutoff,
+                            static_cast<py::ssize_t>(extra_order),
+                            kernel.data(),
+                            miller_values
+                        );
+                        const Complex128 beta_step{
+                            std::cos(beta_ptr[source]), -std::sin(beta_ptr[source])
+                        };
+                        Complex128 beta_phase{1.0, 0.0};
+                        for (py::ssize_t h = 0; h <= cutoff; ++h) {
+                            const Complex128 term =
+                                axial * kernel[static_cast<std::size_t>(h)];
+                            positive[h] += term * beta_phase;
+                            negative[h] += term * std::conj(beta_phase);
+                            beta_phase *= beta_step;
+                        }
+                    }
+                }
+            }
+        });
+    }
+    return out;
+}
+
+ComplexArray exact_beta_harmonic_coefficients_factorized_miller(
+    py::array_t<double, py::array::c_style | py::array::forcecast> radius,
+    py::array_t<double, py::array::c_style | py::array::forcecast> beta,
+    py::array_t<double, py::array::c_style | py::array::forcecast> z,
+    py::array_t<std::int64_t, py::array::c_style | py::array::forcecast> element_indices,
+    ComplexArray atom_weights,
+    ComplexArray form_factors,
+    py::array_t<double, py::array::c_style | py::array::forcecast> q_perp,
+    py::array_t<double, py::array::c_style | py::array::forcecast> q_z,
+    py::array_t<std::int64_t, py::array::c_style | py::array::forcecast> cutoffs,
+    std::int64_t extra_order
+) {
+    return exact_beta_harmonic_coefficients_factorized_miller_impl(
+        radius,
+        beta,
+        z,
+        element_indices,
+        atom_weights,
+        form_factors,
+        q_perp,
+        q_z,
+        cutoffs,
+        extra_order,
+        false,
+        nullptr,
+        0
+    );
+}
+
+ComplexArray exact_beta_harmonic_coefficients_factorized_miller_fused_phase(
+    py::array_t<double, py::array::c_style | py::array::forcecast> radius,
+    py::array_t<double, py::array::c_style | py::array::forcecast> beta,
+    py::array_t<double, py::array::c_style | py::array::forcecast> z,
+    py::array_t<std::int64_t, py::array::c_style | py::array::forcecast> element_indices,
+    ComplexArray atom_weights,
+    ComplexArray form_factors,
+    py::array_t<double, py::array::c_style | py::array::forcecast> q_perp,
+    py::array_t<double, py::array::c_style | py::array::forcecast> q_z,
+    py::array_t<std::int64_t, py::array::c_style | py::array::forcecast> cutoffs,
+    std::int64_t extra_order
+) {
+    return exact_beta_harmonic_coefficients_factorized_miller_impl(
+        radius,
+        beta,
+        z,
+        element_indices,
+        atom_weights,
+        form_factors,
+        q_perp,
+        q_z,
+        cutoffs,
+        extra_order,
+        true,
+        nullptr,
+        0
+    );
+}
+
+ComplexArray exact_beta_harmonic_coefficients_factorized_miller_cached_phase(
+    py::array_t<double, py::array::c_style | py::array::forcecast> radius,
+    py::array_t<double, py::array::c_style | py::array::forcecast> beta,
+    py::array_t<double, py::array::c_style | py::array::forcecast> z,
+    ComplexArray angular_phase,
+    py::array_t<std::int64_t, py::array::c_style | py::array::forcecast> element_indices,
+    ComplexArray atom_weights,
+    ComplexArray form_factors,
+    py::array_t<double, py::array::c_style | py::array::forcecast> q_perp,
+    py::array_t<double, py::array::c_style | py::array::forcecast> q_z,
+    py::array_t<std::int64_t, py::array::c_style | py::array::forcecast> cutoffs,
+    std::int64_t extra_order
+) {
+    const py::buffer_info radius_info = radius.request();
+    const py::buffer_info phase_info = angular_phase.request();
+    if (radius_info.ndim != 1 || phase_info.ndim != 2 ||
+        phase_info.shape[0] != radius_info.shape[0]) {
+        throw std::invalid_argument(
+            "angular_phase must have shape (n_source, n_harmonic)"
+        );
+    }
+    return exact_beta_harmonic_coefficients_factorized_miller_impl(
+        radius,
+        beta,
+        z,
+        element_indices,
+        atom_weights,
+        form_factors,
+        q_perp,
+        q_z,
+        cutoffs,
+        extra_order,
+        true,
+        static_cast<const Complex128*>(phase_info.ptr),
+        phase_info.shape[1]
     );
 }
 
@@ -3366,6 +5580,170 @@ PYBIND11_MODULE(_cpp_solvers, m) {
         py::arg("extra_order")
     );
     m.def(
+        "surface_normal_sparse_rz_half_modes_miller",
+        &surface_normal_sparse_rz_half_modes_miller,
+        py::arg("active_e"),
+        py::arg("active_z"),
+        py::arg("active_hhat"),
+        py::arg("r_profile_starts"),
+        py::arg("r_profile_counts"),
+        py::arg("z_phase"),
+        py::arg("q_perp"),
+        py::arg("q_z"),
+        py::arg("r_centers"),
+        py::arg("form_factors"),
+        py::arg("cutoffs"),
+        py::arg("n_phi"),
+        py::arg("max_cutoff"),
+        py::arg("extra_order") = 64,
+        py::arg("phi_offset") = 0.0
+    );
+    m.def(
+        "surface_normal_sparse_rz_half_modes_miller64",
+        &surface_normal_sparse_rz_half_modes_miller64,
+        py::arg("active_e"),
+        py::arg("active_z"),
+        py::arg("active_hhat"),
+        py::arg("r_profile_starts"),
+        py::arg("r_profile_counts"),
+        py::arg("z_phase"),
+        py::arg("q_perp"),
+        py::arg("q_z"),
+        py::arg("r_centers"),
+        py::arg("form_factors"),
+        py::arg("cutoffs"),
+        py::arg("n_phi"),
+        py::arg("max_cutoff"),
+        py::arg("extra_order") = 64,
+        py::arg("phi_offset") = 0.0
+    );
+    m.def(
+        "giwaxs_contract_half_modes_miller",
+        &giwaxs_contract_half_modes_miller,
+        py::arg("hhat"),
+        py::arg("z_phase"),
+        py::arg("q_perp"),
+        py::arg("q_phi"),
+        py::arg("r_centers"),
+        py::arg("form_factors"),
+        py::arg("cutoffs"),
+        py::arg("n_phi"),
+        py::arg("max_cutoff"),
+        py::arg("extra_order") = 64
+    );
+    m.def(
+        "giwaxs_contract_half_modes_miller64",
+        &giwaxs_contract_half_modes_miller64,
+        py::arg("hhat"),
+        py::arg("z_phase"),
+        py::arg("q_perp"),
+        py::arg("q_phi"),
+        py::arg("r_centers"),
+        py::arg("form_factors"),
+        py::arg("cutoffs"),
+        py::arg("n_phi"),
+        py::arg("max_cutoff"),
+        py::arg("extra_order") = 64
+    );
+    m.def(
+        "giwaxs_contract_half_modes_miller_qz_reduced",
+        &giwaxs_contract_half_modes_miller_qz_reduced,
+        py::arg("hhat"),
+        py::arg("z_phase_groups"),
+        py::arg("qz_group"),
+        py::arg("q_perp"),
+        py::arg("q_phi"),
+        py::arg("r_centers"),
+        py::arg("form_factors"),
+        py::arg("cutoffs"),
+        py::arg("group_cutoffs"),
+        py::arg("n_phi"),
+        py::arg("max_cutoff"),
+        py::arg("extra_order") = 64
+    );
+    m.def(
+        "giwaxs_contract_half_modes_miller_qz_reduced64",
+        &giwaxs_contract_half_modes_miller_qz_reduced64,
+        py::arg("hhat"),
+        py::arg("z_phase_groups"),
+        py::arg("qz_group"),
+        py::arg("q_perp"),
+        py::arg("q_phi"),
+        py::arg("r_centers"),
+        py::arg("form_factors"),
+        py::arg("cutoffs"),
+        py::arg("group_cutoffs"),
+        py::arg("n_phi"),
+        py::arg("max_cutoff"),
+        py::arg("extra_order") = 64
+    );
+    m.def(
+        "giwaxs_contract_half_modes_kernel_qz_reduced",
+        &giwaxs_contract_half_modes_kernel_qz_reduced,
+        py::arg("hhat"),
+        py::arg("z_phase_groups"),
+        py::arg("qz_group"),
+        py::arg("kernel_pos"),
+        py::arg("kernel_neg"),
+        py::arg("form_factors"),
+        py::arg("cutoffs"),
+        py::arg("group_cutoffs"),
+        py::arg("max_cutoff")
+    );
+    m.def(
+        "giwaxs_contract_half_modes_kernel_qz_reduced64",
+        &giwaxs_contract_half_modes_kernel_qz_reduced64,
+        py::arg("hhat"),
+        py::arg("z_phase_groups"),
+        py::arg("qz_group"),
+        py::arg("kernel_pos"),
+        py::arg("kernel_neg"),
+        py::arg("form_factors"),
+        py::arg("cutoffs"),
+        py::arg("group_cutoffs"),
+        py::arg("max_cutoff")
+    );
+    m.def(
+        "giwaxs_contract_sparse_profiles_miller_qz_reduced",
+        &giwaxs_contract_sparse_profiles_miller_qz_reduced,
+        py::arg("profile_e"),
+        py::arg("profile_r"),
+        py::arg("profile_z"),
+        py::arg("active_hhat"),
+        py::arg("r_profile_starts"),
+        py::arg("r_profile_counts"),
+        py::arg("z_phase_groups"),
+        py::arg("qz_group"),
+        py::arg("q_perp"),
+        py::arg("q_phi"),
+        py::arg("r_centers"),
+        py::arg("form_factors"),
+        py::arg("cutoffs"),
+        py::arg("n_phi"),
+        py::arg("max_cutoff"),
+        py::arg("extra_order") = 64
+    );
+    m.def(
+        "giwaxs_contract_sparse_profiles_miller_qz_reduced64",
+        &giwaxs_contract_sparse_profiles_miller_qz_reduced64,
+        py::arg("profile_e"),
+        py::arg("profile_r"),
+        py::arg("profile_z"),
+        py::arg("active_hhat"),
+        py::arg("r_profile_starts"),
+        py::arg("r_profile_counts"),
+        py::arg("z_phase_groups"),
+        py::arg("qz_group"),
+        py::arg("q_perp"),
+        py::arg("q_phi"),
+        py::arg("r_centers"),
+        py::arg("form_factors"),
+        py::arg("cutoffs"),
+        py::arg("n_phi"),
+        py::arg("max_cutoff"),
+        py::arg("extra_order") = 64
+    );
+    m.def(
         "circular_contract_r_dependent_half_z_reduced",
         &circular_contract_r_dependent_half_z_reduced,
         py::arg("z_pos"),
@@ -3404,6 +5782,61 @@ PYBIND11_MODULE(_cpp_solvers, m) {
         py::arg("n_phi"),
         py::arg("max_cutoff"),
         py::arg("extra_order") = 64
+    );
+    m.def(
+        "exact_beta_harmonic_coefficients_miller",
+        &exact_beta_harmonic_coefficients_miller,
+        py::arg("radius"),
+        py::arg("beta"),
+        py::arg("z"),
+        py::arg("coefficients"),
+        py::arg("q_perp"),
+        py::arg("q_z"),
+        py::arg("cutoffs"),
+        py::arg("extra_order") = 32
+    );
+    m.def(
+        "exact_beta_harmonic_coefficients_factorized_miller",
+        &exact_beta_harmonic_coefficients_factorized_miller,
+        py::arg("radius"),
+        py::arg("beta"),
+        py::arg("z"),
+        py::arg("element_indices"),
+        py::arg("atom_weights"),
+        py::arg("form_factors"),
+        py::arg("q_perp"),
+        py::arg("q_z"),
+        py::arg("cutoffs"),
+        py::arg("extra_order") = 32
+    );
+    m.def(
+        "exact_beta_harmonic_coefficients_factorized_miller_fused_phase",
+        &exact_beta_harmonic_coefficients_factorized_miller_fused_phase,
+        py::arg("radius"),
+        py::arg("beta"),
+        py::arg("z"),
+        py::arg("element_indices"),
+        py::arg("atom_weights"),
+        py::arg("form_factors"),
+        py::arg("q_perp"),
+        py::arg("q_z"),
+        py::arg("cutoffs"),
+        py::arg("extra_order") = 32
+    );
+    m.def(
+        "exact_beta_harmonic_coefficients_factorized_miller_cached_phase",
+        &exact_beta_harmonic_coefficients_factorized_miller_cached_phase,
+        py::arg("radius"),
+        py::arg("beta"),
+        py::arg("z"),
+        py::arg("angular_phase"),
+        py::arg("element_indices"),
+        py::arg("atom_weights"),
+        py::arg("form_factors"),
+        py::arg("q_perp"),
+        py::arg("q_z"),
+        py::arg("cutoffs"),
+        py::arg("extra_order") = 32
     );
     m.def(
         "analytic_kernel_hat_modes_table",

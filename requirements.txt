@@ -13,3 +13,8 @@ pydantic
 tqdm
 gdown
 reportlab
+PyMuPDF
+matplotlib
+torch
+cupy-cuda12x
+cufinufft

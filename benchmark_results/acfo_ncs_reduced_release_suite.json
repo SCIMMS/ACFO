@@ -1,0 +1,532 @@
+{
+  "schema": "acfo-ncs-reduced-release-suite-v1",
+  "generated_at_utc": "2026-07-13T03:51:04.651090+00:00",
+  "duration_s": 193.46449009999924,
+  "commands": [
+    {
+      "label": "full_pytest",
+      "command": [
+        "C:\\Users\\tnvlaos456\\Documents\\Atomic WAXS Cake-Map Simulator\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-q"
+      ],
+      "returncode": 0,
+      "duration_s": 14.767069200010155,
+      "stdout_tail": "........................................................................ [ 38%]\n........................................................................ [ 76%]\n.............................................                            [100%]\n189 passed in 12.76s\n",
+      "stderr_tail": "",
+      "passed": true
+    },
+    {
+      "label": "high_na_charge_sweep",
+      "command": [
+        "C:\\Users\\tnvlaos456\\Documents\\Atomic WAXS Cake-Map Simulator\\.venv\\Scripts\\python.exe",
+        "scripts/validate_high_na_harmonic_support_risk.py"
+      ],
+      "returncode": 0,
+      "duration_s": 14.52698870000313,
+      "stdout_tail": "s\": {\n          \"complex_l2\": 0.9719300672191792,\n          \"required_h_abs\": [\n            24\n          ],\n          \"mode_rho_work\": 168,\n          \"mode_rho_work_ratio_vs_geometric\": 1.0838709677419356\n        },\n        \"adaptive_effective_vector\": {\n          \"complex_l2\": 4.378618951133978e-09,\n          \"required_h_abs\": [\n            22,\n            23,\n            24,\n            25,\n            26\n          ],\n          \"mode_rho_work\": 216,\n          \"mode_rho_work_ratio_vs_geometric\": 1.3935483870967742\n        },\n        \"manual_all_effective_modes\": {\n          \"complex_l2\": 4.378618951133978e-09,\n          \"required_h_abs\": [\n            22,\n            23,\n            24,\n            25,\n            26\n          ],\n          \"mode_rho_work\": 216,\n          \"mode_rho_work_ratio_vs_geometric\": 1.3935483870967742\n        }\n      }\n    }\n  ],\n  \"vector_charge18_stress\": {\n    \"sin_theta_max\": 0.8,\n    \"vortex_charge\": 18,\n    \"geometric_h_cutoff\": 17,\n    \"raw_jones_significant_h_abs\": [\n      18\n    ],\n    \"effective_vector_significant_h_abs\": [\n      16,\n      17,\n      18,\n      19,\n      20\n    ],\n    \"variants\": {\n      \"geometric_only\": {\n        \"complex_l2\": 0.41554333312573466,\n        \"required_h_abs\": [],\n        \"mode_rho_work\": 155,\n        \"mode_rho_work_ratio_vs_geometric\": 1.0\n      },\n      \"adaptive_raw_jones\": {\n        \"complex_l2\": 0.1649365660463728,\n        \"required_h_abs\": [\n          18\n        ],\n        \"mode_rho_work\": 167,\n        \"mode_rho_work_ratio_vs_geometric\": 1.0774193548387097\n      },\n      \"adaptive_effective_vector\": {\n        \"complex_l2\": 1.2523844573012271e-12,\n        \"required_h_abs\": [\n          16,\n          17,\n          18,\n          19,\n          20\n        ],\n        \"mode_rho_work\": 211,\n        \"mode_rho_work_ratio_vs_geometric\": 1.3612903225806452\n      },\n      \"manual_all_effective_modes\": {\n        \"complex_l2\": 1.2523844573012271e-12,\n        \"required_h_abs\": [\n          16,\n          17,\n          18,\n          19,\n          20\n        ],\n        \"mode_rho_work\": 211,\n        \"mode_rho_work_ratio_vs_geometric\": 1.3612903225806452\n      }\n    }\n  },\n  \"gates\": {\n    \"current_charge6_geometric_scalar_le_1e_6\": true,\n    \"current_charge6_geometric_vector_le_1e_6\": true,\n    \"stress_geometric_detects_failure\": true,\n    \"stress_raw_adaptive_is_insufficient\": true,\n    \"charge_sweep_effective_adaptive_le_1e_6\": true,\n    \"charge_sweep_effective_adaptive_matches_manual\": true,\n    \"charge_sweep_work_ratio_le_2\": true\n  },\n  \"passed\": true,\n  \"conclusion\": \"The corrected rho-dependent adaptive rule preserves every significant post-Richards-Wolf effective vector harmonic at each local rho cutoff. It recovers the direct Debye-Wolf reference across the charge sweep while retaining bounded sparse work overhead.\",\n  \"environment\": {\n    \"python\": \"3.13.13\",\n    \"numpy\": \"2.4.6\",\n    \"platform\": \"Windows-10-10.0.19045-SP0\"\n  }\n}\nwrote benchmark_results\\high_na_harmonic_support_risk.json\n",
+      "stderr_tail": "",
+      "passed": true
+    },
+    {
+      "label": "detector_mask_smoke",
+      "command": [
+        "C:\\Users\\tnvlaos456\\Documents\\Atomic WAXS Cake-Map Simulator\\.venv\\Scripts\\python.exe",
+        "scripts/benchmark_protein_nanocrystal_finufft_fair.py",
+        "structures/processed/protein_nanocrystal_lysozyme_1iee_1x1x1_fixed.npz",
+        "--source-mode",
+        "same_binned",
+        "--qmin",
+        "0.05",
+        "--qmax",
+        "6.3",
+        "--nq",
+        "8",
+        "--wavelength-nm",
+        "0.08",
+        "--bin-width-nm",
+        "0.1",
+        "--nphi-min",
+        "128",
+        "--harmonic-margin",
+        "32",
+        "--r-dependent-margin",
+        "32",
+        "--cutoff-bin-size",
+        "16",
+        "--acfo-q-block-size",
+        "2",
+        "--profile-chunk-size",
+        "8",
+        "--finufft-eps",
+        "1e-6",
+        "--finufft-threads",
+        "4",
+        "--finufft-q-block-size",
+        "2",
+        "--repeats",
+        "0",
+        "--detector-label",
+        "EIGER2_X_4M_15p5keV_100mm",
+        "--detector-active-width-mm",
+        "155.1",
+        "--detector-active-height-mm",
+        "162.15",
+        "--detector-distance-mm",
+        "100",
+        "--output",
+        "benchmark_results/protein_nanocrystal_detector_mask_smoke.json"
+      ],
+      "returncode": 0,
+      "duration_s": 2.291778400001931,
+      "stdout_tail": " 1.19140625,\n  \"acfo_first_rss_samples\": 3,\n  \"acfo_cached_median_s\": 0.03479890000016894,\n  \"acfo_cached_times\": [],\n  \"acfo_warmup_times\": [],\n  \"acfo_timing_summary\": {\n    \"count\": 0,\n    \"median_s\": null,\n    \"p05_s\": null,\n    \"p95_s\": null\n  },\n  \"finufft_version\": \"2.5.1\",\n  \"finufft_eps\": 1e-06,\n  \"finufft_threads\": 4,\n  \"finufft_plan_mode\": \"memory_safe_q_blocked_setup_per_evaluation\",\n  \"finufft_q_block_size\": 2,\n  \"finufft_setup_s\": 0.0,\n  \"finufft_setup_rss_before_mib\": null,\n  \"finufft_setup_rss_after_mib\": null,\n  \"finufft_setup_rss_after_delta_mib\": null,\n  \"finufft_setup_peak_rss_mib\": null,\n  \"finufft_setup_peak_rss_delta_mib\": null,\n  \"finufft_setup_rss_samples\": null,\n  \"finufft_first_s\": 0.568991799998912,\n  \"finufft_first_rss_before_mib\": 81.0390625,\n  \"finufft_first_rss_after_mib\": 85.64453125,\n  \"finufft_first_rss_after_delta_mib\": 4.60546875,\n  \"finufft_first_peak_rss_mib\": 128.28125,\n  \"finufft_first_peak_rss_delta_mib\": 47.2421875,\n  \"finufft_first_rss_samples\": 37,\n  \"finufft_cached_median_s\": 0.568991799998912,\n  \"finufft_cached_times\": [],\n  \"finufft_warmup_times\": [],\n  \"finufft_timing_summary\": {\n    \"count\": 0,\n    \"median_s\": null,\n    \"p05_s\": null,\n    \"p95_s\": null\n  },\n  \"timing_protocol\": {\n    \"first_calls_recorded_separately\": true,\n    \"warmups_per_method\": 0,\n    \"measured_repeats_per_method\": 0,\n    \"method_order\": \"all_acfo_then_all_finufft\",\n    \"garbage_collection_before_each_warmup_and_measured_call\": true\n  },\n  \"metric_domain\": \"active_detector_nodes\",\n  \"complex_l2_acfo_vs_finufft\": 8.633684222079074e-07,\n  \"intensity_l2_acfo_vs_finufft\": 1.852876594452371e-06,\n  \"ring_l2_acfo_vs_finufft\": 1.5266606064865007e-06,\n  \"intensity_row_relative_l2_median\": 1.823075381273154e-06,\n  \"intensity_row_relative_l2_p99\": 2.4394196647396644e-06,\n  \"warm_speedup_finufft_over_acfo\": 16.350855917748827,\n  \"break_even_repeat\": 1,\n  \"total_time_model\": [\n    {\n      \"T\": 1,\n      \"acfo_total_s\": 0.0386716999928467,\n      \"finufft_total_s\": 0.568991799998912,\n      \"speedup_finufft_over_acfo\": 14.713389897629568,\n      \"modeled_from_measured_first_and_cached\": false\n    },\n    {\n      \"T\": 10,\n      \"acfo_total_s\": 0.3518617999943672,\n      \"finufft_total_s\": 5.68991799998912,\n      \"speedup_finufft_over_acfo\": 16.170888684364737,\n      \"modeled_from_measured_first_and_cached\": true\n    },\n    {\n      \"T\": 100,\n      \"acfo_total_s\": 3.483762800009572,\n      \"finufft_total_s\": 56.8991799998912,\n      \"speedup_finufft_over_acfo\": 16.33267913640242,\n      \"modeled_from_measured_first_and_cached\": true\n    }\n  ],\n  \"all_finite\": true,\n  \"python\": \"3.13.13 | packaged by Anaconda, Inc. | (main, Apr 14 2026, 06:12:50) [MSC v.1942 64 bit (AMD64)]\",\n  \"platform\": \"Windows-10-10.0.19045-SP0\",\n  \"cpu_count\": 4,\n  \"gpu_baseline_status\": \"unavailable: cufinufft 2.5.1 DLL dependency load failure\"\n}\nwrote benchmark_results\\protein_nanocrystal_detector_mask_smoke.json and benchmark_results\\protein_nanocrystal_detector_mask_smoke.md\n",
+      "stderr_tail": "",
+      "passed": true
+    },
+    {
+      "label": "waxs_direct_finufft_triad",
+      "command": [
+        "C:\\Users\\tnvlaos456\\Documents\\Atomic WAXS Cake-Map Simulator\\.venv\\Scripts\\python.exe",
+        "scripts/validate_waxs_direct_finufft_triad.py",
+        "structures/processed/protein_nanocrystal_lysozyme_1iee_1x1x1_fixed.npz",
+        "--output",
+        "benchmark_results/waxs_direct_finufft_triad.json"
+      ],
+      "returncode": 0,
+      "duration_s": 12.971754400001373,
+      "stdout_tail": "{\n  \"schema\": \"waxs-direct-finufft-triad-v1\",\n  \"generated_at_utc\": \"2026-07-13T03:48:40.332587+00:00\",\n  \"structure\": \"protein_nanocrystal_lysozyme_1iee_1x1x1_fixed\",\n  \"structure_path\": \"structures/processed/protein_nanocrystal_lysozyme_1iee_1x1x1_fixed.npz\",\n  \"atom_count\": 8008,\n  \"same_binned_source_count\": 8008,\n  \"q_range_inv_angstrom\": [\n    0.05,\n    6.3\n  ],\n  \"nq\": 8,\n  \"nphi\": 750,\n  \"active_targets\": 4948,\n  \"direct_oracle\": \"complex128 explicit nonuniform phase sum on active curved-Ewald targets\",\n  \"comparison_contract\": \"ACFO and FINUFFT use the same binned sources, form factors, and active detector targets\",\n  \"timings_s\": {\n    \"acfo\": 0.026987400007783435,\n    \"direct\": 4.293940899995505\n  },\n  \"acfo\": {\n    \"complex_l2_vs_direct\": 1.3642581209355848e-07,\n    \"intensity_l2_vs_direct\": 2.6886657147515044e-07,\n    \"masked_ring_intensity_l2_vs_direct\": 3.4758703693076755e-07\n  },\n  \"finufft_sweep\": [\n    {\n      \"eps\": 0.0001,\n      \"seconds\": 0.452707599994028,\n      \"complex_l2_vs_direct\": 7.559397395057593e-06,\n      \"intensity_l2_vs_direct\": 6.556881951044112e-06,\n      \"complex_l2_vs_acfo\": 7.604315615845237e-06\n    },\n    {\n      \"eps\": 1e-06,\n      \"seconds\": 0.47753640000883024,\n      \"complex_l2_vs_direct\": 1.9627364422734394e-07,\n      \"intensity_l2_vs_direct\": 3.350604254164923e-08,\n      \"complex_l2_vs_acfo\": 2.3828420752775336e-07\n    },\n    {\n      \"eps\": 1e-08,\n      \"seconds\": 0.719736400002148,\n      \"complex_l2_vs_direct\": 7.614450820218785e-09,\n      \"intensity_l2_vs_direct\": 1.5193868575020993e-08,\n      \"complex_l2_vs_acfo\": 1.4321755329262217e-07\n    },\n    {\n      \"eps\": 1e-10,\n      \"seconds\": 5.491277399996761,\n      \"complex_l2_vs_direct\": 3.762995940338053e-12,\n      \"intensity_l2_vs_direct\": 6.284045627742712e-12,\n      \"complex_l2_vs_acfo\": 1.3642564458864093e-07\n    }\n  ],\n  \"gates\": {\n    \"acfo_complex_l2_le_2e_6\": true,\n    \"finufft_eps_1e_6_complex_l2_le_2e_6\": true,\n    \"finufft_error_decreases_from_1e_4_to_1e_10\": true\n  },\n  \"passed\": true\n}\n",
+      "stderr_tail": "",
+      "passed": true
+    },
+    {
+      "label": "waxs_direct_reference_sweep",
+      "command": [
+        "C:\\Users\\tnvlaos456\\Documents\\Atomic WAXS Cake-Map Simulator\\.venv\\Scripts\\python.exe",
+        "scripts/validate_waxs_direct_reference_sweep.py",
+        "structures/processed/protein_nanocrystal_lysozyme_1iee_1x1x1_fixed.npz"
+      ],
+      "returncode": 0,
+      "duration_s": 96.89966890000505,
+      "stdout_tail": "t_eps_1e_6_complex_l2_le_2e_6\": true,\n    \"high_q_bin_0p05nm:finufft_tight_complex_l2_le_1e_9\": true,\n    \"high_q_bin_0p05nm:finufft_endpoint_error_decreases\": true,\n    \"high_q_bin_0p025nm:acfo_complex_l2_le_2e_6\": true,\n    \"high_q_bin_0p025nm:acfo_full_harmonic_complex_l2_le_1e_10\": true,\n    \"high_q_bin_0p025nm:finufft_eps_1e_6_complex_l2_le_2e_6\": true,\n    \"high_q_bin_0p025nm:finufft_tight_complex_l2_le_1e_9\": true,\n    \"high_q_bin_0p025nm:finufft_endpoint_error_decreases\": true,\n    \"high_q_bin_0p0125nm:acfo_complex_l2_le_2e_6\": true,\n    \"high_q_bin_0p0125nm:acfo_full_harmonic_complex_l2_le_1e_10\": true,\n    \"high_q_bin_0p0125nm:finufft_eps_1e_6_complex_l2_le_2e_6\": true,\n    \"high_q_bin_0p0125nm:finufft_tight_complex_l2_le_1e_9\": true,\n    \"high_q_bin_0p0125nm:finufft_endpoint_error_decreases\": true,\n    \"high_q_bin_0p00625nm:acfo_complex_l2_le_2e_6\": true,\n    \"high_q_bin_0p00625nm:acfo_full_harmonic_complex_l2_le_1e_10\": true,\n    \"high_q_bin_0p00625nm:finufft_eps_1e_6_complex_l2_le_2e_6\": true,\n    \"high_q_bin_0p00625nm:finufft_tight_complex_l2_le_1e_9\": true,\n    \"high_q_bin_0p00625nm:finufft_endpoint_error_decreases\": true,\n    \"high_q_bin_0p003125nm:acfo_complex_l2_le_2e_6\": true,\n    \"high_q_bin_0p003125nm:acfo_full_harmonic_complex_l2_le_1e_10\": true,\n    \"high_q_bin_0p003125nm:finufft_eps_1e_6_complex_l2_le_2e_6\": true,\n    \"high_q_bin_0p003125nm:finufft_tight_complex_l2_le_1e_9\": true,\n    \"high_q_bin_0p003125nm:finufft_endpoint_error_decreases\": true,\n    \"high_q_bin_0p0015625nm:acfo_complex_l2_le_2e_6\": true,\n    \"high_q_bin_0p0015625nm:acfo_full_harmonic_complex_l2_le_1e_10\": true,\n    \"high_q_bin_0p0015625nm:finufft_eps_1e_6_complex_l2_le_2e_6\": true,\n    \"high_q_bin_0p0015625nm:finufft_tight_complex_l2_le_1e_9\": true,\n    \"high_q_bin_0p0015625nm:finufft_endpoint_error_decreases\": true,\n    \"high_q_bin_0p00078125nm:acfo_complex_l2_le_2e_6\": true,\n    \"high_q_bin_0p00078125nm:acfo_full_harmonic_complex_l2_le_1e_10\": true,\n    \"high_q_bin_0p00078125nm:finufft_eps_1e_6_complex_l2_le_2e_6\": true,\n    \"high_q_bin_0p00078125nm:finufft_tight_complex_l2_le_1e_9\": true,\n    \"high_q_bin_0p00078125nm:finufft_endpoint_error_decreases\": true\n  },\n  \"gates\": {\n    \"operator_reference_pass\": true,\n    \"underresolved_angular_negative_control_detected\": true,\n    \"fixed_nphi_750_finest_bin_intensity_l2_le_1pct\": false\n  },\n  \"operator_reference_pass\": true,\n  \"fixed_nphi_750_finest_bin_intensity_l2\": 0.20166447188437678,\n  \"fixed_nphi_750_representation_pass\": false,\n  \"publication_full_pass\": false,\n  \"passed\": true,\n  \"claim_boundary\": [\n    \"Direct NDFT is the correctness oracle; FINUFFT is a tolerance-controlled practical baseline.\",\n    \"Direct FFT is not used as an oracle because the curved targets are not a uniform Cartesian reciprocal grid.\",\n    \"Same-binned-source comparisons isolate operator error; exact-atom comparisons also include source discretization.\",\n    \"Small-case timings are not production performance evidence.\"\n  ]\n}\n",
+      "stderr_tail": "",
+      "passed": true
+    },
+    {
+      "label": "waxs_source_discretization_convergence",
+      "command": [
+        "C:\\Users\\tnvlaos456\\Documents\\Atomic WAXS Cake-Map Simulator\\.venv\\Scripts\\python.exe",
+        "scripts/validate_waxs_source_discretization_convergence.py",
+        "structures/processed/protein_nanocrystal_lysozyme_1iee_1x1x1_fixed.npz"
+      ],
+      "returncode": 0,
+      "duration_s": 16.572755999994115,
+      "stdout_tail": "\"build_s\": 0.0025350000069011003,\n      \"direct_binned_s\": 0.8836012999963714,\n      \"complex_l2\": 0.12892535775507732,\n      \"intensity_l2\": 0.12043070971017261,\n      \"ring_intensity_l2\": 0.020727709355957677,\n      \"intensity_ncc\": 0.9867378665413311\n    },\n    {\n      \"bin_width_nm\": 0.00625,\n      \"nphi_source\": 96000,\n      \"azimuth_arc_width_at_rmax_nm\": 0.0003479201556005912,\n      \"active_bins\": 8008,\n      \"sparse_storage_mib\": 0.274932861328125,\n      \"build_s\": 0.0027639000036288053,\n      \"direct_binned_s\": 0.839927599998191,\n      \"complex_l2\": 0.06644037837325957,\n      \"intensity_l2\": 0.06203492967809283,\n      \"ring_intensity_l2\": 0.007957123992949544,\n      \"intensity_ncc\": 0.9964791127533799\n    },\n    {\n      \"bin_width_nm\": 0.003125,\n      \"nphi_source\": 96000,\n      \"azimuth_arc_width_at_rmax_nm\": 0.0003479201556005912,\n      \"active_bins\": 8008,\n      \"sparse_storage_mib\": 0.274932861328125,\n      \"build_s\": 0.0028098000038880855,\n      \"direct_binned_s\": 0.9372676999919349,\n      \"complex_l2\": 0.033556945981979724,\n      \"intensity_l2\": 0.03264215494878908,\n      \"ring_intensity_l2\": 0.0010842259119365372,\n      \"intensity_ncc\": 0.9990247664697277\n    },\n    {\n      \"bin_width_nm\": 0.0015625,\n      \"nphi_source\": 96000,\n      \"azimuth_arc_width_at_rmax_nm\": 0.0003479201556005912,\n      \"active_bins\": 8008,\n      \"sparse_storage_mib\": 0.274932861328125,\n      \"build_s\": 0.00243870000122115,\n      \"direct_binned_s\": 0.851478099997621,\n      \"complex_l2\": 0.016834903578688196,\n      \"intensity_l2\": 0.0155436280855478,\n      \"ring_intensity_l2\": 0.006064653144226927,\n      \"intensity_ncc\": 0.9997792270470538\n    },\n    {\n      \"bin_width_nm\": 0.00078125,\n      \"nphi_source\": 96000,\n      \"azimuth_arc_width_at_rmax_nm\": 0.0003479201556005912,\n      \"active_bins\": 8008,\n      \"sparse_storage_mib\": 0.274932861328125,\n      \"build_s\": 0.0032470000005559996,\n      \"direct_binned_s\": 0.9001167999958852,\n      \"complex_l2\": 0.008296819249987021,\n      \"intensity_l2\": 0.008034385835091789,\n      \"ring_intensity_l2\": 0.000944792429069343,\n      \"intensity_ncc\": 0.9999409976813327\n    }\n  ],\n  \"finest\": {\n    \"bin_width_nm\": 0.00078125,\n    \"nphi_source\": 96000,\n    \"azimuth_arc_width_at_rmax_nm\": 0.0003479201556005912,\n    \"active_bins\": 8008,\n    \"sparse_storage_mib\": 0.274932861328125,\n    \"build_s\": 0.0032470000005559996,\n    \"direct_binned_s\": 0.9001167999958852,\n    \"complex_l2\": 0.008296819249987021,\n    \"intensity_l2\": 0.008034385835091789,\n    \"ring_intensity_l2\": 0.000944792429069343,\n    \"intensity_ncc\": 0.9999409976813327\n  },\n  \"finest_intensity_le_1pct\": true,\n  \"finest_ring_intensity_le_0p5pct\": true,\n  \"passed\": true,\n  \"claim_boundary\": [\n    \"This is a source-representation convergence test, not an ACFO operator test.\",\n    \"The detector target grid is held fixed while source azimuth and radial/axial bins change.\",\n    \"The 1% and 0.5% thresholds are exploratory diagnostics, not preregistered publication gates.\"\n  ]\n}\n",
+      "stderr_tail": "",
+      "passed": true
+    },
+    {
+      "label": "waxs_exact_beta_harmonic_bridge",
+      "command": [
+        "C:\\Users\\tnvlaos456\\Documents\\Atomic WAXS Cake-Map Simulator\\.venv\\Scripts\\python.exe",
+        "scripts/validate_waxs_exact_beta_harmonic_bridge.py",
+        "structures/processed/protein_nanocrystal_lysozyme_1iee_1x1x1_fixed.npz",
+        "--bessel-backend",
+        "cpp_fused"
+      ],
+      "returncode": 0,
+      "duration_s": 2.8792507000034675,
+      "stdout_tail": "{\n  \"schema\": \"waxs-exact-beta-harmonic-bridge-v1\",\n  \"generated_at_utc\": \"2026-07-13T03:50:36.683171+00:00\",\n  \"structure\": \"protein_nanocrystal_lysozyme_1iee_1x1x1_fixed\",\n  \"structure_path\": \"structures/processed/protein_nanocrystal_lysozyme_1iee_1x1x1_fixed.npz\",\n  \"atom_count\": 8008,\n  \"q_inv_angstrom\": [\n    5.0,\n    5.65,\n    6.3\n  ],\n  \"target_nphi\": 720,\n  \"target_azimuth_nyquist\": 360,\n  \"active_targets\": 1012,\n  \"harmonic_margin\": 48,\n  \"bessel_backend\": \"cpp_fused\",\n  \"atom_chunk_size\": 256,\n  \"streamed_kernel_upper_bound_mib\": 1.37109375,\n  \"maximum_harmonic\": 350,\n  \"direct_ndft_seconds\": 0.943465100004687,\n  \"exact_coordinate_harmonic\": {\n    \"complex_l2\": 1.0101056434072341e-12,\n    \"intensity_l2\": 8.831173989148007e-13,\n    \"ring_intensity_l2\": 1.7580560786631218e-14,\n    \"intensity_ncc\": 0.9999999999999997,\n    \"seconds\": 0.10242699999071192\n  },\n  \"rz_quantization_sweep\": [\n    {\n      \"bin_width_nm\": 0.1,\n      \"n_r\": 54,\n      \"n_z\": 100,\n      \"maximum_harmonic\": 347,\n      \"seconds\": 0.09501340000133496,\n      \"complex_l2\": 0.9066679928640741,\n      \"intensity_l2\": 0.783069754882619,\n      \"ring_intensity_l2\": 0.22890727766338206,\n      \"intensity_ncc\": 0.3417273664246936\n    },\n    {\n      \"bin_width_nm\": 0.00625,\n      \"n_r\": 836,\n      \"n_z\": 1568,\n      \"maximum_harmonic\": 349,\n      \"seconds\": 0.0884271999966586,\n      \"complex_l2\": 0.06634368188107095,\n      \"intensity_l2\": 0.06200303823426362,\n      \"ring_intensity_l2\": 0.008009117064026228,\n      \"intensity_ncc\": 0.9964827433108517\n    },\n    {\n      \"bin_width_nm\": 0.00078125,\n      \"n_r\": 6678,\n      \"n_z\": 12528,\n      \"maximum_harmonic\": 349,\n      \"seconds\": 0.08863060000294354,\n      \"complex_l2\": 0.008154723834879115,\n      \"intensity_l2\": 0.007786377120645933,\n      \"ring_intensity_l2\": 0.0010462098931069788,\n      \"intensity_ncc\": 0.9999446136114551\n    }\n  ],\n  \"gates\": {\n    \"exact_harmonic_complex_l2_le_1e_10\": true,\n    \"maximum_harmonic_below_target_nyquist\": true,\n    \"fine_rz_exact_beta_intensity_l2_le_1pct\": true,\n    \"fine_rz_exact_beta_ring_l2_le_0p5pct\": true\n  },\n  \"passed\": true,\n  \"decision\": \"Exact per-atom beta and coordinates recover the direct NDFT on a 720-azimuth detector grid; source-coordinate precision therefore need not be represented by a 96,000-point detector/output FFT.\",\n  \"claim_boundary\": [\n    \"This is a small-case exact-coordinate harmonic reference, not a scalable production implementation.\",\n    \"The fine R/z threshold is exploratory and uses fixed detector targets.\",\n    \"Production work remains to accelerate exact-beta/sub-bin source contraction without scaling the output FFT to source-coordinate resolution.\"\n  ]\n}\n",
+      "stderr_tail": "",
+      "passed": true
+    },
+    {
+      "label": "protein_nanocrystal_lattice_factorization",
+      "command": [
+        "C:\\Users\\tnvlaos456\\Documents\\Atomic WAXS Cake-Map Simulator\\.venv\\Scripts\\python.exe",
+        "scripts/validate_protein_nanocrystal_lattice_factorization.py"
+      ],
+      "returncode": 0,
+      "duration_s": 18.042990000001737,
+      "stdout_tail": "attice-factorization-v1\",\n  \"generated_at_utc\": \"2026-07-13T03:50:54.752448+00:00\",\n  \"unit_structure\": \"protein_nanocrystal_lysozyme_1iee_1x1x1_fixed\",\n  \"unit_atom_count\": 8008,\n  \"q_inv_angstrom\": [\n    5.0,\n    5.65,\n    6.3\n  ],\n  \"target_nphi\": 720,\n  \"active_targets\": 1012,\n  \"unit_harmonic\": {\n    \"complex_l2\": 1.0101056434072341e-12,\n    \"intensity_l2\": 8.831173989148007e-13,\n    \"seconds\": 0.08269970001128968,\n    \"direct_seconds\": 0.9518791000009514,\n    \"maximum_harmonic\": 350\n  },\n  \"supercells\": [\n    {\n      \"label\": \"3x3x3\",\n      \"structure_path\": \"structures/processed/protein_nanocrystal_lysozyme_1iee_3x3x3_fixed.npz\",\n      \"atom_count\": 216216,\n      \"cell_count\": 27,\n      \"repetition_residual_nm\": 1.5223378113660146e-12,\n      \"lattice_factor_seconds\": 0.0017260000022361055,\n      \"factorized_full_target_seconds\": 0.08442570001352578,\n      \"direct_subset_targets\": 64,\n      \"direct_subset_seconds\": 1.472914400001173,\n      \"subset_complex_l2\": 3.681842267173203e-11,\n      \"subset_intensity_l2\": 2.826976930353405e-11\n    },\n    {\n      \"label\": \"5x5x5\",\n      \"structure_path\": \"structures/processed/protein_nanocrystal_lysozyme_1iee_5x5x5_fixed.npz\",\n      \"atom_count\": 1001000,\n      \"cell_count\": 125,\n      \"repetition_residual_nm\": 3.0588864774472313e-12,\n      \"lattice_factor_seconds\": 0.010388800001237541,\n      \"factorized_full_target_seconds\": 0.09308850001252722,\n      \"direct_subset_targets\": 64,\n      \"direct_subset_seconds\": 6.823724600006244,\n      \"subset_complex_l2\": 2.4284498525317208e-11,\n      \"subset_intensity_l2\": 1.2567804479511013e-11\n    }\n  ],\n  \"sparse_defect_control\": {\n    \"base_supercell\": \"5x5x5\",\n    \"defect_model\": \"sparse independent positional displacement with exact old/new delta correction\",\n    \"defect_count\": 1001,\n    \"defect_fraction\": 0.001,\n    \"requested_rms_nm\": 0.02,\n    \"realized_rms_nm\": 0.02,\n    \"correction_full_target_seconds\": 0.19579200001317076,\n    \"factorized_plus_correction_seconds\": 0.288880500025698,\n    \"direct_modified_subset_targets\": 64,\n    \"direct_modified_subset_seconds\": 6.805211999992025,\n    \"subset_complex_l2\": 2.425223093751544e-11,\n    \"subset_intensity_l2\": 1.2561148460784933e-11\n  },\n  \"gates\": {\n    \"unit_harmonic_complex_l2_le_1e_10\": true,\n    \"all_repetition_residual_le_1e_9_nm\": true,\n    \"all_supercell_subset_complex_l2_le_1e_9\": true,\n    \"sparse_defect_delta_subset_complex_l2_le_1e_9\": true\n  },\n  \"passed\": true,\n  \"decision\": \"Perfect repeated protein nanocrystals admit an exact unit-cell structure-factor times finite lattice-sum control.\",\n  \"claim_boundary\": [\n    \"This is the standard exact specialization for ordered repeated crystals, not an ACFO novelty claim.\",\n    \"It is a validation/control path for perfect crystals and does not cover arbitrary atom-wise disorder.\",\n    \"Sparse vacancy/substitution defects can be represented as explicit delta-scatterer corrections to the perfect background; dense disorder needs a separate contract.\"\n  ]\n}\n",
+      "stderr_tail": "",
+      "passed": true
+    },
+    {
+      "label": "odt_compact_streaming_64cubed_smoke",
+      "command": [
+        "C:\\Users\\tnvlaos456\\Documents\\Atomic WAXS Cake-Map Simulator\\.venv\\Scripts\\python.exe",
+        "scripts/benchmark_odt_torch_gpu_reconstruction.py",
+        "--device",
+        "cuda",
+        "--dtype",
+        "complex64",
+        "--low-memory-adjoint",
+        "--radial-block-size",
+        "16",
+        "--illumination-block-size",
+        "4",
+        "--skip-native-prepared-adjoint",
+        "--compact-axisymmetric-kernel",
+        "--real-object",
+        "--n-beta",
+        "64",
+        "--n-r",
+        "64",
+        "--n-z",
+        "64",
+        "--ring-illum",
+        "12",
+        "--cap-radial",
+        "64",
+        "--cap-phi",
+        "64",
+        "--h-margin",
+        "8",
+        "--l-margin",
+        "8",
+        "--cone-l-prune-threshold",
+        "0",
+        "--cpp-threads",
+        "4",
+        "--iterations",
+        "1",
+        "--repeats",
+        "1",
+        "--warmups",
+        "0",
+        "--out",
+        "benchmark_results/odt_streaming_64cubed_smoke.json",
+        "--csv",
+        "benchmark_results/odt_streaming_64cubed_smoke.csv",
+        "--summary-md",
+        "benchmark_results/odt_streaming_64cubed_smoke.md"
+      ],
+      "returncode": 0,
+      "duration_s": 5.754227200013702,
+      "stdout_tail": "{\n  \"device\": \"cuda\",\n  \"device_name\": \"NVIDIA GeForce RTX 2070 SUPER\",\n  \"torch_version\": \"2.12.1+cu126\",\n  \"torch_cuda_version\": \"12.6\",\n  \"dtype\": \"complex64\",\n  \"low_memory_adjoint\": true,\n  \"radial_block_size\": 16,\n  \"illumination_block_size\": 4,\n  \"skip_native_prepared_adjoint\": true,\n  \"compact_axisymmetric_kernel\": true,\n  \"real_object\": true,\n  \"ring_illum\": 12,\n  \"axis_illumination_included\": true,\n  \"total_illumination_count\": 13,\n  \"illumination_angle_deg\": 49.0,\n  \"illumination_ring_na\": 0.754709580222772,\n  \"detector_na\": 0.9240924092409241,\n  \"cap_radial\": 64,\n  \"cap_phi\": 64,\n  \"total_q_samples\": 53248,\n  \"object_bins\": 262144,\n  \"gpu_basis_mib\": 3.3184432983398438,\n  \"gpu_peak_allocated_mib\": 202.33056640625,\n  \"gpu_forward_hot_s\": 0.3303295000077924,\n  \"gpu_adjoint_hot_s\": 0.04311030000098981,\n  \"gpu_forward_adjoint_pair_hot_s\": 0.028435899992473423,\n  \"gpu_one_step_update_hot_s\": 0.026850599999306723,\n  \"forward_adjoint_dot_error\": 4.9979938410160685e-08,\n  \"forward_adjoint_dot_error_complex128_accum\": 2.779937125823423e-09,\n  \"gpu_forward_times_s\": [\n    0.3303295000077924\n  ],\n  \"gpu_adjoint_times_s\": [\n    0.04311030000098981\n  ],\n  \"gpu_forward_adjoint_pair_times_s\": [\n    0.028435899992473423\n  ],\n  \"gpu_one_step_update_times_s\": [\n    0.026850599999306723\n  ],\n  \"gpu_median_iter_s\": 0.02695790000143461,\n  \"gpu_median_adjoint_s\": 0.01820590000716038,\n  \"gpu_median_forward_s\": 0.0077822000021114945,\n  \"gpu_final_loss_rel\": 0.6636760234832764,\n  \"gpu_final_object_rel_l2\": 0.8548405766487122,\n  \"cpu_gpu_forward_rel_l2\": null,\n  \"cpu_gpu_adjoint_rel_l2\": null,\n  \"history_csv\": \"benchmark_results\\\\odt_streaming_64cubed_smoke.csv\"\n}\n",
+      "stderr_tail": "",
+      "passed": true
+    },
+    {
+      "label": "summarize_waxs_detector",
+      "command": [
+        "C:\\Users\\tnvlaos456\\Documents\\Atomic WAXS Cake-Map Simulator\\.venv\\Scripts\\python.exe",
+        "scripts/summarize_waxs_detector_aware.py"
+      ],
+      "returncode": 0,
+      "duration_s": 0.3017651999980444,
+      "stdout_tail": "fft_cv\": 0.10487103631651429,\n        \"acfo_first_half_median_s\": 22.00762439999744,\n        \"acfo_second_half_median_s\": 21.478241900000285,\n        \"finufft_first_half_median_s\": 47.20176399999764,\n        \"finufft_second_half_median_s\": 42.31200929999977\n      },\n      \"acfo_peak_rss_mib\": 124.16015625,\n      \"finufft_peak_rss_mib\": 638.765625,\n      \"memory_reduction_ratio\": 5.144690891930156,\n      \"complex_l2\": 7.028044488671733e-07,\n      \"intensity_l2\": 2.1440556777247712e-07,\n      \"ring_l2\": 1.0581279237347644e-07,\n      \"intensity_row_l2_median\": 1.2219815852306915e-06,\n      \"intensity_row_l2_p99\": 1.2936072700508902e-05,\n      \"samples_per_3x3x3_fringe\": 1.6352000000000002\n    },\n    {\n      \"source\": \"benchmark_results/protein_nanocrystal_detector_eiger4m_216k_nq1024_first.json\",\n      \"nq\": 1024,\n      \"dq_inv_angstrom\": 0.006109481915933529,\n      \"nphi\": 2250,\n      \"full_targets\": 2304000,\n      \"active_targets\": 2031482,\n      \"active_fraction\": 0.8817196180555555,\n      \"outer_ring_active_fraction\": 0.04622222222222222,\n      \"acfo_first_s\": 35.202914400000736,\n      \"finufft_first_s\": 124.89147299999968,\n      \"first_speedup\": 3.547759471869098,\n      \"acfo_cached_s\": 35.202914400000736,\n      \"finufft_cached_s\": 124.89147299999968,\n      \"warm_speedup\": 3.547759471869098,\n      \"cached_repeat_count\": 0,\n      \"timing_protocol\": null,\n      \"acfo_timing_summary\": null,\n      \"finufft_timing_summary\": null,\n      \"paired_timing\": null,\n      \"acfo_peak_rss_mib\": 147.74609375,\n      \"finufft_peak_rss_mib\": 693.3984375,\n      \"memory_reduction_ratio\": 4.693176109774476,\n      \"complex_l2\": 7.860089884384767e-07,\n      \"intensity_l2\": 2.3964690293311425e-07,\n      \"ring_l2\": 1.2262279772472626e-07,\n      \"intensity_row_l2_median\": 1.0728074065697867e-06,\n      \"intensity_row_l2_p99\": 1.2929501954455695e-05,\n      \"samples_per_3x3x3_fringe\": 3.2736\n    }\n  ],\n  \"gates\": {\n    \"all_complex_l2_le_1e_6\": true,\n    \"all_intensity_row_median_le_1e_3\": true,\n    \"all_intensity_row_p99_le_5e_3\": true,\n    \"all_memory_reduction_ge_4\": true,\n    \"nq512_protocol_10_warmup_30_repeat_alternating\": true,\n    \"nq512_pairwise_p05_speedup_ge_1_5\": true,\n    \"nq1024_two_samples_per_fringe\": true\n  },\n  \"passed\": true,\n  \"timing_status\": \"Local Nq512 publication protocol complete: 10 warm-ups and 30 measured AB/BA alternating pairs. Nq256 remains a two-repeat probe, Nq1024 remains a first-run probe, and an external-machine rerun is pending.\",\n  \"decision\": \"Detector-aware accuracy and memory gates pass. At Nq512, the local 10/30 alternating protocol gives 1.976x ratio-of-medians speedup and 1.918x paired p05 speedup at unchanged error. The earlier 3.47x one-repeat value is superseded; external-machine timing remains pending.\"\n}\nwrote C:\\Users\\tnvlaos456\\Documents\\Atomic WAXS Cake-Map Simulator\\benchmark_results\\waxs_detector_aware_decision.json and C:\\Users\\tnvlaos456\\Documents\\Atomic WAXS Cake-Map Simulator\\docs\\acfo_ncs_waxs_detector_aware_ko.md\n",
+      "stderr_tail": "",
+      "passed": true
+    },
+    {
+      "label": "summarize_odt_streaming",
+      "command": [
+        "C:\\Users\\tnvlaos456\\Documents\\Atomic WAXS Cake-Map Simulator\\.venv\\Scripts\\python.exe",
+        "scripts/summarize_odt_256_streaming.py"
+      ],
+      "returncode": 0,
+      "duration_s": 0.10276259999955073,
+      "stdout_tail": "plex64_dot_error_with_128accum_le_1e_8\": true,\n    \"finite_forward_adjoint_pair\": true\n  },\n  \"workflow_gates\": {\n    \"acfo_100_pairs_executed\": true,\n    \"cufinufft_100_pairs_executed\": true,\n    \"matched_object_and_q_counts\": true,\n    \"matched_illumination_count\": true,\n    \"cufinufft_forward_l2_vs_acfo_le_1e_3\": true,\n    \"cufinufft_adjoint_l2_vs_acfo_le_1e_3\": true\n  },\n  \"comparative_performance_gates\": {\n    \"steady_100pair_speedup_ge_3\": false,\n    \"setup_inclusive_100pair_speedup_ge_3\": false\n  },\n  \"streaming_feasibility_pass\": true,\n  \"comparative_accuracy_pass\": true,\n  \"comparative_performance_pass\": false,\n  \"passed\": false,\n  \"actual_100pair\": {\n    \"acfo_source\": \"benchmark_results/odt_torch_256cubed_100pair.json\",\n    \"cufinufft_source\": \"benchmark_results/odt_cufinufft_256cubed_100pair.json\",\n    \"acfo_measured_wall_s\": 1107.9528625999992,\n    \"cufinufft_measured_wall_s\": 859.552447099999,\n    \"acfo_pair_median_s\": 11.09843400000318,\n    \"cufinufft_pair_median_s\": 8.597896900000706,\n    \"acfo_setup_s\": 19.661788099998375,\n    \"cufinufft_setup_s\": 23.54695029999857,\n    \"acfo_first_pair_s\": 10.675207699998282,\n    \"cufinufft_first_pair_s\": 7.1481162999989465,\n    \"baseline_over_acfo_steady_speedup\": 0.7758023613774628,\n    \"acfo_slowdown_vs_cufinufft\": 1.2889880848318982,\n    \"acfo_setup_plus_100pair_s\": 1127.6146506999976,\n    \"cufinufft_setup_plus_100pair_s\": 883.0993973999975,\n    \"baseline_over_acfo_setup_inclusive_speedup\": 0.7831570801707742,\n    \"t1_setup_plus_first_pair_acfo_s\": 30.336995799996657,\n    \"t1_setup_plus_first_pair_cufinufft_s\": 30.695066599997517,\n    \"baseline_over_acfo_t1_speedup\": 1.0118031067532698,\n    \"acfo_peak_allocated_mib\": 2334.9912109375,\n    \"cufinufft_pool_total_mib\": 1454.5,\n    \"memory_instrumentation_caveat\": \"PyTorch max allocated and CuPy pool total are allocator-specific and are not a strict apples-to-apples peak comparison.\"\n  },\n  \"matched_accuracy\": {\n    \"source\": \"benchmark_results/odt_cufinufft_gpu_256cubed_plan_pair2.json\",\n    \"cufinufft_eps\": 1e-06,\n    \"forward_rel_l2_vs_acfo\": 7.373895812566615e-05,\n    \"adjoint_rel_l2_vs_acfo\": 9.060704057431695e-05,\n    \"note\": \"Accuracy was checked in a combined process; timing claims use isolated standalone processes to avoid cross-allocator interference.\"\n  },\n  \"decision\": \"256-cubed streaming feasibility and matched cuFINUFFT accuracy pass, but the comparative production gate fails. ACFO required 1107.95 s for 100 measured pairs versus 859.55 s for cuFINUFFT, so baseline/ACFO speedup is 0.776x and ACFO is 1.289x slower.\",\n  \"claim_action\": \"Keep ODT as a memory-feasible proof-of-concept unless the structured adjoint is materially optimized; do not claim an ODT speed advantage from the current implementation.\"\n}\nwrote C:\\Users\\tnvlaos456\\Documents\\Atomic WAXS Cake-Map Simulator\\benchmark_results\\odt_256cubed_streaming_decision.json and C:\\Users\\tnvlaos456\\Documents\\Atomic WAXS Cake-Map Simulator\\docs\\acfo_ncs_odt_256cubed_streaming_ko.md\n",
+      "stderr_tail": "",
+      "passed": true
+    },
+    {
+      "label": "summarize_odt_inverse",
+      "command": [
+        "C:\\Users\\tnvlaos456\\Documents\\Atomic WAXS Cake-Map Simulator\\.venv\\Scripts\\python.exe",
+        "scripts/summarize_odt_regularized_inverse.py"
+      ],
+      "returncode": 0,
+      "duration_s": 0.1134989999991376,
+      "stdout_tail": "{\n  \"schema\": \"odt-128cubed-30db-gradient-sweep-v1\",\n  \"problem\": \"128^3 real beads, 61 illuminations, 128^2 detector, 30 dB complex noise\",\n  \"rows\": [\n    {\n      \"lambda\": 1000000.0,\n      \"object_nrmse\": 0.1854235976934433,\n      \"data_residual\": 0.03164409101009369,\n      \"normal_residual\": 0.00020290260727051646,\n      \"solve_s\": 13.20227480000176,\n      \"peak_mib\": 2484.8017578125,\n      \"source\": \"benchmark_results/odt_128cubed_beads_30db_grad_1e6.json\"\n    },\n    {\n      \"lambda\": 10000000.0,\n      \"object_nrmse\": 0.18331760168075562,\n      \"data_residual\": 0.031643886119127274,\n      \"normal_residual\": 0.0002024945424636826,\n      \"solve_s\": 13.09204150000005,\n      \"peak_mib\": 2484.8017578125,\n      \"source\": \"benchmark_results/odt_128cubed_beads_30db_grad_1e7.json\"\n    },\n    {\n      \"lambda\": 100000000.0,\n      \"object_nrmse\": 0.17111840844154358,\n      \"data_residual\": 0.03168007731437683,\n      \"normal_residual\": 0.00014162957086227834,\n      \"solve_s\": 13.266875900000741,\n      \"peak_mib\": 2484.8017578125,\n      \"source\": \"benchmark_results/odt_128cubed_beads_30db_grad_1e8.json\"\n    },\n    {\n      \"lambda\": 1000000000.0,\n      \"object_nrmse\": 0.17678868770599365,\n      \"data_residual\": 0.03357764706015587,\n      \"normal_residual\": 4.212571366224438e-05,\n      \"solve_s\": 13.426134599998477,\n      \"peak_mib\": 2484.8017578125,\n      \"source\": \"benchmark_results/odt_128cubed_beads_30db_grad_1e9.json\"\n    },\n    {\n      \"lambda\": 10000000000.0,\n      \"object_nrmse\": 0.2677769660949707,\n      \"data_residual\": 0.0720038115978241,\n      \"normal_residual\": 4.279771019355394e-05,\n      \"solve_s\": 13.255548799999815,\n      \"peak_mib\": 2484.8017578125,\n      \"source\": \"benchmark_results/odt_128cubed_beads_30db_grad_1e10.json\"\n    }\n  ],\n  \"best\": {\n    \"lambda\": 100000000.0,\n    \"object_nrmse\": 0.17111840844154358,\n    \"data_residual\": 0.03168007731437683,\n    \"normal_residual\": 0.00014162957086227834,\n    \"solve_s\": 13.266875900000741,\n    \"peak_mib\": 2484.8017578125,\n    \"source\": \"benchmark_results/odt_128cubed_beads_30db_grad_1e8.json\"\n  },\n  \"gate_nrmse_le_5pct\": false,\n  \"passed\": false,\n  \"decision\": \"Quadratic gradient regularization alone is insufficient for the single-axis missing-cone ambiguity.\",\n  \"next\": \"Test nonnegative structured priors and/or a second acquisition axis; do not claim physical inverse recovery from this sweep.\"\n}\n",
+      "stderr_tail": "",
+      "passed": true
+    },
+    {
+      "label": "summarize_prepared_abba",
+      "command": [
+        "C:\\Users\\tnvlaos456\\Documents\\Atomic WAXS Cake-Map Simulator\\.venv\\Scripts\\python.exe",
+        "scripts/summarize_protein_lattice_prepared_abba.py"
+      ],
+      "returncode": 0,
+      "duration_s": 0.3207393000047887,
+      "stdout_tail": "{\n  \"passed\": true,\n  \"gates\": {\n    \"legacy_receipt_pass\": true,\n    \"prepared_receipt_pass\": true,\n    \"core_contracts_match\": true,\n    \"prepared_backend_is_fused_fft_separable\": true,\n    \"balanced_15_15_order_groups\": true,\n    \"order_speedup_median_gap_le_10pct\": true,\n    \"prepared_factorized_median_improvement_ge_3\": true,\n    \"prepared_paired_speedup_median_ge_3\": true,\n    \"prepared_paired_speedup_p05_ge_3\": true,\n    \"prepared_vs_legacy_complex_l2_le_1e_12\": true,\n    \"prepared_vs_finufft_complex_l2_le_2e_6\": true\n  }\n}\nwrote C:\\Users\\tnvlaos456\\Documents\\Atomic WAXS Cake-Map Simulator\\benchmark_results\\protein_lattice_prepared_abba_decision.json and C:\\Users\\tnvlaos456\\Documents\\Atomic WAXS Cake-Map Simulator\\benchmark_results\\protein_lattice_prepared_abba_decision.md\n",
+      "stderr_tail": "",
+      "passed": true
+    },
+    {
+      "label": "summarize_q_sampling",
+      "command": [
+        "C:\\Users\\tnvlaos456\\Documents\\Atomic WAXS Cake-Map Simulator\\.venv\\Scripts\\python.exe",
+        "scripts/summarize_protein_lattice_q_sampling.py"
+      ],
+      "returncode": 0,
+      "duration_s": 0.320413000008557,
+      "stdout_tail": "ion.\",\n      \"default_policy\": \"Keep the legacy baseline as the API default and expose fused_phase/cached_phase through explicit prepared-plan flags until optimized 10/30 AB/BA and independent reruns are complete.\",\n      \"remaining_exact_bottleneck\": \"Miller Bessel recurrence plus source/q axial phase and harmonic accumulation. Further cache-based acceleration increases working memory; approximation-based tables require a separate error sweep.\"\n    },\n    \"gates\": {\n      \"backend_benchmark_pass\": true,\n      \"full_profile_pass\": true,\n      \"baseline_over_fused_p05_ge_1_1\": true,\n      \"fused_vs_baseline_complex_l2_le_1e_12\": true,\n      \"cached_vs_fused_complex_l2_le_1e_12\": true,\n      \"legacy_vs_selected_complex_l2_le_1e_12\": true\n    },\n    \"claim_boundary\": [\n      \"The backend A/B is a local same-machine 2-warmup/10-measured ABC/CBA comparison.\",\n      \"The optimized factorized-to-FINUFFT ratios combine separate local receipts and are not a paired timing claim.\",\n      \"The current publication timing receipt remains the legacy 10/30 AB/BA result until the optimized protocol is rerun.\",\n      \"The repeated-lattice path remains a standard crystallographic specialization and does not apply to dense disorder.\"\n    ],\n    \"passed\": true\n  },\n  \"gates\": {\n    \"all_range_cases_pass\": true,\n    \"range_speedup_increases_monotonically\": true,\n    \"resolution_hot_speedup_decreases_monotonically\": true,\n    \"optimized_profile_pass\": true,\n    \"legacy_vs_prepared_complex_l2_le_1e_12\": true,\n    \"separable_lattice_complex_l2_le_1e_9\": true,\n    \"prepared_abba_decision_pass\": true\n  },\n  \"decision\": [\n    \"The earlier fixed-dq observation is reproduced: widening q range makes q-blocked FINUFFT increasingly unfavorable.\",\n    \"The current Nq=512 narrow-band condition is relatively FINUFFT-favorable because dense radial sampling reduces the factorized speedup.\",\n    \"Prepared geometry plus FFT azimuth synthesis removes an exact-path bottleneck without relaxing accuracy.\",\n    \"After optimization, the Nq=512 hot path is coefficient-contraction limited; this is the next exact optimization target.\",\n    \"The prepared fused Nq=512 path passes its local 10/30 AB/BA gate; independent-machine replication is the remaining publication timing gate.\"\n  ],\n  \"claim_boundary\": [\n    \"Range and resolution sweeps are exploratory local scaling probes, not independent-machine timing claims.\",\n    \"The Nq=512 optimized row uses same-machine prepared fused 10/30 AB/BA paired medians; setup-based first-total is derived separately.\",\n    \"The separable lattice factor is a standard crystallographic specialization, not ACFO novelty.\",\n    \"Dense disordered sources cannot use the perfect-lattice factorization.\"\n  ],\n  \"passed\": true\n}\nwrote C:\\Users\\tnvlaos456\\Documents\\Atomic WAXS Cake-Map Simulator\\benchmark_results\\protein_lattice_q_sampling_decision.json and C:\\Users\\tnvlaos456\\Documents\\Atomic WAXS Cake-Map Simulator\\benchmark_results\\protein_lattice_q_sampling_decision.md\n",
+      "stderr_tail": "",
+      "passed": true
+    },
+    {
+      "label": "plot_highq_threshold",
+      "command": [
+        "C:\\Users\\tnvlaos456\\Documents\\Atomic WAXS Cake-Map Simulator\\.venv\\Scripts\\python.exe",
+        "scripts/plot_protein_lattice_highq_threshold_strategy.py"
+      ],
+      "returncode": 0,
+      "duration_s": 2.7898862000001827,
+      "stdout_tail": "wrote C:\\Users\\tnvlaos456\\Documents\\Atomic WAXS Cake-Map Simulator\\benchmark_results\\protein_lattice_highq_threshold_strategy.png\n",
+      "stderr_tail": "",
+      "passed": true
+    },
+    {
+      "label": "build_execution_update_pdf",
+      "command": [
+        "C:\\Users\\tnvlaos456\\Documents\\Atomic WAXS Cake-Map Simulator\\.venv\\Scripts\\python.exe",
+        "scripts/build_acfo_ncs_execution_update_pdf.py"
+      ],
+      "returncode": 0,
+      "duration_s": 4.692300099995919,
+      "stdout_tail": "t/preview_page_14.png\"\n  ],\n  \"sources\": [\n    \"benchmark_results/high_na_harmonic_support_risk.json\",\n    \"benchmark_results/waxs_detector_aware_decision.json\",\n    \"benchmark_results/waxs_curvature_isolated_decision.json\",\n    \"benchmark_results/waxs_direct_finufft_triad.json\",\n    \"benchmark_results/waxs_direct_reference_sweep.json\",\n    \"benchmark_results/waxs_source_discretization_convergence.json\",\n    \"benchmark_results/waxs_exact_beta_harmonic_bridge.json\",\n    \"benchmark_results/protein_nanocrystal_lattice_factorization.json\",\n    \"benchmark_results/protein_lattice_finufft_512.json\",\n    \"benchmark_results/protein_lattice_finufft_512_abba.json\",\n    \"benchmark_results/protein_lattice_prepared_finufft_512_abba.json\",\n    \"benchmark_results/protein_lattice_prepared_finufft_512_abba.md\",\n    \"benchmark_results/protein_lattice_prepared_abba_decision.json\",\n    \"benchmark_results/protein_lattice_prepared_abba_decision.md\",\n    \"benchmark_results/protein_lattice_q_sampling_decision.json\",\n    \"benchmark_results/protein_lattice_q_sampling_resolution_nq512_optimized_profile.json\",\n    \"benchmark_results/protein_lattice_q_sampling_resolution_nq512_fused_phase_profile.json\",\n    \"benchmark_results/exact_beta_contraction_backends_nq512.json\",\n    \"benchmark_results/exact_beta_contraction_optimization_decision.json\",\n    \"benchmark_results/protein_lattice_highq_threshold_strategy.json\",\n    \"benchmark_results/protein_lattice_highq_threshold_strategy.md\",\n    \"benchmark_results/protein_lattice_highq_threshold_strategy.png\",\n    \"benchmark_results/protein_nanocrystal_sparse_accuracy_1iee_1x1x1_highq.json\",\n    \"benchmark_results/tip3p_dense_highq_exact_beta_20frames.json\",\n    \"benchmark_results/tip3p_exact_beta_backend_comparison.json\",\n    \"benchmark_results/tip3p_exact_beta_factorized_q_scaling.json\",\n    \"benchmark_results/tip3p_exact_beta_finufft_512.json\",\n    \"benchmark_results/odt_128cubed_gate_decision.json\",\n    \"benchmark_results/odt_256cubed_streaming_decision.json\",\n    \"benchmark_results/odt_torch_256cubed_100pair.json\",\n    \"benchmark_results/odt_cufinufft_256cubed_100pair.json\",\n    \"benchmark_results/odt_cufinufft_gpu_256cubed_plan_pair2.json\",\n    \"benchmark_results/odt_128cubed_beads_30db_nonnegative_fista.json\",\n    \"benchmark_results/uniaxial_vector_born_direct_64cubed.json\",\n    \"benchmark_results/uniaxial_green_tensor_residue_64cubed.json\",\n    \"benchmark_results/uniaxial_meep_3d_amplitude_asymptotic_decision.json\",\n    \"benchmark_results/uniaxial_meep_component_aware_amplitude_decision.json\",\n    \"benchmark_results/uniaxial_meep_dispersion_highres_decision.json\",\n    \"benchmark_results/uniaxial_meep_3d_phase_gate_decision.json\",\n    \"benchmark_results/uniaxial_meep_3d_amplitude_gate_decision.json\",\n    \"benchmark_results/acfo_ncs_reduced_release_suite.json\",\n    \"benchmark_results/acfo_ncs_fresh_dependency_rerun.json\"\n  ],\n  \"delivery_mode\": \"direct PDF fallback because report-to-pdf sub-skill is unavailable in this runtime\"\n}\n",
+      "stderr_tail": "",
+      "passed": true
+    }
+  ],
+  "production_artifact_manifest": [
+    {
+      "path": "benchmark_results/local_prepared_waxs_machine_environment.json",
+      "schema": "prepared-waxs-machine-environment-v1",
+      "passed_key": "passed",
+      "passed": true,
+      "size_bytes": 1296,
+      "sha256": "c05f8e07b7869d424e52609488a7170c61c6c71e34d64dbfccd24333acf2cf57"
+    },
+    {
+      "path": "benchmark_results/high_na_harmonic_support_risk.json",
+      "schema": "high-na-harmonic-support-risk-v2",
+      "passed_key": "passed",
+      "passed": true,
+      "size_bytes": 15365,
+      "sha256": "84c1faf6528e849a256839c89df3c551496b0f1a6776ec664057887d6631f369"
+    },
+    {
+      "path": "benchmark_results/waxs_detector_aware_decision.json",
+      "schema": "waxs-detector-aware-decision-v2",
+      "passed_key": "passed",
+      "passed": true,
+      "size_bytes": 6718,
+      "sha256": "d6005d2ff6012aafccadf02ba63ef970dc65432dfcd69e9466eb38905ab7daf1"
+    },
+    {
+      "path": "benchmark_results/waxs_direct_finufft_triad.json",
+      "schema": "waxs-direct-finufft-triad-v1",
+      "passed_key": "passed",
+      "passed": true,
+      "size_bytes": 2090,
+      "sha256": "f862f1ca9b46c3ee55480b7732cca561a12c18079c48455cd1379bfa5d488450"
+    },
+    {
+      "path": "benchmark_results/waxs_direct_reference_sweep.json",
+      "schema": "waxs-direct-reference-sweep-v1",
+      "passed_key": "operator_reference_pass",
+      "passed": true,
+      "size_bytes": 115299,
+      "sha256": "02f5013147f293ef775ab25defe48c256ec86eded13009d7964e2b50635776e5"
+    },
+    {
+      "path": "benchmark_results/waxs_source_discretization_convergence.json",
+      "schema": "waxs-source-discretization-convergence-v1",
+      "passed_key": "passed",
+      "passed": true,
+      "size_bytes": 9194,
+      "sha256": "f25d6e0f2b2b248f7419634716a321c40c9ec7fe48b9e8a6351eda41c7ce869f"
+    },
+    {
+      "path": "benchmark_results/waxs_exact_beta_harmonic_bridge.json",
+      "schema": "waxs-exact-beta-harmonic-bridge-v1",
+      "passed_key": "passed",
+      "passed": true,
+      "size_bytes": 2764,
+      "sha256": "879179d83e410b1ae7c10d87560e137b8aa26c11f05b2d90dd1626de49490d5e"
+    },
+    {
+      "path": "benchmark_results/protein_nanocrystal_lattice_factorization.json",
+      "schema": "protein-nanocrystal-lattice-factorization-v1",
+      "passed_key": "passed",
+      "passed": true,
+      "size_bytes": 3111,
+      "sha256": "a70d8ae17f2515d0541fdf7a5cc3abf1eff88738da23f149406aa9c6924781f6"
+    },
+    {
+      "path": "benchmark_results/protein_lattice_finufft_512.json",
+      "schema": "protein-lattice-finufft-512-crossover-v1",
+      "passed_key": "passed",
+      "passed": true,
+      "size_bytes": 4958,
+      "sha256": "9ea6b386fd80c0a9feebc8140c53b4fab9d379557f21d377c869c251d5b782a6"
+    },
+    {
+      "path": "benchmark_results/protein_lattice_finufft_512_abba.json",
+      "schema": "protein-lattice-finufft-512-abba-v1",
+      "passed_key": "passed",
+      "passed": true,
+      "size_bytes": 10564,
+      "sha256": "d60143c250c3e2a9d2ee5329cf65f08203528fdc7490cc05912130e809af95f6"
+    },
+    {
+      "path": "benchmark_results/protein_lattice_prepared_finufft_512_abba.json",
+      "schema": "protein-lattice-prepared-finufft-512-abba-v1",
+      "passed_key": "passed",
+      "passed": true,
+      "size_bytes": 11287,
+      "sha256": "474156b3b9d7a019b7659e0d86a805339c028d0d137aa6706ba875e7c6c12f3b"
+    },
+    {
+      "path": "benchmark_results/protein_lattice_prepared_abba_decision.json",
+      "schema": "protein-lattice-prepared-abba-decision-v1",
+      "passed_key": "passed",
+      "passed": true,
+      "size_bytes": 5535,
+      "sha256": "58364024103efa4573b4a3cd927f0537d7cea10533229a22a699f4bf8bb9d175"
+    },
+    {
+      "path": "benchmark_results/protein_lattice_q_sampling_decision.json",
+      "schema": "protein-lattice-q-sampling-decision-v1",
+      "passed_key": "passed",
+      "passed": true,
+      "size_bytes": 14071,
+      "sha256": "b8a42fef74079373c7314cc07683283769d564d4d19ee1eabd03190700f1cbd3"
+    },
+    {
+      "path": "benchmark_results/exact_beta_contraction_optimization_decision.json",
+      "schema": "exact-beta-contraction-optimization-decision-v1",
+      "passed_key": "passed",
+      "passed": true,
+      "size_bytes": 3646,
+      "sha256": "6c41fd40e47da46d79504be2c84a43c818e0f534faae3a53f6910aa6c1386e18"
+    },
+    {
+      "path": "benchmark_results/protein_lattice_highq_threshold_strategy.json",
+      "schema": "protein-lattice-highq-threshold-strategy-v1",
+      "passed_key": "passed",
+      "passed": true,
+      "size_bytes": 16821,
+      "sha256": "5eff28105edd9ba8ad0324bcce6683fa90ab54b6521ac3d7336b4311474ba487"
+    },
+    {
+      "path": "benchmark_results/tip3p_dense_highq_exact_beta_20frames.json",
+      "schema": "tip3p-dense-highq-exact-beta-v2",
+      "passed_key": "passed",
+      "passed": true,
+      "size_bytes": 19045,
+      "sha256": "320b65aaca75da079e7938199d214593c78dfd31869894c33b093d4205df4ab4"
+    },
+    {
+      "path": "benchmark_results/tip3p_exact_beta_backend_comparison.json",
+      "schema": "tip3p-exact-beta-backend-comparison-v1",
+      "passed_key": "passed",
+      "passed": true,
+      "size_bytes": 2740,
+      "sha256": "1b33ffc1bf5ca5d312b518429ed03e283d46435c41228250b14c72e79c798236"
+    },
+    {
+      "path": "benchmark_results/tip3p_exact_beta_factorized_q_scaling.json",
+      "schema": "tip3p-exact-beta-factorized-q-scaling-v1",
+      "passed_key": "passed",
+      "passed": true,
+      "size_bytes": 6023,
+      "sha256": "c15cf4e2be90e0438d7f754576e6dae8fee41d6b4ed5f320454d3298019f2f5b"
+    },
+    {
+      "path": "benchmark_results/tip3p_exact_beta_finufft_512.json",
+      "schema": "tip3p-exact-beta-finufft-512-v1",
+      "passed_key": "passed",
+      "passed": true,
+      "size_bytes": 3546,
+      "sha256": "a7b9d5a993749d65aa4ebf8ee46d2ab52c858feb82b0f904bb84b415551e2659"
+    },
+    {
+      "path": "benchmark_results/uniaxial_green_tensor_residue_64cubed.json",
+      "schema": "uniaxial-green-tensor-residue-v1",
+      "passed_key": "passed",
+      "passed": true,
+      "size_bytes": 5476,
+      "sha256": "668a25e6e4a41ff3e3dd53331f952eea295f46d6a732c3c7f09dc4e8228d557e"
+    },
+    {
+      "path": "benchmark_results/uniaxial_meep_3d_amplitude_asymptotic_decision.json",
+      "schema": "uniaxial-meep-3d-amplitude-asymptotic-decision-v1",
+      "passed_key": "scoped_single_component_amplitude_pass",
+      "passed": true,
+      "size_bytes": 12435,
+      "sha256": "2175d349162f8bc7ce92bf43dc1a9962f12fff58c52aeab4696bf490bc44050c"
+    },
+    {
+      "path": "benchmark_results/uniaxial_meep_component_aware_amplitude_decision.json",
+      "schema": "uniaxial-meep-component-aware-amplitude-decision-v1",
+      "passed_key": "detectable_support_amplitude_pass",
+      "passed": true,
+      "size_bytes": 12139,
+      "sha256": "5af7b6b38fef00f3f8c9fe46eb6387a5169e75295b1d531ebc44f1ee6cbcaa37"
+    },
+    {
+      "path": "benchmark_results/odt_256cubed_streaming_decision.json",
+      "schema": "odt-256cubed-streaming-decision-v2",
+      "passed_key": "streaming_feasibility_pass",
+      "passed": true,
+      "size_bytes": 9061,
+      "sha256": "b130c5ca689b48fc8fbc323026cd72e8f5433c0436ae3d971594e0c0097b1def"
+    },
+    {
+      "path": "benchmark_results/odt_128cubed_gate_decision.json",
+      "schema": "acfo-odt-128cubed-gate-v1",
+      "passed_key": "minimum_odt_128cubed_numerical_gate_pass",
+      "passed": true,
+      "size_bytes": 2402,
+      "sha256": "6ab219bdebc0b3294e97fb35a72122e76794129dd3eab8554f1bfcaa075b8fd8"
+    }
+  ],
+  "recorded_outcomes": {
+    "odt_256cubed_comparative_performance_pass": false,
+    "pymeep_publication_full_amplitude_pass": false,
+    "pymeep_grid_converged_detectable_support_pass": false,
+    "waxs_current_production_source_representation_pass": false,
+    "waxs_exact_beta_unit_cell_pass": true,
+    "waxs_perfect_and_sparse_defect_lattice_control_pass": true,
+    "waxs_dense_disorder_general_source_path_pass": true,
+    "waxs_dense_disorder_comparative_performance_pass": false,
+    "waxs_dense_corrected_nq512_timing_measured": true,
+    "waxs_million_atom_repeated_crystal_local_10_30_pass": true,
+    "waxs_prepared_fused_million_atom_local_10_30_pass": true,
+    "waxs_prepared_fused_independent_machine_pass": false,
+    "waxs_fixed_dq_q_range_speedup_monotonic_pass": true,
+    "waxs_fixed_range_resolution_trend_pass": true,
+    "waxs_prepared_exact_optimization_probe_pass": true,
+    "waxs_exact_beta_fused_phase_contraction_pass": true,
+    "waxs_highq_equal_width_position_sweep_pass": true,
+    "waxs_highq_nq64_censored_lower_bound_pass": true,
+    "waxs_highq_extrapolation_holdout_gate_pass": true
+  },
+  "pdf": {
+    "status": "passed",
+    "path": "docs/ACFO_NCS_validation_execution_update_ko.pdf",
+    "size_bytes": 628063,
+    "sha256": "dc5e0799a0fdeae7da1860f414cecef49cb17dc1416c4ca2997fd24c2fde70af"
+  },
+  "environment": {
+    "python": "3.13.13 | packaged by Anaconda, Inc. | (main, Apr 14 2026, 06:12:50) [MSC v.1942 64 bit (AMD64)]",
+    "platform": "Windows-10-10.0.19045-SP0",
+    "numpy": "2.4.6",
+    "torch": "2.12.1+cu126",
+    "torch_cuda": "12.6",
+    "odt_smoke_device": "cuda"
+  },
+  "scope": "Local reduced reproduction: full unit tests, direct-reference High-NA sweep, detector-mask smoke, small WAXS direct-NDFT/FINUFFT/ACFO triad, q/curvature/source-discretization sweeps, exact-beta and crystal-lattice controls, saved TIP3P 20-frame dense correctness, backend, Nq-scaling, matched FINUFFT, legacy and prepared fused 1M lattice 10/30 AB/BA, q-range/resolution, high-q censored-threshold and fused-contraction evidence, 64-cubed compact-streaming ODT smoke, production-artifact schema gates, summaries and PDF rebuild.",
+  "limitations": [
+    "The 216k WAXS and 256-cubed ODT production benchmarks are schema-verified saved artifacts, not rerun here.",
+    "The TIP3P 20-frame, Nq=512 dense, legacy/prepared 1M repeated-crystal 10/30, q-range/resolution, high-q threshold and contraction A/B benchmarks are schema-verified saved artifacts, not rerun by this reduced suite.",
+    "This is not a fresh-install or independent-machine rerun."
+  ],
+  "passed": true
+}

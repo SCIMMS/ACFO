@@ -1,0 +1,101 @@
+{
+  "schema": "uob100dy-scatty-native-grid-audit-protocol-v1",
+  "status": "frozen-grid-isolation-audit",
+  "scientific_scope": "reuse the completed atomic-decoration Monte Carlo ensemble and isolate only the reciprocal-grid/measurement-adapter difference between the previous exact-q run and the source paper's no-Lanczos SCATTY calculation",
+  "source": {
+    "paper_doi": "10.1038/s41467-025-58402-4",
+    "data_doi": "10.5281/zenodo.14269933",
+    "scatty_method_doi": "10.1107/S2053273318015632",
+    "supplementary_information_sha256": "94e2ea447153948bb1ff51ce290d6e9c7c95761ff5925235eabd40dcc0f402a8",
+    "disclosed_grid_statement": "SCATTY calculated hk0.5 with no Lanczos resampling; maximum in-plane resolution was 1/24 r.l.u. for the 24x24 supercell.",
+    "code_availability": "The actual custom Monte Carlo code is available only on request; no public code artifact was found in the article, SI, Zenodo record, or discoverable author repositories."
+  },
+  "frozen_parent": {
+    "request_archive": "uob100dy_atomic_decoration_external_request_v4.zip",
+    "request_sha256": "593bc8855b61b95cd7c63f08831defa2bf3c7f18ab799a15c950905ce5591b02",
+    "return_archive_sha256": "37e0aa30902b6bb38b3ceec6106c3c8d80bc5233250775094f37edc4d5216f1c",
+    "predictions_file": "prior_predictions.npz",
+    "predictions_sha256": "a18c9aabbf4401b06f216bf3e9fc0ad5f160962319492afcf88e247cee34444d",
+    "summary_file": "prior_summary.json",
+    "summary_sha256": "af61ae874b79762c875c74c8ffeced72768d7d199ffef85dc3058880cea021f1",
+    "required_sample_shape": [23, 4, 80, 24, 24],
+    "reuse_rule": "sampled_spins are immutable; no Monte Carlo move, seed, schedule, or n_d estimate is rerun or changed"
+  },
+  "nexus_contract": {
+    "signal_path": "/entry/signal/signal",
+    "axis_order": ["l", "k", "h"],
+    "axis_paths": {"h": "/entry/signal/h", "k": "/entry/signal/k", "l": "/entry/signal/l"},
+    "expected_shape": [1201, 1201, 1201],
+    "expected_axis_start": -30.0,
+    "expected_axis_stop": 30.0,
+    "expected_axis_step": 0.05,
+    "unit_cell_path": "/entry/sample/unit_cell",
+    "expected_unit_cell_angstrom": [28.8634, 28.8634, 11.7021, 90.0, 90.0, 120.0]
+  },
+  "experimental_preprocessing": {
+    "roi_center_hkl": [7.0, 0.0, 0.5],
+    "roi_half_width_hkl": [0.5, 0.5, 0.0],
+    "background_l_offsets": [-0.05, 0.05],
+    "background_rule": "I(h,k,0.5)-0.5*(I(h,k,0.45)+I(h,k,0.55))",
+    "normalization": "match each replica/candidate prediction maximum to the experimental maximum on the compared finite-pixel grid"
+  },
+  "native_grid": {
+    "h_start": 6.5,
+    "h_stop": 7.5,
+    "k_start": -0.5,
+    "k_stop": 0.5,
+    "step_r_l_u": 0.041666666666666664,
+    "points_per_axis_including_both_boundaries": 25,
+    "l": 0.5,
+    "lanczos_resampling": false,
+    "boundary_note": "both +/-0.5 reduced-coordinate boundaries are retained; their lattice coefficients alias but their absolute-q motif factors need not"
+  },
+  "measurement_adapters": {
+    "primary": "bilinear_experiment_to_native",
+    "sensitivity": [
+      "nearest_experiment_to_native",
+      "bilinear_native_prediction_to_measured",
+      "nearest_native_prediction_to_measured",
+      "parent_exact_q_measured_grid"
+    ],
+    "selection_rule": "report every frozen adapter; do not select an adapter post hoc from agreement with 0.144(12)",
+    "rationale": "the paper discloses the simulation grid and no-Lanczos setting but does not disclose how the 0.05-r.l.u. experimental reconstruction was placed on the 1/24-r.l.u. SCATTY grid for pointwise chi-square"
+  },
+  "operators": {
+    "primary_map_backend": "exact 24x24 inverse-FFT lattice coefficients times exact absolute-q atomic motif difference and the analytic two-layer l=0.5 contraction",
+    "acfo_subset": {
+      "schedule_indices": [0, 11, 22],
+      "replica_indices": [0],
+      "sample_indices": [0],
+      "harmonic_cutoff": "ceil(q_reduced_perp*R_max)+48",
+      "harmonic_padding": 48,
+      "miller_recurrence_margin": 32,
+      "coefficient_backend": "cached_phase",
+      "synthesis_backend": "direct"
+    },
+    "atomic_direct_subset_count": 41
+  },
+  "ranking": {
+    "primary": "mean of four independently maximum-normalized full-native-grid chi-square curves using bilinear experimental-to-native adaptation",
+    "uncertainty": "two sample standard deviations across four replica chi-square values",
+    "source_reference_J_over_T": 0.144,
+    "source_reference_2sigma": 0.012,
+    "parent_best_J_over_T": 0.12759804718979337
+  },
+  "technical_gates": {
+    "parent_hashes": true,
+    "parent_sample_shape": true,
+    "sample_bytes_unchanged": true,
+    "native_grid_step": true,
+    "no_lanczos": true,
+    "fft_vs_separable_direct_relative_l2_max": 1e-12,
+    "acfo_vs_fft_relative_l2_max": 1e-9,
+    "fft_vs_atomic_direct_relative_l2_max": 1e-9,
+    "parent_exact_q_best_replayed": true
+  },
+  "claim_boundary": {
+    "positive_physical_claim_allowed": false,
+    "reason": "This audit isolates the disclosed SCATTY native grid using the same frozen spin ensemble, but the authors' n_d estimator and the exact experimental-to-SCATTY grid adapter remain unpublished.",
+    "promotion_gate": "The native-grid best must be stable across preregistered adapters and Monte Carlo estimators, or the authors' actual code/grid adapter must be obtained."
+  }
+}

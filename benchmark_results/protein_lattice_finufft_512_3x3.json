@@ -1,0 +1,77 @@
+{
+  "schema": "protein-lattice-finufft-512-v1",
+  "generated_at_utc": "2026-07-12T21:28:15.192269+00:00",
+  "unit_structure": "protein_nanocrystal_lysozyme_1iee_1x1x1_fixed",
+  "unit_atom_count": 8008,
+  "q_inv_angstrom": [
+    5.0,
+    6.3
+  ],
+  "nq": 512,
+  "target_nphi": 768,
+  "target_count": 393216,
+  "maximum_harmonic": 350,
+  "finufft_eps": 1e-06,
+  "finufft_threads": 4,
+  "rows": [
+    {
+      "label": "3x3x3",
+      "structure_path": "structures/processed/protein_nanocrystal_lysozyme_1iee_3x3x3_fixed.npz",
+      "atom_count": 216216,
+      "cell_count": 27,
+      "repetition_residual_nm": 1.5223378113660146e-12,
+      "factorized": {
+        "unit_first_seconds": 13.77768620000279,
+        "lattice_factor_seconds": 0.8288930000053369,
+        "first_total_seconds": 14.606579200008127,
+        "hot_repeats": 1,
+        "hot_seconds": {
+          "min": 14.074964600004023,
+          "median": 14.074964600004023,
+          "max": 14.074964600004023
+        },
+        "unit_peak_rss_delta_mib": 27.9375,
+        "lattice_peak_rss_delta_mib": 9.73828125
+      },
+      "finufft": {
+        "plan_count": 4,
+        "setup_seconds": 1.0831594000046607,
+        "first_execute_seconds": 6.353099799998745,
+        "first_total_seconds": 7.436259200003406,
+        "hot_repeats": 1,
+        "hot_seconds": {
+          "min": 6.3774054999958025,
+          "median": 6.3774054999958025,
+          "max": 6.3774054999958025
+        },
+        "setup_peak_rss_delta_mib": 95.05078125,
+        "execute_peak_rss_delta_mib": 1899.390625
+      },
+      "speedup": {
+        "first_total_finufft_over_factorized": 0.5091034045808116,
+        "hot_finufft_over_factorized": 0.4531027737003317
+      },
+      "cross_error": {
+        "complex_l2": 3.2356413025964733e-07,
+        "intensity_l2": 1.2178595165477712e-07
+      }
+    }
+  ],
+  "gates": {
+    "maximum_harmonic_below_target_nyquist": true,
+    "all_repetition_residual_le_1e_9_nm": true,
+    "all_cross_complex_l2_le_2e_6": true,
+    "all_cross_intensity_l2_le_5e_6": true
+  },
+  "validity_pass": true,
+  "comparative_performance_pass": false,
+  "passed": true,
+  "decision": "Do not claim a general repeated-crystal speed advantage from this workload.",
+  "claim_boundary": [
+    "The lattice factor is the standard exact crystallographic specialization and is not an ACFO novelty claim.",
+    "Direct NDFT correctness is established by the separate q=3/subset control; Nq=512 is an optimized-method cross-check.",
+    "FINUFFT eps=1e-6 is a practical timing baseline, not a converged correctness oracle.",
+    "Timings and sampled RSS are local to this machine, build, and thread policy.",
+    "The hot factorized path recomputes the unit-cell amplitude while reusing the finite lattice factor; FINUFFT reuses its plan."
+  ]
+}

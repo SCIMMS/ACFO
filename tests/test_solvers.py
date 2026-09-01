@@ -8,9 +8,11 @@ import pytest
 from waxs_cake import (
     PreparedCakePlan,
     circular_fft_amplitude,
+    cylindrical_flat_indices,
     direct_amplitude,
     jacobi_anger_amplitude,
     make_cylindrical_histogram,
+    make_sparse_cylindrical_histogram_from_flat_indices,
     nufft_amplitude,
     nufft_amplitude_chunked,
 )
@@ -897,6 +899,75 @@ def test_sparse_source_projection_matches_dense_circular() -> None:
 
     assert plan.active_er_profile_count <= binned.hist.shape[0] * binned.hist.shape[1]
     assert relative_l2(got, expected) < 1e-12
+
+
+def test_sparse_binned_structure_matches_dense_sparse_source() -> None:
+    rng = np.random.default_rng(24101)
+    coords = rng.normal(size=(700, 3))
+    q = np.linspace(0.08, 0.85, 8)
+    n_r, n_z, n_phi = 18, 20, 128
+    r_max = float(np.sqrt(np.sum(coords[:, :2] ** 2, axis=1)).max()) * 1.01
+    z_range = (float(coords[:, 2].min()) - 0.01, float(coords[:, 2].max()) + 0.01)
+    dense = make_cylindrical_histogram(
+        coords,
+        n_r=n_r,
+        n_z=n_z,
+        n_phi=n_phi,
+        r_max=r_max,
+        z_range=z_range,
+        hist_dtype=np.float32,
+    )
+    flat = cylindrical_flat_indices(
+        coords,
+        backend="numpy",
+        n_r=n_r,
+        n_z=n_z,
+        n_phi=n_phi,
+        r_max=r_max,
+        z_range=z_range,
+    )
+    sparse = make_sparse_cylindrical_histogram_from_flat_indices(
+        flat,
+        n_r=n_r,
+        n_z=n_z,
+        n_phi=n_phi,
+        r_max=r_max,
+        z_range=z_range,
+        element_order=("X",),
+    )
+
+    expected = PreparedCakePlan(
+        dense,
+        q,
+        1.0,
+        circular_backend="numpy",
+        q_block_size=3,
+    ).circular_fft_sparse_source_r_dependent(
+        margin=8,
+        cutoff_bin_size=8,
+        analytic_kernel=True,
+        q_block_size=3,
+        profile_chunk_size=5,
+    )
+    sparse_plan = PreparedCakePlan(
+        sparse,
+        q,
+        1.0,
+        circular_backend="numpy",
+        q_block_size=3,
+    )
+    got = sparse_plan.circular_fft_sparse_source_r_dependent(
+        margin=8,
+        cutoff_bin_size=8,
+        analytic_kernel=True,
+        q_block_size=3,
+        profile_chunk_size=5,
+    )
+
+    assert sparse.active_values.size == np.count_nonzero(dense.hist)
+    assert relative_l2(got, expected) < 1e-12
+    with pytest.raises(RuntimeError, match="sparse-source solver"):
+        sparse_plan.circular_fft()
 
 
 def test_cpp_sparse_source_projection_matches_dense_circular() -> None:

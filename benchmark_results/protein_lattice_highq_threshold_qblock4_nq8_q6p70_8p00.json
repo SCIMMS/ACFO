@@ -1,0 +1,197 @@
+{
+  "schema": "protein-lattice-q-sampling-case-v1",
+  "generated_at_utc": "2026-07-13T01:15:03.651041+00:00",
+  "label": "qblock4_nq8_q6p70_8p00",
+  "axis": "resolution",
+  "contract": {
+    "unit": "structures/processed/protein_nanocrystal_lysozyme_1iee_1x1x1_fixed.npz",
+    "supercell": "structures/processed/protein_nanocrystal_lysozyme_1iee_5x5x5_fixed.npz",
+    "q_min_inv_angstrom": 6.7,
+    "q_max_inv_angstrom": 8.0,
+    "nq": 8,
+    "dq_inv_angstrom": 0.18571428571428594,
+    "nphi": 864,
+    "wavelength_nm": 0.08,
+    "harmonic_margin": 48,
+    "finufft_eps": 1e-06,
+    "finufft_threads": 4,
+    "finufft_mode": "chunked",
+    "finufft_q_block_size": 4,
+    "finufft_wall_threshold_seconds": 90.0,
+    "finufft_max_process_rss_fraction": 0.75,
+    "finufft_min_available_memory_fraction": 0.2,
+    "memory_sample_interval_seconds": 0.02,
+    "lattice_backend": "separable",
+    "coefficient_backend": "fused_phase"
+  },
+  "atom_count": 1001000,
+  "cell_count": 125,
+  "unit_atom_count": 8008,
+  "unit_structure": "protein_nanocrystal_lysozyme_1iee_1x1x1_fixed",
+  "supercell_shape": [
+    5,
+    5,
+    5
+  ],
+  "repetition_residual_nm": 3.0588864774472313e-12,
+  "target_count": 6912,
+  "maximum_harmonic": 408,
+  "timing_seconds": {
+    "shared_target_preparation": 0.036445800004003104,
+    "factorized": {
+      "plan_setup": 0.004061400002683513,
+      "lattice_setup": 0.0023970999973244034,
+      "specific_setup_total": 0.006458500000007916,
+      "first_execute": 0.08337209999444894,
+      "hot_execute": 0.06961620000220137,
+      "first_total_excluding_shared": 0.08983059999445686,
+      "first_profile": {
+        "backend": "fft",
+        "coefficient_backend": "fused_phase",
+        "coefficient_cache_mib": 0.0,
+        "coefficient_contraction_seconds": 0.08294680000108201,
+        "azimuth_synthesis_seconds": 0.00039370000013150275,
+        "total_seconds": 0.08334359999571461
+      },
+      "hot_profile": {
+        "backend": "fft",
+        "coefficient_backend": "fused_phase",
+        "coefficient_cache_mib": 0.0,
+        "coefficient_contraction_seconds": 0.06928460000199266,
+        "azimuth_synthesis_seconds": 0.00029070000164210796,
+        "total_seconds": 0.06957760000659619
+      }
+    },
+    "finufft": {
+      "mode": "chunked_streaming",
+      "q_block_size": 4,
+      "block_count": 2,
+      "summed_plan_setup": 0.4618419000034919,
+      "summed_execute": 73.22966639999504,
+      "summed_cleanup": 0.55024099998991,
+      "streamed_wall_excluding_shared": 74.36042769999767,
+      "block_rows": [
+        {
+          "block_index": 0,
+          "q_start_index": 0,
+          "q_stop_index": 4,
+          "q_min_inv_angstrom": 6.7,
+          "q_max_inv_angstrom": 7.257142857142857,
+          "target_count": 3456,
+          "setup_seconds": 0.16294110000308137,
+          "execute_seconds": 26.46143309999752,
+          "cleanup_seconds": 0.19855089999327902,
+          "block_wall_seconds": 26.874955899998895,
+          "cumulative_wall_seconds": 26.87521050000214,
+          "setup_memory": {
+            "rss_before_mib": 132.859375,
+            "rss_after_mib": 215.625,
+            "rss_after_delta_mib": 82.765625,
+            "peak_rss_mib": 215.625,
+            "peak_rss_delta_mib": 82.765625,
+            "rss_samples": 6
+          },
+          "execute_memory": {
+            "rss_before_mib": 215.62890625,
+            "rss_after_mib": 19.87109375,
+            "rss_after_delta_mib": -195.7578125,
+            "peak_rss_mib": 5283.5546875,
+            "peak_rss_delta_mib": 5067.92578125,
+            "rss_samples": 678
+          },
+          "physical_memory_after_cleanup": {
+            "total_mib": 8155.34765625,
+            "available_mib": 5421.30859375,
+            "available_fraction": 0.6647550567136499
+          },
+          "peak_process_rss_fraction": 0.6478638201831716
+        },
+        {
+          "block_index": 1,
+          "q_start_index": 4,
+          "q_stop_index": 8,
+          "q_min_inv_angstrom": 7.442857142857143,
+          "q_max_inv_angstrom": 8.0,
+          "target_count": 3456,
+          "setup_seconds": 0.2989008000004105,
+          "execute_seconds": 46.76823329999752,
+          "cleanup_seconds": 0.35169009999663103,
+          "block_wall_seconds": 47.481045199994696,
+          "cumulative_wall_seconds": 74.35688300000038,
+          "setup_memory": {
+            "rss_before_mib": 51.77734375,
+            "rss_after_mib": 161.66796875,
+            "rss_after_delta_mib": 109.890625,
+            "peak_rss_mib": 161.66796875,
+            "peak_rss_delta_mib": 109.890625,
+            "rss_samples": 10
+          },
+          "execute_memory": {
+            "rss_before_mib": 161.66796875,
+            "rss_after_mib": 20.703125,
+            "rss_after_delta_mib": -140.96484375,
+            "peak_rss_mib": 6101.109375,
+            "peak_rss_delta_mib": 5939.44140625,
+            "rss_samples": 1299
+          },
+          "physical_memory_after_cleanup": {
+            "total_mib": 8155.34765625,
+            "available_mib": 6021.984375,
+            "available_fraction": 0.7384092780379439
+          },
+          "peak_process_rss_fraction": 0.7481115008413287
+        }
+      ],
+      "completed_nq": 8,
+      "completion_fraction": 1.0,
+      "censored": false,
+      "stop_reasons": [],
+      "stop_contract": {
+        "wall_threshold_seconds": 90.0,
+        "max_process_rss_fraction": 0.75,
+        "min_available_memory_fraction": 0.2,
+        "initial_physical_memory": {
+          "total_mib": 8155.34765625,
+          "available_mib": 4661.9453125,
+          "available_fraction": 0.5716427440008928
+        }
+      }
+    }
+  },
+  "speedup_finufft_over_factorized": {
+    "first_total_excluding_shared": 827.7850499115691,
+    "hot_execute": null,
+    "first_total_is_lower_bound": false
+  },
+  "cross_error": {
+    "complex_l2": 1.2108760293506455e-06,
+    "intensity_l2": 2.482145092646022e-07,
+    "factorized_first_hot_complex_l2": 0.0,
+    "completed_nq": 8
+  },
+  "legacy_comparison": null,
+  "lattice_comparison": null,
+  "gates": {
+    "maximum_harmonic_below_nyquist": true,
+    "repetition_residual_le_1e_9_nm": true,
+    "cross_complex_l2_le_2e_6": true,
+    "cross_intensity_l2_le_5e_6": true,
+    "factorized_repeat_l2_le_1e_13": true,
+    "lattice_comparison_l2_le_1e_9": true,
+    "censored_stop_has_reason": true
+  },
+  "elapsed_seconds": 74.88114440000209,
+  "claim_boundary": [
+    "This is a single-process exploratory scaling case, not a 10/30 timing claim.",
+    "Setup and execute are reported separately; streamed chunking also reports cleanup and wall total.",
+    "The factorized execute uses prepared coordinates/cutoffs and uniform-phi FFT synthesis.",
+    "FINUFFT eps=1e-6 is a practical timing baseline; direct NDFT correctness is separate.",
+    "The chunked FINUFFT row completed all requested q rows."
+  ],
+  "passed": true,
+  "driver_subprocess": {
+    "elapsed_seconds": 76.94012369999837,
+    "stdout_tail": "qblock4_nq8_q6p70_8p00: factorized setup 0.006 s; first/hot 0.083/0.070 s; coefficient 0.069 s; synthesis 0.000 s\nqblock4_nq8_q6p70_8p00: chunk 1 q[0:4] setup 0.163 s execute 26.461 s\nqblock4_nq8_q6p70_8p00: chunk 2 q[4:8] setup 0.299 s execute 46.768 s\nqblock4_nq8_q6p70_8p00: FINUFFT mode chunked; setup sum 0.462 s; execute sum 73.230 s; wall 74.360 s; first-total speedup 827.785x; cross L2 1.211e-06\nwrote C:\\Users\\tnvlaos456\\Documents\\Atomic WAXS Cake-Map Simulator\\benchmark_results\\protein_lattice_highq_threshold_qblock4_nq8_q6p70_8p00.json\n",
+    "stderr_tail": ""
+  }
+}

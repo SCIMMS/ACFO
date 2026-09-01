@@ -1,0 +1,143 @@
+{
+  "schema": "acfo-general-curvature-cpu-replication-summary-v1",
+  "generated_at_utc": "2026-07-22T04:20:52.730843+00:00",
+  "passed": true,
+  "gpu_required": false,
+  "gpu_used": false,
+  "claim_role": "general-curvature correctness and physical-extension replication; no performance claim",
+  "gaussian_validation": {
+    "checks": {
+      "schema": true,
+      "overall_passed": true,
+      "three_levels": true,
+      "four_curve_families": true,
+      "operator_l2_le_1e_12": true,
+      "operator_phase_le_1e_12": true,
+      "closure_le_1e_12": true,
+      "finest_total_le_2pct": true,
+      "all_families_converge": true
+    },
+    "metrics": {
+      "max_operator_relative_l2": 4.9841174304069906e-15,
+      "max_operator_phase_rms_rad": 1.0784480230752758e-14,
+      "max_decomposition_closure_relative_l2": 1.5465004833640309e-18,
+      "finest_total_relative_l2_by_family": {
+        "ellipsoid": 0.0102628216552648,
+        "paraboloid": 0.009351635042696725,
+        "sphere": 0.009337604521731754,
+        "spline": 0.009096805245049884
+      },
+      "finest_below_coarsest_by_family": {
+        "ellipsoid": true,
+        "paraboloid": true,
+        "sphere": true,
+        "spline": true
+      }
+    },
+    "reference_metric_drift": {
+      "finest_below_coarsest_by_family": {
+        "ellipsoid": {
+          "absolute": 0.0,
+          "relative": 0.0
+        },
+        "sphere": {
+          "absolute": 0.0,
+          "relative": 0.0
+        },
+        "paraboloid": {
+          "absolute": 0.0,
+          "relative": 0.0
+        },
+        "spline": {
+          "absolute": 0.0,
+          "relative": 0.0
+        }
+      },
+      "finest_total_relative_l2_by_family": {
+        "ellipsoid": {
+          "absolute": 0.0,
+          "relative": 0.0
+        },
+        "sphere": {
+          "absolute": 0.0,
+          "relative": 0.0
+        },
+        "paraboloid": {
+          "absolute": 0.0,
+          "relative": 0.0
+        },
+        "spline": {
+          "absolute": 0.0,
+          "relative": 0.0
+        }
+      },
+      "max_operator_relative_l2": {
+        "absolute": 0.0,
+        "relative": 0.0
+      },
+      "max_decomposition_closure_relative_l2": {
+        "absolute": 0.0,
+        "relative": 0.0
+      },
+      "max_operator_phase_rms_rad": {
+        "absolute": 0.0,
+        "relative": 0.0
+      }
+    }
+  },
+  "nonlinear_oracle": {
+    "checks": {
+      "schema": true,
+      "overall_passed": true,
+      "all_frozen_gates_pass": true,
+      "green_operator_l2_le_1e_11": true,
+      "selected_voxel_analytic_l2_le_1e_8": true,
+      "finest_histogram_analytic_l2_le_2pct": true,
+      "wrong_d33_residual_ge_20pct": true
+    },
+    "metrics": {
+      "chi2_factorization_relative_l2": 1.3188626038645477e-16,
+      "max_green_acfo_vs_binned_direct_relative_l2": 4.590678241043094e-15,
+      "selected_mode_voxel_vs_analytic_green_relative_l2": 7.151359247742086e-13,
+      "finest_acfo_vs_analytic_green_relative_l2": 0.01810029518111759,
+      "wrong_d33_gain_aligned_relative_l2": 0.29744307049651875,
+      "empirical_resolution_order": 1.610206857647875
+    },
+    "reference_metric_drift": {
+      "finest_acfo_vs_analytic_green_relative_l2": {
+        "absolute": 3.469446951953614e-18,
+        "relative": 1.916790260731757e-16
+      },
+      "max_green_acfo_vs_binned_direct_relative_l2": {
+        "absolute": 0.0,
+        "relative": 0.0
+      },
+      "chi2_factorization_relative_l2": {
+        "absolute": 0.0,
+        "relative": 0.0
+      },
+      "wrong_d33_gain_aligned_relative_l2": {
+        "absolute": 2.7755575615628914e-16,
+        "relative": 9.331390900886271e-16
+      },
+      "empirical_resolution_order": {
+        "absolute": 8.881784197001252e-16,
+        "relative": 5.515927444238685e-16
+      },
+      "selected_mode_voxel_vs_analytic_green_relative_l2": {
+        "absolute": 1.0189856327507892e-15,
+        "relative": 0.0014269170452333166
+      }
+    }
+  },
+  "claim_boundary": {
+    "supported": "CPU-independent correctness for the tested finite axisymmetric curve families and prescribed homogeneous-bulk undepleted LiNbO3 problem",
+    "not_supported": [
+      "GPU performance or scalability",
+      "arbitrary non-axisymmetric manifolds",
+      "interfaces, loss, depletion, periodic poling, or absolute efficiency",
+      "FDTD agreement",
+      "general differential-equation solvers"
+    ]
+  }
+}

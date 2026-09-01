@@ -1,0 +1,483 @@
+{
+  "schema": "odt-128cubed-nonnegative-fista-v1",
+  "problem": {
+    "object_shape": [
+      128,
+      128,
+      128
+    ],
+    "illumination_count": 61,
+    "detector_shape": [
+      128,
+      128
+    ],
+    "noise_db": 30.0,
+    "constraint": "real nonnegative",
+    "regularizer": "3-D forward-difference quadratic gradient"
+  },
+  "data_lipschitz_estimate": 53588541440.0,
+  "timing_s": {
+    "context_plan_and_data": 21.943706699999893,
+    "power_iteration": 1.4928929999987304
+  },
+  "rows": [
+    {
+      "regularization": 0.0,
+      "lipschitz": 58947395584.00001,
+      "step": 1.6964277897146456e-11,
+      "iterations": 200,
+      "solve_s": 26.19172709999839,
+      "object_nrmse": 0.21152275800704956,
+      "data_residual": 0.04290532320737839,
+      "history": [
+        {
+          "iteration": 10,
+          "object_nrmse": 0.5925358533859253
+        },
+        {
+          "iteration": 20,
+          "object_nrmse": 0.45579442381858826
+        },
+        {
+          "iteration": 30,
+          "object_nrmse": 0.39121320843696594
+        },
+        {
+          "iteration": 40,
+          "object_nrmse": 0.3551218807697296
+        },
+        {
+          "iteration": 50,
+          "object_nrmse": 0.33150482177734375
+        },
+        {
+          "iteration": 60,
+          "object_nrmse": 0.31401464343070984
+        },
+        {
+          "iteration": 70,
+          "object_nrmse": 0.29995325207710266
+        },
+        {
+          "iteration": 80,
+          "object_nrmse": 0.28806960582733154
+        },
+        {
+          "iteration": 90,
+          "object_nrmse": 0.2777230441570282
+        },
+        {
+          "iteration": 100,
+          "object_nrmse": 0.2685481309890747
+        },
+        {
+          "iteration": 110,
+          "object_nrmse": 0.26031553745269775
+        },
+        {
+          "iteration": 120,
+          "object_nrmse": 0.25286567211151123
+        },
+        {
+          "iteration": 130,
+          "object_nrmse": 0.2460840940475464
+        },
+        {
+          "iteration": 140,
+          "object_nrmse": 0.23988071084022522
+        },
+        {
+          "iteration": 150,
+          "object_nrmse": 0.23418374359607697
+        },
+        {
+          "iteration": 160,
+          "object_nrmse": 0.2289343625307083
+        },
+        {
+          "iteration": 170,
+          "object_nrmse": 0.224082350730896
+        },
+        {
+          "iteration": 180,
+          "object_nrmse": 0.21958598494529724
+        },
+        {
+          "iteration": 190,
+          "object_nrmse": 0.21541056036949158
+        },
+        {
+          "iteration": 200,
+          "object_nrmse": 0.21152275800704956
+        }
+      ]
+    },
+    {
+      "regularization": 10000000.0,
+      "lipschitz": 59067395584.00001,
+      "step": 1.692981364952676e-11,
+      "iterations": 200,
+      "solve_s": 26.68682500000068,
+      "object_nrmse": 0.2116663157939911,
+      "data_residual": 0.04294896870851517,
+      "history": [
+        {
+          "iteration": 10,
+          "object_nrmse": 0.5929702520370483
+        },
+        {
+          "iteration": 20,
+          "object_nrmse": 0.45617708563804626
+        },
+        {
+          "iteration": 30,
+          "object_nrmse": 0.3915148675441742
+        },
+        {
+          "iteration": 40,
+          "object_nrmse": 0.3553694784641266
+        },
+        {
+          "iteration": 50,
+          "object_nrmse": 0.3317227065563202
+        },
+        {
+          "iteration": 60,
+          "object_nrmse": 0.31421712040901184
+        },
+        {
+          "iteration": 70,
+          "object_nrmse": 0.30014750361442566
+        },
+        {
+          "iteration": 80,
+          "object_nrmse": 0.28825896978378296
+        },
+        {
+          "iteration": 90,
+          "object_nrmse": 0.27790895104408264
+        },
+        {
+          "iteration": 100,
+          "object_nrmse": 0.2687309682369232
+        },
+        {
+          "iteration": 110,
+          "object_nrmse": 0.2604953348636627
+        },
+        {
+          "iteration": 120,
+          "object_nrmse": 0.25304216146469116
+        },
+        {
+          "iteration": 130,
+          "object_nrmse": 0.246257022023201
+        },
+        {
+          "iteration": 140,
+          "object_nrmse": 0.24004985392093658
+        },
+        {
+          "iteration": 150,
+          "object_nrmse": 0.23434889316558838
+        },
+        {
+          "iteration": 160,
+          "object_nrmse": 0.22909536957740784
+        },
+        {
+          "iteration": 170,
+          "object_nrmse": 0.22423914074897766
+        },
+        {
+          "iteration": 180,
+          "object_nrmse": 0.21973833441734314
+        },
+        {
+          "iteration": 190,
+          "object_nrmse": 0.21555839478969574
+        },
+        {
+          "iteration": 200,
+          "object_nrmse": 0.2116663157939911
+        }
+      ]
+    },
+    {
+      "regularization": 100000000.0,
+      "lipschitz": 60147395584.00001,
+      "step": 1.6625823783233154e-11,
+      "iterations": 200,
+      "solve_s": 26.66804630000115,
+      "object_nrmse": 0.2129739224910736,
+      "data_residual": 0.04335279390215874,
+      "history": [
+        {
+          "iteration": 10,
+          "object_nrmse": 0.5968364477157593
+        },
+        {
+          "iteration": 20,
+          "object_nrmse": 0.4596017897129059
+        },
+        {
+          "iteration": 30,
+          "object_nrmse": 0.394222229719162
+        },
+        {
+          "iteration": 40,
+          "object_nrmse": 0.35759198665618896
+        },
+        {
+          "iteration": 50,
+          "object_nrmse": 0.3336763381958008
+        },
+        {
+          "iteration": 60,
+          "object_nrmse": 0.31602993607521057
+        },
+        {
+          "iteration": 70,
+          "object_nrmse": 0.30188560485839844
+        },
+        {
+          "iteration": 80,
+          "object_nrmse": 0.2899535298347473
+        },
+        {
+          "iteration": 90,
+          "object_nrmse": 0.27957308292388916
+        },
+        {
+          "iteration": 100,
+          "object_nrmse": 0.270368754863739
+        },
+        {
+          "iteration": 110,
+          "object_nrmse": 0.26210710406303406
+        },
+        {
+          "iteration": 120,
+          "object_nrmse": 0.25462666153907776
+        },
+        {
+          "iteration": 130,
+          "object_nrmse": 0.24781176447868347
+        },
+        {
+          "iteration": 140,
+          "object_nrmse": 0.2415727972984314
+        },
+        {
+          "iteration": 150,
+          "object_nrmse": 0.23583842813968658
+        },
+        {
+          "iteration": 160,
+          "object_nrmse": 0.23054997622966766
+        },
+        {
+          "iteration": 170,
+          "object_nrmse": 0.22565822303295135
+        },
+        {
+          "iteration": 180,
+          "object_nrmse": 0.22112080454826355
+        },
+        {
+          "iteration": 190,
+          "object_nrmse": 0.21690307557582855
+        },
+        {
+          "iteration": 200,
+          "object_nrmse": 0.2129739224910736
+        }
+      ]
+    },
+    {
+      "regularization": 1000000000.0,
+      "lipschitz": 70947395584.0,
+      "step": 1.4094950093214122e-11,
+      "iterations": 200,
+      "solve_s": 27.875825999999506,
+      "object_nrmse": 0.2264261394739151,
+      "data_residual": 0.04810294508934021,
+      "history": [
+        {
+          "iteration": 10,
+          "object_nrmse": 0.6316865086555481
+        },
+        {
+          "iteration": 20,
+          "object_nrmse": 0.49195167422294617
+        },
+        {
+          "iteration": 30,
+          "object_nrmse": 0.4205227494239807
+        },
+        {
+          "iteration": 40,
+          "object_nrmse": 0.3792864978313446
+        },
+        {
+          "iteration": 50,
+          "object_nrmse": 0.35257983207702637
+        },
+        {
+          "iteration": 60,
+          "object_nrmse": 0.3333733081817627
+        },
+        {
+          "iteration": 70,
+          "object_nrmse": 0.3183763921260834
+        },
+        {
+          "iteration": 80,
+          "object_nrmse": 0.3059667944908142
+        },
+        {
+          "iteration": 90,
+          "object_nrmse": 0.2952946722507477
+        },
+        {
+          "iteration": 100,
+          "object_nrmse": 0.2858838438987732
+        },
+        {
+          "iteration": 110,
+          "object_nrmse": 0.27744725346565247
+        },
+        {
+          "iteration": 120,
+          "object_nrmse": 0.2697981595993042
+        },
+        {
+          "iteration": 130,
+          "object_nrmse": 0.26280850172042847
+        },
+        {
+          "iteration": 140,
+          "object_nrmse": 0.2563830316066742
+        },
+        {
+          "iteration": 150,
+          "object_nrmse": 0.250448614358902
+        },
+        {
+          "iteration": 160,
+          "object_nrmse": 0.24494719505310059
+        },
+        {
+          "iteration": 170,
+          "object_nrmse": 0.23983122408390045
+        },
+        {
+          "iteration": 180,
+          "object_nrmse": 0.23506072163581848
+        },
+        {
+          "iteration": 190,
+          "object_nrmse": 0.2306019514799118
+        },
+        {
+          "iteration": 200,
+          "object_nrmse": 0.2264261394739151
+        }
+      ]
+    }
+  ],
+  "best": {
+    "regularization": 0.0,
+    "lipschitz": 58947395584.00001,
+    "step": 1.6964277897146456e-11,
+    "iterations": 200,
+    "solve_s": 26.19172709999839,
+    "object_nrmse": 0.21152275800704956,
+    "data_residual": 0.04290532320737839,
+    "history": [
+      {
+        "iteration": 10,
+        "object_nrmse": 0.5925358533859253
+      },
+      {
+        "iteration": 20,
+        "object_nrmse": 0.45579442381858826
+      },
+      {
+        "iteration": 30,
+        "object_nrmse": 0.39121320843696594
+      },
+      {
+        "iteration": 40,
+        "object_nrmse": 0.3551218807697296
+      },
+      {
+        "iteration": 50,
+        "object_nrmse": 0.33150482177734375
+      },
+      {
+        "iteration": 60,
+        "object_nrmse": 0.31401464343070984
+      },
+      {
+        "iteration": 70,
+        "object_nrmse": 0.29995325207710266
+      },
+      {
+        "iteration": 80,
+        "object_nrmse": 0.28806960582733154
+      },
+      {
+        "iteration": 90,
+        "object_nrmse": 0.2777230441570282
+      },
+      {
+        "iteration": 100,
+        "object_nrmse": 0.2685481309890747
+      },
+      {
+        "iteration": 110,
+        "object_nrmse": 0.26031553745269775
+      },
+      {
+        "iteration": 120,
+        "object_nrmse": 0.25286567211151123
+      },
+      {
+        "iteration": 130,
+        "object_nrmse": 0.2460840940475464
+      },
+      {
+        "iteration": 140,
+        "object_nrmse": 0.23988071084022522
+      },
+      {
+        "iteration": 150,
+        "object_nrmse": 0.23418374359607697
+      },
+      {
+        "iteration": 160,
+        "object_nrmse": 0.2289343625307083
+      },
+      {
+        "iteration": 170,
+        "object_nrmse": 0.224082350730896
+      },
+      {
+        "iteration": 180,
+        "object_nrmse": 0.21958598494529724
+      },
+      {
+        "iteration": 190,
+        "object_nrmse": 0.21541056036949158
+      },
+      {
+        "iteration": 200,
+        "object_nrmse": 0.21152275800704956
+      }
+    ]
+  },
+  "gate_nrmse_le_5pct": false,
+  "passed": false,
+  "gpu_peak_allocated_mib": 2461.54931640625
+}

@@ -1,0 +1,204 @@
+{
+  "schema": "odt-cufinufft-only-production-timing-v1",
+  "generated_at_utc": "2026-07-14T05:30:34.073773+00:00",
+  "device": {
+    "id": 0,
+    "name": "NVIDIA GeForce RTX 2070 SUPER",
+    "cupy": "14.1.1",
+    "cufinufft": "2.5.1"
+  },
+  "problem": {
+    "object_shape": [
+      256,
+      256,
+      256
+    ],
+    "object_bins": 16777216,
+    "ring_q_samples": 7864320,
+    "axis_q_samples": 65536,
+    "total_q_samples": 7929856,
+    "ring_illum": 120,
+    "detector_shape": [
+      256,
+      256
+    ]
+  },
+  "cufinufft": {
+    "dtype": "complex128",
+    "eps": 1e-07,
+    "plan_mode": "plan",
+    "context_build_s": 23.65856770001119,
+    "operator_setup_s": 2.8705682000145316,
+    "forward_timing": {
+      "count": 1,
+      "median_s": 26.24145270002191,
+      "q1_s": 26.24145270002191,
+      "q3_s": 26.24145270002191,
+      "min_s": 26.24145270002191,
+      "max_s": 26.24145270002191,
+      "mean_s": 26.24145270002191,
+      "std_s": 0.0
+    },
+    "adjoint_timing": {
+      "count": 1,
+      "median_s": 8.317522700002883,
+      "q1_s": 8.317522700002883,
+      "q3_s": 8.317522700002883,
+      "min_s": 8.317522700002883,
+      "max_s": 8.317522700002883,
+      "mean_s": 8.317522700002883,
+      "std_s": 0.0
+    },
+    "pair_timing": {
+      "count": 5,
+      "median_s": 34.628073500003666,
+      "q1_s": 34.58786880000844,
+      "q3_s": 34.656039800000144,
+      "min_s": 34.55845650000265,
+      "max_s": 34.73499639998772,
+      "mean_s": 34.63308700000052,
+      "std_s": 0.06810265992648343
+    },
+    "forward_median_s": 26.24145270002191,
+    "adjoint_median_s": 8.317522700002883,
+    "pair_median_s": 34.628073500003666
+  },
+  "memory_snapshots": [
+    {
+      "label": "after_all_forward_adjoint_plans",
+      "free_mib": 135.0,
+      "used_mib": 8056.5625,
+      "total_mib": 8191.5625,
+      "cupy_pool_used_mib": 2532.0,
+      "cupy_pool_total_mib": 2532.0
+    },
+    {
+      "label": "after_coeff_forward_and_residual",
+      "free_mib": 0.0,
+      "used_mib": 8191.5625,
+      "total_mib": 8191.5625,
+      "cupy_pool_used_mib": 2909.0,
+      "cupy_pool_total_mib": 2909.0
+    },
+    {
+      "label": "after_timed_execution",
+      "free_mib": 0.0,
+      "used_mib": 8191.5625,
+      "total_mib": 8191.5625,
+      "cupy_pool_used_mib": 2909.0,
+      "cupy_pool_total_mib": 2909.0
+    }
+  ],
+  "acfo_reference": {
+    "path": "C:\\Users\\tnvlaos456\\Documents\\Atomic WAXS Cake-Map Simulator\\benchmark_results\\odt_h28_rank16_adaptive_l1e-6_vs_cufinufft_abba30_final.json",
+    "sha256": "cf2eb67a2f92f2b529ad6f316b773d45c04fca40230264b9d70412363c6ee7d8",
+    "pair_median_s": 0.1113661499985028,
+    "device_name": "NVIDIA GeForce RTX 2070 SUPER",
+    "dtype": "complex64",
+    "pair_protocol": {
+      "method_order": "alternating_ab_ba",
+      "warmups_per_backend": 5,
+      "measured_repeats_per_backend": 30,
+      "ours_times_s": [
+        0.11304919999383856,
+        0.11116990000300575,
+        0.11156400000618305,
+        0.11002019999432378,
+        0.11355209999601357,
+        0.11220259999390692,
+        0.11137569999846164,
+        0.1103657000057865,
+        0.11163879999367055,
+        0.11045549999107607,
+        0.11135659999854397,
+        0.1112756999937119,
+        0.11083969999162946,
+        0.11208510000142269,
+        0.11074570000346284,
+        0.11141169999609701,
+        0.11084190000838134,
+        0.11160269999527372,
+        0.11132779999752529,
+        0.11177099999622442,
+        0.11056480000843294,
+        0.1116840000031516,
+        0.11141070000303444,
+        0.11187040001095738,
+        0.11138000000210013,
+        0.1111903999990318,
+        0.11141219999990426,
+        0.11113900000054855,
+        0.11121830000774935,
+        0.11127140000462532
+      ],
+      "cufinufft_times_s": [
+        9.044960500003072,
+        9.034586900001159,
+        9.0404811000044,
+        9.13620720000472,
+        9.100803599998471,
+        9.048275699999067,
+        9.039237000004505,
+        9.053270000003977,
+        9.059616400001687,
+        9.037619900002028,
+        9.050831000000471,
+        9.043155699997442,
+        9.076300300002913,
+        9.067202799997176,
+        9.055433000001358,
+        9.041940399998566,
+        9.03301559999818,
+        9.046732300004805,
+        9.110961300000781,
+        9.054692299992894,
+        9.070288200004143,
+        9.061117799996282,
+        9.062041099998169,
+        9.062615100003313,
+        9.046687100009876,
+        9.033242200006498,
+        9.032465299998876,
+        9.041550299996743,
+        9.040699599994696,
+        9.038913299998967
+      ],
+      "ours_distribution": {
+        "count": 30,
+        "median_s": 0.1113661499985028,
+        "q1_s": 0.11114672500116285,
+        "q3_s": 0.11162977499407134,
+        "min_s": 0.11002019999432378,
+        "max_s": 0.11355209999601357,
+        "mean_s": 0.11139309333326916,
+        "std_s": 0.0007163929820795435
+      },
+      "cufinufft_distribution": {
+        "count": 30,
+        "median_s": 9.047504000001936,
+        "q1_s": 9.040535725001973,
+        "q3_s": 9.061810274997697,
+        "min_s": 9.032465299998876,
+        "max_s": 9.13620720000472,
+        "mean_s": 9.055498100000841,
+        "std_s": 0.024012318130788315
+      }
+    },
+    "candidate": {
+      "h_cutoff": 28,
+      "axial_lowrank_rank": 16,
+      "ring_adaptive_l_packed_threshold": 1e-06
+    }
+  },
+  "accuracy_audit": {
+    "path": "C:\\Users\\tnvlaos456\\Documents\\Atomic WAXS Cake-Map Simulator\\benchmark_results\\odt_cufinufft_matched_error_direct_subset_c128.json",
+    "sha256": "54d6694a8090f8ded70b861fc9e46ec9cb0bef49322bf948d38e02a0faf1b298"
+  },
+  "speedup_acfo_vs_matched_cufinufft": 310.9389477904121,
+  "claim_boundary": [
+    "This process contains only the cuFINUFFT plans and data; the ACFO plan is deliberately absent because the matched complex128 cuFINUFFT and ACFO plans cannot coexist on the 8 GB RTX 2070 SUPER.",
+    "The linked ACFO timing is the frozen 30-repeat alternating AB/BA result from the same 256-cubed geometry and GPU, but the mixed-precision speedup is therefore a separate-process comparison rather than a co-resident AB/BA measurement.",
+    "The linked small direct-sum audit, not cross-backend agreement, selects complex128 eps=1e-7 as the first direction-wise cuFINUFFT match to the complex64 ACFO error.",
+    "Camera acquisition, transfer, remap and reconstruction iteration count are outside this raw full-q forward/adjoint pair timing."
+  ]
+}

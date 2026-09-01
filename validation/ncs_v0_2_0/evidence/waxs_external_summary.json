@@ -1,0 +1,19 @@
+{
+  "schema": "waxs-affine-library-eps-frontier-external-summary-v2",
+  "generated_at_utc": "2026-08-25T10:55:19.154682+00:00",
+  "mode": "full",
+  "verdict": "PASS",
+  "passed": true,
+  "runner_exit_status": 0,
+  "run_binding": {
+    "request_archive_sha256": "162d3bbfd8217075da3d4760241f925c14ae3fe44eced0c96d329cb09c561187",
+    "request_manifest_sha256": "f95ae39dd5e014577c352e8ac817f6687ec69b6c930b0acf37e4f5ec6406d9d7",
+    "protocol_sha256": "e6405008f5a6d9c5202575b0c22889fc4694a74229d4bfb43e80c8138315bb93",
+    "run_id": "waxs_100_state_eps_frontier_external_request_v1_162d3bbfd821_20260825_195415_c9eea9a53a20492fa2212737e6ccc746"
+  },
+  "selected_eps": 3e-06,
+  "return_archive": "waxs_100_state_eps_frontier_external_return.zip",
+  "return_sidecar": "waxs_100_state_eps_frontier_external_return.zip.sha256",
+  "external_audit_sha256": "a6c7fd0df21b5ae5a89e4765819d823027526c788d34245583fe556455118061",
+  "result_sha256": "9421f6114a1beac97d6fe01117228a3e221aa1b1c14d977a738c540d3185b6e4"
+}

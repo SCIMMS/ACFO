@@ -1,0 +1,28 @@
+{
+  "title": "ACFO: Geometry factorization and representation dispatch for repeated curved Fourier inference",
+  "upload_type": "software",
+  "description": "ACFO provides prepared forward-adjoint operators and representation dispatch for repeated curved Fourier inference. Version 0.2.0 includes the manuscript-facing source code, figure source data, normalized external-validation evidence and executable numerical audits for WAXS, ODT and NuMagSANS applications. High-NA Debye-Wolf material is included only as Supplementary accuracy-control evidence.",
+  "creators": [
+    {
+      "name": "Kim, Minsu",
+      "affiliation": "Pohang University of Science and Technology (POSTECH)",
+      "orcid": "0009-0002-3129-6839"
+    },
+    {
+      "name": "Seo, Jongcheol",
+      "affiliation": "Pohang University of Science and Technology (POSTECH)"
+    }
+  ],
+  "version": "0.2.0",
+  "access_right": "open",
+  "license": "other-open",
+  "keywords": [
+    "curved Fourier transform",
+    "axisymmetry",
+    "WAXS",
+    "optical diffraction tomography",
+    "magnetic SANS",
+    "NUFFT",
+    "forward-adjoint operator"
+  ]
+}

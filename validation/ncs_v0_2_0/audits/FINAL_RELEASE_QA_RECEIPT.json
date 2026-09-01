@@ -1,0 +1,231 @@
+{
+  "schema": "acfo-ncs-final-hardening-r3-final-qa-v1",
+  "created_utc": "2026-09-01T12:16:49.982375+00:00",
+  "status": "PASS",
+  "artifacts": [
+    {
+      "path": "reports/acfo_ncs_manuscript_final_hardening_r3_20260902/ACFO_NCS_manuscript_final_hardening_r3_20260902_master.docx",
+      "bytes": 2442624,
+      "sha256": "9d400841e13739e1b76874183fdec25df49ec1f9e824b2d192fabc3ab1695bc5"
+    },
+    {
+      "path": "reports/acfo_ncs_manuscript_final_hardening_r3_20260902/ACFO_NCS_manuscript_final_hardening_r3_20260902_master.pdf",
+      "bytes": 774419,
+      "sha256": "02377f2c131784931a564307b73f0095974cf062591616e908c485d213f4f478"
+    },
+    {
+      "path": "reports/acfo_ncs_manuscript_final_hardening_r3_20260902/ACFO_NCS_Supplementary_Information_final_hardening_r3_20260902_master.docx",
+      "bytes": 3864085,
+      "sha256": "ef3328c5674383575c9f655b3b7763ceb2b1858de879977b8bef43fad7f03a68"
+    },
+    {
+      "path": "reports/acfo_ncs_manuscript_final_hardening_r3_20260902/ACFO_NCS_Supplementary_Information_final_hardening_r3_20260902_master.pdf",
+      "bytes": 362329,
+      "sha256": "ca994defbf5ccfe600050d8401c11788cd47622254f8576855f3db85e2b92e45"
+    }
+  ],
+  "pdf_pages": {
+    "main": 11,
+    "si": 6
+  },
+  "visual_review": {
+    "status": "PASS",
+    "checks": [
+      "all rendered pages inspected",
+      "no clipping or object overlap",
+      "no split table rows",
+      "captions and cross-references readable",
+      "figures and equations legible",
+      "clean submission copies contain no comments or tracked changes"
+    ],
+    "main": [
+      {
+        "page": 1,
+        "path": "reports/acfo_ncs_manuscript_final_hardening_r3_20260902/render_main_release/page-1.png",
+        "pixels": [
+          1275,
+          1650
+        ],
+        "sha256": "3bb117553a0f33288fc116556329b09f9eacafb3bfd1180f6753e6acb9dc8455",
+        "visual_review": "PASS"
+      },
+      {
+        "page": 2,
+        "path": "reports/acfo_ncs_manuscript_final_hardening_r3_20260902/render_main_release/page-2.png",
+        "pixels": [
+          1275,
+          1650
+        ],
+        "sha256": "5c3c226fea1b312b6cec5c9751c8c67667bebb986b66de9bae4fd9642d102e20",
+        "visual_review": "PASS"
+      },
+      {
+        "page": 3,
+        "path": "reports/acfo_ncs_manuscript_final_hardening_r3_20260902/render_main_release/page-3.png",
+        "pixels": [
+          1275,
+          1650
+        ],
+        "sha256": "3701d07dbdd30769e1958c8333553d2c111d3766639dc639d3b8c7b9349d8bb2",
+        "visual_review": "PASS"
+      },
+      {
+        "page": 4,
+        "path": "reports/acfo_ncs_manuscript_final_hardening_r3_20260902/render_main_release/page-4.png",
+        "pixels": [
+          1275,
+          1650
+        ],
+        "sha256": "cb41eb293c588a0f4b8794103a0cf707e2be7fef4c2004e2f352bae5ba1957b3",
+        "visual_review": "PASS"
+      },
+      {
+        "page": 5,
+        "path": "reports/acfo_ncs_manuscript_final_hardening_r3_20260902/render_main_release/page-5.png",
+        "pixels": [
+          1275,
+          1650
+        ],
+        "sha256": "ad9e6ccdb20cea5e98b93ca3135fce752fe4428382b46bcc7c3e383ecdaa777d",
+        "visual_review": "PASS"
+      },
+      {
+        "page": 6,
+        "path": "reports/acfo_ncs_manuscript_final_hardening_r3_20260902/render_main_release/page-6.png",
+        "pixels": [
+          1275,
+          1650
+        ],
+        "sha256": "0e3d39112dc65cf4f3ca44ab5442340421920e86595ed4f30c2461418c5aa1dc",
+        "visual_review": "PASS"
+      },
+      {
+        "page": 7,
+        "path": "reports/acfo_ncs_manuscript_final_hardening_r3_20260902/render_main_release/page-7.png",
+        "pixels": [
+          1275,
+          1650
+        ],
+        "sha256": "63b5da75c108bbf47529726d136060f813b788595eb88a1d3f7620f88f7eaddc",
+        "visual_review": "PASS"
+      },
+      {
+        "page": 8,
+        "path": "reports/acfo_ncs_manuscript_final_hardening_r3_20260902/render_main_release/page-8.png",
+        "pixels": [
+          1275,
+          1650
+        ],
+        "sha256": "420ef7bbd6e5e5d0a7c965447dad34a3dae5a85372fca1bf65b1838fc60b240c",
+        "visual_review": "PASS"
+      },
+      {
+        "page": 9,
+        "path": "reports/acfo_ncs_manuscript_final_hardening_r3_20260902/render_main_release/page-9.png",
+        "pixels": [
+          1275,
+          1650
+        ],
+        "sha256": "273e64c8a8f3f84a7357aca73776ff0d19da3ba81d6e488240d5f6cc5b3cdbde",
+        "visual_review": "PASS"
+      },
+      {
+        "page": 10,
+        "path": "reports/acfo_ncs_manuscript_final_hardening_r3_20260902/render_main_release/page-10.png",
+        "pixels": [
+          1275,
+          1650
+        ],
+        "sha256": "187834b6921d800c92563f611699158106129028e2e57db5af15f665eccba9bc",
+        "visual_review": "PASS"
+      },
+      {
+        "page": 11,
+        "path": "reports/acfo_ncs_manuscript_final_hardening_r3_20260902/render_main_release/page-11.png",
+        "pixels": [
+          1275,
+          1650
+        ],
+        "sha256": "6f105b2be6120229ca32a5b406ab38b8e53277708ffb4c040687222928ac448d",
+        "visual_review": "PASS"
+      }
+    ],
+    "si": [
+      {
+        "page": 1,
+        "path": "reports/acfo_ncs_manuscript_final_hardening_r3_20260902/render_si_release/page-1.png",
+        "pixels": [
+          1275,
+          1650
+        ],
+        "sha256": "c5daa5c04847b6714db24fe8c289a9638bf67c0ec5c19274d5985a868aef639d",
+        "visual_review": "PASS"
+      },
+      {
+        "page": 2,
+        "path": "reports/acfo_ncs_manuscript_final_hardening_r3_20260902/render_si_release/page-2.png",
+        "pixels": [
+          1275,
+          1650
+        ],
+        "sha256": "2e9d464b19747b7193b8276311702b9cf9db8f8850e782f8feb6c85f540afe93",
+        "visual_review": "PASS"
+      },
+      {
+        "page": 3,
+        "path": "reports/acfo_ncs_manuscript_final_hardening_r3_20260902/render_si_release/page-3.png",
+        "pixels": [
+          1275,
+          1650
+        ],
+        "sha256": "09479943b1f828560ad9ce2b3e3503caa6beed997ec5143847b122b189cbfa01",
+        "visual_review": "PASS"
+      },
+      {
+        "page": 4,
+        "path": "reports/acfo_ncs_manuscript_final_hardening_r3_20260902/render_si_release/page-4.png",
+        "pixels": [
+          1275,
+          1650
+        ],
+        "sha256": "86bd07ef740e2209abd5b8c051b684d8f26cca2f4da338b64dbab59ed5138280",
+        "visual_review": "PASS"
+      },
+      {
+        "page": 5,
+        "path": "reports/acfo_ncs_manuscript_final_hardening_r3_20260902/render_si_release/page-5.png",
+        "pixels": [
+          1275,
+          1650
+        ],
+        "sha256": "e0a7a7d7ab2716d3b0b7f453b690241a1595e9e9532922c3c48ccdf01c9dc843",
+        "visual_review": "PASS"
+      },
+      {
+        "page": 6,
+        "path": "reports/acfo_ncs_manuscript_final_hardening_r3_20260902/render_si_release/page-6.png",
+        "pixels": [
+          1275,
+          1650
+        ],
+        "sha256": "8cdd7589f79b6bc2876187bd67b73413f61bd416e116ac22d1bc4d307d1aaa41",
+        "visual_review": "PASS"
+      }
+    ]
+  },
+  "audits": {
+    "MAIN_AUDIT.json": "PASS",
+    "SI_AUDIT.json": "PASS",
+    "NUMERICAL_AUDIT.json": "PASS",
+    "FIGURE_AUDIT.json": "PASS",
+    "STRUCTURE_AUDIT.json": "PASS",
+    "FAIRNESS_CLAIM_AUDIT.json": "PASS"
+  },
+  "submission_blockers": [
+    "public GitHub URL and immutable release commit",
+    "Zenodo DOI linked to the release",
+    "verified funding identifiers and contributor acknowledgements",
+    "final CRediT author-contribution statement",
+    "final competing-interest confirmation"
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "schema": "acfo-ncs-si-audit-v1",
+  "figure_count": 1,
+  "table_count": 7,
+  "removed_topic_hits": {
+    "HL60": 0,
+    "ferrite": 0,
+    "CXIDB": 0,
+    "6O2H": 0,
+    "Magnetic Example 2": 0,
+    "FDTD": 0,
+    "uniaxial": 0,
+    "8DYZ": 0,
+    "42-family": 0
+  },
+  "discouraged_phrase_hits": {
+    "rather than": 0,
+    "not a": 0,
+    "does not": 0,
+    "we do not claim": 0,
+    "not intended to": 0
+  },
+  "internal_term_hits": {
+    "gate": 0,
+    "closure": 0,
+    "selected-baseline": 0,
+    "anchor": 0,
+    "hero": 0,
+    "lane": 0,
+    "systems envelope": 0,
+    "frozen protocol": 0
+  },
+  "unfair_ratio_hits": {
+    "8.221-fold": 0,
+    "38.2-fold": 0,
+    "81.241-fold": 0,
+    "2.952-fold": 0,
+    "2.993-fold": 0,
+    "3.141-fold": 0,
+    "6.639-fold": 0,
+    "100.556-fold": 0,
+    "166-fold": 0,
+    "168-fold": 0
+  },
+  "review_markup": {
+    "comment_parts": [],
+    "insertions": 0,
+    "deletions": 0,
+    "track_revisions": false
+  },
+  "review_response_checks": {
+    "discrete_adjoint_normalization": true,
+    "complexity_and_storage": true,
+    "absolute_times_present": true,
+    "bootstrap_contract_present": true,
+    "waxs_three_intensity_tests_named": true,
+    "numag_bootstrap_unit_present": true,
+    "numag_external_execution_defined": true,
+    "numag_amplitude_results_present": true,
+    "numag_abba_naming": true,
+    "numag_orientation_record_scope": true,
+    "waxs_noise_seed_present": true,
+    "uob_adapter_sensitivity_present": true,
+    "odt_scope_present": true
+  },
+  "passed": true
+}

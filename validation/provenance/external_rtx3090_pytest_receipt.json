@@ -1,0 +1,12 @@
+{
+  "schema": "acfo-ncs-v14-pytest-receipt-v1",
+  "generated_at_utc": "2026-07-14T09:13:41.901523+00:00",
+  "passed": true,
+  "returncode": 0,
+  "duration_s": 12.747941699984949,
+  "log": "benchmark_results/external_acfo_ncs_v14_20260714T091255Z_full/logs/pytest.log",
+  "_publication": {
+    "source_sha256": "74778817b7314a9baa95406e7c60d50777ad93c5cafe77404a5ac463cb9fe7df",
+    "normalization": "Machine-local absolute paths were replaced with repository-relative paths or a redacted placeholder. Scientific values are unchanged."
+  }
+}

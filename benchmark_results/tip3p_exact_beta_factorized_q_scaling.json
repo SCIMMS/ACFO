@@ -1,0 +1,186 @@
+{
+  "schema": "tip3p-exact-beta-factorized-q-scaling-v1",
+  "generated_at_utc": "2026-07-12T20:47:53.852180+00:00",
+  "source": {
+    "input_npz": "runs/water_tip3p_8nm/water_tip3p_8nm_final.npz",
+    "trajectory_dcd": "runs/water_tip3p_8nm/water_tip3p_8nm_trajectory.dcd",
+    "frame_index": 0,
+    "source_metadata": {
+      "box_nm_requested": 8.0,
+      "equilibration_ps": 200.0,
+      "final_box_vectors_nm": [
+        [
+          7.991819567547597,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          7.991819567547597,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          7.991819567547597
+        ]
+      ],
+      "friction_per_ps": 1.0,
+      "input_source": "seed_tip3p_water",
+      "kind": "openmm_tip3p_water_box",
+      "n_atoms": 50430,
+      "n_waters": 16810,
+      "nonbonded_cutoff_nm": 1.0,
+      "openmm_platform": "CUDA",
+      "openmm_version": "8.2.0.dev-5377094",
+      "pressure_bar": 1.0,
+      "production_ps": 200.0,
+      "report_interval_ps": 10.0,
+      "seed": 20260623,
+      "temperature_k": 300.0,
+      "timestep_fs": 2.0,
+      "water_ff": "tip3p.xml",
+      "water_model": "tip3p"
+    }
+  },
+  "atom_count": 50430,
+  "q_range_inv_angstrom": [
+    5.0,
+    6.3
+  ],
+  "target_nphi": 768,
+  "target_nyquist": 384,
+  "harmonic_margin": 48,
+  "timing_scope": "local CPU wall time including coordinate preprocessing, fused contraction, and harmonic evaluation; excludes file loading and form-factor construction",
+  "factorized_vs_expanded_q2_complex_l2": 0.0,
+  "rows": [
+    {
+      "nq": 2,
+      "output_targets": 1536,
+      "maximum_harmonic": 374,
+      "repeats": 3,
+      "seconds": {
+        "min": 0.22089770000457065,
+        "median": 0.2260210000022198,
+        "max": 0.2266343000010238
+      },
+      "memory_accounting_mib": {
+        "coordinates": 1.1542510986328125,
+        "element_indices": 0.3847503662109375,
+        "atom_weights": 0.769500732421875,
+        "form_factors": 6.103515625e-05,
+        "harmonic_coefficients": 0.02288818359375,
+        "amplitude_output": 0.0234375,
+        "per_q_basis": 4.39453125,
+        "thread_scratch_upper_bound": 0.0176544189453125,
+        "avoided_atom_q_complex_matrix": 1.53900146484375,
+        "accounted_total": 6.7670745849609375
+      }
+    },
+    {
+      "nq": 8,
+      "output_targets": 6144,
+      "maximum_harmonic": 374,
+      "repeats": 3,
+      "seconds": {
+        "min": 0.5093903999950271,
+        "median": 0.5124558999959845,
+        "max": 0.5742351000008057
+      },
+      "memory_accounting_mib": {
+        "coordinates": 1.1542510986328125,
+        "element_indices": 0.3847503662109375,
+        "atom_weights": 0.769500732421875,
+        "form_factors": 0.000244140625,
+        "harmonic_coefficients": 0.091552734375,
+        "amplitude_output": 0.09375,
+        "per_q_basis": 4.39453125,
+        "thread_scratch_upper_bound": 0.035308837890625,
+        "avoided_atom_q_complex_matrix": 6.156005859375,
+        "accounted_total": 6.92388916015625
+      }
+    },
+    {
+      "nq": 32,
+      "output_targets": 24576,
+      "maximum_harmonic": 374,
+      "repeats": 3,
+      "seconds": {
+        "min": 2.040816699998686,
+        "median": 2.0441390999985742,
+        "max": 2.158311600003799
+      },
+      "memory_accounting_mib": {
+        "coordinates": 1.1542510986328125,
+        "element_indices": 0.3847503662109375,
+        "atom_weights": 0.769500732421875,
+        "form_factors": 0.0009765625,
+        "harmonic_coefficients": 0.3662109375,
+        "amplitude_output": 0.375,
+        "per_q_basis": 4.39453125,
+        "thread_scratch_upper_bound": 0.035308837890625,
+        "avoided_atom_q_complex_matrix": 24.6240234375,
+        "accounted_total": 7.48052978515625
+      }
+    },
+    {
+      "nq": 128,
+      "output_targets": 98304,
+      "maximum_harmonic": 374,
+      "repeats": 1,
+      "seconds": {
+        "min": 8.082440999998653,
+        "median": 8.082440999998653,
+        "max": 8.082440999998653
+      },
+      "memory_accounting_mib": {
+        "coordinates": 1.1542510986328125,
+        "element_indices": 0.3847503662109375,
+        "atom_weights": 0.769500732421875,
+        "form_factors": 0.00390625,
+        "harmonic_coefficients": 1.46484375,
+        "amplitude_output": 1.5,
+        "per_q_basis": 4.39453125,
+        "thread_scratch_upper_bound": 0.035308837890625,
+        "avoided_atom_q_complex_matrix": 98.49609375,
+        "accounted_total": 9.70709228515625
+      }
+    },
+    {
+      "nq": 512,
+      "output_targets": 393216,
+      "maximum_harmonic": 374,
+      "repeats": 1,
+      "seconds": {
+        "min": 34.05909440000687,
+        "median": 34.05909440000687,
+        "max": 34.05909440000687
+      },
+      "memory_accounting_mib": {
+        "coordinates": 1.1542510986328125,
+        "element_indices": 0.3847503662109375,
+        "atom_weights": 0.769500732421875,
+        "form_factors": 0.015625,
+        "harmonic_coefficients": 5.859375,
+        "amplitude_output": 6.0,
+        "per_q_basis": 4.39453125,
+        "thread_scratch_upper_bound": 0.035308837890625,
+        "avoided_atom_q_complex_matrix": 393.984375,
+        "accounted_total": 18.61334228515625
+      }
+    }
+  ],
+  "gates": {
+    "factorized_vs_expanded_q2_complex_l2_le_1e_12": true,
+    "all_harmonics_below_target_nyquist": true,
+    "nq512_seconds_le_120": true,
+    "nq512_accounted_arrays_le_64_mib": true
+  },
+  "passed": true,
+  "claim_boundary": [
+    "Nq=512 timing is a one-frame local CPU measurement, not an independent-machine result.",
+    "Accounted arrays are an analytic inventory, not measured peak RSS.",
+    "The factorized API applies when per-atom coefficients separate into atom weights and element form factors.",
+    "Direct NDFT correctness is established separately on small cases and 20 TIP3P frames."
+  ]
+}

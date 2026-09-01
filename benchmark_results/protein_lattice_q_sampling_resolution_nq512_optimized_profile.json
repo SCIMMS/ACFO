@@ -1,0 +1,85 @@
+{
+  "schema": "protein-lattice-q-sampling-case-v1",
+  "generated_at_utc": "2026-07-12T23:51:51.718441+00:00",
+  "label": "resolution_nq512_optimized_profile",
+  "axis": "resolution",
+  "contract": {
+    "unit": "structures/processed/protein_nanocrystal_lysozyme_1iee_1x1x1_fixed.npz",
+    "supercell": "structures/processed/protein_nanocrystal_lysozyme_1iee_5x5x5_fixed.npz",
+    "q_min_inv_angstrom": 5.0,
+    "q_max_inv_angstrom": 6.3,
+    "nq": 512,
+    "dq_inv_angstrom": 0.002544031311154882,
+    "nphi": 768,
+    "wavelength_nm": 0.08,
+    "harmonic_margin": 48,
+    "finufft_mode": "skip",
+    "lattice_backend": "separable"
+  },
+  "atom_count": 1001000,
+  "cell_count": 125,
+  "unit_atom_count": 8008,
+  "unit_structure": "protein_nanocrystal_lysozyme_1iee_1x1x1_fixed",
+  "supercell_shape": [
+    5,
+    5,
+    5
+  ],
+  "repetition_residual_nm": 3.0588864774472313e-12,
+  "target_count": 393216,
+  "maximum_harmonic": 350,
+  "timing_seconds": {
+    "shared_target_preparation": 0.05408339999848977,
+    "factorized": {
+      "plan_setup": 0.0037435999984154478,
+      "lattice_setup": 0.17828259999805596,
+      "specific_setup_total": 0.1820261999964714,
+      "first_execute": 3.986530700000003,
+      "hot_execute": 4.137094999998226,
+      "first_total_excluding_shared": 4.168556899996474,
+      "first_profile": {
+        "backend": "fft",
+        "coefficient_contraction_seconds": 3.9684438000040245,
+        "azimuth_synthesis_seconds": 0.013767799995548557,
+        "total_seconds": 3.9822153999994043
+      },
+      "hot_profile": {
+        "backend": "fft",
+        "coefficient_contraction_seconds": 4.117979599999671,
+        "azimuth_synthesis_seconds": 0.016344299998308998,
+        "total_seconds": 4.134326400002465
+      }
+    },
+    "finufft": {
+      "mode": "skip"
+    }
+  },
+  "speedup_finufft_over_factorized": null,
+  "legacy_comparison": {
+    "seconds": 14.005205699999351,
+    "legacy_over_prepared_hot": 3.385275344173957,
+    "complex_l2_vs_prepared": 4.8106151422818794e-14,
+    "intensity_l2_vs_prepared": 5.3006452644114175e-14
+  },
+  "lattice_comparison": {
+    "direct_seconds": 4.254132499998377,
+    "selected_seconds": 0.17828259999805596,
+    "direct_over_selected_speedup": 23.861736928027554,
+    "complex_l2": 1.6112807452798642e-10,
+    "intensity_l2": 1.281888566690927e-10
+  },
+  "cross_error": null,
+  "gates": {
+    "maximum_harmonic_below_nyquist": true,
+    "repetition_residual_le_1e_9_nm": true,
+    "factorized_repeat_l2_le_1e_13": true,
+    "legacy_comparison_l2_le_1e_12": true,
+    "lattice_comparison_l2_le_1e_9": true
+  },
+  "elapsed_seconds": 26.965466900001047,
+  "claim_boundary": [
+    "Factorized-only profile; FINUFFT timing is intentionally omitted.",
+    "The execute uses prepared coordinates/cutoffs and uniform-phi FFT synthesis."
+  ],
+  "passed": true
+}

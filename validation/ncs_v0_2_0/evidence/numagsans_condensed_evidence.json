@@ -1,0 +1,184 @@
+{
+  "schema": "numagsans-example3-strongest-baseline-canonical-external-evidence-v1",
+  "source_return_created_utc": "2026-08-25T11:06:56.349289+00:00",
+  "evidence_id": "NUMAGSANS_EXAMPLE3_ROTATED_LATTICE_TYPE2",
+  "system": "NuMagSANS Example 3",
+  "validation": {
+    "status": "PASS_EXTERNAL_STRONGEST_BASELINE_VALIDATED",
+    "integrity_passed": true,
+    "scientific_closure_passed": true,
+    "acfo_positive_claim_eligible": true,
+    "remote_runner_exit_code": 0,
+    "all_return_gates_passed": true,
+    "request_package_manifest_exact": true
+  },
+  "bindings": {
+    "run_id": "numagsans_example3_strongest_baseline_438e2555ef28_20260825_200600_bd7dfd67307e42ea832c037c4628ded2",
+    "mode": "full",
+    "request_archive_sha256": "438e2555ef28f0f2132522b94601e2005053ba26ed14463e3f9c595fd72b013d",
+    "request_manifest_sha256": "9c365f4c09d514e23d1f41ab5bac622e52c7941d9f6dc8771659e78a7098f062",
+    "protocol_sha256": "41bda823c1e2b6316511aba3bfc14486a5130a74c39d5857e235cc2bd90fcc48",
+    "return_archive_sha256": "657fce873703669e4702946e130b2c9eabcb9dd6241ebee6c7d596a661a3face",
+    "return_manifest_sha256": "e8b62da96bbbc269c72c9878d169963f02a14be81f004ccea2b7b0eb55bb85af"
+  },
+  "source_artifacts": {
+    "request_archive": {
+      "path": "reports/numagsans_example3_strongest_baseline_external_request_v1.zip",
+      "bytes": 731937,
+      "sha256": "438e2555ef28f0f2132522b94601e2005053ba26ed14463e3f9c595fd72b013d"
+    },
+    "request_build_receipt": {
+      "path": "reports/numagsans_example3_strongest_baseline_external_request_v1_build_receipt.json",
+      "bytes": 1098,
+      "sha256": "d2d344fd2d5103dd8455823b438cdd48552e6a02c5788883b62c49e049c3c16f"
+    },
+    "request_sidecar": {
+      "path": "reports/numagsans_example3_strongest_baseline_external_request_v1.zip.sha256",
+      "bytes": 129,
+      "sha256": "879a78b8e1662b34853055e5602b82ff8c3d06f4d6e27482ebe3851843bcdb9f"
+    },
+    "request_manifest": {
+      "path": "reports/numagsans_example3_strongest_baseline_external_request_v1/MANIFEST.json",
+      "bytes": 12982,
+      "sha256": "9c365f4c09d514e23d1f41ab5bac622e52c7941d9f6dc8771659e78a7098f062"
+    },
+    "protocol": {
+      "path": "NUMAGSANS_EXAMPLE3_STRONGEST_BASELINE_PROTOCOL.json",
+      "bytes": 9771,
+      "sha256": "41bda823c1e2b6316511aba3bfc14486a5130a74c39d5857e235cc2bd90fcc48"
+    },
+    "return_archive": {
+      "path": "benchmark_results/external_validation/numagsans_example3_strongest_baseline_438e2555ef28_20260825_200600_bd7dfd67307e42ea832c037c4628ded2/return/numagsans_example3_strongest_baseline_external_return.zip",
+      "bytes": 171881,
+      "sha256": "657fce873703669e4702946e130b2c9eabcb9dd6241ebee6c7d596a661a3face"
+    },
+    "return_sidecar": {
+      "path": "benchmark_results/external_validation/numagsans_example3_strongest_baseline_438e2555ef28_20260825_200600_bd7dfd67307e42ea832c037c4628ded2/return/numagsans_example3_strongest_baseline_external_return.zip.sha256",
+      "bytes": 124,
+      "sha256": "c90e56cb0327c8786d4b3ee99f3708a03ac8a42167346a140e027d77fac47973"
+    },
+    "local_return_audit": {
+      "path": "benchmark_results/external_validation/numagsans_example3_strongest_baseline_438e2555ef28_20260825_200600_bd7dfd67307e42ea832c037c4628ded2/LOCAL_EXTERNAL_RETURN_AUDIT.json",
+      "bytes": 2906,
+      "sha256": "48b43b5d3822196909856f5af0a512fd405d06840b24d153773f295174ed1f26"
+    },
+    "remote_exit_code": {
+      "path": "benchmark_results/external_validation/numagsans_example3_strongest_baseline_438e2555ef28_20260825_200600_bd7dfd67307e42ea832c037c4628ded2/return/REMOTE_RUN_EXIT_CODE.txt",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    }
+  },
+  "embedded_artifacts": {
+    "return_manifest": {
+      "member": "numagsans_example3_strongest_baseline_external_return/RETURN_MANIFEST.json",
+      "sha256": "e8b62da96bbbc269c72c9878d169963f02a14be81f004ccea2b7b0eb55bb85af"
+    },
+    "summary": {
+      "member": "numagsans_example3_strongest_baseline_external_return/evidence/SUMMARY.json",
+      "sha256": "027ba0cdde3ce0f1e79aa182a198316a0bdcbfbf349d9c4e8bb9f6125629c57a"
+    },
+    "audit": {
+      "member": "numagsans_example3_strongest_baseline_external_return/evidence/AUDIT.json",
+      "sha256": "e4af46d4df090a731186001b28d746a12b82bad69c91e6a9d4f571a0eb8e66fa"
+    },
+    "benchmark": {
+      "member": "numagsans_example3_strongest_baseline_external_return/evidence/numagsans_example3_strongest_baseline.json",
+      "sha256": "43678e6d159046e4c1bb5c8f20943b42e1f274ac42187c73704fec58cc1b05f7"
+    }
+  },
+  "workload": {
+    "orientations": 800,
+    "packing_cases": 5,
+    "sources_per_orientation": 4224,
+    "q_nodes": 1000,
+    "unique_theta": 999,
+    "targets": 999000,
+    "streaming": true,
+    "machine": "NVIDIA GeForce RTX 3090",
+    "dtype": "complex64"
+  },
+  "baseline_selection": {
+    "strongest_eligible_baseline": "affine_type2",
+    "selected_type2_eps": 0.003,
+    "selected_type3_eps": 0.01,
+    "declared_fft_pad_factors": [
+      4,
+      8,
+      12,
+      16,
+      20,
+      24,
+      28,
+      32
+    ],
+    "tested_fft_pad_factors": [
+      4,
+      8,
+      12,
+      16,
+      20,
+      24,
+      28,
+      32
+    ],
+    "qualified_fft_pad_factors": [],
+    "accuracy_selection_completed_before_timing": true,
+    "screen_confirmation_sample_overlap": [],
+    "screen_sample_reuse_count": 0,
+    "frozen_before_orientation_2": "affine_type2"
+  },
+  "timing": {
+    "metric": "selected-baseline/ACFO cold-total ratio",
+    "full_800_orientation_speed_ratio": {
+      "point": 1.6867360971899616,
+      "lower_95": 1.6839781422992472,
+      "upper_95": 1.6897096673977714
+    },
+    "independent_confirmation_speed_ratio": {
+      "point": 1.3645225531278875,
+      "lower_95": 1.2484675338166964,
+      "upper_95": 1.513622889682302
+    },
+    "independent_confirmation_contract": {
+      "order": "ABBA",
+      "warmups_per_arm": 10,
+      "samples_per_arm": 30
+    },
+    "measured_crossover_orientations": {
+      "warm_first_strict": 90,
+      "warm_first_persistent": 90,
+      "cold_first_strict": 97,
+      "cold_first_persistent": 97
+    }
+  },
+  "accuracy": {
+    "heldout_orientation_count": 16,
+    "worst_heldout_amplitude_relative_l2": 0.0003772122620875065,
+    "worst_heldout_output_relative_l2": 0.0008481554209074953,
+    "worst_full_ensemble_relative_l2": 0.0015995226567611098,
+    "archive_oracle_performed": true,
+    "worst_acfo_archive_relative_l2": 1.4338360742361166e-05,
+    "worst_selected_baseline_archive_relative_l2": 0.002820386539959549
+  },
+  "harmonic_support": {
+    "max_h": 48,
+    "tier_cutoffs": [
+      16,
+      32,
+      48
+    ],
+    "kernel_backend": "gpu_miller_downward_recurrence",
+    "miller_recurrence_margin": 64,
+    "packing_centers_entered_qR": false
+  },
+  "claim": {
+    "status": "READY_EXTERNAL_POSITIVE_CLAIM",
+    "headline_eligible": true,
+    "point_estimate": 1.6867360971899616,
+    "ci_lower_95": 1.6839781422992472,
+    "ci_upper_95": 1.6897096673977714,
+    "comparator": "accuracy-qualified reusable affine 3-D Type-2",
+    "supersedes": "NUMAGSANS_EXAMPLE3_PROJECTED_TYPE3_800X5",
+    "claim_boundary": "hardware-, dtype-, implementation-, and frozen-workload-specific; not a universal speedup claim"
+  }
+}

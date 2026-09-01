@@ -1,0 +1,41 @@
+ACFO Citation-Required License, Version 1.0
+
+Copyright (c) 2026 Minsu Kim. All rights reserved.
+
+This license applies to the software, validation data, documentation, and other
+original material in this repository (collectively, the "Materials"), except
+for files that identify a different license or third-party rights.
+
+Permission is granted to use, copy, modify, reproduce, and distribute the
+Materials, in source or binary form, for research, educational, commercial, or
+other lawful purposes, provided that all of the following conditions are met:
+
+1. Any public work, publication, presentation, dataset, software release,
+   product documentation, or other publicly disclosed result that uses or is
+   derived from the Materials must include an appropriate citation to ACFO.
+   Until an associated paper DOI is available, use the repository citation in
+   CITATION.cff. After a paper DOI is added to CITATION.cff, cite the associated
+   paper as well.
+
+2. This copyright notice, these license terms, and the citation requirement
+   must be retained in copies or substantial portions of the Materials.
+
+3. Modified versions must be identified as modified and must not be represented
+   as results produced by the unmodified reference implementation.
+
+4. The names of the copyright holder, contributors, and affiliated institutions
+   may not be used to endorse or promote derived products without prior written
+   permission.
+
+No patent, trademark, or institutional endorsement rights are granted by this
+license.
+
+THE MATERIALS ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT. IN NO EVENT SHALL
+THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT, OR OTHERWISE, ARISING FROM,
+OUT OF, OR IN CONNECTION WITH THE MATERIALS OR THEIR USE.
+
+This is a custom citation-required source-available license and is not an
+OSI-approved open-source license.

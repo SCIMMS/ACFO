@@ -1,0 +1,616 @@
+{
+  "schema": "general-curvature-analytic-nonlinear-oracle-v1",
+  "generated_at_utc": "2026-07-22T04:20:52.558340+00:00",
+  "scope": "prescribed fixed-polarization anisotropic-Gaussian undepleted pump; LiNbO3 3m nonlinear contraction; analytic continuous source Fourier transform; homogeneous lossless dyadic Maxwell simple-pole fields on ordinary and extraordinary curved bulk branches",
+  "fourier_contract": {
+    "acfo": "integral P2(r) exp(+i q dot r) dr",
+    "physical_source": "integral P2(r) exp(-i k_out dot r) dr",
+    "manifold_mapping": "q = -k_out",
+    "source_carrier": "P2 contains exp(+i 2 k_pump dot r)",
+    "analytic_argument": "q + 2 k_pump = 2 k_pump - k_out"
+  },
+  "normalization_contract": {
+    "coordinates": "micrometres",
+    "wavevectors": "inverse micrometres",
+    "nonlinear_coefficients": "pm/V scale retained for relative component ratios",
+    "omitted_global_factors": [
+      "2 epsilon_0 convention factor",
+      "-i 2 omega polarization-to-current factor",
+      "overall Green-function/radiation normalization"
+    ],
+    "supported_normalization": "relative complex vector amplitudes with no gain fit in positive comparisons",
+    "not_supported_normalization": "absolute SH power or conversion efficiency"
+  },
+  "material": {
+    "name": "5 mol% MgO-doped congruent LiNbO3",
+    "temperature_c": 24.5,
+    "pump_wavelength_um": 1.064,
+    "sh_wavelength_um": 0.532,
+    "n_o_pump": 2.2295711872954573,
+    "n_e_pump": 2.1481542422227045,
+    "n_o_sh": 2.3193932283594694,
+    "n_e_sh": 2.2244389865983383,
+    "epsilon_sh": [
+      [
+        5.379584947759762,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        5.379584947759762,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        4.9481288050986425
+      ]
+    ],
+    "d22_pm_per_v": 4.08,
+    "d31_pm_per_v": -4.4,
+    "d33_pm_per_v": -25.0
+  },
+  "manufactured_pump": {
+    "branch": "extraordinary",
+    "surface_parameter_deg": 38.0,
+    "azimuth_deg": 1.875,
+    "wavevector_per_um": [
+      7.805722210535407,
+      0.25553288699818477,
+      10.375086539829441
+    ],
+    "electric_unit_vector": [
+      0.7763071145896523,
+      0.02541366357114031,
+      -0.6298423688045932
+    ],
+    "nonlinear_vector_pm_per_v_scale": [
+      [
+        4.1417827134038445,
+        0.0
+      ],
+      [
+        -2.3153299798548104,
+        0.0
+      ],
+      [
+        -12.572049036552453,
+        0.0
+      ]
+    ],
+    "envelope_mean_um": [
+      0.08,
+      -0.05,
+      0.04
+    ],
+    "envelope_standard_deviations_um": [
+      0.24,
+      0.19,
+      0.27
+    ],
+    "envelope_covariance_um2": [
+      [
+        0.052546632090506945,
+        0.009116517033681578,
+        0.0
+      ],
+      [
+        0.009116517033681583,
+        0.04115336790949304,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0729
+      ]
+    ],
+    "nonlinear_envelope_covariance": "pump covariance divided by two",
+    "domain_half_width_um": 1.4
+  },
+  "angular_sampling": {
+    "u_min_rad": 0.08,
+    "u_max_rad": 1.35,
+    "n_u": 18,
+    "full_ring_on_each_convergence_level": true,
+    "selected_voxel_reference_azimuths_deg": [
+      -5.625,
+      1.875,
+      9.375
+    ]
+  },
+  "error_decomposition": {
+    "operator": "ACFO minus direct Cartesian sum over the same nonzero cylindrical bin centers",
+    "voxel_quadrature": "Cartesian midpoint source sum minus continuous analytic Gaussian transform on selected physical modes",
+    "total": "ACFO from the finite cylindrical histogram minus the continuous analytic Gaussian transform"
+  },
+  "chi2_factorization_relative_l2": 1.3188626038645477e-16,
+  "operator_level": {
+    "n_xyz": 24,
+    "n_r": 36,
+    "n_z": 24,
+    "n_phi": 72,
+    "n_u": 18,
+    "q_samples_per_branch": 1296,
+    "cartesian_voxels": 13824,
+    "nonzero_cylindrical_bins": 13824,
+    "voxel_volume_um3": 0.0015879629629629625,
+    "scalar_acfo_vs_analytic_relative_l2": 0.06887615576371584,
+    "green_acfo_vs_analytic_relative_l2": 0.07384925285016415,
+    "branches": {
+      "ordinary": {
+        "q_perp_min": 2.1891184518700393,
+        "q_perp_max": 26.728176014324596,
+        "outgoing_kz_min": 5.999291944773599,
+        "outgoing_kz_max": 27.30557923383103,
+        "scalar_acfo_vs_analytic": {
+          "relative_l2": 0.07209964777189275,
+          "relative_linf": 0.043476561814594986,
+          "phase_rms_rad": 0.4968369619436639,
+          "max_absolute_error": 0.002863639471273825,
+          "phase_mask_count": 730,
+          "phase_threshold": 6.586628177926681e-05
+        },
+        "green_acfo_vs_analytic": {
+          "relative_l2": 0.09712239139808601,
+          "relative_linf": 0.05388247905908912,
+          "phase_rms_rad": 0.4438500057151975,
+          "max_absolute_error": 0.00023038486180250098,
+          "phase_mask_count": 1353,
+          "phase_threshold": 4.275691575917547e-06
+        },
+        "maxwell_pole": {
+          "max_normalized_null_residual": 8.490028825181782e-16,
+          "min_normalized_spectral_gap": 0.0006046879731664164,
+          "min_abs_pole_derivative": 11.998583889547186,
+          "max_abs_pole_derivative": 54.61115846766212
+        },
+        "scalar_acfo_vs_binned_direct": {
+          "relative_l2": 3.958547245584208e-15,
+          "relative_linf": 6.778874376992621e-15,
+          "phase_rms_rad": 1.3918730987012893e-14,
+          "max_absolute_error": 4.376456705707376e-16,
+          "phase_mask_count": 1213,
+          "phase_threshold": 6.456022729320656e-05
+        },
+        "green_acfo_vs_binned_direct": {
+          "relative_l2": 4.142308669112751e-15,
+          "relative_linf": 6.4658426748057995e-15,
+          "phase_rms_rad": 1.3677502258206858e-14,
+          "max_absolute_error": 2.692513010149866e-17,
+          "phase_mask_count": 2261,
+          "phase_threshold": 4.1642105222282344e-06
+        }
+      },
+      "extraordinary": {
+        "q_perp_min": 2.099497563018153,
+        "q_perp_max": 25.63394427471856,
+        "outgoing_kz_min": 5.999291944773599,
+        "outgoing_kz_max": 27.30557923383103,
+        "scalar_acfo_vs_analytic": {
+          "relative_l2": 0.0656633159246026,
+          "relative_linf": 0.03952159508380713,
+          "phase_rms_rad": 0.47833875745235876,
+          "max_absolute_error": 0.00266392991722195,
+          "phase_mask_count": 746,
+          "phase_threshold": 6.740441299428781e-05
+        },
+        "green_acfo_vs_analytic": {
+          "relative_l2": 0.07250595444318976,
+          "relative_linf": 0.055078039213033766,
+          "phase_rms_rad": 0.3913235975873851,
+          "max_absolute_error": 0.0007725149115101682,
+          "phase_mask_count": 1752,
+          "phase_threshold": 1.4025824494626505e-05
+        },
+        "maxwell_pole": {
+          "max_normalized_null_residual": 6.584317648537041e-16,
+          "min_normalized_spectral_gap": 0.0005565538175036971,
+          "min_abs_pole_derivative": 11.078886064091064,
+          "max_abs_pole_derivative": 54.580764418938585
+        },
+        "scalar_acfo_vs_binned_direct": {
+          "relative_l2": 4.5851896409086896e-15,
+          "relative_linf": 1.0235557268904459e-14,
+          "phase_rms_rad": 1.3629758378130411e-14,
+          "max_absolute_error": 6.80669688045573e-16,
+          "phase_mask_count": 1214,
+          "phase_threshold": 6.6500501161128e-05
+        },
+        "green_acfo_vs_binned_direct": {
+          "relative_l2": 4.590678241043094e-15,
+          "relative_linf": 1.0032248725469308e-14,
+          "phase_rms_rad": 1.212259483606832e-14,
+          "max_absolute_error": 1.3891062935108367e-16,
+          "phase_mask_count": 2951,
+          "phase_threshold": 1.3846410027537015e-05
+        }
+      }
+    },
+    "elapsed_seconds": 1.6553613999858499
+  },
+  "convergence_levels": [
+    {
+      "n_xyz": 48,
+      "n_r": 72,
+      "n_z": 48,
+      "n_phi": 144,
+      "n_u": 18,
+      "q_samples_per_branch": 2592,
+      "cartesian_voxels": 110592,
+      "nonzero_cylindrical_bins": 110208,
+      "voxel_volume_um3": 0.0001984953703703703,
+      "scalar_acfo_vs_analytic_relative_l2": 0.03646004615883539,
+      "green_acfo_vs_analytic_relative_l2": 0.041201026411188724,
+      "branches": {
+        "ordinary": {
+          "q_perp_min": 2.1891184518700393,
+          "q_perp_max": 26.728176014324596,
+          "outgoing_kz_min": 5.999291944773599,
+          "outgoing_kz_max": 27.30557923383103,
+          "scalar_acfo_vs_analytic": {
+            "relative_l2": 0.037781507617806666,
+            "relative_linf": 0.024361834856226693,
+            "phase_rms_rad": 0.6069287400290466,
+            "max_absolute_error": 0.0016087033600269093,
+            "phase_mask_count": 1460,
+            "phase_threshold": 6.603375195344687e-05
+          },
+          "green_acfo_vs_analytic": {
+            "relative_l2": 0.04998143131344892,
+            "relative_linf": 0.03695334778610877,
+            "phase_rms_rad": 0.5855252879699131,
+            "max_absolute_error": 0.00015814031769895715,
+            "phase_mask_count": 2685,
+            "phase_threshold": 4.27945848409448e-06
+          },
+          "maxwell_pole": {
+            "max_normalized_null_residual": 8.250697200696554e-16,
+            "min_normalized_spectral_gap": 0.0006046879731665752,
+            "min_abs_pole_derivative": 11.998583889547186,
+            "max_abs_pole_derivative": 54.61115846766211
+          }
+        },
+        "extraordinary": {
+          "q_perp_min": 2.099497563018153,
+          "q_perp_max": 25.63394427471856,
+          "outgoing_kz_min": 5.999291944773599,
+          "outgoing_kz_max": 27.30557923383103,
+          "scalar_acfo_vs_analytic": {
+            "relative_l2": 0.03515702149343915,
+            "relative_linf": 0.022780955289960488,
+            "phase_rms_rad": 0.5739432272888468,
+            "max_absolute_error": 0.001537585635279632,
+            "phase_mask_count": 1498,
+            "phase_threshold": 6.749434410054096e-05
+          },
+          "green_acfo_vs_analytic": {
+            "relative_l2": 0.04071814339507252,
+            "relative_linf": 0.03183461845721735,
+            "phase_rms_rad": 0.5008723011979996,
+            "max_absolute_error": 0.00044814238333158203,
+            "phase_mask_count": 3513,
+            "phase_threshold": 1.4077202902049608e-05
+          },
+          "maxwell_pole": {
+            "max_normalized_null_residual": 7.5345774990565e-16,
+            "min_normalized_spectral_gap": 0.000556553817503876,
+            "min_abs_pole_derivative": 11.078886064091062,
+            "max_abs_pole_derivative": 54.58076441893859
+          }
+        }
+      },
+      "elapsed_seconds": 0.559179599978961
+    },
+    {
+      "n_xyz": 64,
+      "n_r": 96,
+      "n_z": 64,
+      "n_phi": 192,
+      "n_u": 18,
+      "q_samples_per_branch": 3456,
+      "cartesian_voxels": 262144,
+      "nonzero_cylindrical_bins": 260608,
+      "voxel_volume_um3": 8.374023437499998e-05,
+      "scalar_acfo_vs_analytic_relative_l2": 0.023326495883057023,
+      "green_acfo_vs_analytic_relative_l2": 0.025616987574949488,
+      "branches": {
+        "ordinary": {
+          "q_perp_min": 2.1891184518700393,
+          "q_perp_max": 26.728176014324596,
+          "outgoing_kz_min": 5.999291944773599,
+          "outgoing_kz_max": 27.30557923383103,
+          "scalar_acfo_vs_analytic": {
+            "relative_l2": 0.024158488333419787,
+            "relative_linf": 0.014503875284728763,
+            "phase_rms_rad": 0.6455117431032582,
+            "max_absolute_error": 0.0009579761537139488,
+            "phase_mask_count": 1946,
+            "phase_threshold": 6.604966844430943e-05
+          },
+          "green_acfo_vs_analytic": {
+            "relative_l2": 0.030867900163144977,
+            "relative_linf": 0.023107113179450835,
+            "phase_rms_rad": 0.5929372476579875,
+            "max_absolute_error": 9.885568394632132e-05,
+            "phase_mask_count": 3570,
+            "phase_threshold": 4.2781494675948405e-06
+          },
+          "maxwell_pole": {
+            "max_normalized_null_residual": 8.341244769714125e-16,
+            "min_normalized_spectral_gap": 0.0006046879731665112,
+            "min_abs_pole_derivative": 11.998583889547184,
+            "max_abs_pole_derivative": 54.61115846766211
+          }
+        },
+        "extraordinary": {
+          "q_perp_min": 2.099497563018153,
+          "q_perp_max": 25.63394427471856,
+          "outgoing_kz_min": 5.999291944773599,
+          "outgoing_kz_max": 27.30557923383103,
+          "scalar_acfo_vs_analytic": {
+            "relative_l2": 0.02250658961560353,
+            "relative_linf": 0.013545750117702001,
+            "phase_rms_rad": 0.6335298674013661,
+            "max_absolute_error": 0.0009142160757942604,
+            "phase_mask_count": 1999,
+            "phase_threshold": 6.749098926603813e-05
+          },
+          "green_acfo_vs_analytic": {
+            "relative_l2": 0.02532934326817148,
+            "relative_linf": 0.01860195646359972,
+            "phase_rms_rad": 0.5159025787700366,
+            "max_absolute_error": 0.00026197331279478723,
+            "phase_mask_count": 4668,
+            "phase_threshold": 1.4083105360848264e-05
+          },
+          "maxwell_pole": {
+            "max_normalized_null_residual": 6.772269758133269e-16,
+            "min_normalized_spectral_gap": 0.0005565538175037489,
+            "min_abs_pole_derivative": 11.078886064091058,
+            "max_abs_pole_derivative": 54.580764418938614
+          }
+        }
+      },
+      "elapsed_seconds": 0.7622916999971494
+    },
+    {
+      "n_xyz": 80,
+      "n_r": 120,
+      "n_z": 80,
+      "n_phi": 240,
+      "n_u": 18,
+      "q_samples_per_branch": 4320,
+      "cartesian_voxels": 512000,
+      "nonzero_cylindrical_bins": 510400,
+      "voxel_volume_um3": 4.2874999999999985e-05,
+      "scalar_acfo_vs_analytic_relative_l2": 0.016851397045002606,
+      "green_acfo_vs_analytic_relative_l2": 0.01810029518111759,
+      "branches": {
+        "ordinary": {
+          "q_perp_min": 2.1891184518700393,
+          "q_perp_max": 26.728176014324596,
+          "outgoing_kz_min": 5.999291944773599,
+          "outgoing_kz_max": 27.30557923383103,
+          "scalar_acfo_vs_analytic": {
+            "relative_l2": 0.017502218318057098,
+            "relative_linf": 0.011255515053588632,
+            "phase_rms_rad": 0.5721742375186093,
+            "max_absolute_error": 0.0007434738968364229,
+            "phase_mask_count": 2429,
+            "phase_threshold": 6.605418706266834e-05
+          },
+          "green_acfo_vs_analytic": {
+            "relative_l2": 0.025752610224155727,
+            "relative_linf": 0.02070558034795608,
+            "phase_rms_rad": 0.5355105545067629,
+            "max_absolute_error": 8.860867148816057e-05,
+            "phase_mask_count": 4453,
+            "phase_threshold": 4.27945848409448e-06
+          },
+          "maxwell_pole": {
+            "max_normalized_null_residual": 7.498561461845977e-16,
+            "min_normalized_spectral_gap": 0.0006046879731665681,
+            "min_abs_pole_derivative": 11.998583889547184,
+            "max_abs_pole_derivative": 54.61115846766211
+          }
+        },
+        "extraordinary": {
+          "q_perp_min": 2.099497563018153,
+          "q_perp_max": 25.63394427471856,
+          "outgoing_kz_min": 5.999291944773599,
+          "outgoing_kz_max": 27.30557923383103,
+          "scalar_acfo_vs_analytic": {
+            "relative_l2": 0.01620810905143897,
+            "relative_linf": 0.010448947698108842,
+            "phase_rms_rad": 0.5649739718133009,
+            "max_absolute_error": 0.0007051365553902117,
+            "phase_mask_count": 2499,
+            "phase_threshold": 6.748397788591042e-05
+          },
+          "green_acfo_vs_analytic": {
+            "relative_l2": 0.017636336578051085,
+            "relative_linf": 0.013628581840812285,
+            "phase_rms_rad": 0.4907035386269691,
+            "max_absolute_error": 0.0001919628956449786,
+            "phase_mask_count": 5837,
+            "phase_threshold": 1.4085317011497456e-05
+          },
+          "maxwell_pole": {
+            "max_normalized_null_residual": 6.345692301228054e-16,
+            "min_normalized_spectral_gap": 0.000556553817503763,
+            "min_abs_pole_derivative": 11.078886064091058,
+            "max_abs_pole_derivative": 54.580764418938585
+          }
+        }
+      },
+      "elapsed_seconds": 1.086612799903378
+    }
+  ],
+  "selected_mode_voxel_reference": {
+    "n_xyz": 80,
+    "voxel_volume_um3": 4.2874999999999985e-05,
+    "output_azimuths_deg": [
+      -5.625,
+      1.875,
+      9.375
+    ],
+    "n_u": 18,
+    "target_count": 108,
+    "scalar_voxel_vs_analytic_relative_l2": 5.864735872892512e-13,
+    "green_voxel_vs_analytic_relative_l2": 7.151359247742086e-13,
+    "branches": {
+      "ordinary": {
+        "scalar_voxel_vs_analytic": {
+          "relative_l2": 5.801759405519049e-13,
+          "relative_linf": 5.06924121388903e-13,
+          "phase_rms_rad": 6.030496559635448e-12,
+          "max_absolute_error": 3.3442119040426014e-14,
+          "phase_mask_count": 54,
+          "phase_threshold": 6.597066035997491e-05
+        },
+        "green_voxel_vs_analytic": {
+          "relative_l2": 6.292053959131555e-13,
+          "relative_linf": 5.085378033011375e-13,
+          "phase_rms_rad": 5.591425810116923e-12,
+          "max_absolute_error": 2.1634677334628403e-15,
+          "phase_mask_count": 105,
+          "phase_threshold": 4.254290869663654e-06
+        }
+      },
+      "extraordinary": {
+        "scalar_voxel_vs_analytic": {
+          "relative_l2": 5.924330034415959e-13,
+          "relative_linf": 5.41019995748703e-13,
+          "phase_rms_rad": 6.02958674826655e-12,
+          "max_absolute_error": 3.6502595323154726e-14,
+          "phase_mask_count": 54,
+          "phase_threshold": 6.74699560274843e-05
+        },
+        "green_voxel_vs_analytic": {
+          "relative_l2": 7.184136916259095e-13,
+          "relative_linf": 7.521924588594679e-13,
+          "phase_rms_rad": 5.104185248268589e-12,
+          "max_absolute_error": 1.0540248278987658e-14,
+          "phase_mask_count": 157,
+          "phase_threshold": 1.4012701343708753e-05
+        }
+      }
+    }
+  },
+  "convergence": {
+    "green_total_relative_l2": [
+      0.041201026411188724,
+      0.025616987574949488,
+      0.01810029518111759
+    ],
+    "strictly_decreasing": true,
+    "empirical_resolution_order": 1.610206857647875
+  },
+  "maxwell_resolvent_check": {
+    "ordinary": {
+      "rows": [
+        {
+          "eta": 1e-05,
+          "relative_l2": 2.7842428786130983e-05
+        },
+        {
+          "eta": 1e-06,
+          "relative_l2": 2.7842238746238063e-06
+        },
+        {
+          "eta": 1e-07,
+          "relative_l2": 2.798903541909275e-07
+        }
+      ],
+      "convergence_order": 0.9988595929024302,
+      "finest_relative_l2": 2.798903541909275e-07
+    },
+    "extraordinary": {
+      "rows": [
+        {
+          "eta": 1e-05,
+          "relative_l2": 2.888249469742153e-05
+        },
+        {
+          "eta": 1e-06,
+          "relative_l2": 2.8882376502953897e-06
+        },
+        {
+          "eta": 1e-07,
+          "relative_l2": 2.888495592511223e-07
+        }
+      ],
+      "convergence_order": 0.999981496541842,
+      "finest_relative_l2": 2.888495592511223e-07
+    }
+  },
+  "wrong_tensor_control": {
+    "definition": "d33 set to zero; one global complex gain allowed over both branches",
+    "true_nonlinear_vector_pm_per_v_scale": [
+      [
+        4.1417827134038445,
+        0.0
+      ],
+      [
+        -2.3153299798548104,
+        0.0
+      ],
+      [
+        -12.572049036552453,
+        0.0
+      ]
+    ],
+    "wrong_nonlinear_vector_pm_per_v_scale": [
+      [
+        4.1417827134038445,
+        0.0
+      ],
+      [
+        -2.3153299798548104,
+        0.0
+      ],
+      [
+        -2.6545137980179225,
+        0.0
+      ]
+    ],
+    "raw_relative_l2": 0.5778199117992103,
+    "global_gain": [
+      2.0784241956132954,
+      0.0
+    ],
+    "gain_aligned_relative_l2": 0.29744307049651875,
+    "per_angle_or_per_branch_fitting": false
+  },
+  "gates": {
+    "chi2_factorization_l2_le_1e_13": true,
+    "maxwell_pole_residual_le_1e_12": true,
+    "resolvent_limit_l2_le_1e_5": true,
+    "resolvent_first_order_ge_0_8": true,
+    "operator_green_l2_le_1e_11": true,
+    "finest_voxel_green_l2_le_1e_8": true,
+    "finest_acfo_green_l2_le_2pct": true,
+    "acfo_green_error_strictly_decreases": true,
+    "empirical_resolution_order_ge_1": true,
+    "wrong_d33_gain_aligned_l2_ge_20pct": true
+  },
+  "passed": true,
+  "claim_boundary": {
+    "supported": "exact-source and discretization-converged relative complex vector fields for a prescribed homogeneous-bulk undepleted Gaussian-pump LiNbO3 SHG problem on nonspherical ordinary/extraordinary branches",
+    "not_supported": [
+      "self-consistent pump propagation or spatially varying pump polarization",
+      "pump depletion, back-conversion, or coupled nonlinear propagation",
+      "finite-crystal interfaces, Fresnel coupling, periodic poling, or sharp domain walls",
+      "lossy non-Hermitian media or degenerate/grazing poles",
+      "absolute SH power or conversion efficiency",
+      "FDTD accuracy or agreement"
+    ]
+  },
+  "environment": {
+    "python": "3.14.6",
+    "numpy": "2.4.6",
+    "platform": "Windows-11-10.0.26200-SP0"
+  }
+}

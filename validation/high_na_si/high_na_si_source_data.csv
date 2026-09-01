@@ -1,0 +1,9 @@
+panel,workload,label,metric,value,reference,snapshot_date,finufft_eps
+a,vortex_requires_extra_h_small,Small vortex,geometric_only_field_l2_vs_direct,0.9999999995055344,direct_debye_wolf,2026-06-20,1e-12
+a,vortex_requires_extra_h_small,Small vortex,adaptive_sparse_field_l2_vs_direct,4.3052285525497385e-10,direct_debye_wolf,2026-06-20,1e-12
+a,vortex_requires_extra_h_representative,Representative vortex,geometric_only_field_l2_vs_direct,0.9999999999999848,direct_debye_wolf,2026-06-20,1e-12
+a,vortex_requires_extra_h_representative,Representative vortex,adaptive_sparse_field_l2_vs_direct,4.034728804921065e-08,direct_debye_wolf,2026-06-20,1e-12
+b,benign_mixed_representative_modes16,"Mixed, 16 modes",adaptive_sparse_speedup_total_vs_finufft,2.0283287277846043,finufft,2026-06-20,1e-12
+b,vortex_extra_h_representative_modes16,"Vortex, 16 modes",adaptive_sparse_speedup_total_vs_finufft,1.831879321112749,finufft,2026-06-20,1e-12
+b,vortex_extra_h_large_volume_modes16,"Vortex, large volume",adaptive_sparse_speedup_total_vs_finufft,1.4635133744922006,finufft,2026-06-20,1e-12
+b,benign_mixed_large_modes64,"Mixed, 64 modes",adaptive_sparse_speedup_total_vs_finufft,2.584868803661492,finufft,2026-06-20,1e-12

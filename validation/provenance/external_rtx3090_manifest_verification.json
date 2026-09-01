@@ -1,0 +1,10 @@
+{
+  "schema": "acfo-ncs-v14-manifest-verification-v1",
+  "generated_at_utc": "2026-07-14T11:37:10.278637+00:00",
+  "release_schema": "acfo-ncs-validation-release-candidate-v2",
+  "manifest_sha256": "f72bd38a65f759ef51b5e021cc7b1ff056610fdbfdfd23f7a35adcc1d83400de",
+  "file_count": 504,
+  "mismatch_count": 0,
+  "mismatches": [],
+  "passed": true
+}

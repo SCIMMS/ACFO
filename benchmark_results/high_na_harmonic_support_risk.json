@@ -1,0 +1,638 @@
+{
+  "schema": "high-na-harmonic-support-risk-v2",
+  "generated_at_utc": "2026-07-13T03:48:25.061408+00:00",
+  "configuration": {
+    "ntheta": 32,
+    "nphi": 96,
+    "target_shape": [
+      12,
+      24,
+      5
+    ],
+    "rho_max": 2.0,
+    "margin": 6,
+    "cutoff_bin_size": 2,
+    "relative_spectrum_threshold": 1e-06
+  },
+  "current_si_charge6": [
+    {
+      "sin_theta_max": 0.5,
+      "geometric_h_cutoff": 13,
+      "scalar_significant_h_abs": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "vector_raw_significant_h_abs": [
+        6
+      ],
+      "vector_effective_significant_h_abs": [
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "scalar_geometric_l2": 3.24215287953127e-11,
+      "scalar_adaptive_l2": 7.492786539390038e-13,
+      "vector_geometric_l2": 2.4322139792117696e-15,
+      "vector_adaptive_effective_l2": 2.4322139792117696e-15,
+      "scalar_required_h_abs": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "vector_required_h_abs": [
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "sin_theta_max": 0.8,
+      "geometric_h_cutoff": 17,
+      "scalar_significant_h_abs": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "vector_raw_significant_h_abs": [
+        6
+      ],
+      "vector_effective_significant_h_abs": [
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "scalar_geometric_l2": 2.1387172179020583e-11,
+      "scalar_adaptive_l2": 3.8321696407146626e-12,
+      "vector_geometric_l2": 2.307431115390228e-15,
+      "vector_adaptive_effective_l2": 2.307431115390228e-15,
+      "scalar_required_h_abs": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "vector_required_h_abs": [
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "sin_theta_max": 0.95,
+      "geometric_h_cutoff": 18,
+      "scalar_significant_h_abs": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "vector_raw_significant_h_abs": [
+        6
+      ],
+      "vector_effective_significant_h_abs": [
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "scalar_geometric_l2": 8.644285256474909e-12,
+      "scalar_adaptive_l2": 4.819561515150703e-12,
+      "vector_geometric_l2": 2.386230239435107e-15,
+      "vector_adaptive_effective_l2": 2.386230239435107e-15,
+      "scalar_required_h_abs": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "vector_required_h_abs": [
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    }
+  ],
+  "vector_charge_sweep": [
+    {
+      "sin_theta_max": 0.8,
+      "vortex_charge": 0,
+      "geometric_h_cutoff": 17,
+      "raw_jones_significant_h_abs": [
+        0
+      ],
+      "effective_vector_significant_h_abs": [
+        0,
+        1,
+        2
+      ],
+      "variants": {
+        "geometric_only": {
+          "complex_l2": 2.914314311252521e-16,
+          "required_h_abs": [],
+          "mode_rho_work": 155,
+          "mode_rho_work_ratio_vs_geometric": 1.0
+        },
+        "adaptive_raw_jones": {
+          "complex_l2": 2.914314311252521e-16,
+          "required_h_abs": [
+            0
+          ],
+          "mode_rho_work": 155,
+          "mode_rho_work_ratio_vs_geometric": 1.0
+        },
+        "adaptive_effective_vector": {
+          "complex_l2": 2.914314311252521e-16,
+          "required_h_abs": [
+            0,
+            1,
+            2
+          ],
+          "mode_rho_work": 155,
+          "mode_rho_work_ratio_vs_geometric": 1.0
+        },
+        "manual_all_effective_modes": {
+          "complex_l2": 2.914314311252521e-16,
+          "required_h_abs": [
+            0,
+            1,
+            2
+          ],
+          "mode_rho_work": 155,
+          "mode_rho_work_ratio_vs_geometric": 1.0
+        }
+      }
+    },
+    {
+      "sin_theta_max": 0.8,
+      "vortex_charge": 6,
+      "geometric_h_cutoff": 17,
+      "raw_jones_significant_h_abs": [
+        6
+      ],
+      "effective_vector_significant_h_abs": [
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "variants": {
+        "geometric_only": {
+          "complex_l2": 2.307431115390228e-15,
+          "required_h_abs": [],
+          "mode_rho_work": 155,
+          "mode_rho_work_ratio_vs_geometric": 1.0
+        },
+        "adaptive_raw_jones": {
+          "complex_l2": 2.307431115390228e-15,
+          "required_h_abs": [
+            6
+          ],
+          "mode_rho_work": 155,
+          "mode_rho_work_ratio_vs_geometric": 1.0
+        },
+        "adaptive_effective_vector": {
+          "complex_l2": 2.307431115390228e-15,
+          "required_h_abs": [
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "mode_rho_work": 157,
+          "mode_rho_work_ratio_vs_geometric": 1.0129032258064516
+        },
+        "manual_all_effective_modes": {
+          "complex_l2": 2.307431115390228e-15,
+          "required_h_abs": [
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "mode_rho_work": 157,
+          "mode_rho_work_ratio_vs_geometric": 1.0129032258064516
+        }
+      }
+    },
+    {
+      "sin_theta_max": 0.8,
+      "vortex_charge": 10,
+      "geometric_h_cutoff": 17,
+      "raw_jones_significant_h_abs": [
+        10
+      ],
+      "effective_vector_significant_h_abs": [
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "variants": {
+        "geometric_only": {
+          "complex_l2": 1.4780308463135889e-05,
+          "required_h_abs": [],
+          "mode_rho_work": 155,
+          "mode_rho_work_ratio_vs_geometric": 1.0
+        },
+        "adaptive_raw_jones": {
+          "complex_l2": 1.4778476087167353e-05,
+          "required_h_abs": [
+            10
+          ],
+          "mode_rho_work": 158,
+          "mode_rho_work_ratio_vs_geometric": 1.0193548387096774
+        },
+        "adaptive_effective_vector": {
+          "complex_l2": 4.448950597168067e-15,
+          "required_h_abs": [
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "mode_rho_work": 172,
+          "mode_rho_work_ratio_vs_geometric": 1.1096774193548387
+        },
+        "manual_all_effective_modes": {
+          "complex_l2": 4.448950597168067e-15,
+          "required_h_abs": [
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "mode_rho_work": 172,
+          "mode_rho_work_ratio_vs_geometric": 1.1096774193548387
+        }
+      }
+    },
+    {
+      "sin_theta_max": 0.8,
+      "vortex_charge": 14,
+      "geometric_h_cutoff": 17,
+      "raw_jones_significant_h_abs": [
+        14
+      ],
+      "effective_vector_significant_h_abs": [
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "variants": {
+        "geometric_only": {
+          "complex_l2": 0.001824186130312358,
+          "required_h_abs": [],
+          "mode_rho_work": 155,
+          "mode_rho_work_ratio_vs_geometric": 1.0
+        },
+        "adaptive_raw_jones": {
+          "complex_l2": 0.0017912752656029732,
+          "required_h_abs": [
+            14
+          ],
+          "mode_rho_work": 162,
+          "mode_rho_work_ratio_vs_geometric": 1.0451612903225806
+        },
+        "adaptive_effective_vector": {
+          "complex_l2": 2.6047573002549998e-14,
+          "required_h_abs": [
+            12,
+            13,
+            14,
+            15,
+            16
+          ],
+          "mode_rho_work": 192,
+          "mode_rho_work_ratio_vs_geometric": 1.238709677419355
+        },
+        "manual_all_effective_modes": {
+          "complex_l2": 2.6047573002549998e-14,
+          "required_h_abs": [
+            12,
+            13,
+            14,
+            15,
+            16
+          ],
+          "mode_rho_work": 192,
+          "mode_rho_work_ratio_vs_geometric": 1.238709677419355
+        }
+      }
+    },
+    {
+      "sin_theta_max": 0.8,
+      "vortex_charge": 18,
+      "geometric_h_cutoff": 17,
+      "raw_jones_significant_h_abs": [
+        18
+      ],
+      "effective_vector_significant_h_abs": [
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "variants": {
+        "geometric_only": {
+          "complex_l2": 0.41554333312573466,
+          "required_h_abs": [],
+          "mode_rho_work": 155,
+          "mode_rho_work_ratio_vs_geometric": 1.0
+        },
+        "adaptive_raw_jones": {
+          "complex_l2": 0.1649365660463728,
+          "required_h_abs": [
+            18
+          ],
+          "mode_rho_work": 167,
+          "mode_rho_work_ratio_vs_geometric": 1.0774193548387097
+        },
+        "adaptive_effective_vector": {
+          "complex_l2": 1.2523844573012271e-12,
+          "required_h_abs": [
+            16,
+            17,
+            18,
+            19,
+            20
+          ],
+          "mode_rho_work": 211,
+          "mode_rho_work_ratio_vs_geometric": 1.3612903225806452
+        },
+        "manual_all_effective_modes": {
+          "complex_l2": 1.2523844573012271e-12,
+          "required_h_abs": [
+            16,
+            17,
+            18,
+            19,
+            20
+          ],
+          "mode_rho_work": 211,
+          "mode_rho_work_ratio_vs_geometric": 1.3612903225806452
+        }
+      }
+    },
+    {
+      "sin_theta_max": 0.8,
+      "vortex_charge": 22,
+      "geometric_h_cutoff": 17,
+      "raw_jones_significant_h_abs": [
+        22
+      ],
+      "effective_vector_significant_h_abs": [
+        20,
+        21,
+        22,
+        23,
+        24
+      ],
+      "variants": {
+        "geometric_only": {
+          "complex_l2": 0.9999999999225502,
+          "required_h_abs": [],
+          "mode_rho_work": 155,
+          "mode_rho_work_ratio_vs_geometric": 1.0
+        },
+        "adaptive_raw_jones": {
+          "complex_l2": 0.9616817227802325,
+          "required_h_abs": [
+            22
+          ],
+          "mode_rho_work": 168,
+          "mode_rho_work_ratio_vs_geometric": 1.0838709677419356
+        },
+        "adaptive_effective_vector": {
+          "complex_l2": 2.510905970955509e-10,
+          "required_h_abs": [
+            20,
+            21,
+            22,
+            23,
+            24
+          ],
+          "mode_rho_work": 216,
+          "mode_rho_work_ratio_vs_geometric": 1.3935483870967742
+        },
+        "manual_all_effective_modes": {
+          "complex_l2": 2.510905970955509e-10,
+          "required_h_abs": [
+            20,
+            21,
+            22,
+            23,
+            24
+          ],
+          "mode_rho_work": 216,
+          "mode_rho_work_ratio_vs_geometric": 1.3935483870967742
+        }
+      }
+    },
+    {
+      "sin_theta_max": 0.8,
+      "vortex_charge": 24,
+      "geometric_h_cutoff": 17,
+      "raw_jones_significant_h_abs": [
+        24
+      ],
+      "effective_vector_significant_h_abs": [
+        22,
+        23,
+        24,
+        25,
+        26
+      ],
+      "variants": {
+        "geometric_only": {
+          "complex_l2": 1.0000000010348653,
+          "required_h_abs": [],
+          "mode_rho_work": 155,
+          "mode_rho_work_ratio_vs_geometric": 1.0
+        },
+        "adaptive_raw_jones": {
+          "complex_l2": 0.9719300672191792,
+          "required_h_abs": [
+            24
+          ],
+          "mode_rho_work": 168,
+          "mode_rho_work_ratio_vs_geometric": 1.0838709677419356
+        },
+        "adaptive_effective_vector": {
+          "complex_l2": 4.378618951133978e-09,
+          "required_h_abs": [
+            22,
+            23,
+            24,
+            25,
+            26
+          ],
+          "mode_rho_work": 216,
+          "mode_rho_work_ratio_vs_geometric": 1.3935483870967742
+        },
+        "manual_all_effective_modes": {
+          "complex_l2": 4.378618951133978e-09,
+          "required_h_abs": [
+            22,
+            23,
+            24,
+            25,
+            26
+          ],
+          "mode_rho_work": 216,
+          "mode_rho_work_ratio_vs_geometric": 1.3935483870967742
+        }
+      }
+    }
+  ],
+  "vector_charge18_stress": {
+    "sin_theta_max": 0.8,
+    "vortex_charge": 18,
+    "geometric_h_cutoff": 17,
+    "raw_jones_significant_h_abs": [
+      18
+    ],
+    "effective_vector_significant_h_abs": [
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "variants": {
+      "geometric_only": {
+        "complex_l2": 0.41554333312573466,
+        "required_h_abs": [],
+        "mode_rho_work": 155,
+        "mode_rho_work_ratio_vs_geometric": 1.0
+      },
+      "adaptive_raw_jones": {
+        "complex_l2": 0.1649365660463728,
+        "required_h_abs": [
+          18
+        ],
+        "mode_rho_work": 167,
+        "mode_rho_work_ratio_vs_geometric": 1.0774193548387097
+      },
+      "adaptive_effective_vector": {
+        "complex_l2": 1.2523844573012271e-12,
+        "required_h_abs": [
+          16,
+          17,
+          18,
+          19,
+          20
+        ],
+        "mode_rho_work": 211,
+        "mode_rho_work_ratio_vs_geometric": 1.3612903225806452
+      },
+      "manual_all_effective_modes": {
+        "complex_l2": 1.2523844573012271e-12,
+        "required_h_abs": [
+          16,
+          17,
+          18,
+          19,
+          20
+        ],
+        "mode_rho_work": 211,
+        "mode_rho_work_ratio_vs_geometric": 1.3612903225806452
+      }
+    }
+  },
+  "gates": {
+    "current_charge6_geometric_scalar_le_1e_6": true,
+    "current_charge6_geometric_vector_le_1e_6": true,
+    "stress_geometric_detects_failure": true,
+    "stress_raw_adaptive_is_insufficient": true,
+    "charge_sweep_effective_adaptive_le_1e_6": true,
+    "charge_sweep_effective_adaptive_matches_manual": true,
+    "charge_sweep_work_ratio_le_2": true
+  },
+  "passed": true,
+  "conclusion": "The corrected rho-dependent adaptive rule preserves every significant post-Richards-Wolf effective vector harmonic at each local rho cutoff. It recovers the direct Debye-Wolf reference across the charge sweep while retaining bounded sparse work overhead.",
+  "environment": {
+    "python": "3.13.13",
+    "numpy": "2.4.6",
+    "platform": "Windows-10-10.0.19045-SP0"
+  }
+}

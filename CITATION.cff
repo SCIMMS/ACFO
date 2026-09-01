@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: >-
+  If you use ACFO software or validation materials, cite this software release.
+title: "ACFO: Geometry factorization and representation dispatch for repeated curved Fourier inference"
+type: software
+version: 0.2.0
+date-released: 2026-09-01
+authors:
+  - family-names: Kim
+    given-names: Minsu
+    affiliation: Pohang University of Science and Technology (POSTECH)
+    orcid: "https://orcid.org/0009-0002-3129-6839"
+  - family-names: Seo
+    given-names: Jongcheol
+    affiliation: Pohang University of Science and Technology (POSTECH)
+repository-code: "https://github.com/SCIMMS/ACFO"
+url: "https://github.com/SCIMMS/ACFO"
+keywords:
+  - Fourier operator
+  - axisymmetric geometry
+  - WAXS
+  - optical diffraction tomography
+  - magnetic SANS
+  - NUFFT
+  - reproducible research

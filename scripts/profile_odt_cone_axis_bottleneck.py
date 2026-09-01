@@ -109,9 +109,14 @@ def speedup(reference_s: float | None, candidate_s: float | None) -> float | Non
 def axis_factor_pack(decomp: Any) -> tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray]:
     plan = decomp.plan
     cap_phi = decomp.factorization.cap_phi
-    radial = decomp.factorization.kernel.radial[:, ::cap_phi, :]
-    axial = decomp.factorization.kernel.axial[::cap_phi, :]
-    mode_phase = decomp.factorization.kernel.angular[:, 0]
+    kernel = decomp.factorization.kernel
+    if kernel.radial.shape[1] == decomp.factorization.cap_radial:
+        radial = kernel.radial
+        axial = kernel.axial
+    else:
+        radial = kernel.radial[:, ::cap_phi, :]
+        axial = kernel.axial[::cap_phi, :]
+    mode_phase = kernel.angular[:, 0]
     slots = np.mod(plan.h_values, cap_phi).astype(np.int64)
     return (
         np.ascontiguousarray(radial),

@@ -1,0 +1,796 @@
+{
+  "schema": "waxs-affine-library-eps-frontier-result-v1",
+  "generated_at_utc": "2026-08-25T10:55:19.105264+00:00",
+  "status": "PASS",
+  "mode": "full",
+  "protocol": {
+    "path": "WAXS_100_STATE_EPS_FRONTIER_PROTOCOL.json",
+    "sha256": "e6405008f5a6d9c5202575b0c22889fc4694a74229d4bfb43e80c8138315bb93",
+    "schema": "waxs-affine-library-eps-frontier-protocol-v1",
+    "prospective_status": "prospective-before-external-execution"
+  },
+  "environment": {
+    "platform": "Linux-6.17.0-19-generic-x86_64-with-glibc2.39",
+    "python": "3.11.15",
+    "finufft_threads": 4,
+    "omp_num_threads": "4",
+    "mkl_num_threads": "1",
+    "openblas_num_threads": "1"
+  },
+  "problem": {
+    "candidate_count": 100,
+    "q_range_inv_angstrom": [
+      6.7,
+      8.0
+    ],
+    "nq": 16,
+    "nphi": 864,
+    "target_count": 13824,
+    "unit_atom_count": 8008,
+    "supercell_atom_count": 216216,
+    "cell_count": 27,
+    "element_channel_count": 4,
+    "source_basis_count": 2,
+    "unit_structure_sha256": "bbb52722463406b0c94f061932c1986edf44fe5902a148347b19bf01a465eb6c",
+    "supercell_structure_sha256": "963a7c033cddc6661f1694c6586a2a65bafb6826639244696bc60e0bba050562",
+    "unit_structure_id": "protein_nanocrystal_lysozyme_1iee_1x1x1_fixed",
+    "repetition_residual_nm": 1.5223378113660146e-12,
+    "observed_intensity_sha256": "040f7b9b522c1b42b38d7e97ffa57442ed41e576e154ad11cddc0aa74ba563e0",
+    "noise": {
+      "seed": 2026072611,
+      "target_relative_l2": 0.01,
+      "observed_relative_l2": 0.008388861367539939,
+      "clipped_negative_pixels": 3767
+    }
+  },
+  "representation_fairness": {
+    "source_geometry": "8008 arbitrary atomic coordinates",
+    "target_geometry": "nonuniform curved Ewald/cake targets",
+    "lowest_applicable_nufft_type": 3,
+    "same_unit_cell": true,
+    "same_exact_finite_lattice_factor": true,
+    "same_two_occupancy_source_bases": true,
+    "same_four_element_channels": true,
+    "b_factor_scaling_outside_fourier_kernel_for_both": true,
+    "eligible_finufft_variant": "one fused n_trans=8 Type-3 plan"
+  },
+  "epsilon_selection": {
+    "candidate_order": [
+      0.001,
+      0.0003,
+      0.0001,
+      3e-05,
+      1e-05,
+      3e-06,
+      1e-06
+    ],
+    "selection_rule": "first passing row in epsilon_candidates_loose_to_tight",
+    "timing_used": false,
+    "timing_fields_recorded_per_candidate": false,
+    "accuracy_reference_epsilon": 1e-12,
+    "gates": {
+      "maximum_acfo_vs_candidate_intensity_relative_l2": 5e-06,
+      "maximum_candidate_vs_reference_intensity_relative_l2": 5e-06,
+      "maximum_acfo_vs_reference_intensity_relative_l2": 5e-06,
+      "same_top1": true,
+      "top_k_jaccard_min": 1.0,
+      "spearman_min": 0.999
+    },
+    "rows": [
+      {
+        "candidate_index": 0,
+        "eps": 0.001,
+        "metrics": {
+          "maximum_acfo_vs_candidate_complex_relative_l2": 0.0009320624110965991,
+          "maximum_acfo_vs_candidate_intensity_relative_l2": 0.0009915174065919421,
+          "maximum_candidate_vs_reference_complex_relative_l2": 0.0009320935246621606,
+          "maximum_candidate_vs_reference_intensity_relative_l2": 0.0009917252829165283,
+          "maximum_acfo_vs_reference_complex_relative_l2": 1.0747676805965342e-11,
+          "maximum_acfo_vs_reference_intensity_relative_l2": 9.34325999649082e-12,
+          "acfo_vs_candidate_ranking": {
+            "same_top1": true,
+            "top_k": 5,
+            "top_k_overlap": {
+              "intersection_count": 5,
+              "fraction": 1.0,
+              "jaccard": 1.0,
+              "same_order": true
+            },
+            "spearman": 0.9999999999999999,
+            "acfo_top_indices": [
+              94,
+              84,
+              74,
+              64,
+              54
+            ],
+            "candidate_top_indices": [
+              94,
+              84,
+              74,
+              64,
+              54
+            ]
+          },
+          "candidate_vs_reference_ranking": {
+            "same_top1": true,
+            "top_k_overlap": {
+              "intersection_count": 5,
+              "fraction": 1.0,
+              "jaccard": 1.0,
+              "same_order": true
+            },
+            "spearman": 0.9999999999999999,
+            "reference_top_indices": [
+              94,
+              84,
+              74,
+              64,
+              54
+            ]
+          }
+        },
+        "gates": {
+          "acfo_vs_candidate_intensity": false,
+          "candidate_vs_reference_intensity": false,
+          "acfo_vs_reference_intensity": true,
+          "same_top1": true,
+          "top_k_jaccard": true,
+          "spearman": true
+        },
+        "accuracy_pass": false
+      },
+      {
+        "candidate_index": 1,
+        "eps": 0.0003,
+        "metrics": {
+          "maximum_acfo_vs_candidate_complex_relative_l2": 0.00022295159508323924,
+          "maximum_acfo_vs_candidate_intensity_relative_l2": 0.00025089244762613804,
+          "maximum_candidate_vs_reference_complex_relative_l2": 0.0002229562265071386,
+          "maximum_candidate_vs_reference_intensity_relative_l2": 0.00025091186069884345,
+          "maximum_acfo_vs_reference_complex_relative_l2": 1.0747676805965342e-11,
+          "maximum_acfo_vs_reference_intensity_relative_l2": 9.34325999649082e-12,
+          "acfo_vs_candidate_ranking": {
+            "same_top1": true,
+            "top_k": 5,
+            "top_k_overlap": {
+              "intersection_count": 5,
+              "fraction": 1.0,
+              "jaccard": 1.0,
+              "same_order": true
+            },
+            "spearman": 0.9999999999999999,
+            "acfo_top_indices": [
+              94,
+              84,
+              74,
+              64,
+              54
+            ],
+            "candidate_top_indices": [
+              94,
+              84,
+              74,
+              64,
+              54
+            ]
+          },
+          "candidate_vs_reference_ranking": {
+            "same_top1": true,
+            "top_k_overlap": {
+              "intersection_count": 5,
+              "fraction": 1.0,
+              "jaccard": 1.0,
+              "same_order": true
+            },
+            "spearman": 0.9999999999999999,
+            "reference_top_indices": [
+              94,
+              84,
+              74,
+              64,
+              54
+            ]
+          }
+        },
+        "gates": {
+          "acfo_vs_candidate_intensity": false,
+          "candidate_vs_reference_intensity": false,
+          "acfo_vs_reference_intensity": true,
+          "same_top1": true,
+          "top_k_jaccard": true,
+          "spearman": true
+        },
+        "accuracy_pass": false
+      },
+      {
+        "candidate_index": 2,
+        "eps": 0.0001,
+        "metrics": {
+          "maximum_acfo_vs_candidate_complex_relative_l2": 6.405531495878317e-05,
+          "maximum_acfo_vs_candidate_intensity_relative_l2": 6.382973796943414e-05,
+          "maximum_candidate_vs_reference_complex_relative_l2": 6.405543182552329e-05,
+          "maximum_candidate_vs_reference_intensity_relative_l2": 6.383069274225405e-05,
+          "maximum_acfo_vs_reference_complex_relative_l2": 1.0747676805965342e-11,
+          "maximum_acfo_vs_reference_intensity_relative_l2": 9.34325999649082e-12,
+          "acfo_vs_candidate_ranking": {
+            "same_top1": true,
+            "top_k": 5,
+            "top_k_overlap": {
+              "intersection_count": 5,
+              "fraction": 1.0,
+              "jaccard": 1.0,
+              "same_order": true
+            },
+            "spearman": 0.9999999999999999,
+            "acfo_top_indices": [
+              94,
+              84,
+              74,
+              64,
+              54
+            ],
+            "candidate_top_indices": [
+              94,
+              84,
+              74,
+              64,
+              54
+            ]
+          },
+          "candidate_vs_reference_ranking": {
+            "same_top1": true,
+            "top_k_overlap": {
+              "intersection_count": 5,
+              "fraction": 1.0,
+              "jaccard": 1.0,
+              "same_order": true
+            },
+            "spearman": 0.9999999999999999,
+            "reference_top_indices": [
+              94,
+              84,
+              74,
+              64,
+              54
+            ]
+          }
+        },
+        "gates": {
+          "acfo_vs_candidate_intensity": false,
+          "candidate_vs_reference_intensity": false,
+          "acfo_vs_reference_intensity": true,
+          "same_top1": true,
+          "top_k_jaccard": true,
+          "spearman": true
+        },
+        "accuracy_pass": false
+      },
+      {
+        "candidate_index": 3,
+        "eps": 3e-05,
+        "metrics": {
+          "maximum_acfo_vs_candidate_complex_relative_l2": 5.376479732758358e-05,
+          "maximum_acfo_vs_candidate_intensity_relative_l2": 5.5579461655523343e-05,
+          "maximum_candidate_vs_reference_complex_relative_l2": 5.3764931161804214e-05,
+          "maximum_candidate_vs_reference_intensity_relative_l2": 5.558035485564526e-05,
+          "maximum_acfo_vs_reference_complex_relative_l2": 1.0747676805965342e-11,
+          "maximum_acfo_vs_reference_intensity_relative_l2": 9.34325999649082e-12,
+          "acfo_vs_candidate_ranking": {
+            "same_top1": true,
+            "top_k": 5,
+            "top_k_overlap": {
+              "intersection_count": 5,
+              "fraction": 1.0,
+              "jaccard": 1.0,
+              "same_order": true
+            },
+            "spearman": 0.9999999999999999,
+            "acfo_top_indices": [
+              94,
+              84,
+              74,
+              64,
+              54
+            ],
+            "candidate_top_indices": [
+              94,
+              84,
+              74,
+              64,
+              54
+            ]
+          },
+          "candidate_vs_reference_ranking": {
+            "same_top1": true,
+            "top_k_overlap": {
+              "intersection_count": 5,
+              "fraction": 1.0,
+              "jaccard": 1.0,
+              "same_order": true
+            },
+            "spearman": 0.9999999999999999,
+            "reference_top_indices": [
+              94,
+              84,
+              74,
+              64,
+              54
+            ]
+          }
+        },
+        "gates": {
+          "acfo_vs_candidate_intensity": false,
+          "candidate_vs_reference_intensity": false,
+          "acfo_vs_reference_intensity": true,
+          "same_top1": true,
+          "top_k_jaccard": true,
+          "spearman": true
+        },
+        "accuracy_pass": false
+      },
+      {
+        "candidate_index": 4,
+        "eps": 1e-05,
+        "metrics": {
+          "maximum_acfo_vs_candidate_complex_relative_l2": 1.4887538915356397e-05,
+          "maximum_acfo_vs_candidate_intensity_relative_l2": 1.655943321893942e-05,
+          "maximum_candidate_vs_reference_complex_relative_l2": 1.48875583151285e-05,
+          "maximum_candidate_vs_reference_intensity_relative_l2": 1.6559515767244633e-05,
+          "maximum_acfo_vs_reference_complex_relative_l2": 1.0747676805965342e-11,
+          "maximum_acfo_vs_reference_intensity_relative_l2": 9.34325999649082e-12,
+          "acfo_vs_candidate_ranking": {
+            "same_top1": true,
+            "top_k": 5,
+            "top_k_overlap": {
+              "intersection_count": 5,
+              "fraction": 1.0,
+              "jaccard": 1.0,
+              "same_order": true
+            },
+            "spearman": 0.9999999999999999,
+            "acfo_top_indices": [
+              94,
+              84,
+              74,
+              64,
+              54
+            ],
+            "candidate_top_indices": [
+              94,
+              84,
+              74,
+              64,
+              54
+            ]
+          },
+          "candidate_vs_reference_ranking": {
+            "same_top1": true,
+            "top_k_overlap": {
+              "intersection_count": 5,
+              "fraction": 1.0,
+              "jaccard": 1.0,
+              "same_order": true
+            },
+            "spearman": 0.9999999999999999,
+            "reference_top_indices": [
+              94,
+              84,
+              74,
+              64,
+              54
+            ]
+          }
+        },
+        "gates": {
+          "acfo_vs_candidate_intensity": false,
+          "candidate_vs_reference_intensity": false,
+          "acfo_vs_reference_intensity": true,
+          "same_top1": true,
+          "top_k_jaccard": true,
+          "spearman": true
+        },
+        "accuracy_pass": false
+      },
+      {
+        "candidate_index": 5,
+        "eps": 3e-06,
+        "metrics": {
+          "maximum_acfo_vs_candidate_complex_relative_l2": 3.2869216435443204e-06,
+          "maximum_acfo_vs_candidate_intensity_relative_l2": 3.906416557749818e-06,
+          "maximum_candidate_vs_reference_complex_relative_l2": 3.2869225512840546e-06,
+          "maximum_candidate_vs_reference_intensity_relative_l2": 3.906421766953869e-06,
+          "maximum_acfo_vs_reference_complex_relative_l2": 1.0747676805965342e-11,
+          "maximum_acfo_vs_reference_intensity_relative_l2": 9.34325999649082e-12,
+          "acfo_vs_candidate_ranking": {
+            "same_top1": true,
+            "top_k": 5,
+            "top_k_overlap": {
+              "intersection_count": 5,
+              "fraction": 1.0,
+              "jaccard": 1.0,
+              "same_order": true
+            },
+            "spearman": 0.9999999999999999,
+            "acfo_top_indices": [
+              94,
+              84,
+              74,
+              64,
+              54
+            ],
+            "candidate_top_indices": [
+              94,
+              84,
+              74,
+              64,
+              54
+            ]
+          },
+          "candidate_vs_reference_ranking": {
+            "same_top1": true,
+            "top_k_overlap": {
+              "intersection_count": 5,
+              "fraction": 1.0,
+              "jaccard": 1.0,
+              "same_order": true
+            },
+            "spearman": 0.9999999999999999,
+            "reference_top_indices": [
+              94,
+              84,
+              74,
+              64,
+              54
+            ]
+          }
+        },
+        "gates": {
+          "acfo_vs_candidate_intensity": true,
+          "candidate_vs_reference_intensity": true,
+          "acfo_vs_reference_intensity": true,
+          "same_top1": true,
+          "top_k_jaccard": true,
+          "spearman": true
+        },
+        "accuracy_pass": true
+      },
+      {
+        "candidate_index": 6,
+        "eps": 1e-06,
+        "metrics": {
+          "maximum_acfo_vs_candidate_complex_relative_l2": 8.644922744387707e-07,
+          "maximum_acfo_vs_candidate_intensity_relative_l2": 9.07635271534089e-07,
+          "maximum_candidate_vs_reference_complex_relative_l2": 8.64492284468961e-07,
+          "maximum_candidate_vs_reference_intensity_relative_l2": 9.076360401291694e-07,
+          "maximum_acfo_vs_reference_complex_relative_l2": 1.0747676805965342e-11,
+          "maximum_acfo_vs_reference_intensity_relative_l2": 9.34325999649082e-12,
+          "acfo_vs_candidate_ranking": {
+            "same_top1": true,
+            "top_k": 5,
+            "top_k_overlap": {
+              "intersection_count": 5,
+              "fraction": 1.0,
+              "jaccard": 1.0,
+              "same_order": true
+            },
+            "spearman": 0.9999999999999999,
+            "acfo_top_indices": [
+              94,
+              84,
+              74,
+              64,
+              54
+            ],
+            "candidate_top_indices": [
+              94,
+              84,
+              74,
+              64,
+              54
+            ]
+          },
+          "candidate_vs_reference_ranking": {
+            "same_top1": true,
+            "top_k_overlap": {
+              "intersection_count": 5,
+              "fraction": 1.0,
+              "jaccard": 1.0,
+              "same_order": true
+            },
+            "spearman": 0.9999999999999999,
+            "reference_top_indices": [
+              94,
+              84,
+              74,
+              64,
+              54
+            ]
+          }
+        },
+        "gates": {
+          "acfo_vs_candidate_intensity": true,
+          "candidate_vs_reference_intensity": true,
+          "acfo_vs_reference_intensity": true,
+          "same_top1": true,
+          "top_k_jaccard": true,
+          "spearman": true
+        },
+        "accuracy_pass": true
+      }
+    ],
+    "selected_eps": 3e-06,
+    "selected_candidate_index": 5,
+    "accuracy_pass": true
+  },
+  "acfo_harmonic_accuracy": {
+    "cutoff_rule": "ceil(abs(q_perp) * R_max) + harmonic_margin",
+    "r_max_nm": 5.215828406253006,
+    "q_perp_r_max": [
+      316.0768700996029,
+      319.2370969276503,
+      322.3587353194742,
+      325.4410881394853,
+      328.4834477647018,
+      331.48509572604434,
+      334.4453023346724,
+      337.36332629254457,
+      340.2384142863311,
+      343.06980056375227,
+      345.8567064913504,
+      348.5983400926419,
+      351.29389556551746,
+      353.94255277768735,
+      356.54347673887827,
+      359.0958170484036
+    ],
+    "kernel_cutoff": [
+      317,
+      320,
+      323,
+      326,
+      329,
+      332,
+      335,
+      338,
+      341,
+      344,
+      346,
+      349,
+      352,
+      354,
+      357,
+      360
+    ],
+    "harmonic_margin": 48,
+    "compute_cutoff": [
+      365,
+      368,
+      371,
+      374,
+      377,
+      380,
+      383,
+      386,
+      389,
+      392,
+      394,
+      397,
+      400,
+      402,
+      405,
+      408
+    ],
+    "nested_validation_margin": 64,
+    "nested_compute_cutoff": [
+      381,
+      384,
+      387,
+      390,
+      393,
+      396,
+      399,
+      402,
+      405,
+      408,
+      410,
+      413,
+      416,
+      418,
+      421,
+      424
+    ],
+    "angular_nyquist_index": 432,
+    "miller_downward_recurrence_extra_order": 32,
+    "coefficient_backend": "fused_phase",
+    "synthesis_backend": "fft",
+    "maximum_acfo_vs_reference_complex_relative_l2": 1.0747676805965342e-11,
+    "maximum_acfo_vs_reference_intensity_relative_l2": 9.34325999649082e-12,
+    "maximum_margin48_vs_margin64_complex_relative_l2": 1.072907267447754e-11,
+    "maximum_margin48_vs_margin64_intensity_relative_l2": 9.27983167419676e-12,
+    "gates": {
+      "cutoffs_follow_frozen_qr_rule": true,
+      "cutoffs_non_decreasing_with_qr": true,
+      "selected_cutoff_below_nyquist": true,
+      "nested_cutoff_below_nyquist": true,
+      "acfo_vs_reference_intensity": true,
+      "nested_margin_intensity": true
+    },
+    "accuracy_pass": true
+  },
+  "selected_accuracy_recheck": {
+    "maximum_acfo_vs_candidate_complex_relative_l2": 3.2869216435443204e-06,
+    "maximum_acfo_vs_candidate_intensity_relative_l2": 3.906416557749818e-06,
+    "maximum_candidate_vs_reference_complex_relative_l2": 3.2869225512840546e-06,
+    "maximum_candidate_vs_reference_intensity_relative_l2": 3.906421766953869e-06,
+    "maximum_acfo_vs_reference_complex_relative_l2": 1.0747676805965342e-11,
+    "maximum_acfo_vs_reference_intensity_relative_l2": 9.34325999649082e-12,
+    "acfo_vs_candidate_ranking": {
+      "same_top1": true,
+      "top_k": 5,
+      "top_k_overlap": {
+        "intersection_count": 5,
+        "fraction": 1.0,
+        "jaccard": 1.0,
+        "same_order": true
+      },
+      "spearman": 0.9999999999999999,
+      "acfo_top_indices": [
+        94,
+        84,
+        74,
+        64,
+        54
+      ],
+      "candidate_top_indices": [
+        94,
+        84,
+        74,
+        64,
+        54
+      ]
+    },
+    "candidate_vs_reference_ranking": {
+      "same_top1": true,
+      "top_k_overlap": {
+        "intersection_count": 5,
+        "fraction": 1.0,
+        "jaccard": 1.0,
+        "same_order": true
+      },
+      "spearman": 0.9999999999999999,
+      "reference_top_indices": [
+        94,
+        84,
+        74,
+        64,
+        54
+      ]
+    }
+  },
+  "final_timing": {
+    "measurement_unit": "two exact occupancy FT bases plus vectorized 100-state synthesis",
+    "ordering": "ABBA",
+    "warmup_count": 10,
+    "samples_per_arm": 30,
+    "acfo_seconds": {
+      "count": 30,
+      "total_s": 1.1225695833563805,
+      "median_s": 0.03745308704674244,
+      "p05_s": 0.036141029465943574,
+      "p95_s": 0.03849888164550066,
+      "min_s": 0.03586193732917309,
+      "max_s": 0.038716062903404236,
+      "samples_s": [
+        0.03612915985286236,
+        0.038554415106773376,
+        0.038089288398623466,
+        0.03704349882900715,
+        0.03615553677082062,
+        0.03645971603691578,
+        0.03839607909321785,
+        0.036784952506422997,
+        0.03774967975914478,
+        0.03704512491822243,
+        0.038322094827890396,
+        0.03684871271252632,
+        0.03781445510685444,
+        0.03805263340473175,
+        0.036767398938536644,
+        0.03734229691326618,
+        0.03664613328874111,
+        0.03818865865468979,
+        0.03767256997525692,
+        0.0375638771802187,
+        0.03586193732917309,
+        0.037297189235687256,
+        0.03797437064349651,
+        0.038716062903404236,
+        0.03622818924486637,
+        0.0384118240326643,
+        0.037940820679068565,
+        0.03843100741505623,
+        0.03699258342385292,
+        0.03708931617438793
+      ]
+    },
+    "baseline_seconds": {
+      "count": 30,
+      "total_s": 9.323384497314692,
+      "median_s": 0.31009166687726974,
+      "p05_s": 0.30823185248300433,
+      "p95_s": 0.3125071944668889,
+      "min_s": 0.3073082435876131,
+      "max_s": 0.3293981347233057,
+      "samples_s": [
+        0.3118400573730469,
+        0.3091812413185835,
+        0.3114501927047968,
+        0.31002582237124443,
+        0.309953473508358,
+        0.3086899630725384,
+        0.31017061695456505,
+        0.3073082435876131,
+        0.31280219554901123,
+        0.3089080434292555,
+        0.3293981347233057,
+        0.30994507670402527,
+        0.3121466375887394,
+        0.3082596305757761,
+        0.3110932745039463,
+        0.3082091249525547,
+        0.3112853318452835,
+        0.3089793734252453,
+        0.3113732133060694,
+        0.3092656284570694,
+        0.31172322295606136,
+        0.3112770803272724,
+        0.31015751138329506,
+        0.30935988388955593,
+        0.3103480637073517,
+        0.3085701484233141,
+        0.31162265688180923,
+        0.308648232370615,
+        0.3117938172072172,
+        0.30959860421717167
+      ]
+    },
+    "baseline_over_acfo_speedup": {
+      "definition": "median(baseline workflow totals) / median(ACFO workflow totals)",
+      "point": 8.279468832309261,
+      "lower_95": 8.165543844352424,
+      "upper_95": 8.395671149353307,
+      "paired_ratio_median": 8.312458698683447,
+      "paired_ratio_p05": 8.024694147113523,
+      "paired_ratio_p95": 8.615172928062012,
+      "bootstrap_samples": 10000,
+      "bootstrap_seed": 20260825
+    },
+    "finufft_plan_type": 3,
+    "finufft_n_trans": 8,
+    "selected_eps": 3e-06,
+    "finufft_plan_setup_s_excluded": 0.002042081207036972,
+    "acfo_geometry_setup_s_excluded": 0.0008359253406524658,
+    "selection_and_accuracy_excluded": true,
+    "scoring_and_observation_generation_excluded": true
+  },
+  "decision": {
+    "epsilon_accuracy_selected_before_timing": true,
+    "selected_fused_n_trans_8_only": true,
+    "acfo_harmonic_accuracy_pass": true,
+    "external_contract_complete": true,
+    "speed_sign_is_integrity_gate": false
+  },
+  "historical_receipt": {
+    "path": "reports/acfo_p0_p1_external_return_v6_20260817/acfo_p0_p1_external_return/evidence/receipts/waxs_structured_library_closure.json",
+    "role": "fixed-eps=1e-6 history; not overwritten or silently upgraded"
+  },
+  "claim_boundary": [
+    "The 100-state occupancy/B-factor library is manufactured and is not a crystallographic refinement benchmark.",
+    "Both timed arms evaluate the same two occupancy bases, retain four element channels for q-dependent form factors, apply the same exact finite-lattice factor, and synthesize all 100 candidates outside the Fourier kernel.",
+    "The epsilon frontier contains no timing measurements; the selected tolerance is therefore accuracy-first.",
+    "The old fixed-epsilon 8.221x receipt remains historical evidence and is not overwritten by this prospective closure.",
+    "The timed workload is CPU-only; the RTX 3090 identifies the independent validation workstation.",
+    "Performance sign is reported but is not an integrity gate."
+  ]
+}

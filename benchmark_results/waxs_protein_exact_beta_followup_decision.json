@@ -1,0 +1,99 @@
+{
+  "schema": "waxs-protein-exact-beta-followup-decision-v1",
+  "generated_at_utc": "2026-07-14T05:41:08.025475+00:00",
+  "decision": "NO_ADDITIONAL_LOCAL_PROTEIN_EXACT_BETA_RERUN",
+  "decision_reason": [
+    "The requested protein exact-beta validation already exists on the 8008-atom lysozyme unit cell against a literal direct NDFT reference.",
+    "The ordered-crystal specialization is independently checked on 216216- and 1001000-atom protein supercells, including a 1M direct-subset gate and a same-machine prepared 10/30 AB/BA timing receipt.",
+    "The 20-frame 50430-atom TIP3P trajectory already supplies a dense-disorder/MD exact-beta control; repeating this specifically for disordered protein MD would broaden the claim beyond the chosen ordered protein-crystal experiment.",
+    "The Nq=512 TIP3P row shows FINUFFT is faster for the generic dense exact-coordinate workload, so the paper must attribute the protein-crystal gain to ordered lattice/prepared reuse rather than to a universal exact-beta advantage."
+  ],
+  "experimental_object_definition": "ordered lysozyme protein crystal / single-crystal protein nanocrystal; not a dilute isolated single protein",
+  "metrics": {
+    "protein_unit_cell": {
+      "structure": "protein_nanocrystal_lysozyme_1iee_1x1x1_fixed",
+      "atoms": 8008,
+      "q_inv_angstrom": [
+        5.0,
+        5.65,
+        6.3
+      ],
+      "target_nphi": 720,
+      "exact_beta_complex_l2_vs_direct": 1.0101056434072341e-12,
+      "exact_beta_intensity_l2_vs_direct": 8.831173989148007e-13,
+      "fine_rz_pixel_intensity_l2": 0.007786377120645933,
+      "fine_rz_ring_intensity_l2": 0.0010462098931069788
+    },
+    "ordered_protein_supercells": {
+      "3x3x3_atoms": 216216,
+      "3x3x3_direct_subset_complex_l2": 3.681842267173203e-11,
+      "5x5x5_atoms": 1001000,
+      "5x5x5_direct_subset_complex_l2": 2.4284498525317208e-11,
+      "sparse_defect_control_pass": true
+    },
+    "prepared_1m_abba": {
+      "nq": 512,
+      "q_min_inv_angstrom": 5.0,
+      "q_max_inv_angstrom": 6.3,
+      "paired_speedup_median": 33.479878176092924,
+      "paired_speedup_p05": 24.242784431238654,
+      "prepared_vs_finufft_complex_l2": 3.155502734745625e-07,
+      "local_gate_pass": true,
+      "independent_machine_replication_complete": false
+    },
+    "dense_md_control": {
+      "material": "TIP3P water trajectory",
+      "frames": 20,
+      "atoms": 50430,
+      "maximum_exact_beta_complex_l2": 2.4561805692188578e-12,
+      "median_direct_over_exact_beta_speedup": 17.906558060707006,
+      "nq512_exact_beta_s": 38.37306660000468,
+      "nq512_finufft_hot_median_s": 0.3871142999996664,
+      "nq512_comparative_performance_pass": false
+    }
+  },
+  "gates": {
+    "protein_unit_exact_beta_direct_l2_le_1e-9": true,
+    "million_atom_ordered_crystal_direct_subset_l2_le_1e-9": true,
+    "prepared_1m_local_abba_gate_pass": true,
+    "dense_md_exact_beta_20_frame_control_pass": true,
+    "experimental_object_explicitly_crystalline": true
+  },
+  "passed": true,
+  "remaining_required_work": [
+    "Independent-machine replication of the frozen 1M prepared AB/BA timing protocol.",
+    "Experimental photon-count, orientation stability and detector-geometry validation for the selected protein crystal or single-crystal nanocrystal."
+  ],
+  "optional_scope_expansion_not_required_for_current_claim": [
+    "Dense disordered protein-MD exact-beta timing.",
+    "Dilute isolated single-protein WAXS feasibility.",
+    "Arbitrary dense lattice disorder beyond the existing sparse-defect delta control."
+  ],
+  "claim_boundary": [
+    "WAXS is a validation/control domain in the current paper; the novelty claim is not that ACFO universally beats FINUFFT for every dense exact-coordinate source.",
+    "The oriented protein object is an ordered protein crystal or single-crystal nanocrystal. A single isolated protein is outside the experimental claim because its WAXS signal may be insufficient.",
+    "Perfect lattice factorization is a known exact specialization used as a protein-crystal control; the paper novelty remains the broader prepared curved-geometry operator and its cross-domain evidence."
+  ],
+  "sources": {
+    "protein_exact_beta": {
+      "path": "benchmark_results\\waxs_exact_beta_harmonic_bridge.json",
+      "sha256": "879179d83e410b1ae7c10d87560e137b8aa26c11f05b2d90dd1626de49490d5e"
+    },
+    "protein_lattice": {
+      "path": "benchmark_results\\protein_nanocrystal_lattice_factorization.json",
+      "sha256": "a70d8ae17f2515d0541fdf7a5cc3abf1eff88738da23f149406aa9c6924781f6"
+    },
+    "protein_prepared_abba": {
+      "path": "benchmark_results\\protein_lattice_prepared_abba_decision.json",
+      "sha256": "58364024103efa4573b4a3cd927f0537d7cea10533229a22a699f4bf8bb9d175"
+    },
+    "tip3p_dense_md": {
+      "path": "benchmark_results\\tip3p_dense_highq_exact_beta_20frames.json",
+      "sha256": "320b65aaca75da079e7938199d214593c78dfd31869894c33b093d4205df4ab4"
+    },
+    "tip3p_dense_finufft": {
+      "path": "benchmark_results\\tip3p_exact_beta_finufft_512.json",
+      "sha256": "a7b9d5a993749d65aa4ebf8ee46d2ab52c858feb82b0f904bb84b415551e2659"
+    }
+  }
+}

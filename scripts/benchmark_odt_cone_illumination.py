@@ -146,11 +146,19 @@ def cone_q_samples(
     cap_radial: int,
     cap_phi: int,
     illumination: np.ndarray,
+    radial_sampling: str = "uniform_rho",
+    radial_outer_power: float = 2.0,
+    radial_min_fraction: float = 0.0,
+    radial_max_fraction: float = 1.0,
 ) -> tuple[QSamples, QSamples]:
     detector = detector_directions(
         detector_na=detector_na,
         cap_radial=cap_radial,
         cap_phi=cap_phi,
+        radial_sampling=radial_sampling,
+        radial_outer_power=radial_outer_power,
+        radial_min_fraction=radial_min_fraction,
+        radial_max_fraction=radial_max_fraction,
     )
     base_q_vectors = k * (detector - np.array([[0.0, 0.0, 1.0]], dtype=float))
     base_q = q_samples_from_vectors(

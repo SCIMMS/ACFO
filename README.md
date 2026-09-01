@@ -1,7 +1,21 @@
-# Curved Ewald Operators
+# Axisymmetric Curved-Fourier Operator (ACFO)
 
-Prepared operators for fast Fourier evaluation on rotationally structured
-curved Ewald manifolds and caps.
+Prepared forward-adjoint operators for repeated curved Fourier inference.
+ACFO applies analytic, symmetry and dimensional contractions first, selects the
+lowest eligible FFT/NUFFT representation, and uses SO(2) geometry factorization
+when the workload contains repeated complete rotational orbits.
+
+## Version 0.2.0 manuscript release
+
+The manuscript-facing code, figures, source data, normalized external evidence
+and numerical audits are in [`validation/ncs_v0_2_0`](validation/ncs_v0_2_0/README.md).
+The NuMagSANS headline is explicitly limited to the shared 800-orientation
+Fourier backbone; its five packing reductions are excluded from the speed
+ratio. Recompute the headline intervals and validate all public hashes with:
+
+```bash
+python scripts/verify_ncs_release_v020.py
+```
 
 This repository is evolving from an atomistic WAXS cake-map solver prototype
 into a broader curved-Ewald operator testbed. The current Python package name is
@@ -22,8 +36,37 @@ The core output is a caked single-shot WAXS map `A(q, phi)` or
 
 The newer ODT/aIDT GPU benchmark path demonstrates repeated fixed-geometry
 transfer reconstruction on public annular IDT geometry. Curated benchmark
-summaries live under `benchmark_results/`; large generated arrays, PDFs, images,
-and public-data probes are intentionally excluded from Git.
+receipts used by the legacy validation scripts live under `benchmark_results/`.
+The paper-facing, normalized evidence and its provenance ledger live under
+`validation/`. Large or third-party inputs are excluded and identified by
+SHA-256 in `validation/INPUTS.md`; the compact general-curvature field archive
+and replication package are included because they are original ACFO outputs.
+
+## Manuscript validation release
+
+The compact manuscript evidence is published under [`validation/`](validation/README.md):
+
+- WAXS is the primary validation axis.
+- ODT/aIDT is the first processing-core extension.
+- General-curvature uniaxial optics is the second extension.
+- High-NA optics is prior-art correspondence and Supplementary cutoff-safety
+  validation.
+
+The validation release contains machine-readable results, independent-run
+provenance, claim boundaries, checksums, and a CPU replication package. Raw
+machine paths were normalized for publication without changing scientific
+values. Run the release audit with:
+
+```powershell
+python scripts/verify_validation_release.py
+```
+
+## Citation and license
+
+Copyright in the original ACFO materials is held by Minsu Kim. Use is permitted
+under the citation-required terms in [`LICENSE`](LICENSE). Cite the repository
+using [`CITATION.cff`](CITATION.cff); the associated paper DOI will be added
+when available.
 
 ## Setup
 

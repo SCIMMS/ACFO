@@ -1,0 +1,43 @@
+{
+  "schema": "pymeep-yee-source-export-v1",
+  "generated_at_utc": "2026-07-12T18:28:55.492243+00:00",
+  "resolution": 12.0,
+  "cell_width": 10.0,
+  "pml_width": 1.0,
+  "source_half_width": 0.25,
+  "source_grid_n": 64,
+  "source_vector_mode": "nonlinear",
+  "source_vector": [
+    [
+      -0.1255258202589303,
+      0.0
+    ],
+    [
+      -0.11788487180221609,
+      0.0
+    ],
+    [
+      -0.9850616353551171,
+      0.0
+    ]
+  ],
+  "array_shape": [
+    3,
+    12,
+    12,
+    12
+  ],
+  "pattern_nonzero_by_component": [
+    78,
+    96,
+    102
+  ],
+  "point_nonzero_by_component": [
+    2,
+    2,
+    2
+  ],
+  "meep": "1.33.0",
+  "python": "3.13.14",
+  "numpy": "2.5.1"
+}

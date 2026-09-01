@@ -1,0 +1,764 @@
+{
+  "schema": "odt-banded-cartesian-selected-z-reconstruction-v1",
+  "generated_at_utc": "2026-07-13T12:36:41.950148+00:00",
+  "device_name": "NVIDIA GeForce RTX 2070 SUPER",
+  "variant": "banded_inner96_outer64",
+  "bands": [
+    {
+      "name": "inner",
+      "cap_radial": 96,
+      "cap_phi": 128,
+      "min_fraction": 0.0,
+      "max_fraction": 0.75,
+      "sampling": "outer_power",
+      "outer_power": 2.0,
+      "samples_per_view": 12288,
+      "ring_h_cutoff": 32,
+      "ring_h_modes": 65,
+      "q_samples": 1486848
+    },
+    {
+      "name": "outer",
+      "cap_radial": 64,
+      "cap_phi": 256,
+      "min_fraction": 0.75,
+      "max_fraction": 1.0,
+      "sampling": "outer_power",
+      "outer_power": 2.0,
+      "samples_per_view": 16384,
+      "ring_h_cutoff": 36,
+      "ring_h_modes": 73,
+      "q_samples": 1982464
+    }
+  ],
+  "problem": {
+    "full_object_shape": [
+      256,
+      256,
+      256
+    ],
+    "selected_slices": [
+      1,
+      8
+    ],
+    "total_views": 121,
+    "cartesian_detector": [
+      320,
+      320
+    ],
+    "iterations": 120,
+    "noise": "none"
+  },
+  "context_build_s": 46.7434624999878,
+  "plan_build_s": 0.602592100010952,
+  "cases": [
+    {
+      "selected_n_z": 1,
+      "q_samples": 3469312,
+      "cartesian_remap_rel_l2_vs_ideal": 0.003594824578613043,
+      "remap_timing": {
+        "count": 30,
+        "median_s": 0.011445199997979216,
+        "mean_s": 0.008587743333676675,
+        "min_s": 0.0017134000081568956,
+        "max_s": 0.014633900005719624,
+        "output_q_count": 3469312
+      },
+      "reference_generation": {
+        "generation_total_s": 6.60906599998998,
+        "direct_cufinufft_total_s": 3.4556538999750046,
+        "camera_shape": [
+          121,
+          320,
+          320
+        ],
+        "active_pixels_per_view": 79900,
+        "camera_input_mib": 94.53125,
+        "blocks": [
+          {
+            "group": "ring",
+            "view_start": 0,
+            "view_stop": 8,
+            "direct_cufinufft_s": 0.36739959999977145
+          },
+          {
+            "group": "ring",
+            "view_start": 8,
+            "view_stop": 16,
+            "direct_cufinufft_s": 0.17286690000037197
+          },
+          {
+            "group": "ring",
+            "view_start": 16,
+            "view_stop": 24,
+            "direct_cufinufft_s": 0.1711178999976255
+          },
+          {
+            "group": "ring",
+            "view_start": 24,
+            "view_stop": 32,
+            "direct_cufinufft_s": 0.24136689999431837
+          },
+          {
+            "group": "ring",
+            "view_start": 32,
+            "view_stop": 40,
+            "direct_cufinufft_s": 0.3182167000049958
+          },
+          {
+            "group": "ring",
+            "view_start": 40,
+            "view_stop": 48,
+            "direct_cufinufft_s": 0.1590950999961933
+          },
+          {
+            "group": "ring",
+            "view_start": 48,
+            "view_stop": 56,
+            "direct_cufinufft_s": 0.15331419999711215
+          },
+          {
+            "group": "ring",
+            "view_start": 56,
+            "view_stop": 64,
+            "direct_cufinufft_s": 0.19468010000127833
+          },
+          {
+            "group": "ring",
+            "view_start": 64,
+            "view_stop": 72,
+            "direct_cufinufft_s": 0.15535929999896325
+          },
+          {
+            "group": "ring",
+            "view_start": 72,
+            "view_stop": 80,
+            "direct_cufinufft_s": 0.1439061999990372
+          },
+          {
+            "group": "ring",
+            "view_start": 80,
+            "view_stop": 88,
+            "direct_cufinufft_s": 0.23643170000286773
+          },
+          {
+            "group": "ring",
+            "view_start": 88,
+            "view_stop": 96,
+            "direct_cufinufft_s": 0.30274199999985285
+          },
+          {
+            "group": "ring",
+            "view_start": 96,
+            "view_stop": 104,
+            "direct_cufinufft_s": 0.2241364999936195
+          },
+          {
+            "group": "ring",
+            "view_start": 104,
+            "view_stop": 112,
+            "direct_cufinufft_s": 0.20084769999084529
+          },
+          {
+            "group": "ring",
+            "view_start": 112,
+            "view_stop": 120,
+            "direct_cufinufft_s": 0.19729300000471994
+          },
+          {
+            "group": "axis",
+            "view_start": 0,
+            "view_stop": 1,
+            "direct_cufinufft_s": 0.21688009999343194
+          }
+        ]
+      },
+      "ideal": {
+        "input": "ideal_banded",
+        "iterations": 120,
+        "step": 5.560851075441336e-11,
+        "lipschitz_with_margin": 17982858854.4,
+        "adaptive_restart_count": 60,
+        "object_rel_l2": 0.009399771690368652,
+        "data_residual": 0.001626716461032629,
+        "core_iteration_timing": {
+          "count": 120,
+          "total_s": 10.158555599977262,
+          "mean_s": 0.08465462999981052,
+          "median_s": 0.07751884999743197,
+          "p05_s": 0.07595816500106593,
+          "p95_s": 0.12242895500385202,
+          "min_s": 0.07508520000556018,
+          "max_s": 0.14016809999884572
+        },
+        "core_solve_s": 10.158555599977262,
+        "wall_solve_s_including_diagnostics": 10.759141600006842
+      },
+      "cartesian_remap": {
+        "input": "cartesian_to_banded",
+        "iterations": 120,
+        "step": 5.560851075441336e-11,
+        "lipschitz_with_margin": 17982858854.4,
+        "adaptive_restart_count": 60,
+        "object_rel_l2": 0.009688673540949821,
+        "data_residual": 0.0038697198033332825,
+        "core_iteration_timing": {
+          "count": 120,
+          "total_s": 10.612904399968102,
+          "mean_s": 0.08844086999973418,
+          "median_s": 0.07803500000591157,
+          "p05_s": 0.07601473500253633,
+          "p95_s": 0.1303645199986931,
+          "min_s": 0.0751860000018496,
+          "max_s": 0.1793597000068985
+        },
+        "core_solve_s": 10.612904399968102,
+        "wall_solve_s_including_diagnostics": 11.234041999996407
+      },
+      "remap_vs_ideal_reconstruction_rel_l2": 0.00097245181677863,
+      "ideal_history": [
+        {
+          "input": "ideal_banded",
+          "iteration": 0,
+          "data_residual": 1.0,
+          "object_rel_l2": 1.0,
+          "core_cumulative_s": 0.0
+        },
+        {
+          "input": "ideal_banded",
+          "iteration": 10,
+          "data_residual": 0.2010689526796341,
+          "object_rel_l2": 0.27349209785461426,
+          "core_cumulative_s": 0.9381991000118433
+        },
+        {
+          "input": "ideal_banded",
+          "iteration": 20,
+          "data_residual": 0.07668213546276093,
+          "object_rel_l2": 0.12055289000272751,
+          "core_cumulative_s": 1.7184976999997161
+        },
+        {
+          "input": "ideal_banded",
+          "iteration": 30,
+          "data_residual": 0.03672172129154205,
+          "object_rel_l2": 0.06297649443149567,
+          "core_cumulative_s": 2.483704400015995
+        },
+        {
+          "input": "ideal_banded",
+          "iteration": 40,
+          "data_residual": 0.019389035180211067,
+          "object_rel_l2": 0.036596059799194336,
+          "core_cumulative_s": 3.4275139999954263
+        },
+        {
+          "input": "ideal_banded",
+          "iteration": 50,
+          "data_residual": 0.010956439189612865,
+          "object_rel_l2": 0.0238279290497303,
+          "core_cumulative_s": 4.239494999972521
+        },
+        {
+          "input": "ideal_banded",
+          "iteration": 60,
+          "data_residual": 0.006653703283518553,
+          "object_rel_l2": 0.017543401569128036,
+          "core_cumulative_s": 5.125964799983194
+        },
+        {
+          "input": "ideal_banded",
+          "iteration": 70,
+          "data_residual": 0.004401909653097391,
+          "object_rel_l2": 0.014328476041555405,
+          "core_cumulative_s": 5.9057599999941885
+        },
+        {
+          "input": "ideal_banded",
+          "iteration": 80,
+          "data_residual": 0.0031932098791003227,
+          "object_rel_l2": 0.01252562552690506,
+          "core_cumulative_s": 6.723395399996662
+        },
+        {
+          "input": "ideal_banded",
+          "iteration": 90,
+          "data_residual": 0.0025136470794677734,
+          "object_rel_l2": 0.011379077099263668,
+          "core_cumulative_s": 7.632191399941803
+        },
+        {
+          "input": "ideal_banded",
+          "iteration": 100,
+          "data_residual": 0.0021011759527027607,
+          "object_rel_l2": 0.010559693910181522,
+          "core_cumulative_s": 8.514572399944882
+        },
+        {
+          "input": "ideal_banded",
+          "iteration": 110,
+          "data_residual": 0.001826365478336811,
+          "object_rel_l2": 0.009922562167048454,
+          "core_cumulative_s": 9.317727399960859
+        },
+        {
+          "input": "ideal_banded",
+          "iteration": 120,
+          "data_residual": 0.001626716461032629,
+          "object_rel_l2": 0.009399771690368652,
+          "core_cumulative_s": 10.158555599977262
+        }
+      ],
+      "remap_history": [
+        {
+          "input": "cartesian_to_banded",
+          "iteration": 0,
+          "data_residual": 1.0,
+          "object_rel_l2": 1.0,
+          "core_cumulative_s": 0.0
+        },
+        {
+          "input": "cartesian_to_banded",
+          "iteration": 10,
+          "data_residual": 0.2009786069393158,
+          "object_rel_l2": 0.2736968696117401,
+          "core_cumulative_s": 0.7752734000241617
+        },
+        {
+          "input": "cartesian_to_banded",
+          "iteration": 20,
+          "data_residual": 0.07669225335121155,
+          "object_rel_l2": 0.12086155265569687,
+          "core_cumulative_s": 1.5555709000327624
+        },
+        {
+          "input": "cartesian_to_banded",
+          "iteration": 30,
+          "data_residual": 0.03684462606906891,
+          "object_rel_l2": 0.06332748383283615,
+          "core_cumulative_s": 2.502090500027407
+        },
+        {
+          "input": "cartesian_to_banded",
+          "iteration": 40,
+          "data_residual": 0.01967192254960537,
+          "object_rel_l2": 0.036969806998968124,
+          "core_cumulative_s": 3.6722066000074847
+        },
+        {
+          "input": "cartesian_to_banded",
+          "iteration": 50,
+          "data_residual": 0.011479022912681103,
+          "object_rel_l2": 0.024208320304751396,
+          "core_cumulative_s": 4.640400200034492
+        },
+        {
+          "input": "cartesian_to_banded",
+          "iteration": 60,
+          "data_residual": 0.0075011360459029675,
+          "object_rel_l2": 0.01791279949247837,
+          "core_cumulative_s": 5.4842390000558225
+        },
+        {
+          "input": "cartesian_to_banded",
+          "iteration": 70,
+          "data_residual": 0.00561270909383893,
+          "object_rel_l2": 0.014676697552204132,
+          "core_cumulative_s": 6.3625115000177175
+        },
+        {
+          "input": "cartesian_to_banded",
+          "iteration": 80,
+          "data_residual": 0.0047325193881988525,
+          "object_rel_l2": 0.01285262405872345,
+          "core_cumulative_s": 7.1453883000067435
+        },
+        {
+          "input": "cartesian_to_banded",
+          "iteration": 90,
+          "data_residual": 0.004308943171054125,
+          "object_rel_l2": 0.011689764447510242,
+          "core_cumulative_s": 8.062503399967682
+        },
+        {
+          "input": "cartesian_to_banded",
+          "iteration": 100,
+          "data_residual": 0.004086296074092388,
+          "object_rel_l2": 0.01085942704230547,
+          "core_cumulative_s": 8.849229799961904
+        },
+        {
+          "input": "cartesian_to_banded",
+          "iteration": 110,
+          "data_residual": 0.003955272492021322,
+          "object_rel_l2": 0.010215481743216515,
+          "core_cumulative_s": 9.79814359996817
+        },
+        {
+          "input": "cartesian_to_banded",
+          "iteration": 120,
+          "data_residual": 0.0038697198033332825,
+          "object_rel_l2": 0.009688673540949821,
+          "core_cumulative_s": 10.612904399968102
+        }
+      ]
+    },
+    {
+      "selected_n_z": 8,
+      "q_samples": 3469312,
+      "cartesian_remap_rel_l2_vs_ideal": 0.0036085001192986965,
+      "remap_timing": {
+        "count": 30,
+        "median_s": 0.0020355499946163036,
+        "mean_s": 0.0023904799983332243,
+        "min_s": 0.0017965000006370246,
+        "max_s": 0.007696799992118031,
+        "output_q_count": 3469312
+      },
+      "reference_generation": {
+        "generation_total_s": 9.250724799989257,
+        "direct_cufinufft_total_s": 4.428524600007222,
+        "camera_shape": [
+          121,
+          320,
+          320
+        ],
+        "active_pixels_per_view": 79900,
+        "camera_input_mib": 94.53125,
+        "blocks": [
+          {
+            "group": "ring",
+            "view_start": 0,
+            "view_stop": 8,
+            "direct_cufinufft_s": 0.17571460000181105
+          },
+          {
+            "group": "ring",
+            "view_start": 8,
+            "view_stop": 16,
+            "direct_cufinufft_s": 0.2310194000019692
+          },
+          {
+            "group": "ring",
+            "view_start": 16,
+            "view_stop": 24,
+            "direct_cufinufft_s": 0.442009299993515
+          },
+          {
+            "group": "ring",
+            "view_start": 24,
+            "view_stop": 32,
+            "direct_cufinufft_s": 0.327332100001513
+          },
+          {
+            "group": "ring",
+            "view_start": 32,
+            "view_stop": 40,
+            "direct_cufinufft_s": 0.316957300005015
+          },
+          {
+            "group": "ring",
+            "view_start": 40,
+            "view_stop": 48,
+            "direct_cufinufft_s": 0.2105984000081662
+          },
+          {
+            "group": "ring",
+            "view_start": 48,
+            "view_stop": 56,
+            "direct_cufinufft_s": 0.30287939999834634
+          },
+          {
+            "group": "ring",
+            "view_start": 56,
+            "view_stop": 64,
+            "direct_cufinufft_s": 0.35194189999310765
+          },
+          {
+            "group": "ring",
+            "view_start": 64,
+            "view_stop": 72,
+            "direct_cufinufft_s": 0.2636419000045862
+          },
+          {
+            "group": "ring",
+            "view_start": 72,
+            "view_stop": 80,
+            "direct_cufinufft_s": 0.4042599000094924
+          },
+          {
+            "group": "ring",
+            "view_start": 80,
+            "view_stop": 88,
+            "direct_cufinufft_s": 0.408419799990952
+          },
+          {
+            "group": "ring",
+            "view_start": 88,
+            "view_stop": 96,
+            "direct_cufinufft_s": 0.17867559999285731
+          },
+          {
+            "group": "ring",
+            "view_start": 96,
+            "view_stop": 104,
+            "direct_cufinufft_s": 0.20148000000335742
+          },
+          {
+            "group": "ring",
+            "view_start": 104,
+            "view_stop": 112,
+            "direct_cufinufft_s": 0.19520719999854919
+          },
+          {
+            "group": "ring",
+            "view_start": 112,
+            "view_stop": 120,
+            "direct_cufinufft_s": 0.21101939999789465
+          },
+          {
+            "group": "axis",
+            "view_start": 0,
+            "view_stop": 1,
+            "direct_cufinufft_s": 0.20736840000608936
+          }
+        ]
+      },
+      "ideal": {
+        "input": "ideal_banded",
+        "iterations": 120,
+        "step": 6.959638663236028e-12,
+        "lipschitz_with_margin": 143685620531.2,
+        "adaptive_restart_count": 60,
+        "object_rel_l2": 0.06706041097640991,
+        "data_residual": 0.002661124337464571,
+        "core_iteration_timing": {
+          "count": 120,
+          "total_s": 12.185161200031871,
+          "mean_s": 0.1015430100002656,
+          "median_s": 0.08938669999770354,
+          "p05_s": 0.08734491499781143,
+          "p95_s": 0.15752007000555748,
+          "min_s": 0.08681069999875035,
+          "max_s": 0.30725410000013653
+        },
+        "core_solve_s": 12.185161200031871,
+        "wall_solve_s_including_diagnostics": 12.83020559999568
+      },
+      "cartesian_remap": {
+        "input": "cartesian_to_banded",
+        "iterations": 120,
+        "step": 6.959638663236028e-12,
+        "lipschitz_with_margin": 143685620531.2,
+        "adaptive_restart_count": 60,
+        "object_rel_l2": 0.06710438430309296,
+        "data_residual": 0.004414323717355728,
+        "core_iteration_timing": {
+          "count": 120,
+          "total_s": 11.75413249997655,
+          "mean_s": 0.09795110416647125,
+          "median_s": 0.08798499999829801,
+          "p05_s": 0.08354353999020532,
+          "p95_s": 0.15112338500257466,
+          "min_s": 0.0831700999988243,
+          "max_s": 0.29008069999690633
+        },
+        "core_solve_s": 11.75413249997655,
+        "wall_solve_s_including_diagnostics": 12.455117700010305
+      },
+      "remap_vs_ideal_reconstruction_rel_l2": 0.0009765679715201259,
+      "ideal_history": [
+        {
+          "input": "ideal_banded",
+          "iteration": 0,
+          "data_residual": 1.0,
+          "object_rel_l2": 1.0,
+          "core_cumulative_s": 0.0
+        },
+        {
+          "input": "ideal_banded",
+          "iteration": 10,
+          "data_residual": 0.20197360217571259,
+          "object_rel_l2": 0.2823988199234009,
+          "core_cumulative_s": 0.9465881999931298
+        },
+        {
+          "input": "ideal_banded",
+          "iteration": 20,
+          "data_residual": 0.07729508727788925,
+          "object_rel_l2": 0.13860777020454407,
+          "core_cumulative_s": 1.989625399975921
+        },
+        {
+          "input": "ideal_banded",
+          "iteration": 30,
+          "data_residual": 0.03707840293645859,
+          "object_rel_l2": 0.09240292757749557,
+          "core_cumulative_s": 3.207106899964856
+        },
+        {
+          "input": "ideal_banded",
+          "iteration": 40,
+          "data_residual": 0.019646069034934044,
+          "object_rel_l2": 0.07664202153682709,
+          "core_cumulative_s": 4.102683299963246
+        },
+        {
+          "input": "ideal_banded",
+          "iteration": 50,
+          "data_residual": 0.011225508525967598,
+          "object_rel_l2": 0.07129008322954178,
+          "core_cumulative_s": 5.242993899984867
+        },
+        {
+          "input": "ideal_banded",
+          "iteration": 60,
+          "data_residual": 0.007012561894953251,
+          "object_rel_l2": 0.06932651251554489,
+          "core_cumulative_s": 6.257360499977949
+        },
+        {
+          "input": "ideal_banded",
+          "iteration": 70,
+          "data_residual": 0.004897601902484894,
+          "object_rel_l2": 0.06847287714481354,
+          "core_cumulative_s": 7.252882300002966
+        },
+        {
+          "input": "ideal_banded",
+          "iteration": 80,
+          "data_residual": 0.003836203133687377,
+          "object_rel_l2": 0.06800854206085205,
+          "core_cumulative_s": 8.585568000024068
+        },
+        {
+          "input": "ideal_banded",
+          "iteration": 90,
+          "data_residual": 0.0032869470305740833,
+          "object_rel_l2": 0.06769666075706482,
+          "core_cumulative_s": 9.488827500026673
+        },
+        {
+          "input": "ideal_banded",
+          "iteration": 100,
+          "data_residual": 0.002980127464979887,
+          "object_rel_l2": 0.06745343655347824,
+          "core_cumulative_s": 10.373162600022624
+        },
+        {
+          "input": "ideal_banded",
+          "iteration": 110,
+          "data_residual": 0.002790360013023019,
+          "object_rel_l2": 0.06724613159894943,
+          "core_cumulative_s": 11.294553000028827
+        },
+        {
+          "input": "ideal_banded",
+          "iteration": 120,
+          "data_residual": 0.002661124337464571,
+          "object_rel_l2": 0.06706041097640991,
+          "core_cumulative_s": 12.185161200031871
+        }
+      ],
+      "remap_history": [
+        {
+          "input": "cartesian_to_banded",
+          "iteration": 0,
+          "data_residual": 1.0,
+          "object_rel_l2": 1.0,
+          "core_cumulative_s": 0.0
+        },
+        {
+          "input": "cartesian_to_banded",
+          "iteration": 10,
+          "data_residual": 0.20188216865062714,
+          "object_rel_l2": 0.28259754180908203,
+          "core_cumulative_s": 0.8858102000231156
+        },
+        {
+          "input": "cartesian_to_banded",
+          "iteration": 20,
+          "data_residual": 0.07730432599782944,
+          "object_rel_l2": 0.13887858390808105,
+          "core_cumulative_s": 1.8530245000001742
+        },
+        {
+          "input": "cartesian_to_banded",
+          "iteration": 30,
+          "data_residual": 0.03720030561089516,
+          "object_rel_l2": 0.0926453247666359,
+          "core_cumulative_s": 2.730591200015624
+        },
+        {
+          "input": "cartesian_to_banded",
+          "iteration": 40,
+          "data_residual": 0.019926676526665688,
+          "object_rel_l2": 0.07682372629642487,
+          "core_cumulative_s": 3.745506200037198
+        },
+        {
+          "input": "cartesian_to_banded",
+          "iteration": 50,
+          "data_residual": 0.011738990433514118,
+          "object_rel_l2": 0.07142031192779541,
+          "core_cumulative_s": 4.678954400034854
+        },
+        {
+          "input": "cartesian_to_banded",
+          "iteration": 60,
+          "data_residual": 0.007825800217688084,
+          "object_rel_l2": 0.0694229006767273,
+          "core_cumulative_s": 5.9663042000174755
+        },
+        {
+          "input": "cartesian_to_banded",
+          "iteration": 70,
+          "data_residual": 0.006015464663505554,
+          "object_rel_l2": 0.06854858249425888,
+          "core_cumulative_s": 7.23027050003293
+        },
+        {
+          "input": "cartesian_to_banded",
+          "iteration": 80,
+          "data_residual": 0.005195294972509146,
+          "object_rel_l2": 0.06807161867618561,
+          "core_cumulative_s": 8.163006699978723
+        },
+        {
+          "input": "cartesian_to_banded",
+          "iteration": 90,
+          "data_residual": 0.004809118807315826,
+          "object_rel_l2": 0.06775183975696564,
+          "core_cumulative_s": 9.193287999994936
+        },
+        {
+          "input": "cartesian_to_banded",
+          "iteration": 100,
+          "data_residual": 0.004608634393662214,
+          "object_rel_l2": 0.06750345975160599,
+          "core_cumulative_s": 10.035598200003733
+        },
+        {
+          "input": "cartesian_to_banded",
+          "iteration": 110,
+          "data_residual": 0.004491160158067942,
+          "object_rel_l2": 0.06729263812303543,
+          "core_cumulative_s": 10.879257099993993
+        },
+        {
+          "input": "cartesian_to_banded",
+          "iteration": 120,
+          "data_residual": 0.004414323717355728,
+          "object_rel_l2": 0.06710438430309296,
+          "core_cumulative_s": 11.75413249997655
+        }
+      ]
+    }
+  ],
+  "pytorch_peak_allocated_mib": 399.31689453125,
+  "claim_boundary": [
+    "The physical input remains a Cartesian complex camera field; banded polar samples are cached bilinear interpolants.",
+    "The direct Cartesian reference is generated with chunked cuFINUFFT and is validation-only setup work.",
+    "No acquisition transfer, hologram demodulation, or measurement noise is included."
+  ]
+}

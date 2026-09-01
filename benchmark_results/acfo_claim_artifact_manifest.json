@@ -1,0 +1,809 @@
+{
+  "schema": "acfo-claim-artifact-manifest-v1",
+  "generated_at_utc": "2026-07-23T12:06:40.688487+00:00",
+  "purpose": "Map each paper-facing claim to its scope, timing boundary, reference, raw evidence, reproduction driver and unresolved gate without changing validated execution paths.",
+  "worktree": {
+    "commit": "af68ee6096185ef2086cec31e0f9d8f4928bae42",
+    "branch": "codex/acfo-validation-release",
+    "tracked_changes": 19,
+    "untracked_entries": 219,
+    "total_status_entries": 238,
+    "clean": false
+  },
+  "prior_release_candidate": {
+    "path": "benchmark_results/acfo_ncs_release_candidate_manifest.json",
+    "generated_at_utc": "2026-07-13T04:06:36.024335+00:00",
+    "zip": "docs/ACFO_NCS_validation_release_candidate_2026-07-13_v13.zip",
+    "zip_sha256": "22e6ba67fb7c2e7ce4848464c401e605f8cf700247bb00212c364beecefd47f9",
+    "file_count": 401
+  },
+  "claim_count": 7,
+  "claims": [
+    {
+      "claim_id": "waxs_detector_aware_local",
+      "application": "WAXS",
+      "status": "verified_local_external_rerun_pending",
+      "headline": "EIGER2 X 4M envelope의 Nq=512 local 10/30 protocol에서 1.976x",
+      "claim_ko": "동일 binned source와 detector-aware curved targets에서 prepared ACFO가 FINUFFT보다 약 1.98배 빠르다.",
+      "scope": "RTX 2070 SUPER local CPU timing; Nq=512; geometric detector envelope; fixed source representation",
+      "reference": "FINUFFT on the same binned source and active curved targets",
+      "timing_boundary": "10 warm-ups and 30 AB/BA alternating cached solves; setup excluded",
+      "metrics": {
+        "acfo_median_s": 21.60191885000131,
+        "finufft_median_s": 42.68526495000151,
+        "ratio_of_medians_speedup": 1.975994134891351,
+        "paired_p05_speedup": 1.917575390889492,
+        "complex_l2": 7.028044488671733e-07,
+        "memory_reduction_ratio": 5.144690891930156
+      },
+      "claim_boundary": [
+        "This is same-bin operator evidence, not end-to-end exact-atom high-q accuracy.",
+        "Module gaps and beamstop are not included in the geometric-envelope detector tier.",
+        "Independent-machine timing remains pending."
+      ],
+      "reproduction": {
+        "mode": "saved production rows plus deterministic decision rebuild",
+        "driver": "scripts/summarize_waxs_detector_aware.py"
+      },
+      "artifacts": [
+        {
+          "path": "benchmark_results/waxs_detector_aware_decision.json",
+          "role": "decision",
+          "bytes": 6718,
+          "sha256": "d6005d2ff6012aafccadf02ba63ef970dc65432dfcd69e9466eb38905ab7daf1",
+          "release_candidate": {
+            "included": true,
+            "hash_matches_current": true
+          }
+        },
+        {
+          "path": "benchmark_results/protein_nanocrystal_detector_eiger4m_216k_nq512_w10_r30_alternating.json",
+          "role": "raw timing and accuracy",
+          "bytes": 6875,
+          "sha256": "6a46d3f3d191a81e7a934f53a10c3ccd762289d515bb1bad9ec98f080b228959",
+          "release_candidate": {
+            "included": true,
+            "hash_matches_current": true
+          }
+        },
+        {
+          "path": "scripts/summarize_waxs_detector_aware.py",
+          "role": "decision builder",
+          "bytes": 12311,
+          "sha256": "92103b92357235dc2162622a4897046cc5617d45c827dd530c41156bf03dfb1f",
+          "release_candidate": {
+            "included": true,
+            "hash_matches_current": true
+          }
+        },
+        {
+          "path": "docs/acfo_ncs_waxs_detector_aware_ko.md",
+          "role": "human-readable interpretation",
+          "bytes": 1695,
+          "sha256": "ad20a311913a87f9b873db52d34fcca18766f6aedc650829145f11cb292fd52a",
+          "release_candidate": {
+            "included": true,
+            "hash_matches_current": true
+          }
+        }
+      ]
+    },
+    {
+      "claim_id": "waxs_dense_exact_beta_highq",
+      "application": "WAXS",
+      "status": "accuracy_verified_dense_nq512_not_competitive",
+      "headline": "50,430-atom TIP3P 20 frames의 high-q exact-beta 정확도 PASS; dense Nq=512 성능 FAIL",
+      "claim_ko": "Bounded-memory exact-beta 경로는 dense disordered coordinates를 direct NDFT 정확도로 재현하지만 dense Nq=512 workload에서는 FINUFFT보다 느리다.",
+      "scope": "8 nm TIP3P trajectory; q=5.0-6.3 A^-1; local CPU wall time",
+      "reference": "direct NDFT for correctness; reusable FINUFFT for Nq=512 cross-check",
+      "timing_boundary": "exact-coordinate contraction and harmonic evaluation; file loading/form-factor construction excluded in the scaling row",
+      "metrics": {
+        "frames": 20,
+        "atoms_per_frame": 50430,
+        "max_complex_l2_vs_direct": 2.4561805692188578e-12,
+        "median_direct_over_exact_beta": 17.906558060707006,
+        "nq512_exact_beta_s": 38.37306660000468,
+        "nq512_finufft_hot_median_s": 0.3871142999996664,
+        "nq512_cross_complex_l2": 3.9558072050356216e-07,
+        "nq512_comparative_performance_pass": false
+      },
+      "claim_boundary": [
+        "This closes dense-disorder small-case correctness for the selected two high-q rows, not Nq=512 production timing.",
+        "The exact-beta path is exact-coordinate and bounded-memory but still scales with atom count, q rows, and retained harmonics.",
+        "The TIP3P model uses neutral xray_f0 form factors without anomalous dispersion or experimental background calibration.",
+        "Direct NDFT is the correctness oracle on small cases; this Nq=512 row is an optimized-method cross-check.",
+        "FINUFFT eps=1e-6 is a practical timing baseline, not a converged numerical oracle.",
+        "Timings and sampled RSS are local to this machine, build, thread policy, and run.",
+        "The full polar grid is used rather than a detector rectangle so both methods produce identical targets."
+      ],
+      "reproduction": {
+        "mode": "full saved TIP3P validation driver",
+        "driver": "scripts/validate_tip3p_dense_highq_exact_beta.py"
+      },
+      "artifacts": [
+        {
+          "path": "benchmark_results/tip3p_dense_highq_exact_beta_20frames.json",
+          "role": "accuracy",
+          "bytes": 19045,
+          "sha256": "320b65aaca75da079e7938199d214593c78dfd31869894c33b093d4205df4ab4",
+          "release_candidate": {
+            "included": true,
+            "hash_matches_current": true
+          }
+        },
+        {
+          "path": "benchmark_results/tip3p_exact_beta_finufft_512.json",
+          "role": "dense performance",
+          "bytes": 3546,
+          "sha256": "a7b9d5a993749d65aa4ebf8ee46d2ab52c858feb82b0f904bb84b415551e2659",
+          "release_candidate": {
+            "included": true,
+            "hash_matches_current": true
+          }
+        },
+        {
+          "path": "scripts/validate_tip3p_dense_highq_exact_beta.py",
+          "role": "accuracy driver",
+          "bytes": 17283,
+          "sha256": "a05bd8668f2317fa36d13c83f2aefda7e36ae8a4b67c0fdfaf9de066f2fd70a1",
+          "release_candidate": {
+            "included": true,
+            "hash_matches_current": true
+          }
+        },
+        {
+          "path": "scripts/benchmark_tip3p_exact_beta_finufft_512.py",
+          "role": "FINUFFT comparison driver",
+          "bytes": 10882,
+          "sha256": "d4e204c3aec025efbab415b8341876aba0c698a398d531a76f69602622b8522f",
+          "release_candidate": {
+            "included": true,
+            "hash_matches_current": true
+          }
+        }
+      ]
+    },
+    {
+      "claim_id": "aidt_gpu_resident_core",
+      "application": "aIDT",
+      "status": "verified_processing_core",
+      "headline": "24x700x700 input to 700x700x35 GPU-resident core: 97.002 ms, 10.31 Hz",
+      "claim_ko": "고정 geometry와 GPU-resident input의 public aIDT reconstruction core가 RTX 2070 SUPER에서 10 Hz를 넘는다.",
+      "scope": "public 24-illumination aIDT transfer reconstruction; complex64; prepared support-transfer cache",
+      "reference": "validated public-data contract and dense transfer baseline",
+      "timing_boundary": "GPU core only; setup, output statistics, CPU preprocessing, acquisition and scheduling excluded",
+      "metrics": {
+        "gpu_run_median_s": 0.09700215001066681,
+        "gpu_run_hz": 10.30904984982328,
+        "gpu_setup_s": 0.9143597999936901,
+        "n_illumination": 24,
+        "depth_count": 35,
+        "support_active_fraction": 0.26430408163265307,
+        "torch_peak_allocated_mib": 3849.37060546875
+      },
+      "claim_boundary": [
+        "This is a GPU-resident processing-core result, not raw-acquisition-to-reconstruction end-to-end 10 Hz.",
+        "Output statistics were deliberately excluded in the frozen 10 Hz row."
+      ],
+      "reproduction": {
+        "mode": "full public-condition benchmark using saved JSON config",
+        "driver": "scripts/benchmark_aidt_transfer_torch_gpu.py",
+        "saved_config": {
+          "contract": "benchmark_results\\aidt_diatom_public_contract.npz",
+          "device": "cuda",
+          "crop_size": 700,
+          "max_frames": null,
+          "depth_min_um": -25.5,
+          "depth_max_um": 25.5,
+          "depth_step_um": 1.5,
+          "alpha": 100.0,
+          "beta": 100.0,
+          "dtype": "complex64",
+          "rhs_mode": "support",
+          "cache_support_transfer": true,
+          "cache_solve_coeffs": false,
+          "skip_output_stats": true,
+          "fft_norm": "ortho",
+          "background_mode": "frame_mean",
+          "flatfield_mode": "none",
+          "frame_scale_mode": "none",
+          "evanescent_eps": 1e-09,
+          "repeats": 20,
+          "compare_cpu": false,
+          "out": "benchmark_results\\aidt_10hz_full700_opt_repeat.json",
+          "summary_md": "benchmark_results\\aidt_10hz_full700_opt_repeat.md"
+        }
+      },
+      "artifacts": [
+        {
+          "path": "benchmark_results/aidt_10hz_full700_opt_repeat.json",
+          "role": "timing and configuration",
+          "bytes": 15418,
+          "sha256": "112a97f7d212b22322c99f0edc0678106a936de7e11f4f3451673ed1ef8b12e2",
+          "release_candidate": {
+            "included": false,
+            "hash_matches_current": null
+          }
+        },
+        {
+          "path": "validation/odt_aidt/aidt_diatom_public_contract_validation.json",
+          "role": "public-data contract validation receipt",
+          "bytes": 1293,
+          "sha256": "11ea6356e386dc0694972b3429168eecf052cab3f85cf3af2b379c27e08b6704",
+          "release_candidate": {
+            "included": false,
+            "hash_matches_current": null
+          }
+        },
+        {
+          "path": "scripts/benchmark_aidt_transfer_torch_gpu.py",
+          "role": "benchmark driver",
+          "bytes": 38645,
+          "sha256": "0001dc2de9062e5834ed1c996647a2b8dc9f1fa1f90adc04008f0f51833e24d5",
+          "release_candidate": {
+            "included": true,
+            "hash_matches_current": true
+          }
+        },
+        {
+          "path": "benchmark_results/aidt_10hz_full700_opt_repeat.md",
+          "role": "human-readable summary",
+          "bytes": 1050,
+          "sha256": "b914d4b9749e07aef23b9e729e79761a75539ba9c3507399c9f5a4997e1ecdc0",
+          "release_candidate": {
+            "included": false,
+            "hash_matches_current": null
+          }
+        }
+      ]
+    },
+    {
+      "claim_id": "odt_final_packed_operator",
+      "application": "ODT",
+      "status": "operator_verified_local_timing_baseline_accuracy_open",
+      "headline": "256^3 final packed pair 111.366 ms; H36 structured gate PASS; local cuFINUFFT ratio 81.24x",
+      "claim_ko": "Final H28/rank16/adaptive-L packed operator는 H36 structured reference gate를 통과하고 local reusable-plan timing에서 큰 실행시간 차이를 보인다.",
+      "scope": "256^3; 121 illuminations; 7,929,856 q samples; fixed geometry; complex64",
+      "reference": "H36 full-rank dense-L structured operator for ACFO accuracy; cuFINUFFT reusable plan for timing",
+      "timing_boundary": "both inputs GPU-resident; setup/allocation/setpts excluded; 5 warm-ups plus 30 AB/BA pairs",
+      "metrics": {
+        "worst_rel_l2_vs_h36": 1.0721107628341997e-06,
+        "acceptance_tolerance": 2e-06,
+        "dot_error": 6.983339631005947e-07,
+        "acfo_pair_median_s": 0.1113661499985028,
+        "cufinufft_pair_median_s": 9.047504000001936,
+        "local_pair_speedup": 81.24105933556623,
+        "cross_backend_forward_rel_l2": 6.990600436436457e-05,
+        "cross_backend_adjoint_rel_l2": 8.358686714513663e-05
+      },
+      "claim_boundary": [
+        "The 81.24x value is a measured local hot-time ratio, not yet a matched-effective-error speedup.",
+        "The ACFO accuracy gate is against H36 structured ACFO; the cross-backend difference is not an independent exact error.",
+        "Independent-machine replication remains pending."
+      ],
+      "reproduction": {
+        "mode": "accuracy driver plus saved-config production AB/BA driver",
+        "accuracy_driver": "scripts/validate_odt_final_packed_candidate.py",
+        "timing_driver": "scripts/benchmark_odt_cufinufft_gpu_baseline.py",
+        "saved_timing_config": {
+          "device": "cuda",
+          "dtype": "complex64",
+          "low_memory_adjoint": true,
+          "radial_block_size": 32,
+          "illumination_block_size": 4,
+          "prune_axis_l0": true,
+          "axial_lowrank_rank": 16,
+          "ring_adaptive_l_packed_threshold": 1e-06,
+          "skip_native_prepared_adjoint": true,
+          "compact_axisymmetric_kernel": true,
+          "n_beta": 256,
+          "n_r": 256,
+          "n_z": 256,
+          "r_max": 1.0,
+          "z_max": 0.8,
+          "phantom": "random_beads",
+          "object_scale": 1.0,
+          "seed": 123,
+          "k": 17.307319527958313,
+          "detector_na": 0.9240924092409241,
+          "illumination_angle_deg": 49.0,
+          "ring_illum": 120,
+          "skip_axis_illumination": false,
+          "cap_radial": 256,
+          "cap_phi": 256,
+          "h_cutoff": 28,
+          "h_margin": 20,
+          "l_margin": 18,
+          "cone_l_prune_threshold": 1e-12,
+          "cpp_threads": 4,
+          "forward_execute_mode": "prepared",
+          "forward_kernel_mode": "partitioned",
+          "native_prepared_plan_mode": "auto",
+          "native_prepared_gather_threshold": 8192,
+          "finufft_eps": 1e-12,
+          "finufft_q_batch_size": 1048576,
+          "cufinufft_eps": 1e-06,
+          "cufinufft_plan_mode": "plan",
+          "repeats": 1,
+          "warmups": 1,
+          "pair_repeats": 30,
+          "pair_warmups": 5,
+          "include_cpu_finufft": false,
+          "cpu_repeats": 1,
+          "cpu_warmups": 0,
+          "residual_scale_real": 0.1,
+          "residual_scale_imag": 0.2,
+          "out": "benchmark_results\\odt_h28_rank16_adaptive_l1e-6_vs_cufinufft_abba30_final.json",
+          "csv": "benchmark_results\\odt_h28_rank16_adaptive_l1e-6_vs_cufinufft_abba30_final.csv",
+          "summary_md": "benchmark_results\\odt_h28_rank16_adaptive_l1e-6_vs_cufinufft_abba30_final_ko.md"
+        }
+      },
+      "artifacts": [
+        {
+          "path": "benchmark_results/odt_final_packed_candidate_validation.json",
+          "role": "structured accuracy",
+          "bytes": 1905,
+          "sha256": "02cbe48d9a63c81969ee570af03baf77d0911b57928b3d3c112049477b3f06b3",
+          "release_candidate": {
+            "included": false,
+            "hash_matches_current": null
+          }
+        },
+        {
+          "path": "benchmark_results/odt_h28_rank16_adaptive_l1e-6_vs_cufinufft_abba30_final.json",
+          "role": "local hot timing",
+          "bytes": 6900,
+          "sha256": "cf2eb67a2f92f2b529ad6f316b773d45c04fca40230264b9d70412363c6ee7d8",
+          "release_candidate": {
+            "included": false,
+            "hash_matches_current": null
+          }
+        },
+        {
+          "path": "scripts/validate_odt_final_packed_candidate.py",
+          "role": "accuracy driver",
+          "bytes": 9067,
+          "sha256": "9d831855b543307c22aea8c387f82c6a1f6f4332ddd820468fdf84bb73e3688d",
+          "release_candidate": {
+            "included": false,
+            "hash_matches_current": null
+          }
+        },
+        {
+          "path": "scripts/benchmark_odt_cufinufft_gpu_baseline.py",
+          "role": "timing driver",
+          "bytes": 32693,
+          "sha256": "f5cd398f26e21c02c9cdf32feba0f2ff9fd4e587ef96ba45efe614da366f1db7",
+          "release_candidate": {
+            "included": true,
+            "hash_matches_current": false
+          }
+        },
+        {
+          "path": "benchmark_results/odt_promising_optimization_final_summary_ko.md",
+          "role": "decision summary",
+          "bytes": 5724,
+          "sha256": "0bcd6fef962d4d5e125ea0d8ff91f21ef5750693de29fc3c84cc5d5dae075cea",
+          "release_candidate": {
+            "included": false,
+            "hash_matches_current": null
+          }
+        }
+      ]
+    },
+    {
+      "claim_id": "odt_full_slab_update_throughput",
+      "application": "ODT",
+      "status": "verified_synthetic_update_throughput",
+      "headline": "full 256^3 update 8.46 Hz; known-support z=128 update 10.64 Hz",
+      "claim_ko": "Final packed operator를 이용한 fixed-geometry normal-equation update가 full volume에서 8.46 Hz, z=128 known-support slab에서 10 Hz를 넘는다.",
+      "scope": "synthetic noiseless self-consistent data; one CG update rate; 121 illuminations and all active detector modes",
+      "reference": "known synthetic object and real-subspace normal equations",
+      "timing_boundary": "cached geometry; per-update core; pixel-to-mode preprocessing recorded separately",
+      "metrics": {
+        "full_update_median_s": 0.11819005000143079,
+        "full_update_p95_s": 0.1190128049973282,
+        "full_update_hz": 8.460949123787444,
+        "full_rhs_plus_100_updates_s": 11.904045600094832,
+        "full_final_object_nrmse": 0.18569180369377136,
+        "full_final_data_residual": 0.0017690635286271572,
+        "slab128_update_median_s": 0.09400064999499591,
+        "slab128_update_hz": 10.63822431071737
+      },
+      "claim_boundary": [
+        "The full case treats all 256 z planes as unknown.",
+        "Each slab case assumes that only the stated centered z support is unknown; outside-slab contributions are absent or already removed.",
+        "All illumination views and all active detector harmonics are used.",
+        "Pixel-to-mode conversion is a one-time exact normal-operator-preserving preprocessing step for repeated geometry.",
+        "The inversion is synthetic, noiseless, and self-consistent; independent operator accuracy is reported separately.",
+        "Object NRMSE and data residual are both reported because missing-cone conditioning limits what data consistency alone proves."
+      ],
+      "reproduction": {
+        "mode": "full saved synthetic reconstruction benchmark",
+        "driver": "scripts/benchmark_odt_full_slab_reconstruction.py"
+      },
+      "artifacts": [
+        {
+          "path": "benchmark_results/odt_full_slab_reconstruction_claim.json",
+          "role": "timing and inverse metrics",
+          "bytes": 53412,
+          "sha256": "ed94e03b8d369f24ad75c562748f35a8cd74ee8876c280d4777c01ab98872438",
+          "release_candidate": {
+            "included": false,
+            "hash_matches_current": null
+          }
+        },
+        {
+          "path": "scripts/benchmark_odt_full_slab_reconstruction.py",
+          "role": "benchmark driver",
+          "bytes": 21242,
+          "sha256": "4c001094af5a15aa03756ecfac7d1ac744c1fb41e0eb0b5aa7d1f3de7df7f665",
+          "release_candidate": {
+            "included": false,
+            "hash_matches_current": null
+          }
+        },
+        {
+          "path": "tests/test_odt_full_slab_reconstruction.py",
+          "role": "regression tests",
+          "bytes": 3503,
+          "sha256": "fd9911a8e90fd706e017812473336970843b021685760810ca6f0603fa624c22",
+          "release_candidate": {
+            "included": false,
+            "hash_matches_current": null
+          }
+        }
+      ]
+    },
+    {
+      "claim_id": "odt_cartesian_detector_remap_separate_branch",
+      "application": "ODT",
+      "status": "verified_separate_branch_integration_open",
+      "headline": "Cartesian camera to banded angular sampling branch: z=1/z=8 remap-inclusive 12.52/11.11 Hz",
+      "claim_ko": "Cartesian complex camera field를 cached bilinear remap으로 banded angular samples로 변환하는 별도 branch가 10 Hz를 넘고 ideal-banded reconstruction과 약 0.098% 이내로 일치한다.",
+      "scope": "121 views; 320x320 Cartesian complex field; inner 96x128 plus outer 64x256 bands",
+      "reference": "ideal banded angular input generated from the same synthetic object",
+      "timing_boundary": "cached remap plus branch-specific reconstruction update; acquisition and hologram demodulation excluded",
+      "metrics": {
+        "samples_per_view": 28672,
+        "z1_total_s": 0.07988735000253655,
+        "z1_total_hz": 12.517626382252615,
+        "z1_reconstruction_difference": 0.00097245181677863,
+        "z8_total_s": 0.09002054999291431,
+        "z8_total_hz": 11.108574654106333,
+        "z8_reconstruction_difference": 0.0009765679715201259
+      },
+      "claim_boundary": [
+        "The physical input remains a Cartesian complex camera field; banded polar samples are cached bilinear interpolants.",
+        "The direct Cartesian reference is generated with chunked cuFINUFFT and is validation-only setup work.",
+        "No acquisition transfer, hologram demodulation, or measurement noise is included.",
+        "This detector branch has not yet been measured with the final H28/rank16/adaptive-L packed operator.",
+        "Do not combine its 12.52 Hz with the separate 81.24x packed/cuFINUFFT row."
+      ],
+      "reproduction": {
+        "mode": "full saved Cartesian-remap reconstruction driver",
+        "driver": "scripts/benchmark_odt_banded_cartesian_reconstruction.py"
+      },
+      "artifacts": [
+        {
+          "path": "benchmark_results/odt_banded_cartesian_reconstruction.json",
+          "role": "accuracy and solve timing",
+          "bytes": 24408,
+          "sha256": "c152f0bd980dc92dac4eecc319bac0726873a3c63fd1007e39afb731b203459a",
+          "release_candidate": {
+            "included": false,
+            "hash_matches_current": null
+          }
+        },
+        {
+          "path": "benchmark_results/odt_banded_cartesian_remap_hot_recheck.json",
+          "role": "hot remap timing recheck",
+          "bytes": 7734,
+          "sha256": "e6c4813c23947efd077b26f564625e202fd60fdd0dfb26bee97d9e7b649cd4cd",
+          "release_candidate": {
+            "included": false,
+            "hash_matches_current": null
+          }
+        },
+        {
+          "path": "scripts/benchmark_odt_banded_cartesian_reconstruction.py",
+          "role": "benchmark driver",
+          "bytes": 15315,
+          "sha256": "1b150ff9fe4e6b866d6453c151c4c80ef57ac6febe01004b26285a009488a6b7",
+          "release_candidate": {
+            "included": false,
+            "hash_matches_current": null
+          }
+        },
+        {
+          "path": "tests/test_odt_detector_geometry.py",
+          "role": "geometry regression tests",
+          "bytes": 3105,
+          "sha256": "b27f906862b39a118c9aea8c6b8d26c15425877ae5e4ec393f2ae6308b0d58bb",
+          "release_candidate": {
+            "included": false,
+            "hash_matches_current": null
+          }
+        }
+      ]
+    },
+    {
+      "claim_id": "general_curvature_frozen_holdout",
+      "application": "general curvature / nonlinear optics",
+      "status": "verified_single_frozen_holdout",
+      "headline": "38 deg calibration to 25 deg no-refit holdout: 10/10 gates PASS",
+      "claim_ko": "사전에 고정한 38-degree point calibration을 25-degree pump holdout에 재적합 없이 적용한 one-way bulk SHG cascade가 모든 gate를 통과한다.",
+      "scope": "homogeneous LiNbO3; one-way pump to impressed SH current; one preselected r24 holdout",
+      "reference": "direct tensor contraction and exact injected Yee-source modal contraction, plus SH impressed-current FDTD",
+      "timing_boundary": "accuracy validation; pump and SH FDTD runtimes recorded but no performance claim",
+      "metrics": {
+        "cell_center_acfo_vs_direct_l2": 0.006206516132550844,
+        "exact_yee_acfo_vs_direct_l2": 0.007981147055908201,
+        "source_transfer_direct_l2": 0.02707925233766151,
+        "sh_fdtd_vs_exact_yee_direct_l2": 0.04246273166642296,
+        "sh_fdtd_vs_exact_yee_acfo_l2": 0.04448610350172713,
+        "ordinary_l2": 0.04363660188271579,
+        "extraordinary_l2": 0.042250004566461496,
+        "monitor_shell_l2": 0.011278410579582732,
+        "passed_gate_count": 10,
+        "total_gate_count": 10
+      },
+      "claim_boundary": "pump propagation is solved by Maxwell FDTD and feeds the SH source, but the cascade remains undepleted and one-way; it excludes pump back-action, coupled nonlinear time stepping, interfaces, periodic poling, loss, and absolute conversion efficiency",
+      "reproduction": {
+        "mode": "frozen point calibration plus one-way PyMeep cascade",
+        "driver": "scripts/probe_linbo3_one_way_shg_cascade.py",
+        "holdout_contract": {
+          "training_case_pump_surface_parameter_deg": 38.0,
+          "holdout_pump_surface_parameter_deg": 25.0,
+          "training_case_pump_azimuth_deg": 1.875,
+          "holdout_pump_azimuth_deg": 1.875,
+          "training_case_pump_beam_sigma": 0.55,
+          "holdout_pump_beam_sigma": 0.55,
+          "frozen_calibration_source_vector": [
+            0.3082213139277428,
+            -0.17230117993820526,
+            -0.935581062780002
+          ],
+          "holdout_nonlinear_source_vector": [
+            0.3414250332976671,
+            -0.3364621812331089,
+            -0.8776230097470926
+          ],
+          "no_holdout_refit": true,
+          "grid_convergence_source": "baseline r20/r24 cascade; the holdout is a single preselected r24 case"
+        }
+      },
+      "artifacts": [
+        {
+          "path": "benchmark_results/linbo3_one_way_shg_cascade_holdout_angle25_r24.json",
+          "role": "frozen holdout metrics and gates",
+          "bytes": 23764,
+          "sha256": "ae6d912a0d3ddeb936eec4e743f27e650118e125fb03060e7b573d38790566fa",
+          "release_candidate": {
+            "included": false,
+            "hash_matches_current": null
+          }
+        },
+        {
+          "path": "benchmark_results/linbo3_one_way_shg_cascade_holdout_angle25_r24_fields_r24.npz",
+          "role": "pump, nonlinear-current and SH field arrays",
+          "bytes": 2876927,
+          "sha256": "d237cbd2531a01acea0bc8451b815e5fa4cc8ec97d7dfa063b88d26ecd31865e",
+          "release_candidate": {
+            "included": false,
+            "hash_matches_current": null
+          }
+        },
+        {
+          "path": "benchmark_results/linbo3_point_modal_calibration.json",
+          "role": "frozen training calibration",
+          "bytes": 18996,
+          "sha256": "eb64c22c267607a0865c158bfc4f35028fc8b3b49b5297d6fb21ed148ed53456",
+          "release_candidate": {
+            "included": false,
+            "hash_matches_current": null
+          }
+        },
+        {
+          "path": "scripts/probe_linbo3_one_way_shg_cascade.py",
+          "role": "cascade driver",
+          "bytes": 33720,
+          "sha256": "2b27948f2469864f0c3a95e11ff0f982f1e12d577b66f468ccf01d3d2bfd11c1",
+          "release_candidate": {
+            "included": false,
+            "hash_matches_current": null
+          }
+        },
+        {
+          "path": "tests/test_general_curvature_publication_controls.py",
+          "role": "publication controls",
+          "bytes": 1989,
+          "sha256": "17a7ef49f479148ee728cec790efc2020e43068050c49ea156d2fbe3d64b1b82",
+          "release_candidate": {
+            "included": false,
+            "hash_matches_current": null
+          }
+        },
+        {
+          "path": "reports/general_curvature_frozen_holdout_ko/ACFO_general_curvature_frozen_holdout_validation_ko.pdf",
+          "role": "verified Korean report",
+          "bytes": 504540,
+          "sha256": "43e0f3794983572042d04cae37d906bfba9ebc74a1b1b3353ad88887f7e5ea17",
+          "release_candidate": {
+            "included": false,
+            "hash_matches_current": null
+          }
+        }
+      ]
+    }
+  ],
+  "open_gates": [
+    {
+      "gate_id": "odt_remap_final_packed_integration",
+      "priority": 1,
+      "status": "closed",
+      "reason": "The Cartesian camera, cached remap, mode reduction and final packed operator now pass in one frozen run.",
+      "result": {
+        "worst_operator_rel_l2": 9.017000479616399e-07,
+        "worst_remap_reconstruction_rel_l2": 0.0009415781823918223,
+        "full_256z_steady_hot_hz": 6.660017749619366
+      },
+      "acceptance": [
+        "one run uses Cartesian camera-like complex fields, cached remap and final H28/rank16/adaptive-L forward/adjoint",
+        "direct structured complex error remains <= 2e-6",
+        "remap-vs-ideal reconstruction difference is reported",
+        "preprocessing, pair/update timing and peak memory are reported from the same run"
+      ]
+    },
+    {
+      "gate_id": "odt_cufinufft_matched_effective_error",
+      "priority": 2,
+      "status": "closed_with_separate_process_caveat",
+      "reason": "An independent complex128 exponent sum fixes the matched point at cuFINUFFT complex128 eps=1e-7; full timing is separate-process because both plans do not coexist in 8 GB.",
+      "result": {
+        "acfo_complex64_worst_direct_l2": 6.442624231781914e-07,
+        "matched_cufinufft_dtype": "complex128",
+        "matched_cufinufft_eps": 1e-07,
+        "matched_full_pair_median_s": 34.628073500003666,
+        "acfo_speedup_vs_matched_cufinufft": 310.9389477904121
+      },
+      "acceptance": [
+        "small direct-reference forward and adjoint cases use identical q/object definitions",
+        "ACFO threshold and cuFINUFFT tolerance are swept",
+        "runtime is compared at matched measured complex error",
+        "GPU residency, plan reuse, setpts and synchronization boundaries remain explicit"
+      ]
+    },
+    {
+      "gate_id": "odt_temporal_final_operator",
+      "priority": 3,
+      "status": "closed_frozen_noiseless_sequence",
+      "reason": "An eight-frame physical Cartesian-camera sequence now runs through the integrated final packed path with warm/cold/reference rows.",
+      "result": {
+        "warm_1_update_median_hot_hz": 15.908671499591806,
+        "warm_1_update_mean_object_rel_l2": 0.037604636911834986,
+        "warm_3_update_vs_reference_ratio": 1.0542106263990214
+      },
+      "acceptance": [
+        "a short frozen sequence first verifies cold/warm equivalence and latency",
+        "updates per frame and object/tracking error are recorded",
+        "only after the short gate passes is a longer sequence justified"
+      ]
+    },
+    {
+      "gate_id": "independent_machine_replication",
+      "priority": 4,
+      "status": "external_pending",
+      "reason": "All current production timings are from the same physical RTX 2070 SUPER machine.",
+      "acceptance": [
+        "rerun frozen commands on a distinct machine fingerprint",
+        "preserve raw timing distributions, environment metadata and source hashes"
+      ]
+    },
+    {
+      "gate_id": "waxs_protein_exact_beta_followup",
+      "priority": 5,
+      "status": "closed_no_additional_rerun",
+      "reason": "Existing 8008-atom protein direct validation and 216216/1001000-atom ordered-crystal controls already cover the chosen protein-crystal object.",
+      "result": {
+        "decision": "NO_ADDITIONAL_LOCAL_PROTEIN_EXACT_BETA_RERUN",
+        "experimental_object": "ordered lysozyme protein crystal / single-crystal protein nanocrystal; not a dilute isolated single protein",
+        "protein_unit_exact_beta_complex_l2": 1.0101056434072341e-12,
+        "million_atom_direct_subset_complex_l2": 2.4284498525317208e-11
+      },
+      "acceptance": [
+        "predeclare the protein crystal/oriented nanocrystal object and detector contract",
+        "compare an exact-atom subset and report performance without implying universal advantage"
+      ]
+    }
+  ],
+  "gate_closure_artifacts": [
+    {
+      "path": "benchmark_results/odt_banded_cartesian_final_packed_probe.json",
+      "role": "integrated accuracy gate",
+      "bytes": 18147,
+      "sha256": "9fd96dcb98ff6a0ee5c74954f5f00469710a074a9a878ae301de4177e0926fd3",
+      "release_candidate": {
+        "included": false,
+        "hash_matches_current": null
+      }
+    },
+    {
+      "path": "benchmark_results/odt_banded_cartesian_final_packed_full_timing.json",
+      "role": "integrated 64/128/256-z timing",
+      "bytes": 9343,
+      "sha256": "92ddfe2f93e99fec56eae0207a4fed35f798c3347d52f619070ce9210cb13204",
+      "release_candidate": {
+        "included": false,
+        "hash_matches_current": null
+      }
+    },
+    {
+      "path": "benchmark_results/odt_cufinufft_matched_error_direct_subset.json",
+      "role": "same-dtype direct audit",
+      "bytes": 14943,
+      "sha256": "4c04e7943601a7b8b0ef73303f98ed5701f234522f5e91be4e9d9659bd06da61",
+      "release_candidate": {
+        "included": false,
+        "hash_matches_current": null
+      }
+    },
+    {
+      "path": "benchmark_results/odt_cufinufft_matched_error_direct_subset_c128.json",
+      "role": "matched-error direct audit",
+      "bytes": 16101,
+      "sha256": "54d6694a8090f8ded70b861fc9e46ec9cb0bef49322bf948d38e02a0faf1b298",
+      "release_candidate": {
+        "included": false,
+        "hash_matches_current": null
+      }
+    },
+    {
+      "path": "benchmark_results/odt_cufinufft_matched_c128_full_pair5.json",
+      "role": "matched-error production timing",
+      "bytes": 6674,
+      "sha256": "182e40e0dd36593b12c0d3b1137f45b6f49ae063f7d8d408e8f5570bd85d8478",
+      "release_candidate": {
+        "included": false,
+        "hash_matches_current": null
+      }
+    },
+    {
+      "path": "benchmark_results/odt_cufinufft_c128_full_plan_diagnostic.json",
+      "role": "8 GB co-residency diagnosis",
+      "bytes": 1930,
+      "sha256": "32edadb81835faec2e6b85dbbbfc02303d79fff94edb0064a255fe8ba573d0c8",
+      "release_candidate": {
+        "included": false,
+        "hash_matches_current": null
+      }
+    },
+    {
+      "path": "benchmark_results/odt_banded_cartesian_temporal_warm_start.json",
+      "role": "integrated temporal gate",
+      "bytes": 61036,
+      "sha256": "73751358ae1633d594e520407a8a3a4182ac0d144b256443dcdf3ebb43ccd150",
+      "release_candidate": {
+        "included": false,
+        "hash_matches_current": null
+      }
+    },
+    {
+      "path": "benchmark_results/waxs_protein_exact_beta_followup_decision.json",
+      "role": "WAXS follow-up decision",
+      "bytes": 5251,
+      "sha256": "9c85cc388722e21ad01e8fcd39f7dfc1e6f088faed579331a840d0ccaa9cb47e",
+      "release_candidate": {
+        "included": false,
+        "hash_matches_current": null
+      }
+    }
+  ],
+  "artifact_audit": {
+    "unique_artifact_count": 38,
+    "included_in_prior_release_count": 10,
+    "included_and_hash_matching_count": 9,
+    "not_in_prior_release_count": 28,
+    "hash_changed_since_prior_release_count": 1
+  }
+}

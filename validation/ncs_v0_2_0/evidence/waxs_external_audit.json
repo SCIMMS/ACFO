@@ -1,0 +1,41 @@
+{
+  "schema": "waxs-affine-library-eps-frontier-external-audit-v1",
+  "generated_at_utc": "2026-08-25T10:55:19.154543+00:00",
+  "gates": {
+    "schema": true,
+    "mode": true,
+    "protocol_sha256": true,
+    "independent_machine": true,
+    "epsilon_order": true,
+    "no_frontier_timing_fields": true,
+    "selected_is_first_passing": true,
+    "accuracy_pass": true,
+    "harmonic_accuracy_pass": true,
+    "fused_type3_n_trans_8": true,
+    "selected_eps_retimed": true,
+    "abba": true,
+    "warmups": true,
+    "raw_samples": true,
+    "full_external_contract": true
+  },
+  "passed": true,
+  "performance_sign_is_gate": false,
+  "selected_eps": 3e-06,
+  "speedup": {
+    "definition": "median(baseline workflow totals) / median(ACFO workflow totals)",
+    "point": 8.279468832309261,
+    "lower_95": 8.165543844352424,
+    "upper_95": 8.395671149353307,
+    "paired_ratio_median": 8.312458698683447,
+    "paired_ratio_p05": 8.024694147113523,
+    "paired_ratio_p95": 8.615172928062012,
+    "bootstrap_samples": 10000,
+    "bootstrap_seed": 20260825
+  },
+  "process_status": {
+    "build": 0,
+    "tests": 0,
+    "benchmark": 0
+  },
+  "package_audit_passed": true
+}

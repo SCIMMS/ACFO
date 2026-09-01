@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "curved-ewald-operators"
-version = "0.1.0"
-description = "Prepared curved-Ewald Fourier operators for WAXS, high-NA optics, and ODT/aIDT benchmarks."
+version = "0.2.0"
+description = "Geometry factorization and representation dispatch for repeated curved Fourier inference."
 requires-python = ">=3.11"
 dependencies = [
   "numpy",
@@ -18,8 +18,20 @@ nufft = ["finufft"]
 numba = ["numba"]
 cpp = ["pybind11>=2.12"]
 gpu = ["torch"]
+gpu-baseline = ["torch", "cupy-cuda12x[ctk]", "cufinufft"]
 optics = ["PyCustomFocus", "psf-generator"]
 test = ["pytest"]
+report = ["reportlab", "PyMuPDF", "matplotlib"]
+reproduce = [
+  "finufft",
+  "numba",
+  "pybind11>=2.12",
+  "torch",
+  "pytest",
+  "reportlab",
+  "PyMuPDF",
+  "matplotlib",
+]
 
 [tool.pytest.ini_options]
 pythonpath = ["src"]

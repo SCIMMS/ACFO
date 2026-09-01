@@ -1,0 +1,280 @@
+{
+  "schema": "numagsans-example3-strongest-baseline-protocol-v1",
+  "frozen_utc": "2026-08-25T02:30:00+09:00",
+  "status": "PROSPECTIVE_FROZEN_BEFORE_RTX3090_SCREEN_CONFIRMATION_AND_ORIENTATIONS_2_THROUGH_800",
+  "purpose": "Replace the invalid projected-type-3-only comparison by the strongest accuracy-qualified geometry-aware baseline before rerunning the complete 800-orientation, five-hierarchy workload.",
+  "historical_boundary": {
+    "preserved_result": "benchmark_results/external_validation/numagsans_example3_ensemble_dispatch_29847e0881a4/numagsans_example3_ensemble_dispatch_external_return/evidence/numagsans_example3_ensemble_dispatch.json",
+    "historical_verdict": "FAIL_PRESERVE_FROZEN_RULE",
+    "reason_not_reused": "The old protocol incorrectly declared type-2 ineligible because it did not recognize that every orientation is an affine rotation of the same 20^3 Cartesian lattice.",
+    "seen_before_this_freeze": [
+      "orientation-1 coordinates and weights",
+      "orientation-1 exact 20^3 affine lattice certificate",
+      "orientation-1 local RTX 2070 SUPER type-2 accuracy probes",
+      "orientation-1 local RTX 2070 SUPER linear FFT interpolation probes through pad 24",
+      "the old projected type-3 RTX 3090 result, retained only as historical context"
+    ],
+    "not_seen_before_this_freeze": [
+      "any RTX 3090 timing screen under this protocol",
+      "any independent 30-sample confirmation under this protocol",
+      "type-2 or affine-grid FFT timings for public orientations 2 through 800",
+      "any five-hierarchy result produced by the strongest baseline selected here"
+    ]
+  },
+  "dataset": {
+    "doi": "10.5281/zenodo.17931156",
+    "orientation_count": 800,
+    "sources_per_orientation": 4224,
+    "source_coordinate_scale": 1000000000.0,
+    "source_coordinate_unit_after_scale": "nm",
+    "source_archive": {
+      "name": "IronVortexRemanence.zip",
+      "bytes": 269857730,
+      "md5": "be8de42af0f11b41bf49320b03167c52",
+      "url": "https://zenodo.org/api/records/17931156/files/IronVortexRemanence.zip/content",
+      "magnetic_member_template": "IronVortexRemanence/MagData/Orientation_{index}/m_1.txt",
+      "nuclear_member_template": "IronVortexRemanence/NucData/Orientation_{index}/n_1.txt"
+    },
+    "output_archive": {
+      "name": "NuMagSANS_IVR40.zip",
+      "bytes": 794054325,
+      "md5": "8f7ea2974951796571586b7653df3a3d",
+      "url": "https://zenodo.org/api/records/17931156/files/NuMagSANS_IVR40.zip/content",
+      "sans2d_member_template": "NuMagSANS_Output_IVR40_{archive_index}/SANS_1/SANS2D.csv"
+    }
+  },
+  "packing_hierarchy": [
+    {
+      "id": "dilute",
+      "archive_index": 1,
+      "structure_member": null,
+      "aggregation": "incoherent_observable_sum"
+    },
+    {
+      "id": "packing_0p5_percent",
+      "archive_index": 2,
+      "structure_member": "IronVortexRemanence/StructData05.csv",
+      "local_structure_file": "inputs/numagsans_example3_reduced/StructData05.csv",
+      "aggregation": "coherent_translated_amplitude_sum"
+    },
+    {
+      "id": "packing_5_percent",
+      "archive_index": 3,
+      "structure_member": "IronVortexRemanence/StructData5.csv",
+      "local_structure_file": "inputs/numagsans_example3_reduced/StructData5.csv",
+      "aggregation": "coherent_translated_amplitude_sum"
+    },
+    {
+      "id": "packing_10_percent",
+      "archive_index": 4,
+      "structure_member": "IronVortexRemanence/StructData10.csv",
+      "local_structure_file": "inputs/numagsans_example3_reduced/StructData10.csv",
+      "aggregation": "coherent_translated_amplitude_sum"
+    },
+    {
+      "id": "ordered",
+      "archive_index": 5,
+      "structure_member": "IronVortexRemanence/StructDataOrdered.csv",
+      "local_structure_file": "inputs/numagsans_example3_reduced/StructDataOrdered.csv",
+      "aggregation": "coherent_translated_amplitude_sum"
+    }
+  ],
+  "workload": {
+    "dtype": "complex64",
+    "q_nodes": 1000,
+    "theta_nodes_upstream": 1000,
+    "unique_theta": 999,
+    "q_max_inverse_nm": 2.0,
+    "targets": 999000,
+    "fourier_channels": 4,
+    "detector_observables": 12,
+    "polarization_acfo": [
+      0.0,
+      1.0,
+      0.0
+    ],
+    "acfo_n_r": 384,
+    "acfo_n_z": 41,
+    "source_deposition": "linear",
+    "prefix_orientation_counts": [
+      1,
+      16,
+      32,
+      64,
+      128,
+      256,
+      400,
+      800
+    ],
+    "streaming_required": true,
+    "maximum_allowed_resident_bytes": 23622320128
+  },
+  "harmonic_support": {
+    "selection_rule": "H_kernel(q,R)=ceil(qR)+4 below angular Nyquist",
+    "mode_padding": 4,
+    "miller_recurrence_margin": 64,
+    "required_kernel_backend": "gpu_miller_downward_recurrence",
+    "packing_centers_must_not_enter_qR": true
+  },
+  "affine_lattice_contract": {
+    "basis_anchor_rows_zero_based": [
+      1,
+      5,
+      49
+    ],
+    "expected_shape": [
+      20,
+      20,
+      20
+    ],
+    "expected_dense_sites": 8000,
+    "expected_active_sites": 4224,
+    "expected_spacing_nm": [
+      2.0,
+      2.0,
+      2.0
+    ],
+    "coordinate_reconstruction_tolerance_nm": 1e-08,
+    "normalized_gram_tolerance": 1e-08,
+    "orientation_invariance": "shape, active integer indices, and Gram matrix must match orientation 1; the fitted basis map must be a proper rotation",
+    "coefficient_contract": "scatter N,Mx,My,Mz into four zero-filled 20^3 arrays",
+    "type2_identity": "F(q)=exp(-i q dot center) sum_m c[m] exp(-i wrap(B^T q) dot m), with centered modeord=0 indices",
+    "cost_assignment": "per-orientation basis recovery/certification, B^Tq transform, wrapping, coefficient zero-fill/scatter, all H2D transfers, setpts, execute, and phase correction are timed"
+  },
+  "accuracy_qualification": {
+    "orientation_indices": [
+      1
+    ],
+    "direct_targets": 64,
+    "direct_target_rule": "unique evenly spaced flattened detector indices including both endpoints",
+    "amplitude_relative_l2_max": 0.003,
+    "worst_twelve_output_relative_l2_max": 0.003,
+    "held_out_orientation_indices": [
+      53,
+      106,
+      159,
+      212,
+      265,
+      318,
+      371,
+      424,
+      477,
+      530,
+      583,
+      636,
+      689,
+      742,
+      795,
+      800
+    ],
+    "full_ensemble_selected_baseline_worst_output_relative_l2_max": 0.003,
+    "archived_output_radial_indices": [
+      1,
+      16,
+      64,
+      128,
+      256,
+      400,
+      600,
+      799,
+      999
+    ],
+    "archived_output_worst_relative_l2_max": 0.01,
+    "selection_must_finish_before_timing": true
+  },
+  "baseline_candidates": {
+    "affine_type2": {
+      "eligible": true,
+      "dimension": 3,
+      "n_trans": 4,
+      "modeord": 0,
+      "eps_candidates": [
+        0.01,
+        0.003,
+        0.001
+      ],
+      "selection_rule": "choose the largest eps passing both frozen direct gates; do not use timing"
+    },
+    "projected_type3_control": {
+      "eligible": true,
+      "dimension": 2,
+      "n_trans": 4,
+      "eps_candidates": [
+        0.01,
+        0.003,
+        0.001
+      ],
+      "selection_rule": "choose the largest eps passing both frozen direct gates; do not use timing",
+      "role": "eligible nonuniform control, not the sole comparator"
+    },
+    "dense_periodic_fft": {
+      "eligible": true,
+      "interpolation": "periodic trilinear interpolation of a zero-padded batched 3-D FFT",
+      "pad_factors": [
+        4,
+        8,
+        12,
+        16,
+        20,
+        24,
+        28,
+        32
+      ],
+      "four_channel_transformed_grid_mib": {
+        "4": 15.625,
+        "8": 125.0,
+        "12": 421.875,
+        "16": 1000.0,
+        "20": 1953.125,
+        "24": 3375.0,
+        "28": 5359.375,
+        "32": 8000.0
+      },
+      "qualification_rule": "retain every pad factor passing both frozen direct gates and the remote memory cap; no timing may enter this step",
+      "screen_selection_rule": "among accuracy-qualified pads, select the lowest median end-to-end per-orientation time on the frozen RTX 3090 screen"
+    }
+  },
+  "timing_screen": {
+    "machine": "POSTECH NVIDIA GeForce RTX 3090 only",
+    "orientation_index": 1,
+    "warmups_per_fft_candidate": 3,
+    "samples_per_fft_candidate": 7,
+    "candidate_order": "declared ascending pad order followed by descending pad order allocation warm-up; only the seven forward timed samples enter each median",
+    "included_costs": "basis/target transform, wrap, scatter, H2D, interpolation-map preparation, FFT, interpolation, phase correction, and synchronization",
+    "selection_only": true,
+    "samples_forbidden_from_confirmation": true
+  },
+  "independent_confirmation": {
+    "machine": "same POSTECH NVIDIA GeForce RTX 3090 process after the screen",
+    "orientation_index": 1,
+    "arms": [
+      "acfo",
+      "affine_type2",
+      "projected_type3",
+      "selected_dense_periodic_fft_if_any"
+    ],
+    "pairing": "each baseline is compared with ACFO in a separate deterministic ABBA sequence",
+    "warmups_per_arm_per_pair": 10,
+    "paired_samples_per_arm": 30,
+    "bootstrap_resamples": 10000,
+    "bootstrap_seed": 20260825,
+    "screen_sample_reuse_must_equal": 0,
+    "strongest_baseline_rule": "before loading orientation 2, select the confirmed baseline with the smallest median inclusive time among accuracy-qualified arms",
+    "no_posthoc_hardware_transfer": "RTX 2070 rankings cannot select the RTX 3090 baseline"
+  },
+  "full_ensemble": {
+    "orientation_order": "public archive order 1 through 800",
+    "paired_order": "ACFO then selected baseline for odd orientations; selected baseline then ACFO for even orientations",
+    "five_hierarchy_reducer": "the exact common dilute/packed reducer is timed separately and applied to both arms",
+    "data_decompression_excluded": true,
+    "primary_speed_ratio": "selected strongest baseline total Fourier time divided by ACFO total Fourier time at N_ori=800",
+    "required_lower_95_speed_ratio": 1.0,
+    "unfavorable_result_policy": "preserve and report; never replace the selected baseline after orientation 2 has been loaded"
+  },
+  "external_machine": {
+    "host_label": "POSTECH validation machine",
+    "gpu_required": "NVIDIA GeForce RTX 3090",
+    "conda_environment": "acfo-ncs-gpu",
+    "working_directory": "<ACFO_WORKSPACE>"
+  }
+}

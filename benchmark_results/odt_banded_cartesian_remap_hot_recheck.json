@@ -1,0 +1,258 @@
+{
+  "schema": "odt-banded-cartesian-selected-z-reconstruction-v1",
+  "generated_at_utc": "2026-07-13T12:38:06.383877+00:00",
+  "device_name": "NVIDIA GeForce RTX 2070 SUPER",
+  "variant": "banded_inner96_outer64",
+  "bands": [
+    {
+      "name": "inner",
+      "cap_radial": 96,
+      "cap_phi": 128,
+      "min_fraction": 0.0,
+      "max_fraction": 0.75,
+      "sampling": "outer_power",
+      "outer_power": 2.0,
+      "samples_per_view": 12288,
+      "ring_h_cutoff": 32,
+      "ring_h_modes": 65,
+      "q_samples": 1486848
+    },
+    {
+      "name": "outer",
+      "cap_radial": 64,
+      "cap_phi": 256,
+      "min_fraction": 0.75,
+      "max_fraction": 1.0,
+      "sampling": "outer_power",
+      "outer_power": 2.0,
+      "samples_per_view": 16384,
+      "ring_h_cutoff": 36,
+      "ring_h_modes": 73,
+      "q_samples": 1982464
+    }
+  ],
+  "problem": {
+    "full_object_shape": [
+      256,
+      256,
+      256
+    ],
+    "selected_slices": [
+      1
+    ],
+    "total_views": 121,
+    "cartesian_detector": [
+      320,
+      320
+    ],
+    "iterations": 1,
+    "noise": "none"
+  },
+  "context_build_s": 46.33485670000664,
+  "plan_build_s": 0.39218260000052396,
+  "cases": [
+    {
+      "selected_n_z": 1,
+      "q_samples": 3469312,
+      "cartesian_remap_rel_l2_vs_ideal": 0.003594341455027461,
+      "remap_timing": {
+        "count": 100,
+        "median_s": 0.0018523499966249801,
+        "mean_s": 0.002033387999981642,
+        "min_s": 0.0016204999992623925,
+        "max_s": 0.006164699996588752,
+        "output_q_count": 3469312
+      },
+      "reference_generation": {
+        "generation_total_s": 5.471868499997072,
+        "direct_cufinufft_total_s": 2.8794089000148233,
+        "camera_shape": [
+          121,
+          320,
+          320
+        ],
+        "active_pixels_per_view": 79900,
+        "camera_input_mib": 94.53125,
+        "blocks": [
+          {
+            "group": "ring",
+            "view_start": 0,
+            "view_stop": 8,
+            "direct_cufinufft_s": 0.271359600010328
+          },
+          {
+            "group": "ring",
+            "view_start": 8,
+            "view_stop": 16,
+            "direct_cufinufft_s": 0.14763460001267958
+          },
+          {
+            "group": "ring",
+            "view_start": 16,
+            "view_stop": 24,
+            "direct_cufinufft_s": 0.19741870000143535
+          },
+          {
+            "group": "ring",
+            "view_start": 24,
+            "view_stop": 32,
+            "direct_cufinufft_s": 0.17094900000665803
+          },
+          {
+            "group": "ring",
+            "view_start": 32,
+            "view_stop": 40,
+            "direct_cufinufft_s": 0.16816909999761265
+          },
+          {
+            "group": "ring",
+            "view_start": 40,
+            "view_stop": 48,
+            "direct_cufinufft_s": 0.17815999999584164
+          },
+          {
+            "group": "ring",
+            "view_start": 48,
+            "view_stop": 56,
+            "direct_cufinufft_s": 0.17502369999419898
+          },
+          {
+            "group": "ring",
+            "view_start": 56,
+            "view_stop": 64,
+            "direct_cufinufft_s": 0.25998519999848213
+          },
+          {
+            "group": "ring",
+            "view_start": 64,
+            "view_stop": 72,
+            "direct_cufinufft_s": 0.1546980999992229
+          },
+          {
+            "group": "ring",
+            "view_start": 72,
+            "view_stop": 80,
+            "direct_cufinufft_s": 0.19445969999651425
+          },
+          {
+            "group": "ring",
+            "view_start": 80,
+            "view_stop": 88,
+            "direct_cufinufft_s": 0.15765330000431277
+          },
+          {
+            "group": "ring",
+            "view_start": 88,
+            "view_stop": 96,
+            "direct_cufinufft_s": 0.16407099999196362
+          },
+          {
+            "group": "ring",
+            "view_start": 96,
+            "view_stop": 104,
+            "direct_cufinufft_s": 0.1738247000030242
+          },
+          {
+            "group": "ring",
+            "view_start": 104,
+            "view_stop": 112,
+            "direct_cufinufft_s": 0.16159470001002774
+          },
+          {
+            "group": "ring",
+            "view_start": 112,
+            "view_stop": 120,
+            "direct_cufinufft_s": 0.17375289999472443
+          },
+          {
+            "group": "axis",
+            "view_start": 0,
+            "view_stop": 1,
+            "direct_cufinufft_s": 0.13065459999779705
+          }
+        ]
+      },
+      "ideal": {
+        "input": "ideal_banded",
+        "iterations": 1,
+        "step": 5.560851075441336e-11,
+        "lipschitz_with_margin": 17982858854.4,
+        "adaptive_restart_count": 0,
+        "object_rel_l2": 0.8371221423149109,
+        "data_residual": 0.7884454727172852,
+        "core_iteration_timing": {
+          "count": 1,
+          "total_s": 0.15664630000537727,
+          "mean_s": 0.15664630000537727,
+          "median_s": 0.15664630000537727,
+          "p05_s": 0.15664630000537727,
+          "p95_s": 0.15664630000537727,
+          "min_s": 0.15664630000537727,
+          "max_s": 0.15664630000537727
+        },
+        "core_solve_s": 0.15664630000537727,
+        "wall_solve_s_including_diagnostics": 0.2540785000019241
+      },
+      "cartesian_remap": {
+        "input": "cartesian_to_banded",
+        "iterations": 1,
+        "step": 5.560851075441336e-11,
+        "lipschitz_with_margin": 17982858854.4,
+        "adaptive_restart_count": 0,
+        "object_rel_l2": 0.8371227979660034,
+        "data_residual": 0.7883458137512207,
+        "core_iteration_timing": {
+          "count": 1,
+          "total_s": 0.07592239999212325,
+          "mean_s": 0.07592239999212325,
+          "median_s": 0.07592239999212325,
+          "p05_s": 0.07592239999212325,
+          "p95_s": 0.07592239999212325,
+          "min_s": 0.07592239999212325,
+          "max_s": 0.07592239999212325
+        },
+        "core_solve_s": 0.07592239999212325,
+        "wall_solve_s_including_diagnostics": 0.16740829999616835
+      },
+      "remap_vs_ideal_reconstruction_rel_l2": 0.0006807156023569405,
+      "ideal_history": [
+        {
+          "input": "ideal_banded",
+          "iteration": 0,
+          "data_residual": 1.0,
+          "object_rel_l2": 1.0,
+          "core_cumulative_s": 0.0
+        },
+        {
+          "input": "ideal_banded",
+          "iteration": 1,
+          "data_residual": 0.7884454727172852,
+          "object_rel_l2": 0.8371221423149109,
+          "core_cumulative_s": 0.15664630000537727
+        }
+      ],
+      "remap_history": [
+        {
+          "input": "cartesian_to_banded",
+          "iteration": 0,
+          "data_residual": 1.0,
+          "object_rel_l2": 1.0,
+          "core_cumulative_s": 0.0
+        },
+        {
+          "input": "cartesian_to_banded",
+          "iteration": 1,
+          "data_residual": 0.7883458137512207,
+          "object_rel_l2": 0.8371227979660034,
+          "core_cumulative_s": 0.07592239999212325
+        }
+      ]
+    }
+  ],
+  "pytorch_peak_allocated_mib": 363.29052734375,
+  "claim_boundary": [
+    "The physical input remains a Cartesian complex camera field; banded polar samples are cached bilinear interpolants.",
+    "The direct Cartesian reference is generated with chunked cuFINUFFT and is validation-only setup work.",
+    "No acquisition transfer, hologram demodulation, or measurement noise is included."
+  ]
+}
