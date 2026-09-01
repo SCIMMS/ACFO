@@ -1,6 +1,9 @@
 from __future__ import annotations
 
 import numpy as np
+import pytest
+
+pytest.importorskip("finufft", reason="FINUFFT is an optional reference dependency")
 
 from waxs_cake import (
     PreparedAxisymmetricOperator,

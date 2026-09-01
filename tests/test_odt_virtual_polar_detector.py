@@ -4,7 +4,9 @@ import sys
 from pathlib import Path
 
 import numpy as np
-import torch
+import pytest
+
+torch = pytest.importorskip("torch", reason="PyTorch is an optional ODT dependency")
 
 
 ROOT = Path(__file__).resolve().parents[1]
