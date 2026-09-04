@@ -1,0 +1,161 @@
+{
+  "archive_separator": "! separates an archive from a member, including nested archives",
+  "sources": [
+    {
+      "original_source": "reports/acfo_operator_storyline_external_audit_20260904/server36/system_audit.json",
+      "original_sha256": "dc5b93db7d4887fa258903c6d3bacc32ff39b21a34d0aa24e9e42470b7b3291e",
+      "public_locations": [
+        "audits/server36/system_audit.json"
+      ]
+    },
+    {
+      "original_source": "reports/acfo_operator_storyline_external_audit_20260904/server59/system_audit.json",
+      "original_sha256": "b87327f97bf331e411179a0640c4cb6076ac9202e605dc998ba1371faa94b718",
+      "public_locations": [
+        "audits/server59/system_audit.json"
+      ]
+    },
+    {
+      "original_source": "reports/acfo_operator_storyline_external_audit_20260904/server36/components/waxs/waxs_100_state_external_return/environment.json",
+      "original_sha256": "753fd10b5d25d63c96dfba1e8672281ef36ac7fdbfe5a0400f7adbabfdf76b19",
+      "public_locations": [
+        "evidence/server36_original_return.public.zip!outputs/component_returns/waxs/waxs_100_state_full_external_return.zip!waxs_100_state_external_return/environment.json",
+        "evidence/server36_original_return.public.zip!outputs/partial_component_evidence/waxs/evidence/environment.json"
+      ]
+    },
+    {
+      "original_source": "reports/acfo_operator_storyline_external_audit_20260904/server59/components/waxs/waxs_100_state_external_return/environment.json",
+      "original_sha256": "2e0420e86b67a37caf223855dac7d94149471204abc654817db3563d490b1d8f",
+      "public_locations": [
+        "evidence/server59_original_return.public.zip!outputs/component_returns/waxs/waxs_100_state_full_external_return.zip!waxs_100_state_external_return/environment.json",
+        "evidence/server59_original_return.public.zip!outputs/partial_component_evidence/waxs/evidence/environment.json"
+      ]
+    },
+    {
+      "original_source": "reports/acfo_operator_storyline_external_audit_20260904/server36/extracted/outputs/extension/outputs/high_na_correspondence.json",
+      "original_sha256": "ff74e7e7b811447287b7255a73895d3db267dd925ff377d225d807e3f3a38d37",
+      "public_locations": [
+        "evidence/server36_original_return.public.zip!outputs/extension/outputs/high_na_correspondence.json"
+      ]
+    },
+    {
+      "original_source": "reports/acfo_operator_storyline_external_audit_20260904/server36/extracted/outputs/extension/outputs/high_na_support.json",
+      "original_sha256": "0243ea2faef7106fd42457e8179d60495fb3f57f40678393550a24a845fe1fc2",
+      "public_locations": [
+        "evidence/server36_original_return.public.zip!outputs/extension/outputs/high_na_support.json"
+      ]
+    },
+    {
+      "original_source": "reports/acfo_operator_storyline_external_audit_20260904/server36/components/waxs/waxs_100_state_external_return/seed_2026072611.csv",
+      "original_sha256": "6b7acc100d496ebc5e0ea9039c8381995c3342c3eb54d5d47a2b5723976eb9de",
+      "public_locations": [
+        "evidence/server36_original_return.public.zip!outputs/component_returns/waxs/waxs_100_state_full_external_return.zip!waxs_100_state_external_return/seed_2026072611.csv",
+        "evidence/server36_original_return.public.zip!outputs/partial_component_evidence/waxs/evidence/seed_2026072611.csv"
+      ]
+    },
+    {
+      "original_source": "reports/acfo_operator_storyline_external_audit_20260904/server36/components/waxs/waxs_100_state_external_return/seed_2026072612.csv",
+      "original_sha256": "92776ac53af0dd728e0545704a84f361384ba111e77decefa9e4889a02129c4a",
+      "public_locations": [
+        "evidence/server36_original_return.public.zip!outputs/component_returns/waxs/waxs_100_state_full_external_return.zip!waxs_100_state_external_return/seed_2026072612.csv",
+        "evidence/server36_original_return.public.zip!outputs/partial_component_evidence/waxs/evidence/seed_2026072612.csv"
+      ]
+    },
+    {
+      "original_source": "reports/acfo_operator_storyline_external_audit_20260904/server36/components/waxs/waxs_100_state_external_return/seed_2026072613.csv",
+      "original_sha256": "f6a6d2d022353642fedc45f55d7c467055ec152a344f677540f64ad4e33bc6c5",
+      "public_locations": [
+        "evidence/server36_original_return.public.zip!outputs/component_returns/waxs/waxs_100_state_full_external_return.zip!waxs_100_state_external_return/seed_2026072613.csv",
+        "evidence/server36_original_return.public.zip!outputs/partial_component_evidence/waxs/evidence/seed_2026072613.csv"
+      ]
+    },
+    {
+      "original_source": "reports/acfo_operator_storyline_external_audit_20260904/server59/extracted/outputs/extension/outputs/high_na_correspondence.json",
+      "original_sha256": "82ce00ab7be5d3d81f030ef74a4980a21c5fbe6c70cdf04b8ab80810c8b2d23b",
+      "public_locations": [
+        "evidence/server59_original_return.public.zip!outputs/extension/outputs/high_na_correspondence.json"
+      ]
+    },
+    {
+      "original_source": "reports/acfo_operator_storyline_external_audit_20260904/server59/extracted/outputs/extension/outputs/high_na_support.json",
+      "original_sha256": "e309503e338c973447ad4a56c0550f6ccdaec6769e0213b553d1341ffe35a32a",
+      "public_locations": [
+        "evidence/server59_original_return.public.zip!outputs/extension/outputs/high_na_support.json"
+      ]
+    },
+    {
+      "original_source": "reports/acfo_operator_storyline_external_audit_20260904/server59/components/waxs/waxs_100_state_external_return/seed_2026072611.csv",
+      "original_sha256": "6f8834aacd8bac972f1b7aea085a5169022f4c2011a6f17faf4bd305df9cc470",
+      "public_locations": [
+        "evidence/server59_original_return.public.zip!outputs/component_returns/waxs/waxs_100_state_full_external_return.zip!waxs_100_state_external_return/seed_2026072611.csv",
+        "evidence/server59_original_return.public.zip!outputs/partial_component_evidence/waxs/evidence/seed_2026072611.csv"
+      ]
+    },
+    {
+      "original_source": "reports/acfo_operator_storyline_external_audit_20260904/server59/components/waxs/waxs_100_state_external_return/seed_2026072612.csv",
+      "original_sha256": "4c020c85d2ee620b4fa45e697da3b0195600123b5ba2024134d06cf07dbe1ce5",
+      "public_locations": [
+        "evidence/server59_original_return.public.zip!outputs/component_returns/waxs/waxs_100_state_full_external_return.zip!waxs_100_state_external_return/seed_2026072612.csv",
+        "evidence/server59_original_return.public.zip!outputs/partial_component_evidence/waxs/evidence/seed_2026072612.csv"
+      ]
+    },
+    {
+      "original_source": "reports/acfo_operator_storyline_external_audit_20260904/server59/components/waxs/waxs_100_state_external_return/seed_2026072613.csv",
+      "original_sha256": "ef867474e8661314bf29190f4b1205ac9b04b1f51af82d96c431b4d7c30399ac",
+      "public_locations": [
+        "evidence/server59_original_return.public.zip!outputs/component_returns/waxs/waxs_100_state_full_external_return.zip!waxs_100_state_external_return/seed_2026072613.csv",
+        "evidence/server59_original_return.public.zip!outputs/partial_component_evidence/waxs/evidence/seed_2026072613.csv"
+      ]
+    },
+    {
+      "original_source": "reports/acfo_operator_storyline_external_audit_20260904/server36/extracted/outputs/extension/reports/acfo_common_radial_cpswf_v1/summary.json",
+      "original_sha256": "9319781851d7e14a5be8a3cb7820ee34d0e0153f9433c5cb328c71e060a58afb",
+      "public_locations": [
+        "evidence/server36_original_return.public.zip!outputs/extension/reports/acfo_common_radial_cpswf_v1/summary.json"
+      ]
+    },
+    {
+      "original_source": "reports/acfo_operator_storyline_external_audit_20260904/server59/extracted/outputs/extension/reports/acfo_common_radial_cpswf_v1/summary.json",
+      "original_sha256": "d03a7333e64efbd94b5c613fbdc6b6360f46374a83ce9681da0257a56a5f4300",
+      "public_locations": [
+        "evidence/server59_original_return.public.zip!outputs/extension/reports/acfo_common_radial_cpswf_v1/summary.json"
+      ]
+    },
+    {
+      "original_source": "reports/acfo_operator_storyline_external_audit_20260904/server36/extracted/outputs/composite_regimes.json",
+      "original_sha256": "4b6e8ab04cf66ea580a1e07b78bd86d4a3e6e7403af5b1691a891109bf5bd011",
+      "public_locations": [
+        "evidence/server36_original_return.public.zip!outputs/composite_regimes.json",
+        "evidence/server36_original_return.public.zip!outputs/logs/composite_regimes.stdout.log"
+      ]
+    },
+    {
+      "original_source": "reports/acfo_operator_storyline_external_audit_20260904/server36/components/composite/outputs/translation_inference.json",
+      "original_sha256": "b49b284a916d2ef6431f27ebab43ff168f6786052f96cf12fd4e541d003402aa",
+      "public_locations": [
+        "evidence/server36_original_return.public.zip!outputs/component_returns/composite/acfo_layered_vector_composite_external_return.zip!outputs/translation_inference.json",
+        "evidence/server36_original_return.public.zip!outputs/component_returns/composite/acfo_layered_vector_composite_external_return.zip!outputs/translation_inference.log",
+        "evidence/server36_original_return.public.zip!outputs/partial_component_evidence/composite/outputs/translation_inference.json",
+        "evidence/server36_original_return.public.zip!outputs/partial_component_evidence/composite/outputs/translation_inference.log"
+      ]
+    },
+    {
+      "original_source": "reports/acfo_operator_storyline_external_audit_20260904/server59/extracted/outputs/composite_regimes.json",
+      "original_sha256": "d60f2f0c56b0b73f3a250c0d22bfe42f0cff34a6eb6e1905fbaecc2c52ff05b9",
+      "public_locations": [
+        "evidence/server59_original_return.public.zip!outputs/composite_regimes.json",
+        "evidence/server59_original_return.public.zip!outputs/logs/composite_regimes.stdout.log"
+      ]
+    },
+    {
+      "original_source": "reports/acfo_operator_storyline_external_audit_20260904/server59/components/composite/outputs/translation_inference.json",
+      "original_sha256": "b6a2725996be25cf84bf0848853e483a1d810bff2c07a8c88113883ea6394f6a",
+      "public_locations": [
+        "evidence/server59_original_return.public.zip!outputs/component_returns/composite/acfo_layered_vector_composite_external_return.zip!outputs/translation_inference.json",
+        "evidence/server59_original_return.public.zip!outputs/component_returns/composite/acfo_layered_vector_composite_external_return.zip!outputs/translation_inference.log",
+        "evidence/server59_original_return.public.zip!outputs/partial_component_evidence/composite/outputs/translation_inference.json",
+        "evidence/server59_original_return.public.zip!outputs/partial_component_evidence/composite/outputs/translation_inference.log"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "schema": "acfo-operator-storyline-claim-freeze-v2",
+  "status": "frozen_before_external_benchmark",
+  "freeze_context": "Existing local pilots and earlier external results informed this design. This is prospective external replication, not a preregistration predating all exploration.",
+  "inherited_claim": "legacy/ACFO_FINAL_MULTISYSTEM_CLAIM_FREEZE.json",
+  "immutability": {"post_result_arm_selection_allowed": false, "post_result_threshold_change_allowed": false, "unfavourable_results_must_be_returned": true},
+  "primary_metrics": {
+    "high_na": ["scalar/vector relative L2 versus identical-node direct quadrature", "effective-pupil support correctness"],
+    "waxs": ["all inherited candidate-ranking metrics", "strongest eligible Type-3 paired timing", "planar Type-1 geometry boundary"],
+    "odt": ["all inherited native-forward/adjoint and Cartesian-Toeplitz metrics", "coupled modal R*G R versus the same physical forward-adjoint composition", "off-mode deletion negative control"],
+    "cpswf": ["weighted spectral radial error", "CPSWF and matched shared-SVD ranks", "independent single-family SVD lower bound", "density-metric radial error", "full-chain probe error", "fresh/cache action identity", "preparation breakdown", "retained bytes", "full-support resource estimate"],
+    "composite": ["all inherited direct/action/adjoint/JVP/VJP/normal/recovery metrics", "isolated balanced timing", "setup, hot, storage and amortization"]
+  },
+  "success_failure_thresholds": {
+    "inherited": "Exactly as archived component protocols and the inherited claim-freeze. Inconsistent or stricter inherited gates remain visible; they cannot be waived after results.",
+    "high_na_field_relative_l2_max": 1e-6,
+    "high_na_support": "All original support-script acceptance criteria; geometric-only and raw-Jones controls retain their prespecified failures.",
+    "radial": "All 45 common radial cases must pass their individual epsilon, weighted spectral and padding criteria; rank gap is an outcome, not a pass criterion.",
+    "physical": {"probe_error_max": 1e-7, "dot_error_max": 1e-12, "normal_composition_max": 1e-12, "small_direct_max": 1e-11},
+    "api": {"radial_tolerance": 1e-8, "full_chain_probe_max": 1e-7, "cached_action_max": 1e-13, "normal_composition_max": 1e-12, "legacy_action_max": 1e-12},
+    "negative_controls": "Under-resolution, stale/corrupt cache, budget rejection, nonnegative weights, create-only cache and standalone normal ownership tests must pass.",
+    "full_support": "Accounting completion only. Exceeding the prespecified dense-normal budget is a reported representation limit, never numerical validation or an observed OOM.",
+    "performance_sign_is_not_integrity": true
+  },
+  "machine_specific_allowed_arms": {
+    "server36_full": ["high_na", "waxs_full", "planar", "odt_full_256", "common_radial", "physical_modal_normal", "geometry_api", "negative_tests", "support_frontier_accounting", "composite_full", "composite_all_regimes"],
+    "server59_replication": ["high_na", "waxs_full", "planar", "odt_full_256_with_prespecified_oom_recording", "common_radial", "physical_modal_normal", "geometry_api", "negative_tests", "support_frontier_accounting", "composite_full", "composite_all_regimes"]
+  },
+  "main_text_eligibility": {
+    "high_na": "Known-case correspondence and accuracy illustration with prior-art attribution. Timing fields are diagnostic only.",
+    "waxs": "Inherited identical curved-target, candidate and strongest-eligible-comparator rules. Physical planar detector coordinates do not by themselves make exact Ewald targets a Cartesian reciprocal grid.",
+    "odt": "Report native Cartesian Toeplitz separately from the selected-mode physical modal normal. Every compiled normal comparison includes an equivalent dense-radial compiled normal and shared-SVD arm; its within-arm composition ratio is not a CPSWF-specific or end-to-end reconstruction speedup.",
+    "cpswf": "Selected-mode representation preparation, accuracy, observed ranks and checked reuse, if both returns pass. No near-optimality claim outside tested metrics. Default density rank selection is conservative, not minimal. Timings from five/seven-trial CPU pilot designs remain descriptive; no stable CPSWF headline speed ratio is preauthorized.",
+    "composite": "Inherited same-chain materialization and CPU-only timing conditions, with direct numerical reference, preparation and break-even.",
+    "forbidden": ["High-NA speed or invention-of-vortex-series claim", "universal CPSWF superiority to SVD", "full original-grid active-support validation from selected modes or byte estimates", "treating retained-array bytes as peak RSS", "equating Cartesian Toeplitz with a coupled modal Gram", "unqualified SO(2) equivariance of mode-coupling physics", "unexecuted GPU CPSWF speedup", "cross-machine absolute speed ratio", "measured reconstruction or thermodynamic inference from synthetic operator probes"]
+  },
+  "publication_release": {"both_verified_machine_returns_required": true, "all_failures_and_unfavourable_arms_retained": true, "automatic_manuscript_claim_promotion": false}
+}

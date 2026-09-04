@@ -1,0 +1,1643 @@
+{
+  "schema": "acfo-radial-physical-transfer-audit-v1",
+  "passed": true,
+  "check_count": 383,
+  "passed_count": 383,
+  "scope": "Independent receipt, source-coordinate, rank, density-error and metric audit.\n\nNo new physical-chain module is imported. Direct-DFT and full-chain numerical\nchecks live in the validation run and independent-formula unit tests; this\naudit does not claim a second full reconstruction of every chain output.\n",
+  "checks": [
+    {
+      "check": "sha256:validation_contracts/acfo_radial_physical_transfer_v1.json",
+      "passed": true
+    },
+    {
+      "check": "sha256:reports/acfo_common_radial_cpswf_v1/summary.json",
+      "passed": true
+    },
+    {
+      "check": "sha256:reports/acfo_common_radial_cpswf_v1/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "sha256:reports/acfo_common_radial_cpswf_v1/coordinates.npz",
+      "passed": true
+    },
+    {
+      "check": "sha256:benchmark_results/aidt_diatom_public_contract.npz",
+      "passed": true
+    },
+    {
+      "check": "sha256:benchmark_results/aidt_acfo_full1024polar_optimized_validation_rtx2070.json",
+      "passed": true
+    },
+    {
+      "check": "sha256:benchmark_results/aidt_acfo_physical_torch_rtx2070_public256.json",
+      "passed": true
+    },
+    {
+      "check": "sha256:reports/acfo_common_radial_cpswf_v1/q350_m0.npz",
+      "passed": true
+    },
+    {
+      "check": "sha256:reports/acfo_common_radial_cpswf_v1/q350_m4.npz",
+      "passed": true
+    },
+    {
+      "check": "sha256:reports/acfo_common_radial_cpswf_v1/q350_m16.npz",
+      "passed": true
+    },
+    {
+      "check": "sha256:reports/acfo_common_radial_cpswf_v1/q350_m64.npz",
+      "passed": true
+    },
+    {
+      "check": "sha256:reports/acfo_common_radial_cpswf_v1/q350_m128.npz",
+      "passed": true
+    },
+    {
+      "check": "sha256:reports/acfo_radial_physical_transfer_v1/single_illumination_single_depth_coordinates.npz",
+      "passed": true
+    },
+    {
+      "check": "sha256:reports/acfo_radial_physical_transfer_v1/three_illuminations_five_depths_coordinates.npz",
+      "passed": true
+    },
+    {
+      "check": "sha256:reports/acfo_radial_physical_transfer_v1/summary.json",
+      "passed": true
+    },
+    {
+      "check": "sha256:reports/acfo_radial_physical_transfer_v1/protocol.json",
+      "passed": true
+    },
+    {
+      "check": "sha256:scripts/validate_acfo_radial_physical_transfer.py",
+      "passed": true
+    },
+    {
+      "check": "sha256:src/waxs_cake/radial_aidt.py",
+      "passed": true
+    },
+    {
+      "check": "sha256:src/waxs_cake/radial_cpswf.py",
+      "passed": true
+    },
+    {
+      "check": "sha256:src/waxs_cake/aidt_acfo.py",
+      "passed": true
+    },
+    {
+      "check": "sha256:tests/test_radial_aidt.py",
+      "passed": true
+    },
+    {
+      "check": "protocol digest",
+      "passed": true
+    },
+    {
+      "check": "case completeness",
+      "passed": true
+    },
+    {
+      "check": "measurement contract source digest",
+      "passed": true
+    },
+    {
+      "check": "rank unchanged 0 cpswf",
+      "passed": true
+    },
+    {
+      "check": "density error 0 cpswf",
+      "passed": true
+    },
+    {
+      "check": "rank unchanged 0 shared_svd",
+      "passed": true
+    },
+    {
+      "check": "density error 0 shared_svd",
+      "passed": true
+    },
+    {
+      "check": "rank unchanged 4 cpswf",
+      "passed": true
+    },
+    {
+      "check": "density error 4 cpswf",
+      "passed": true
+    },
+    {
+      "check": "rank unchanged 4 shared_svd",
+      "passed": true
+    },
+    {
+      "check": "density error 4 shared_svd",
+      "passed": true
+    },
+    {
+      "check": "rank unchanged 16 cpswf",
+      "passed": true
+    },
+    {
+      "check": "density error 16 cpswf",
+      "passed": true
+    },
+    {
+      "check": "rank unchanged 16 shared_svd",
+      "passed": true
+    },
+    {
+      "check": "density error 16 shared_svd",
+      "passed": true
+    },
+    {
+      "check": "rank unchanged 64 cpswf",
+      "passed": true
+    },
+    {
+      "check": "density error 64 cpswf",
+      "passed": true
+    },
+    {
+      "check": "rank unchanged 64 shared_svd",
+      "passed": true
+    },
+    {
+      "check": "density error 64 shared_svd",
+      "passed": true
+    },
+    {
+      "check": "rank unchanged 128 cpswf",
+      "passed": true
+    },
+    {
+      "check": "density error 128 cpswf",
+      "passed": true
+    },
+    {
+      "check": "rank unchanged 128 shared_svd",
+      "passed": true
+    },
+    {
+      "check": "density error 128 shared_svd",
+      "passed": true
+    },
+    {
+      "check": "small direct reference",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth sources",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth depth selection",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth unchanged dz",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth area metric",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth angular modes",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth angular grid",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth transfer bytes",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depthidentity Gram bytes",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depthidentity Hermitian",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depthidentity transfer composition",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depthidentity direct selected-q lift",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depthpositive_angular_illumination_profile Gram bytes",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depthpositive_angular_illumination_profile Hermitian",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depthpositive_angular_illumination_profile transfer composition",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depthpositive_angular_illumination_profile direct selected-q lift",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth all probes",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth0denseforward_relative_l2_vs_dense",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth0denseadjoint_relative_l2_vs_dense",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth0dense dot",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth0dense weight completeness",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth0denseidentity normal error",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth0denseidentity compiled agreement",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth0denseidentity PSD probe",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth0densepositive_angular_illumination_profile normal error",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth0densepositive_angular_illumination_profile compiled agreement",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth0densepositive_angular_illumination_profile PSD probe",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth0shared_svdforward_relative_l2_vs_dense",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth0shared_svdadjoint_relative_l2_vs_dense",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth0shared_svd dot",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth0shared_svd weight completeness",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth0shared_svdidentity normal error",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth0shared_svdidentity compiled agreement",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth0shared_svdidentity PSD probe",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth0shared_svdpositive_angular_illumination_profile normal error",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth0shared_svdpositive_angular_illumination_profile compiled agreement",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth0shared_svdpositive_angular_illumination_profile PSD probe",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth0cpswfforward_relative_l2_vs_dense",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth0cpswfadjoint_relative_l2_vs_dense",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth0cpswf dot",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth0cpswf weight completeness",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth0cpswfidentity normal error",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth0cpswfidentity compiled agreement",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth0cpswfidentity PSD probe",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth0cpswfpositive_angular_illumination_profile normal error",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth0cpswfpositive_angular_illumination_profile compiled agreement",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth0cpswfpositive_angular_illumination_profile PSD probe",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth1denseforward_relative_l2_vs_dense",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth1denseadjoint_relative_l2_vs_dense",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth1dense dot",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth1dense weight completeness",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth1denseidentity normal error",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth1denseidentity compiled agreement",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth1denseidentity PSD probe",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth1densepositive_angular_illumination_profile normal error",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth1densepositive_angular_illumination_profile compiled agreement",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth1densepositive_angular_illumination_profile PSD probe",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth1shared_svdforward_relative_l2_vs_dense",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth1shared_svdadjoint_relative_l2_vs_dense",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth1shared_svd dot",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth1shared_svd weight completeness",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth1shared_svdidentity normal error",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth1shared_svdidentity compiled agreement",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth1shared_svdidentity PSD probe",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth1shared_svdpositive_angular_illumination_profile normal error",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth1shared_svdpositive_angular_illumination_profile compiled agreement",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth1shared_svdpositive_angular_illumination_profile PSD probe",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth1cpswfforward_relative_l2_vs_dense",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth1cpswfadjoint_relative_l2_vs_dense",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth1cpswf dot",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth1cpswf weight completeness",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth1cpswfidentity normal error",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth1cpswfidentity compiled agreement",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth1cpswfidentity PSD probe",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth1cpswfpositive_angular_illumination_profile normal error",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth1cpswfpositive_angular_illumination_profile compiled agreement",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth1cpswfpositive_angular_illumination_profile PSD probe",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth2denseforward_relative_l2_vs_dense",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth2denseadjoint_relative_l2_vs_dense",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth2dense dot",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth2dense weight completeness",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth2denseidentity normal error",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth2denseidentity compiled agreement",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth2denseidentity PSD probe",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth2densepositive_angular_illumination_profile normal error",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth2densepositive_angular_illumination_profile compiled agreement",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth2densepositive_angular_illumination_profile PSD probe",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth2shared_svdforward_relative_l2_vs_dense",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth2shared_svdadjoint_relative_l2_vs_dense",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth2shared_svd dot",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth2shared_svd weight completeness",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth2shared_svdidentity normal error",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth2shared_svdidentity compiled agreement",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth2shared_svdidentity PSD probe",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth2shared_svdpositive_angular_illumination_profile normal error",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth2shared_svdpositive_angular_illumination_profile compiled agreement",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth2shared_svdpositive_angular_illumination_profile PSD probe",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth2cpswfforward_relative_l2_vs_dense",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth2cpswfadjoint_relative_l2_vs_dense",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth2cpswf dot",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth2cpswf weight completeness",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth2cpswfidentity normal error",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth2cpswfidentity compiled agreement",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth2cpswfidentity PSD probe",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth2cpswfpositive_angular_illumination_profile normal error",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth2cpswfpositive_angular_illumination_profile compiled agreement",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depth2cpswfpositive_angular_illumination_profile PSD probe",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depthdense/forward timing count",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depthdense/forward positive timing",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depthdense/forward median",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depthdense/forward matched ratio",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depthdense/adjoint timing count",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depthdense/adjoint positive timing",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depthdense/adjoint median",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depthdense/adjoint matched ratio",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depthdense/normal_composed timing count",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depthdense/normal_composed positive timing",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depthdense/normal_composed median",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depthdense/normal_composed matched ratio",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depthdense/normal_compiled timing count",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depthdense/normal_compiled positive timing",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depthdense/normal_compiled median",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depthdense/normal_compiled matched ratio",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depthdense/normal_compiled compilation ratio",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depthshared_svd/forward timing count",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depthshared_svd/forward positive timing",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depthshared_svd/forward median",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depthshared_svd/forward matched ratio",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depthshared_svd/adjoint timing count",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depthshared_svd/adjoint positive timing",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depthshared_svd/adjoint median",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depthshared_svd/adjoint matched ratio",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depthshared_svd/normal_composed timing count",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depthshared_svd/normal_composed positive timing",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depthshared_svd/normal_composed median",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depthshared_svd/normal_composed matched ratio",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depthshared_svd/normal_compiled timing count",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depthshared_svd/normal_compiled positive timing",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depthshared_svd/normal_compiled median",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depthshared_svd/normal_compiled matched ratio",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depthshared_svd/normal_compiled compilation ratio",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depthcpswf/forward timing count",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depthcpswf/forward positive timing",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depthcpswf/forward median",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depthcpswf/forward matched ratio",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depthcpswf/adjoint timing count",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depthcpswf/adjoint positive timing",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depthcpswf/adjoint median",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depthcpswf/adjoint matched ratio",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depthcpswf/normal_composed timing count",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depthcpswf/normal_composed positive timing",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depthcpswf/normal_composed median",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depthcpswf/normal_composed matched ratio",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depthcpswf/normal_compiled timing count",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depthcpswf/normal_compiled positive timing",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depthcpswf/normal_compiled median",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depthcpswf/normal_compiled matched ratio",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depthcpswf/normal_compiled compilation ratio",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depthdense radial bytes",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depthdense full cache",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depthdense standalone normal sufficient cache",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depthdense complete family cache",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depthshared_svd radial bytes",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depthshared_svd full cache",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depthshared_svd standalone normal sufficient cache",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depthshared_svd complete family cache",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depthcpswf radial bytes",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depthcpswf full cache",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depthcpswf standalone normal sufficient cache",
+      "passed": true
+    },
+    {
+      "check": "single_illumination_single_depthcpswf complete family cache",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths sources",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths depth selection",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths unchanged dz",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths area metric",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths angular modes",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths angular grid",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths transfer bytes",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depthsidentity Gram bytes",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depthsidentity Hermitian",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depthsidentity transfer composition",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depthsidentity direct selected-q lift",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depthspositive_angular_illumination_profile Gram bytes",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depthspositive_angular_illumination_profile Hermitian",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depthspositive_angular_illumination_profile transfer composition",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depthspositive_angular_illumination_profile direct selected-q lift",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths all probes",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths0denseforward_relative_l2_vs_dense",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths0denseadjoint_relative_l2_vs_dense",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths0dense dot",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths0dense weight completeness",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths0denseidentity normal error",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths0denseidentity compiled agreement",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths0denseidentity PSD probe",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths0densepositive_angular_illumination_profile normal error",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths0densepositive_angular_illumination_profile compiled agreement",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths0densepositive_angular_illumination_profile PSD probe",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths0shared_svdforward_relative_l2_vs_dense",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths0shared_svdadjoint_relative_l2_vs_dense",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths0shared_svd dot",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths0shared_svd weight completeness",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths0shared_svdidentity normal error",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths0shared_svdidentity compiled agreement",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths0shared_svdidentity PSD probe",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths0shared_svdpositive_angular_illumination_profile normal error",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths0shared_svdpositive_angular_illumination_profile compiled agreement",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths0shared_svdpositive_angular_illumination_profile PSD probe",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths0cpswfforward_relative_l2_vs_dense",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths0cpswfadjoint_relative_l2_vs_dense",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths0cpswf dot",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths0cpswf weight completeness",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths0cpswfidentity normal error",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths0cpswfidentity compiled agreement",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths0cpswfidentity PSD probe",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths0cpswfpositive_angular_illumination_profile normal error",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths0cpswfpositive_angular_illumination_profile compiled agreement",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths0cpswfpositive_angular_illumination_profile PSD probe",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths1denseforward_relative_l2_vs_dense",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths1denseadjoint_relative_l2_vs_dense",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths1dense dot",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths1dense weight completeness",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths1denseidentity normal error",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths1denseidentity compiled agreement",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths1denseidentity PSD probe",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths1densepositive_angular_illumination_profile normal error",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths1densepositive_angular_illumination_profile compiled agreement",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths1densepositive_angular_illumination_profile PSD probe",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths1shared_svdforward_relative_l2_vs_dense",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths1shared_svdadjoint_relative_l2_vs_dense",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths1shared_svd dot",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths1shared_svd weight completeness",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths1shared_svdidentity normal error",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths1shared_svdidentity compiled agreement",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths1shared_svdidentity PSD probe",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths1shared_svdpositive_angular_illumination_profile normal error",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths1shared_svdpositive_angular_illumination_profile compiled agreement",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths1shared_svdpositive_angular_illumination_profile PSD probe",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths1cpswfforward_relative_l2_vs_dense",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths1cpswfadjoint_relative_l2_vs_dense",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths1cpswf dot",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths1cpswf weight completeness",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths1cpswfidentity normal error",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths1cpswfidentity compiled agreement",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths1cpswfidentity PSD probe",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths1cpswfpositive_angular_illumination_profile normal error",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths1cpswfpositive_angular_illumination_profile compiled agreement",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths1cpswfpositive_angular_illumination_profile PSD probe",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths2denseforward_relative_l2_vs_dense",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths2denseadjoint_relative_l2_vs_dense",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths2dense dot",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths2dense weight completeness",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths2denseidentity normal error",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths2denseidentity compiled agreement",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths2denseidentity PSD probe",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths2densepositive_angular_illumination_profile normal error",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths2densepositive_angular_illumination_profile compiled agreement",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths2densepositive_angular_illumination_profile PSD probe",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths2shared_svdforward_relative_l2_vs_dense",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths2shared_svdadjoint_relative_l2_vs_dense",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths2shared_svd dot",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths2shared_svd weight completeness",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths2shared_svdidentity normal error",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths2shared_svdidentity compiled agreement",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths2shared_svdidentity PSD probe",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths2shared_svdpositive_angular_illumination_profile normal error",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths2shared_svdpositive_angular_illumination_profile compiled agreement",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths2shared_svdpositive_angular_illumination_profile PSD probe",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths2cpswfforward_relative_l2_vs_dense",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths2cpswfadjoint_relative_l2_vs_dense",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths2cpswf dot",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths2cpswf weight completeness",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths2cpswfidentity normal error",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths2cpswfidentity compiled agreement",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths2cpswfidentity PSD probe",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths2cpswfpositive_angular_illumination_profile normal error",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths2cpswfpositive_angular_illumination_profile compiled agreement",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depths2cpswfpositive_angular_illumination_profile PSD probe",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depthsdense/forward timing count",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depthsdense/forward positive timing",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depthsdense/forward median",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depthsdense/forward matched ratio",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depthsdense/adjoint timing count",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depthsdense/adjoint positive timing",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depthsdense/adjoint median",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depthsdense/adjoint matched ratio",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depthsdense/normal_composed timing count",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depthsdense/normal_composed positive timing",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depthsdense/normal_composed median",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depthsdense/normal_composed matched ratio",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depthsdense/normal_compiled timing count",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depthsdense/normal_compiled positive timing",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depthsdense/normal_compiled median",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depthsdense/normal_compiled matched ratio",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depthsdense/normal_compiled compilation ratio",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depthsshared_svd/forward timing count",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depthsshared_svd/forward positive timing",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depthsshared_svd/forward median",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depthsshared_svd/forward matched ratio",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depthsshared_svd/adjoint timing count",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depthsshared_svd/adjoint positive timing",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depthsshared_svd/adjoint median",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depthsshared_svd/adjoint matched ratio",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depthsshared_svd/normal_composed timing count",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depthsshared_svd/normal_composed positive timing",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depthsshared_svd/normal_composed median",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depthsshared_svd/normal_composed matched ratio",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depthsshared_svd/normal_compiled timing count",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depthsshared_svd/normal_compiled positive timing",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depthsshared_svd/normal_compiled median",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depthsshared_svd/normal_compiled matched ratio",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depthsshared_svd/normal_compiled compilation ratio",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depthscpswf/forward timing count",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depthscpswf/forward positive timing",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depthscpswf/forward median",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depthscpswf/forward matched ratio",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depthscpswf/adjoint timing count",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depthscpswf/adjoint positive timing",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depthscpswf/adjoint median",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depthscpswf/adjoint matched ratio",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depthscpswf/normal_composed timing count",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depthscpswf/normal_composed positive timing",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depthscpswf/normal_composed median",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depthscpswf/normal_composed matched ratio",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depthscpswf/normal_compiled timing count",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depthscpswf/normal_compiled positive timing",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depthscpswf/normal_compiled median",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depthscpswf/normal_compiled matched ratio",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depthscpswf/normal_compiled compilation ratio",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depthsdense radial bytes",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depthsdense full cache",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depthsdense standalone normal sufficient cache",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depthsdense complete family cache",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depthsshared_svd radial bytes",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depthsshared_svd full cache",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depthsshared_svd standalone normal sufficient cache",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depthsshared_svd complete family cache",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depthscpswf radial bytes",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depthscpswf full cache",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depthscpswf standalone normal sufficient cache",
+      "passed": true
+    },
+    {
+      "check": "three_illuminations_five_depthscpswf complete family cache",
+      "passed": true
+    }
+  ],
+  "compact_results": [
+    {
+      "case": "single_illumination_single_depth",
+      "max_forward_error": 4.9288024734932725e-09,
+      "max_adjoint_error": 7.496920455192584e-09,
+      "max_normal_error": 4.959750222283436e-09,
+      "max_dot_error": 2.343300464324226e-17,
+      "max_compiled_composed_error": 4.964803629990485e-16,
+      "timings_ms": {
+        "dense/forward": 7.1646,
+        "dense/adjoint": 11.7891,
+        "dense/normal_composed": 17.7565,
+        "dense/normal_compiled": 4.5558,
+        "shared_svd/forward": 7.5198,
+        "shared_svd/adjoint": 9.4904,
+        "shared_svd/normal_composed": 16.731,
+        "shared_svd/normal_compiled": 3.9188,
+        "cpswf/forward": 7.2383,
+        "cpswf/adjoint": 9.7276,
+        "cpswf/normal_composed": 16.7219,
+        "cpswf/normal_compiled": 4.0332
+      },
+      "normal_offmode_fraction": [
+        0.1236671475718477,
+        0.11216876778424686
+      ],
+      "diagonal_mode_negative_control": [
+        0.12473040808118604,
+        0.11448063185179007
+      ],
+      "cache_MiB": {
+        "dense": {
+          "radial_bytes": 9.3487,
+          "forward_adjoint_total_bytes": 20.4268,
+          "standalone_one_weight_normal_total_bytes": 11.079,
+          "forward_adjoint_and_two_normals_total_bytes": 23.8875
+        },
+        "shared_svd": {
+          "radial_bytes": 7.0309,
+          "forward_adjoint_total_bytes": 18.109,
+          "standalone_one_weight_normal_total_bytes": 8.7612,
+          "forward_adjoint_and_two_normals_total_bytes": 21.5697
+        },
+        "cpswf": {
+          "radial_bytes": 7.0629,
+          "forward_adjoint_total_bytes": 18.141,
+          "standalone_one_weight_normal_total_bytes": 8.7933,
+          "forward_adjoint_and_two_normals_total_bytes": 21.6017
+        }
+      }
+    },
+    {
+      "case": "three_illuminations_five_depths",
+      "max_forward_error": 6.66972640070327e-09,
+      "max_adjoint_error": 5.5427841064343595e-09,
+      "max_normal_error": 6.6846134948472265e-09,
+      "max_dot_error": 1.5860939113549674e-17,
+      "max_compiled_composed_error": 6.059343211975286e-16,
+      "timings_ms": {
+        "dense/forward": 49.1451,
+        "dense/adjoint": 69.5638,
+        "dense/normal_composed": 119.2875,
+        "dense/normal_compiled": 10.2713,
+        "shared_svd/forward": 48.6507,
+        "shared_svd/adjoint": 67.1942,
+        "shared_svd/normal_composed": 116.7468,
+        "shared_svd/normal_compiled": 9.2508,
+        "cpswf/forward": 48.156,
+        "cpswf/adjoint": 67.8365,
+        "cpswf/normal_composed": 116.5756,
+        "cpswf/normal_compiled": 9.3284
+      },
+      "normal_offmode_fraction": [
+        0.22469630695977033,
+        0.23323579032109687
+      ],
+      "diagonal_mode_negative_control": [
+        0.22278942175852667,
+        0.2332095178108264
+      ],
+      "cache_MiB": {
+        "dense": {
+          "radial_bytes": 9.3487,
+          "forward_adjoint_total_bytes": 173.5518,
+          "standalone_one_weight_normal_total_bytes": 52.6073,
+          "forward_adjoint_and_two_normals_total_bytes": 260.0691
+        },
+        "shared_svd": {
+          "radial_bytes": 7.0309,
+          "forward_adjoint_total_bytes": 171.234,
+          "standalone_one_weight_normal_total_bytes": 50.2895,
+          "forward_adjoint_and_two_normals_total_bytes": 257.7513
+        },
+        "cpswf": {
+          "radial_bytes": 7.0629,
+          "forward_adjoint_total_bytes": 171.266,
+          "standalone_one_weight_normal_total_bytes": 50.3216,
+          "forward_adjoint_and_two_normals_total_bytes": 257.7834
+        }
+      }
+    }
+  ]
+}

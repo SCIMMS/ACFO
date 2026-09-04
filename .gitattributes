@@ -11,3 +11,6 @@
 *.txt text eol=lf
 *.yml text eol=lf
 *.yaml text eol=lf
+
+# Audited publication bytes must survive checkout without EOL conversion.
+validation/operator_synthesis_v0_3_0/** -text whitespace=cr-at-eol

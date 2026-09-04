@@ -1,0 +1,111 @@
+{
+  "schema": "acfo-operator-storyline-two-server-final-audit-v1",
+  "created_utc": "2026-09-04T04:37:01.098997+00:00",
+  "checks": {
+    "server36_original_archive_reverified": true,
+    "server36_scoped_numerical_evidence": true,
+    "server59_original_archive_reverified": true,
+    "server59_scoped_numerical_evidence": true,
+    "matching_radial_rank_rows": true,
+    "matching_api_ranks": true,
+    "matching_waxs_candidate_seeds_and_top5": true,
+    "both_physical_case_names": true,
+    "matching_composite_storage": true
+  },
+  "scoped_constructive_numerical_evidence_supported": true,
+  "all_strict_local_audits_passed": false,
+  "all_frozen_publication_requirements_fulfilled": false,
+  "new_benchmarks_executed_during_audit": false,
+  "original_server59_failure_preserved": true,
+  "server59_odt_corrective_evidence": "<WORKSPACE>\\reports\\acfo_server59_loader_odt_revalidation_20260904",
+  "platform": {
+    "python": "3.13.13 | packaged by Anaconda, Inc. | (main, Apr 14 2026, 06:12:50) [MSC v.1942 64 bit (AMD64)]",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "os": "win32"
+  },
+  "cross_machine_kernel_diagnostics": [
+    {
+      "id": "q175_m0",
+      "bitwise_equal": false,
+      "relative_frobenius_difference": 6.277570829419134e-17
+    },
+    {
+      "id": "q175_m128",
+      "bitwise_equal": false,
+      "relative_frobenius_difference": 2.1124522544745838e-16
+    },
+    {
+      "id": "q175_m16",
+      "bitwise_equal": false,
+      "relative_frobenius_difference": 1.88930900961947e-16
+    },
+    {
+      "id": "q175_m4",
+      "bitwise_equal": false,
+      "relative_frobenius_difference": 1.0162880168256086e-16
+    },
+    {
+      "id": "q175_m64",
+      "bitwise_equal": false,
+      "relative_frobenius_difference": 3.6708881850212593e-16
+    },
+    {
+      "id": "q350_m0",
+      "bitwise_equal": false,
+      "relative_frobenius_difference": 6.322147155130586e-17
+    },
+    {
+      "id": "q350_m128",
+      "bitwise_equal": false,
+      "relative_frobenius_difference": 3.595757028282561e-16
+    },
+    {
+      "id": "q350_m16",
+      "bitwise_equal": false,
+      "relative_frobenius_difference": 1.9898974277695817e-16
+    },
+    {
+      "id": "q350_m4",
+      "bitwise_equal": false,
+      "relative_frobenius_difference": 9.603690720024805e-17
+    },
+    {
+      "id": "q350_m64",
+      "bitwise_equal": false,
+      "relative_frobenius_difference": 4.334345035146473e-16
+    },
+    {
+      "id": "q88_m0",
+      "bitwise_equal": false,
+      "relative_frobenius_difference": 6.13188176857908e-17
+    },
+    {
+      "id": "q88_m128",
+      "bitwise_equal": true,
+      "relative_frobenius_difference": 0.0
+    },
+    {
+      "id": "q88_m16",
+      "bitwise_equal": false,
+      "relative_frobenius_difference": 1.4848712685551494e-16
+    },
+    {
+      "id": "q88_m4",
+      "bitwise_equal": false,
+      "relative_frobenius_difference": 1.0537196998933665e-16
+    },
+    {
+      "id": "q88_m64",
+      "bitwise_equal": false,
+      "relative_frobenius_difference": 2.803066424806564e-16
+    }
+  ],
+  "remaining_boundaries": [
+    "WAXS strongest eligible comparator and paired workflow interval absent in this archived payload",
+    "ODT inherited paired hot-speed interval absent; timings remain descriptive",
+    "Windows bitwise radial audit failures retained; Linux original audits passed",
+    "Full original-grid active support, measured reconstruction and generic operator compiler outside executed scope"
+  ],
+  "next_step": "Use scoped constructive evidence in story planning. No new speed headline or full-support claim; keep original failure and strict local bitwise audit caveat."
+}

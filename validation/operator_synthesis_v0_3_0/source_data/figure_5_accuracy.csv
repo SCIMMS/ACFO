@@ -1,0 +1,3 @@
+machine,materialized_vs_unfused_relative_l2,materialized_vs_direct_relative_l2,adjoint_dot_relative_error,adjoint_vs_unfused_relative_l2,translation_jvp_vs_unfused_relative_l2,translation_jvp_vs_finite_difference_relative_l2,translation_jvp_vjp_relative_error,weighted_normal_quadratic_identity_relative_error,translation_absolute_l2_error
+server36,2.5305900129179123e-16,3.065264757286515e-16,1.3357468426568333e-15,9.750941922392837e-16,3.112261020231701e-16,1.5562317870916023e-10,3.23642170079231e-16,1.2978916337175169e-16,6.938893903907228e-18
+server59,2.333673937603259e-16,2.94408156540234e-16,1.8554987357840288e-16,6.384042702815629e-16,3.052428066713828e-16,1.4000280940768413e-10,4.854632551188464e-16,1.2978916337175166e-16,9.813077866773595e-18

@@ -1,0 +1,123 @@
+{
+  "schema": "acfo-final-multisystem-external-protocol-v1",
+  "created_utc": "2026-09-03T13:44:55.5887643Z",
+  "campaign": "ACFO final WAXS, ODT, and composite-operator external validation",
+  "claim_freeze": "ACFO_FINAL_MULTISYSTEM_CLAIM_FREEZE.json",
+  "package_name": "acfo_final_multisystem_external_request_v1",
+  "execution_profiles": {
+    "server36_full": {
+      "host": "redacted.invalid",
+      "port": 1303,
+      "user": "benchmark",
+      "remote_workspace": "/workspace/ACFO",
+      "conda_environment": "acfo-ncs-gpu",
+      "role": "full 24-GiB validation"
+    },
+    "server59_replication": {
+      "host": "redacted.invalid",
+      "port": 1303,
+      "user": "benchmark",
+      "remote_workspace": "/workspace/ACFO",
+      "conda_environment": "pythonProject",
+      "role": "independent 12-GiB replication and memory frontier"
+    }
+  },
+  "component_packages": {
+    "waxs": {
+      "source": "reports/waxs_100_state_ranking_rtx3090_validation_request_v1",
+      "manifest": "PACKAGE_MANIFEST.json",
+      "mode": "full",
+      "shared_arms": [
+        "curved ACFO versus strongest eligible Type-3 NUFFT",
+        "planar Type-1 dispatch boundary"
+      ]
+    },
+    "odt": {
+      "source": "reports/odt_toeplitz_si_rtx3090_validation_request_v1",
+      "manifest": "PACKAGE_MANIFEST.json",
+      "mode": "full",
+      "shared_arms": [
+        "exact forward/adjoint and normal identities",
+        "native Type-2 forward and Type-1 adjoint",
+        "explicit A*WA",
+        "all-GPU cached Toeplitz",
+        "CPU generic cached Toeplitz",
+        "ACFO cached Toeplitz"
+      ]
+    },
+    "composite": {
+      "source": "external_validation/acfo_layered_vector_composite_external_request_v1",
+      "manifest": "MANIFEST.json",
+      "mode": "full",
+      "shared_arms": [
+        "independent direct numerical validation",
+        "forward, adjoint, normal, JVP and VJP",
+        "translation inference",
+        "isolated ABBA timing",
+        "prespecified preparation/hot/regime map"
+      ]
+    }
+  },
+  "prespecified_regime_cases": [
+    {
+      "id": "small",
+      "ntheta": 10,
+      "nphi": 73,
+      "nrho": 4,
+      "npsi": 12,
+      "nz": 2,
+      "channels": 2,
+      "warmup": 2,
+      "repeats": 15
+    },
+    {
+      "id": "medium",
+      "ntheta": 14,
+      "nphi": 129,
+      "nrho": 6,
+      "npsi": 24,
+      "nz": 3,
+      "channels": 6,
+      "warmup": 3,
+      "repeats": 21
+    },
+    {
+      "id": "large",
+      "ntheta": 18,
+      "nphi": 193,
+      "nrho": 8,
+      "npsi": 32,
+      "nz": 4,
+      "channels": 6,
+      "warmup": 3,
+      "repeats": 15
+    }
+  ],
+  "planar_boundary": {
+    "structure": "protein_nanocrystal_lysozyme_1iee_1x1x1_fixed.npz",
+    "source_atoms": 512,
+    "grid_sizes": [
+      16,
+      24,
+      32
+    ],
+    "q_step_inverse_nm": 0.35,
+    "wavelength_nm": 0.08,
+    "finufft_eps": 1e-12,
+    "direct_reference_grid": 16,
+    "random_seed": 20260903
+  },
+  "execution_order": [
+    "verify exact request manifest and frozen-claim hash",
+    "record environment and competing-process state",
+    "extract and verify each component archive",
+    "execute WAXS component",
+    "execute planar WAXS dispatch boundary",
+    "execute ODT component",
+    "execute composite component",
+    "execute composite prespecified regime map",
+    "aggregate technical integrity separately from scientific outcomes",
+    "create return manifest and return archive"
+  ],
+  "nonretuning_rule": "No input, seed, q sample, candidate family, cutoff, recurrence margin, grid size, batch size, tolerance, comparator, or regime case may be changed after observing either machine's result."
+}

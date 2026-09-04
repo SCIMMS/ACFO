@@ -1,7 +1,7 @@
 {
-  "title": "ACFO: Geometry factorization and representation dispatch for repeated curved Fourier inference",
+  "title": "ACFO: Geometry-prepared Fourier operators and coefficient-space operator synthesis",
   "upload_type": "software",
-  "description": "ACFO provides prepared forward-adjoint operators and representation dispatch for repeated curved Fourier inference. Version 0.2.0 includes the manuscript-facing source code, figure source data, normalized external-validation evidence and executable numerical audits for WAXS, ODT and NuMagSANS applications. High-NA Debye-Wolf material is included only as Supplementary accuracy-control evidence.",
+  "description": "ACFO provides geometry-prepared Fourier operators and explicit construction of compatible coefficient-space actions. Version 0.3.0 adds self-contained two-machine validation packages for High-NA correspondence and harmonic support, WAXS candidate ranking, Cartesian ODT and coupled modal normal actions, radial CPSWF preparation and checked cache reuse, and layered vector-wave composite operators with derivatives. The source archive includes component code and tests, prespecified protocols and claim freeze, numerical arrays and raw timings, privacy-normalized original returns, the original second-machine ODT loader failure and its same-input corrective rerun, independent audits, thirteen numerical source-data tables, and a portable verifier. The evidence supports the tested finite geometries and subspaces with explicit comparator and support limits: the current WAXS payload lacks an equally contracted strongest comparator, the ODT paired hot-speed interval is absent, and Windows strict bitwise radial audit failures remain recorded. Composite performance refers to its own fixed unfused/materialized chain and retained-array storage. No universal speed or full-support/measured-data CPSWF reconstruction claim is made. Unlicensed third-party raw intensity is excluded; required geometry is retained. Existing v0.2.0 evidence and the established package API remain available. License: ACFO Citation-Required License, source-available and not OSI-approved.",
   "creators": [
     {
       "name": "Kim, Minsu",
@@ -13,7 +13,7 @@
       "affiliation": "Pohang University of Science and Technology (POSTECH)"
     }
   ],
-  "version": "0.2.0",
+  "version": "0.3.0",
   "access_right": "open",
   "license": "other-open",
   "keywords": [
@@ -21,7 +21,8 @@
     "axisymmetry",
     "WAXS",
     "optical diffraction tomography",
-    "magnetic SANS",
+    "coefficient-space operator synthesis",
+    "CPSWF",
     "NUFFT",
     "forward-adjoint operator"
   ]

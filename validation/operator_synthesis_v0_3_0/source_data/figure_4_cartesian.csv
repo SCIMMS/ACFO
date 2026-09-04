@@ -1,0 +1,3 @@
+machine,acfo_explicit_sample_l2,acfo_setup_seconds,comparator_setup_seconds,comparator,grid_side,tolerance
+server36,3.7503911632585123e-06,0.6001607291400433,0.5465326383709908,cuFINUFFT Toeplitz,256,1e-05
+server59,3.7573010215160423e-06,1.0432642921805382,0.8296859839465469,cuFINUFFT Toeplitz,256,1e-05

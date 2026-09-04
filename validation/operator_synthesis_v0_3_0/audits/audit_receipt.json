@@ -1,0 +1,26 @@
+{
+  "created_utc": "2026-09-04T04:37:01.100763+00:00",
+  "files": {
+    "scripts\\audit_acfo_storyline_campaign.py": "ebce2837de8e1a3aeecb83bad8dce1f29c80de57dfb4bd440b2a079deaedfca9",
+    "reports\\acfo_operator_storyline_external_request_v2_1\\PACKAGE_MANIFEST.json": "c24a199886239d28fabea2140346d82a8601b4d39276b006f6263f8c9ae8af55",
+    "reports\\acfo_operator_storyline_external_request_v2_1\\CLAIM_FREEZE.json": "2bec572b6ae8b70ef9f4a3f47b07b4e5f294364189078e1bf852ce36aa8a6f56",
+    "reports\\acfo_operator_storyline_external_audit_20260904\\campaign_audit.json": "c4337f32c526f7bc0521a9a659aa8676ff6e9174707d9dfe2f51580f9ea04266",
+    "reports\\acfo_operator_storyline_external_audit_20260904\\server36\\system_audit.json": "dc5b93db7d4887fa258903c6d3bacc32ff39b21a34d0aa24e9e42470b7b3291e",
+    "reports\\acfo_operator_storyline_external_audit_20260904\\server36\\outer_audit.json": "7860ea8d3235842824d4edb58b3b2b114f5f3258b239ebf5c5947ad2e37fc36c",
+    "reports\\acfo_operator_storyline_external_audit_20260904\\server36\\waxs_independent_audit.json": "5208cf7a5934fee78427e1bc1141c529f0c2b966874d53ebeaa1e499473a1f47",
+    "reports\\acfo_operator_storyline_external_audit_20260904\\server36\\extension_reaudit.json": "01c2c564388182f752ef5cc690e389ee8dabb24793dc1a35d26186398806e7a0",
+    "reports\\acfo_operator_storyline_external_audit_20260904\\server36\\acfo_common_radial_cpswf_independent_audit.json": "94fe1aa3f90880df5ee00b49ddd55cbc560ffc8a982e60f9255983b64deb779f",
+    "reports\\acfo_operator_storyline_external_audit_20260904\\server36\\acfo_radial_physical_transfer_independent_audit.json": "469913f8707c9fa1890eaa5e2d2cdb6b4505138b3a8e59d294c0297185c9507d",
+    "reports\\acfo_operator_storyline_external_audit_20260904\\server36\\acfo_geometry_preparation_api_independent_audit.json": "bc163b188d72f50a06ab333273fbfc65af0c4f02894c6558bbfcc238625e0513",
+    "reports\\acfo_operator_storyline_external_audit_20260904\\server36\\acfo_operator_storyline_return_server36_full.zip": "39fda1c52f1625616b179831306c3639185e6694f10fb55846a61d42ebbe992e",
+    "reports\\acfo_operator_storyline_external_audit_20260904\\server59\\system_audit.json": "b87327f97bf331e411179a0640c4cb6076ac9202e605dc998ba1371faa94b718",
+    "reports\\acfo_operator_storyline_external_audit_20260904\\server59\\outer_audit.json": "946fb50dd7238d8a4e4b32896ae3698b25005e884e184ff480d9ab4730829a2e",
+    "reports\\acfo_operator_storyline_external_audit_20260904\\server59\\waxs_independent_audit.json": "446be2ae9841cfaa2d9508b92bd7c2487462ff7b4369d924a8222904bbc35208",
+    "reports\\acfo_operator_storyline_external_audit_20260904\\server59\\extension_reaudit.json": "cfe5953b936fac5d7ef27f45927c4b09c59fab0702c77b46a4d5daadc4da508d",
+    "reports\\acfo_operator_storyline_external_audit_20260904\\server59\\acfo_common_radial_cpswf_independent_audit.json": "94fe1aa3f90880df5ee00b49ddd55cbc560ffc8a982e60f9255983b64deb779f",
+    "reports\\acfo_operator_storyline_external_audit_20260904\\server59\\acfo_radial_physical_transfer_independent_audit.json": "071424b8c3a4c3190f658e6b02a9abcc438e1f0708ea51c665c46059b71e394e",
+    "reports\\acfo_operator_storyline_external_audit_20260904\\server59\\acfo_geometry_preparation_api_independent_audit.json": "6540e4889de86b576bce0c8f98b42af113738bdba2ced793a6a7e9e1016d9b2e",
+    "reports\\acfo_operator_storyline_external_audit_20260904\\server59\\acfo_operator_storyline_return_server59_replication.zip": "42defdabf6cdf87ac12e5773f39be5ff9de2045dc8ec294d4dbfda3ec8d21538"
+  },
+  "scope": "Local audit records and immutable original inputs; no scientific result overwritten"
+}

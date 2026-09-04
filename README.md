@@ -1,13 +1,38 @@
 # Axisymmetric Curved-Fourier Operator (ACFO)
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22239163.svg)](https://doi.org/10.5281/zenodo.22239163)
+[![DOI — all versions](https://zenodo.org/badge/DOI/10.5281/zenodo.22239162.svg)](https://doi.org/10.5281/zenodo.22239162)
 
 Prepared forward-adjoint operators for repeated curved Fourier inference.
 ACFO applies analytic, symmetry and dimensional contractions first, selects the
 lowest eligible FFT/NUFFT representation, and uses SO(2) geometry factorization
 when the workload contains repeated complete rotational orbits.
 
-## Version 0.2.0 manuscript release
+## Version 0.3.0 — geometry-prepared operator validation
+
+The [new validation supplement](validation/operator_synthesis_v0_3_0/README.md)
+contains the two-machine High-NA, WAXS, ODT, radial CPSWF and layered-composite
+campaign: component code, prespecified claim freeze, numerical arrays, raw timings,
+original failures, corrective evidence and independent audits. It connects the
+rotational-restriction core to geometry-prepared coefficient-space actions and
+explicit compatible operator composition. Experimental implementations remain
+isolated inside the replay component archives; the established package API is
+unchanged.
+
+The evidence supports the tested constructive workflows with
+[explicit comparison and support boundaries](validation/operator_synthesis_v0_3_0/SCOPE_AND_RESULTS.md).
+In particular, this campaign's WAXS timings lack an equally contracted strongest
+comparator, ODT lacks the prespecified paired hot-speed interval, and Windows
+strict bitwise radial failures are retained. No universal acceleration or
+full-support reconstruction claim is assigned to this release.
+
+```bash
+python validation/operator_synthesis_v0_3_0/verify.py
+```
+
+See the [v0.3.0 release notes](docs/releases/v0.3.0.md). The all-versions DOI above
+tracks the release series; the previous version-specific DOI is recorded below.
+
+## Version 0.2.0 manuscript release (preserved historical evidence)
 
 Archived release: [Zenodo DOI 10.5281/zenodo.22239163](https://doi.org/10.5281/zenodo.22239163).
 

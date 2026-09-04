@@ -1,0 +1,54 @@
+{
+  "schema": "acfo-final-multisystem-component-index-v1",
+  "generated_at_utc": "2026-09-03T13:56:27.331825+00:00",
+  "components": {
+    "waxs": {
+      "archive": "components/waxs_request.zip",
+      "archive_bytes": 5631181,
+      "archive_sha256": "1607f488f3411dba701a5c0fc31868a00c987f755be95e1dde231d7aa3dac6c2",
+      "root": "waxs_component",
+      "manifest": "PACKAGE_MANIFEST.json",
+      "source_manifest_sha256": "5d187de04504b0db8875bf9b1360995b00d53b45d0a00d7fe8ac5e7d432d69cc",
+      "packaged_manifest_sha256": "880b69cae301599496c3b08ec5b65cd3ff0867f5cce2998b201a3d8217c388a7",
+      "manifested_file_count": 41,
+      "transform": {
+        "purpose": "allow the prespecified full CPU WAXS replication on the recorded RTX 3080 Ti host",
+        "path": "scripts/run_waxs_100_state_external_validation.py",
+        "source_sha256": "7a02e717b3be6796418117ef7fc34b4b5da0010ae68b4cc2e9e77d62f18a9d46",
+        "packaged_sha256": "13aa4825600b57f17019a5fd41d7f1b0dddff504b560710f62b60253c59a118c",
+        "scientific_inputs_or_thresholds_changed": false
+      }
+    },
+    "odt": {
+      "archive": "components/odt_request.zip",
+      "archive_bytes": 362225,
+      "archive_sha256": "8018fdee1656d1cee0a2a9d95e115d7ef1daaf44333e350c2d71da29a22ab6c8",
+      "root": "odt_component",
+      "manifest": "PACKAGE_MANIFEST.json",
+      "source_manifest_sha256": "f8b33b2416f38844d1708048989fd6406d52da61100cc8e3ec5042a28524cc41",
+      "packaged_manifest_sha256": "8c435180386e9e20e305e140127737b53c4a6c4df468aaab2a51f827a04680bf",
+      "manifested_file_count": 66,
+      "transform": null
+    },
+    "composite": {
+      "archive": "components/composite_request.zip",
+      "archive_bytes": 64273,
+      "archive_sha256": "9858208c87f120d13347df2ac56a5ce0fa576d64e9bb2537f451d4de6cee36fc",
+      "root": "composite_component",
+      "manifest": "MANIFEST.json",
+      "source_manifest_sha256": "481a6de28960570a3e1351306d2af40a21092a8fa5dc7e8d47b239610bb5ca04",
+      "packaged_manifest_sha256": "29a51f8426d4b2ba5a4b7a9c94b477439a8b11dbcea5f328d666b44912dcf556",
+      "manifested_file_count": 16,
+      "transform": null
+    },
+    "extension": {
+      "archive": "components/extension_request.zip",
+      "root": "extension_component",
+      "manifest": "PACKAGE_MANIFEST.json",
+      "archive_sha256": "81b182e8c08297f80f47bb4335bb1a68814f9b03f7219145d1b8cf5b6cd15d1d",
+      "archive_bytes": 370962,
+      "manifested_file_count": 94,
+      "packaged_manifest_sha256": "305ae3aad600ba61fbfce450658a155811dde2e65692b2fca4fdc1144b64b73e"
+    }
+  }
+}

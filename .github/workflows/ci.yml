@@ -34,3 +34,6 @@ jobs:
 
       - name: Run tests
         run: python -m pytest -q
+
+      - name: Verify operator-synthesis distribution and focused CPU tests
+        run: python validation/operator_synthesis_v0_3_0/verify.py --smoke

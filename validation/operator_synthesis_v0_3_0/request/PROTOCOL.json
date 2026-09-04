@@ -1,0 +1,93 @@
+{
+  "schema": "acfo-operator-storyline-protocol-v2",
+  "created": "2026-09-04",
+  "package_name": "acfo_operator_storyline_external_request_v2_1",
+  "claim_freeze": "CLAIM_FREEZE.json",
+  "principle": "Given system geometry/physics S, requested action Q and tolerance epsilon, prepare a reusable representation V and materialize the requested finite action P. SO(2)-adapted coordinates may retain nonzero couplings between modes.",
+  "story_order": [
+    "high_na",
+    "waxs",
+    "odt",
+    "cpswf",
+    "composite"
+  ],
+  "figures": {
+    "high_na": "Known Debye-Wolf/Richards-Wolf correspondence introduces coefficient-space factorization and its intellectual lineage; Boichenko specialized vortex-series prior art is acknowledged.",
+    "waxs": "Curved Fourier restriction and repeated evaluation; planar Type-1 boundary is a different geometry, never a cross-geometry speed ratio.",
+    "odt": "Native Type-2/Type-1 and Cartesian Toeplitz, distinguished from the coupled modal normal R* G R.",
+    "cpswf": "Geometry-prepared radial representation, common-family spectral accuracy, matched SVD, fresh preparation and checked cache reuse.",
+    "composite": "Translation, layered Green action and restriction synthesized into a finite operator with derivatives and synthetic parameter recovery."
+  },
+  "inherited_request": {
+    "path": "reports/acfo_final_multisystem_external_request_v1",
+    "manifest_sha256": "63932fd806fd0639b3f86ffe7fabd3bcdd8976348e3a3ba3ef88ddffaf5ed167",
+    "claim_sha256": "d08bb8cc00fbda14fa28c3176755c98f4de32464011c2daa42c627d6a0272476",
+    "components_unchanged": [
+      "waxs",
+      "odt",
+      "composite"
+    ],
+    "scientific_conditions": "Preserve all component inputs, seeds, tolerances, grids, batches, timing designs and comparators. This version adds evidence stages and stricter orchestration; it does not rewrite inherited results."
+  },
+  "profiles": {
+    "server36_full": {
+      "gpu": "NVIDIA GeForce RTX 3090",
+      "gpu_memory_gib": 24,
+      "conda": "acfo-ncs-gpu",
+      "host": "redacted.invalid",
+      "user": "benchmark",
+      "port": 1303
+    },
+    "server59_replication": {
+      "gpu": "NVIDIA GeForce RTX 3080 Ti",
+      "gpu_memory_gib": 12,
+      "conda": "pythonProject",
+      "host": "redacted.invalid",
+      "user": "benchmark",
+      "port": 1303
+    }
+  },
+  "execution": {
+    "cpu_extension_threads": 1,
+    "legacy_omp_threads": 4,
+    "legacy_blas_threads": 1,
+    "refuse_busy_gpu": true,
+    "refuse_gpu_mismatch": true,
+    "full_run_requires_explicit_idle_confirmation": true,
+    "no_download_or_dependency_install": true,
+    "create_only_run_directory": true,
+    "keep_failed_outputs": true,
+    "local_check": "Same CPU extension science and tests, plus inherited planar and small composite checks. Skips full WAXS, Cartesian ODT GPU and full composite timing; never eligible for a main-text speed claim."
+  },
+  "extension_contracts": [
+    "acfo_common_radial_cpswf_v1.json",
+    "acfo_radial_physical_transfer_v1.json",
+    "acfo_geometry_preparation_api_v1.json"
+  ],
+  "extension_replay": "Run common radial preparation fresh, then physical composition using its freshly generated bases, then the geometry-prepared API using fresh geometry and an independently rebuilt basis. Original contract prose saying local describes the original pilot, not permission to change this external replay.",
+  "high_na": {
+    "backend": "numpy",
+    "correspondence": "three apertures, scalar and vector, identical-node direct quadrature",
+    "support": "post-Richards-Wolf effective-pupil harmonic support including the complete seven-charge stress sweep; no speed claim"
+  },
+  "full_support_frontier": {
+    "geometry": "Original 350 radial x 350 frequency x 1024 angular grid, three illuminations, five depth planes, two channels; resource accounting only",
+    "kernel_cutoff": "ceil(q_max R)",
+    "data_bandlimit": 128,
+    "mode_padding": 48,
+    "normal_byte_limit": 134217728,
+    "cases": [
+      "current_nine_mode_subspace",
+      "contiguous_input_band_minus128_to128",
+      "kernel_plus_padding_expansion_band"
+    ],
+    "rule": "Report q-local dense Gram retained bytes = 16*Nq*(Nm*Nz*2)^2. No large allocation and no claim that resource accounting validates numerical full support. Kernel expansion support and input-density support are distinct. No silent mode reduction."
+  },
+  "deferred": [
+    "Full original-grid all-active-mode CPSWF physical execution with a scalable coupled normal representation",
+    "Measured-data CPSWF reconstruction",
+    "Automatic discovery of an arbitrary mathematical basis",
+    "Full-wave Green or general SO(3) extension"
+  ],
+  "source_data_policy": "Return raw timings and all prespecified outcomes. A verified return is not automatic manuscript eligibility; both machine returns, accuracy, comparator scope and intervals must be checked before a publication table is made."
+}

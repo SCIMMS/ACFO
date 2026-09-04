@@ -1,0 +1,11 @@
+machine,mode,rank,metric,tolerance,relative_spectral_residual
+server36,0,152,potential_density,1e-08,1.3891165685776945e-09
+server36,4,150,potential_density,1e-08,2.7939348738748726e-09
+server36,16,144,potential_density,1e-08,5.235153360839095e-09
+server36,64,122,potential_density,1e-08,2.706251752550214e-09
+server36,128,94,potential_density,1e-08,6.417910977996319e-09
+server59,0,152,potential_density,1e-08,1.3891165539330976e-09
+server59,4,150,potential_density,1e-08,2.793934880888613e-09
+server59,16,144,potential_density,1e-08,5.235153365886115e-09
+server59,64,122,potential_density,1e-08,2.706251715700807e-09
+server59,128,94,potential_density,1e-08,6.417910978995583e-09

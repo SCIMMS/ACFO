@@ -1,0 +1,392 @@
+{
+  "schema": "acfo-geometry-preparation-api-audit-v1",
+  "checks": [
+    {
+      "name": "hash:validation_contracts/acfo_geometry_preparation_api_v1.json",
+      "passed": true
+    },
+    {
+      "name": "hash:reports/acfo_radial_physical_transfer_v1/three_illuminations_five_depths_coordinates.npz",
+      "passed": true
+    },
+    {
+      "name": "hash:benchmark_results/aidt_acfo_physical_torch_rtx2070_public256.json",
+      "passed": true
+    },
+    {
+      "name": "hash:reports/acfo_common_radial_cpswf_v1/summary.json",
+      "passed": true
+    },
+    {
+      "name": "hash:reports/acfo_common_radial_cpswf_v1/q350_m0.npz",
+      "passed": true
+    },
+    {
+      "name": "hash:reports/acfo_common_radial_cpswf_v1/q350_m4.npz",
+      "passed": true
+    },
+    {
+      "name": "hash:reports/acfo_common_radial_cpswf_v1/q350_m16.npz",
+      "passed": true
+    },
+    {
+      "name": "hash:reports/acfo_common_radial_cpswf_v1/q350_m64.npz",
+      "passed": true
+    },
+    {
+      "name": "hash:reports/acfo_common_radial_cpswf_v1/q350_m128.npz",
+      "passed": true
+    },
+    {
+      "name": "hash:reports/acfo_geometry_preparation_api_v1/summary.json",
+      "passed": true
+    },
+    {
+      "name": "hash:reports/acfo_geometry_preparation_api_v1/protocol.json",
+      "passed": true
+    },
+    {
+      "name": "hash:reports/acfo_geometry_preparation_api_v1/radial_cache.npz",
+      "passed": true
+    },
+    {
+      "name": "hash:scripts/validate_acfo_geometry_preparation_api.py",
+      "passed": true
+    },
+    {
+      "name": "hash:src/waxs_cake/prepared_cpswf_aidt.py",
+      "passed": true
+    },
+    {
+      "name": "hash:src/waxs_cake/radial_aidt.py",
+      "passed": true
+    },
+    {
+      "name": "hash:src/waxs_cake/radial_cpswf.py",
+      "passed": true
+    },
+    {
+      "name": "hash:src/waxs_cake/finite_hankel.py",
+      "passed": true
+    },
+    {
+      "name": "hash:src/waxs_cake/aidt_acfo.py",
+      "passed": true
+    },
+    {
+      "name": "hash:tests/test_prepared_cpswf_aidt.py",
+      "passed": true
+    },
+    {
+      "name": "protocol identity",
+      "passed": true
+    },
+    {
+      "name": "check accounting",
+      "passed": true
+    },
+    {
+      "name": "fresh preparation requested",
+      "passed": true
+    },
+    {
+      "name": "cache key parity",
+      "passed": true
+    },
+    {
+      "name": "cache descriptor key",
+      "passed": true
+    },
+    {
+      "name": "rank shape 0",
+      "passed": true
+    },
+    {
+      "name": "C = A P 0",
+      "passed": true
+    },
+    {
+      "name": "density norm error 0",
+      "passed": true
+    },
+    {
+      "name": "reported density error 0",
+      "passed": true
+    },
+    {
+      "name": "orthogonality 0",
+      "passed": true
+    },
+    {
+      "name": "conservative prefix criterion 0",
+      "passed": true
+    },
+    {
+      "name": "padding audit 0",
+      "passed": true
+    },
+    {
+      "name": "rank shape 4",
+      "passed": true
+    },
+    {
+      "name": "C = A P 4",
+      "passed": true
+    },
+    {
+      "name": "density norm error 4",
+      "passed": true
+    },
+    {
+      "name": "reported density error 4",
+      "passed": true
+    },
+    {
+      "name": "orthogonality 4",
+      "passed": true
+    },
+    {
+      "name": "conservative prefix criterion 4",
+      "passed": true
+    },
+    {
+      "name": "padding audit 4",
+      "passed": true
+    },
+    {
+      "name": "rank shape 16",
+      "passed": true
+    },
+    {
+      "name": "C = A P 16",
+      "passed": true
+    },
+    {
+      "name": "density norm error 16",
+      "passed": true
+    },
+    {
+      "name": "reported density error 16",
+      "passed": true
+    },
+    {
+      "name": "orthogonality 16",
+      "passed": true
+    },
+    {
+      "name": "conservative prefix criterion 16",
+      "passed": true
+    },
+    {
+      "name": "padding audit 16",
+      "passed": true
+    },
+    {
+      "name": "rank shape 64",
+      "passed": true
+    },
+    {
+      "name": "C = A P 64",
+      "passed": true
+    },
+    {
+      "name": "density norm error 64",
+      "passed": true
+    },
+    {
+      "name": "reported density error 64",
+      "passed": true
+    },
+    {
+      "name": "orthogonality 64",
+      "passed": true
+    },
+    {
+      "name": "conservative prefix criterion 64",
+      "passed": true
+    },
+    {
+      "name": "padding audit 64",
+      "passed": true
+    },
+    {
+      "name": "rank shape 128",
+      "passed": true
+    },
+    {
+      "name": "C = A P 128",
+      "passed": true
+    },
+    {
+      "name": "density norm error 128",
+      "passed": true
+    },
+    {
+      "name": "reported density error 128",
+      "passed": true
+    },
+    {
+      "name": "orthogonality 128",
+      "passed": true
+    },
+    {
+      "name": "conservative prefix criterion 128",
+      "passed": true
+    },
+    {
+      "name": "padding audit 128",
+      "passed": true
+    },
+    {
+      "name": "radial retained bytes",
+      "passed": true
+    },
+    {
+      "name": "all probes present",
+      "passed": true
+    },
+    {
+      "name": "dense parity 0",
+      "passed": true
+    },
+    {
+      "name": "cache actions 0",
+      "passed": true
+    },
+    {
+      "name": "legacy actions 0",
+      "passed": true
+    },
+    {
+      "name": "normal 0 identity",
+      "passed": true
+    },
+    {
+      "name": "normal 0 positive_profile",
+      "passed": true
+    },
+    {
+      "name": "dense parity 1",
+      "passed": true
+    },
+    {
+      "name": "cache actions 1",
+      "passed": true
+    },
+    {
+      "name": "legacy actions 1",
+      "passed": true
+    },
+    {
+      "name": "normal 1 identity",
+      "passed": true
+    },
+    {
+      "name": "normal 1 positive_profile",
+      "passed": true
+    },
+    {
+      "name": "dense parity 2",
+      "passed": true
+    },
+    {
+      "name": "cache actions 2",
+      "passed": true
+    },
+    {
+      "name": "legacy actions 2",
+      "passed": true
+    },
+    {
+      "name": "normal 2 identity",
+      "passed": true
+    },
+    {
+      "name": "normal 2 positive_profile",
+      "passed": true
+    },
+    {
+      "name": "source metric rank 0",
+      "passed": true
+    },
+    {
+      "name": "source metric rank 4",
+      "passed": true
+    },
+    {
+      "name": "source metric rank 16",
+      "passed": true
+    },
+    {
+      "name": "source metric rank 64",
+      "passed": true
+    },
+    {
+      "name": "source metric rank 128",
+      "passed": true
+    },
+    {
+      "name": "fresh_preparation adjoint",
+      "passed": true
+    },
+    {
+      "name": "fresh_preparation setup includes both phases",
+      "passed": true
+    },
+    {
+      "name": "cached_preparation adjoint",
+      "passed": true
+    },
+    {
+      "name": "cached_preparation setup includes both phases",
+      "passed": true
+    },
+    {
+      "name": "legacy_preparation adjoint",
+      "passed": true
+    },
+    {
+      "name": "legacy_preparation setup includes both phases",
+      "passed": true
+    },
+    {
+      "name": "identity standalone bytes",
+      "passed": true
+    },
+    {
+      "name": "positive_profile standalone bytes",
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "passed_count": 89,
+  "check_count": 89,
+  "independent_cached_radial_checks": [
+    {
+      "mode_abs": 0,
+      "rank": 152,
+      "density_relative_operator_error": 1.3891165550791702e-09
+    },
+    {
+      "mode_abs": 4,
+      "rank": 150,
+      "density_relative_operator_error": 2.793934881396966e-09
+    },
+    {
+      "mode_abs": 16,
+      "rank": 144,
+      "density_relative_operator_error": 5.235153364985638e-09
+    },
+    {
+      "mode_abs": 64,
+      "rank": 122,
+      "density_relative_operator_error": 2.706251769501588e-09
+    },
+    {
+      "mode_abs": 128,
+      "rank": 94,
+      "density_relative_operator_error": 6.4179106117022875e-09
+    }
+  ],
+  "scope": "No prepared API import. Recomputed radial kernel, reduced image, density spectral error, orthogonality and storage from cache; reconciled source hashes and reported full-chain probes. Full-chain output arrays are not independently rerun by this audit."
+}

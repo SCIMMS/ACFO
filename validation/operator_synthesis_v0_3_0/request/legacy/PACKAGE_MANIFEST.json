@@ -1,0 +1,69 @@
+{
+  "schema": "acfo-final-multisystem-request-manifest-v1",
+  "generated_at_utc": "2026-09-03T13:56:27.455442+00:00",
+  "package_name": "acfo_final_multisystem_external_request_v1",
+  "claim_freeze_sha256": "d08bb8cc00fbda14fa28c3176755c98f4de32464011c2daa42c627d6a0272476",
+  "protocol_sha256": "bbe14d4f23c36591aef5709a515f6305c70ba8a789bc8f559889180de7892104",
+  "files": {
+    "ACFO_FINAL_MULTISYSTEM_CLAIM_FREEZE.json": {
+      "bytes": 9037,
+      "sha256": "d08bb8cc00fbda14fa28c3176755c98f4de32464011c2daa42c627d6a0272476"
+    },
+    "ACFO_FINAL_MULTISYSTEM_PROTOCOL.json": {
+      "bytes": 3622,
+      "sha256": "bbe14d4f23c36591aef5709a515f6305c70ba8a789bc8f559889180de7892104"
+    },
+    "COMPONENT_INDEX.json": {
+      "bytes": 2196,
+      "sha256": "45d185cdb7e9a4109e437d8d4376a03ff3145a4d683963af90b0660897d25960"
+    },
+    "components/composite_request.zip": {
+      "bytes": 64278,
+      "sha256": "78c8f01c50bc7528328c5af37f2327dcfa842737c6edbdb21b55e376a1fac4da"
+    },
+    "components/odt_request.zip": {
+      "bytes": 362239,
+      "sha256": "1e0bc524742644d5d22d1723a63338ae194fb52e00f72292cdb80d0f488b0c15"
+    },
+    "components/waxs_request.zip": {
+      "bytes": 5631192,
+      "sha256": "18d3cc6e995a8ca983b06ad13656f68d6e993f1ff97648fd65a6aab72e37d07f"
+    },
+    "profiles/server36_full.json": {
+      "bytes": 277,
+      "sha256": "282df34fc7c5f5fbcb7d651adaba78398ca59416c4ca36ab219152e865f2f6b5"
+    },
+    "profiles/server59_replication.json": {
+      "bytes": 315,
+      "sha256": "5e3824b8c69efe6431de3c221aff558cc5e43f26549670099a4f4d1e0720d338"
+    },
+    "README.md": {
+      "bytes": 862,
+      "sha256": "c03d408a238029c9f4cd75880a5065edddf69e574d09783a4983d04fbdb63c69"
+    },
+    "run_ubuntu.sh": {
+      "bytes": 610,
+      "sha256": "9d87b318c3e8e9edc656276207d43aed0303ba343c6c3a785f3837bdf3bd364f"
+    },
+    "scripts/benchmark_acfo_composite_regime.py": {
+      "bytes": 8178,
+      "sha256": "e44af81d37089ea1d0e03105a10ef90180d92bbef886fe3620ba8ec2d38f4ff9"
+    },
+    "scripts/run_acfo_final_multisystem_external.py": {
+      "bytes": 20003,
+      "sha256": "b715c1035cb585929bfe246a64f92998fe8e28ccdd31791fad7ad3c4ae8b7a3d"
+    },
+    "scripts/validate_acfo_final_claim_freeze.py": {
+      "bytes": 5406,
+      "sha256": "f6b0c71bb586f19911e0746066c466b994bc7244531fa4e21e8e6ae7475db83c"
+    },
+    "scripts/validate_waxs_planar_dispatch_boundary.py": {
+      "bytes": 7966,
+      "sha256": "625c00af4e78a3525707cef4bdc26b777e371b0da74364c83b7b8182a7b53a83"
+    },
+    "scripts/verify_acfo_final_multisystem_return.py": {
+      "bytes": 4957,
+      "sha256": "56b19da03158a61b14f5de3ff6db73499b373343cd575661450f879702fa3807"
+    }
+  }
+}

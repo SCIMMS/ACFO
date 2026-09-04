@@ -1,0 +1,17 @@
+{
+  "schema": "odt-toeplitz-si-external-run-console-v1",
+  "mode": "full",
+  "run_dir": "/workspace/ACFO/environment_migrations/acfo_ncs_gpu_loader_20260904/odt_rerun/runs/20260904T040909Z",
+  "return_root": "/workspace/ACFO/environment_migrations/acfo_ncs_gpu_loader_20260904/odt_rerun/runs/20260904T040909Z/odt_toeplitz_si_external_return",
+  "return_manifest_sha256": "f78c734bb4e4eeb354994b10ba934d7409c67bf1f11914165be139b759935e4d",
+  "manifested_file_count": 31,
+  "request_integrity": true,
+  "scientific_correctness": true,
+  "performance_compelling": false,
+  "research_disposition": "correct_but_performance_not_compelling",
+  "archive": "/workspace/ACFO/environment_migrations/acfo_ncs_gpu_loader_20260904/odt_rerun/runs/20260904T040909Z/odt_toeplitz_si_external_return.zip",
+  "archive_bytes": 128214,
+  "archive_sha256": "6ed84f705a7163537c25560fd90839f60518a2524c9559c74f3868de221f7fec",
+  "sha256_sidecar": "/workspace/ACFO/environment_migrations/acfo_ncs_gpu_loader_20260904/odt_rerun/runs/20260904T040909Z/odt_toeplitz_si_external_return.zip.sha256",
+  "sha256_sidecar_sha256": "9e842ea62a2c3bce8e5a4c5332ec0cc60fbb4c2f5acfd834e7738c93745fbe0a"
+}

@@ -1,0 +1,72 @@
+{
+  "schema": "acfo-operator-storyline-request-manifest-v2",
+  "created_utc": "2026-09-04T00:24:23.185835+00:00",
+  "claim_freeze_sha256": "2bec572b6ae8b70ef9f4a3f47b07b4e5f294364189078e1bf852ce36aa8a6f56",
+  "protocol_sha256": "66edf7a089b5c0daa0cf61758de6f1d0336e0599b27a7faf63c0322e11e8a08e",
+  "files": {
+    "CLAIM_FREEZE.json": {
+      "bytes": 5134,
+      "sha256": "2bec572b6ae8b70ef9f4a3f47b07b4e5f294364189078e1bf852ce36aa8a6f56"
+    },
+    "COMPONENT_INDEX.json": {
+      "bytes": 2569,
+      "sha256": "54e9548d689db70cec944b4ad7dfe768996d1a1c41c7d222776e78f762820c2c"
+    },
+    "PROTOCOL.json": {
+      "bytes": 4926,
+      "sha256": "66edf7a089b5c0daa0cf61758de6f1d0336e0599b27a7faf63c0322e11e8a08e"
+    },
+    "README.md": {
+      "bytes": 3441,
+      "sha256": "e5af9b49544525895aba813af92e5c2b5812d3d3fab7b804a57d876ca2d92e23"
+    },
+    "components/composite_request.zip": {
+      "bytes": 64273,
+      "sha256": "9858208c87f120d13347df2ac56a5ce0fa576d64e9bb2537f451d4de6cee36fc"
+    },
+    "components/extension_request.zip": {
+      "bytes": 370962,
+      "sha256": "81b182e8c08297f80f47bb4335bb1a68814f9b03f7219145d1b8cf5b6cd15d1d"
+    },
+    "components/odt_request.zip": {
+      "bytes": 362225,
+      "sha256": "8018fdee1656d1cee0a2a9d95e115d7ef1daaf44333e350c2d71da29a22ab6c8"
+    },
+    "components/waxs_request.zip": {
+      "bytes": 5631181,
+      "sha256": "1607f488f3411dba701a5c0fc31868a00c987f755be95e1dde231d7aa3dac6c2"
+    },
+    "legacy/ACFO_FINAL_MULTISYSTEM_CLAIM_FREEZE.json": {
+      "bytes": 9045,
+      "sha256": "48cac29efc35a573ac6dcb838a84d94518ef9f167917e8c0c9e3a04d48fc9380"
+    },
+    "legacy/ACFO_FINAL_MULTISYSTEM_PROTOCOL.json": {
+      "bytes": 3658,
+      "sha256": "c08f769cde5be88849b30713bf220cafcb9fed6322c7fe45214ffca30186c123"
+    },
+    "legacy/PACKAGE_MANIFEST.json": {
+      "bytes": 2760,
+      "sha256": "63932fd806fd0639b3f86ffe7fabd3bcdd8976348e3a3ba3ef88ddffaf5ed167"
+    },
+    "scripts/acfo_storyline_package_io.py": {
+      "bytes": 3819,
+      "sha256": "f97531b5244b423b401ccc1f5c1b9957091aae8adadc464a8da3c7163d22e3c3"
+    },
+    "scripts/benchmark_acfo_composite_regime.py": {
+      "bytes": 8178,
+      "sha256": "e44af81d37089ea1d0e03105a10ef90180d92bbef886fe3620ba8ec2d38f4ff9"
+    },
+    "scripts/run_acfo_operator_storyline_external.py": {
+      "bytes": 15326,
+      "sha256": "08fa3a963c4ad32240ca7045a3f20a5db91cf869bf72a87b9b52d616c27c1a87"
+    },
+    "scripts/validate_waxs_planar_dispatch_boundary.py": {
+      "bytes": 7966,
+      "sha256": "625c00af4e78a3525707cef4bdc26b777e371b0da74364c83b7b8182a7b53a83"
+    },
+    "scripts/verify_acfo_operator_storyline_return.py": {
+      "bytes": 2736,
+      "sha256": "25d31cdd8d61894cd0f36d5aec7307fe51884992adb2ff194e21398728e731d8"
+    }
+  }
+}

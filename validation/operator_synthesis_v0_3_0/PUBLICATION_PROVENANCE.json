@@ -1,0 +1,2111 @@
+{
+  "schema": "acfo-v030-publication-provenance-v1",
+  "date": "2026-09-04",
+  "original_request_archive": {
+    "bytes": 50118297,
+    "sha256": "c77ec1e1ba84690f8ad58738d2fcd21f734afb1ff5e24aadfd3bbe32b6bf8f3d"
+  },
+  "evidence_archives": {
+    "evidence/server36_original_return.public.zip": {
+      "original": {
+        "bytes": 38078673,
+        "sha256": "39fda1c52f1625616b179831306c3639185e6694f10fb55846a61d42ebbe992e"
+      },
+      "public": {
+        "bytes": 38078661,
+        "sha256": "c4ddd3722b98c936c3fe30f1c6346ab92df94230213cf82640bb99f962aa095b"
+      }
+    },
+    "evidence/server59_original_return.public.zip": {
+      "original": {
+        "bytes": 38094322,
+        "sha256": "42defdabf6cdf87ac12e5773f39be5ff9de2045dc8ec294d4dbfda3ec8d21538"
+      },
+      "public": {
+        "bytes": 38094056,
+        "sha256": "ef325f4e3efe59dfecca0d6093d0f5f4527a5ff8f841b191059c964a569c1838"
+      }
+    },
+    "evidence/server59_corrective_odt.public.zip": {
+      "original": {
+        "bytes": 128214,
+        "sha256": "6ed84f705a7163537c25560fd90839f60518a2524c9559c74f3868de221f7fec"
+      },
+      "public": {
+        "bytes": 128207,
+        "sha256": "0b43e9da02549e3e8006a6920dce45d9d23f11961302c58dd6e885874a6ecd3e"
+      }
+    }
+  },
+  "scientific_computations_reexecuted": false,
+  "original_evidence_modified": false,
+  "public_arrays_byte_preserved_except_excluded_raw_intensity": true,
+  "claim_freeze_byte_preserved": true,
+  "checks": {
+    "numeric_json_leaves_preserved": 178513,
+    "binary_files_preserved": 8,
+    "npy_payloads_preserved": 347,
+    "python_sources_parsed": 193
+  },
+  "changes": [
+    {
+      "member": "request/PROTOCOL.json",
+      "original": {
+        "bytes": 4705,
+        "sha256": "3f2e1b720d28a45849ef91d79b7991cdb9ba6bbae5c3907329f9a33be29bef3e"
+      },
+      "public": {
+        "bytes": 4926,
+        "sha256": "66edf7a089b5c0daa0cf61758de6f1d0336e0599b27a7faf63c0322e11e8a08e"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "request/components/composite_request.zip",
+      "original": {
+        "bytes": 64278,
+        "sha256": "78c8f01c50bc7528328c5af37f2327dcfa842737c6edbdb21b55e376a1fac4da"
+      },
+      "public": {
+        "bytes": 64278,
+        "sha256": "84b46d524e2ead894802344e93111364f6d0eefa6f57b31a9d280c038daacedb"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "request/components/extension_request.zip!extension_component/benchmark_results/aidt_acfo_full1024polar_optimized_validation_rtx2070.json",
+      "original": {
+        "bytes": 10742,
+        "sha256": "15df6a17e33dcfe05dd7f5695af913e922c8ce75ae83c19ac69b14e9691c961f"
+      },
+      "public": {
+        "bytes": 10326,
+        "sha256": "9435181cf0f46c47b080b8e97cf361d418d36997048a2e396805a6db6e77be98"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "request/components/extension_request.zip!extension_component/benchmark_results/aidt_acfo_physical_torch_rtx2070_public256.json",
+      "original": {
+        "bytes": 10236,
+        "sha256": "ebfc49030a9fa306e1bbefe60cec98b431dac272fbbfb4fdf94c9852cda776c1"
+      },
+      "public": {
+        "bytes": 9829,
+        "sha256": "19666ee14c7d808116e2d2a04a2be78d0239551d3dc8f9734fb903467d28be6d"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "request/components/extension_request.zip!extension_component/benchmark_results/aidt_diatom_public_contract.npz!data.npy",
+      "original": {
+        "bytes": 47040128,
+        "sha256": "aed9f5ffc161180c39fa29eced18ef04074ff170aefb47b60479ba31da6450a0"
+      },
+      "public": null,
+      "reason": "Unlicensed third-party raw intensity stack excluded; no declared replay stage reads this field"
+    },
+    {
+      "member": "request/components/extension_request.zip!extension_component/benchmark_results/aidt_diatom_public_contract.npz",
+      "original": {
+        "bytes": 47061848,
+        "sha256": "e60c79eb6d49edcc38031c42d78ddca819ab7817d9aa5101fe0743a40ccd53da"
+      },
+      "public": {
+        "bytes": 11528,
+        "sha256": "0eac672fb6d1e6fd76742d2d94263d7b097130d7fcbf1c560f5554bf22213467"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "request/components/extension_request.zip",
+      "original": {
+        "bytes": 44031543,
+        "sha256": "ce5b63dec4f1ba9b15211472a8e6840afcf21d27e7a8299f9680810b1da6d14a"
+      },
+      "public": {
+        "bytes": 370985,
+        "sha256": "014fec57f3215c1f38f14b5f8fd7f3aa633a7ba966c9acea1c803f4816d0f98e"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "request/components/odt_request.zip",
+      "original": {
+        "bytes": 362239,
+        "sha256": "1e0bc524742644d5d22d1723a63338ae194fb52e00f72292cdb80d0f488b0c15"
+      },
+      "public": {
+        "bytes": 362239,
+        "sha256": "9777cffc8ced7c47848c17ae32024ceaa971bbac63a5a19ead0b5233254840bb"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "request/components/waxs_request.zip",
+      "original": {
+        "bytes": 5631192,
+        "sha256": "18d3cc6e995a8ca983b06ad13656f68d6e993f1ff97648fd65a6aab72e37d07f"
+      },
+      "public": {
+        "bytes": 5631192,
+        "sha256": "c7ecc043999e2fe16d954b8ce8ec02178cabded11e3de2ded35f008ba9037619"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "request/legacy/ACFO_FINAL_MULTISYSTEM_CLAIM_FREEZE.json",
+      "original": {
+        "bytes": 9037,
+        "sha256": "d08bb8cc00fbda14fa28c3176755c98f4de32464011c2daa42c627d6a0272476"
+      },
+      "public": {
+        "bytes": 9045,
+        "sha256": "48cac29efc35a573ac6dcb838a84d94518ef9f167917e8c0c9e3a04d48fc9380"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "request/legacy/ACFO_FINAL_MULTISYSTEM_PROTOCOL.json",
+      "original": {
+        "bytes": 3622,
+        "sha256": "bbe14d4f23c36591aef5709a515f6305c70ba8a789bc8f559889180de7892104"
+      },
+      "public": {
+        "bytes": 3658,
+        "sha256": "c08f769cde5be88849b30713bf220cafcb9fed6322c7fe45214ffca30186c123"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "request/docs/storyline_and_scope_ko.md",
+      "original": {
+        "bytes": 7168,
+        "sha256": "e00e0ac6dbbaa2a3d6b60c454990f871b2a89d971b6d964b78cea98bfc7c1173"
+      },
+      "public": null,
+      "reason": "Internal editorial planning omitted; scientific protocol and pre-execution claim freeze retained"
+    },
+    {
+      "member": "request/components/waxs_request.zip!waxs_component/PACKAGE_MANIFEST.json",
+      "original": {
+        "bytes": 6718,
+        "sha256": "6af6e4957634b3a8c5201f1532efc4c870362cfb40eb32bf9a252fb7b6c5835a"
+      },
+      "public": {
+        "bytes": 6547,
+        "sha256": "880b69cae301599496c3b08ec5b65cd3ff0867f5cce2998b201a3d8217c388a7"
+      },
+      "reason": "Recompute public component manifest after documented metadata / input curation"
+    },
+    {
+      "member": "request/components/odt_request.zip!odt_component/PACKAGE_MANIFEST.json",
+      "original": {
+        "bytes": 12974,
+        "sha256": "f8b33b2416f38844d1708048989fd6406d52da61100cc8e3ec5042a28524cc41"
+      },
+      "public": {
+        "bytes": 12661,
+        "sha256": "8c435180386e9e20e305e140127737b53c4a6c4df468aaab2a51f827a04680bf"
+      },
+      "reason": "Recompute public component manifest after documented metadata / input curation"
+    },
+    {
+      "member": "request/components/composite_request.zip!composite_component/MANIFEST.json",
+      "original": {
+        "bytes": 2878,
+        "sha256": "481a6de28960570a3e1351306d2af40a21092a8fa5dc7e8d47b239610bb5ca04"
+      },
+      "public": {
+        "bytes": 2805,
+        "sha256": "29a51f8426d4b2ba5a4b7a9c94b477439a8b11dbcea5f328d666b44912dcf556"
+      },
+      "reason": "Recompute public component manifest after documented metadata / input curation"
+    },
+    {
+      "member": "request/components/extension_request.zip!extension_component/PACKAGE_MANIFEST.json",
+      "original": {
+        "bytes": 15297,
+        "sha256": "88bac65352c5f9a7158540aff6b090c6e3d83699cbe3cfa42681efb2af664613"
+      },
+      "public": {
+        "bytes": 14912,
+        "sha256": "305ae3aad600ba61fbfce450658a155811dde2e65692b2fca4fdc1144b64b73e"
+      },
+      "reason": "Recompute public component manifest after documented metadata / input curation"
+    },
+    {
+      "member": "request/COMPONENT_INDEX.json",
+      "original": {
+        "bytes": 2625,
+        "sha256": "493933108d504c445ee696d813d39e0e5502c6bd79cef5d870c78c732619a696"
+      },
+      "public": {
+        "bytes": 2569,
+        "sha256": "54e9548d689db70cec944b4ad7dfe768996d1a1c41c7d222776e78f762820c2c"
+      },
+      "reason": "Public distribution derivative; original science and numeric values preserved"
+    },
+    {
+      "member": "request/PACKAGE_MANIFEST.json",
+      "original": {
+        "bytes": 3004,
+        "sha256": "c24a199886239d28fabea2140346d82a8601b4d39276b006f6263f8c9ae8af55"
+      },
+      "public": {
+        "bytes": 2775,
+        "sha256": "872a6d26aab76c7feafc2e8ff5bc6418554029162422b85050415c98f03eeb53"
+      },
+      "reason": "Public distribution derivative; original science and numeric values preserved"
+    },
+    {
+      "member": "request/PROTOCOL.json",
+      "original": {
+        "bytes": 4705,
+        "sha256": "3f2e1b720d28a45849ef91d79b7991cdb9ba6bbae5c3907329f9a33be29bef3e"
+      },
+      "public": {
+        "bytes": 4926,
+        "sha256": "66edf7a089b5c0daa0cf61758de6f1d0336e0599b27a7faf63c0322e11e8a08e"
+      },
+      "reason": "Public distribution derivative; original science and numeric values preserved"
+    },
+    {
+      "member": "request/components/composite_request.zip",
+      "original": {
+        "bytes": 64278,
+        "sha256": "78c8f01c50bc7528328c5af37f2327dcfa842737c6edbdb21b55e376a1fac4da"
+      },
+      "public": {
+        "bytes": 64273,
+        "sha256": "9858208c87f120d13347df2ac56a5ce0fa576d64e9bb2537f451d4de6cee36fc"
+      },
+      "reason": "Public distribution derivative; original science and numeric values preserved"
+    },
+    {
+      "member": "request/components/extension_request.zip",
+      "original": {
+        "bytes": 44031543,
+        "sha256": "ce5b63dec4f1ba9b15211472a8e6840afcf21d27e7a8299f9680810b1da6d14a"
+      },
+      "public": {
+        "bytes": 370962,
+        "sha256": "81b182e8c08297f80f47bb4335bb1a68814f9b03f7219145d1b8cf5b6cd15d1d"
+      },
+      "reason": "Public distribution derivative; original science and numeric values preserved"
+    },
+    {
+      "member": "request/components/odt_request.zip",
+      "original": {
+        "bytes": 362239,
+        "sha256": "1e0bc524742644d5d22d1723a63338ae194fb52e00f72292cdb80d0f488b0c15"
+      },
+      "public": {
+        "bytes": 362225,
+        "sha256": "8018fdee1656d1cee0a2a9d95e115d7ef1daaf44333e350c2d71da29a22ab6c8"
+      },
+      "reason": "Public distribution derivative; original science and numeric values preserved"
+    },
+    {
+      "member": "request/components/waxs_request.zip",
+      "original": {
+        "bytes": 5631192,
+        "sha256": "18d3cc6e995a8ca983b06ad13656f68d6e993f1ff97648fd65a6aab72e37d07f"
+      },
+      "public": {
+        "bytes": 5631181,
+        "sha256": "1607f488f3411dba701a5c0fc31868a00c987f755be95e1dde231d7aa3dac6c2"
+      },
+      "reason": "Public distribution derivative; original science and numeric values preserved"
+    },
+    {
+      "member": "request/legacy/ACFO_FINAL_MULTISYSTEM_CLAIM_FREEZE.json",
+      "original": {
+        "bytes": 9037,
+        "sha256": "d08bb8cc00fbda14fa28c3176755c98f4de32464011c2daa42c627d6a0272476"
+      },
+      "public": {
+        "bytes": 9045,
+        "sha256": "48cac29efc35a573ac6dcb838a84d94518ef9f167917e8c0c9e3a04d48fc9380"
+      },
+      "reason": "Public distribution derivative; original science and numeric values preserved"
+    },
+    {
+      "member": "request/legacy/ACFO_FINAL_MULTISYSTEM_PROTOCOL.json",
+      "original": {
+        "bytes": 3622,
+        "sha256": "bbe14d4f23c36591aef5709a515f6305c70ba8a789bc8f559889180de7892104"
+      },
+      "public": {
+        "bytes": 3658,
+        "sha256": "c08f769cde5be88849b30713bf220cafcb9fed6322c7fe45214ffca30186c123"
+      },
+      "reason": "Public distribution derivative; original science and numeric values preserved"
+    },
+    {
+      "member": "evidence/server36_original_return.public.zip!PROTOCOL.json",
+      "original": {
+        "bytes": 4705,
+        "sha256": "3f2e1b720d28a45849ef91d79b7991cdb9ba6bbae5c3907329f9a33be29bef3e"
+      },
+      "public": {
+        "bytes": 4926,
+        "sha256": "66edf7a089b5c0daa0cf61758de6f1d0336e0599b27a7faf63c0322e11e8a08e"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server36_original_return.public.zip!outputs/component_returns/composite/acfo_layered_vector_composite_external_return.zip",
+      "original": {
+        "bytes": 199046,
+        "sha256": "3f96dbb17eb833cd1b7bd040e19921bdda74ff8f338745b4190b554c9692b017"
+      },
+      "public": {
+        "bytes": 199046,
+        "sha256": "4e988b51eb81f8c1fff47cf71552c56564127e04b6d79d28263b88afeb51b445"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server36_original_return.public.zip!outputs/component_returns/odt/runs/20260904T015354Z/odt_toeplitz_si_external_return.zip!odt_toeplitz_si_external_return/AGGREGATE_RESULT.json",
+      "original": {
+        "bytes": 35797,
+        "sha256": "0777b4c70ae9e3b13e853e165969f6c65dfdc6a8349574e860830e3878b81ad3"
+      },
+      "public": {
+        "bytes": 35837,
+        "sha256": "7b1482e90c02331b047a782cd64d2f8510830139beefd260e72774861fae414f"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server36_original_return.public.zip!outputs/component_returns/odt/runs/20260904T015354Z/odt_toeplitz_si_external_return.zip!odt_toeplitz_si_external_return/aggregate/ODT_TOEPLITZ_SI_AGGREGATE.json",
+      "original": {
+        "bytes": 13543,
+        "sha256": "4c2ac1f5f76deb64d2a8cc9aecee565ebff7ed1be388b4af99ab1f37aeec0149"
+      },
+      "public": {
+        "bytes": 13543,
+        "sha256": "091b237ef01974a247cc77d26333214d1d0275774045009be4a82c2ca5901efe"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server36_original_return.public.zip!outputs/component_returns/odt/runs/20260904T015354Z/odt_toeplitz_si_external_return.zip!odt_toeplitz_si_external_return/environment/environment.json",
+      "original": {
+        "bytes": 1835,
+        "sha256": "03ab79d0b77aa36fe61d5aa2406f0a1542afa4cfabacd2a40a1c521aaba747a9"
+      },
+      "public": {
+        "bytes": 1870,
+        "sha256": "67982037a89931f9e9acf43a58538f6c5e1f3dcc21ee0bd30371a02f7928f632"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server36_original_return.public.zip!outputs/component_returns/odt/runs/20260904T015354Z/odt_toeplitz_si_external_return.zip!odt_toeplitz_si_external_return/environment/pip_freeze.txt",
+      "original": {
+        "bytes": 2761,
+        "sha256": "027e11335dfdfefdede0e0982a46f00a90b9f0c2513f142e46c3fdcd41856d35"
+      },
+      "public": {
+        "bytes": 2761,
+        "sha256": "d7340e7794522f31b90b36b4c3ebd20e821cca3ff673338af1c2e292cdf2718f"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server36_original_return.public.zip!outputs/component_returns/odt/runs/20260904T015354Z/odt_toeplitz_si_external_return.zip!odt_toeplitz_si_external_return/logs/stage1_exact_complex128.log",
+      "original": {
+        "bytes": 783,
+        "sha256": "6d804c32ae82f3fa6ad9b63aff76e4c8df6fcfc78cb49afc5b15a20dd0c7a8c1"
+      },
+      "public": {
+        "bytes": 783,
+        "sha256": "126530a674cdad170df3af11f66b857cfaf816ff6b546e974a0806d0ee46eda4"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server36_original_return.public.zip!outputs/component_returns/odt/runs/20260904T015354Z/odt_toeplitz_si_external_return.zip!odt_toeplitz_si_external_return/logs/stage2_weighted_updates.log",
+      "original": {
+        "bytes": 1193,
+        "sha256": "e6fbe8e9baa4d3a1f9405b4fb813de94771f8cb2f45c1f79d1134e697e405189"
+      },
+      "public": {
+        "bytes": 1193,
+        "sha256": "2657f08800fe1799939774e39b8b0842c98f841299009db22291e0f3e640822c"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server36_original_return.public.zip!outputs/component_returns/odt/runs/20260904T015354Z/odt_toeplitz_si_external_return.zip!odt_toeplitz_si_external_return/logs/stage3_cg_trajectory.log",
+      "original": {
+        "bytes": 831,
+        "sha256": "dac1a75b2764f04a2f5b9f92fe503de3379d37753d455ba47904387b8115b4d8"
+      },
+      "public": {
+        "bytes": 831,
+        "sha256": "33301c431b1031b5623a7b878d8adc3e93e31765c2e26124e868b53472c572a4"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server36_original_return.public.zip!outputs/component_returns/odt/runs/20260904T015354Z/odt_toeplitz_si_external_return.zip!odt_toeplitz_si_external_return/logs/stage4_cufinufft_normal.log",
+      "original": {
+        "bytes": 453,
+        "sha256": "b173bcc5f224ff4244d90d8abaf4318958462ffc7733990240b13604dbccbee5"
+      },
+      "public": {
+        "bytes": 453,
+        "sha256": "338a68f36820a95752e57c63cba5f4bb1877e8e1e4917845bb224f0bb02a5ee4"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server36_original_return.public.zip!outputs/component_returns/odt/runs/20260904T015354Z/odt_toeplitz_si_external_return.zip!odt_toeplitz_si_external_return/logs/stage5_cufinufft_toeplitz.log",
+      "original": {
+        "bytes": 458,
+        "sha256": "867856c5d711853384ae401f556dcad6fc956eeea5853504dc0d220aaed650a6"
+      },
+      "public": {
+        "bytes": 458,
+        "sha256": "e44dfb36a36909fdb0c2e557593cd84e514adf02dbc6856f013eee501ab6c1bc"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server36_original_return.public.zip!outputs/component_returns/odt/runs/20260904T015354Z/odt_toeplitz_si_external_return.zip!odt_toeplitz_si_external_return/logs/stage6_cpu_generic_toeplitz.log",
+      "original": {
+        "bytes": 456,
+        "sha256": "5a26b9c3f1d354ba86286a5a171db112c3ff471ec4ec6dc7951aaadd9ddd25f7"
+      },
+      "public": {
+        "bytes": 456,
+        "sha256": "bf15534b202d17c3841e93fc664cd2f5d050f6d18b4612ebe3cd4f263c09f877"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server36_original_return.public.zip!outputs/component_returns/odt/runs/20260904T015354Z/odt_toeplitz_si_external_return.zip!odt_toeplitz_si_external_return/logs/stage7_acfo_toeplitz.log",
+      "original": {
+        "bytes": 448,
+        "sha256": "8c7b6a3e8b6ea8bc791fbe095b884b7efc1546979a4c9380f05af540386bd75c"
+      },
+      "public": {
+        "bytes": 448,
+        "sha256": "cafb51c6f18c6651ac4af693c6d65c271ec20665f26eec16f717d13ecd581b75"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server36_original_return.public.zip!outputs/component_returns/odt/runs/20260904T015354Z/odt_toeplitz_si_external_return.zip!odt_toeplitz_si_external_return/logs/stage8_aggregate.log",
+      "original": {
+        "bytes": 1196,
+        "sha256": "26ac0ecc2bf71b94787587da7aa16596c666ab4fc112015d76904153ab3d73f7"
+      },
+      "public": {
+        "bytes": 1196,
+        "sha256": "971c62fac9cea0b368b7484f7039f841b3e33a87960285438064687eb847d862"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server36_original_return.public.zip!outputs/component_returns/odt/runs/20260904T015354Z/odt_toeplitz_si_external_return.zip",
+      "original": {
+        "bytes": 128184,
+        "sha256": "f857a89880febf3974b1f0d9dbb275ebb8dbc76577986b60cef56ab6b47a8bfa"
+      },
+      "public": {
+        "bytes": 128181,
+        "sha256": "226cab6fdf202a6ebfb17e515917a7cb7836f27e44fde8015c1b1ddca77c525d"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server36_original_return.public.zip!outputs/component_returns/waxs/waxs_100_state_full_external_return.zip!waxs_100_state_external_return/build.log",
+      "original": {
+        "bytes": 2401,
+        "sha256": "d7f546bb0b095dff8a6d640c4c2d26aed155fff712fe98d0f68e26cf4717bcb9"
+      },
+      "public": {
+        "bytes": 2491,
+        "sha256": "bf5fe26ea74003355c51f3e110cab5a4bfbb540b7e28c9471a567df8f5e9b089"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server36_original_return.public.zip!outputs/component_returns/waxs/waxs_100_state_full_external_return.zip!waxs_100_state_external_return/seed_2026072611.log",
+      "original": {
+        "bytes": 9008,
+        "sha256": "3b0eb3b7d33b91e4df0f9f35fbdd9a26ae48427955e1d97c8c74afb675a86c30"
+      },
+      "public": {
+        "bytes": 9008,
+        "sha256": "56bbc68ea32d75bdd22a573f3b17ba52fa9240429382b9a55efcdcfb78d0c271"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server36_original_return.public.zip!outputs/component_returns/waxs/waxs_100_state_full_external_return.zip!waxs_100_state_external_return/seed_2026072612.log",
+      "original": {
+        "bytes": 9000,
+        "sha256": "6e9c69d18769f0e2b15392a64ad465f8608195f9183ba08f423ae74964f71f0b"
+      },
+      "public": {
+        "bytes": 9000,
+        "sha256": "f91d1bb0b85b922dc16fcef89c172dc7a086e28b8530f5b98eb66cd28b15c863"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server36_original_return.public.zip!outputs/component_returns/waxs/waxs_100_state_full_external_return.zip!waxs_100_state_external_return/seed_2026072613.log",
+      "original": {
+        "bytes": 9006,
+        "sha256": "9d45a85efeca17affb6058dfbbf576a33f0f0c54b6a067cb7c292781e9e304cd"
+      },
+      "public": {
+        "bytes": 9006,
+        "sha256": "9860fea2b5d4e158f01e061170c6daf6d891466b93e19b2164bc45ba9b65fd9e"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server36_original_return.public.zip!outputs/component_returns/waxs/waxs_100_state_full_external_return.zip",
+      "original": {
+        "bytes": 69365,
+        "sha256": "f63398308320209cb91044a643b2bbec4a8a87e87c0ecf56bc9a947a972d2c62"
+      },
+      "public": {
+        "bytes": 69361,
+        "sha256": "0921f48b7d4b4ad22bab1d19c3e408d5ece9d54b8cc03751e9b595b60c5275e7"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server36_original_return.public.zip!outputs/composite_regimes.json",
+      "original": {
+        "bytes": 9646,
+        "sha256": "4b6e8ab04cf66ea580a1e07b78bd86d4a3e6e7403af5b1691a891109bf5bd011"
+      },
+      "public": {
+        "bytes": 9646,
+        "sha256": "ee0f9ad2d7e57976ce18c79bfedd0da9aaf04e03f8899ffc445e4f9caa72bc60"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server36_original_return.public.zip!outputs/environment.json",
+      "original": {
+        "bytes": 18489,
+        "sha256": "de50d878a9425a936df5ced54d299d4c15ea4e5866b048a7b5a2a81db2ea202b"
+      },
+      "public": {
+        "bytes": 19684,
+        "sha256": "cf4d9cdb74108cebf8bd12b5711ade35d18f6d93a5a6b555b5674cecf986cd1f"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server36_original_return.public.zip!outputs/execution_plan.json",
+      "original": {
+        "bytes": 12719,
+        "sha256": "917bf3a56a80434759cff4e37cb26d9584256da3f11b7e33961690830049717c"
+      },
+      "public": {
+        "bytes": 12789,
+        "sha256": "b3702f094b314a64c6e0e4b6611559ba94eaae0bcfab17bbb1ae318700beae13"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server36_original_return.public.zip!outputs/logs/common_radial.json",
+      "original": {
+        "bytes": 540,
+        "sha256": "1096198f77f52fa4ad03b96d83168c5dab1e8c01a1e7db22e557c295bb1844cc"
+      },
+      "public": {
+        "bytes": 545,
+        "sha256": "a727fade34979250b3b9b14846d56003c5d10a07b6b674e4450e11f219835f54"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server36_original_return.public.zip!outputs/logs/common_radial_audit.json",
+      "original": {
+        "bytes": 544,
+        "sha256": "c08a10f4befd13d0cd71bb3928e2c1847e8dcf773fb77ac09f04709d07d4ab46"
+      },
+      "public": {
+        "bytes": 549,
+        "sha256": "3db996f5a61be32e22a37fb2ad26d69c29078aa0c55b6533ef67f25dc2b345d3"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server36_original_return.public.zip!outputs/logs/composite_regimes.json",
+      "original": {
+        "bytes": 1072,
+        "sha256": "607cc42d56f8eb6a3aed4e255598dd475a2951e521b4981fa951cd8eb4379f72"
+      },
+      "public": {
+        "bytes": 1077,
+        "sha256": "bb9b32a73b925384d566bc5481ae0cb33bfa56e878379ac34461066c6ae0b2a1"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server36_original_return.public.zip!outputs/logs/composite_regimes.stdout.log",
+      "original": {
+        "bytes": 9646,
+        "sha256": "4b6e8ab04cf66ea580a1e07b78bd86d4a3e6e7403af5b1691a891109bf5bd011"
+      },
+      "public": {
+        "bytes": 9646,
+        "sha256": "ee0f9ad2d7e57976ce18c79bfedd0da9aaf04e03f8899ffc445e4f9caa72bc60"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server36_original_return.public.zip!outputs/logs/extension_unit_tests.json",
+      "original": {
+        "bytes": 744,
+        "sha256": "ba90411f7ca758f65ede7dd612eacecbac27dd9eb32b8817d5c28a548a285d0f"
+      },
+      "public": {
+        "bytes": 749,
+        "sha256": "6cc2b65ea670dc867f013100fdf3a8e165033c9dc1847a4df3a2771e8d364aa3"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server36_original_return.public.zip!outputs/logs/geometry_api.json",
+      "original": {
+        "bytes": 543,
+        "sha256": "fec4d380206f1f89b7ff7f43f722dcd09246188e4bb8d22dec7cabdbc01ea2fa"
+      },
+      "public": {
+        "bytes": 548,
+        "sha256": "229e68ff0b2d4db03438ea1b57b8ff55ab69da2b0198a44f10ee588254dcf758"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server36_original_return.public.zip!outputs/logs/geometry_api_audit.json",
+      "original": {
+        "bytes": 548,
+        "sha256": "49ac26a23213ef384800c8cae0912fb675e06810b9bd016a116f686270c7af87"
+      },
+      "public": {
+        "bytes": 553,
+        "sha256": "4415180d97314b6e25bcd6bf36c87a85b36a77fdaee5d2a33589eec29a3d6969"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server36_original_return.public.zip!outputs/logs/high_na_correspondence.json",
+      "original": {
+        "bytes": 639,
+        "sha256": "a1afe3ef536518a4acf9d60aeaccdeeab63f6dfc9d5bfc48d0cc2567bbc933c1"
+      },
+      "public": {
+        "bytes": 644,
+        "sha256": "a996a0ec7093d9731c8e175bf0e3abdc04966e1935e119ef31a5000849389d66"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server36_original_return.public.zip!outputs/logs/high_na_support.json",
+      "original": {
+        "bytes": 599,
+        "sha256": "590bafdf4ccdc7ef8dc8f31e25d4fe0f5442d410c1a231cd887fa48a5625a235"
+      },
+      "public": {
+        "bytes": 604,
+        "sha256": "568ad824bf96fd7111a1b040ab051227f67bd49e2c63ab085da7aadbffc7261f"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server36_original_return.public.zip!outputs/logs/odt_cartesian.json",
+      "original": {
+        "bytes": 845,
+        "sha256": "df8bf3fc5bbeb95b58d3e7c5646519bdb5ae05db0cbdc76112dbd1ee2d525f49"
+      },
+      "public": {
+        "bytes": 850,
+        "sha256": "dc658b22dc1ea84e22ed02b36457820d9eef8a90ff9b3817c0cc11cc46fd4dac"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server36_original_return.public.zip!outputs/logs/odt_cartesian.stdout.log",
+      "original": {
+        "bytes": 1601,
+        "sha256": "3d03f7f3b0a81613d968dcca42979cf0e0dac0a86f38167914d9cdc5b3531704"
+      },
+      "public": {
+        "bytes": 1601,
+        "sha256": "3729b8aac358376fde07e1eacba654bc78c2050114c1d3abe9b9225fd1fdeece"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server36_original_return.public.zip!outputs/logs/physical_modal_normal.json",
+      "original": {
+        "bytes": 554,
+        "sha256": "b53ac052c06dbba0090d829d73d29f6c9441171643cd4dc2f98db98588d1281a"
+      },
+      "public": {
+        "bytes": 559,
+        "sha256": "346fb32f7fbbc1d259700256128125e2a8751ce5fe188a9ce705d2ae80690c0d"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server36_original_return.public.zip!outputs/logs/physical_modal_normal_audit.json",
+      "original": {
+        "bytes": 558,
+        "sha256": "e2eb5401989e11efcf093981d920790a2e50c14d7867ba01732d32972094762b"
+      },
+      "public": {
+        "bytes": 563,
+        "sha256": "0e4be060244a2df8333d825179d04d5a370b3023bc3268ee8f3663077d254db8"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server36_original_return.public.zip!outputs/logs/planar_boundary.json",
+      "original": {
+        "bytes": 1297,
+        "sha256": "9840944bebde27ace5401a84510c09adf2c80fb9eaa5d0bb8d418a240389dec2"
+      },
+      "public": {
+        "bytes": 1302,
+        "sha256": "811fdd504d22b5fd19fe82582a505eed45d8733d4edfed7420b3cccd6417a873"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server36_original_return.public.zip!outputs/logs/planar_boundary.stdout.log",
+      "original": {
+        "bytes": 4552,
+        "sha256": "621b3ab614ef19e10b3f43d25072ecf79ac7c62890e2fb622b5921c2bebc2a98"
+      },
+      "public": {
+        "bytes": 4552,
+        "sha256": "98c1e542d8a52e2fb65781da04b1000631e28fdd6125aca14bbf75c50d0a8d70"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server36_original_return.public.zip!outputs/logs/support_frontier.json",
+      "original": {
+        "bytes": 766,
+        "sha256": "41b20439eeee3ae654bd7cf3e6e69d390c9a2983e96eadeb93589684c46ea720"
+      },
+      "public": {
+        "bytes": 771,
+        "sha256": "f680fadbb0e4158bbf81319f92e5d030901ecae74b94ad2ffa4d437bf96cd155"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server36_original_return.public.zip!outputs/logs/waxs_full.json",
+      "original": {
+        "bytes": 642,
+        "sha256": "03562eb0f172875cf6a66d3cf20602cb62281c7cf1c40caf0d3679fb7b99fa34"
+      },
+      "public": {
+        "bytes": 647,
+        "sha256": "d64d4aca2d3dda40b80404c28426bd8e55c8da923d40dc1a4b881930c970aeb2"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server36_original_return.public.zip!outputs/logs/waxs_full.stdout.log",
+      "original": {
+        "bytes": 32049,
+        "sha256": "3f0316ecb886273241afd5abde6ad5ce8f1593975f7a0f0e821964a291c7e51e"
+      },
+      "public": {
+        "bytes": 32139,
+        "sha256": "62bb476b0bf3d9b13df93c5b819d70868c41f706c85c3667cecd94612e0a6640"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server36_original_return.public.zip!outputs/partial_component_evidence/odt/runs/20260904T015354Z/odt_toeplitz_si_external_return/AGGREGATE_RESULT.json",
+      "original": {
+        "bytes": 35797,
+        "sha256": "0777b4c70ae9e3b13e853e165969f6c65dfdc6a8349574e860830e3878b81ad3"
+      },
+      "public": {
+        "bytes": 35837,
+        "sha256": "7b1482e90c02331b047a782cd64d2f8510830139beefd260e72774861fae414f"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server36_original_return.public.zip!outputs/partial_component_evidence/odt/runs/20260904T015354Z/odt_toeplitz_si_external_return/aggregate/ODT_TOEPLITZ_SI_AGGREGATE.json",
+      "original": {
+        "bytes": 13543,
+        "sha256": "4c2ac1f5f76deb64d2a8cc9aecee565ebff7ed1be388b4af99ab1f37aeec0149"
+      },
+      "public": {
+        "bytes": 13543,
+        "sha256": "091b237ef01974a247cc77d26333214d1d0275774045009be4a82c2ca5901efe"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server36_original_return.public.zip!outputs/partial_component_evidence/odt/runs/20260904T015354Z/odt_toeplitz_si_external_return/environment/environment.json",
+      "original": {
+        "bytes": 1835,
+        "sha256": "03ab79d0b77aa36fe61d5aa2406f0a1542afa4cfabacd2a40a1c521aaba747a9"
+      },
+      "public": {
+        "bytes": 1870,
+        "sha256": "67982037a89931f9e9acf43a58538f6c5e1f3dcc21ee0bd30371a02f7928f632"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server36_original_return.public.zip!outputs/partial_component_evidence/odt/runs/20260904T015354Z/odt_toeplitz_si_external_return/environment/pip_freeze.txt",
+      "original": {
+        "bytes": 2761,
+        "sha256": "027e11335dfdfefdede0e0982a46f00a90b9f0c2513f142e46c3fdcd41856d35"
+      },
+      "public": {
+        "bytes": 2761,
+        "sha256": "d7340e7794522f31b90b36b4c3ebd20e821cca3ff673338af1c2e292cdf2718f"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server36_original_return.public.zip!outputs/partial_component_evidence/odt/runs/20260904T015354Z/odt_toeplitz_si_external_return/logs/stage1_exact_complex128.log",
+      "original": {
+        "bytes": 783,
+        "sha256": "6d804c32ae82f3fa6ad9b63aff76e4c8df6fcfc78cb49afc5b15a20dd0c7a8c1"
+      },
+      "public": {
+        "bytes": 783,
+        "sha256": "126530a674cdad170df3af11f66b857cfaf816ff6b546e974a0806d0ee46eda4"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server36_original_return.public.zip!outputs/partial_component_evidence/odt/runs/20260904T015354Z/odt_toeplitz_si_external_return/logs/stage2_weighted_updates.log",
+      "original": {
+        "bytes": 1193,
+        "sha256": "e6fbe8e9baa4d3a1f9405b4fb813de94771f8cb2f45c1f79d1134e697e405189"
+      },
+      "public": {
+        "bytes": 1193,
+        "sha256": "2657f08800fe1799939774e39b8b0842c98f841299009db22291e0f3e640822c"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server36_original_return.public.zip!outputs/partial_component_evidence/odt/runs/20260904T015354Z/odt_toeplitz_si_external_return/logs/stage3_cg_trajectory.log",
+      "original": {
+        "bytes": 831,
+        "sha256": "dac1a75b2764f04a2f5b9f92fe503de3379d37753d455ba47904387b8115b4d8"
+      },
+      "public": {
+        "bytes": 831,
+        "sha256": "33301c431b1031b5623a7b878d8adc3e93e31765c2e26124e868b53472c572a4"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server36_original_return.public.zip!outputs/partial_component_evidence/odt/runs/20260904T015354Z/odt_toeplitz_si_external_return/logs/stage4_cufinufft_normal.log",
+      "original": {
+        "bytes": 453,
+        "sha256": "b173bcc5f224ff4244d90d8abaf4318958462ffc7733990240b13604dbccbee5"
+      },
+      "public": {
+        "bytes": 453,
+        "sha256": "338a68f36820a95752e57c63cba5f4bb1877e8e1e4917845bb224f0bb02a5ee4"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server36_original_return.public.zip!outputs/partial_component_evidence/odt/runs/20260904T015354Z/odt_toeplitz_si_external_return/logs/stage5_cufinufft_toeplitz.log",
+      "original": {
+        "bytes": 458,
+        "sha256": "867856c5d711853384ae401f556dcad6fc956eeea5853504dc0d220aaed650a6"
+      },
+      "public": {
+        "bytes": 458,
+        "sha256": "e44dfb36a36909fdb0c2e557593cd84e514adf02dbc6856f013eee501ab6c1bc"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server36_original_return.public.zip!outputs/partial_component_evidence/odt/runs/20260904T015354Z/odt_toeplitz_si_external_return/logs/stage6_cpu_generic_toeplitz.log",
+      "original": {
+        "bytes": 456,
+        "sha256": "5a26b9c3f1d354ba86286a5a171db112c3ff471ec4ec6dc7951aaadd9ddd25f7"
+      },
+      "public": {
+        "bytes": 456,
+        "sha256": "bf15534b202d17c3841e93fc664cd2f5d050f6d18b4612ebe3cd4f263c09f877"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server36_original_return.public.zip!outputs/partial_component_evidence/odt/runs/20260904T015354Z/odt_toeplitz_si_external_return/logs/stage7_acfo_toeplitz.log",
+      "original": {
+        "bytes": 448,
+        "sha256": "8c7b6a3e8b6ea8bc791fbe095b884b7efc1546979a4c9380f05af540386bd75c"
+      },
+      "public": {
+        "bytes": 448,
+        "sha256": "cafb51c6f18c6651ac4af693c6d65c271ec20665f26eec16f717d13ecd581b75"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server36_original_return.public.zip!outputs/partial_component_evidence/odt/runs/20260904T015354Z/odt_toeplitz_si_external_return/logs/stage8_aggregate.log",
+      "original": {
+        "bytes": 1196,
+        "sha256": "26ac0ecc2bf71b94787587da7aa16596c666ab4fc112015d76904153ab3d73f7"
+      },
+      "public": {
+        "bytes": 1196,
+        "sha256": "971c62fac9cea0b368b7484f7039f841b3e33a87960285438064687eb847d862"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server36_original_return.public.zip!outputs/partial_component_evidence/waxs/evidence/build.log",
+      "original": {
+        "bytes": 2401,
+        "sha256": "d7f546bb0b095dff8a6d640c4c2d26aed155fff712fe98d0f68e26cf4717bcb9"
+      },
+      "public": {
+        "bytes": 2491,
+        "sha256": "bf5fe26ea74003355c51f3e110cab5a4bfbb540b7e28c9471a567df8f5e9b089"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server36_original_return.public.zip!outputs/partial_component_evidence/waxs/evidence/seed_2026072611.log",
+      "original": {
+        "bytes": 9008,
+        "sha256": "3b0eb3b7d33b91e4df0f9f35fbdd9a26ae48427955e1d97c8c74afb675a86c30"
+      },
+      "public": {
+        "bytes": 9008,
+        "sha256": "56bbc68ea32d75bdd22a573f3b17ba52fa9240429382b9a55efcdcfb78d0c271"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server36_original_return.public.zip!outputs/partial_component_evidence/waxs/evidence/seed_2026072612.log",
+      "original": {
+        "bytes": 9000,
+        "sha256": "6e9c69d18769f0e2b15392a64ad465f8608195f9183ba08f423ae74964f71f0b"
+      },
+      "public": {
+        "bytes": 9000,
+        "sha256": "f91d1bb0b85b922dc16fcef89c172dc7a086e28b8530f5b98eb66cd28b15c863"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server36_original_return.public.zip!outputs/partial_component_evidence/waxs/evidence/seed_2026072613.log",
+      "original": {
+        "bytes": 9006,
+        "sha256": "9d45a85efeca17affb6058dfbbf576a33f0f0c54b6a067cb7c292781e9e304cd"
+      },
+      "public": {
+        "bytes": 9006,
+        "sha256": "9860fea2b5d4e158f01e061170c6daf6d891466b93e19b2164bc45ba9b65fd9e"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server36_original_return.public.zip!outputs/planar.json",
+      "original": {
+        "bytes": 4552,
+        "sha256": "621b3ab614ef19e10b3f43d25072ecf79ac7c62890e2fb622b5921c2bebc2a98"
+      },
+      "public": {
+        "bytes": 4552,
+        "sha256": "98c1e542d8a52e2fb65781da04b1000631e28fdd6125aca14bbf75c50d0a8d70"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server36_original_return.public.zip!outputs/progress.json",
+      "original": {
+        "bytes": 11845,
+        "sha256": "6880b0b3894185e4cc375996a8f877492551800b432f8595cc4b9e63c32fb726"
+      },
+      "public": {
+        "bytes": 11915,
+        "sha256": "72b9c8ac6f297fe5b805e23ebc9dcf8a05d14d15e83cf61abb3e1085a31f5c5c"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server36_original_return.public.zip!outputs/summary.json",
+      "original": {
+        "bytes": 12869,
+        "sha256": "f3c3cb12ce6ea527e368f29e4f11c0900e134f70210fb94820696f8b1fac62d2"
+      },
+      "public": {
+        "bytes": 12939,
+        "sha256": "c87ce36b0626cc76bf125fab87b186e374f8799d68869933057a8e9ab63913e5"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server36_original_return.public.zip",
+      "original": {
+        "bytes": 38078673,
+        "sha256": "39fda1c52f1625616b179831306c3639185e6694f10fb55846a61d42ebbe992e"
+      },
+      "public": {
+        "bytes": 38078661,
+        "sha256": "c4ddd3722b98c936c3fe30f1c6346ab92df94230213cf82640bb99f962aa095b"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "audits/server36/audit_preparation.json",
+      "original": {
+        "bytes": 2132,
+        "sha256": "f767375fe5243cf63575bdad28c582163a6ae02249af46fbe8f67844ed44e59c"
+      },
+      "public": {
+        "bytes": 1733,
+        "sha256": "d35042c968ed485bdf95e086769670ded28a946e696eef33bc103b44be9f5752"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "audits/server36/extension_reaudit.json",
+      "original": {
+        "bytes": 2690,
+        "sha256": "01c2c564388182f752ef5cc690e389ee8dabb24793dc1a35d26186398806e7a0"
+      },
+      "public": {
+        "bytes": 2171,
+        "sha256": "004db0be097e4477724d16769095e9eceb8cb1d46dc5d7b85a882e3bc46c3611"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "audits/server36/odt_independent_audit.json",
+      "original": {
+        "bytes": 4840,
+        "sha256": "4babe7850b7c089ab00e07abe1bf1f46454ce67d245bd2017f26a0c42debb9ed"
+      },
+      "public": {
+        "bytes": 4612,
+        "sha256": "67c0ce5fdf811b380d9b38b085dfc72eeb7611de4ed7fcac9bc24492e89186ba"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "audits/server36/system_audit.json",
+      "original": {
+        "bytes": 43842,
+        "sha256": "dc5b93db7d4887fa258903c6d3bacc32ff39b21a34d0aa24e9e42470b7b3291e"
+      },
+      "public": {
+        "bytes": 42445,
+        "sha256": "09a9c4715b092d1477a751ed9a7da4ba30634f869dd48cd2a6b0d70d639bab98"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server59_original_return.public.zip!PROTOCOL.json",
+      "original": {
+        "bytes": 4705,
+        "sha256": "3f2e1b720d28a45849ef91d79b7991cdb9ba6bbae5c3907329f9a33be29bef3e"
+      },
+      "public": {
+        "bytes": 4926,
+        "sha256": "66edf7a089b5c0daa0cf61758de6f1d0336e0599b27a7faf63c0322e11e8a08e"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server59_original_return.public.zip!outputs/component_returns/composite/acfo_layered_vector_composite_external_return.zip",
+      "original": {
+        "bytes": 199113,
+        "sha256": "f5d0a7962fc6c1b9f3e1704d86ca5dd89f08d260c9a2a0dd37efb8f9ad3b3d92"
+      },
+      "public": {
+        "bytes": 199113,
+        "sha256": "446b190a2107cde9e3b47190f8f5928cf24140501cf5687ec7d0cbc524f6df89"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server59_original_return.public.zip!outputs/component_returns/odt/runs/20260904T021655Z/odt_toeplitz_si_external_return.zip!odt_toeplitz_si_external_return/AGGREGATE_RESULT.json",
+      "original": {
+        "bytes": 21488,
+        "sha256": "c5a846f0ac272c646e1f2fb1661c464c198a5ddbfd51b77b385bdcd51a7badb7"
+      },
+      "public": {
+        "bytes": 21359,
+        "sha256": "6e549e52f3386809536acfcdce71abc5908eeb8cd97836e0a7ed7c67ca909c34"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server59_original_return.public.zip!outputs/component_returns/odt/runs/20260904T021655Z/odt_toeplitz_si_external_return.zip!odt_toeplitz_si_external_return/environment/environment.json",
+      "original": {
+        "bytes": 1898,
+        "sha256": "28c69fcf5eef856aad3dbea4da261d3f9c49c00695f2aa59c749d422f6c601eb"
+      },
+      "public": {
+        "bytes": 1821,
+        "sha256": "95d212c2146764ed82b076997561c1e9b30c18a33001ac9110ffbf9d1cf31f4e"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server59_original_return.public.zip!outputs/component_returns/odt/runs/20260904T021655Z/odt_toeplitz_si_external_return.zip!odt_toeplitz_si_external_return/logs/stage1_exact_complex128.log",
+      "original": {
+        "bytes": 799,
+        "sha256": "e6432a7e38ccb4ec6214be6e10b10e6aa512fa6ed1bb95eaecfe2d2521f6d769"
+      },
+      "public": {
+        "bytes": 797,
+        "sha256": "89ebbe3a6cb12d92b928d8725ba98a1f7e7db6c63d31614eef028fbbc2aa796e"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server59_original_return.public.zip!outputs/component_returns/odt/runs/20260904T021655Z/odt_toeplitz_si_external_return.zip!odt_toeplitz_si_external_return/logs/stage2_weighted_updates.log",
+      "original": {
+        "bytes": 1201,
+        "sha256": "02ad2e02e4139c4dc241581d6811099c658e90de4806d14b9d757ccefb322931"
+      },
+      "public": {
+        "bytes": 1200,
+        "sha256": "e6fe73ea84cd91c7187b38bd0168ae2af632e27a24d5761243f6bdad70f122fe"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server59_original_return.public.zip!outputs/component_returns/odt/runs/20260904T021655Z/odt_toeplitz_si_external_return.zip!odt_toeplitz_si_external_return/logs/stage3_cg_trajectory.log",
+      "original": {
+        "bytes": 846,
+        "sha256": "239a40cc968152b69ebab7ef176a74b287e0b0bcee718282061f4d7ce9e4c02a"
+      },
+      "public": {
+        "bytes": 844,
+        "sha256": "9a21be0c0f8eca0c50cf4d0a3474e54f1461a349dc144647fdaa63481ee2e7f4"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server59_original_return.public.zip!outputs/component_returns/odt/runs/20260904T021655Z/odt_toeplitz_si_external_return.zip!odt_toeplitz_si_external_return/logs/stage4_cufinufft_normal.log",
+      "original": {
+        "bytes": 2858,
+        "sha256": "8dc37fec10d5cee28454558a3b63c0be412b70869c146fd0f8e723d9158e8a2e"
+      },
+      "public": {
+        "bytes": 2819,
+        "sha256": "14e8712033de48944368bdcfffd158dc35cc48d3dbba0b763f228a0f6981434c"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server59_original_return.public.zip!outputs/component_returns/odt/runs/20260904T021655Z/odt_toeplitz_si_external_return.zip!odt_toeplitz_si_external_return/logs/stage5_cufinufft_toeplitz.log",
+      "original": {
+        "bytes": 2864,
+        "sha256": "be7bd298e07e66bc4e042a954ae2223f35f6c4985836bc3bb4aa00b55dd90b77"
+      },
+      "public": {
+        "bytes": 2825,
+        "sha256": "0db3169f00e64e3b19c0c4fd25a808d784e48021e67e3924048ef0cbf6434c1e"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server59_original_return.public.zip!outputs/component_returns/odt/runs/20260904T021655Z/odt_toeplitz_si_external_return.zip!odt_toeplitz_si_external_return/logs/stage6_cpu_generic_toeplitz.log",
+      "original": {
+        "bytes": 463,
+        "sha256": "dca2ca278e8b90f058473e4fb2214d812ff9ff08bd0dfe179ade16bbf73e84ed"
+      },
+      "public": {
+        "bytes": 462,
+        "sha256": "17bbb26c4db86f3375b389df95fd3294cbd71cb21b8953dffde77437812ea2ef"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server59_original_return.public.zip!outputs/component_returns/odt/runs/20260904T021655Z/odt_toeplitz_si_external_return.zip!odt_toeplitz_si_external_return/logs/stage7_acfo_toeplitz.log",
+      "original": {
+        "bytes": 455,
+        "sha256": "f4d5143d99840f25294fe50be2642f09db0d8a79034b5090633099a5a7cae1f6"
+      },
+      "public": {
+        "bytes": 454,
+        "sha256": "7b810902abec6b1db67779a836658f6103a85675fe34ef748cf7708f7d29d7b1"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server59_original_return.public.zip!outputs/component_returns/odt/runs/20260904T021655Z/odt_toeplitz_si_external_return.zip!odt_toeplitz_si_external_return/logs/stage8_aggregate.log",
+      "original": {
+        "bytes": 2471,
+        "sha256": "836e072b331595b3ad1bae4f25c8536b82c13a2a9e7650adb5c7ce624a1c9c84"
+      },
+      "public": {
+        "bytes": 2443,
+        "sha256": "731b7c5be1311e7c90313691924fe1beba680d8507a63a3457f7c0dce3a54f76"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server59_original_return.public.zip!outputs/component_returns/odt/runs/20260904T021655Z/odt_toeplitz_si_external_return.zip",
+      "original": {
+        "bytes": 82097,
+        "sha256": "07e866bc645d5fc92a2d88e1eb822cfe9148b69c679d3566c31171cc9ebfae9f"
+      },
+      "public": {
+        "bytes": 82071,
+        "sha256": "e1d5fb3a85165e6fb1001e2345c0f5eb0a65665e1c6bac3697ec72cc49a26fed"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server59_original_return.public.zip!outputs/component_returns/waxs/waxs_100_state_full_external_return.zip!waxs_100_state_external_return/build.log",
+      "original": {
+        "bytes": 2505,
+        "sha256": "5c4b7a4b4d8bb61b432c2b4317b4e33446064dc516faa627abd6401604b29056"
+      },
+      "public": {
+        "bytes": 2329,
+        "sha256": "d844d8c734e2a35c00223c6b78eca565518fa6a10f0924a084568556e52dc231"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server59_original_return.public.zip!outputs/component_returns/waxs/waxs_100_state_full_external_return.zip!waxs_100_state_external_return/seed_2026072611.log",
+      "original": {
+        "bytes": 9117,
+        "sha256": "3de35c58d5bd0c2f6d0381d04ae9e82a225da41c537e5f1637204fc380afb6ff"
+      },
+      "public": {
+        "bytes": 9116,
+        "sha256": "f7830995c5070aef50e28bce39837d3898da63120de76e7a812ab02576872bf8"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server59_original_return.public.zip!outputs/component_returns/waxs/waxs_100_state_full_external_return.zip!waxs_100_state_external_return/seed_2026072612.log",
+      "original": {
+        "bytes": 9108,
+        "sha256": "09d15eb958c695936f0016e0eb7e4830a93c7d944d28f687e7cbd3a30e6248b4"
+      },
+      "public": {
+        "bytes": 9107,
+        "sha256": "7d509beab6cce05cc63cb97395d3a3d3b9a3e6b74ee1675f25cfec5796b576ff"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server59_original_return.public.zip!outputs/component_returns/waxs/waxs_100_state_full_external_return.zip!waxs_100_state_external_return/seed_2026072613.log",
+      "original": {
+        "bytes": 9116,
+        "sha256": "d849e62770b58c3d6d13f699a0a422672d72a97f2f6173ed58feec4dc613dd5e"
+      },
+      "public": {
+        "bytes": 9115,
+        "sha256": "a3474f7b88c86a0e31f34b3628a13785218938def491e5df4996e09c4d1452c4"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server59_original_return.public.zip!outputs/component_returns/waxs/waxs_100_state_full_external_return.zip",
+      "original": {
+        "bytes": 69346,
+        "sha256": "12124e59dcf27bcb54329ebe16422f7ec2966fa48e382e0b988530930ea7440f"
+      },
+      "public": {
+        "bytes": 69332,
+        "sha256": "42b59c2eb4202cc4bfc1ec2aacaa86203bb19ac07508891113df6567949efea1"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server59_original_return.public.zip!outputs/composite_regimes.json",
+      "original": {
+        "bytes": 9610,
+        "sha256": "d60f2f0c56b0b73f3a250c0d22bfe42f0cff34a6eb6e1905fbaecc2c52ff05b9"
+      },
+      "public": {
+        "bytes": 9609,
+        "sha256": "0e0526869996c4fb675725090634597015ffedb780435c3db2178585f05cc026"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server59_original_return.public.zip!outputs/environment.json",
+      "original": {
+        "bytes": 49368,
+        "sha256": "ddb9e8979d7388d251bf2f874d016fe1f9fa11d6344f21442909a72c15e613f2"
+      },
+      "public": {
+        "bytes": 52571,
+        "sha256": "cccfa1d1f2b4c760fa51adbacddcb29dd7db4b010936b8ca7b2d933c17a1b803"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server59_original_return.public.zip!outputs/execution_plan.json",
+      "original": {
+        "bytes": 13092,
+        "sha256": "60521f592e56fc7e4e6ee1591c52119436d4eccb2bf898c2ba4dfc6a25c96627"
+      },
+      "public": {
+        "bytes": 12904,
+        "sha256": "c30f5a66932b19df0224e373e071a884250425671669f0c51b7f4dd3768bf3d4"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server59_original_return.public.zip!outputs/extension/outputs/tests.xml",
+      "original": {
+        "bytes": 8171,
+        "sha256": "f52d73d3f78dc63294cb006759fed87b2b94e98a10e32c26f0cf45a5476b7a40"
+      },
+      "public": {
+        "bytes": 8166,
+        "sha256": "8dc55357f984396d17b19c32c1a2b3d068b609e18ac8b69ca267222534dcff13"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server59_original_return.public.zip!outputs/logs/common_radial.json",
+      "original": {
+        "bytes": 544,
+        "sha256": "6cbc81f64ca511c96e25db1608287a8a60428e82718142a56fc0b3eb387062a4"
+      },
+      "public": {
+        "bytes": 533,
+        "sha256": "f89b85b8c8b0463e3d4c74fdf65aceeed421b201130e2fb69bcac6471d6f1919"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server59_original_return.public.zip!outputs/logs/common_radial_audit.json",
+      "original": {
+        "bytes": 547,
+        "sha256": "b94bf1f623d2d5b7fd346d0fcc6640a958c92ac4a0d850ff9896512dba6b7546"
+      },
+      "public": {
+        "bytes": 536,
+        "sha256": "0701cf79a1e0abeebd6b1d9ee310c0f7b7c13c1b2d33d7658809f0ff460c583b"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server59_original_return.public.zip!outputs/logs/composite_regimes.json",
+      "original": {
+        "bytes": 1086,
+        "sha256": "a02696d98bd6a383d77764f9b781ed9fe9a35e8fc0a204b15ec96ae9848d277c"
+      },
+      "public": {
+        "bytes": 1072,
+        "sha256": "077d0cef899f57e1a920d1a033df7108710b1c23170f9cbe14d87c2a9bdcdee9"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server59_original_return.public.zip!outputs/logs/composite_regimes.stdout.log",
+      "original": {
+        "bytes": 9610,
+        "sha256": "d60f2f0c56b0b73f3a250c0d22bfe42f0cff34a6eb6e1905fbaecc2c52ff05b9"
+      },
+      "public": {
+        "bytes": 9609,
+        "sha256": "0e0526869996c4fb675725090634597015ffedb780435c3db2178585f05cc026"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server59_original_return.public.zip!outputs/logs/extension_unit_tests.json",
+      "original": {
+        "bytes": 747,
+        "sha256": "3005a587501c2cb2f76b5b0c0b742c0606bd0e9f724f27711bc21ca9fc8df6ed"
+      },
+      "public": {
+        "bytes": 736,
+        "sha256": "efd50d31ae4be4fe57e23d113796ae0ab6ee37fff6b98a9bb8ec9d8c6339b574"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server59_original_return.public.zip!outputs/logs/geometry_api.json",
+      "original": {
+        "bytes": 549,
+        "sha256": "0a6c0c017be077413f28e499ed3bf8622e98a3f6c569eba9f7856d2a02fdfc88"
+      },
+      "public": {
+        "bytes": 538,
+        "sha256": "f0112326a6b34c681550c8fb79c805a72a870b5cfd1b85d154bb6befb1632518"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server59_original_return.public.zip!outputs/logs/geometry_api_audit.json",
+      "original": {
+        "bytes": 552,
+        "sha256": "09113277c3d03dbfe1447779639795a49462d954b88e4d2201862d5d8fb71a06"
+      },
+      "public": {
+        "bytes": 541,
+        "sha256": "fd4ee0697619fecbfa029745e6f1d45001cad09c9308b04b2f877f0582986e43"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server59_original_return.public.zip!outputs/logs/high_na_correspondence.json",
+      "original": {
+        "bytes": 643,
+        "sha256": "5bacfa519766983ff5a5ffb2bc3044629a92e3273f60436ac942b3c3a26bf762"
+      },
+      "public": {
+        "bytes": 632,
+        "sha256": "df5ccfafc1a6a7b55f8a5f543c9b3ca3b32c0055c0752aecfcee3694858209fe"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server59_original_return.public.zip!outputs/logs/high_na_support.json",
+      "original": {
+        "bytes": 601,
+        "sha256": "e8055a05074ace9b49c119d7dffc411272db610590cfc0e77b787a1adb703158"
+      },
+      "public": {
+        "bytes": 590,
+        "sha256": "fe8c9c43da737773be7679a9a7caea7fbb8e921071168476098057b704a5d62e"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server59_original_return.public.zip!outputs/logs/odt_cartesian.json",
+      "original": {
+        "bytes": 908,
+        "sha256": "533fb199cd8abd1c6995b393ee0fc2ecce1a64f8b8c2c6bd3ae45d84855cdd6a"
+      },
+      "public": {
+        "bytes": 896,
+        "sha256": "043c3393a900dde7e36e776d0294abf775fc955b19976a6a6f94198179f04a29"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server59_original_return.public.zip!outputs/logs/odt_cartesian.stdout.log",
+      "original": {
+        "bytes": 1608,
+        "sha256": "fba4943e7a55d1a503ef1e0018015b3f755269cf40f52e5c8030f56b4b5a31ce"
+      },
+      "public": {
+        "bytes": 1604,
+        "sha256": "c0cf519f48539da44e3a3f1b55c363948590da9862687286b914c7f36e8710a3"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server59_original_return.public.zip!outputs/logs/physical_modal_normal.json",
+      "original": {
+        "bytes": 558,
+        "sha256": "211f409911027832b10ed5725e54ce9e41b03952c462a24c5e924f6109c0079f"
+      },
+      "public": {
+        "bytes": 547,
+        "sha256": "fad622538c1d9678386dccaf9c1a3d0a1b69d60f56485286b6a1fdd694c30d71"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server59_original_return.public.zip!outputs/logs/physical_modal_normal_audit.json",
+      "original": {
+        "bytes": 561,
+        "sha256": "3f4cc375807b8719371a5e7ae378f4c819b703725ce3a652e3567fba6a41cf87"
+      },
+      "public": {
+        "bytes": 550,
+        "sha256": "430154390f9d000b5d6be51eb492f3fbdb8dfb8823fd2dc7341dca6c06443263"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server59_original_return.public.zip!outputs/logs/planar_boundary.json",
+      "original": {
+        "bytes": 1317,
+        "sha256": "b57f64fb897d81410703d37ea776cec196f41ea7e6b9f29b641a9c0a7970ffb7"
+      },
+      "public": {
+        "bytes": 1303,
+        "sha256": "52e886a2e2d0ad725db0e8f4e7046e71dc8c5086da7c0ae6291fe383dbcdb7ec"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server59_original_return.public.zip!outputs/logs/planar_boundary.stdout.log",
+      "original": {
+        "bytes": 4538,
+        "sha256": "f2460941dc3af1e0d395c835a0932d861bd00cb899d015792e5c2456516ba96c"
+      },
+      "public": {
+        "bytes": 4537,
+        "sha256": "7461462b5928db9fab9c9b39cce46f131e312f08618c5b1316a8e391182b87e2"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server59_original_return.public.zip!outputs/logs/support_frontier.json",
+      "original": {
+        "bytes": 770,
+        "sha256": "61d57fff3b82d2ca6909b762520882190111af8e692a2fab8e70656e3323cdf5"
+      },
+      "public": {
+        "bytes": 758,
+        "sha256": "3cd5d13bc52a1be0b7056c9e92833996819c6298dd377a521d1d0a77af2aae86"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server59_original_return.public.zip!outputs/logs/waxs_full.json",
+      "original": {
+        "bytes": 683,
+        "sha256": "c14599aa5351f830246d3b9d55a4e5a3aeb4b139155db55b934c4bd526c03ada"
+      },
+      "public": {
+        "bytes": 672,
+        "sha256": "f725d3fbd7517752b2bcbb0639b5a07b30db3cef295ad71efcb2a9b8405c47ec"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server59_original_return.public.zip!outputs/logs/waxs_full.stdout.log",
+      "original": {
+        "bytes": 32503,
+        "sha256": "d13fca464307dae530c67bb14c5384ab1d8b6edd251353df9dc96d810babcdf4"
+      },
+      "public": {
+        "bytes": 32324,
+        "sha256": "68f67fa8bdba1c8adde0cb303fcf8ea23ed44dc1eedf6d406d72fdab7b2733f1"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server59_original_return.public.zip!outputs/partial_component_evidence/odt/runs/20260904T021655Z/odt_toeplitz_si_external_return/AGGREGATE_RESULT.json",
+      "original": {
+        "bytes": 21488,
+        "sha256": "c5a846f0ac272c646e1f2fb1661c464c198a5ddbfd51b77b385bdcd51a7badb7"
+      },
+      "public": {
+        "bytes": 21359,
+        "sha256": "6e549e52f3386809536acfcdce71abc5908eeb8cd97836e0a7ed7c67ca909c34"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server59_original_return.public.zip!outputs/partial_component_evidence/odt/runs/20260904T021655Z/odt_toeplitz_si_external_return/environment/environment.json",
+      "original": {
+        "bytes": 1898,
+        "sha256": "28c69fcf5eef856aad3dbea4da261d3f9c49c00695f2aa59c749d422f6c601eb"
+      },
+      "public": {
+        "bytes": 1821,
+        "sha256": "95d212c2146764ed82b076997561c1e9b30c18a33001ac9110ffbf9d1cf31f4e"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server59_original_return.public.zip!outputs/partial_component_evidence/odt/runs/20260904T021655Z/odt_toeplitz_si_external_return/logs/stage1_exact_complex128.log",
+      "original": {
+        "bytes": 799,
+        "sha256": "e6432a7e38ccb4ec6214be6e10b10e6aa512fa6ed1bb95eaecfe2d2521f6d769"
+      },
+      "public": {
+        "bytes": 797,
+        "sha256": "89ebbe3a6cb12d92b928d8725ba98a1f7e7db6c63d31614eef028fbbc2aa796e"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server59_original_return.public.zip!outputs/partial_component_evidence/odt/runs/20260904T021655Z/odt_toeplitz_si_external_return/logs/stage2_weighted_updates.log",
+      "original": {
+        "bytes": 1201,
+        "sha256": "02ad2e02e4139c4dc241581d6811099c658e90de4806d14b9d757ccefb322931"
+      },
+      "public": {
+        "bytes": 1200,
+        "sha256": "e6fe73ea84cd91c7187b38bd0168ae2af632e27a24d5761243f6bdad70f122fe"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server59_original_return.public.zip!outputs/partial_component_evidence/odt/runs/20260904T021655Z/odt_toeplitz_si_external_return/logs/stage3_cg_trajectory.log",
+      "original": {
+        "bytes": 846,
+        "sha256": "239a40cc968152b69ebab7ef176a74b287e0b0bcee718282061f4d7ce9e4c02a"
+      },
+      "public": {
+        "bytes": 844,
+        "sha256": "9a21be0c0f8eca0c50cf4d0a3474e54f1461a349dc144647fdaa63481ee2e7f4"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server59_original_return.public.zip!outputs/partial_component_evidence/odt/runs/20260904T021655Z/odt_toeplitz_si_external_return/logs/stage4_cufinufft_normal.log",
+      "original": {
+        "bytes": 2858,
+        "sha256": "8dc37fec10d5cee28454558a3b63c0be412b70869c146fd0f8e723d9158e8a2e"
+      },
+      "public": {
+        "bytes": 2819,
+        "sha256": "14e8712033de48944368bdcfffd158dc35cc48d3dbba0b763f228a0f6981434c"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server59_original_return.public.zip!outputs/partial_component_evidence/odt/runs/20260904T021655Z/odt_toeplitz_si_external_return/logs/stage5_cufinufft_toeplitz.log",
+      "original": {
+        "bytes": 2864,
+        "sha256": "be7bd298e07e66bc4e042a954ae2223f35f6c4985836bc3bb4aa00b55dd90b77"
+      },
+      "public": {
+        "bytes": 2825,
+        "sha256": "0db3169f00e64e3b19c0c4fd25a808d784e48021e67e3924048ef0cbf6434c1e"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server59_original_return.public.zip!outputs/partial_component_evidence/odt/runs/20260904T021655Z/odt_toeplitz_si_external_return/logs/stage6_cpu_generic_toeplitz.log",
+      "original": {
+        "bytes": 463,
+        "sha256": "dca2ca278e8b90f058473e4fb2214d812ff9ff08bd0dfe179ade16bbf73e84ed"
+      },
+      "public": {
+        "bytes": 462,
+        "sha256": "17bbb26c4db86f3375b389df95fd3294cbd71cb21b8953dffde77437812ea2ef"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server59_original_return.public.zip!outputs/partial_component_evidence/odt/runs/20260904T021655Z/odt_toeplitz_si_external_return/logs/stage7_acfo_toeplitz.log",
+      "original": {
+        "bytes": 455,
+        "sha256": "f4d5143d99840f25294fe50be2642f09db0d8a79034b5090633099a5a7cae1f6"
+      },
+      "public": {
+        "bytes": 454,
+        "sha256": "7b810902abec6b1db67779a836658f6103a85675fe34ef748cf7708f7d29d7b1"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server59_original_return.public.zip!outputs/partial_component_evidence/odt/runs/20260904T021655Z/odt_toeplitz_si_external_return/logs/stage8_aggregate.log",
+      "original": {
+        "bytes": 2471,
+        "sha256": "836e072b331595b3ad1bae4f25c8536b82c13a2a9e7650adb5c7ce624a1c9c84"
+      },
+      "public": {
+        "bytes": 2443,
+        "sha256": "731b7c5be1311e7c90313691924fe1beba680d8507a63a3457f7c0dce3a54f76"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server59_original_return.public.zip!outputs/partial_component_evidence/waxs/evidence/build.log",
+      "original": {
+        "bytes": 2505,
+        "sha256": "5c4b7a4b4d8bb61b432c2b4317b4e33446064dc516faa627abd6401604b29056"
+      },
+      "public": {
+        "bytes": 2329,
+        "sha256": "d844d8c734e2a35c00223c6b78eca565518fa6a10f0924a084568556e52dc231"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server59_original_return.public.zip!outputs/partial_component_evidence/waxs/evidence/seed_2026072611.log",
+      "original": {
+        "bytes": 9117,
+        "sha256": "3de35c58d5bd0c2f6d0381d04ae9e82a225da41c537e5f1637204fc380afb6ff"
+      },
+      "public": {
+        "bytes": 9116,
+        "sha256": "f7830995c5070aef50e28bce39837d3898da63120de76e7a812ab02576872bf8"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server59_original_return.public.zip!outputs/partial_component_evidence/waxs/evidence/seed_2026072612.log",
+      "original": {
+        "bytes": 9108,
+        "sha256": "09d15eb958c695936f0016e0eb7e4830a93c7d944d28f687e7cbd3a30e6248b4"
+      },
+      "public": {
+        "bytes": 9107,
+        "sha256": "7d509beab6cce05cc63cb97395d3a3d3b9a3e6b74ee1675f25cfec5796b576ff"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server59_original_return.public.zip!outputs/partial_component_evidence/waxs/evidence/seed_2026072613.log",
+      "original": {
+        "bytes": 9116,
+        "sha256": "d849e62770b58c3d6d13f699a0a422672d72a97f2f6173ed58feec4dc613dd5e"
+      },
+      "public": {
+        "bytes": 9115,
+        "sha256": "a3474f7b88c86a0e31f34b3628a13785218938def491e5df4996e09c4d1452c4"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server59_original_return.public.zip!outputs/planar.json",
+      "original": {
+        "bytes": 4538,
+        "sha256": "f2460941dc3af1e0d395c835a0932d861bd00cb899d015792e5c2456516ba96c"
+      },
+      "public": {
+        "bytes": 4537,
+        "sha256": "7461462b5928db9fab9c9b39cce46f131e312f08618c5b1316a8e391182b87e2"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server59_original_return.public.zip!outputs/progress.json",
+      "original": {
+        "bytes": 12028,
+        "sha256": "4001881eac263870957cd2fc3ec61e950ee9334a00f84e631c0f246db7405303"
+      },
+      "public": {
+        "bytes": 11866,
+        "sha256": "1596f1bfad2aaadd1e9178b9385c65189d0ef78eb6c615c140d89463eda6c002"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server59_original_return.public.zip!outputs/summary.json",
+      "original": {
+        "bytes": 13060,
+        "sha256": "09b98d4828636ddefa1c0e292e6877d9476cbf4eb7063d74356f289621b49d3f"
+      },
+      "public": {
+        "bytes": 12898,
+        "sha256": "490496ddb0a99d9b95424c66edf5151f97ef5e55657ca768988e707a8e8889e4"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server59_original_return.public.zip",
+      "original": {
+        "bytes": 38094322,
+        "sha256": "42defdabf6cdf87ac12e5773f39be5ff9de2045dc8ec294d4dbfda3ec8d21538"
+      },
+      "public": {
+        "bytes": 38094056,
+        "sha256": "ef325f4e3efe59dfecca0d6093d0f5f4527a5ff8f841b191059c964a569c1838"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "audits/server59/audit_preparation.json",
+      "original": {
+        "bytes": 2132,
+        "sha256": "bd1512180b4aa982f799b08e929fa3e8eea442dbed038ae7ca63ef161a4098d8"
+      },
+      "public": {
+        "bytes": 1733,
+        "sha256": "108ba7202456889513aa12a4f0fca093cdc0dae0fe15fc041cbe3db05d68a1c2"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "audits/server59/extension_reaudit.json",
+      "original": {
+        "bytes": 2690,
+        "sha256": "cfe5953b936fac5d7ef27f45927c4b09c59fab0702c77b46a4d5daadc4da508d"
+      },
+      "public": {
+        "bytes": 2171,
+        "sha256": "e8cda2a2a81c862f47d096ab67501ab3ea57c5e622ad88bab5a668af03c87fa6"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "audits/server59/system_audit.json",
+      "original": {
+        "bytes": 43808,
+        "sha256": "b87327f97bf331e411179a0640c4cb6076ac9202e605dc998ba1371faa94b718"
+      },
+      "public": {
+        "bytes": 42411,
+        "sha256": "5ac3d1b7ac24e7447aaa349141ad05fb79a58d351518eeead3a2910a0ec69d97"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server59_corrective_odt.public.zip!odt_toeplitz_si_external_return/AGGREGATE_RESULT.json",
+      "original": {
+        "bytes": 30596,
+        "sha256": "826157b386c97076d4c38bf6b9c6a769c41d04605efc0a3526f439a0eafbc03e"
+      },
+      "public": {
+        "bytes": 30458,
+        "sha256": "c9a74ee8768e9bb0d71147d43c4758d1f7954ac5cd76eb3c456832acee1ce5e9"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server59_corrective_odt.public.zip!odt_toeplitz_si_external_return/aggregate/ODT_TOEPLITZ_SI_AGGREGATE.json",
+      "original": {
+        "bytes": 12657,
+        "sha256": "8cb2054a6f38318f93063f95d8e6c29a8d4498e4cbdfad87da21264d8cd15cba"
+      },
+      "public": {
+        "bytes": 12649,
+        "sha256": "ee7a262103836b66420ca15153d8cee610dcbdaef65d0d4e8a60133d6cfcc349"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server59_corrective_odt.public.zip!odt_toeplitz_si_external_return/environment/environment.json",
+      "original": {
+        "bytes": 1898,
+        "sha256": "959de25a92bf173c9c8c99489295f69d23093b15f6dbd77a238efa3026a600a9"
+      },
+      "public": {
+        "bytes": 1821,
+        "sha256": "55e05f03a77227e5a364a08e816ab26b1624bf926d235fa5ffdc397380826be8"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server59_corrective_odt.public.zip!odt_toeplitz_si_external_return/logs/stage1_exact_complex128.log",
+      "original": {
+        "bytes": 566,
+        "sha256": "e722721ac967da5614cea8d7afc1f4e8c0bf9fa271a3db9fc00d3aa6eaf55e1a"
+      },
+      "public": {
+        "bytes": 564,
+        "sha256": "27dba88b7adb5c478705bb9e9593971906c0ee317ef861aad2cb59957b116c1f"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server59_corrective_odt.public.zip!odt_toeplitz_si_external_return/logs/stage2_weighted_updates.log",
+      "original": {
+        "bytes": 1085,
+        "sha256": "0041c2ae99469fc74d6fd4066924d8957fb4450b46b341802535e71bbde5423d"
+      },
+      "public": {
+        "bytes": 1084,
+        "sha256": "169c810a289cf6af7e5727649a55d556f48d47fb9977075aea560b00448b19a5"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server59_corrective_odt.public.zip!odt_toeplitz_si_external_return/logs/stage3_cg_trajectory.log",
+      "original": {
+        "bytes": 615,
+        "sha256": "bf1db4ed64c51a73014f89bef433c3288bdeccb733303108b1597f2d031c8e42"
+      },
+      "public": {
+        "bytes": 613,
+        "sha256": "8f70bad439ff4fb4c996b9b047cbc60b33d36e081863941b11cb42bd451e8898"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server59_corrective_odt.public.zip!odt_toeplitz_si_external_return/logs/stage4_cufinufft_normal.log",
+      "original": {
+        "bytes": 346,
+        "sha256": "219436e4c1d574a3784591485c7a15ae51da697a98b6c52d57c434870c1626eb"
+      },
+      "public": {
+        "bytes": 345,
+        "sha256": "bb7d07b81ed9ce0bff5f8506f1ea5a8116e11840d00ba51fb4ff0e35255f70de"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server59_corrective_odt.public.zip!odt_toeplitz_si_external_return/logs/stage5_cufinufft_toeplitz.log",
+      "original": {
+        "bytes": 349,
+        "sha256": "b6c9c1759f06903c3ff88797d9f7fedb8632ae06758967bc0faff538f4d959de"
+      },
+      "public": {
+        "bytes": 348,
+        "sha256": "781d91a6b6ea0949f5a0b2cba500e4ef50ae9e0a1e4bf74b18957c3f4c516ee5"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server59_corrective_odt.public.zip!odt_toeplitz_si_external_return/logs/stage6_cpu_generic_toeplitz.log",
+      "original": {
+        "bytes": 348,
+        "sha256": "834752549fb07227fbe6185798d38a112cd597e2dece7ee4b8b3c70793b9bf54"
+      },
+      "public": {
+        "bytes": 347,
+        "sha256": "ab0628d9bcf45247678d7d6b914530fae733d99f8d1856faa98e776caf9f978b"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server59_corrective_odt.public.zip!odt_toeplitz_si_external_return/logs/stage7_acfo_toeplitz.log",
+      "original": {
+        "bytes": 339,
+        "sha256": "8e81df15e707f553737811ee41c445c9cfb706f7992ef0bd62ac2ac6e679f36e"
+      },
+      "public": {
+        "bytes": 338,
+        "sha256": "e440994b385c4b94870d668e6837463f153263b6604dbb18ad798399c3d5b8b2"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server59_corrective_odt.public.zip!odt_toeplitz_si_external_return/logs/stage8_aggregate.log",
+      "original": {
+        "bytes": 978,
+        "sha256": "c8a6d74f8ec8e05533bb651cb160863d363f5d2370da5e3bfb46a01ad9c85f3b"
+      },
+      "public": {
+        "bytes": 976,
+        "sha256": "36079adb8dc684e9b72a56fcecbcb9866d4cc41d382678868aec3d7f6da5c26c"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "evidence/server59_corrective_odt.public.zip",
+      "original": {
+        "bytes": 128214,
+        "sha256": "6ed84f705a7163537c25560fd90839f60518a2524c9559c74f3868de221f7fec"
+      },
+      "public": {
+        "bytes": 128207,
+        "sha256": "0b43e9da02549e3e8006a6920dce45d9d23f11961302c58dd6e885874a6ecd3e"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "audits/campaign_audit.json",
+      "original": {
+        "bytes": 3802,
+        "sha256": "c4337f32c526f7bc0521a9a659aa8676ff6e9174707d9dfe2f51580f9ea04266"
+      },
+      "public": {
+        "bytes": 3638,
+        "sha256": "6594d1c269fd538d00508fdcaba564c1f791d7c569c72aa4834b673b83c4cb14"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "audits/retrieval_audit.json",
+      "original": {
+        "bytes": 1124,
+        "sha256": "dcdd360ef9d2a4f2660452ad76779adce30c1faf5675669e4d0e140831e6e159"
+      },
+      "public": {
+        "bytes": 1123,
+        "sha256": "f31d97551211d15b074e89c5e8a5b7e0ce4058e0547a2617d7d5fad3f27710a8"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "audits/server59_corrective_odt/independent_odt_audit.json",
+      "original": {
+        "bytes": 4680,
+        "sha256": "8a0e67b707a1af578045e0a08b21f485f9561d30e47e6f2370bde28537919724"
+      },
+      "public": {
+        "bytes": 4452,
+        "sha256": "cd13c495965a2605e2680d258a866de251f6ae4ab81b9273b790a47df7bd62ee"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "audits/server59_corrective_odt/repair_receipt.json",
+      "original": {
+        "bytes": 1976,
+        "sha256": "abfb7044802a4a38d4e4eccf868d434e4c2f17d07fe6e6a59473202a6c2f1ba1"
+      },
+      "public": {
+        "bytes": 1896,
+        "sha256": "522fa27cc10b12a4496360357abfb1eca480a5a75287461890f070f70f4a21fc"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "audits/server59_corrective_odt/original_artifact_hashes.json",
+      "original": {
+        "bytes": 1408,
+        "sha256": "1a6725d3a1293e212131773f806743bdcaa180a3a3ce79a6405938a99eeec7b2"
+      },
+      "public": {
+        "bytes": 1404,
+        "sha256": "9705811fa18ae1508d2083b7aa7dd903afbdf6fcb6ceb92b2a4d7f6ef02ddb96"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "audits/server59_corrective_odt/exit_status.json",
+      "original": {
+        "bytes": 1206,
+        "sha256": "d07b3af21d05ea77af38c8038867db19028114b9d593062df79b0939097ebe6c"
+      },
+      "public": {
+        "bytes": 1171,
+        "sha256": "90b203bf7b8645cb11f96bcce3581b7dd1693f7e249dced7a08e8a425fccceb8"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "audits/server59_corrective_odt/standalone_before.json",
+      "original": {
+        "bytes": 1155,
+        "sha256": "07b4142bbb3e53f8767121d2b7bb9c967370585698cf6a19d6e3670e452c1e3b"
+      },
+      "public": {
+        "bytes": 1100,
+        "sha256": "db6ccafee65ec2cea60c672799a92ade8ce764bf6da343069fb179ba60659eef"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "audits/server59_corrective_odt/standalone_after.json",
+      "original": {
+        "bytes": 1777,
+        "sha256": "401c791851ad076920f14ab12a3a16e41197031327d46aa7bd7b0189c82a1f8f"
+      },
+      "public": {
+        "bytes": 1701,
+        "sha256": "cda6335a182990f069a127b235ad29b2937be27289911419bd96aa7ebd2e9e78"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    },
+    {
+      "member": "audits/server59_corrective_odt/odt_rerun.log",
+      "original": {
+        "bytes": 1169,
+        "sha256": "5930ad166f66d55d60cf38212693014ccf7776c70b1048bd82398a50ef58269b"
+      },
+      "public": {
+        "bytes": 1165,
+        "sha256": "1176568c8a60470f4c1949c9591549fb086cad6fb9dc21a74133b1f7716e0299"
+      },
+      "reason": "Privacy normalization / recursive archive repack / geometry-only input"
+    }
+  ],
+  "hash_semantics": "Original manifests, SHA sidecars and receipts inside evidence archives describe original pre-publication bytes. They remain historical provenance. PUBLIC_MANIFEST.json and public digests here authenticate the distribution derivatives. Request manifests have been rebuilt for portable replay. No original hash is asserted to authenticate redacted bytes."
+}

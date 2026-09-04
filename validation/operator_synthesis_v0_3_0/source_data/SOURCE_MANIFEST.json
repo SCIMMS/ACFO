@@ -1,0 +1,69 @@
+{
+  "sources_sha256": {
+    "reports/acfo_operator_storyline_external_audit_20260904/server36/system_audit.json": "dc5b93db7d4887fa258903c6d3bacc32ff39b21a34d0aa24e9e42470b7b3291e",
+    "reports/acfo_operator_storyline_external_audit_20260904/server59/system_audit.json": "b87327f97bf331e411179a0640c4cb6076ac9202e605dc998ba1371faa94b718",
+    "reports/acfo_operator_storyline_external_audit_20260904/server36/components/waxs/waxs_100_state_external_return/environment.json": "753fd10b5d25d63c96dfba1e8672281ef36ac7fdbfe5a0400f7adbabfdf76b19",
+    "reports/acfo_operator_storyline_external_audit_20260904/server59/components/waxs/waxs_100_state_external_return/environment.json": "2e0420e86b67a37caf223855dac7d94149471204abc654817db3563d490b1d8f",
+    "reports/acfo_operator_storyline_external_audit_20260904/server36/extracted/outputs/extension/outputs/high_na_correspondence.json": "ff74e7e7b811447287b7255a73895d3db267dd925ff377d225d807e3f3a38d37",
+    "reports/acfo_operator_storyline_external_audit_20260904/server36/extracted/outputs/extension/outputs/high_na_support.json": "0243ea2faef7106fd42457e8179d60495fb3f57f40678393550a24a845fe1fc2",
+    "reports/acfo_operator_storyline_external_audit_20260904/server36/components/waxs/waxs_100_state_external_return/seed_2026072611.csv": "6b7acc100d496ebc5e0ea9039c8381995c3342c3eb54d5d47a2b5723976eb9de",
+    "reports/acfo_operator_storyline_external_audit_20260904/server36/components/waxs/waxs_100_state_external_return/seed_2026072612.csv": "92776ac53af0dd728e0545704a84f361384ba111e77decefa9e4889a02129c4a",
+    "reports/acfo_operator_storyline_external_audit_20260904/server36/components/waxs/waxs_100_state_external_return/seed_2026072613.csv": "f6a6d2d022353642fedc45f55d7c467055ec152a344f677540f64ad4e33bc6c5",
+    "reports/acfo_operator_storyline_external_audit_20260904/server59/extracted/outputs/extension/outputs/high_na_correspondence.json": "82ce00ab7be5d3d81f030ef74a4980a21c5fbe6c70cdf04b8ab80810c8b2d23b",
+    "reports/acfo_operator_storyline_external_audit_20260904/server59/extracted/outputs/extension/outputs/high_na_support.json": "e309503e338c973447ad4a56c0550f6ccdaec6769e0213b553d1341ffe35a32a",
+    "reports/acfo_operator_storyline_external_audit_20260904/server59/components/waxs/waxs_100_state_external_return/seed_2026072611.csv": "6f8834aacd8bac972f1b7aea085a5169022f4c2011a6f17faf4bd305df9cc470",
+    "reports/acfo_operator_storyline_external_audit_20260904/server59/components/waxs/waxs_100_state_external_return/seed_2026072612.csv": "4c020c85d2ee620b4fa45e697da3b0195600123b5ba2024134d06cf07dbe1ce5",
+    "reports/acfo_operator_storyline_external_audit_20260904/server59/components/waxs/waxs_100_state_external_return/seed_2026072613.csv": "ef867474e8661314bf29190f4b1205ac9b04b1f51af82d96c431b4d7c30399ac",
+    "reports/acfo_operator_storyline_external_audit_20260904/server36/extracted/outputs/extension/reports/acfo_common_radial_cpswf_v1/summary.json": "9319781851d7e14a5be8a3cb7820ee34d0e0153f9433c5cb328c71e060a58afb",
+    "reports/acfo_operator_storyline_external_audit_20260904/server59/extracted/outputs/extension/reports/acfo_common_radial_cpswf_v1/summary.json": "d03a7333e64efbd94b5c613fbdc6b6360f46374a83ce9681da0257a56a5f4300",
+    "reports/acfo_operator_storyline_external_audit_20260904/server36/extracted/outputs/composite_regimes.json": "4b6e8ab04cf66ea580a1e07b78bd86d4a3e6e7403af5b1691a891109bf5bd011",
+    "reports/acfo_operator_storyline_external_audit_20260904/server36/components/composite/outputs/translation_inference.json": "b49b284a916d2ef6431f27ebab43ff168f6786052f96cf12fd4e541d003402aa",
+    "reports/acfo_operator_storyline_external_audit_20260904/server59/extracted/outputs/composite_regimes.json": "d60f2f0c56b0b73f3a250c0d22bfe42f0cff34a6eb6e1905fbaecc2c52ff05b9",
+    "reports/acfo_operator_storyline_external_audit_20260904/server59/components/composite/outputs/translation_inference.json": "b6a2725996be25cf84bf0848853e483a1d810bff2c07a8c88113883ea6394f6a"
+  },
+  "machines": {
+    "server36": {
+      "generated_at_utc": "2026-09-04T01:25:01.787692+00:00",
+      "platform": "Linux-6.17.0-19-generic-x86_64-with-glibc2.39",
+      "python": "3.11.15",
+      "numpy": "2.4.6",
+      "scipy": "1.17.1",
+      "finufft": "2.5.1",
+      "cpu_model": "Intel(R) Core(TM) i5-14500",
+      "cpu_count": 20,
+      "gpu_name": "NVIDIA GeForce RTX 3090",
+      "omp_num_threads": "4",
+      "mkl_num_threads": "1",
+      "openblas_num_threads": "1"
+    },
+    "server59": {
+      "generated_at_utc": "2026-09-04T01:23:07.371261+00:00",
+      "platform": "Linux-5.15.0-139-generic-x86_64-with-glibc2.31",
+      "python": "3.11.15",
+      "numpy": "2.4.6",
+      "scipy": "1.17.1",
+      "finufft": "2.5.1",
+      "cpu_model": "Intel(R) Xeon(R) Gold 6230R CPU @ 2.10GHz",
+      "cpu_count": 104,
+      "gpu_name": "NVIDIA GeForce RTX 3080 Ti",
+      "omp_num_threads": "4",
+      "mkl_num_threads": "1",
+      "openblas_num_threads": "1"
+    }
+  },
+  "outputs": {
+    "figure_2_high_na.csv": "8eca157573c74325c7ff80363645520717ea7a989666729311b545b88fd8b23d",
+    "figure_2_support.csv": "0373001e02793358cd6b0e9a9f8ac7c508a203fd7f24d8b87d3851734dc2f259",
+    "figure_2_waxs.csv": "9a1354319bf5f204e75b1f6191a6a5d627bbd568255f06c44e3cfea1f6e03216",
+    "figure_3_api_probes.csv": "61620a81c20742d3c0b2c3c3a1993916fee4ab28e054b5ac61dc79991d984601",
+    "figure_3_common_radial.csv": "4bbaa72bdb94c781a81cb07860fa4a7e60391d8e4a4f411b6ccef45f17606136",
+    "figure_3_density.csv": "8f284f0b5eb0bc037899ad116730292b820663d16bed4a8ef62cb5a9e1646134",
+    "figure_4_cartesian.csv": "ccf5bbeb760540ada775f89f191779a763c513c6c0319591aa81ac042df61327",
+    "figure_4_coupled.csv": "f6e8f0a9decf7e8c9ce9a263c050c9af83e8f8e47961a25ddab7cb5970f0e970",
+    "figure_4_normal_storage.csv": "fe2cfe4c922b7c50d84c47f30d43d389562fc1d0acae8d5040c76b5250a533f7",
+    "figure_5_accuracy.csv": "f7053fc5cf92505be0bd02121d2c8cb34ac7e904f2f920e0a1fc14454c2a97ef",
+    "figure_5_regimes.csv": "7941488fa9346a8fceb645371b01a7f25a597b898ca819527efa7ab13158a2bd",
+    "figure_5_synthetic_update.csv": "7376b52322b71b43264286d8d110ef7f5d85ed7d3c20b5b6670c15f146d641d4",
+    "figure_5_timing.csv": "1f488323d0a45f565036096698100d1878fcf7a938ec17bf606925a564822ac7"
+  }
+}

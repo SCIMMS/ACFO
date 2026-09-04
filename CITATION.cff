@@ -1,11 +1,10 @@
 cff-version: 1.2.0
 message: >-
   If you use ACFO software or validation materials, cite this software release.
-title: "ACFO: Geometry factorization and representation dispatch for repeated curved Fourier inference"
+title: "ACFO: Geometry-prepared Fourier operators and coefficient-space operator synthesis"
 type: software
-version: 0.2.0
-date-released: 2026-09-02
-doi: "10.5281/zenodo.22239163"
+version: 0.3.0
+date-released: 2026-09-04
 authors:
   - family-names: Kim
     given-names: Minsu
@@ -15,7 +14,7 @@ authors:
     given-names: Jongcheol
     affiliation: Pohang University of Science and Technology (POSTECH)
 repository-code: "https://github.com/SCIMMS/ACFO"
-repository-artifact: "https://doi.org/10.5281/zenodo.22239163"
+repository-artifact: "https://github.com/SCIMMS/ACFO/releases/tag/v0.3.0"
 url: "https://github.com/SCIMMS/ACFO"
 keywords:
   - Fourier operator

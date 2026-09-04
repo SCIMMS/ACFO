@@ -1,0 +1,42 @@
+{
+  "passed": false,
+  "records": [
+    {
+      "name": "acfo_common_radial_cpswf",
+      "command": [
+        "<WORKSPACE>\\.venv\\Scripts\\python.exe",
+        "-B",
+        "<WORKSPACE>\\reports\\acfo_operator_storyline_external_audit_20260904\\server59\\extension_audit_work\\extension_component\\scripts\\audit_acfo_common_radial_cpswf.py"
+      ],
+      "returncode": 2,
+      "passed": false,
+      "receipt": "<WORKSPACE>\\reports\\acfo_operator_storyline_external_audit_20260904\\server59\\extension_audit_work\\extension_component\\reports\\acfo_common_radial_cpswf_v1\\audit.json",
+      "receipt_sha256": "94fe1aa3f90880df5ee00b49ddd55cbc560ffc8a982e60f9255983b64deb779f"
+    },
+    {
+      "name": "acfo_radial_physical_transfer",
+      "command": [
+        "<WORKSPACE>\\.venv\\Scripts\\python.exe",
+        "-B",
+        "<WORKSPACE>\\reports\\acfo_operator_storyline_external_audit_20260904\\server59\\extension_audit_work\\extension_component\\scripts\\audit_acfo_radial_physical_transfer.py"
+      ],
+      "returncode": 0,
+      "passed": true,
+      "receipt": "<WORKSPACE>\\reports\\acfo_operator_storyline_external_audit_20260904\\server59\\extension_audit_work\\extension_component\\reports\\acfo_radial_physical_transfer_v1\\audit.json",
+      "receipt_sha256": "071424b8c3a4c3190f658e6b02a9abcc438e1f0708ea51c665c46059b71e394e"
+    },
+    {
+      "name": "acfo_geometry_preparation_api",
+      "command": [
+        "<WORKSPACE>\\.venv\\Scripts\\python.exe",
+        "-B",
+        "<WORKSPACE>\\reports\\acfo_operator_storyline_external_audit_20260904\\server59\\extension_audit_work\\extension_component\\scripts\\audit_acfo_geometry_preparation_api.py"
+      ],
+      "returncode": 0,
+      "passed": true,
+      "receipt": "<WORKSPACE>\\reports\\acfo_operator_storyline_external_audit_20260904\\server59\\extension_audit_work\\extension_component\\reports\\acfo_geometry_preparation_api_v1\\audit.json",
+      "receipt_sha256": "6540e4889de86b576bce0c8f98b42af113738bdba2ced793a6a7e9e1016d9b2e"
+    }
+  ],
+  "scope": "Independent radial saved-array recomputation and full-chain receipt reconciliation; no new benchmark, no full-chain replay"
+}

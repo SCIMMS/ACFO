@@ -1,0 +1,3 @@
+machine,ratio,interval_low,interval_high,materialized_bytes,unfused_bytes,process_count,repeats,scope
+server36,22.04534960717817,21.436440168370414,22.463784865461093,373248,640032,4,31,CPU own unfused chain / materialized hot action; repeat-resampling interval
+server59,20.27460625708093,16.659899115679703,21.27457998960799,373248,640032,4,31,CPU own unfused chain / materialized hot action; repeat-resampling interval

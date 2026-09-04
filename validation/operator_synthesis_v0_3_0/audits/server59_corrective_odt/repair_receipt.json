@@ -1,0 +1,56 @@
+{
+  "created_utc": "2026-09-04T04:08:53.218804+00:00",
+  "prefix": "/opt/conda/envs/acfo-ncs-gpu",
+  "gpu_before": "NVIDIA GeForce RTX 3080 Ti, 0 %, 86 MiB",
+  "only_change": "two environment-local activation hooks for existing CUDA runtime/cuFFT wheel libraries",
+  "packages_or_drivers_changed": false,
+  "scientific_parameters_changed": false,
+  "before": {
+    "command": [
+      "/opt/conda/bin/conda",
+      "run",
+      "--no-capture-output",
+      "-n",
+      "acfo-ncs-gpu",
+      "/opt/conda/envs/acfo-ncs-gpu/bin/python",
+      "/workspace/ACFO/environment_migrations/acfo_ncs_gpu_loader_20260904/verify_cufinufft_standalone.py",
+      "--output",
+      "/workspace/ACFO/environment_migrations/acfo_ncs_gpu_loader_20260904/standalone_before.json"
+    ],
+    "returncode": 2
+  },
+  "after": {
+    "command": [
+      "/opt/conda/bin/conda",
+      "run",
+      "--no-capture-output",
+      "-n",
+      "acfo-ncs-gpu",
+      "/opt/conda/envs/acfo-ncs-gpu/bin/python",
+      "/workspace/ACFO/environment_migrations/acfo_ncs_gpu_loader_20260904/verify_cufinufft_standalone.py",
+      "--output",
+      "/workspace/ACFO/environment_migrations/acfo_ncs_gpu_loader_20260904/standalone_after.json"
+    ],
+    "returncode": 0
+  },
+  "path_restoration_tests": [
+    {
+      "initial": "unset LD_LIBRARY_PATH",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "initial": "export LD_LIBRARY_PATH=/tmp/acfo-loader-sentinel",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "hooks": {
+    "/opt/conda/envs/acfo-ncs-gpu/etc/conda/activate.d/acfo_ncs_gpu_cuda.sh": "8aa079cda7333f803b12c7e65864410a5d86be80fffbc65bd220da4ad0f212a8",
+    "/opt/conda/envs/acfo-ncs-gpu/etc/conda/deactivate.d/acfo_ncs_gpu_cuda.sh": "1bf795348c5e4d440752ae9ec0be46f457bbc24752648a1b403a629d2785680c"
+  },
+  "original_artifacts_unchanged": true,
+  "passed": true
+}

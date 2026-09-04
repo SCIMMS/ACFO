@@ -1,0 +1,11 @@
+{
+  "purpose": "environment smoke only; no benchmark evidence",
+  "python": "/opt/conda/envs/acfo-ncs-gpu/bin/python",
+  "prefix": "/opt/conda/envs/acfo-ncs-gpu",
+  "ld_library_path": null,
+  "checks": {
+    "execution_completed": false
+  },
+  "error": "Traceback (most recent call last):\n  File \"/workspace/ACFO/environment_migrations/acfo_ncs_gpu_loader_20260904/verify_cufinufft_standalone.py\", line 21, in main\n    import cufinufft  # Must be the first imported CUDA-using package.\n    ^^^^^^^^^^^^^^^^\n  File \"/opt/conda/envs/acfo-ncs-gpu/lib/python3.11/site-packages/cufinufft/__init__.py\", line 1, in <module>\n    from cufinufft._plan import Plan\n  File \"/opt/conda/envs/acfo-ncs-gpu/lib/python3.11/site-packages/cufinufft/_plan.py\", line 19, in <module>\n    from cufinufft._cufinufft import NufftOpts\n  File \"/opt/conda/envs/acfo-ncs-gpu/lib/python3.11/site-packages/cufinufft/_cufinufft.py\", line 58, in <module>\n    raise ImportError(\"Could not find cufinufft library in system path\")\nImportError: Could not find cufinufft library in system path\n",
+  "passed": false
+}

@@ -1,0 +1,122 @@
+{
+  "schema": "odt-toeplitz-si-return-verification-v1",
+  "archive": "<WORKSPACE>\\reports\\acfo_server59_loader_odt_revalidation_20260904\\odt_toeplitz_si_external_return.zip",
+  "integrity_passed": true,
+  "independent_audit_passed": true,
+  "passed": true,
+  "zip": {
+    "archive": "<WORKSPACE>\\reports\\acfo_server59_loader_odt_revalidation_20260904\\odt_toeplitz_si_external_return.zip",
+    "archive_sha256": "6ed84f705a7163537c25560fd90839f60518a2524c9559c74f3868de221f7fec",
+    "errors": [],
+    "passed": true,
+    "expected_sha256": "6ed84f705a7163537c25560fd90839f60518a2524c9559c74f3868de221f7fec",
+    "root_prefixes": [
+      "odt_toeplitz_si_external_return"
+    ],
+    "crc_bad_member": null,
+    "member_count": 32
+  },
+  "manifest": {
+    "errors": [],
+    "passed": true,
+    "schema": "odt-toeplitz-si-return-manifest-v1",
+    "missing": [],
+    "unexpected": [],
+    "mismatched": [],
+    "manifest_sha256": "f78c734bb4e4eeb354994b10ba934d7409c67bf1f11914165be139b759935e4d",
+    "manifested_file_count": 31
+  },
+  "request_anchor": {
+    "errors": [],
+    "passed": true,
+    "checks": {
+      "anchor_schema": true,
+      "protocol_schema": true,
+      "manifest_schema": true,
+      "provenance_schema": true,
+      "manifest_hash": true,
+      "protocol_hash": true,
+      "provenance_hash": true,
+      "manifest_protocol_anchor": true,
+      "manifest_provenance_anchor": true,
+      "runner_hash": true
+    },
+    "required_files": [
+      "AGGREGATE_RESULT.json",
+      "RETURN_MANIFEST.json",
+      "REQUEST_ANCHOR.json",
+      "environment/environment.json",
+      "environment/pip_freeze.txt",
+      "logs/stage1_exact_complex128.log",
+      "logs/stage2_weighted_updates.log",
+      "logs/stage3_cg_trajectory.log",
+      "logs/stage4_cufinufft_normal.log",
+      "logs/stage5_cufinufft_toeplitz.log",
+      "logs/stage6_cpu_generic_toeplitz.log",
+      "logs/stage7_acfo_toeplitz.log",
+      "logs/stage8_aggregate.log"
+    ],
+    "required_files_present": {
+      "AGGREGATE_RESULT.json": true,
+      "RETURN_MANIFEST.json": true,
+      "REQUEST_ANCHOR.json": true,
+      "environment/environment.json": true,
+      "environment/pip_freeze.txt": true,
+      "logs/stage1_exact_complex128.log": true,
+      "logs/stage2_weighted_updates.log": true,
+      "logs/stage3_cg_trajectory.log": true,
+      "logs/stage4_cufinufft_normal.log": true,
+      "logs/stage5_cufinufft_toeplitz.log": true,
+      "logs/stage6_cpu_generic_toeplitz.log": true,
+      "logs/stage7_acfo_toeplitz.log": true,
+      "logs/stage8_aggregate.log": true
+    }
+  },
+  "science": {
+    "errors": [],
+    "passed": true,
+    "reported_scientific_correctness": true,
+    "reported_research_disposition": "correct_but_performance_not_compelling",
+    "comparisons": {
+      "scientific_correctness": true,
+      "research_disposition": true,
+      "configuration": true,
+      "correctness_gates": true,
+      "accuracy": true,
+      "methods": true,
+      "method_order": true,
+      "performance": true,
+      "amortization": true,
+      "supporting_gates": true,
+      "claim_boundary": true,
+      "optional_gpu_generic": true
+    },
+    "outer_checks": {
+      "schema": true,
+      "request_integrity": true,
+      "inner_present": true,
+      "inner_science_matches": true,
+      "inner_performance_matches": true,
+      "embedded_aggregate_matches": true
+    },
+    "recomputed_performance": {
+      "generic_toeplitz_hot_speedup_vs_cufinufft": 1.663710376900427,
+      "acfo_toeplitz_hot_speedup_vs_cufinufft": 1.6631802441375696,
+      "acfo_setup_speedup_vs_cpu_generic": 87.6051586173313,
+      "acfo_setup_speedup_vs_strongest_generic": 0.7952788091811435,
+      "strongest_generic_setup_backend": "cufinufft-toeplitz",
+      "toeplitz_hot_advantage": true,
+      "acfo_setup_advantage": false,
+      "cufinufft_toeplitz_hot_speedup_vs_cufinufft_normal": 1.6633972969338318
+    },
+    "recomputed_accuracy": {
+      "generic_vs_cufinufft_sample_relative_l2": 1.002389202661037e-05,
+      "acfo_vs_cufinufft_sample_relative_l2": 3.7573010215160423e-06,
+      "acfo_vs_generic_sample_relative_l2": 8.987273796710765e-06,
+      "generic_vs_cufinufft_norm_relative_error": 7.652170267775222e-06,
+      "acfo_vs_cufinufft_norm_relative_error": 5.822303464611582e-07,
+      "cufinufft_toeplitz_vs_normal_sample_relative_l2": 3.470931352710514e-06,
+      "cufinufft_toeplitz_vs_normal_norm_relative_error": 9.1493340158182e-07
+    }
+  }
+}

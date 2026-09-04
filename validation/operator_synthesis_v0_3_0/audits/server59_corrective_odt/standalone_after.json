@@ -1,0 +1,23 @@
+{
+  "purpose": "environment smoke only; no benchmark evidence",
+  "python": "/opt/conda/envs/acfo-ncs-gpu/bin/python",
+  "prefix": "/opt/conda/envs/acfo-ncs-gpu",
+  "ld_library_path": "/opt/conda/envs/acfo-ncs-gpu/lib/python3.11/site-packages/nvidia/cuda_runtime/lib:/opt/conda/envs/acfo-ncs-gpu/lib/python3.11/site-packages/nvidia/cufft/lib",
+  "checks": {
+    "cufinufft_import_without_torch": true,
+    "shared_libraries_resolved": true,
+    "type1": true,
+    "type2": true,
+    "type3": true,
+    "torch_remained_unloaded": true
+  },
+  "ldd": {
+    "/opt/conda/envs/acfo-ncs-gpu/lib/python3.11/site-packages/cufinufft/libcufinufft.so": "\tlinux-vdso.so.1 (0x00007ffcddbe0000)\n\tlibcudart.so.12 => /opt/conda/envs/acfo-ncs-gpu/lib/python3.11/site-packages/nvidia/cuda_runtime/lib/libcudart.so.12 (0x00007f3634469000)\n\tlibcufft.so.11 => /opt/conda/envs/acfo-ncs-gpu/lib/python3.11/site-packages/nvidia/cufft/lib/libcufft.so.11 (0x00007f3623268000)\n\tlibdl.so.2 => /lib/x86_64-linux-gnu/libdl.so.2 (0x00007f362324e000)\n\tlibrt.so.1 => /lib/x86_64-linux-gnu/librt.so.1 (0x00007f3623244000)\n\tlibm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x00007f36230f5000)\n\tlibpthread.so.0 => /lib/x86_64-linux-gnu/libpthread.so.0 (0x00007f36230d0000)\n\tlibstdc++.so.6 => /lib/x86_64-linux-gnu/libstdc++.so.6 (0x00007f3622eee000)\n\tlibgcc_s.so.1 => /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x00007f3622ed3000)\n\tlibc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007f3622ce1000)\n\t/lib64/ld-linux-x86-64.so.2 (0x00007f363edb0000)\n"
+  },
+  "relative_l2_against_direct_sum": {
+    "type1": 4.396924903786029e-12,
+    "type2": 5.1376612614367785e-12,
+    "type3": 3.502709742324568e-11
+  },
+  "passed": true
+}

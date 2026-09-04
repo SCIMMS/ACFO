@@ -1,0 +1,23 @@
+{
+  "schema": "acfo-storyline-return-verification-v2",
+  "passed": true,
+  "checks": {
+    "sidecar": true,
+    "request_valid": true,
+    "exact_inventory": true,
+    "request_manifest_sha256": true,
+    "protocol_sha256": true,
+    "claim_freeze_sha256": true,
+    "profile_valid": true,
+    "exact_stage_coverage": true,
+    "no_automatic_claim_promotion": true,
+    "no_false_full_support": true
+  },
+  "archive_sha256": "42defdabf6cdf87ac12e5773f39be5ff9de2045dc8ec294d4dbfda3ec8d21538",
+  "inventory_errors": [],
+  "profile": "server59_replication",
+  "technical_execution_completed": true,
+  "all_stage_acceptance_passed": false,
+  "system_specific_science_and_performance_review_required": true,
+  "publication_eligible": false
+}

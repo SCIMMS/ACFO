@@ -1,0 +1,28 @@
+{
+  "created_utc": "2026-09-04T04:27:32.788663+00:00",
+  "components": {
+    "waxs": {
+      "archive": "<WORKSPACE>\\reports\\acfo_operator_storyline_external_audit_20260904\\server59\\extracted\\outputs\\component_returns\\waxs\\waxs_100_state_full_external_return.zip",
+      "sha256": "12124e59dcf27bcb54329ebe16422f7ec2966fa48e382e0b988530930ea7440f",
+      "extracted": "<WORKSPACE>\\reports\\acfo_operator_storyline_external_audit_20260904\\server59\\components\\waxs"
+    },
+    "odt": {
+      "archive": "<WORKSPACE>\\reports\\acfo_operator_storyline_external_audit_20260904\\server59\\extracted\\outputs\\component_returns\\odt\\runs\\20260904T021655Z\\odt_toeplitz_si_external_return.zip",
+      "sha256": "07e866bc645d5fc92a2d88e1eb822cfe9148b69c679d3566c31171cc9ebfae9f",
+      "extracted": "<WORKSPACE>\\reports\\acfo_operator_storyline_external_audit_20260904\\server59\\components\\odt"
+    },
+    "composite": {
+      "archive": "<WORKSPACE>\\reports\\acfo_operator_storyline_external_audit_20260904\\server59\\extracted\\outputs\\component_returns\\composite\\acfo_layered_vector_composite_external_return.zip",
+      "sha256": "f5d0a7962fc6c1b9f3e1704d86ca5dd89f08d260c9a2a0dd37efb8f9ad3b3d92",
+      "extracted": "<WORKSPACE>\\reports\\acfo_operator_storyline_external_audit_20260904\\server59\\components\\composite"
+    }
+  },
+  "extension_work_root": "<WORKSPACE>\\reports\\acfo_operator_storyline_external_audit_20260904\\server59\\extension_audit_work\\extension_component",
+  "extension_original_source_audit": {
+    "passed": true,
+    "errors": [],
+    "file_count": 94,
+    "manifest_sha256": "88bac65352c5f9a7158540aff6b090c6e3d83699cbe3cfa42681efb2af664613"
+  },
+  "original_returns_modified": false
+}

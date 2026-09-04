@@ -1,0 +1,28 @@
+{
+  "schema": "acfo-v030-local-publication-qa-v1",
+  "date": "2026-09-04",
+  "verification": {
+    "distribution_verification_passed": true,
+    "checks": {
+      "public_manifest_files": 68,
+      "request_components": 4,
+      "original_failure_and_scientific_limits_preserved": true,
+      "waxs_rankings_recomputed": 6,
+      "waxs_max_intensity_relative_l2": 2.9002718907856117e-07,
+      "radial_spectral_rank_rows": 90,
+      "coupled_normal_rows": 8,
+      "retained_array_reduction_percent": 41.682915854207295,
+      "csv_files": 13
+    },
+    "scientific_assessment": "Scoped constructive evidence; recorded strict and publication failures remain. No universal speed, full-support or measured-reconstruction claim.",
+    "new_external_benchmarks_run": false,
+    "focused_cpu_smoke_tests_passed": true
+  },
+  "focused_cpu_test_summary": "....................................................................     [100%]\n68 passed in 3.49s",
+  "public_source_references_resolved": 20,
+  "privacy_and_credential_marker_scan_passed": true,
+  "scientific_python_source_changes": [],
+  "original_input_geometry_preserved": true,
+  "raw_intensity_excluded": true,
+  "scope": "Local distribution QA, not a new external benchmark. Existing scientific failures and limits are preserved."
+}

@@ -1,0 +1,21 @@
+{
+  "schema": "acfo-storyline-full-returns-retrieval-v1",
+  "checked_utc": "2026-09-04T04:40:10.187Z",
+  "passed": true,
+  "records": [
+    {
+      "server": "server36",
+      "remote_archive": "/workspace/ACFO/external_validation/acfo_storyline_v2_1_20260904/extracted/acfo_operator_storyline_external_request_v2_1/_runs/20260904T012456705916Z_server36_full/acfo_operator_storyline_return_server36_full.zip",
+      "remote_sha256": "39fda1c52f1625616b179831306c3639185e6694f10fb55846a61d42ebbe992e",
+      "local_sha256": "39fda1c52f1625616b179831306c3639185e6694f10fb55846a61d42ebbe992e",
+      "matched": true
+    },
+    {
+      "server": "server59",
+      "remote_archive": "/workspace/ACFO/external_validation/acfo_storyline_v2_1_20260904/extracted/acfo_operator_storyline_external_request_v2_1/_runs/20260904T012257437855Z_server59_replication/acfo_operator_storyline_return_server59_replication.zip",
+      "remote_sha256": "42defdabf6cdf87ac12e5773f39be5ff9de2045dc8ec294d4dbfda3ec8d21538",
+      "local_sha256": "42defdabf6cdf87ac12e5773f39be5ff9de2045dc8ec294d4dbfda3ec8d21538",
+      "matched": true
+    }
+  ]
+}

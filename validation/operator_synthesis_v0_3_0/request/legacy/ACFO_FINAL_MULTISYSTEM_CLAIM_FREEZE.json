@@ -1,0 +1,211 @@
+{
+  "schema": "acfo-final-multisystem-claim-freeze-v1",
+  "created_utc": "2026-09-03T13:44:55.5887643Z",
+  "status": "frozen_before_external_benchmark",
+  "purpose": "Prespecify publication metrics, acceptance criteria, machine-specific arms, and main-text eligibility before either external machine executes the benchmark.",
+  "immutability": {
+    "enforcement": [
+      "The package manifest records this file's SHA-256.",
+      "The runner refuses to execute if the observed SHA-256 differs from the manifest.",
+      "Every return archive embeds the observed file and SHA-256.",
+      "Changing any field requires a new package version and cannot retroactively change this campaign."
+    ],
+    "post_result_arm_selection_allowed": false,
+    "post_result_threshold_change_allowed": false,
+    "failed_or_unfavourable_scientific_results_must_be_returned": true
+  },
+  "shared_accuracy_contract": {
+    "harmonic_support": "H_req=max(H_kernel,H_data)+p_H",
+    "waxs_mode_padding": 48,
+    "waxs_miller_margin": 64,
+    "composite_mode_padding": 8,
+    "composite_miller_margin": 32,
+    "nyquist_and_under_resolution_checks_required": true,
+    "same_inputs_and_requested_tolerance_within_each_comparison": true
+  },
+  "primary_metrics": {
+    "waxs_curved_fourier": [
+      "candidate_score_spearman",
+      "same_top1_candidate",
+      "top5_jaccard",
+      "maximum_candidate_intensity_relative_l2",
+      "paired_acfo_over_strongest_eligible_type3_timing_ratio",
+      "paired_resampling_interval"
+    ],
+    "waxs_planar_dispatch_boundary": [
+      "type1_vs_planar_direct_relative_l2",
+      "exact_ewald_vs_planar_geometry_relative_l2",
+      "dispatch_classification"
+    ],
+    "odt_forward_adjoint_toeplitz": [
+      "forward_relative_l2",
+      "adjoint_dot_relative_error",
+      "normal_hermitian_relative_error",
+      "normal_psd_tolerance",
+      "cg_solution_relative_error",
+      "explicit_normal_hot_seconds",
+      "cached_toeplitz_hot_seconds",
+      "setup_seconds",
+      "resident_and_transient_memory_bytes",
+      "measured_break_even_applications"
+    ],
+    "composite_operator": [
+      "materialized_vs_unfused_relative_l2",
+      "materialized_vs_independent_direct_relative_l2",
+      "adjoint_dot_relative_error",
+      "jvp_vs_finite_difference_relative_l2",
+      "jvp_vjp_duality_relative_error",
+      "weighted_normal_identity_relative_error",
+      "translation_inference_error",
+      "setup_seconds",
+      "materialized_and_unfused_hot_seconds",
+      "prepared_array_bytes",
+      "measured_break_even_applications",
+      "prespecified_regime_map"
+    ],
+    "cross_machine_replication": [
+      "all_common_numerical_acceptance_criteria",
+      "within_machine_timing_ratio_direction",
+      "scientific_completion_or_prespecified_oom"
+    ]
+  },
+  "success_failure_thresholds": {
+    "technical_integrity": {
+      "request_manifest_exact": true,
+      "claim_freeze_hash_exact": true,
+      "protocol_hash_exact": true,
+      "runner_completed_and_return_archive_created": true
+    },
+    "waxs_curved_fourier": {
+      "candidate_score_spearman_min": 0.999,
+      "same_top1_required": true,
+      "top5_jaccard_min": 1.0,
+      "maximum_candidate_intensity_relative_l2_max": 5e-06,
+      "prespecified_seeds_required": 3,
+      "faster_main_text_claim_requires_resampling_interval_lower_gt": 1.0
+    },
+    "waxs_planar_dispatch_boundary": {
+      "type1_vs_planar_direct_relative_l2_max": 5e-10,
+      "geometry_error_is_reported_without_pass_fail_optimization": true
+    },
+    "odt": {
+      "complex128_exact_relative_l2_max": 5e-12,
+      "adjoint_dot_relative_error_max": 5e-12,
+      "gpu_sampled_relative_l2_max": 5e-05,
+      "normal_hermitian_relative_error_max": 5e-12,
+      "cg_relative_error_max": 5e-07,
+      "hot_speed_claim_requires_paired_interval_lower_gt": 1.0,
+      "setup_speed_win_required": false,
+      "optional_all_gpu_arm_oom_is_scientific_memory_evidence": true
+    },
+    "composite": {
+      "materialized_vs_unfused_relative_l2_max": 5e-13,
+      "materialized_vs_direct_relative_l2_max": 5e-11,
+      "adjoint_dot_relative_error_max": 5e-13,
+      "jvp_vs_finite_difference_relative_l2_max": 5e-08,
+      "jvp_vjp_duality_relative_error_max": 5e-13,
+      "weighted_normal_identity_relative_error_max": 5e-13,
+      "isolated_hot_speed_claim_requires_paired_interval_lower_gt": 1.0,
+      "prepared_array_storage_must_be_smaller": true
+    },
+    "cross_machine": {
+      "raw_absolute_timing_equality_required": false,
+      "common_numerical_criteria_must_pass_on_both_machines": true,
+      "ratios_are_interpreted_within_machine_only": true
+    }
+  },
+  "machine_specific_allowed_arms": {
+    "server36_full": {
+      "expected_host": "redacted.invalid",
+      "expected_gpu": "NVIDIA GeForce RTX 3090",
+      "allowed": [
+        "waxs_curved_full_100_state",
+        "waxs_planar_type1_boundary",
+        "odt_exact_small",
+        "odt_native_type2_forward_type1_adjoint",
+        "odt_explicit_normal_256",
+        "odt_all_gpu_toeplitz_256",
+        "odt_cpu_generic_toeplitz_256",
+        "odt_acfo_toeplitz_256",
+        "composite_numerical_and_inference",
+        "composite_isolated_abba",
+        "composite_prespecified_regime_map"
+      ],
+      "required": [
+        "waxs_curved_full_100_state",
+        "waxs_planar_type1_boundary",
+        "odt_exact_small",
+        "odt_explicit_normal_256",
+        "odt_acfo_toeplitz_256",
+        "composite_numerical_and_inference",
+        "composite_isolated_abba",
+        "composite_prespecified_regime_map"
+      ]
+    },
+    "server59_replication": {
+      "expected_host": "redacted.invalid",
+      "expected_gpu": "NVIDIA GeForce RTX 3080 Ti",
+      "allowed": [
+        "waxs_curved_full_100_state",
+        "waxs_planar_type1_boundary",
+        "odt_exact_small",
+        "odt_native_type2_forward_type1_adjoint",
+        "odt_explicit_normal_256",
+        "odt_all_gpu_toeplitz_256_or_prespecified_oom",
+        "odt_cpu_generic_toeplitz_256",
+        "odt_acfo_toeplitz_256_or_prespecified_oom",
+        "composite_numerical_and_inference",
+        "composite_isolated_abba",
+        "composite_prespecified_regime_map"
+      ],
+      "required": [
+        "waxs_curved_full_100_state",
+        "waxs_planar_type1_boundary",
+        "odt_exact_small",
+        "odt_explicit_normal_256_attempt",
+        "odt_acfo_toeplitz_256_attempt",
+        "composite_numerical_and_inference",
+        "composite_isolated_abba",
+        "composite_prespecified_regime_map"
+      ],
+      "memory_frontier_rule": "An unmodified 12-GiB full-size arm that ends in CUDA out-of-memory is retained as a completed scientific outcome; no grid, batch, tolerance, or representation retuning is permitted."
+    }
+  },
+  "main_text_comparison_eligibility": {
+    "allowed": [
+      {
+        "system": "WAXS curved Fourier evaluation",
+        "comparison": "ACFO versus the strongest eligible Type-3 NUFFT on the identical nonuniform atomic sources and curved reciprocal targets",
+        "conditions": "all three prespecified seeds, identical candidate library, q samples, tolerance contract, thread contract, and ranking output"
+      },
+      {
+        "system": "ODT repeated normal application",
+        "comparison": "cached ACFO Toeplitz normal application versus explicit native Type-2 forward plus Type-1 adjoint on the identical A*WA operator",
+        "conditions": "setup, hot application, memory, and break-even reported together; strongest completed all-GPU setup arm shown"
+      },
+      {
+        "system": "composite prepared operator",
+        "comparison": "materialized operator versus the algebraically identical unfused chain",
+        "conditions": "independent direct numerical reference, isolated balanced timing, preparation and break-even reported, CPU scope stated"
+      }
+    ],
+    "boundary_only_not_speed_headline": [
+      "Planar WAXS Type-1 is a representation-dispatch boundary and cannot be compared with curved ACFO as a headline speed ratio.",
+      "ODT Type-2 and Type-1 results establish native forward/adjoint eligibility and cannot be replaced by a Type-3 comparator."
+    ],
+    "forbidden": [
+      "Any WAXS ACFO speed claim against Type-1 on a planarized geometry",
+      "Any ODT headline based on a Type-3 comparator when Type-2 forward and Type-1 adjoint are eligible",
+      "Any ACFO Toeplitz setup-speed claim that omits the strongest completed all-GPU comparator",
+      "Any cross-machine absolute-time speed ratio",
+      "Any one-seed, smoke, diagnostic, superseded, or post-result-selected arm",
+      "Any composite GPU, end-to-end solver, or general SO(3) claim not executed by this package"
+    ]
+  },
+  "publication_source_data_policy": {
+    "manuscript_ready_source_data_created_only_after_both_returns_are_verified": true,
+    "source_data_must_include_unfavourable_prespecified_arms": true,
+    "primary_metrics_may_not_be_replaced_by_secondary_metrics": true,
+    "secondary_diagnostics_may_enter_supplement_only_if_labeled": true
+  }
+}

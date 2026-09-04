@@ -1,0 +1,29 @@
+{
+  "started_utc": "2026-09-04T04:09:09.348948+00:00",
+  "finished_utc": "2026-09-04T04:12:02.480570+00:00",
+  "returncode": 0,
+  "command": [
+    "/opt/conda/envs/acfo-ncs-gpu/bin/python",
+    "-u",
+    "/workspace/ACFO/environment_migrations/acfo_ncs_gpu_loader_20260904/odt_rerun/extracted/odt_component/scripts/run_odt_toeplitz_si_external_validation.py",
+    "--mode",
+    "full",
+    "--run-parent",
+    "/workspace/ACFO/environment_migrations/acfo_ncs_gpu_loader_20260904/odt_rerun/runs",
+    "--allow-non-rtx3090"
+  ],
+  "ld_library_path": "/opt/conda/envs/acfo-ncs-gpu/lib/python3.11/site-packages/nvidia/cuda_runtime/lib:/opt/conda/envs/acfo-ncs-gpu/lib/python3.11/site-packages/nvidia/cufft/lib",
+  "thread_contract": {
+    "OMP_NUM_THREADS": "4",
+    "MKL_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "BLIS_NUM_THREADS": "1"
+  },
+  "returns": {
+    "/workspace/ACFO/environment_migrations/acfo_ncs_gpu_loader_20260904/odt_rerun/runs/20260904T040909Z/odt_toeplitz_si_external_return.zip": {
+      "sha256": "6ed84f705a7163537c25560fd90839f60518a2524c9559c74f3868de221f7fec",
+      "bytes": 128214
+    }
+  },
+  "original_artifacts_unchanged": true
+}
