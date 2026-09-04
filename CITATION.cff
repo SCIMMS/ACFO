@@ -5,6 +5,7 @@ title: "ACFO: Geometry-prepared Fourier operators and coefficient-space operator
 type: software
 version: 0.3.0
 date-released: 2026-09-04
+doi: "10.5281/zenodo.22298532"
 authors:
   - family-names: Kim
     given-names: Minsu
@@ -14,7 +15,7 @@ authors:
     given-names: Jongcheol
     affiliation: Pohang University of Science and Technology (POSTECH)
 repository-code: "https://github.com/SCIMMS/ACFO"
-repository-artifact: "https://github.com/SCIMMS/ACFO/releases/tag/v0.3.0"
+repository-artifact: "https://doi.org/10.5281/zenodo.22298532"
 url: "https://github.com/SCIMMS/ACFO"
 keywords:
   - Fourier operator

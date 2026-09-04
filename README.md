@@ -9,6 +9,9 @@ when the workload contains repeated complete rotational orbits.
 
 ## Version 0.3.0 — geometry-prepared operator validation
 
+Archived release: [Zenodo DOI 10.5281/zenodo.22298532](https://doi.org/10.5281/zenodo.22298532).
+Scientific release commit: `01ee59422399a554ff099877f8ad551535a41fe8`.
+
 The [new validation supplement](validation/operator_synthesis_v0_3_0/README.md)
 contains the two-machine High-NA, WAXS, ODT, radial CPSWF and layered-composite
 campaign: component code, prespecified claim freeze, numerical arrays, raw timings,
