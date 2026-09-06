@@ -25,8 +25,8 @@
         "sha256": "6783f554abd1a471da8ad7478faa52f3b70862dd99edd6f0f03d909e999eff37"
       },
       "public": {
-        "bytes": 157120,
-        "sha256": "ab199171a087d7dbb7e29b09b946bc3ac272fd51b25cdfd5f310ee12e7a557bc"
+        "bytes": 157560,
+        "sha256": "10e9d5aeab8c5fe5ffc5d3a1a794a5398e5980f717ef84ff8af88880117b27f5"
       }
     },
     "replay/pyproject.toml": {
