@@ -9,6 +9,9 @@ when the workload contains repeated complete rotational orbits.
 
 ## Version 0.4.0 — structure guided reuse and composition
 
+Archived release: [Zenodo DOI 10.5281/zenodo.22486955](https://doi.org/10.5281/zenodo.22486955).
+Scientific release commit: `9c858ce32d9bdafc93daca0fb141fb90886642ee`.
+
 The [validation supplement](validation/structure_reuse_v0_4_0/README.md) connects
 rotational coefficient structure to reusable factors, finite intermediate spaces
 and correction supports. It includes two-host slab, radial 4f, WAXS and weighted
