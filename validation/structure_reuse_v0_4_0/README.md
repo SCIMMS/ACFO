@@ -50,6 +50,7 @@ From this directory, with Python 3.11 or later:
 ```bash
 python verify.py
 python -m pip install -r replay/requirements-core.txt
+python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
 python verify.py --smoke
 ```
 
@@ -59,6 +60,9 @@ CPSWF factor/result coverage. `--smoke` additionally executes focused CPU tests 
 a temporary copy. It does not repeat the large performance campaign. Torch, CuPy,
 CUDA and a C++ compiler are required for GPU replication; install compatible builds
 for the target machine separately.
+
+The CPU smoke suite also imports PyTorch; the command above installs its CPU build.
+For GPU replication, use a CUDA-compatible PyTorch build instead of the CPU build.
 
 ## Reproduce the four externally replicated cases
 
@@ -115,4 +119,3 @@ the experiments on new hardware provides additional computational replication.
 Original submission drafts and internal editorial planning are outside this release.
 
 License: ACFO Citation-Required License (see `LICENSE`), source-available.
-
