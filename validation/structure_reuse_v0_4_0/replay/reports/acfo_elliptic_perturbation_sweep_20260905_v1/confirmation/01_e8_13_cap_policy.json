@@ -1,0 +1,140 @@
+{
+  "case": "e8_13",
+  "arm": "cap_policy",
+  "pair": 1,
+  "stage": "confirmation",
+  "warm_s": 0.25261119997594506,
+  "refresh_s": 0.8298085000133142,
+  "total_s": 1.0824196999892592,
+  "state_audit_s": 0.007280500023625791,
+  "independent_audit_s": 0.005212399992160499,
+  "warm_fingerprint": {
+    "sha256": "09129197f87b7507b11303e9af7ba25f873a10ec10cbda2f9b8bdef3d80332d6",
+    "coefficient_nodes": 476,
+    "field_modes": 0,
+    "factors": 107,
+    "edges": 200
+  },
+  "events": [
+    {
+      "theta": [
+        0.12,
+        -0.08,
+        0.0
+      ],
+      "tolerance": 1e-08,
+      "observation": "wide",
+      "setup_s": 0.10726429999340326,
+      "selection_s": 0.001055200002156198,
+      "planning_s": 0.009908400010317564,
+      "update_s": 0.0927533000940457,
+      "direct_s": 0.0,
+      "observation_s": 0.04130989999976009,
+      "reuse_check_s": 7.1999384090304375e-06,
+      "new_nodes": 474,
+      "p": 7,
+      "q": 0,
+      "predicted_direct_s": 0.42637387571372,
+      "predicted_update_s": 0.09580672947760914,
+      "full_degree_indices": 36,
+      "graph_cache_hit": false,
+      "graph_complete": true,
+      "graph_screened": false,
+      "graph_nodes_known": 476,
+      "graph_nodes_added": 476,
+      "graph_nodes_scanned": 476,
+      "model_lower_update_s": 0.09580672947760914,
+      "model_screen_ceiling_s": 0.40505518192803397,
+      "order": 7,
+      "relative_bound": 3.862315739749558e-09,
+      "absolute_bound": 1.1939388995566503e-10,
+      "requested_nodes": 476,
+      "synthesis_s": 0.007454500067979097,
+      "route": "base_prepare",
+      "retained_nodes": 476,
+      "retained_nodes_by_gamma_degree": {
+        "0": 476
+      },
+      "field_modes": 0,
+      "bank_bytes": 3069360,
+      "state_bytes": 548352,
+      "reachability_entries": 4256,
+      "retained_graph_nodes": 476,
+      "total_s": 0.2525086000096053,
+      "relative_error": 4.6117115569273145e-12,
+      "passed": true
+    },
+    {
+      "theta": [
+        0.12,
+        -0.08,
+        0.35420416890662065
+      ],
+      "tolerance": 1e-08,
+      "observation": "wide",
+      "setup_s": 1.100008375942707e-06,
+      "selection_s": 0.0017425999976694584,
+      "planning_s": 0.09702159999869764,
+      "update_s": 0.0,
+      "direct_s": 0.7296728000510484,
+      "observation_s": 5.600042641162872e-06,
+      "reuse_check_s": 0.00013499998021870852,
+      "new_nodes": 0,
+      "p": 10,
+      "q": 8,
+      "predicted_direct_s": 0.6349852713212852,
+      "predicted_update_s": null,
+      "full_degree_indices": 286,
+      "graph_cache_hit": false,
+      "graph_complete": false,
+      "graph_screened": true,
+      "graph_nodes_known": 5760,
+      "graph_nodes_added": 5760,
+      "graph_nodes_scanned": 5760,
+      "model_lower_update_s": 0.6151329803873468,
+      "model_screen_ceiling_s": 0.6032360077552209,
+      "relative_bound": 1.1320670743069336e-09,
+      "absolute_bound": 3.873619570362973e-11,
+      "field_reused": false,
+      "radius": 6,
+      "iterations": 76,
+      "solve_calls": 15170,
+      "attempts": [
+        {
+          "radius": 2,
+          "modes": 46,
+          "bound": 0.00010150221338996323
+        },
+        {
+          "radius": 4,
+          "modes": 202,
+          "bound": 3.310562026519785e-07
+        },
+        {
+          "radius": 6,
+          "modes": 474,
+          "bound": 1.1320670743069336e-09
+        }
+      ],
+      "exterior_modes_checked": 178,
+      "route": "cost_to_direct",
+      "fallback_reason": "model_screen",
+      "retained_nodes": 476,
+      "retained_nodes_by_gamma_degree": {
+        "0": 476
+      },
+      "field_modes": 474,
+      "bank_bytes": 8293968,
+      "state_bytes": 1094400,
+      "reachability_entries": 30443,
+      "retained_graph_nodes": 6236,
+      "total_s": 0.8296736000338569,
+      "process_peak_bytes": 122970112,
+      "relative_error": 1.2444706051014357e-12,
+      "ideal_omission_error": 0.016041192585869737,
+      "passed": true
+    }
+  ],
+  "prediction_match": true,
+  "passed": true
+}

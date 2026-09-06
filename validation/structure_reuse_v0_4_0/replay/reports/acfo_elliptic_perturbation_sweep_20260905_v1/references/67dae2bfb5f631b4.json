@@ -1,0 +1,80 @@
+{
+  "event": {
+    "theta": [
+      0.12,
+      -0.08,
+      0.0
+    ],
+    "tolerance": 1e-08,
+    "observation": "wide"
+  },
+  "radial_change": 0.0,
+  "metadata": [
+    {
+      "relative_bound": 2.5905700552645243e-14,
+      "absolute_bound": 8.85295638844863e-16,
+      "field_reused": false,
+      "radius": 8,
+      "iterations": 114,
+      "solve_calls": 13196,
+      "direct_s": 0.5642422999953851,
+      "attempts": [
+        {
+          "radius": 2,
+          "modes": 26,
+          "bound": 1.286711835350584e-05
+        },
+        {
+          "radius": 4,
+          "modes": 82,
+          "bound": 1.433958445081432e-08
+        },
+        {
+          "radius": 6,
+          "modes": 170,
+          "bound": 1.8480996759951308e-11
+        },
+        {
+          "radius": 8,
+          "modes": 290,
+          "bound": 2.5905700552645243e-14
+        }
+      ],
+      "exterior_modes_checked": 72
+    },
+    {
+      "relative_bound": 2.5905700552645243e-14,
+      "absolute_bound": 8.85295638844863e-16,
+      "field_reused": false,
+      "radius": 8,
+      "iterations": 114,
+      "solve_calls": 13196,
+      "direct_s": 0.7564923000754789,
+      "attempts": [
+        {
+          "radius": 2,
+          "modes": 26,
+          "bound": 1.286711835350584e-05
+        },
+        {
+          "radius": 4,
+          "modes": 82,
+          "bound": 1.433958445081432e-08
+        },
+        {
+          "radius": 6,
+          "modes": 170,
+          "bound": 1.8480996759951308e-11
+        },
+        {
+          "radius": 8,
+          "modes": 290,
+          "bound": 2.5905700552645243e-14
+        }
+      ],
+      "exterior_modes_checked": 72
+    }
+  ],
+  "passed": true,
+  "seconds": 2.1875643000239506
+}

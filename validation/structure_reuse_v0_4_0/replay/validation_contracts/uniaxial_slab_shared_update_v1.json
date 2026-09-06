@@ -1,0 +1,19 @@
+{
+  "schema":"uniaxial-slab-shared-update-v1",
+  "scope":"Existing passive scalar reflected annular TE/TM slab; fixed radii, source weights, material and k0=4+0.05i. Thickness d and uniform target-height shift change. Not full FDTD or full dyadic Maxwell.",
+  "cases":[{"rings":8,"branch":"ordinary","eps_z":[3.1,0.035]},{"rings":32,"branch":"extraordinary","eps_z":[-1.2,0.04]},{"rings":64,"branch":"extraordinary","eps_z":[-1.2,0.04]}],
+  "nodes_per_segment":16,
+  "quadrature_revision":"v3: split 0..10 in 0.25 intervals, 10..30 in 0.5, 30..50 in 2.0; v1/v2 coarse intervals failed independent reference convergence and were preserved. Same physics and acceptance criteria.",
+  "nphi":192,
+  "states":[[0.31,0.0],[0.37,0.03],[0.43,-0.02]],
+  "methods":["modal_cached","factor_separate","factor_shared"],
+  "calls_per_update":[1,64],
+  "hot_inner":5,
+  "operator_tolerance":1e-8,
+  "derivative_tolerance":1e-6,
+  "reference_tolerance":1e-9,
+  "confirmation":"Pilot first, then five fresh paired processes on largest case; randomized method order, single-thread CPU complex128. Hot repetitions are not independent samples.",
+  "fairness":"v4: Every method reuses both Bessel/height factors, material roots, source FFT within each forward+two-derivative call. Modal baseline rebuilds only three matrices for nonnegative m and shares them for both signs; no duplicated +/- preparation, Bessel rebuild, or unused derivatives. Factor_separate is an ablation, modal_cached is the strong matched prepared baseline. v3 correct pilot retained as superseded baseline.",
+  "cost":"Cold includes common factor preparation; warm sums changed spectral weights, modal preparation if selected, and applications. End-to-end totals are measured phase-sum estimates. Sources may change at every call; no cross-call source cache. Retained array bytes are not peak RSS.",
+  "validation":"Match existing production operator and finite differences in focused tests; compare all three actions across methods for each state. Independently refine quadrature on representative ring pairs using direct J0 separation and 4-boundary reflection solve; correctness audits are posthoc, not a deployable certificate. No new truncation rank or adaptive policy claim."
+}

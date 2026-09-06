@@ -1,0 +1,66 @@
+{
+  "previous_manifests": [
+    {
+      "report": "acfo_cylinder_coupling_20260905_v1",
+      "files": 51,
+      "mismatches": []
+    },
+    {
+      "report": "acfo_elliptic_ablation_20260905_v1",
+      "files": 216,
+      "mismatches": []
+    },
+    {
+      "report": "acfo_elliptic_refresh_20260905_v1",
+      "files": 66,
+      "mismatches": []
+    },
+    {
+      "report": "acfo_elliptic_observation_refresh_20260905_v1",
+      "files": 97,
+      "mismatches": []
+    },
+    {
+      "report": "acfo_elliptic_new_coupling_20260905_v1",
+      "files": 60,
+      "mismatches": []
+    },
+    {
+      "report": "acfo_elliptic_update_policy_20260905_v1",
+      "files": 183,
+      "mismatches": []
+    },
+    {
+      "report": "acfo_elliptic_counterfactual_20260905_v1",
+      "files": 215,
+      "mismatches": []
+    },
+    {
+      "report": "acfo_elliptic_structured_policy_20260905_v1",
+      "files": 208,
+      "mismatches": []
+    },
+    {
+      "report": "acfo_elliptic_progressive_policy_20260905_v1",
+      "files": 206,
+      "mismatches": []
+    },
+    {
+      "report": "acfo_elliptic_weak_coupling_20260905_v1",
+      "files": 136,
+      "mismatches": []
+    }
+  ],
+  "unique_workers": 512,
+  "responses": 1024,
+  "warm_groups": 8,
+  "boundary_cases": 12,
+  "frozen_hashes": 61,
+  "gates": {
+    "accuracy": true,
+    "common_warm_state": true,
+    "prospective_boundaries": true,
+    "adjacent_positive_region": true,
+    "negative_cases_preserved": true
+  }
+}

@@ -1,0 +1,669 @@
+{
+  "model": {
+    "update": {
+      "coefficients": [
+        0.0,
+        0.07675216588373988,
+        0.014733528677459069,
+        0.10422732319754278,
+        0.015280068315358006
+      ],
+      "training_rows": 17,
+      "training_median_absolute_log_ratio": 0.11669276361713529
+    },
+    "direct": {
+      "coefficients": [
+        0.016439373285183873,
+        0.29846616817012267,
+        0.1909847098538598,
+        1.0076101432113715,
+        0.0,
+        0.0
+      ],
+      "training_rows": 18,
+      "training_median_absolute_log_ratio": 0.4254863622036479
+    }
+  },
+  "rows": [
+    {
+      "sequence": 0,
+      "event": {
+        "theta": [
+          0.1,
+          -0.06,
+          0.015
+        ],
+        "observation": "narrow",
+        "tolerance": 1e-08
+      },
+      "update": {
+        "features": [
+          1.0,
+          0.936,
+          0.388,
+          0.86,
+          0.216
+        ],
+        "seconds": 0.1650726000079885,
+        "new_nodes": 936,
+        "planning_s": 0.025820799986831844
+      },
+      "direct": {
+        "features": [
+          1.0,
+          0.441,
+          1.0,
+          0.07375,
+          0.018,
+          0.0
+        ],
+        "seconds": 0.3622265999438241,
+        "radius": 4
+      }
+    },
+    {
+      "sequence": 0,
+      "event": {
+        "theta": [
+          0.1,
+          -0.06,
+          0.075
+        ],
+        "observation": "narrow",
+        "tolerance": 1e-08
+      },
+      "update": {
+        "features": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.216
+        ],
+        "seconds": 0.004976899945177138,
+        "new_nodes": 0,
+        "planning_s": 0.01860730000771582
+      },
+      "direct": {
+        "features": [
+          1.0,
+          0.441,
+          0.0,
+          0.08875,
+          0.018,
+          0.202
+        ],
+        "seconds": 0.5665743999416009,
+        "radius": 6
+      }
+    },
+    {
+      "sequence": 0,
+      "event": {
+        "theta": [
+          0.1,
+          -0.06,
+          0.076
+        ],
+        "observation": "narrow",
+        "tolerance": 1e-08
+      },
+      "update": {
+        "features": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.216
+        ],
+        "seconds": 0.004551099962554872,
+        "new_nodes": 0,
+        "planning_s": 0.022887400002218783
+      },
+      "direct": {
+        "features": [
+          1.0,
+          0.441,
+          0.0,
+          0.089,
+          0.018,
+          0.474
+        ],
+        "seconds": 0.32445229997392744,
+        "radius": 6
+      }
+    },
+    {
+      "sequence": 0,
+      "event": {
+        "theta": [
+          0.1,
+          -0.06,
+          0.076
+        ],
+        "observation": "wide",
+        "tolerance": 1e-08
+      },
+      "update": {
+        "features": [
+          1.0,
+          1.34,
+          0.362,
+          0.55,
+          2.544
+        ],
+        "seconds": 0.18448659998830408,
+        "new_nodes": 1340,
+        "planning_s": 0.03685950010549277
+      },
+      "direct": {
+        "features": [
+          1.0,
+          0.441,
+          0.0,
+          0.089,
+          0.212,
+          0.474
+        ],
+        "seconds": 0.03591239999514073,
+        "radius": 6
+      }
+    },
+    {
+      "sequence": 0,
+      "event": {
+        "theta": [
+          0.1,
+          -0.06,
+          0.076
+        ],
+        "observation": "radial",
+        "tolerance": 1e-08
+      },
+      "update": {
+        "features": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.216
+        ],
+        "seconds": 0.004390299902297556,
+        "new_nodes": 0,
+        "planning_s": 0.016810599947348237
+      },
+      "direct": {
+        "features": [
+          1.0,
+          0.441,
+          0.0,
+          0.089,
+          0.018,
+          0.474
+        ],
+        "seconds": 0.03589619998820126,
+        "radius": 6
+      }
+    },
+    {
+      "sequence": 1,
+      "event": {
+        "theta": [
+          0.16,
+          0.07,
+          0.03
+        ],
+        "observation": "narrow",
+        "tolerance": 1e-06
+      },
+      "update": {
+        "features": [
+          1.0,
+          0.52,
+          0.234,
+          0.6,
+          0.1512
+        ],
+        "seconds": 0.09628759999759495,
+        "new_nodes": 520,
+        "planning_s": 0.01270620001014322
+      },
+      "direct": {
+        "features": [
+          1.0,
+          0.441,
+          1.0,
+          0.11083333333333334,
+          0.018,
+          0.0
+        ],
+        "seconds": 0.31334510003216565,
+        "radius": 4
+      }
+    },
+    {
+      "sequence": 1,
+      "event": {
+        "theta": [
+          0.16,
+          0.07,
+          0.18
+        ],
+        "observation": "narrow",
+        "tolerance": 1e-08
+      },
+      "update": {
+        "features": [
+          1.0,
+          2.057,
+          0.459,
+          0.7,
+          0.396
+        ],
+        "seconds": 0.23546810005791485,
+        "new_nodes": 2057,
+        "planning_s": 0.07868779997806996
+      },
+      "direct": {
+        "features": [
+          1.0,
+          0.841,
+          0.0,
+          0.14833333333333334,
+          0.018,
+          0.202
+        ],
+        "seconds": 0.7928227999946102,
+        "radius": 6
+      }
+    },
+    {
+      "sequence": 1,
+      "event": {
+        "theta": [
+          0.16,
+          0.07,
+          0.19
+        ],
+        "observation": "narrow",
+        "tolerance": 1e-08
+      },
+      "update": {
+        "features": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.396
+        ],
+        "seconds": 0.0123626000713557,
+        "new_nodes": 0,
+        "planning_s": 0.06334310001693666
+      },
+      "direct": {
+        "features": [
+          1.0,
+          0.841,
+          0.0,
+          0.15083333333333335,
+          0.018,
+          0.474
+        ],
+        "seconds": 0.39144289994146675,
+        "radius": 6
+      }
+    },
+    {
+      "sequence": 1,
+      "event": {
+        "theta": [
+          0.16,
+          0.07,
+          0.19
+        ],
+        "observation": "wide",
+        "tolerance": 1e-08
+      },
+      "update": {
+        "features": [
+          1.0,
+          3.215,
+          0.461,
+          0.68,
+          4.664
+        ],
+        "seconds": 0.3903942999895662,
+        "new_nodes": 3215,
+        "planning_s": 0.1126333000138402
+      },
+      "direct": {
+        "features": [
+          1.0,
+          0.841,
+          0.0,
+          0.15083333333333335,
+          0.212,
+          0.474
+        ],
+        "seconds": 0.03671959997154772,
+        "radius": 6
+      }
+    },
+    {
+      "sequence": 1,
+      "event": {
+        "theta": [
+          0.16,
+          0.07,
+          0.3
+        ],
+        "observation": "narrow",
+        "tolerance": 1e-08
+      },
+      "update": {
+        "features": [
+          1.0,
+          0.157,
+          0.0,
+          0.0,
+          0.5148
+        ],
+        "seconds": 0.021981799975037575,
+        "new_nodes": 157,
+        "planning_s": 0.08993119990918785
+      },
+      "direct": {
+        "features": [
+          1.0,
+          0.841,
+          0.0,
+          0.17833333333333334,
+          0.018,
+          0.474
+        ],
+        "seconds": 0.42249220004305243,
+        "radius": 6
+      }
+    },
+    {
+      "sequence": 2,
+      "event": {
+        "theta": [
+          0.09,
+          -0.11,
+          0.24
+        ],
+        "observation": "narrow",
+        "tolerance": 1e-08
+      },
+      "update": {
+        "features": [
+          1.0,
+          2.577,
+          0.693,
+          1.3,
+          0.396
+        ],
+        "seconds": 0.37160129996482283,
+        "new_nodes": 2577,
+        "planning_s": 0.08091080002486706
+      },
+      "direct": {
+        "features": [
+          1.0,
+          0.625,
+          1.0,
+          0.14166666666666666,
+          0.018,
+          0.0
+        ],
+        "seconds": 0.8602978000417352,
+        "radius": 6
+      }
+    },
+    {
+      "sequence": 2,
+      "event": {
+        "theta": [
+          0.09,
+          -0.11,
+          0.25
+        ],
+        "observation": "wide",
+        "tolerance": 1e-08
+      },
+      "update": {
+        "features": [
+          1.0,
+          3.215,
+          0.461,
+          0.68,
+          4.664
+        ],
+        "seconds": 0.39169960003346205,
+        "new_nodes": 3215,
+        "planning_s": 0.11064890003763139
+      },
+      "direct": {
+        "features": [
+          1.0,
+          0.625,
+          0.0,
+          0.14416666666666667,
+          0.212,
+          0.474
+        ],
+        "seconds": 0.41029730008449405,
+        "radius": 6
+      }
+    },
+    {
+      "sequence": 2,
+      "event": {
+        "theta": [
+          0.09,
+          -0.11,
+          0.25
+        ],
+        "observation": "radial",
+        "tolerance": 1e-08
+      },
+      "update": {
+        "features": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.396
+        ],
+        "seconds": 0.008597100037150085,
+        "new_nodes": 0,
+        "planning_s": 0.06222989992238581
+      },
+      "direct": {
+        "features": [
+          1.0,
+          0.625,
+          0.0,
+          0.14416666666666667,
+          0.018,
+          0.474
+        ],
+        "seconds": 0.04507659992668778,
+        "radius": 6
+      }
+    },
+    {
+      "sequence": 2,
+      "event": {
+        "theta": [
+          0.09,
+          -0.11,
+          0.52
+        ],
+        "observation": "narrow",
+        "tolerance": 1e-08
+      },
+      "update_unavailable": "Order limit exceeded",
+      "direct": {
+        "features": [
+          1.0,
+          0.841,
+          0.0,
+          0.21166666666666667,
+          0.018,
+          0.474
+        ],
+        "seconds": 0.5022247999440879,
+        "radius": 6
+      }
+    },
+    {
+      "sequence": 3,
+      "event": {
+        "theta": [
+          0.15,
+          0.04,
+          0
+        ],
+        "observation": "narrow",
+        "tolerance": 1e-08
+      },
+      "update": {
+        "features": [
+          1.0,
+          0.188,
+          0.092,
+          0.35,
+          0.0648
+        ],
+        "seconds": 0.05549940001219511,
+        "new_nodes": 188,
+        "planning_s": 0.0035577999660745263
+      },
+      "direct": {
+        "features": [
+          1.0,
+          0.441,
+          1.0,
+          0.08833333333333333,
+          0.018,
+          0.0
+        ],
+        "seconds": 0.29297730000689626,
+        "radius": 6
+      }
+    },
+    {
+      "sequence": 3,
+      "event": {
+        "theta": [
+          0.15,
+          0.04,
+          0.02
+        ],
+        "observation": "narrow",
+        "tolerance": 1e-08
+      },
+      "update": {
+        "features": [
+          1.0,
+          0.748,
+          0.296,
+          0.51,
+          0.216
+        ],
+        "seconds": 0.08986059995368123,
+        "new_nodes": 748,
+        "planning_s": 0.03600570000708103
+      },
+      "direct": {
+        "features": [
+          1.0,
+          0.441,
+          0.0,
+          0.09333333333333334,
+          0.018,
+          0.17
+        ],
+        "seconds": 0.6288209999911487,
+        "radius": 6
+      }
+    },
+    {
+      "sequence": 3,
+      "event": {
+        "theta": [
+          0.15,
+          0.04,
+          0.021
+        ],
+        "observation": "narrow",
+        "tolerance": 1e-08
+      },
+      "update": {
+        "features": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.216
+        ],
+        "seconds": 0.00480790005531162,
+        "new_nodes": 0,
+        "planning_s": 0.01843000005465001
+      },
+      "direct": {
+        "features": [
+          1.0,
+          0.441,
+          0.0,
+          0.09358333333333334,
+          0.018,
+          0.474
+        ],
+        "seconds": 0.32306169997900724,
+        "radius": 6
+      }
+    },
+    {
+      "sequence": 3,
+      "event": {
+        "theta": [
+          0.15,
+          0.04,
+          0.021
+        ],
+        "observation": "wide",
+        "tolerance": 1e-08
+      },
+      "update": {
+        "features": [
+          1.0,
+          1.34,
+          0.362,
+          0.55,
+          2.544
+        ],
+        "seconds": 0.2403951999731362,
+        "new_nodes": 1340,
+        "planning_s": 0.04158279998227954
+      },
+      "direct": {
+        "features": [
+          1.0,
+          0.441,
+          0.0,
+          0.09358333333333334,
+          0.212,
+          0.474
+        ],
+        "seconds": 0.04186709993518889,
+        "radius": 6
+      }
+    }
+  ],
+  "total_calibration_s": 10.53689700004179,
+  "protocol_sha256": "11fe02e478390b0ce0cb78f99059891e88ed03fd87b709272f75c7f4c0c330ea",
+  "data_split": "Only calibration sequences; all evaluation sequences held out"
+}

@@ -1,7 +1,7 @@
 {
-  "title": "ACFO: Geometry-prepared Fourier operators and coefficient-space operator synthesis",
+  "title": "ACFO: Structure guided reuse and composition of rotationally structured operators",
   "upload_type": "software",
-  "description": "ACFO provides geometry-prepared Fourier operators and explicit construction of compatible coefficient-space actions. Version 0.3.0 adds self-contained two-machine validation packages for High-NA correspondence and harmonic support, WAXS candidate ranking, Cartesian ODT and coupled modal normal actions, radial CPSWF preparation and checked cache reuse, and layered vector-wave composite operators with derivatives. The source archive includes component code and tests, prespecified protocols and claim freeze, numerical arrays and raw timings, privacy-normalized original returns, the original second-machine ODT loader failure and its same-input corrective rerun, independent audits, thirteen numerical source-data tables, and a portable verifier. The evidence supports the tested finite geometries and subspaces with explicit comparator and support limits: the current WAXS payload lacks an equally contracted strongest comparator, the ODT paired hot-speed interval is absent, and Windows strict bitwise radial audit failures remain recorded. Composite performance refers to its own fixed unfused/materialized chain and retained-array storage. No universal speed or full-support/measured-data CPSWF reconstruction claim is made. Unlicensed third-party raw intensity is excluded; required geometry is retained. Existing v0.2.0 evidence and the established package API remain available. License: ACFO Citation-Required License, source-available and not OSI-approved.",
+  "description": "ACFO provides geometry-prepared Fourier operators and computational constructions from rotational coefficient structure. Version 0.4.0 adds an executable validation supplement for structure guided factor reuse, finite-basis composition and perturbation-support updates. The supplement contains four-system replication on two Linux hosts (uniaxial slab, radial 4f relay, curved-detector WAXS tangents and weighted ODT), with five fresh processes per system and host; the separately frozen local elliptic perturbation sweep, matrix-free CPSWF preparation comparisons, basis-closure experiments and affine-family controls; numerical arrays, per-process timings, figure source data, original protocols and a portable verifier. Results identify workload-dependent advantages and boundaries: large-grid CPSWF preparation can improve over randomized preparation; intermediate spaces can require more modes than the input; small elliptic corrections can be cheaper while larger corrections favor rebuilding; repeated relay workloads can amortize compression while single-use cold workloads lose; WAXS streaming offers a distinct memory/time tradeoff; ODT core gains have small whole-operation effects. External ODT validation compares the same prepared normal action. The local historical cases remain distinct from the new two-host replication. Public metadata is privacy-normalized, with original/public digests recorded and numerical arrays preserved. Previous releases remain available. License: ACFO Citation-Required License, source-available and not OSI-approved.",
   "creators": [
     {
       "name": "Kim, Minsu",
@@ -13,7 +13,7 @@
       "affiliation": "Pohang University of Science and Technology (POSTECH)"
     }
   ],
-  "version": "0.3.0",
+  "version": "0.4.0",
   "access_right": "open",
   "license": "other-open",
   "keywords": [
@@ -24,6 +24,10 @@
     "coefficient-space operator synthesis",
     "CPSWF",
     "NUFFT",
-    "forward-adjoint operator"
+    "forward-adjoint operator",
+    "structure guided reuse",
+    "elliptic PDE",
+    "perturbation support",
+    "basis composition"
   ]
 }

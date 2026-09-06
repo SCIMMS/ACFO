@@ -1,0 +1,140 @@
+{
+  "case": "e8_13",
+  "arm": "cap_policy",
+  "pair": 2,
+  "stage": "confirmation",
+  "warm_s": 0.23996249993797392,
+  "refresh_s": 0.7962135000852868,
+  "total_s": 1.0361760000232607,
+  "state_audit_s": 0.007209000061266124,
+  "independent_audit_s": 0.004755999892950058,
+  "warm_fingerprint": {
+    "sha256": "09129197f87b7507b11303e9af7ba25f873a10ec10cbda2f9b8bdef3d80332d6",
+    "coefficient_nodes": 476,
+    "field_modes": 0,
+    "factors": 107,
+    "edges": 200
+  },
+  "events": [
+    {
+      "theta": [
+        0.12,
+        -0.08,
+        0.0
+      ],
+      "tolerance": 1e-08,
+      "observation": "wide",
+      "setup_s": 0.1029163000639528,
+      "selection_s": 0.0012199999764561653,
+      "planning_s": 0.009324399987235665,
+      "update_s": 0.08894129993859679,
+      "direct_s": 0.0,
+      "observation_s": 0.03726189990993589,
+      "reuse_check_s": 7.00005330145359e-06,
+      "new_nodes": 474,
+      "p": 7,
+      "q": 0,
+      "predicted_direct_s": 0.42637387571372,
+      "predicted_update_s": 0.09580672947760914,
+      "full_degree_indices": 36,
+      "graph_cache_hit": false,
+      "graph_complete": true,
+      "graph_screened": false,
+      "graph_nodes_known": 476,
+      "graph_nodes_added": 476,
+      "graph_nodes_scanned": 476,
+      "model_lower_update_s": 0.09580672947760914,
+      "model_screen_ceiling_s": 0.40505518192803397,
+      "order": 7,
+      "relative_bound": 3.862315739749558e-09,
+      "absolute_bound": 1.1939388995566503e-10,
+      "requested_nodes": 476,
+      "synthesis_s": 0.00735169998370111,
+      "route": "base_prepare",
+      "retained_nodes": 476,
+      "retained_nodes_by_gamma_degree": {
+        "0": 476
+      },
+      "field_modes": 0,
+      "bank_bytes": 3069360,
+      "state_bytes": 548352,
+      "reachability_entries": 4256,
+      "retained_graph_nodes": 476,
+      "total_s": 0.23986229998990893,
+      "relative_error": 4.6117115569273145e-12,
+      "passed": true
+    },
+    {
+      "theta": [
+        0.12,
+        -0.08,
+        0.35420416890662065
+      ],
+      "tolerance": 1e-08,
+      "observation": "wide",
+      "setup_s": 1.300009898841381e-06,
+      "selection_s": 0.0017663000617176294,
+      "planning_s": 0.08996469993144274,
+      "update_s": 0.0,
+      "direct_s": 0.7031136999139562,
+      "observation_s": 6.00004568696022e-06,
+      "reuse_check_s": 0.00013399997260421515,
+      "new_nodes": 0,
+      "p": 10,
+      "q": 8,
+      "predicted_direct_s": 0.6349852713212852,
+      "predicted_update_s": null,
+      "full_degree_indices": 286,
+      "graph_cache_hit": false,
+      "graph_complete": false,
+      "graph_screened": true,
+      "graph_nodes_known": 5760,
+      "graph_nodes_added": 5760,
+      "graph_nodes_scanned": 5760,
+      "model_lower_update_s": 0.6151329803873468,
+      "model_screen_ceiling_s": 0.6032360077552209,
+      "relative_bound": 1.1320670743069336e-09,
+      "absolute_bound": 3.873619570362973e-11,
+      "field_reused": false,
+      "radius": 6,
+      "iterations": 76,
+      "solve_calls": 15170,
+      "attempts": [
+        {
+          "radius": 2,
+          "modes": 46,
+          "bound": 0.00010150221338996323
+        },
+        {
+          "radius": 4,
+          "modes": 202,
+          "bound": 3.310562026519785e-07
+        },
+        {
+          "radius": 6,
+          "modes": 474,
+          "bound": 1.1320670743069336e-09
+        }
+      ],
+      "exterior_modes_checked": 178,
+      "route": "cost_to_direct",
+      "fallback_reason": "model_screen",
+      "retained_nodes": 476,
+      "retained_nodes_by_gamma_degree": {
+        "0": 476
+      },
+      "field_modes": 474,
+      "bank_bytes": 8293968,
+      "state_bytes": 1094400,
+      "reachability_entries": 30443,
+      "retained_graph_nodes": 6236,
+      "total_s": 0.7960786999901757,
+      "process_peak_bytes": 124137472,
+      "relative_error": 1.2444706051014357e-12,
+      "ideal_omission_error": 0.016041192585869737,
+      "passed": true
+    }
+  ],
+  "prediction_match": true,
+  "passed": true
+}

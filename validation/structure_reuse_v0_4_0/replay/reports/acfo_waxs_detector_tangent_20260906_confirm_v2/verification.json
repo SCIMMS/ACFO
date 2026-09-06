@@ -1,0 +1,13 @@
+{
+  "pilot_workers": 3,
+  "confirmation_workers": 5,
+  "tests_passed": 9,
+  "input_manifest_entries_verified": 36,
+  "metrics": {
+    "max_direct_amplitude_relative": 1.90651206231826e-15,
+    "max_finite_difference_normalized": 1.1309719151825053e-11,
+    "max_loss_absolute": 1.1102230246251565e-16,
+    "max_gradient_relative": 1.919186853789713e-15
+  },
+  "test_command": "CUPY_CACHE_DIR=<workspace>/.cupy_cache python -m pytest -q tests/test_waxs_detector_tangent_adapter.py tests/test_differentiable_acfo.py"
+}

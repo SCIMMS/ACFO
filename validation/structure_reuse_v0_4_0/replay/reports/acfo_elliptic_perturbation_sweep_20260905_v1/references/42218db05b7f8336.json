@@ -1,0 +1,90 @@
+{
+  "event": {
+    "theta": [
+      0.12,
+      -0.08,
+      0.3914888182652123
+    ],
+    "tolerance": 1e-08,
+    "observation": "wide"
+  },
+  "radial_change": 0.0,
+  "metadata": [
+    {
+      "relative_bound": 1.8285590038389192e-14,
+      "absolute_bound": 6.258588864008291e-16,
+      "field_reused": false,
+      "radius": 10,
+      "iterations": 176,
+      "solve_calls": 78842,
+      "direct_s": 3.2475018999539316,
+      "attempts": [
+        {
+          "radius": 2,
+          "modes": 46,
+          "bound": 0.0001207001010868888
+        },
+        {
+          "radius": 4,
+          "modes": 202,
+          "bound": 4.341673407532642e-07
+        },
+        {
+          "radius": 6,
+          "modes": 474,
+          "bound": 1.5807462783045148e-09
+        },
+        {
+          "radius": 8,
+          "modes": 858,
+          "bound": 5.559367762235118e-12
+        },
+        {
+          "radius": 10,
+          "modes": 1354,
+          "bound": 1.8285590038389192e-14
+        }
+      ],
+      "exterior_modes_checked": 290
+    },
+    {
+      "relative_bound": 1.8285590038389192e-14,
+      "absolute_bound": 6.258588864008291e-16,
+      "field_reused": false,
+      "radius": 10,
+      "iterations": 176,
+      "solve_calls": 78842,
+      "direct_s": 4.176181899965741,
+      "attempts": [
+        {
+          "radius": 2,
+          "modes": 46,
+          "bound": 0.0001207001010868888
+        },
+        {
+          "radius": 4,
+          "modes": 202,
+          "bound": 4.341673407532642e-07
+        },
+        {
+          "radius": 6,
+          "modes": 474,
+          "bound": 1.5807462783045148e-09
+        },
+        {
+          "radius": 8,
+          "modes": 858,
+          "bound": 5.559367762235118e-12
+        },
+        {
+          "radius": 10,
+          "modes": 1354,
+          "bound": 1.8285590038389192e-14
+        }
+      ],
+      "exterior_modes_checked": 290
+    }
+  ],
+  "passed": true,
+  "seconds": 8.309233900043182
+}

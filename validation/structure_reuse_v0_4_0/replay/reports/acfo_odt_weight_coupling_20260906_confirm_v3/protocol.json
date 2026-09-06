@@ -1,0 +1,14 @@
+{
+ "schema":"odt-weight-coupling-v1",
+ "scope":"Existing banded cylindrical ODT plan, fixed Ewald geometry and object representation; positive scalar confidence per illumination, constant over detector pixels. Weighted normal only; no angle updates, camera remap, RHS update or reconstruction claim.",
+ "sizes":[32,64,128],"n_beta":256,"dtype":"complex128","variant":"banded_inner96_outer64",
+ "profiles":["harmonic1","harmonic3","view_drop"],
+ "methods":["explicit","dense_gram","fft_dense","fourier_sparse","view_update","fft_view"],
+ "revision":"v3 retains v2 native FFT comparator and computes FFT/support of host-resident input weights on CPU for both FFT-built Gram and sparse lag arms; host-to-device transfer included. v1/v2 retained, superseded for performance conclusions.",
+ "accuracy_tolerance":1e-8,"hermitian_tolerance":1e-8,"warmup":2,"samples":5,
+ "calls_per_update":[1,64],
+ "confirmation":"Three-size pilot, then five fresh CUDA workers at largest size; randomized method order and synchronized samples. No concurrent GPU tests. Hot repeats are not independent samples.",
+ "fairness":"Keep existing H28/rank16/adaptive-L=1e-6 approximation in all arms. Compare existing forward-weight-adjoint, cached dense Gram, FFT-built dense Gram, Fourier-lag sparse action, and identity plus sparse-view low-rank update. All share geometry; no per-update geometry rebuild. Sparse lag extraction/host transfer costs included.",
+ "accuracy_scope":"Incremental equality to the SAME prepared approximate ODT operator. Does not promote inherited physical discretization error to 1e-8. Fourier coefficient numerical tail bounded by discarded l1; no claim of global certified continuum error.",
+ "cost":"Report weight preparation, isolated illumination block, whole normal and update+normal estimates separately. Common ODT/adapter setup recorded. Memory is per-call incremental Torch allocated peak, not total device/process usage."
+}

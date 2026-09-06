@@ -1,0 +1,32 @@
+{
+  "pilot_workers": 3,
+  "confirmation_workers": 5,
+  "input_manifest_entries_verified": 30,
+  "tests_passed": 9,
+  "test_command": "python -m pytest -q tests/test_slab_update_adapter.py tests/test_uniaxial_slab_acfo.py",
+  "crossover_calls_per_state": [
+    9.750312133983734,
+    9.662710372986854,
+    9.984434956383774,
+    10.045084691425021,
+    10.036800324184354
+  ],
+  "source_projection_sharing_speedups": [
+    1.5220916964876736,
+    1.4943292888068285,
+    1.5369673758546816,
+    1.5575798874609887,
+    1.54729649490415
+  ],
+  "max_independent_errors": [
+    6.279819869154364e-10,
+    1.0265802544834043e-08,
+    2.641026573687251e-10
+  ],
+  "max_reference_convergence": [
+    3.0555430221519934e-15,
+    4.159109394630735e-12,
+    5.866130685863326e-14
+  ],
+  "max_method_agreement_error": 2.7240034679253683e-15
+}

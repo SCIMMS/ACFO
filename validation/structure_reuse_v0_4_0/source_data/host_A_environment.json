@@ -1,0 +1,32 @@
+{
+  "python": "3.11.15 (main, Jun 11 2026, 15:20:16) [GCC 14.3.0]",
+  "platform": "Linux-6.17.0-19-generic-x86_64-with-glibc2.39",
+  "machine": "x86_64",
+  "cpu": "x86_64",
+  "cpu_count": 20,
+  "numpy": "2.4.6",
+  "scipy": "1.17.1",
+  "source": "/workspace/ACFO/external_validation/acfo_structure_reuse_v2_20260906/extracted/acfo_structure_reuse_request_v2/src/waxs_cake/__init__.py",
+  "versions": {
+    "periodictable": "2.1.0",
+    "pytest": "9.1.1",
+    "pybind11": "3.0.4",
+    "setuptools": "78.1.0",
+    "torch": "2.11.0+cu128",
+    "cupy-cuda12x": "14.1.1"
+  },
+  "errors": [],
+  "native_source": "/workspace/ACFO/external_validation/acfo_structure_reuse_v2_20260906/extracted/acfo_structure_reuse_request_v2/src/waxs_cake/_cpp_odt.cpython-311-x86_64-linux-gnu.so",
+  "native_sha256": "bc667e9a6d6e8adf91e94a5d78b7fbabdfb7e37f2d0f608baad1113fa0b05e62",
+  "gpu": "NVIDIA GeForce RTX 3090",
+  "torch_cuda": "12.8",
+  "gpu_memory_bytes": 25306529792,
+  "cupy_runtime": 12090,
+  "thread_environment": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "BLIS_NUM_THREADS": "1"
+  },
+  "cuda_visible_devices": null
+}

@@ -1,0 +1,511 @@
+{
+  "protocol": {
+    "nr": 18,
+    "per_seed": 2,
+    "quadrature": 145,
+    "reference_nr": 26,
+    "reference_quadrature": 211,
+    "reference_tolerance": 1e-12,
+    "radial_gate": 2e-10,
+    "pairs": 4,
+    "arms": [
+      "total_update",
+      "cap_update",
+      "cap_policy",
+      "direct"
+    ],
+    "cases": {
+      "e6_00": {
+        "event": {
+          "theta": [
+            0.12,
+            -0.08,
+            0.0
+          ],
+          "tolerance": 1e-06,
+          "observation": "wide"
+        },
+        "tag": "log",
+        "pilot": false
+      },
+      "e6_01": {
+        "event": {
+          "theta": [
+            0.12,
+            -0.08,
+            1e-08
+          ],
+          "tolerance": 1e-06,
+          "observation": "wide"
+        },
+        "tag": "log",
+        "pilot": false
+      },
+      "e6_02": {
+        "event": {
+          "theta": [
+            0.12,
+            -0.08,
+            1e-06
+          ],
+          "tolerance": 1e-06,
+          "observation": "wide"
+        },
+        "tag": "log",
+        "pilot": false
+      },
+      "e6_03": {
+        "event": {
+          "theta": [
+            0.12,
+            -0.08,
+            1.6911360637550384e-06
+          ],
+          "tolerance": 1e-06,
+          "observation": "wide"
+        },
+        "tag": "reuse_below",
+        "pilot": true
+      },
+      "e6_04": {
+        "event": {
+          "theta": [
+            0.12,
+            -0.08,
+            1.8691503862555692e-06
+          ],
+          "tolerance": 1e-06,
+          "observation": "wide"
+        },
+        "tag": "reuse_above",
+        "pilot": false
+      },
+      "e6_05": {
+        "event": {
+          "theta": [
+            0.12,
+            -0.08,
+            1e-05
+          ],
+          "tolerance": 1e-06,
+          "observation": "wide"
+        },
+        "tag": "log",
+        "pilot": true
+      },
+      "e6_06": {
+        "event": {
+          "theta": [
+            0.12,
+            -0.08,
+            0.0001
+          ],
+          "tolerance": 1e-06,
+          "observation": "wide"
+        },
+        "tag": "log",
+        "pilot": false
+      },
+      "e6_07": {
+        "event": {
+          "theta": [
+            0.12,
+            -0.08,
+            0.001
+          ],
+          "tolerance": 1e-06,
+          "observation": "wide"
+        },
+        "tag": "log",
+        "pilot": false
+      },
+      "e6_08": {
+        "event": {
+          "theta": [
+            0.12,
+            -0.08,
+            0.002146865661571837
+          ],
+          "tolerance": 1e-06,
+          "observation": "wide"
+        },
+        "tag": "one_layer_below",
+        "pilot": false
+      },
+      "e6_09": {
+        "event": {
+          "theta": [
+            0.12,
+            -0.08,
+            0.002372851520684662
+          ],
+          "tolerance": 1e-06,
+          "observation": "wide"
+        },
+        "tag": "one_layer_above",
+        "pilot": true
+      },
+      "e6_10": {
+        "event": {
+          "theta": [
+            0.12,
+            -0.08,
+            0.01
+          ],
+          "tolerance": 1e-06,
+          "observation": "wide"
+        },
+        "tag": "log",
+        "pilot": false
+      },
+      "e6_11": {
+        "event": {
+          "theta": [
+            0.12,
+            -0.08,
+            0.12
+          ],
+          "tolerance": 1e-06,
+          "observation": "wide"
+        },
+        "tag": "log",
+        "pilot": false
+      },
+      "e6_12": {
+        "event": {
+          "theta": [
+            0.12,
+            -0.08,
+            0.28
+          ],
+          "tolerance": 1e-06,
+          "observation": "wide"
+        },
+        "tag": "log",
+        "pilot": true
+      },
+      "e6_13": {
+        "event": {
+          "theta": [
+            0.12,
+            -0.08,
+            0.6804344992162884
+          ],
+          "tolerance": 1e-06,
+          "observation": "wide"
+        },
+        "tag": "preparation_below",
+        "pilot": false
+      },
+      "e6_14": {
+        "event": {
+          "theta": [
+            0.12,
+            -0.08,
+            0.7520591833443188
+          ],
+          "tolerance": 1e-06,
+          "observation": "wide"
+        },
+        "tag": "preparation_above",
+        "pilot": true
+      },
+      "e6_15": {
+        "event": {
+          "theta": [
+            0.12,
+            -0.08,
+            0.8
+          ],
+          "tolerance": 1e-06,
+          "observation": "wide"
+        },
+        "tag": "log",
+        "pilot": false
+      },
+      "e8_00": {
+        "event": {
+          "theta": [
+            0.12,
+            -0.08,
+            0.0
+          ],
+          "tolerance": 1e-08,
+          "observation": "wide"
+        },
+        "tag": "log",
+        "pilot": false
+      },
+      "e8_01": {
+        "event": {
+          "theta": [
+            0.12,
+            -0.08,
+            1e-08
+          ],
+          "tolerance": 1e-08,
+          "observation": "wide"
+        },
+        "tag": "log",
+        "pilot": false
+      },
+      "e8_02": {
+        "event": {
+          "theta": [
+            0.12,
+            -0.08,
+            2.0571818595271907e-08
+          ],
+          "tolerance": 1e-08,
+          "observation": "wide"
+        },
+        "tag": "reuse_below",
+        "pilot": true
+      },
+      "e8_03": {
+        "event": {
+          "theta": [
+            0.12,
+            -0.08,
+            2.2737273184247902e-08
+          ],
+          "tolerance": 1e-08,
+          "observation": "wide"
+        },
+        "tag": "reuse_above",
+        "pilot": false
+      },
+      "e8_04": {
+        "event": {
+          "theta": [
+            0.12,
+            -0.08,
+            1e-06
+          ],
+          "tolerance": 1e-08,
+          "observation": "wide"
+        },
+        "tag": "log",
+        "pilot": false
+      },
+      "e8_05": {
+        "event": {
+          "theta": [
+            0.12,
+            -0.08,
+            1e-05
+          ],
+          "tolerance": 1e-08,
+          "observation": "wide"
+        },
+        "tag": "log",
+        "pilot": true
+      },
+      "e8_06": {
+        "event": {
+          "theta": [
+            0.12,
+            -0.08,
+            0.0001
+          ],
+          "tolerance": 1e-08,
+          "observation": "wide"
+        },
+        "tag": "log",
+        "pilot": false
+      },
+      "e8_07": {
+        "event": {
+          "theta": [
+            0.12,
+            -0.08,
+            0.0003096679517022948
+          ],
+          "tolerance": 1e-08,
+          "observation": "wide"
+        },
+        "tag": "one_layer_below",
+        "pilot": false
+      },
+      "e8_08": {
+        "event": {
+          "theta": [
+            0.12,
+            -0.08,
+            0.00034226457819727326
+          ],
+          "tolerance": 1e-08,
+          "observation": "wide"
+        },
+        "tag": "one_layer_above",
+        "pilot": true
+      },
+      "e8_09": {
+        "event": {
+          "theta": [
+            0.12,
+            -0.08,
+            0.001
+          ],
+          "tolerance": 1e-08,
+          "observation": "wide"
+        },
+        "tag": "log",
+        "pilot": false
+      },
+      "e8_10": {
+        "event": {
+          "theta": [
+            0.12,
+            -0.08,
+            0.01
+          ],
+          "tolerance": 1e-08,
+          "observation": "wide"
+        },
+        "tag": "log",
+        "pilot": false
+      },
+      "e8_11": {
+        "event": {
+          "theta": [
+            0.12,
+            -0.08,
+            0.12
+          ],
+          "tolerance": 1e-08,
+          "observation": "wide"
+        },
+        "tag": "log",
+        "pilot": false
+      },
+      "e8_12": {
+        "event": {
+          "theta": [
+            0.12,
+            -0.08,
+            0.28
+          ],
+          "tolerance": 1e-08,
+          "observation": "wide"
+        },
+        "tag": "log",
+        "pilot": true
+      },
+      "e8_13": {
+        "event": {
+          "theta": [
+            0.12,
+            -0.08,
+            0.35420416890662065
+          ],
+          "tolerance": 1e-08,
+          "observation": "wide"
+        },
+        "tag": "preparation_below",
+        "pilot": false
+      },
+      "e8_14": {
+        "event": {
+          "theta": [
+            0.12,
+            -0.08,
+            0.3914888182652123
+          ],
+          "tolerance": 1e-08,
+          "observation": "wide"
+        },
+        "tag": "preparation_above",
+        "pilot": true
+      },
+      "e8_15": {
+        "event": {
+          "theta": [
+            0.12,
+            -0.08,
+            0.8
+          ],
+          "tolerance": 1e-08,
+          "observation": "wide"
+        },
+        "tag": "log",
+        "pilot": false
+      }
+    },
+    "model": "reports/acfo_elliptic_update_policy_20260905_v1/calibration.json",
+    "information": "Only current request; each fresh worker prepares gamma=0 at the target tolerance, then one target gamma. No cross-point cache.",
+    "timing": "Warm setup and target refresh recorded separately and added. Offline state fingerprint and reference audit excluded and separately timed.",
+    "predictions": "Reuse, chosen p/q, preparation guard predicted using gamma-zero response only. Positive/negative runtimes are measured separately.",
+    "acceptance": {
+      "accuracy": "Every target and base pass 1e-6 or 1e-8; reference gate and frozen predictions checked.",
+      "state": "Identical warm numerical fingerprint within each arm/tolerance across points and pairs.",
+      "positive": "At least two adjacent fixed-log-grid nonzero points need correction by independent omission error and beat total_update and direct in all four refresh pairs using cap_update.",
+      "boundaries": "Prospective +/-5% reuse, q<=1 selector, and preparation-guard boundary probes match their forecast and all accuracy gates.",
+      "cost": "Report every disagreement between cost policy and fastest measured baseline; no universal runtime-optimality requirement."
+    },
+    "scope": "Existing wide observation and fixed elliptic family; no new geometry or physics; no new cost fit."
+  },
+  "hashes": {
+    "scripts/acfo_elliptic_update_policy.py": "f37cc8aa820d70e2ace368e9bc6462a0e03b50a4e48bf75cfa538d33e06ec983",
+    "scripts/benchmark_acfo_elliptic_update_policy.py": "b753380677afd1b10274e86b946e484756163841e5d1004f2448fe2a9e2a2757",
+    "tests/test_acfo_elliptic_update_policy.py": "9de87d28129881432a19bedb20bb03a10375152975a1902809152ef915dc4dd4",
+    "scripts/acfo_elliptic_new_coupling.py": "566f378defac2d504819620cac6339f7c766d4719d7fcd9014fc4c7a56fa3135",
+    "scripts/acfo_elliptic_observation_refresh.py": "7926d8413e41da49ae85ded2d37e9b473025e1f31ea0c14f9eb7a05f77c1dd8e",
+    "scripts/acfo_elliptic_refresh.py": "a68babc9a39c9aa670a241a1abc12f5e410b789ef3c73aadccd0e7174ed54d0d",
+    "scripts/acfo_cylinder_coupling.py": "6cc818ae13d3b5bf96f5541e4b8dd62e327fcaf66193dea6c9e9e5ccd0ea16a5",
+    "scripts/acfo_elliptic_disk.py": "3a337a02e6c415b9110c7a40b80c48222a35099c2b630a6843da7d809133f7d5",
+    "scripts/acfo_elliptic_structured_policy.py": "925ca0bc9a4a0458335638d348fdaeac452c1ef70cad1d10febfd4be7553ee9f",
+    "scripts/acfo_elliptic_progressive_policy.py": "4fa818166fd678970297f391a83be92141a79f037e6c3a5c7c4d2e0e6bef57af",
+    "scripts/benchmark_acfo_elliptic_progressive_policy.py": "58d5b62b8528528c8a3297ae81a9574fdab8e50c2654f4a7ed6b7b4bb2e4247b",
+    "tests/test_acfo_elliptic_progressive_policy.py": "efc3dc15e2f95bd79c27286f45e8a6980a0fd45925f61322c21045bb23acd12a",
+    "scripts/acfo_elliptic_weak_coupling.py": "42edbd7708e71187944a59550bb70de2e3dc1e53d546008120226005056833fe",
+    "scripts/benchmark_acfo_elliptic_weak_coupling.py": "7eba4a8b4372d400bdd91cf237b8d6ac0cbbd0037aef9ad6ca65bf555d27958f",
+    "tests/test_acfo_elliptic_weak_coupling.py": "4812b0f2a39806b0f78b537c8363aaaff06e01ff530137a95e4e76085480506e",
+    "scripts/acfo_elliptic_perturbation_sweep.py": "228fecb4e2eaa4bfbcc4602e9f0d4d76c5ae601fffc7b49cfba29f204f219302",
+    "scripts/benchmark_acfo_elliptic_perturbation_sweep.py": "d932d618ad12ea877a8b61919c6eafb6c10c6cdde22e85619432753e5a640465",
+    "tests/test_acfo_elliptic_perturbation_sweep.py": "3b937766e5a1bc6b739120bbb3b27a6abd287d83264725c9823062ad4353581d",
+    "validation_contracts/acfo_elliptic_perturbation_sweep_20260905_pilot.json": "3490014a0cee71be00c8bb1516384946c6bf81c0c4ccd9337b0830f0d24af63d",
+    "reports/acfo_elliptic_perturbation_sweep_20260905_v1/prospective_contract.json": "0ba0ec724599ec5e195340b2129553e957630ece2b73c25a0a7d5e85f9eca16f",
+    "reports/acfo_elliptic_perturbation_sweep_20260905_v1/forecast.json": "efb299dcc96363e2cca0fd74d2fea19c2202197dca6665ba5680c23c18b301b1",
+    "reports/acfo_elliptic_perturbation_sweep_20260905_v1/unit_tests.xml": "c87c05cf221af0cd33a53c56a1b3e79cb81ed7f01b9c05b8c98a722bc06912d1",
+    "reports/acfo_elliptic_perturbation_sweep_20260905_v1/references.json": "60d684d737607f5911ebff8b81c762d392a3bd1b01135d82fea6bae550315861",
+    "reports/acfo_elliptic_update_policy_20260905_v1/calibration.json": "2b1997c8c77ccd648a0fead8fad35feeb8316ab583f47687b7bf8e6556527531",
+    "reports/acfo_elliptic_perturbation_sweep_20260905_v1/references/0b4c1647e777af8a.json": "ffdc7045bf9932f32e0a15c9d95b6b40e4767151e29b9c232177d1b953b5b848",
+    "reports/acfo_elliptic_perturbation_sweep_20260905_v1/references/0b4c1647e777af8a.npz": "ad86aaeffdd2e02a763e992b299fab3634986824ee0b48c2299a92d5271e4c0c",
+    "reports/acfo_elliptic_perturbation_sweep_20260905_v1/references/0ee81f5e5fff2d84.json": "be2be764898eb854fb3b58c94e9937911ef668ce77930f864ce29aa3fbbd79de",
+    "reports/acfo_elliptic_perturbation_sweep_20260905_v1/references/0ee81f5e5fff2d84.npz": "932238973b710a756a575a5566edf1f29d5473d11d7ab1ffd9c97af07504bae2",
+    "reports/acfo_elliptic_perturbation_sweep_20260905_v1/references/38853c88bd7c88f1.json": "c61872ca1e9a2d5263c2d7578beffa427585e6ee0ba0c38f2d5e10dd6836a9d2",
+    "reports/acfo_elliptic_perturbation_sweep_20260905_v1/references/38853c88bd7c88f1.npz": "f6450a8d705481b32f90db71ce22acdea2ef40abf2e5396dd088f2a8fc7e784a",
+    "reports/acfo_elliptic_perturbation_sweep_20260905_v1/references/42218db05b7f8336.json": "53228b16b68ad9a4d2971c3a4f0840cb385b4c0bd10f5c3afae04a6960dec8d5",
+    "reports/acfo_elliptic_perturbation_sweep_20260905_v1/references/42218db05b7f8336.npz": "b6c11a8da8fb3e9d6af433e348d7a091c4a03e1de88d7058fea07ede4fb1e7a2",
+    "reports/acfo_elliptic_perturbation_sweep_20260905_v1/references/57337b721ae905cb.json": "7c332d38d0354926035ce9f8935abab303865f13d2c19a3e3956921cb65285b2",
+    "reports/acfo_elliptic_perturbation_sweep_20260905_v1/references/57337b721ae905cb.npz": "24fcbc72cf3d3ad24aac4dc9bc0705a401bd46cfd38def2cf0501163ef68897a",
+    "reports/acfo_elliptic_perturbation_sweep_20260905_v1/references/63f40734b7dd1c55.json": "10a3ec9e1de0f3f5dac1411ecc9b5664332e132eef88d48f9729ac85944acd28",
+    "reports/acfo_elliptic_perturbation_sweep_20260905_v1/references/63f40734b7dd1c55.npz": "658afabe87f2496b5dd8b9777d2eabb569e6e29b53e17c17a28112921d060466",
+    "reports/acfo_elliptic_perturbation_sweep_20260905_v1/references/67dae2bfb5f631b4.json": "7e9cbe980eae04b4ce4e663d3e1aac5130d3b0a51e4c90c395dde332efd82c71",
+    "reports/acfo_elliptic_perturbation_sweep_20260905_v1/references/67dae2bfb5f631b4.npz": "9bd7cd44921a57fea2bcf8f20d466ef3550237988636067fb24e1580111ef567",
+    "reports/acfo_elliptic_perturbation_sweep_20260905_v1/references/746002663b44c4e1.json": "98756f407096e926fb9df4a739500dfc82bc0134edfec0ed5a0dd08670ec9305",
+    "reports/acfo_elliptic_perturbation_sweep_20260905_v1/references/746002663b44c4e1.npz": "dde6c03fa242d9684935d784c0fdfdb7ba1ca7a2371040d0fe85d9a60c27142e",
+    "reports/acfo_elliptic_perturbation_sweep_20260905_v1/references/74902710ebaf1400.json": "212ec4499927b829de09cea56a82d8e532905b787f2e2a5f92024cde7b9cb7dc",
+    "reports/acfo_elliptic_perturbation_sweep_20260905_v1/references/74902710ebaf1400.npz": "17a6484feb8ddb998331269fa19ac5479af655191c20daf22096dd0f35e75369",
+    "reports/acfo_elliptic_perturbation_sweep_20260905_v1/references/83e58010c4fa1bda.json": "dbf9eb3e9ad7d7f32a92ef310b540012ec3847f61ac8b9baeacfaa8985a50506",
+    "reports/acfo_elliptic_perturbation_sweep_20260905_v1/references/83e58010c4fa1bda.npz": "2add5603b259937f4a4860d278d8bd844cc57655fff88c614586c8d84e70eb88",
+    "reports/acfo_elliptic_perturbation_sweep_20260905_v1/references/8971bcc72aaf1742.json": "a313ab465bb68b888ab4b07871d440f401bf688356d98b9b082aef2bac13d203",
+    "reports/acfo_elliptic_perturbation_sweep_20260905_v1/references/8971bcc72aaf1742.npz": "25cb11e1d0652012c7fd0ccae569c8b86cedfdec11edfd3c0e36b2f82e6368b0",
+    "reports/acfo_elliptic_perturbation_sweep_20260905_v1/references/c01c3bb071a87456.json": "5971a59820ed866dac738372bae4404b101b51a6b357f48360dd4cbab8a0a968",
+    "reports/acfo_elliptic_perturbation_sweep_20260905_v1/references/c01c3bb071a87456.npz": "a5531bc6d6a3e77fbf8b361734de3adbdcea6168a9196befcdb6a63f45a6521c",
+    "reports/acfo_elliptic_perturbation_sweep_20260905_v1/references/d652191421926023.json": "d62420ed5eb18af9743674af121e08194adcbf65f8a8edf0ea1a05208bcd6ece",
+    "reports/acfo_elliptic_perturbation_sweep_20260905_v1/references/d652191421926023.npz": "b552954974b53302e61144519dbf8dbecce41de288618d15900d3b2b78658877",
+    "reports/acfo_elliptic_perturbation_sweep_20260905_v1/references/e8921a37fd056c86.json": "b1e14372acf33faaf7807d062e98382def3cac59df8d03bea8eb4fc8d15e7d3f",
+    "reports/acfo_elliptic_perturbation_sweep_20260905_v1/references/e8921a37fd056c86.npz": "e1bd47123ddb97fb53760c1be50c711996f9b07f7ad7a515b061ab1bb89e1da4",
+    "reports/acfo_elliptic_perturbation_sweep_20260905_v1/references/ff6bcab7fa132a39.json": "7647b12f689ac476c97977fa0f8979637a0254222825377c049ebecf6e18ceff",
+    "reports/acfo_elliptic_perturbation_sweep_20260905_v1/references/ff6bcab7fa132a39.npz": "829674859607f911698e46f6c8b308420615e4267da3a35b8834f83b1708b084",
+    "reports/acfo_elliptic_weak_coupling_20260905_v1/references/0e2b313191023e7f.npz": "1b8d742e68b2861596e5ccd91171a6b77d3247d0eee47ecc481d764bfdb0fcab",
+    "reports/acfo_elliptic_weak_coupling_20260905_v1/references/cba945a9ac144041.npz": "d31aacc2f4af4160c802f6013435f7cc9a5b0a3fc00f0416df14adcf8c4818e3",
+    "reports/acfo_elliptic_weak_coupling_20260905_v1/references/aacf1d10fc7efc21.npz": "868f004c5d567c457f4abe59ea3fa72567d39f2f74aa08cfad2d0087912965a2",
+    "reports/acfo_elliptic_weak_coupling_20260905_v1/references/b1f47e93c0ba12b8.npz": "21f51183d0c7c384611e3d68929815798260c2824da060feaf8c9d3789e6eb06",
+    "reports/acfo_elliptic_weak_coupling_20260905_v1/references/95024f5e060f6b76.npz": "060042a5e8e1f3ac6a0d12374c87c5b6515952ff828ff430539b64d0d26a3ce0",
+    "reports/acfo_elliptic_counterfactual_20260905_v1/references/0998e7a0f52dac20.npz": "5b4e3d7b63f8c717846ba46a04ca48724917c60e3641b2208599c2883fbe9a4f",
+    "reports/acfo_elliptic_weak_coupling_20260905_v1/references/3da859c62134e62e.npz": "7c4301c55e2ec5ef530a5cb2d45c9914a639e9fe3e6b2084718eb27bb9fb38f8"
+  }
+}

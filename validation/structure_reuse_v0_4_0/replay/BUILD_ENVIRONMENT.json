@@ -1,0 +1,15 @@
+{
+  "python": "3.13.13 | packaged by Anaconda, Inc. | (main, Apr 14 2026, 06:12:50) [MSC v.1942 64 bit (AMD64)]",
+  "platform": "Windows-10-10.0.19045-SP0",
+  "versions": {
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "periodictable": "2.1.0",
+    "pytest": "9.0.3",
+    "pybind11": "3.0.4",
+    "setuptools": "70.2.0",
+    "torch": "2.12.1+cu126",
+    "cupy-cuda12x": "14.1.1"
+  },
+  "note": "Authoring environment, not an external runtime result."
+}

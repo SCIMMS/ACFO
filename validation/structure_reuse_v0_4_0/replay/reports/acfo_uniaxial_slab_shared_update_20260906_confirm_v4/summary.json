@@ -1,0 +1,134 @@
+[
+  {
+    "method": "modal_cached",
+    "calls_per_update": 1,
+    "state": "warm",
+    "median_seconds": 1.6505346200196072,
+    "min_seconds": 1.6430805400712416,
+    "max_seconds": 1.6710198000073433,
+    "paired_speedup_median": 1.0,
+    "paired_speedup_min": 1.0,
+    "paired_speedup_max": 1.0
+  },
+  {
+    "method": "modal_cached",
+    "calls_per_update": 1,
+    "state": "cold",
+    "median_seconds": 8.83721164003946,
+    "min_seconds": 8.810235500102863,
+    "max_seconds": 9.122155159828253,
+    "paired_speedup_median": 1.0,
+    "paired_speedup_min": 1.0,
+    "paired_speedup_max": 1.0
+  },
+  {
+    "method": "modal_cached",
+    "calls_per_update": 64,
+    "state": "warm",
+    "median_seconds": 2.359652638551779,
+    "min_seconds": 2.3295435797423125,
+    "max_seconds": 2.423340600566007,
+    "paired_speedup_median": 1.0,
+    "paired_speedup_min": 1.0,
+    "paired_speedup_max": 1.0
+  },
+  {
+    "method": "modal_cached",
+    "calls_per_update": 64,
+    "state": "cold",
+    "median_seconds": 9.562556300661527,
+    "min_seconds": 9.527931998413987,
+    "max_seconds": 9.83128063858021,
+    "paired_speedup_median": 1.0,
+    "paired_speedup_min": 1.0,
+    "paired_speedup_max": 1.0
+  },
+  {
+    "method": "factor_separate",
+    "calls_per_update": 1,
+    "state": "warm",
+    "median_seconds": 0.2737022798275575,
+    "min_seconds": 0.2700870998902246,
+    "max_seconds": 0.27556598007213323,
+    "paired_speedup_median": 6.063955353160541,
+    "paired_speedup_min": 6.027055681903549,
+    "paired_speedup_max": 6.092689807166433
+  },
+  {
+    "method": "factor_separate",
+    "calls_per_update": 1,
+    "state": "cold",
+    "median_seconds": 7.464218199858442,
+    "min_seconds": 7.4147816801676525,
+    "max_seconds": 7.74548098014202,
+    "paired_speedup_median": 1.1839433686714915,
+    "paired_speedup_min": 1.1777390175272229,
+    "paired_speedup_max": 1.1881989086297222
+  },
+  {
+    "method": "factor_separate",
+    "calls_per_update": 64,
+    "state": "warm",
+    "median_seconds": 17.380985118681565,
+    "min_seconds": 17.210667401994577,
+    "max_seconds": 17.510455820406786,
+    "paired_speedup_median": 0.13618465178515993,
+    "paired_speedup_min": 0.1337121348431545,
+    "paired_speedup_max": 0.13839391877747878
+  },
+  {
+    "method": "factor_separate",
+    "calls_per_update": 64,
+    "state": "cold",
+    "median_seconds": 24.649671520502306,
+    "min_seconds": 24.404798501962794,
+    "max_seconds": 24.852613118709996,
+    "paired_speedup_median": 0.3887699394020702,
+    "paired_speedup_min": 0.38793848805278774,
+    "paired_speedup_max": 0.39558337755553147
+  },
+  {
+    "method": "factor_shared",
+    "calls_per_update": 1,
+    "state": "warm",
+    "median_seconds": 0.17914036009460688,
+    "min_seconds": 0.17545709991827607,
+    "max_seconds": 0.18133097996469588,
+    "paired_speedup_median": 9.327991744154422,
+    "paired_speedup_min": 9.061223517300464,
+    "paired_speedup_max": 9.40701265761602
+  },
+  {
+    "method": "factor_shared",
+    "calls_per_update": 1,
+    "state": "cold",
+    "median_seconds": 7.375462079932913,
+    "min_seconds": 7.318356060190126,
+    "max_seconds": 7.6470850999467075,
+    "paired_speedup_median": 1.1981909125509114,
+    "paired_speedup_min": 1.1928931142523607,
+    "paired_speedup_max": 1.2038544486825609
+  },
+  {
+    "method": "factor_shared",
+    "calls_per_update": 64,
+    "state": "warm",
+    "median_seconds": 11.392709438456222,
+    "min_seconds": 11.158606199547648,
+    "max_seconds": 11.517908820603044,
+    "paired_speedup_median": 0.21068687243875175,
+    "paired_speedup_min": 0.2035185402087283,
+    "paired_speedup_max": 0.2127097696695391
+  },
+  {
+    "method": "factor_shared",
+    "calls_per_update": 64,
+    "state": "cold",
+    "median_seconds": 18.63023419957608,
+    "min_seconds": 18.375619497918525,
+    "max_seconds": 18.71203992057126,
+    "paired_speedup_median": 0.5160044749354536,
+    "paired_speedup_min": 0.5100000748130719,
+    "paired_speedup_max": 0.52770569243858
+  }
+]

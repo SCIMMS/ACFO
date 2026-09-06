@@ -1,0 +1,15 @@
+{
+  "scripts\\experiment_cpswf_operator_algebra.py": "a328085cea8c7de01b0a791c4a2a9235d963bd75577f4f9eea49627b4da0ef1d",
+  "validation_contracts\\cpswf_operator_algebra_pilot_v1.json": "671e3860509967a76c384a323f9c1fef449a05e8b37f3973759e4b332bfab4be",
+  "reports\\acfo_cpswf_operator_algebra_20260905_v2\\results.json": "d9120649248700eebf83d04d07567fb86a201106209a47b0d9cee15290ffaac2",
+  "reports\\acfo_cpswf_operator_algebra_20260905_v2\\verification.json": "569ed6cf603a7261ccf097cc10b5bb7c13e2a2581257520a3f34213c43926b54",
+  "reports\\acfo_cpswf_operator_algebra_20260905_v2\\closure_curves.pdf": "6d3f3481be7345ca101bc1c7043d22b2a6f2051c11634d376fbe1c99cfc5ea80",
+  "reports\\acfo_cpswf_operator_algebra_20260905_v2\\closure_curves.png": "100427519ff3d5200f821445d857e40c3f3ce871a6503fe0130c3a82af7c6d83",
+  "reports\\acfo_cpswf_operator_algebra_20260905_v2\\comparison.csv": "4398a637b0229542c13e6129ebe699d594d0980ea198667b37311c1183505127",
+  "reports\\acfo_cpswf_operator_algebra_20260905_v2\\protocol.json": "d5a99e89980eea40e4c3273a680563ddee311eda692de19e6bc83533c938b711",
+  "reports\\acfo_cpswf_operator_algebra_20260905_v2\\REPORT_ko.md": "ac07de2df77dfff521f13bbfe0ee6560265176c8110bc76c3a36c098f2b5ea9c",
+  "reports\\acfo_cpswf_operator_algebra_20260905_v2\\report_source_snapshot.py": "d017aef75df0248a614fb1d669a13b6086bc2b5a9718d76e8001a8fdd7aa69d8",
+  "reports\\acfo_cpswf_operator_algebra_20260905_v2\\source_snapshot.py": "a328085cea8c7de01b0a791c4a2a9235d963bd75577f4f9eea49627b4da0ef1d",
+  "scripts\\report_cpswf_operator_algebra.py": "d017aef75df0248a614fb1d669a13b6086bc2b5a9718d76e8001a8fdd7aa69d8",
+  "tests\\test_cpswf_operator_algebra_pilot.py": "5e2945ed57c5e091eca0b2a73cfd8caf7d27ed04e225d326ad11a1512db90bb3"
+}

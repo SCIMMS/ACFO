@@ -1,0 +1,54 @@
+{
+  "schema": "cpswf-operator-algebra-pilot-v1",
+  "scope": "Exploratory finite-Hankel reduced operator calculus; no performance confirmation or manuscript change",
+  "bandwidths": [
+    24.0,
+    64.0
+  ],
+  "orders": [
+    0,
+    4,
+    12
+  ],
+  "tolerances": [
+    1e-06,
+    1e-08
+  ],
+  "dimension": 128,
+  "dimension_audit_padding": 32,
+  "quadrature": 384,
+  "quadrature_audit": 768,
+  "output_quadrature": 192,
+  "reference_threshold": 1e-10,
+  "numerical_revision": "After retaining initial v1 results with failed reference checks, use Golub-Welsch Gauss weights and exact Jacobi ladder coefficients. Same cases, norms, tolerances and dimensions; v2 is authoritative only if original reference threshold passes.",
+  "kernel": "K_m(x,y)=c sqrt(xy) J_m(cxy), L2(dx); phi=sqrt(x)*physical radial field",
+  "input_domain": "Unit ball in the first r CPSWF modes, where r resolves K_m in spectral norm; external analytic inputs are checked separately",
+  "profiles": [
+    "x2",
+    "smooth_exp",
+    "edge_erf"
+  ],
+  "actions": [
+    "identity",
+    "x2_once",
+    "x2_return",
+    "smooth_exp_once",
+    "smooth_exp_return",
+    "edge_erf_once",
+    "edge_erf_return",
+    "raise_once",
+    "raise_lower"
+  ],
+  "derivatives": "Dimensionless Cartesian ladders: D+_m=d/dr-m/r takes m to m+1; D-_(m+1)=d/dr+(m+1)/r returns to m. No PDE boundary condition is imposed at r=1.",
+  "bases": [
+    "CPSWF",
+    "Jacobi",
+    "Hankel_SVD",
+    "action_SVD"
+  ],
+  "rank_policy": "Scan every nested prefix; report first observed pass and full curves because final composite error need not be monotone",
+  "metrics": "Spectral norm of intermediate leakage and final observation error, separately relative to each full reference operator. Raw coefficient density is descriptive only.",
+  "reference": "Direct Bessel-kernel quadrature of analytic Jacobi derivatives/profiles; double source quadrature, larger output quadrature and padded commuting eigensolve audits",
+  "cost": "Single-process phase times and retained array bytes are diagnostic only. No speedup claim; fresh-process paired confirmation is deferred until a useful algorithm is selected.",
+  "limitations": "CPSWF and Hankel SVD are reusable across tested actions at fixed m,c; action SVD is rebuilt for every action and input rank. Source-domain restriction is not a general composite-operator approximation guarantee. SO(2) ladders are exact selection rules, not discoveries."
+}

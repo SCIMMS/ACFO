@@ -1,0 +1,21 @@
+{
+  "pilot_workers": 4,
+  "confirmation_workers": 5,
+  "validation_records": 270,
+  "max_errors": {
+    "physical_error": 9.563939563881622e-12,
+    "quadrature_error": 1.6976069066675265e-15,
+    "operator_relative_bound": 1.9750340978804077e-10,
+    "derivative_absolute_bound_per_unit_input": 1.9750340974863543e-10
+  },
+  "verified_input_manifest_entries": 30,
+  "tests_passed": 27,
+  "test_command": "python -m pytest -q tests/test_radial_4f_phase_relay.py tests/test_cpswf_operator_algebra_pilot.py tests/test_finite_hankel_cpswf.py",
+  "python": "3.13.13",
+  "numpy": "2.4.6",
+  "scipy": "1.17.1",
+  "current_authoritative_versions": [
+    "pilot_v2",
+    "confirm_v2"
+  ]
+}

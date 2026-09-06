@@ -1,0 +1,288 @@
+{
+  "thresholds": {
+    "6": {
+      "reuse": 1.7801432250053038e-06,
+      "one_layer": 0.0022598585911282497,
+      "preparation": 0.7162468412803036
+    },
+    "8": {
+      "reuse": 2.1654545889759905e-08,
+      "one_layer": 0.000325966264949784,
+      "preparation": 0.3728464935859165
+    }
+  },
+  "cases": {
+    "e6_00": {
+      "phase": "exact_reuse",
+      "p": null,
+      "q": null,
+      "reuse_bound": 4.651415485888199e-07,
+      "eta_upper": 0.0
+    },
+    "e6_01": {
+      "phase": "perturbation_reuse",
+      "p": null,
+      "q": null,
+      "reuse_bound": 4.6814612656840934e-07,
+      "eta_upper": 2.7372262773722627e-09
+    },
+    "e6_02": {
+      "phase": "perturbation_reuse",
+      "p": null,
+      "q": null,
+      "reuse_bound": 7.655995173396501e-07,
+      "eta_upper": 2.737226277372263e-07
+    },
+    "e6_03": {
+      "phase": "perturbation_reuse",
+      "p": null,
+      "q": null,
+      "reuse_bound": 9.732570568249315e-07,
+      "eta_upper": 4.6290220723221854e-07
+    },
+    "e6_04": {
+      "phase": "correction",
+      "p": 6,
+      "q": 0,
+      "relative_bound": 6.6541489436495e-07,
+      "absolute_bound": 2.0569634566834743e-08,
+      "reuse_bound": 1.0267429571997894e-06,
+      "eta_upper": 5.116287553619258e-07
+    },
+    "e6_05": {
+      "phase": "correction",
+      "p": 5,
+      "q": 1,
+      "relative_bound": 5.143148402321651e-07,
+      "absolute_bound": 1.589871196728358e-08,
+      "reuse_bound": 3.4697367627200447e-06,
+      "eta_upper": 2.737226277372263e-06
+    },
+    "e6_06": {
+      "phase": "correction",
+      "p": 5,
+      "q": 1,
+      "relative_bound": 5.160440457208014e-07,
+      "absolute_bound": 1.595168898864973e-08,
+      "reuse_bound": 3.051264644045755e-05,
+      "eta_upper": 2.737226277372263e-05
+    },
+    "e6_07": {
+      "phase": "correction",
+      "p": 5,
+      "q": 1,
+      "relative_bound": 6.144017984540406e-07,
+      "absolute_bound": 1.898639402579515e-08,
+      "reuse_bound": 0.0003010955538379495,
+      "eta_upper": 0.0002737226277372263
+    },
+    "e6_08": {
+      "phase": "correction",
+      "p": 5,
+      "q": 1,
+      "relative_bound": 9.535958458362163e-07,
+      "absolute_bound": 2.945701210942092e-08,
+      "reuse_bound": 0.0006463037845381015,
+      "eta_upper": 0.000587645710284262
+    },
+    "e6_09": {
+      "phase": "correction",
+      "p": 5,
+      "q": 2,
+      "relative_bound": 5.367970041599458e-07,
+      "absolute_bound": 1.6580658023731416e-08,
+      "reuse_bound": 0.0007143795490446861,
+      "eta_upper": 0.0006495031534720791
+    },
+    "e6_10": {
+      "phase": "correction",
+      "p": 5,
+      "q": 2,
+      "relative_bound": 6.383662474236322e-07,
+      "absolute_bound": 1.9667779782893442e-08,
+      "reuse_bound": 0.0030223944260409684,
+      "eta_upper": 0.002737226277372263
+    },
+    "e6_11": {
+      "phase": "correction",
+      "p": 6,
+      "q": 4,
+      "relative_bound": 4.285210984993527e-07,
+      "absolute_bound": 1.270073798925979e-08,
+      "reuse_bound": 0.0387234796679801,
+      "eta_upper": 0.032846715328467155
+    },
+    "e6_12": {
+      "phase": "correction",
+      "p": 7,
+      "q": 5,
+      "relative_bound": 7.734814493148117e-07,
+      "absolute_bound": 2.1501937135515388e-08,
+      "reuse_bound": 0.10024501195324446,
+      "eta_upper": 0.07664233576642336
+    },
+    "e6_13": {
+      "phase": "correction",
+      "p": 10,
+      "q": 9,
+      "relative_bound": 6.917231847696943e-07,
+      "absolute_bound": 1.544403186245873e-08,
+      "reuse_bound": 0.33553171533958154,
+      "eta_upper": 0.1862503191285461
+    },
+    "e6_14": {
+      "phase": "preparation_guard",
+      "p": null,
+      "q": null,
+      "reason": "Order limit exceeded",
+      "reuse_bound": 0.39769322581704003,
+      "eta_upper": 0.20585561587891937
+    },
+    "e6_15": {
+      "phase": "preparation_guard",
+      "p": null,
+      "q": null,
+      "reason": "Order limit exceeded",
+      "reuse_bound": 0.44458322769841047,
+      "eta_upper": 0.21897810218978103
+    },
+    "e8_00": {
+      "phase": "exact_reuse",
+      "p": null,
+      "q": null,
+      "reuse_bound": 3.493728237337486e-09,
+      "eta_upper": 0.0
+    },
+    "e8_01": {
+      "phase": "perturbation_reuse",
+      "p": null,
+      "q": null,
+      "reuse_bound": 6.498303439688823e-09,
+      "eta_upper": 2.7372262773722627e-09
+    },
+    "e8_02": {
+      "phase": "perturbation_reuse",
+      "p": null,
+      "q": null,
+      "reuse_bound": 9.674685876719104e-09,
+      "eta_upper": 5.630972243231362e-09
+    },
+    "e8_03": {
+      "phase": "correction",
+      "p": 8,
+      "q": 0,
+      "relative_bound": 7.887049356804103e-09,
+      "absolute_bound": 2.438085230003679e-10,
+      "reuse_bound": 1.0325313005148138e-08,
+      "eta_upper": 6.223706163571506e-09
+    },
+    "e8_04": {
+      "phase": "correction",
+      "p": 7,
+      "q": 1,
+      "relative_bound": 3.862498128827038e-09,
+      "absolute_bound": 1.19399488401357e-10,
+      "reuse_bound": 3.0395141926414456e-07,
+      "eta_upper": 2.737226277372263e-07
+    },
+    "e8_05": {
+      "phase": "correction",
+      "p": 7,
+      "q": 1,
+      "relative_bound": 3.872322355973744e-09,
+      "absolute_bound": 1.1970282201911322e-10,
+      "reuse_bound": 3.008086165110218e-06,
+      "eta_upper": 2.737226277372263e-06
+    },
+    "e8_06": {
+      "phase": "correction",
+      "p": 7,
+      "q": 1,
+      "relative_bound": 4.780703531489102e-09,
+      "absolute_bound": 1.4777865671278994e-10,
+      "reuse_bound": 3.005097084571139e-05,
+      "eta_upper": 2.737226277372263e-05
+    },
+    "e8_07": {
+      "phase": "correction",
+      "p": 8,
+      "q": 1,
+      "relative_bound": 9.05768813560251e-09,
+      "absolute_bound": 2.79967110400213e-10,
+      "reuse_bound": 9.306210436266876e-05,
+      "eta_upper": 8.476312546595661e-05
+    },
+    "e8_08": {
+      "phase": "correction",
+      "p": 7,
+      "q": 2,
+      "relative_bound": 3.8947327776077794e-09,
+      "absolute_bound": 1.2038229358119362e-10,
+      "reuse_bound": 0.00010285967302048171,
+      "eta_upper": 9.3685559725531e-05
+    },
+    "e8_09": {
+      "phase": "correction",
+      "p": 7,
+      "q": 2,
+      "relative_bound": 3.979643363789727e-09,
+      "absolute_bound": 1.2297990855035668e-10,
+      "reuse_bound": 0.0003006336280924037,
+      "eta_upper": 0.0002737226277372263
+    },
+    "e8_10": {
+      "phase": "correction",
+      "p": 7,
+      "q": 3,
+      "relative_bound": 4.946875354142924e-09,
+      "absolute_bound": 1.524110265405994e-10,
+      "reuse_bound": 0.0030219299807186643,
+      "eta_upper": 0.002737226277372263
+    },
+    "e8_11": {
+      "phase": "correction",
+      "p": 8,
+      "q": 5,
+      "relative_bound": 6.814745005834633e-09,
+      "absolute_bound": 2.0197906494177693e-10,
+      "reuse_bound": 0.038722981533313966,
+      "eta_upper": 0.032846715328467155
+    },
+    "e8_12": {
+      "phase": "correction",
+      "p": 10,
+      "q": 7,
+      "relative_bound": 3.6405492387792077e-09,
+      "absolute_bound": 1.0120328152707764e-10,
+      "reuse_bound": 0.10024445299629355,
+      "eta_upper": 0.07664233576642336
+    },
+    "e8_13": {
+      "phase": "correction",
+      "p": 10,
+      "q": 8,
+      "relative_bound": 8.218256680059018e-09,
+      "absolute_bound": 2.2094915459461802e-10,
+      "reuse_bound": 0.1335930654400227,
+      "eta_upper": 0.09695369586860055
+    },
+    "e8_14": {
+      "phase": "preparation_guard",
+      "p": null,
+      "q": null,
+      "reason": "Order limit exceeded",
+      "reuse_bound": 0.15173310337204804,
+      "eta_upper": 0.10715934806529534
+    },
+    "e8_15": {
+      "phase": "preparation_guard",
+      "p": null,
+      "q": null,
+      "reason": "Order limit exceeded",
+      "reuse_bound": 0.44458226365499653,
+      "eta_upper": 0.21897810218978103
+    }
+  },
+  "construction_s": 0.8385864999145269,
+  "note": "Constructed before target references or pilot. Selector boundaries are sufficient-method boundaries, not minimal physical correction thresholds."
+}

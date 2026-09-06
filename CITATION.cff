@@ -1,11 +1,10 @@
 cff-version: 1.2.0
 message: >-
   If you use ACFO software or validation materials, cite this software release.
-title: "ACFO: Geometry-prepared Fourier operators and coefficient-space operator synthesis"
+title: "ACFO: Structure guided reuse and composition of rotationally structured operators"
 type: software
-version: 0.3.0
-date-released: 2026-09-04
-doi: "10.5281/zenodo.22298532"
+version: 0.4.0
+date-released: 2026-09-06
 authors:
   - family-names: Kim
     given-names: Minsu
@@ -15,7 +14,7 @@ authors:
     given-names: Jongcheol
     affiliation: Pohang University of Science and Technology (POSTECH)
 repository-code: "https://github.com/SCIMMS/ACFO"
-repository-artifact: "https://doi.org/10.5281/zenodo.22298532"
+repository-artifact: "https://github.com/SCIMMS/ACFO/releases/tag/v0.4.0"
 url: "https://github.com/SCIMMS/ACFO"
 keywords:
   - Fourier operator

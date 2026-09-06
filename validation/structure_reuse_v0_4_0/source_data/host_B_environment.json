@@ -1,0 +1,32 @@
+{
+  "python": "3.11.15 | packaged by conda-forge | (main, Aug 11 2026, 10:26:29) [GCC 14.4.0]",
+  "platform": "Linux-5.15.0-139-generic-x86_64-with-glibc2.31",
+  "machine": "x86_64",
+  "cpu": "x86_64",
+  "cpu_count": 104,
+  "numpy": "2.4.6",
+  "scipy": "1.17.1",
+  "source": "/workspace/ACFO/external_validation/acfo_structure_reuse_v2_20260906/extracted/acfo_structure_reuse_request_v2/src/waxs_cake/__init__.py",
+  "versions": {
+    "periodictable": "2.1.0",
+    "pytest": "9.1.1",
+    "pybind11": "3.0.4",
+    "setuptools": "81.0.0",
+    "torch": "2.11.0+cu128",
+    "cupy-cuda12x": "14.1.1"
+  },
+  "errors": [],
+  "native_source": "/workspace/ACFO/external_validation/acfo_structure_reuse_v2_20260906/extracted/acfo_structure_reuse_request_v2/src/waxs_cake/_cpp_odt.cpython-311-x86_64-linux-gnu.so",
+  "native_sha256": "833e6a221696e8e59667257daf6c3b1f1fb63eb6fc384847611707c92990167b",
+  "gpu": "NVIDIA GeForce RTX 3080 Ti",
+  "torch_cuda": "12.8",
+  "gpu_memory_bytes": 12497518592,
+  "cupy_runtime": 12090,
+  "thread_environment": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "BLIS_NUM_THREADS": "1"
+  },
+  "cuda_visible_devices": null
+}

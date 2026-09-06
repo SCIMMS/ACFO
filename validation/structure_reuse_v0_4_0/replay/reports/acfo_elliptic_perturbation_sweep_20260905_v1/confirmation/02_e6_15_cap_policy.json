@@ -1,0 +1,131 @@
+{
+  "case": "e6_15",
+  "arm": "cap_policy",
+  "pair": 2,
+  "stage": "confirmation",
+  "warm_s": 0.2027863000985235,
+  "refresh_s": 0.696962199988775,
+  "total_s": 0.8997485000872985,
+  "state_audit_s": 0.0035655999090522528,
+  "independent_audit_s": 0.004848000011406839,
+  "warm_fingerprint": {
+    "sha256": "c8dfd89074a94766388bc95fa822bc7571c262d857df43e045573728dc7e7ca4",
+    "coefficient_nodes": 212,
+    "field_modes": 0,
+    "factors": 83,
+    "edges": 128
+  },
+  "events": [
+    {
+      "theta": [
+        0.12,
+        -0.08,
+        0.0
+      ],
+      "tolerance": 1e-06,
+      "observation": "wide",
+      "setup_s": 0.10582100006286055,
+      "selection_s": 0.0010937000624835491,
+      "planning_s": 0.005108400015160441,
+      "update_s": 0.052596600144170225,
+      "direct_s": 0.0,
+      "observation_s": 0.03792610007803887,
+      "reuse_check_s": 8.09994526207447e-06,
+      "new_nodes": 210,
+      "p": 5,
+      "q": 0,
+      "predicted_direct_s": 0.38100701815186133,
+      "predicted_update_s": 0.044609724327830655,
+      "full_degree_indices": 21,
+      "graph_cache_hit": false,
+      "graph_complete": true,
+      "graph_screened": false,
+      "graph_nodes_known": 212,
+      "graph_nodes_added": 212,
+      "graph_nodes_scanned": 212,
+      "model_lower_update_s": 0.044609724327830655,
+      "model_screen_ceiling_s": 0.3619566672442682,
+      "order": 5,
+      "relative_bound": 5.142136339903258e-07,
+      "absolute_bound": 1.5895636236700967e-08,
+      "requested_nodes": 212,
+      "synthesis_s": 0.004333500051870942,
+      "route": "base_prepare",
+      "retained_nodes": 212,
+      "retained_nodes_by_gamma_degree": {
+        "0": 212
+      },
+      "field_modes": 0,
+      "bank_bytes": 2437344,
+      "state_bytes": 244224,
+      "reachability_entries": 2394,
+      "retained_graph_nodes": 212,
+      "total_s": 0.20268740004394203,
+      "relative_error": 1.2786591194219168e-09,
+      "passed": true
+    },
+    {
+      "theta": [
+        0.12,
+        -0.08,
+        0.8
+      ],
+      "tolerance": 1e-06,
+      "observation": "wide",
+      "setup_s": 1.300009898841381e-06,
+      "selection_s": 0.0014102999120950699,
+      "planning_s": 2.00001522898674e-07,
+      "update_s": 0.0,
+      "direct_s": 0.6942634000442922,
+      "observation_s": 3.400025889277458e-06,
+      "reuse_check_s": 0.00015440001152455807,
+      "new_nodes": 0,
+      "p": null,
+      "q": null,
+      "predicted_direct_s": null,
+      "predicted_update_s": null,
+      "relative_bound": 2.7914690533124287e-08,
+      "absolute_bound": 9.602142216905203e-10,
+      "field_reused": false,
+      "radius": 6,
+      "iterations": 74,
+      "solve_calls": 14222,
+      "attempts": [
+        {
+          "radius": 2,
+          "modes": 46,
+          "bound": 0.0005787692476776421
+        },
+        {
+          "radius": 4,
+          "modes": 202,
+          "bound": 4.704153467293864e-06
+        },
+        {
+          "radius": 6,
+          "modes": 474,
+          "bound": 2.7914690533124287e-08
+        }
+      ],
+      "exterior_modes_checked": 178,
+      "route": "guard_to_direct",
+      "fallback_reason": "Order limit exceeded",
+      "retained_nodes": 212,
+      "retained_nodes_by_gamma_degree": {
+        "0": 212
+      },
+      "field_modes": 474,
+      "bank_bytes": 8293968,
+      "state_bytes": 790272,
+      "reachability_entries": 2394,
+      "retained_graph_nodes": 212,
+      "total_s": 0.6968528999714181,
+      "process_peak_bytes": 113713152,
+      "relative_error": 7.213843267127602e-10,
+      "ideal_omission_error": 0.03685721029005255,
+      "passed": true
+    }
+  ],
+  "prediction_match": true,
+  "passed": true
+}

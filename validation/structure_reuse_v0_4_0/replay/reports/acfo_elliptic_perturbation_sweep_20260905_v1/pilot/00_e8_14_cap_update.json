@@ -1,0 +1,131 @@
+{
+  "case": "e8_14",
+  "arm": "cap_update",
+  "pair": 0,
+  "stage": "pilot",
+  "warm_s": 0.2425093000056222,
+  "refresh_s": 0.7103769000386819,
+  "total_s": 0.9528862000443041,
+  "state_audit_s": 0.006527799996547401,
+  "independent_audit_s": 0.004780799965374172,
+  "warm_fingerprint": {
+    "sha256": "09129197f87b7507b11303e9af7ba25f873a10ec10cbda2f9b8bdef3d80332d6",
+    "coefficient_nodes": 476,
+    "field_modes": 0,
+    "factors": 107,
+    "edges": 200
+  },
+  "events": [
+    {
+      "theta": [
+        0.12,
+        -0.08,
+        0.0
+      ],
+      "tolerance": 1e-08,
+      "observation": "wide",
+      "setup_s": 0.1036926000379026,
+      "selection_s": 0.0010739999124780297,
+      "planning_s": 0.00957130000460893,
+      "update_s": 0.09046530001796782,
+      "direct_s": 0.0,
+      "observation_s": 0.037415700033307076,
+      "reuse_check_s": 7.300055585801601e-06,
+      "new_nodes": 474,
+      "p": 7,
+      "q": 0,
+      "predicted_direct_s": null,
+      "predicted_update_s": 0.09580672947760914,
+      "full_degree_indices": 36,
+      "graph_cache_hit": false,
+      "graph_complete": true,
+      "graph_screened": false,
+      "graph_nodes_known": 476,
+      "graph_nodes_added": 476,
+      "graph_nodes_scanned": 476,
+      "model_lower_update_s": null,
+      "model_screen_ceiling_s": null,
+      "order": 7,
+      "relative_bound": 3.862315739749558e-09,
+      "absolute_bound": 1.1939388995566503e-10,
+      "requested_nodes": 476,
+      "synthesis_s": 0.007176200044341385,
+      "route": "base_prepare",
+      "retained_nodes": 476,
+      "retained_nodes_by_gamma_degree": {
+        "0": 476
+      },
+      "field_modes": 0,
+      "bank_bytes": 3069360,
+      "state_bytes": 548352,
+      "reachability_entries": 4256,
+      "retained_graph_nodes": 476,
+      "total_s": 0.2424086999380961,
+      "relative_error": 4.6117115569273145e-12,
+      "passed": true
+    },
+    {
+      "theta": [
+        0.12,
+        -0.08,
+        0.3914888182652123
+      ],
+      "tolerance": 1e-08,
+      "observation": "wide",
+      "setup_s": 1.200009137392044e-06,
+      "selection_s": 0.0015287999995052814,
+      "planning_s": 2.00001522898674e-07,
+      "update_s": 0.0,
+      "direct_s": 0.7075911000138149,
+      "observation_s": 3.300025127828121e-06,
+      "reuse_check_s": 0.00012360000982880592,
+      "new_nodes": 0,
+      "p": null,
+      "q": null,
+      "predicted_direct_s": null,
+      "predicted_update_s": null,
+      "relative_bound": 1.5809591864140467e-09,
+      "absolute_bound": 5.411131673697998e-11,
+      "field_reused": false,
+      "radius": 6,
+      "iterations": 78,
+      "solve_calls": 15574,
+      "attempts": [
+        {
+          "radius": 2,
+          "modes": 46,
+          "bound": 0.00012070010109526078
+        },
+        {
+          "radius": 4,
+          "modes": 202,
+          "bound": 4.341673300085583e-07
+        },
+        {
+          "radius": 6,
+          "modes": 474,
+          "bound": 1.5809591864140467e-09
+        }
+      ],
+      "exterior_modes_checked": 178,
+      "route": "guard_to_direct",
+      "fallback_reason": "Order limit exceeded",
+      "retained_nodes": 476,
+      "retained_nodes_by_gamma_degree": {
+        "0": 476
+      },
+      "field_modes": 474,
+      "bank_bytes": 8293968,
+      "state_bytes": 1094400,
+      "reachability_entries": 4256,
+      "retained_graph_nodes": 476,
+      "total_s": 0.7102560000494123,
+      "process_peak_bytes": 115216384,
+      "relative_error": 2.0290943995762617e-12,
+      "ideal_omission_error": 0.01774621749279414,
+      "passed": true
+    }
+  ],
+  "prediction_match": true,
+  "passed": true
+}

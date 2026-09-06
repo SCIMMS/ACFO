@@ -1,0 +1,51 @@
+{
+  "schema": "acfo-research-abcd-v1",
+  "date": "2026-09-05",
+  "seed": 20260905,
+  "operator_tolerances": [1e-8, 1e-6],
+  "reference_tolerance": 1e-10,
+  "A": {
+    "cases": [[350,441.3799661723198,0],[350,441.3799661723198,4],[350,441.3799661723198,16],[350,441.3799661723198,64],[350,441.3799661723198,128],[512,441.3799661723198,0],[1024,441.3799661723198,0],[512,220.6899830861599,0],[512,662.0699492584797,0]],
+    "arms": ["cpswf","randomized","blocked_projection"],
+    "randomized": "input range of A*: Gaussian width ceil(c/pi)+32, oversampling implicit, one subspace iteration with intervening QR; small projected SVD; double width on failed independent 12-probe check",
+    "memory": "sampled RSS every 5 ms during preparation and OS HWM before dense audit; full target kernel prohibited in builders; tiles 64 rows",
+    "audit": "full discrete spectral residual after preparation; 12 independent Gaussian operational probes charged equally to all arms; neither probe test nor spectral mu tail is a continuous error certificate",
+    "reuse": "eight RHS and bounded output multiplier; same prepared factor API for all arms",
+    "pilot_repeats": 1,
+    "confirmation": "after pilot, freeze case IDs and run fresh-process paired repeats; no hot calls counted as samples"
+  },
+  "B": {
+    "bandwidths": [24.0,80.0], "orders": [0,4], "alphas": [0.0,0.5,1.5],
+    "ranks": [8,16,24,40,64,96],
+    "profiles": ["uniform","smooth_apodization","edge_power","edge_layer","off_basis"],
+    "fit_nodes": 256, "audit_nodes": 768, "reference_nodes": 1536, "output_nodes": 192,
+    "metric": "physical source L2(r dr) and output L2(y dy), same unweighted norm for every backend; combined sqrt(source_relative_error^2+transform_relative_error^2)",
+    "arms": ["ordinary_zernike","generalized_zernike","weighted_ball_pswf","cpswf","shared_svd"],
+    "claim": "basis-specific profile alone cannot establish advantage; report every profile and reference convergence"
+  },
+  "C": {
+    "order_pairs": [[0,4],[4,16],[16,64],[64,128]],
+    "bandwidths": [8.0,80.0,441.3799661723198],
+    "quadratures": [128,256],
+    "conditioning_stop": 1000000.0,
+    "identity_tolerance": 1e-8,
+    "scope": "Sonine positive order increment, finite support dilation, then only if stable a compressed connection; preserve failed gates"
+  },
+  "D": {
+    "theta_max": 0.96, "model_quadrature": [24,193], "truth_quadrature": [48,289], "audit_quadrature": [64,385],
+    "rho": [0.0,0.3,0.6,0.9,1.2], "npsi": 18, "z": [-0.19,0.0,0.23],
+    "base_pose": [0.12,-0.08], "truth_delta": [0.047,-0.036],
+    "starts": [[0.0,0.0],[0.16,-0.14],[-0.16,0.14]],
+    "noise_relative_rms": [0.0,0.001,0.01],
+    "source_conditions": ["known","five_real_amplitudes"],
+    "truth_amplitudes": [1.08,0.93,1.04,0.9,1.06],
+    "optimizer": "scipy least_squares TRF, analytic Jacobian, identical bounds and tolerances, normalized residual, amplitude prior 1e-8, max_nfev 60",
+    "translation_bounds": [-0.3,0.3], "amplitude_bounds": [0.5,1.5],
+    "ftol": 1e-10, "xtol": 1e-10, "gtol": 1e-10,
+    "heldout": "every fourth flattened complex field entry excluded from optimization",
+    "success": "optimizer success and dimensionless translation error <= max(0.005,5*noise); also report amplitude errors independently",
+    "derivative": "normalized k*length coordinates; central difference audit step 1e-5 and 5e-6, error <= 1e-7",
+    "timing": "cold response+derivative build plus all refreshes and optimizer work; reference generation separately; local pilot then fresh-process paired confirmation"
+  },
+  "publication": "no release; preserve old manuscripts and failed runs; v3 Markdown research revision; do not infer NCS acceptance from passing audits"
+}

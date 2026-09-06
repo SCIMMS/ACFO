@@ -1,0 +1,140 @@
+{
+  "case": "e6_13",
+  "arm": "cap_policy",
+  "pair": 2,
+  "stage": "confirmation",
+  "warm_s": 0.2221239999635145,
+  "refresh_s": 0.8067239000229165,
+  "total_s": 1.028847899986431,
+  "state_audit_s": 0.004611100070178509,
+  "independent_audit_s": 0.0049860000144690275,
+  "warm_fingerprint": {
+    "sha256": "c8dfd89074a94766388bc95fa822bc7571c262d857df43e045573728dc7e7ca4",
+    "coefficient_nodes": 212,
+    "field_modes": 0,
+    "factors": 83,
+    "edges": 128
+  },
+  "events": [
+    {
+      "theta": [
+        0.12,
+        -0.08,
+        0.0
+      ],
+      "tolerance": 1e-06,
+      "observation": "wide",
+      "setup_s": 0.1121108999941498,
+      "selection_s": 0.0012977999867871404,
+      "planning_s": 0.0083105000667274,
+      "update_s": 0.05892490001861006,
+      "direct_s": 0.0,
+      "observation_s": 0.04120840004179627,
+      "reuse_check_s": 7.699942216277122e-06,
+      "new_nodes": 210,
+      "p": 5,
+      "q": 0,
+      "predicted_direct_s": 0.38100701815186133,
+      "predicted_update_s": 0.044609724327830655,
+      "full_degree_indices": 21,
+      "graph_cache_hit": false,
+      "graph_complete": true,
+      "graph_screened": false,
+      "graph_nodes_known": 212,
+      "graph_nodes_added": 212,
+      "graph_nodes_scanned": 212,
+      "model_lower_update_s": 0.044609724327830655,
+      "model_screen_ceiling_s": 0.3619566672442682,
+      "order": 5,
+      "relative_bound": 5.142136339903258e-07,
+      "absolute_bound": 1.5895636236700967e-08,
+      "requested_nodes": 212,
+      "synthesis_s": 0.0043110999977216125,
+      "route": "base_prepare",
+      "retained_nodes": 212,
+      "retained_nodes_by_gamma_degree": {
+        "0": 212
+      },
+      "field_modes": 0,
+      "bank_bytes": 2437344,
+      "state_bytes": 244224,
+      "reachability_entries": 2394,
+      "retained_graph_nodes": 212,
+      "total_s": 0.22202119999565184,
+      "relative_error": 1.2786591194219168e-09,
+      "passed": true
+    },
+    {
+      "theta": [
+        0.12,
+        -0.08,
+        0.6804344992162884
+      ],
+      "tolerance": 1e-06,
+      "observation": "wide",
+      "setup_s": 1.500011421740055e-06,
+      "selection_s": 0.0016934999730437994,
+      "planning_s": 0.10143779998179525,
+      "update_s": 0.0,
+      "direct_s": 0.7022920999443159,
+      "observation_s": 5.00003807246685e-06,
+      "reuse_check_s": 0.00013669999316334724,
+      "new_nodes": 0,
+      "p": 10,
+      "q": 9,
+      "predicted_direct_s": 0.7171635187820895,
+      "predicted_update_s": null,
+      "full_degree_indices": 286,
+      "graph_cache_hit": false,
+      "graph_complete": false,
+      "graph_screened": true,
+      "graph_nodes_known": 6016,
+      "graph_nodes_added": 6016,
+      "graph_nodes_scanned": 6016,
+      "model_lower_update_s": 0.6822091588533553,
+      "model_screen_ceiling_s": 0.681305342842985,
+      "relative_bound": 1.3587984276211151e-08,
+      "absolute_bound": 4.665490922799751e-10,
+      "field_reused": false,
+      "radius": 6,
+      "iterations": 68,
+      "solve_calls": 13634,
+      "attempts": [
+        {
+          "radius": 2,
+          "modes": 46,
+          "bound": 0.0003844100446106694
+        },
+        {
+          "radius": 4,
+          "modes": 202,
+          "bound": 2.5691057151970315e-06
+        },
+        {
+          "radius": 6,
+          "modes": 474,
+          "bound": 1.3587984276211151e-08
+        }
+      ],
+      "exterior_modes_checked": 178,
+      "route": "cost_to_direct",
+      "fallback_reason": "model_screen",
+      "retained_nodes": 212,
+      "retained_nodes_by_gamma_degree": {
+        "0": 212
+      },
+      "field_modes": 474,
+      "bank_bytes": 8293968,
+      "state_bytes": 790272,
+      "reachability_entries": 31437,
+      "retained_graph_nodes": 6228,
+      "total_s": 0.8065899999346584,
+      "process_peak_bytes": 122736640,
+      "relative_error": 2.939789005581664e-10,
+      "ideal_omission_error": 0.03116448648858233,
+      "passed": true
+    }
+  ],
+  "prediction_match": true,
+  "passed": true
+}

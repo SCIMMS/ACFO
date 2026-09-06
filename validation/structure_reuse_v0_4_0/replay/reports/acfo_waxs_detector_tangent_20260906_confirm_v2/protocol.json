@@ -1,0 +1,15 @@
+{
+ "schema":"waxs-detector-tangent-v1",
+ "scope":"Existing cylindrical WAXS source-grid operator fixture with a curved complete-orbit detector. Effective single-carbon channel, q-dependent Waasmaier-Kirfel f0 and its derivative. No measured atomic-library refinement or detector-integrated counts.",
+ "cases":[{"nr":8,"nz":8,"nphi":192,"nq":128,"qblock":64},{"nr":24,"nz":24,"nphi":256,"nq":1024,"qblock":64},{"nr":32,"nz":32,"nphi":512,"nq":2048,"qblock":64}],
+ "states":[[1.0,0.02],[0.98,0.03],[1.02,-0.01]],
+ "methods":["production_backward","coordinate_fields","tangent_full","tangent_stream"],
+ "geometry":"rho=tan(theta_nom), theta_nom=0.025..1 rad; detector height z=D+kappa*rho^2, k=8 nm^-1. Common support envelope qp<=8, padding48, margin64, radii0..1.5nm, zsource -1.5..1.5nm.",
+ "objective":"Fixed masked weighted squared residual of point intensities, normalized by sum(weight*target^2). Target is synthetic positive random data independent of tested forward; no recovery experiment. Both parameter derivatives include form-factor chain rule.",
+ "accuracy":{"loss_absolute":1e-10,"gradient_relative":1e-8,"independent_amplitude_relative":1e-8,"finite_difference_normalized":1e-6},
+ "warmup":2,"samples":5,
+ "confirmation":"After pilot, five fresh CUDA processes on largest case, randomized method order; synchronized timing. Each process is one paired sample, hot calls only estimate time. Same input, q geometry, support and tolerance for all methods.",
+ "fairness":"Production comparator uses current fused custom backward with object gradients disabled. coordinate_fields already shares Miller and axial contraction. tangent_full and tangent_stream change the direction/placement of derivative synthesis and loss reduction. No forced unrelated adjoint and no dense Jacobian baseline.",
+ "memory":"Incremental max_memory_allocated measured for one synchronized call after warmup; not total GPU process memory. Sources may change between calls, no cross-call source FFT cache in any arm. Preparation/JIT excluded from hot results and recorded separately.",
+ "limits":"No GPU instruction-level Miller/contraction fusion, no automatic cutoff differentiation, arbitrary detector tilt, multi-element atomic library or optimizer speed claim. Existing 20260903 fused-pullback results retained without rerun."
+}

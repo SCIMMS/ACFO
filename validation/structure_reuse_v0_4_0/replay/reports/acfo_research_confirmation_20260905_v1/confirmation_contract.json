@@ -1,0 +1,41 @@
+{
+  "A_cases": [
+    [
+      350,
+      441.3799661723198,
+      0
+    ],
+    [
+      1024,
+      441.3799661723198,
+      0
+    ],
+    [
+      2048,
+      441.3799661723198,
+      0
+    ],
+    [
+      512,
+      220.6899830861599,
+      0
+    ]
+  ],
+  "A_arms": [
+    "cpswf",
+    "randomized"
+  ],
+  "D_cases": [
+    7,
+    16,
+    17
+  ],
+  "D_arms": [
+    "acfo",
+    "direct"
+  ],
+  "repeats": 6,
+  "pair_order": "alternate AB/BA by repeat; both arms get the same seed",
+  "sample_unit": "fresh process per arm; primary tolerance memory only (secondary process HWM includes prior audit)",
+  "status": "local CPU evidence, six paired process repeats; selected after pilot, no population or hardware universality"
+}

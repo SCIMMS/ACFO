@@ -1,0 +1,47 @@
+{
+  "passed": true,
+  "workers": 512,
+  "responses": 1024,
+  "warm_groups": 8,
+  "cap_forecast_checks": 256,
+  "boundary_cases": 12,
+  "positive_adjacent_log_pairs": [
+    [
+      "e6_06",
+      "e6_07"
+    ],
+    [
+      "e6_07",
+      "e6_10"
+    ],
+    [
+      "e8_04",
+      "e8_05"
+    ],
+    [
+      "e8_05",
+      "e8_06"
+    ],
+    [
+      "e8_06",
+      "e8_09"
+    ],
+    [
+      "e8_09",
+      "e8_10"
+    ],
+    [
+      "e8_10",
+      "e8_11"
+    ]
+  ],
+  "references": 22,
+  "max_reference_radial_change": 0.0,
+  "frozen_hash_checks": 82,
+  "previous_manifest_entries": 1438,
+  "local_link_checks": 9,
+  "raw_aggregation_recomputed": true,
+  "scope": "Audit of saved numerical error records and independent reference metadata; does not rerun solvers.",
+  "audit_source": "scripts/audit_acfo_elliptic_perturbation_sweep.py",
+  "audit_source_sha256": "f61c4cd9e12c5f98200d970086b6a0fd0bb729af88c74efb02e1e065dd8eb506"
+}

@@ -1,0 +1,25 @@
+{
+  "hashes": {
+    "scripts/acfo_elliptic_update_policy.py": "f37cc8aa820d70e2ace368e9bc6462a0e03b50a4e48bf75cfa538d33e06ec983",
+    "scripts/benchmark_acfo_elliptic_update_policy.py": "b753380677afd1b10274e86b946e484756163841e5d1004f2448fe2a9e2a2757",
+    "tests/test_acfo_elliptic_update_policy.py": "9de87d28129881432a19bedb20bb03a10375152975a1902809152ef915dc4dd4",
+    "scripts/acfo_elliptic_new_coupling.py": "566f378defac2d504819620cac6339f7c766d4719d7fcd9014fc4c7a56fa3135",
+    "scripts/acfo_elliptic_observation_refresh.py": "7926d8413e41da49ae85ded2d37e9b473025e1f31ea0c14f9eb7a05f77c1dd8e",
+    "scripts/acfo_elliptic_refresh.py": "a68babc9a39c9aa670a241a1abc12f5e410b789ef3c73aadccd0e7174ed54d0d",
+    "scripts/acfo_cylinder_coupling.py": "6cc818ae13d3b5bf96f5541e4b8dd62e327fcaf66193dea6c9e9e5ccd0ea16a5",
+    "scripts/acfo_elliptic_disk.py": "3a337a02e6c415b9110c7a40b80c48222a35099c2b630a6843da7d809133f7d5",
+    "scripts/acfo_elliptic_structured_policy.py": "925ca0bc9a4a0458335638d348fdaeac452c1ef70cad1d10febfd4be7553ee9f",
+    "scripts/acfo_elliptic_progressive_policy.py": "4fa818166fd678970297f391a83be92141a79f037e6c3a5c7c4d2e0e6bef57af",
+    "scripts/benchmark_acfo_elliptic_progressive_policy.py": "58d5b62b8528528c8a3297ae81a9574fdab8e50c2654f4a7ed6b7b4bb2e4247b",
+    "tests/test_acfo_elliptic_progressive_policy.py": "efc3dc15e2f95bd79c27286f45e8a6980a0fd45925f61322c21045bb23acd12a",
+    "scripts/acfo_elliptic_weak_coupling.py": "42edbd7708e71187944a59550bb70de2e3dc1e53d546008120226005056833fe",
+    "scripts/benchmark_acfo_elliptic_weak_coupling.py": "7eba4a8b4372d400bdd91cf237b8d6ac0cbbd0037aef9ad6ca65bf555d27958f",
+    "tests/test_acfo_elliptic_weak_coupling.py": "4812b0f2a39806b0f78b537c8363aaaff06e01ff530137a95e4e76085480506e",
+    "scripts/acfo_elliptic_perturbation_sweep.py": "228fecb4e2eaa4bfbcc4602e9f0d4d76c5ae601fffc7b49cfba29f204f219302",
+    "scripts/benchmark_acfo_elliptic_perturbation_sweep.py": "d932d618ad12ea877a8b61919c6eafb6c10c6cdde22e85619432753e5a640465",
+    "tests/test_acfo_elliptic_perturbation_sweep.py": "3b937766e5a1bc6b739120bbb3b27a6abd287d83264725c9823062ad4353581d",
+    "validation_contracts/acfo_elliptic_perturbation_sweep_20260905_pilot.json": "3490014a0cee71be00c8bb1516384946c6bf81c0c4ccd9337b0830f0d24af63d",
+    "reports/acfo_elliptic_perturbation_sweep_20260905_v1/forecast.json": "efb299dcc96363e2cca0fd74d2fea19c2202197dca6665ba5680c23c18b301b1",
+    "reports/acfo_elliptic_update_policy_20260905_v1/calibration.json": "2b1997c8c77ccd648a0fead8fad35feeb8316ab583f47687b7bf8e6556527531"
+  }
+}

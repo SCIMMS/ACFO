@@ -1,0 +1,23 @@
+{
+  "schema": "radial-4f-phase-relay-v1",
+  "system": "Scalar paraxial coherent 4f relay: equal input/output disk, finite Fourier-plane aperture, tunable radial phase plate",
+  "operator": "T(alpha,beta)=K_m M_exp(i*(alpha*r^2+beta*r^4)) K_m, up to fixed imaging parity/convention phase",
+  "kernel": "K=c sqrt(xy) J_m(cxy), L2(dx); equivalent physical radial L2(r dr) via phi=sqrt(r)g",
+  "cases": [{"q":256,"c":24.0,"m":0},{"q":512,"c":64.0,"m":0},{"q":512,"c":64.0,"m":4},{"q":1024,"c":64.0,"m":0}],
+  "tolerance": 1e-8,
+  "kernel_cutoff": 1e-10,
+  "spectral_dimension": 96,
+  "reference_nodes": 128,
+  "phases": [[0.0,0.0],[4.0,-2.0],[10.0,6.0]],
+  "rhs_counts": [1,16],
+  "calls_per_mask": [1,64],
+  "timing_inner": 8,
+  "audit_source_modes": [0,3,17,31],
+  "physical_reference_nodes": [256,512],
+  "methods": ["dense_factor","dense_fused","jacobi_value","jacobi_core","cpswf_value","cpswf_core","nystrom_value","nystrom_core","svd_value","svd_core"],
+  "derivative": "Return both T f and partial_alpha T f, sharing the first propagation/input conversion",
+  "accuracy": "All sampled-input directions bounded by exact finite-matrix kernel residual delta: E <= delta*(||K||+||Khat||) for both phase and alpha derivative. Relative bound uses low-rank composite norm minus E when positive. Analytic continuous-source direct-quadrature audit is separate.",
+  "cost": "v2: Dense kernel assembly/casting charged to all; compression-only kernel norm and residual/QR checks charged only to compressed methods. Per-phase relative operator-norm gate charged to compressed methods, reusing a prepared core when present. Independent continuous-source audits excluded. Cached-kernel factor action, full response refresh, low-rank value action and core refresh all allowed. Totals are phase-sum workload estimates, not a continuous end-to-end stopwatch. No matrix-free cold preparation claim.",
+  "confirmation": "After pilot, same largest case, five fresh processes, randomized method order. Each process is one paired sample; repeated hot calls only estimate one time.",
+  "scope": "Synthetic radial phase plate in a physical 4f architecture. No replication of a published device, full high-NA vector model or measured optical data. Keep prior affine negative results."
+}

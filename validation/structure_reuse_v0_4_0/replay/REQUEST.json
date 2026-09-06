@@ -1,0 +1,42 @@
+{
+  "schema": "acfo-structure-replication-v1",
+  "revision": "v2: smoke records GPU processes without blocking; confirm remains guarded. v1 blocked Windows desktop smoke and is preserved.",
+  "created_utc": "2026-09-06T03:08:29.974471+00:00",
+  "seed_base": 20260906,
+  "fresh_processes": 5,
+  "systems": {
+    "slab": {
+      "device": "cpu",
+      "script": "scripts/experiment_uniaxial_slab_shared_update.py",
+      "contract": "validation_contracts/uniaxial_slab_shared_update_v1.json",
+      "baseline": "reports/acfo_uniaxial_slab_shared_update_20260906_confirm_v4"
+    },
+    "relay4f": {
+      "device": "cpu",
+      "script": "scripts/experiment_radial_4f_phase_relay.py",
+      "contract": "validation_contracts/radial_4f_phase_relay_v1.json",
+      "baseline": "reports/acfo_radial_4f_phase_relay_20260906_confirm_v2"
+    },
+    "waxs": {
+      "device": "gpu",
+      "script": "scripts/experiment_waxs_detector_tangent.py",
+      "contract": "validation_contracts/waxs_detector_tangent_v1.json",
+      "baseline": "reports/acfo_waxs_detector_tangent_20260906_confirm_v2"
+    },
+    "odt": {
+      "device": "gpu",
+      "script": "scripts/experiment_odt_weight_coupling.py",
+      "contract": "validation_contracts/odt_weight_coupling_v1.json",
+      "baseline": "reports/acfo_odt_weight_coupling_20260906_confirm_v3"
+    }
+  },
+  "prior_evidence_only": [
+    "acfo_elliptic_perturbation_sweep_20260905_v1",
+    "acfo_elliptic_structured_policy_20260905_v1",
+    "acfo_cpswf_operator_algebra_20260905_v2",
+    "acfo_structure_to_computation_review_20260905_v1",
+    "acfo_mixed_basis_family_20260906_confirm_v2"
+  ],
+  "scope": "Replicate new slab/4f/WAXS/ODT cases on independent hardware. Historical elliptic/CPSWF/inverse evidence is not rerun or represented as new external data.",
+  "acceptance": "All frozen methods, cases and numerical gates. Speed wins are descriptive outcomes, not success filters. No automatic downsizing or comparator removal."
+}

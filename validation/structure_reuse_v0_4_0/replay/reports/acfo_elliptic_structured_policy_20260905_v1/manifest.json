@@ -1,0 +1,836 @@
+{
+  "files": [
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/completion_audit.json",
+      "sha256": "50cb7254ea0246bc0c21a03dc8955d65c6995ea127c66427ed93f3796a32396e"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/00_expansion_direct.json",
+      "sha256": "e9fe18f013d8c3fb2d9e686ab8e35ee5318bc9c8ec7f9aa14e7f40791f3fa8bf"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/00_expansion_old.json",
+      "sha256": "962933f01211de79543c68f7bfa038864a3aef2a01ff130adf49314eef802f39"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/00_expansion_remaining.json",
+      "sha256": "1d12ef29a8410b1e5934dab3896f5a3b1f20708a829f0d534c85a0d6efadbc99"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/00_expansion_threshold.json",
+      "sha256": "70b6e10d867907f644bf359269d297d757b46533e7f82893537331b349155184"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/00_expansion_update.json",
+      "sha256": "eb52af1e11ff87831635efbda9e6886fd6d17db754dd3144e86767ab6d3d3280"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/00_local_direct.json",
+      "sha256": "5bf18c2b6505f165cee03337b86f6ea29e7974301459012102d450602f9e5258"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/00_local_old.json",
+      "sha256": "e4d50c2959b29b613c41573e187fa74d770b6bc408635fc9b65afe5a1e60de3d"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/00_local_remaining.json",
+      "sha256": "f6ad224e61d7e8b4fd4f4beefe86934ff3348e0b79e3fda7da9983117f59d139"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/00_local_threshold.json",
+      "sha256": "03f6baaf8485bff9a9fac6863e47963ae01db65c8b55ed37a18f9dd9babd4f8d"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/00_local_update.json",
+      "sha256": "869040a96fb395eba14347d13aa4855b00b2c7f856b990cf6f173bf6d34ff474"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/00_mixed_batches_batch_direct.json",
+      "sha256": "01efd95ebdf4a66bda6dc996f31b2870cc9628e03d43a4d1b9927bd763ebc112"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/00_mixed_batches_batch_update.json",
+      "sha256": "4201a853d4d6d01c9e3dbf7f7b0a3d75495112a1ef070e62578f6fe307ca96df"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/00_mixed_batches_coverage.json",
+      "sha256": "bc86af22ea2f66a5c81dd1fef8c677d91a6edab40db58a9f89781b57fc11ad1a"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/00_mixed_batches_old.json",
+      "sha256": "4d443db0b441725b780d0077615f621038e60cdf0df885dff457ccdec66438e5"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/00_mixed_batches_remaining.json",
+      "sha256": "23a4bdae483b6607258bea0e9492357c791ba2a6b14ad75b3293206c9b6705ba"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/00_mixed_batches_scheduled.json",
+      "sha256": "083a2ccb6807723ea7efcc395aed0fa75783249f3ae09814ab56167992e71a5c"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/00_narrow_batches_batch_direct.json",
+      "sha256": "1c284a3b05e4dffabd9881fd73ee1a4adc3ae6c1d5003896bec7c2ce6545d2db"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/00_narrow_batches_batch_update.json",
+      "sha256": "e0bc9029fe6e8c5b82453b206b28882888944f2a0d9c0486bdc416f1b49a521a"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/00_narrow_batches_coverage.json",
+      "sha256": "92091287cee9385dcc214a338fbc450d067332ded7ffacd483de8dbeceecb8f8"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/00_narrow_batches_old.json",
+      "sha256": "be829402778bed43c8618a55b70ecae12a69fb45875ddc1d3032c57043e1788f"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/00_narrow_batches_remaining.json",
+      "sha256": "51b1c2ea6afbd5389867149d0ce912a6c5286f8d3e5e27e0736689780e5d8325"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/00_narrow_batches_scheduled.json",
+      "sha256": "c3934c5a2a2848da50d6427d4395ba57062a2c3ffd101f039391c138e59d720a"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/00_strong_direct.json",
+      "sha256": "5a19ec903cb5ebbf4472dead227bdc862301e4bebb5c802964260037660c3b18"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/00_strong_old.json",
+      "sha256": "2388338b70684c3033f58682f9a4f13bb4ea7059de3eb1cff14852d9a513f4f3"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/00_strong_remaining.json",
+      "sha256": "d9fd729535e3b290d359ff249df04beee6149f56de5fd74745cd475ac0fb554c"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/00_strong_threshold.json",
+      "sha256": "65d8f2bbd2c666e2fc5247ef3608f523c4a5ad5183246dc328d2c50180ee0c47"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/00_strong_update.json",
+      "sha256": "88195ea2e51c349470b989a010ba8caa2e9c4f2ab5ef734399833de6b8818544"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/00_wide_batches_batch_direct.json",
+      "sha256": "c50c8a1fc72d1285102de04e7d1a3d5cce0a36e6af4b467d5e6c6323c1bb7058"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/00_wide_batches_batch_update.json",
+      "sha256": "79566fed853e22d9399b5d08041736b980bd041d75a88ee65e709ef211d89191"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/00_wide_batches_coverage.json",
+      "sha256": "576e39041edcf7095727620b0b936177b2d33ba7cde6de9569321684c34d5076"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/00_wide_batches_old.json",
+      "sha256": "656ea67620b25946ed54b492601bd302bab71db2f3910d77845d8e80429cdc00"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/00_wide_batches_remaining.json",
+      "sha256": "737fee4760efd54043f57aba242fbaff2be61eec5d3b25500a5c9f513ca2b91a"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/00_wide_batches_scheduled.json",
+      "sha256": "9d188da8cedc4e2536447aafec441d2f511cf24f1d3c32d3d8f576a35c0fe400"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/01_expansion_direct.json",
+      "sha256": "9a120807a35c6eed277e1d9065ccd65d0b3caaf2e3ec76ae364a838dc51a15f8"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/01_expansion_old.json",
+      "sha256": "9feae513da39247674de368797f406c52150b59b13662203faa6bfc46ad3c006"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/01_expansion_remaining.json",
+      "sha256": "162fcb54b45235e55bc5dc596765ee11d80314fd6507306451db5bc448a914c9"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/01_expansion_threshold.json",
+      "sha256": "db0399ea09bab5ad306cbf96fd0e7a7575d02ef82d1c1a00a2c92bc1bae466c9"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/01_expansion_update.json",
+      "sha256": "654c9b06bb7a9c1addf8123eae4b21cb87d587f33c6766274da291ac3048ce1b"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/01_local_direct.json",
+      "sha256": "497f075e06bed594790f1220d59b9d1b8fa1c67def1ba7158b8812b335ee374f"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/01_local_old.json",
+      "sha256": "ae6ca10dcfc8c27c3846b9faaf6d02db65be972cef9b60353d9aa0c79a95871f"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/01_local_remaining.json",
+      "sha256": "7e73c77ef36bf029dd8e41f88af273f925841673ac6fb0b9342cab223914d6a4"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/01_local_threshold.json",
+      "sha256": "cabdcf685fcc3cfb3b24262e02a4d18bd407cb3058b58a90cb52c4902d250a67"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/01_local_update.json",
+      "sha256": "e44f10cadabe693ae44de68b6078fbb886b3bb1bc3022fb5ac6568f17380a5a1"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/01_mixed_batches_batch_direct.json",
+      "sha256": "5892027b68e735c3ef5c3b9dce83a9d34b13de62b4c59f25baba5c80865eb033"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/01_mixed_batches_batch_update.json",
+      "sha256": "009d47c7234f9c62b753916e886c5bbd28a0b438fac2a125dd36027ee83a93b9"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/01_mixed_batches_coverage.json",
+      "sha256": "4da1385bef3e1c8a9b631ec82391c22212c8892114656e251a5bb2f5c63bbfb9"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/01_mixed_batches_old.json",
+      "sha256": "a651e620d0f16903756250650a7564393041ba3b44376c19dd71f295e15ab5ab"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/01_mixed_batches_remaining.json",
+      "sha256": "0e407aab5dd151d5b06131c5f254507d3df24d71d634db5ddba6eb882bcc2181"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/01_mixed_batches_scheduled.json",
+      "sha256": "d46d8ffb020726c928cc61340eb5b7586627213a652a457454b5359d4ff6ac48"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/01_narrow_batches_batch_direct.json",
+      "sha256": "431fbd5b9bcf16441b72583880e06e1d5a3a6ffecd100773236dcc19c554fda5"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/01_narrow_batches_batch_update.json",
+      "sha256": "13842840d5757caf29773ed2619034598360741b7baa16c7687ce7debad19c8c"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/01_narrow_batches_coverage.json",
+      "sha256": "a96295664df0a3f9b047ccd7fc54bf46fd7c50ea42972d2802fb5a6977819234"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/01_narrow_batches_old.json",
+      "sha256": "3f300c4feca284426477a49ca4735c4224c00b4902599c305b1954a5aad918b3"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/01_narrow_batches_remaining.json",
+      "sha256": "f01277b3e64dc9460570876d31e71661cd32b9be142f53b890f5f2a45ffc3622"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/01_narrow_batches_scheduled.json",
+      "sha256": "79c7683bb39f3efa3f4a6aab17e776d15afac73887a5b0415d90130c7d1529f6"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/01_strong_direct.json",
+      "sha256": "774289935120a4282317963bbec20bf5ad4dd3e672c1a0dfe1d29c87205cf14b"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/01_strong_old.json",
+      "sha256": "0628aeae7864ec56fdb29878c4dbfcdbd53176cda3644e46e2ca5b647acff82f"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/01_strong_remaining.json",
+      "sha256": "1bb09ed536227ec07ca090d841c6bbb9e55be90d95eb2d7c52ee17a4f933d452"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/01_strong_threshold.json",
+      "sha256": "33cc1147e372237ce83c6fc07da20d0d4a362746a8f33ac0c6a063c82e9dc690"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/01_strong_update.json",
+      "sha256": "15b419c5c2b4a28b1c59e66211a335c2e0798a9e46fd95bcb5264cb295c5bb8e"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/01_wide_batches_batch_direct.json",
+      "sha256": "d2285241405bab8b20d9dce1b9f48c79160df07a6d3762674d242c26980ac909"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/01_wide_batches_batch_update.json",
+      "sha256": "7ca500e939a54f16a4ac2aa96793c2ecbce28e6085703fed9446920308029300"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/01_wide_batches_coverage.json",
+      "sha256": "392fc7f2ec7b21edb4462389bad16655e8578e58dd160b65b58a4dec5ab81161"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/01_wide_batches_old.json",
+      "sha256": "8df7e2c0daec0379939ff24f85f733c6a135d46d2332277c495eb0b5d6186d69"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/01_wide_batches_remaining.json",
+      "sha256": "0111a4ca324b2d26fb180ad3e38af8a6933471dba6a04609e79e0151bbfb2d1f"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/01_wide_batches_scheduled.json",
+      "sha256": "628c50aff3ec21ca3a04d4c86ecccbee4cd282642043a136120a0133f8a24c69"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/02_expansion_direct.json",
+      "sha256": "273eee6d172aa39eefadbaa1915a848c6e51f4b41c708df287538d33719333c3"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/02_expansion_old.json",
+      "sha256": "498f1e9673c7d295bb2d074edc6767a095555fc4f2c0d4e8af497ab692d054d3"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/02_expansion_remaining.json",
+      "sha256": "e95f26f528abd8fba879407d6a4b21fb54505e4d62859b8c8541f1ea0f73813c"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/02_expansion_threshold.json",
+      "sha256": "0765524ff7b844d5b0b32356bb16c5b5bced62ed423266540ea69a4e7e391218"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/02_expansion_update.json",
+      "sha256": "22ca60c29f6ef8e29986049dcfe5cf0838221687ad707c87cdac42dd91b2429a"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/02_local_direct.json",
+      "sha256": "b3ef25932c47cd632d5294a93b23461c2232b7fae50c64e041241a028e85886c"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/02_local_old.json",
+      "sha256": "44736998570a3ae2d73ea3a0829d07e70d4f3fa9896221d65aeb3de861f9f8ad"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/02_local_remaining.json",
+      "sha256": "289adddf60ce275f4266668915abda4f49aebe7a818a365be55550717507d063"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/02_local_threshold.json",
+      "sha256": "ee17731e6130dc691068fe09523dc1075334d060ed2d555b352b183a91dd470a"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/02_local_update.json",
+      "sha256": "f2e8f929a480a5cbdbb491e1c68ccbca3051ac93289f7e6eb0a7b222c65d9540"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/02_mixed_batches_batch_direct.json",
+      "sha256": "cb7f350fecf85d879b173958951fe3da78048fc7e1500a8fa6e92b0cb14f286c"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/02_mixed_batches_batch_update.json",
+      "sha256": "f0f0a424ce42b65cdc29808ec5ab868ac9bef42247af3cac7494126749670f23"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/02_mixed_batches_coverage.json",
+      "sha256": "232b47e48446ab77764be3236f2ad21e788247662571375b2360ca7a3d1dfb31"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/02_mixed_batches_old.json",
+      "sha256": "c5efb8526b8fad85acee34a30363b4796620d8395e7456825185f8b6f3b8e4ee"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/02_mixed_batches_remaining.json",
+      "sha256": "e5b74656d8b3aa00c0ac742deb0fca84ab2c02e4216f6039a70541161cc955cf"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/02_mixed_batches_scheduled.json",
+      "sha256": "1a7285b885736e95f2373beec2edfd4a9ba7e4bd590e5e604711d1bd189f64dd"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/02_narrow_batches_batch_direct.json",
+      "sha256": "885a0fe78b26dcc1d5303b65045a97b166f94d2f9dbb7b6c59f605d3641c71e8"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/02_narrow_batches_batch_update.json",
+      "sha256": "3e57d558003cd20f910d51407c289c9ee2db6e59f1a6da8a7ff781dd3dea228b"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/02_narrow_batches_coverage.json",
+      "sha256": "8eb79fea4fde95395579affeedd0d3293e1f12566a58e29ad50df2fcbc474864"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/02_narrow_batches_old.json",
+      "sha256": "fcc4611602760ba1c974c9028b081699e17b712f3ed78c598a24b5c6e78df6f5"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/02_narrow_batches_remaining.json",
+      "sha256": "e54175c9ae55d375d0b9ab001d29698a47a1592272d7c5bb3c27d5d6ca8871e5"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/02_narrow_batches_scheduled.json",
+      "sha256": "c807f8d6900a3070bbb04c8a5678e6f456356ccd84e552e3f3195e5a9dca14f4"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/02_strong_direct.json",
+      "sha256": "bb8076e9eaa5c0044bef4f6bf6db5a691a87f605d840f4f2929d0cf424dbe8ea"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/02_strong_old.json",
+      "sha256": "19237998894322cd79e4f3fb8997dbe405191c254ffba733d90d63b55d5b4f9f"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/02_strong_remaining.json",
+      "sha256": "8e805a2c424aa940dd283ae727d94a3ff3a897b914ec46b0fd5dd23f70657e08"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/02_strong_threshold.json",
+      "sha256": "9423a1867f233a59fe85126f9dcf9fcfdc4e1ca1c98023aafbbab14fb654d3a0"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/02_strong_update.json",
+      "sha256": "a8badb5aa6375072424c291783861aae2fbbac51e260919ec054ad8db898ecc7"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/02_wide_batches_batch_direct.json",
+      "sha256": "8fde58149654d5e1983259e03b30fd83930c07b5a333178b1d17d7c6b7b560e6"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/02_wide_batches_batch_update.json",
+      "sha256": "e884b7b004e4d4c9b8ca090f7d42134e57f08169f1f419ce562120b94bf22462"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/02_wide_batches_coverage.json",
+      "sha256": "c99d564285af1ce07b1ef75f0cfd2d90be36993789f0a5023bd94e44f9bc0066"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/02_wide_batches_old.json",
+      "sha256": "35d452041ac4316cdca6fe8c1ee5cf0c5afb4d209c0eb3d8f1e32d3236c0a4d4"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/02_wide_batches_remaining.json",
+      "sha256": "3fe29344f5070622d4ed1220f577087002ae4e2aa91cc932ef074b377182d724"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/02_wide_batches_scheduled.json",
+      "sha256": "c8dd78cce95e729e72144bc2715c7ff406caee1c53c56d3aad677fa50b5bd2cd"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/03_expansion_direct.json",
+      "sha256": "4b2656b9c5b6555abb240b38aa2ef039880701a4d0f67ec8f5d1d6c65a408d2d"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/03_expansion_old.json",
+      "sha256": "9f0ebfd97eddd0dd5d77872817889b318bdf7fcbc687e025db1a9cd008c57d05"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/03_expansion_remaining.json",
+      "sha256": "a38724947cbad63432ff4725e944b9bf986f3ed26c41227d78748e5f1073195e"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/03_expansion_threshold.json",
+      "sha256": "0d9d89bcddd40c7163e2f77422014ac6030340a401d4640592ebbe82aaf2ac2f"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/03_expansion_update.json",
+      "sha256": "fea7600e52a91535441583dfdf1877f472f5e63bf01f34031b7f8fb0e22d2524"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/03_local_direct.json",
+      "sha256": "99b7345642182a3453ce5e8a777e12335298baed326b3d25e973491fc9703342"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/03_local_old.json",
+      "sha256": "530db9f1ae8f56dbf4758dc371ec2a0f1b5d21c4d0eb532766e9b738ca151119"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/03_local_remaining.json",
+      "sha256": "8a638e11ba7cdb113a2bbe47d5bc97e94878fc5cf4b6f3a3a97995d74d240ceb"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/03_local_threshold.json",
+      "sha256": "e7e450bb00bc64fbb89a3c6a1a783a9025f687d143621225d34506a4d2388371"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/03_local_update.json",
+      "sha256": "6aadfa243df9767c9f342bc9fba66cde71b410d20374cdba755bf1fa23810b99"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/03_mixed_batches_batch_direct.json",
+      "sha256": "9974f8200142f26d7207cec6d5914d63c51023457952f4b503d63fa78e2c571a"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/03_mixed_batches_batch_update.json",
+      "sha256": "a1cd60304f9ef0f705bcc7c116e068e7f9ece0c530cbf0e69820b8158b8a5d5d"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/03_mixed_batches_coverage.json",
+      "sha256": "1e411c39f2a297e1a50af73250eeb49dac6b530e08363a10d247a6713d249cb4"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/03_mixed_batches_old.json",
+      "sha256": "a639fe3049a4ce1ba178043cd67d53329628dc04c6dafe67992062af20ad3440"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/03_mixed_batches_remaining.json",
+      "sha256": "f38d53057fa32d7e57d89ff10f8c58843cb975826aab35604795aeab8fa87854"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/03_mixed_batches_scheduled.json",
+      "sha256": "d220fdbb7aa47e5109d85cfaa013731a850ce8987d9503cd070eb11151244b77"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/03_narrow_batches_batch_direct.json",
+      "sha256": "a0be369f1e1bde62a5229411d4f1d72d3b2cf1abaec2f91727ae83d58517ae6c"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/03_narrow_batches_batch_update.json",
+      "sha256": "e79f23ae458d635f7cf8a22f0cdd0868b19e9f915794528ea9265d85541986f1"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/03_narrow_batches_coverage.json",
+      "sha256": "03c7f7f34843408bb8058d7f818054a87517ec4aa9d68e8871afd97f61d1d3f5"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/03_narrow_batches_old.json",
+      "sha256": "da4ffa977cf64060ab2a99f8b9d3d9458b40eccd2237fcca9dd4f9964ea8c31f"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/03_narrow_batches_remaining.json",
+      "sha256": "1615f4fcb9445553b3dc03139a4196af28902123bb12b281c5d99477ba603b63"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/03_narrow_batches_scheduled.json",
+      "sha256": "2d69141e4a7d832b8b96fd7d70f8688e6c345e85ab1486d2b9a2ae1c936fb1c2"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/03_strong_direct.json",
+      "sha256": "6f62753074393f7833c22886ae63c3064ece22b49b92ba4fc847b4bac5d7624c"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/03_strong_old.json",
+      "sha256": "337a4408c0a5c0d361ac7aa7300bd68b288209328ff7fa2c234730c17a75dbcf"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/03_strong_remaining.json",
+      "sha256": "2333674f8a25f2b2580719d8c214f413ee0f8b0a53f58de9157fa9d9c0432d8c"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/03_strong_threshold.json",
+      "sha256": "08f9f2433d2c2e2279757a0a975423334d7368d10ba4c5cb765a6183e8bb6b45"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/03_strong_update.json",
+      "sha256": "60fada6d0302a1504fbb7147c37904ac94bea1985c11dfee95ecac7e4ca104c3"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/03_wide_batches_batch_direct.json",
+      "sha256": "2fb96cfcc0ab2aeff1d6204d4295c5d8c6bf9e070236d2a616d2ba20719eba00"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/03_wide_batches_batch_update.json",
+      "sha256": "3584570d2303d6a37f0d282972709008a8da7abd79510dee4dba595bd41f49ea"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/03_wide_batches_coverage.json",
+      "sha256": "cd130b17f1753acc7ac025222110ca6aa85519a77c7dbcdf762e0406d1b4f571"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/03_wide_batches_old.json",
+      "sha256": "c538bd4eb5490dba33dbb7d2be9f4c83eda5dab029fc3807f4b5e9e98b96a8e9"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/03_wide_batches_remaining.json",
+      "sha256": "c536bf48b066031ce7a737a2aeef54430ab1b38a3ffe62a1b25d32b87b7fd29c"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/confirmation/03_wide_batches_scheduled.json",
+      "sha256": "944eaf56ca3030597c3cc396241c7f8e666a5e84b919344ca89930936be7180c"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/METHOD_ko.md",
+      "sha256": "30c625bc7433479dc5ec42a5fa323c0f7465a12a32358e21cf5d9894e716b5e2"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/NEXT_STEP_ko.md",
+      "sha256": "c7ebb1b91f7448db4ff8a917b9b65c9ec8078f090844e2f33e34f5f212f519e2"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/pilot/00_expansion_direct.json",
+      "sha256": "5a89342a2ee1a81be159fcec53f7836ff058a6a00d2b45be9a6295ea494cfa5c"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/pilot/00_expansion_old.json",
+      "sha256": "6082eca025cf8167be0f3f31ddd5615588f762fb35a0ae8f95e506e2f9afab13"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/pilot/00_expansion_remaining.json",
+      "sha256": "d37ded882493345c527257571adc405897f23121ecd0e0011c05593c3aad0f71"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/pilot/00_expansion_threshold.json",
+      "sha256": "468ef5dc516267ccd51bc16d2513673e00e8a7b6426b38569884e84bc12f51f6"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/pilot/00_expansion_update.json",
+      "sha256": "cd1260658bfb84cc7479f6512040baa633608803c631fb417707b865433ebc47"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/pilot/00_local_direct.json",
+      "sha256": "268a494907dac334cdd970d9f94e80006dd4871680750c0c1b5001989c3d1d8e"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/pilot/00_local_old.json",
+      "sha256": "78198a5e1870dc94b063bf497753caa65e2c4986cca3ba8345574becd25e8d86"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/pilot/00_local_remaining.json",
+      "sha256": "44bf654224b88a66f9ac115deb4c96624570e72ff8609277c090ed5c640c1839"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/pilot/00_local_threshold.json",
+      "sha256": "83e80804f09ef8496d5b7a5a92520c3a86a528df4dd991efa03b8a61cedc04a2"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/pilot/00_local_update.json",
+      "sha256": "d276f563b051298a682bba651f37a4d0e92815bb42481076418818583f72f56a"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/pilot/00_mixed_batches_batch_direct.json",
+      "sha256": "db0de6ed6c97ca3265554f3ad89b4bba3bc443bef5122829665b36b6ed2bf383"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/pilot/00_mixed_batches_batch_update.json",
+      "sha256": "034260ee53deea053855074cf0c8fc5aa8c6c559ea7b43a204a12f2858093ae5"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/pilot/00_mixed_batches_coverage.json",
+      "sha256": "a5d7df0c79a0c6d99f58291117ee71488868b202a5b39123214f3b7c2d90fd61"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/pilot/00_mixed_batches_old.json",
+      "sha256": "fbaa6e19928d0ce29f97e32f0107ead583ab7daad0d9d6e70746f9e092829f63"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/pilot/00_mixed_batches_remaining.json",
+      "sha256": "704e870029482f41b1d98a6d179706f1b5dd9577fe4832144e08aa829e354f42"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/pilot/00_mixed_batches_scheduled.json",
+      "sha256": "32adf63cf80cc6bbc63a1c3d651658c7607205475f2823152d3e6d443738f875"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/pilot/00_narrow_batches_batch_direct.json",
+      "sha256": "75e823ba8897866f844f636ddc4ea7b61a7da513357c83e389813417ac27924f"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/pilot/00_narrow_batches_batch_update.json",
+      "sha256": "aa92173126feb3f2b80b7c3bcb259caa7f2d9e0d45d4bafe2644fcf08b846f33"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/pilot/00_narrow_batches_coverage.json",
+      "sha256": "496014ccd29cb5df9269345bf8a9f5795540b0ecd64d9b90efbb1b98e4fc9e05"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/pilot/00_narrow_batches_old.json",
+      "sha256": "460fa79b8822111287a96bda0cabd86cff4116402f12b24d2424d3d3d8c2801e"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/pilot/00_narrow_batches_remaining.json",
+      "sha256": "08a4f6acfc4d8031b4b832b307704d407b50b442f3f0d8b44f90a3fb5d247fc6"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/pilot/00_narrow_batches_scheduled.json",
+      "sha256": "b75b9163fd1f638df767b01a7a3b21c5ef12e7183b2ab35a496486a6c59ef7da"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/pilot/00_strong_direct.json",
+      "sha256": "d31fbeba18255e963a15299693cd5065d57e57aa0c361060d8400d3edae54ef4"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/pilot/00_strong_old.json",
+      "sha256": "18265fee79e9c5b18d002c3593929a3d62a596fca2634139ee756231b4b54f45"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/pilot/00_strong_remaining.json",
+      "sha256": "fcbc8177b83d32271922c0391c8c0b44202209923b51ec09a0b433cfd225d114"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/pilot/00_strong_threshold.json",
+      "sha256": "0afdead1f44594b191e30d14bfbcd6040f450bf49cb0dc2da4f25b64c64211c0"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/pilot/00_strong_update.json",
+      "sha256": "bfed2cc266277d35293d3e3b3f42455de2c7aa1df67358e78c7f1d8530fb9e80"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/pilot/00_wide_batches_batch_direct.json",
+      "sha256": "735c1da35eea402c64bf0d576270a4adf69a138f1269e83740fa089923f10cf1"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/pilot/00_wide_batches_batch_update.json",
+      "sha256": "4806fb1258fad518cfe2a81900fca1be04fa7ab7c958cb9c978a5ca2a1e903a2"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/pilot/00_wide_batches_coverage.json",
+      "sha256": "d299e639beff4074a4a973ccb591826748ee454880b3d383022f63d41c245122"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/pilot/00_wide_batches_old.json",
+      "sha256": "9baa8a7b4c31a101d8d657a973cf018992e456fa985e631d338217dd8afb0951"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/pilot/00_wide_batches_remaining.json",
+      "sha256": "851dea9ddef960641bab2f4106ef3c7755beddc8fa399d2c135c6f4e476fec84"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/pilot/00_wide_batches_scheduled.json",
+      "sha256": "d09a58a46eeb37e748455696adda09a9b44878631d2127aa1c1866dcdf402faf"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/references/05f6a3449da2eece.json",
+      "sha256": "1ce9cafa6087d18ae55216430dfff4bce02cecf2063a75709b1946224a7bf338"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/references/05f6a3449da2eece.npz",
+      "sha256": "c626b7e2710ca1539c9297bafc9eda503c99090da8712fb1643671d18a3ebc88"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/references/061d085d4cd8febb.json",
+      "sha256": "bb4ab85d58eb9ad08fd0d93f1bcaeeda61926fffe42b929f055094884787ba7f"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/references/061d085d4cd8febb.npz",
+      "sha256": "0912d44eeca098dc675141080574c5529f00c42c11d78f9aaf5061b87070149e"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/references/1d5a0dcf0b3dc9fe.json",
+      "sha256": "2352b47be255e50af60040b129f409379e0390a03fb4ecde4c2f0afda23e129d"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/references/1d5a0dcf0b3dc9fe.npz",
+      "sha256": "9b173aeefdd49d1eba2dbe597bbc77a986ca73dca182c509ae80d7fdd8735335"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/references/6c95e2cb479a2fa8.json",
+      "sha256": "363c5757c58cb16de3085c8798761a7747c2b5a31d734be269897fd889b153ff"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/references/6c95e2cb479a2fa8.npz",
+      "sha256": "6a29884f45b61d2773d255cc32fece0bfd2f96cf23d5cabfc434072fff7a17c1"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/references/7b532af9c0bea3a1.json",
+      "sha256": "d35df01821d1a6b75de196078c0e805df12aec2b9a45ad3d8bc43755ee7fe76e"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/references/7b532af9c0bea3a1.npz",
+      "sha256": "0323d5bcc3a8c00fc2a5598956511c63111fa0b321ecbb8164eedc48048fc1dd"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/references/8295057b8529f4cc.json",
+      "sha256": "d42fd5a1cbe11b4fc26c7c87e2cf72fcc697d2a2434e6ca998480702485b3d2f"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/references/8295057b8529f4cc.npz",
+      "sha256": "12ade5dfc85d6285e7c15d39b53eb1042e6736042c9dd37398165ab34426764b"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/references/86d5247cdb3f8c97.json",
+      "sha256": "cb60b10071526f20eaadc3071a3979c8104b130fa8e9d5bc31ce78d5e0cc3af1"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/references/86d5247cdb3f8c97.npz",
+      "sha256": "d7344a1f422c49f602515111edd99b38eea851d9b3efa37b33009e2c444a27ec"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/references/b1e55d2e428f8459.json",
+      "sha256": "e7b8a7f3eb9cb562d3af9d4fa2c4f89b2e7258677d0924fc1d745ea822a76bab"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/references/b1e55d2e428f8459.npz",
+      "sha256": "87e7a898757155d8de1d9729e93aa9b333481d1e5e4d923eeab21f9570e5a2af"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/references/b297dd588ebdf826.json",
+      "sha256": "a40984f8f5e8b9cec2b9579465863cc733771db66eef7c397cdf2a11fb197d46"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/references/b297dd588ebdf826.npz",
+      "sha256": "7d6ac42e731b4362a94b5bd394c51936d40c8d5033b411f85fe464399700ced4"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/references/ce90b1ae7a6482e9.json",
+      "sha256": "07fab204ffc41b90b058c025ba7b0bc006d951b2fe49fa4850faf2e7777f286a"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/references/ce90b1ae7a6482e9.npz",
+      "sha256": "1c475192aa8bf82db8730e1172cd63eeaf4a6345d15613c95a8731db54175e0a"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/references.json",
+      "sha256": "8125bd7f2095ad980ccabab92f56dcf10b2dcc37c9303aede0393fe672e9e9b4"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/REPORT_ko.md",
+      "sha256": "37a53efc8babc8a0a22ee81f00032e5a5d5e7fe0f0ad14dd8faa0d7edb72c3e4"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/structured_policy.png",
+      "sha256": "b58261c9999989cefecbce2c11a334cc26a57565a89200ac4697e075e71d479c"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/structured_policy.svg",
+      "sha256": "8ae8784c5ea67f55332bcd2df88e0678daffa3ebed6f13759c2a3f7d1b598c65"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/summary.json",
+      "sha256": "5315bd8b73fb68ac0b4d16d7af3de188f8d38aed6ab69d87d48439a29a135faa"
+    },
+    {
+      "path": "reports/acfo_elliptic_structured_policy_20260905_v1/unit_tests.xml",
+      "sha256": "38e4fab691ba203777b258675f3ff0fdcbe4f2f42e38b101aab969aa3963f388"
+    },
+    {
+      "path": "scripts/acfo_cylinder_coupling.py",
+      "sha256": "6cc818ae13d3b5bf96f5541e4b8dd62e327fcaf66193dea6c9e9e5ccd0ea16a5"
+    },
+    {
+      "path": "scripts/acfo_elliptic_disk.py",
+      "sha256": "3a337a02e6c415b9110c7a40b80c48222a35099c2b630a6843da7d809133f7d5"
+    },
+    {
+      "path": "scripts/acfo_elliptic_new_coupling.py",
+      "sha256": "566f378defac2d504819620cac6339f7c766d4719d7fcd9014fc4c7a56fa3135"
+    },
+    {
+      "path": "scripts/acfo_elliptic_observation_refresh.py",
+      "sha256": "7926d8413e41da49ae85ded2d37e9b473025e1f31ea0c14f9eb7a05f77c1dd8e"
+    },
+    {
+      "path": "scripts/acfo_elliptic_refresh.py",
+      "sha256": "a68babc9a39c9aa670a241a1abc12f5e410b789ef3c73aadccd0e7174ed54d0d"
+    },
+    {
+      "path": "scripts/acfo_elliptic_structured_policy.py",
+      "sha256": "925ca0bc9a4a0458335638d348fdaeac452c1ef70cad1d10febfd4be7553ee9f"
+    },
+    {
+      "path": "scripts/acfo_elliptic_update_policy.py",
+      "sha256": "f37cc8aa820d70e2ace368e9bc6462a0e03b50a4e48bf75cfa538d33e06ec983"
+    },
+    {
+      "path": "scripts/benchmark_acfo_elliptic_structured_policy.py",
+      "sha256": "71c8c7e671373f27a3a796df10cb89cb3e0cef6f87be9584f891ff15687b4925"
+    },
+    {
+      "path": "scripts/benchmark_acfo_elliptic_update_policy.py",
+      "sha256": "b753380677afd1b10274e86b946e484756163841e5d1004f2448fe2a9e2a2757"
+    },
+    {
+      "path": "scripts/report_acfo_elliptic_structured_policy.py",
+      "sha256": "2871edf35017ca600b710211501c17b3c4d677255e888ddda83f5dc647d2ded1"
+    },
+    {
+      "path": "tests/test_acfo_elliptic_structured_policy.py",
+      "sha256": "ea44ba2143b6eb4dd59e536093182a9abdd7ab56fe88cd1bcce4351721fe7d09"
+    },
+    {
+      "path": "tests/test_acfo_elliptic_update_policy.py",
+      "sha256": "9de87d28129881432a19bedb20bb03a10375152975a1902809152ef915dc4dd4"
+    },
+    {
+      "path": "validation_contracts/acfo_elliptic_structured_policy_20260905_confirmation.json",
+      "sha256": "1422c39374c8de73ae99409d670efbec90f4d8c0570801294d5baa82b520fe67"
+    },
+    {
+      "path": "validation_contracts/acfo_elliptic_structured_policy_20260905_pilot.json",
+      "sha256": "20f241f06a9a9a364de25ce21c7d0009d92a3ff650511fec1326dd3101cad6a1"
+    }
+  ]
+}

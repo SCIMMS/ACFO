@@ -1,0 +1,54 @@
+[
+  {
+    "method": "production_backward",
+    "seconds_median": 0.2030117999529466,
+    "seconds_min": 0.20139260007999837,
+    "seconds_max": 0.20557239989284426,
+    "torch_peak_bytes_median": 92604928.0,
+    "paired_speedup_production_median": 1.0,
+    "paired_speedup_production_min": 1.0,
+    "paired_speedup_production_max": 1.0,
+    "paired_speedup_coordinate_median": 0.7249692663469969,
+    "paired_speedup_coordinate_min": 0.7153635412995867,
+    "paired_speedup_coordinate_max": 0.7274760830528912
+  },
+  {
+    "method": "coordinate_fields",
+    "seconds_median": 0.14705899998079985,
+    "seconds_min": 0.14650829986203462,
+    "seconds_max": 0.14781370013952255,
+    "torch_peak_bytes_median": 134349312.0,
+    "paired_speedup_production_median": 1.3793688179898143,
+    "paired_speedup_production_min": 1.3746156379512133,
+    "paired_speedup_production_max": 1.3978906419850805,
+    "paired_speedup_coordinate_median": 1.0,
+    "paired_speedup_coordinate_min": 1.0,
+    "paired_speedup_coordinate_max": 1.0
+  },
+  {
+    "method": "tangent_full",
+    "seconds_median": 0.1420594999799505,
+    "seconds_min": 0.14174960006494075,
+    "seconds_max": 0.14413899998180568,
+    "torch_peak_bytes_median": 126202368.0,
+    "paired_speedup_production_median": 1.4312257961539638,
+    "paired_speedup_production_min": 1.3972110261998465,
+    "paired_speedup_production_max": 1.4420858872539797,
+    "paired_speedup_coordinate_median": 1.0359239101166615,
+    "paired_speedup_coordinate_min": 1.016437604538175,
+    "paired_speedup_coordinate_max": 1.0405055639389424
+  },
+  {
+    "method": "tangent_stream",
+    "seconds_median": 0.19409560004714876,
+    "seconds_min": 0.18738209991715848,
+    "seconds_max": 0.19695249991491437,
+    "torch_peak_bytes_median": 33660928.0,
+    "paired_speedup_production_median": 1.045074373701936,
+    "paired_speedup_production_min": 1.0307652862525225,
+    "paired_speedup_production_max": 1.0747696827446909,
+    "paired_speedup_coordinate_median": 0.7566582949651944,
+    "paired_speedup_coordinate_min": 0.747599547715399,
+    "paired_speedup_coordinate_max": 0.7818692389871063
+  }
+]

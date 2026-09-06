@@ -1,0 +1,90 @@
+{
+  "event": {
+    "theta": [
+      0.12,
+      -0.08,
+      0.6804344992162884
+    ],
+    "tolerance": 1e-06,
+    "observation": "wide"
+  },
+  "radial_change": 0.0,
+  "metadata": [
+    {
+      "relative_bound": 1.9322773187507223e-13,
+      "absolute_bound": 6.6345546405219645e-15,
+      "field_reused": false,
+      "radius": 10,
+      "iterations": 216,
+      "solve_calls": 99698,
+      "direct_s": 3.611326599959284,
+      "attempts": [
+        {
+          "radius": 2,
+          "modes": 46,
+          "bound": 0.00038441007150188505
+        },
+        {
+          "radius": 4,
+          "modes": 202,
+          "bound": 2.569177716502817e-06
+        },
+        {
+          "radius": 6,
+          "modes": 474,
+          "bound": 1.2709816522930833e-08
+        },
+        {
+          "radius": 8,
+          "modes": 858,
+          "bound": 5.289311236662651e-11
+        },
+        {
+          "radius": 10,
+          "modes": 1354,
+          "bound": 1.9322773187507223e-13
+        }
+      ],
+      "exterior_modes_checked": 290
+    },
+    {
+      "relative_bound": 1.9322773187507223e-13,
+      "absolute_bound": 6.6345546405219645e-15,
+      "field_reused": false,
+      "radius": 10,
+      "iterations": 216,
+      "solve_calls": 99698,
+      "direct_s": 4.808666000026278,
+      "attempts": [
+        {
+          "radius": 2,
+          "modes": 46,
+          "bound": 0.00038441007150188505
+        },
+        {
+          "radius": 4,
+          "modes": 202,
+          "bound": 2.569177716502817e-06
+        },
+        {
+          "radius": 6,
+          "modes": 474,
+          "bound": 1.2709816522930833e-08
+        },
+        {
+          "radius": 8,
+          "modes": 858,
+          "bound": 5.289311236662651e-11
+        },
+        {
+          "radius": 10,
+          "modes": 1354,
+          "bound": 1.9322773187507223e-13
+        }
+      ],
+      "exterior_modes_checked": 290
+    }
+  ],
+  "passed": true,
+  "seconds": 9.299972499953583
+}

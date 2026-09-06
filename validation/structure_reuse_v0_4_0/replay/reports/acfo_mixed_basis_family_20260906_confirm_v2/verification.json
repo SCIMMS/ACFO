@@ -1,0 +1,13 @@
+{
+  "pilot_workers": 16,
+  "confirmation_workers": 10,
+  "arms_per_worker": 9,
+  "all_operator_accuracy_checks_pass": true,
+  "max_catalogue_reference_error": 7.31495241536018e-13,
+  "max_quadrature_error": 4.8913987785519425e-15,
+  "max_error_at_1e_8": 2.1982151146363955e-09,
+  "unit_tests_passed": 26,
+  "fresh_process_samples_per_profile": 5,
+  "workload_totals_are_phase_sum_estimates": true,
+  "peak_memory_measured": false
+}

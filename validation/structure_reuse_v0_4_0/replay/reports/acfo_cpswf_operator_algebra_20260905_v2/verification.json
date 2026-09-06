@@ -1,0 +1,14 @@
+{
+  "maximum_base_audit": 9.17922164409973e-13,
+  "maxima": {
+    "reference_quadrature_error": 2.1346413411926767e-14,
+    "middle_quadrature_error": 4.596731160766727e-13,
+    "output_norm_quadrature_error": 8.604511299748657e-16,
+    "full_workspace_composite_error": 4.763563707212082e-14,
+    "intermediate_workspace_floor": 3.3918107131559603e-13
+  },
+  "case_count": 6,
+  "row_count": 432,
+  "external_input_count": 72,
+  "all_reference_checks_pass": true
+}

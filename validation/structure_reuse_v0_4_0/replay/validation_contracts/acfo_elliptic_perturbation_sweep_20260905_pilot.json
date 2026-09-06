@@ -1,0 +1,446 @@
+{
+  "nr": 18,
+  "per_seed": 2,
+  "quadrature": 145,
+  "reference_nr": 26,
+  "reference_quadrature": 211,
+  "reference_tolerance": 1e-12,
+  "radial_gate": 2e-10,
+  "pairs": 4,
+  "arms": [
+    "total_update",
+    "cap_update",
+    "cap_policy",
+    "direct"
+  ],
+  "cases": {
+    "e6_00": {
+      "event": {
+        "theta": [
+          0.12,
+          -0.08,
+          0.0
+        ],
+        "tolerance": 1e-06,
+        "observation": "wide"
+      },
+      "tag": "log",
+      "pilot": false
+    },
+    "e6_01": {
+      "event": {
+        "theta": [
+          0.12,
+          -0.08,
+          1e-08
+        ],
+        "tolerance": 1e-06,
+        "observation": "wide"
+      },
+      "tag": "log",
+      "pilot": false
+    },
+    "e6_02": {
+      "event": {
+        "theta": [
+          0.12,
+          -0.08,
+          1e-06
+        ],
+        "tolerance": 1e-06,
+        "observation": "wide"
+      },
+      "tag": "log",
+      "pilot": false
+    },
+    "e6_03": {
+      "event": {
+        "theta": [
+          0.12,
+          -0.08,
+          1.6911360637550384e-06
+        ],
+        "tolerance": 1e-06,
+        "observation": "wide"
+      },
+      "tag": "reuse_below",
+      "pilot": true
+    },
+    "e6_04": {
+      "event": {
+        "theta": [
+          0.12,
+          -0.08,
+          1.8691503862555692e-06
+        ],
+        "tolerance": 1e-06,
+        "observation": "wide"
+      },
+      "tag": "reuse_above",
+      "pilot": false
+    },
+    "e6_05": {
+      "event": {
+        "theta": [
+          0.12,
+          -0.08,
+          1e-05
+        ],
+        "tolerance": 1e-06,
+        "observation": "wide"
+      },
+      "tag": "log",
+      "pilot": true
+    },
+    "e6_06": {
+      "event": {
+        "theta": [
+          0.12,
+          -0.08,
+          0.0001
+        ],
+        "tolerance": 1e-06,
+        "observation": "wide"
+      },
+      "tag": "log",
+      "pilot": false
+    },
+    "e6_07": {
+      "event": {
+        "theta": [
+          0.12,
+          -0.08,
+          0.001
+        ],
+        "tolerance": 1e-06,
+        "observation": "wide"
+      },
+      "tag": "log",
+      "pilot": false
+    },
+    "e6_08": {
+      "event": {
+        "theta": [
+          0.12,
+          -0.08,
+          0.002146865661571837
+        ],
+        "tolerance": 1e-06,
+        "observation": "wide"
+      },
+      "tag": "one_layer_below",
+      "pilot": false
+    },
+    "e6_09": {
+      "event": {
+        "theta": [
+          0.12,
+          -0.08,
+          0.002372851520684662
+        ],
+        "tolerance": 1e-06,
+        "observation": "wide"
+      },
+      "tag": "one_layer_above",
+      "pilot": true
+    },
+    "e6_10": {
+      "event": {
+        "theta": [
+          0.12,
+          -0.08,
+          0.01
+        ],
+        "tolerance": 1e-06,
+        "observation": "wide"
+      },
+      "tag": "log",
+      "pilot": false
+    },
+    "e6_11": {
+      "event": {
+        "theta": [
+          0.12,
+          -0.08,
+          0.12
+        ],
+        "tolerance": 1e-06,
+        "observation": "wide"
+      },
+      "tag": "log",
+      "pilot": false
+    },
+    "e6_12": {
+      "event": {
+        "theta": [
+          0.12,
+          -0.08,
+          0.28
+        ],
+        "tolerance": 1e-06,
+        "observation": "wide"
+      },
+      "tag": "log",
+      "pilot": true
+    },
+    "e6_13": {
+      "event": {
+        "theta": [
+          0.12,
+          -0.08,
+          0.6804344992162884
+        ],
+        "tolerance": 1e-06,
+        "observation": "wide"
+      },
+      "tag": "preparation_below",
+      "pilot": false
+    },
+    "e6_14": {
+      "event": {
+        "theta": [
+          0.12,
+          -0.08,
+          0.7520591833443188
+        ],
+        "tolerance": 1e-06,
+        "observation": "wide"
+      },
+      "tag": "preparation_above",
+      "pilot": true
+    },
+    "e6_15": {
+      "event": {
+        "theta": [
+          0.12,
+          -0.08,
+          0.8
+        ],
+        "tolerance": 1e-06,
+        "observation": "wide"
+      },
+      "tag": "log",
+      "pilot": false
+    },
+    "e8_00": {
+      "event": {
+        "theta": [
+          0.12,
+          -0.08,
+          0.0
+        ],
+        "tolerance": 1e-08,
+        "observation": "wide"
+      },
+      "tag": "log",
+      "pilot": false
+    },
+    "e8_01": {
+      "event": {
+        "theta": [
+          0.12,
+          -0.08,
+          1e-08
+        ],
+        "tolerance": 1e-08,
+        "observation": "wide"
+      },
+      "tag": "log",
+      "pilot": false
+    },
+    "e8_02": {
+      "event": {
+        "theta": [
+          0.12,
+          -0.08,
+          2.0571818595271907e-08
+        ],
+        "tolerance": 1e-08,
+        "observation": "wide"
+      },
+      "tag": "reuse_below",
+      "pilot": true
+    },
+    "e8_03": {
+      "event": {
+        "theta": [
+          0.12,
+          -0.08,
+          2.2737273184247902e-08
+        ],
+        "tolerance": 1e-08,
+        "observation": "wide"
+      },
+      "tag": "reuse_above",
+      "pilot": false
+    },
+    "e8_04": {
+      "event": {
+        "theta": [
+          0.12,
+          -0.08,
+          1e-06
+        ],
+        "tolerance": 1e-08,
+        "observation": "wide"
+      },
+      "tag": "log",
+      "pilot": false
+    },
+    "e8_05": {
+      "event": {
+        "theta": [
+          0.12,
+          -0.08,
+          1e-05
+        ],
+        "tolerance": 1e-08,
+        "observation": "wide"
+      },
+      "tag": "log",
+      "pilot": true
+    },
+    "e8_06": {
+      "event": {
+        "theta": [
+          0.12,
+          -0.08,
+          0.0001
+        ],
+        "tolerance": 1e-08,
+        "observation": "wide"
+      },
+      "tag": "log",
+      "pilot": false
+    },
+    "e8_07": {
+      "event": {
+        "theta": [
+          0.12,
+          -0.08,
+          0.0003096679517022948
+        ],
+        "tolerance": 1e-08,
+        "observation": "wide"
+      },
+      "tag": "one_layer_below",
+      "pilot": false
+    },
+    "e8_08": {
+      "event": {
+        "theta": [
+          0.12,
+          -0.08,
+          0.00034226457819727326
+        ],
+        "tolerance": 1e-08,
+        "observation": "wide"
+      },
+      "tag": "one_layer_above",
+      "pilot": true
+    },
+    "e8_09": {
+      "event": {
+        "theta": [
+          0.12,
+          -0.08,
+          0.001
+        ],
+        "tolerance": 1e-08,
+        "observation": "wide"
+      },
+      "tag": "log",
+      "pilot": false
+    },
+    "e8_10": {
+      "event": {
+        "theta": [
+          0.12,
+          -0.08,
+          0.01
+        ],
+        "tolerance": 1e-08,
+        "observation": "wide"
+      },
+      "tag": "log",
+      "pilot": false
+    },
+    "e8_11": {
+      "event": {
+        "theta": [
+          0.12,
+          -0.08,
+          0.12
+        ],
+        "tolerance": 1e-08,
+        "observation": "wide"
+      },
+      "tag": "log",
+      "pilot": false
+    },
+    "e8_12": {
+      "event": {
+        "theta": [
+          0.12,
+          -0.08,
+          0.28
+        ],
+        "tolerance": 1e-08,
+        "observation": "wide"
+      },
+      "tag": "log",
+      "pilot": true
+    },
+    "e8_13": {
+      "event": {
+        "theta": [
+          0.12,
+          -0.08,
+          0.35420416890662065
+        ],
+        "tolerance": 1e-08,
+        "observation": "wide"
+      },
+      "tag": "preparation_below",
+      "pilot": false
+    },
+    "e8_14": {
+      "event": {
+        "theta": [
+          0.12,
+          -0.08,
+          0.3914888182652123
+        ],
+        "tolerance": 1e-08,
+        "observation": "wide"
+      },
+      "tag": "preparation_above",
+      "pilot": true
+    },
+    "e8_15": {
+      "event": {
+        "theta": [
+          0.12,
+          -0.08,
+          0.8
+        ],
+        "tolerance": 1e-08,
+        "observation": "wide"
+      },
+      "tag": "log",
+      "pilot": false
+    }
+  },
+  "model": "reports/acfo_elliptic_update_policy_20260905_v1/calibration.json",
+  "information": "Only current request; each fresh worker prepares gamma=0 at the target tolerance, then one target gamma. No cross-point cache.",
+  "timing": "Warm setup and target refresh recorded separately and added. Offline state fingerprint and reference audit excluded and separately timed.",
+  "predictions": "Reuse, chosen p/q, preparation guard predicted using gamma-zero response only. Positive/negative runtimes are measured separately.",
+  "acceptance": {
+    "accuracy": "Every target and base pass 1e-6 or 1e-8; reference gate and frozen predictions checked.",
+    "state": "Identical warm numerical fingerprint within each arm/tolerance across points and pairs.",
+    "positive": "At least two adjacent fixed-log-grid nonzero points need correction by independent omission error and beat total_update and direct in all four refresh pairs using cap_update.",
+    "boundaries": "Prospective +/-5% reuse, q<=1 selector, and preparation-guard boundary probes match their forecast and all accuracy gates.",
+    "cost": "Report every disagreement between cost policy and fastest measured baseline; no universal runtime-optimality requirement."
+  },
+  "scope": "Existing wide observation and fixed elliptic family; no new geometry or physics; no new cost fit."
+}

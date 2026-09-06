@@ -7,6 +7,26 @@ ACFO applies analytic, symmetry and dimensional contractions first, selects the
 lowest eligible FFT/NUFFT representation, and uses SO(2) geometry factorization
 when the workload contains repeated complete rotational orbits.
 
+## Version 0.4.0 — structure guided reuse and composition
+
+The [validation supplement](validation/structure_reuse_v0_4_0/README.md) connects
+rotational coefficient structure to reusable factors, finite intermediate spaces
+and correction supports. It includes two-host slab, radial 4f, WAXS and weighted
+ODT replication, together with the frozen local elliptic sweep, matrix-free CPSWF
+preparation comparison, basis closure and affine-family controls.
+
+The archive retains all compared workloads and negative regimes. Its public
+verifier re-evaluates 40 external workers, checks 512 elliptic confirmation rows,
+48 preparation-worker records and 432 basis-closure comparison rows. Numerical
+arrays, per-process timings, fixed contracts and figure source data are included.
+
+```bash
+python validation/structure_reuse_v0_4_0/verify.py
+```
+
+See the [release notes](docs/releases/v0.4.0.md) for replay instructions, comparison
+scope and the distinction between external replication and historical local data.
+
 ## Version 0.3.0 — geometry-prepared operator validation
 
 Archived release: [Zenodo DOI 10.5281/zenodo.22298532](https://doi.org/10.5281/zenodo.22298532).

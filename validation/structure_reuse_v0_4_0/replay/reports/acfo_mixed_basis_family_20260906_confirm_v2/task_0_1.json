@@ -1,0 +1,10 @@
+{
+  "case": {
+    "c": 64.0,
+    "nin": 28,
+    "m": 0,
+    "profile": "edge_erf",
+    "tolerance": 1e-08
+  },
+  "seed": 20260907
+}

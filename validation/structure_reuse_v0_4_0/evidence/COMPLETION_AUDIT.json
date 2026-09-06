@@ -1,0 +1,14 @@
+{
+  "manifest_files": 42,
+  "report_links": 8,
+  "tests": {
+    "server36": 18,
+    "server59": 18
+  },
+  "confirm_workers": {
+    "server36": 20,
+    "server59": 20
+  },
+  "frozen_request_files": 288,
+  "external_complete": true
+}

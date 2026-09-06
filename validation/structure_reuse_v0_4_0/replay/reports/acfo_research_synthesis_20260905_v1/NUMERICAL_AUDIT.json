@@ -1,0 +1,18 @@
+{
+  "checks": {
+    "A_all_spectral_and_adjoint_pass": true,
+    "A_timed_functions_match_frozen_source": true,
+    "B_all_references_below_1e10": true,
+    "D_all_prespecified_success_gates": true,
+    "Heun_known_case_commutator_below_1e10": true,
+    "mathematical_reproduction_is_not_NCS_success": true
+  },
+  "all_pass": true,
+  "open_limits": [
+    "B timing not a production cost comparison",
+    "D complex fields, one noise draw, held-out entries not whole unseen geometries",
+    "C no stable fast large-bandwidth connection",
+    "A no fast-Hankel/FMM-accelerated randomized baseline",
+    "no new NCS-level contribution established"
+  ]
+}

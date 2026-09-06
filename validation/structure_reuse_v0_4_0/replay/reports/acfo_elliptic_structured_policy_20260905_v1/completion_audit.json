@@ -1,0 +1,44 @@
+{
+  "previous_manifests": [
+    {
+      "report": "acfo_cylinder_coupling_20260905_v1",
+      "files": 51,
+      "mismatches": []
+    },
+    {
+      "report": "acfo_elliptic_ablation_20260905_v1",
+      "files": 216,
+      "mismatches": []
+    },
+    {
+      "report": "acfo_elliptic_refresh_20260905_v1",
+      "files": 66,
+      "mismatches": []
+    },
+    {
+      "report": "acfo_elliptic_observation_refresh_20260905_v1",
+      "files": 97,
+      "mismatches": []
+    },
+    {
+      "report": "acfo_elliptic_new_coupling_20260905_v1",
+      "files": 60,
+      "mismatches": []
+    },
+    {
+      "report": "acfo_elliptic_update_policy_20260905_v1",
+      "files": 183,
+      "mismatches": []
+    },
+    {
+      "report": "acfo_elliptic_counterfactual_20260905_v1",
+      "files": 215,
+      "mismatches": []
+    }
+  ],
+  "frozen_inputs": 58,
+  "unique_workers": 132,
+  "responses": 1152,
+  "pairwise_order_balanced": true,
+  "all_passed": true
+}

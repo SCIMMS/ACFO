@@ -1,0 +1,858 @@
+{
+  "case": {
+    "q": 1024,
+    "c": 64.0,
+    "m": 0
+  },
+  "seed": 20261106,
+  "common_kernel_seconds": 0.7140810999553651,
+  "common_norm_check_seconds": 0.3214049000525847,
+  "kernel_norm": 1.0000000000000013,
+  "kernel_bytes": 16777216,
+  "methods": {
+    "jacobi_value": {
+      "validation": [
+        {
+          "phase": [
+            0.0,
+            0.0
+          ],
+          "physical_error": 1.0136506768568354e-14,
+          "quadrature_error": 1.6976069066675265e-15,
+          "operator_relative_bound": 3.6472772558391997e-11,
+          "derivative_absolute_bound_per_unit_input": 3.6472772557061806e-11
+        },
+        {
+          "phase": [
+            4.0,
+            -2.0
+          ],
+          "physical_error": 9.6090434201852e-15,
+          "quadrature_error": 1.6907857056407724e-15,
+          "operator_relative_bound": 3.647277255839198e-11,
+          "derivative_absolute_bound_per_unit_input": 3.6472772557061806e-11
+        },
+        {
+          "phase": [
+            10.0,
+            6.0
+          ],
+          "physical_error": 9.100218291248073e-15,
+          "quadrature_error": 1.5410242503133732e-15,
+          "operator_relative_bound": 3.647277255839204e-11,
+          "derivative_absolute_bound_per_unit_input": 3.6472772557061806e-11
+        }
+      ],
+      "update_seconds": [
+        9.570003021508455e-05,
+        0.00010800000745803118,
+        0.00012199999764561653
+      ],
+      "required_update_check_seconds": [
+        0.0012123000342398882,
+        0.0016544000245630741,
+        0.0012310000602155924
+      ],
+      "timings": {
+        "1": {
+          "apply_seconds": [
+            0.00017035000200849026,
+            0.0001684125018073246,
+            0.00016823750047478825
+          ],
+          "totals": {
+            "1": {
+              "warm_seconds": 0.00493040015862789,
+              "cold_seconds": 1.6208947001578053
+            },
+            "64": {
+              "warm_seconds": 0.036871400428935885,
+              "cold_seconds": 1.6528357004281133
+            }
+          }
+        },
+        "16": {
+          "apply_seconds": [
+            0.0012897749984404072,
+            0.001119499997003004,
+            0.0012707624991890043
+          ],
+          "totals": {
+            "1": {
+              "warm_seconds": 0.008103437648969702,
+              "cold_seconds": 1.6240677376481472
+            },
+            "64": {
+              "warm_seconds": 0.23994579981081188,
+              "cold_seconds": 1.8559100998099893
+            }
+          }
+        }
+      },
+      "runtime_state_and_one_plan_bytes": 1642496
+    },
+    "jacobi_core": {
+      "validation": [
+        {
+          "phase": [
+            0.0,
+            0.0
+          ],
+          "physical_error": 1.0108327111586862e-14,
+          "quadrature_error": 1.6976069066675265e-15,
+          "operator_relative_bound": 3.6472772558391997e-11,
+          "derivative_absolute_bound_per_unit_input": 3.6472772557061806e-11
+        },
+        {
+          "phase": [
+            4.0,
+            -2.0
+          ],
+          "physical_error": 9.557836504566525e-15,
+          "quadrature_error": 1.6907857056407724e-15,
+          "operator_relative_bound": 3.647277255839198e-11,
+          "derivative_absolute_bound_per_unit_input": 3.6472772557061806e-11
+        },
+        {
+          "phase": [
+            10.0,
+            6.0
+          ],
+          "physical_error": 9.160564077210815e-15,
+          "quadrature_error": 1.5410242503133732e-15,
+          "operator_relative_bound": 3.647277255839204e-11,
+          "derivative_absolute_bound_per_unit_input": 3.6472772557061806e-11
+        }
+      ],
+      "update_seconds": [
+        0.0013599999947473407,
+        0.0013998000649735332,
+        0.0013640000252053142
+      ],
+      "required_update_check_seconds": [
+        0.00036669999826699495,
+        0.00034369993954896927,
+        0.00031889998354017735
+      ],
+      "timings": {
+        "1": {
+          "apply_seconds": [
+            0.0002523875009501353,
+            9.31999966269359e-05,
+            9.244999091606587e-05
+          ],
+          "totals": {
+            "1": {
+              "warm_seconds": 0.005591137494775467,
+              "cold_seconds": 1.621555437493953
+            },
+            "64": {
+              "warm_seconds": 0.0331874992698431,
+              "cold_seconds": 1.6491517992690206
+            }
+          }
+        },
+        "16": {
+          "apply_seconds": [
+            0.0005160375003470108,
+            0.000524650007719174,
+            0.0005936999950790778
+          ],
+          "totals": {
+            "1": {
+              "warm_seconds": 0.006787487509427592,
+              "cold_seconds": 1.622751787508605
+            },
+            "64": {
+              "warm_seconds": 0.10975390020757914,
+              "cold_seconds": 1.7257182002067566
+            }
+          }
+        }
+      },
+      "runtime_state_and_one_plan_bytes": 1683456
+    },
+    "cpswf_core": {
+      "validation": [
+        {
+          "phase": [
+            0.0,
+            0.0
+          ],
+          "physical_error": 1.2309758702176123e-14,
+          "quadrature_error": 1.6976069066675265e-15,
+          "operator_relative_bound": 8.4053465981613e-11,
+          "derivative_absolute_bound_per_unit_input": 8.405346597454871e-11
+        },
+        {
+          "phase": [
+            4.0,
+            -2.0
+          ],
+          "physical_error": 1.7096103161226005e-14,
+          "quadrature_error": 1.6907857056407724e-15,
+          "operator_relative_bound": 8.405346598161354e-11,
+          "derivative_absolute_bound_per_unit_input": 8.405346597454871e-11
+        },
+        {
+          "phase": [
+            10.0,
+            6.0
+          ],
+          "physical_error": 1.5584730797594065e-12,
+          "quadrature_error": 1.5410242503133732e-15,
+          "operator_relative_bound": 8.405346598161315e-11,
+          "derivative_absolute_bound_per_unit_input": 8.405346597454871e-11
+        }
+      ],
+      "update_seconds": [
+        0.000937200034968555,
+        0.000833400059491396,
+        0.0007772999815642834
+      ],
+      "required_update_check_seconds": [
+        0.00023989996407181025,
+        0.00019159994553774595,
+        0.00018590001855045557
+      ],
+      "timings": {
+        "1": {
+          "apply_seconds": [
+            6.804999429732561e-05,
+            6.665001274086535e-05,
+            8.680000610183924e-05
+          ],
+          "totals": {
+            "1": {
+              "warm_seconds": 0.0033868000173242763,
+              "cold_seconds": 1.6451022999390261
+            },
+            "64": {
+              "warm_seconds": 0.01734130084514618,
+              "cold_seconds": 1.659056800766848
+            }
+          }
+        },
+        "16": {
+          "apply_seconds": [
+            0.00034726249577943236,
+            0.00034927501110360026,
+            0.00046376249520108104
+          ],
+          "totals": {
+            "1": {
+              "warm_seconds": 0.00432560000626836,
+              "cold_seconds": 1.6460410999279702
+            },
+            "64": {
+              "warm_seconds": 0.07742450013756752,
+              "cold_seconds": 1.7191400000592694
+            }
+          }
+        }
+      },
+      "runtime_state_and_one_plan_bytes": 1061936
+    },
+    "svd_core": {
+      "validation": [
+        {
+          "phase": [
+            0.0,
+            0.0
+          ],
+          "physical_error": 9.681962669974859e-15,
+          "quadrature_error": 1.6976069066675265e-15,
+          "operator_relative_bound": 8.405346398492278e-11,
+          "derivative_absolute_bound_per_unit_input": 8.405346397785807e-11
+        },
+        {
+          "phase": [
+            4.0,
+            -2.0
+          ],
+          "physical_error": 9.399010001734208e-15,
+          "quadrature_error": 1.6907857056407724e-15,
+          "operator_relative_bound": 8.405346398492292e-11,
+          "derivative_absolute_bound_per_unit_input": 8.405346397785807e-11
+        },
+        {
+          "phase": [
+            10.0,
+            6.0
+          ],
+          "physical_error": 1.558441796461723e-12,
+          "quadrature_error": 1.5410242503133732e-15,
+          "operator_relative_bound": 8.405346398492292e-11,
+          "derivative_absolute_bound_per_unit_input": 8.405346397785807e-11
+        }
+      ],
+      "update_seconds": [
+        0.0009442000882700086,
+        0.0008168000495061278,
+        0.0007791999960318208
+      ],
+      "required_update_check_seconds": [
+        0.0002756998874247074,
+        0.00017739995382726192,
+        0.00018610002007335424
+      ],
+      "timings": {
+        "1": {
+          "apply_seconds": [
+            9.092500840779394e-05,
+            6.725000275764614e-05,
+            6.648749695159495e-05
+          ],
+          "totals": {
+            "1": {
+              "warm_seconds": 0.003404062503250316,
+              "cold_seconds": 1.8518543624377344
+            },
+            "64": {
+              "warm_seconds": 0.017557800514623523,
+              "cold_seconds": 1.8660081004491076
+            }
+          }
+        },
+        "16": {
+          "apply_seconds": [
+            0.00034582499938551337,
+            0.0003486875066300854,
+            0.00046477498835884035
+          ],
+          "totals": {
+            "1": {
+              "warm_seconds": 0.00433868748950772,
+              "cold_seconds": 1.8527889874239918
+            },
+            "64": {
+              "warm_seconds": 0.07737379963509738,
+              "cold_seconds": 1.9258240995695814
+            }
+          }
+        }
+      },
+      "runtime_state_and_one_plan_bytes": 1061936
+    },
+    "nystrom_value": {
+      "validation": [
+        {
+          "phase": [
+            0.0,
+            0.0
+          ],
+          "physical_error": 1.0076211414214761e-14,
+          "quadrature_error": 1.6976069066675265e-15,
+          "operator_relative_bound": 8.405346205192371e-11,
+          "derivative_absolute_bound_per_unit_input": 8.405346204485888e-11
+        },
+        {
+          "phase": [
+            4.0,
+            -2.0
+          ],
+          "physical_error": 9.622051700123196e-15,
+          "quadrature_error": 1.6907857056407724e-15,
+          "operator_relative_bound": 8.405346205192354e-11,
+          "derivative_absolute_bound_per_unit_input": 8.405346204485888e-11
+        },
+        {
+          "phase": [
+            10.0,
+            6.0
+          ],
+          "physical_error": 1.5584318753555525e-12,
+          "quadrature_error": 1.5410242503133732e-15,
+          "operator_relative_bound": 8.405346205192372e-11,
+          "derivative_absolute_bound_per_unit_input": 8.405346204485888e-11
+        }
+      ],
+      "update_seconds": [
+        0.00011639995500445366,
+        0.0001121999230235815,
+        0.00011349993292242289
+      ],
+      "required_update_check_seconds": [
+        0.0007501000072807074,
+        0.0006704999832436442,
+        0.0006689000874757767
+      ],
+      "timings": {
+        "1": {
+          "apply_seconds": [
+            0.00014215000555850565,
+            0.0001406124938512221,
+            0.00013840000610798597
+          ],
+          "totals": {
+            "1": {
+              "warm_seconds": 0.0028527623944683,
+              "cold_seconds": 1.465424462381634
+            },
+            "64": {
+              "warm_seconds": 0.029386000242084265,
+              "cold_seconds": 1.49195770022925
+            }
+          }
+        },
+        "16": {
+          "apply_seconds": [
+            0.0009497874998487532,
+            0.0008169000066118315,
+            0.0009084750054171309
+          ],
+          "totals": {
+            "1": {
+              "warm_seconds": 0.005106762400828302,
+              "cold_seconds": 1.467678462387994
+            },
+            "64": {
+              "warm_seconds": 0.17364200064912438,
+              "cold_seconds": 1.63621370063629
+            }
+          }
+        }
+      },
+      "runtime_state_and_one_plan_bytes": 1063952
+    },
+    "svd_value": {
+      "validation": [
+        {
+          "phase": [
+            0.0,
+            0.0
+          ],
+          "physical_error": 9.705336596053435e-15,
+          "quadrature_error": 1.6976069066675265e-15,
+          "operator_relative_bound": 8.405346398492278e-11,
+          "derivative_absolute_bound_per_unit_input": 8.405346397785807e-11
+        },
+        {
+          "phase": [
+            4.0,
+            -2.0
+          ],
+          "physical_error": 9.425290687500098e-15,
+          "quadrature_error": 1.6907857056407724e-15,
+          "operator_relative_bound": 8.405346398492292e-11,
+          "derivative_absolute_bound_per_unit_input": 8.405346397785807e-11
+        },
+        {
+          "phase": [
+            10.0,
+            6.0
+          ],
+          "physical_error": 1.5584430631797766e-12,
+          "quadrature_error": 1.5410242503133732e-15,
+          "operator_relative_bound": 8.405346398492292e-11,
+          "derivative_absolute_bound_per_unit_input": 8.405346397785807e-11
+        }
+      ],
+      "update_seconds": [
+        0.00011719996109604836,
+        0.00010930001735687256,
+        0.00010820000898092985
+      ],
+      "required_update_check_seconds": [
+        0.000758600072003901,
+        0.0007234999211505055,
+        0.0006193999433889985
+      ],
+      "timings": {
+        "1": {
+          "apply_seconds": [
+            0.00013649999164044857,
+            0.00013564999972004443,
+            0.0001373750128550455
+          ],
+          "totals": {
+            "1": {
+              "warm_seconds": 0.0028457249281927943,
+              "cold_seconds": 1.8512960248626769
+            },
+            "64": {
+              "warm_seconds": 0.02864580019377172,
+              "cold_seconds": 1.8770961001282558
+            }
+          }
+        },
+        "16": {
+          "apply_seconds": [
+            0.0009164375078398734,
+            0.0008509375038556755,
+            0.0008876124920789152
+          ],
+          "totals": {
+            "1": {
+              "warm_seconds": 0.00509118742775172,
+              "cold_seconds": 1.8535414873622358
+            },
+            "64": {
+              "warm_seconds": 0.17235540016554296,
+              "cold_seconds": 2.020805700100027
+            }
+          }
+        }
+      },
+      "runtime_state_and_one_plan_bytes": 1063952
+    },
+    "dense_fused": {
+      "validation": [
+        {
+          "phase": [
+            0.0,
+            0.0
+          ],
+          "physical_error": 9.83430969353353e-15,
+          "quadrature_error": 1.6976069066675265e-15,
+          "operator_relative_bound": 0.0,
+          "derivative_absolute_bound_per_unit_input": 0.0
+        },
+        {
+          "phase": [
+            4.0,
+            -2.0
+          ],
+          "physical_error": 9.488218403859628e-15,
+          "quadrature_error": 1.6907857056407724e-15,
+          "operator_relative_bound": 0.0,
+          "derivative_absolute_bound_per_unit_input": 0.0
+        },
+        {
+          "phase": [
+            10.0,
+            6.0
+          ],
+          "physical_error": 8.901344014529835e-15,
+          "quadrature_error": 1.5410242503133732e-15,
+          "operator_relative_bound": 0.0,
+          "derivative_absolute_bound_per_unit_input": 0.0
+        }
+      ],
+      "update_seconds": [
+        0.3521620000246912,
+        0.3497649999335408,
+        0.3466986999846995
+      ],
+      "required_update_check_seconds": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "timings": {
+        "1": {
+          "apply_seconds": [
+            0.001761437495588325,
+            0.0019803249888354912,
+            0.0017748124955687672
+          ],
+          "totals": {
+            "1": {
+              "warm_seconds": 1.0541422749229241,
+              "cold_seconds": 1.7682233748782892
+            },
+            "64": {
+              "warm_seconds": 1.4016864986624569,
+              "cold_seconds": 2.115767598617822
+            }
+          }
+        },
+        "16": {
+          "apply_seconds": [
+            0.007899475007434376,
+            0.008277500004624017,
+            0.008144700012053363
+          ],
+          "totals": {
+            "1": {
+              "warm_seconds": 1.0729473749670433,
+              "cold_seconds": 1.7870284749224083
+            },
+            "64": {
+              "warm_seconds": 2.605212901486084,
+              "cold_seconds": 3.319294001441449
+            }
+          }
+        }
+      },
+      "runtime_state_and_one_plan_bytes": 50331648
+    },
+    "dense_factor": {
+      "validation": [
+        {
+          "phase": [
+            0.0,
+            0.0
+          ],
+          "physical_error": 9.857918420055553e-15,
+          "quadrature_error": 1.6976069066675265e-15,
+          "operator_relative_bound": 0.0,
+          "derivative_absolute_bound_per_unit_input": 0.0
+        },
+        {
+          "phase": [
+            4.0,
+            -2.0
+          ],
+          "physical_error": 9.50467949391783e-15,
+          "quadrature_error": 1.6907857056407724e-15,
+          "operator_relative_bound": 0.0,
+          "derivative_absolute_bound_per_unit_input": 0.0
+        },
+        {
+          "phase": [
+            10.0,
+            6.0
+          ],
+          "physical_error": 8.905660940154147e-15,
+          "quadrature_error": 1.5410242503133732e-15,
+          "operator_relative_bound": 0.0,
+          "derivative_absolute_bound_per_unit_input": 0.0
+        }
+      ],
+      "update_seconds": [
+        0.0027596999425441027,
+        0.00011490005999803543,
+        0.00011519994586706161
+      ],
+      "required_update_check_seconds": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "timings": {
+        "1": {
+          "apply_seconds": [
+            0.0026533499913057312,
+            0.002925849999883212,
+            0.0026044499973068014
+          ],
+          "totals": {
+            "1": {
+              "warm_seconds": 0.011173449936904944,
+              "cold_seconds": 0.72525454989227
+            },
+            "64": {
+              "warm_seconds": 0.5267433992121369,
+              "cold_seconds": 1.240824499167502
+            }
+          }
+        },
+        "16": {
+          "apply_seconds": [
+            0.01096063750446774,
+            0.011166049996973015,
+            0.01100159999623429
+          ],
+          "totals": {
+            "1": {
+              "warm_seconds": 0.036118087446084246,
+              "cold_seconds": 0.7501991874014493
+            },
+            "64": {
+              "warm_seconds": 2.123200199799612,
+              "cold_seconds": 2.8372812997549772
+            }
+          }
+        }
+      },
+      "runtime_state_and_one_plan_bytes": 16809984
+    },
+    "cpswf_value": {
+      "validation": [
+        {
+          "phase": [
+            0.0,
+            0.0
+          ],
+          "physical_error": 1.2314217054815047e-14,
+          "quadrature_error": 1.6976069066675265e-15,
+          "operator_relative_bound": 8.4053465981613e-11,
+          "derivative_absolute_bound_per_unit_input": 8.405346597454871e-11
+        },
+        {
+          "phase": [
+            4.0,
+            -2.0
+          ],
+          "physical_error": 1.692129252238167e-14,
+          "quadrature_error": 1.6907857056407724e-15,
+          "operator_relative_bound": 8.405346598161354e-11,
+          "derivative_absolute_bound_per_unit_input": 8.405346597454871e-11
+        },
+        {
+          "phase": [
+            10.0,
+            6.0
+          ],
+          "physical_error": 1.5584815948216149e-12,
+          "quadrature_error": 1.5410242503133732e-15,
+          "operator_relative_bound": 8.405346598161315e-11,
+          "derivative_absolute_bound_per_unit_input": 8.405346597454871e-11
+        }
+      ],
+      "update_seconds": [
+        0.00012099999003112316,
+        0.00010559998918324709,
+        0.00010689999908208847
+      ],
+      "required_update_check_seconds": [
+        0.0007244000444188714,
+        0.0006264999974519014,
+        0.0006137000164017081
+      ],
+      "timings": {
+        "1": {
+          "apply_seconds": [
+            0.00014082499546930194,
+            0.0002883374982047826,
+            0.00015295000048354268
+          ],
+          "totals": {
+            "1": {
+              "warm_seconds": 0.002880212530726567,
+              "cold_seconds": 1.6445957124524284
+            },
+            "64": {
+              "warm_seconds": 0.03955329966265708,
+              "cold_seconds": 1.681268799584359
+            }
+          }
+        },
+        "16": {
+          "apply_seconds": [
+            0.000821024994365871,
+            0.0009585749940015376,
+            0.0008788499981164932
+          ],
+          "totals": {
+            "1": {
+              "warm_seconds": 0.004956550023052841,
+              "cold_seconds": 1.6466720499447547
+            },
+            "64": {
+              "warm_seconds": 0.17243889917153865,
+              "cold_seconds": 1.8141543990932405
+            }
+          }
+        }
+      },
+      "runtime_state_and_one_plan_bytes": 1063952
+    },
+    "nystrom_core": {
+      "validation": [
+        {
+          "phase": [
+            0.0,
+            0.0
+          ],
+          "physical_error": 1.0135832494166113e-14,
+          "quadrature_error": 1.6976069066675265e-15,
+          "operator_relative_bound": 8.405346205192371e-11,
+          "derivative_absolute_bound_per_unit_input": 8.405346204485888e-11
+        },
+        {
+          "phase": [
+            4.0,
+            -2.0
+          ],
+          "physical_error": 9.583768087522428e-15,
+          "quadrature_error": 1.6907857056407724e-15,
+          "operator_relative_bound": 8.405346205192354e-11,
+          "derivative_absolute_bound_per_unit_input": 8.405346204485888e-11
+        },
+        {
+          "phase": [
+            10.0,
+            6.0
+          ],
+          "physical_error": 1.5584310260740161e-12,
+          "quadrature_error": 1.5410242503133732e-15,
+          "operator_relative_bound": 8.405346205192372e-11,
+          "derivative_absolute_bound_per_unit_input": 8.405346204485888e-11
+        }
+      ],
+      "update_seconds": [
+        0.0008043000707402825,
+        0.0007953000022098422,
+        0.0007843999192118645
+      ],
+      "required_update_check_seconds": [
+        0.00025889999233186245,
+        0.00018230010755360126,
+        0.0001759000588208437
+      ],
+      "timings": {
+        "1": {
+          "apply_seconds": [
+            7.303748861886561e-05,
+            0.0001592625048942864,
+            7.870000263210386e-05
+          ],
+          "totals": {
+            "1": {
+              "warm_seconds": 0.0033121001470135525,
+              "cold_seconds": 1.4658838001341792
+            },
+            "64": {
+              "warm_seconds": 0.022905099904164672,
+              "cold_seconds": 1.4854767998913303
+            }
+          }
+        },
+        "16": {
+          "apply_seconds": [
+            0.00036099999852012843,
+            0.00034897500881925225,
+            0.000346937493304722
+          ],
+          "totals": {
+            "1": {
+              "warm_seconds": 0.004058012651512399,
+              "cold_seconds": 1.466629712638678
+            },
+            "64": {
+              "warm_seconds": 0.07064350019209087,
+              "cold_seconds": 1.5332152001792565
+            }
+          }
+        }
+      },
+      "runtime_state_and_one_plan_bytes": 1061936
+    }
+  },
+  "factor_metrics": {
+    "jacobi": {
+      "delta": 1.8236386278530877e-11,
+      "hn": 1.000000000000001,
+      "rank": 48,
+      "prepare_seconds": 0.2506831999635324,
+      "required_check_seconds": 0.3297951000276953,
+      "retained_bytes": 1609728
+    },
+    "nystrom": {
+      "delta": 4.20267310224294e-11,
+      "hn": 1.0000000000000004,
+      "rank": 31,
+      "prepare_seconds": 0.09518559998832643,
+      "required_check_seconds": 0.33190009999088943,
+      "retained_bytes": 1031184
+    },
+    "svd": {
+      "delta": 4.202673198892897e-11,
+      "hn": 1.0000000000000018,
+      "rank": 31,
+      "prepare_seconds": 0.4835244999267161,
+      "required_check_seconds": 0.3294397999998182,
+      "retained_bytes": 1031184
+    },
+    "cpswf": {
+      "delta": 4.202673298727427e-11,
+      "hn": 1.0000000000000027,
+      "rank": 31,
+      "prepare_seconds": 0.28498200001195073,
+      "required_check_seconds": 0.32124749990180135,
+      "retained_bytes": 1031184
+    }
+  }
+}

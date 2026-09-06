@@ -1,0 +1,9 @@
+{
+  "supersedes": "FINAL_QA.json: regex falsely interpreted LaTeX H[f](y) as a Markdown link; skip math blocks in v2",
+  "local_links_checked": 24,
+  "broken_links": [],
+  "artifact_hashes_checked": 419,
+  "hash_mismatches": [],
+  "all_pass": true,
+  "manuscript_delivery": "v3 Markdown source; v2 PDF/DOCX preserved"
+}

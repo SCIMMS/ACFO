@@ -1,0 +1,140 @@
+{
+  "case": "e8_12",
+  "arm": "cap_policy",
+  "pair": 3,
+  "stage": "confirmation",
+  "warm_s": 0.2402826000470668,
+  "refresh_s": 0.7644242000533268,
+  "total_s": 1.0047068001003936,
+  "state_audit_s": 0.006675299955531955,
+  "independent_audit_s": 0.004781600087881088,
+  "warm_fingerprint": {
+    "sha256": "09129197f87b7507b11303e9af7ba25f873a10ec10cbda2f9b8bdef3d80332d6",
+    "coefficient_nodes": 476,
+    "field_modes": 0,
+    "factors": 107,
+    "edges": 200
+  },
+  "events": [
+    {
+      "theta": [
+        0.12,
+        -0.08,
+        0.0
+      ],
+      "tolerance": 1e-08,
+      "observation": "wide",
+      "setup_s": 0.10163950000423938,
+      "selection_s": 0.0010710000060498714,
+      "planning_s": 0.009686000063084066,
+      "update_s": 0.09042959986254573,
+      "direct_s": 0.0,
+      "observation_s": 0.03713209996931255,
+      "reuse_check_s": 7.2999391704797745e-06,
+      "new_nodes": 474,
+      "p": 7,
+      "q": 0,
+      "predicted_direct_s": 0.42637387571372,
+      "predicted_update_s": 0.09580672947760914,
+      "full_degree_indices": 36,
+      "graph_cache_hit": false,
+      "graph_complete": true,
+      "graph_screened": false,
+      "graph_nodes_known": 476,
+      "graph_nodes_added": 476,
+      "graph_nodes_scanned": 476,
+      "model_lower_update_s": 0.09580672947760914,
+      "model_screen_ceiling_s": 0.40505518192803397,
+      "order": 7,
+      "relative_bound": 3.862315739749558e-09,
+      "absolute_bound": 1.1939388995566503e-10,
+      "requested_nodes": 476,
+      "synthesis_s": 0.008125499938614666,
+      "route": "base_prepare",
+      "retained_nodes": 476,
+      "retained_nodes_by_gamma_degree": {
+        "0": 476
+      },
+      "field_modes": 0,
+      "bank_bytes": 3069360,
+      "state_bytes": 548352,
+      "reachability_entries": 4256,
+      "retained_graph_nodes": 476,
+      "total_s": 0.24017799994908273,
+      "relative_error": 4.6117115569273145e-12,
+      "passed": true
+    },
+    {
+      "theta": [
+        0.12,
+        -0.08,
+        0.28
+      ],
+      "tolerance": 1e-08,
+      "observation": "wide",
+      "setup_s": 1.200009137392044e-06,
+      "selection_s": 0.0016888000536710024,
+      "planning_s": 0.08555750001687557,
+      "update_s": 0.0,
+      "direct_s": 0.6757850999711081,
+      "observation_s": 4.200031980872154e-06,
+      "reuse_check_s": 0.00013299996498972178,
+      "new_nodes": 0,
+      "p": 10,
+      "q": 7,
+      "predicted_direct_s": 0.616293053006565,
+      "predicted_update_s": null,
+      "full_degree_indices": 286,
+      "graph_cache_hit": false,
+      "graph_complete": false,
+      "graph_screened": true,
+      "graph_nodes_known": 5504,
+      "graph_nodes_added": 5504,
+      "graph_nodes_scanned": 5504,
+      "model_lower_update_s": 0.5909847818497662,
+      "model_screen_ceiling_s": 0.5854784003562368,
+      "relative_bound": 5.561473181813109e-10,
+      "absolute_bound": 1.9020737954650904e-11,
+      "field_reused": false,
+      "radius": 6,
+      "iterations": 72,
+      "solve_calls": 14130,
+      "attempts": [
+        {
+          "radius": 2,
+          "modes": 46,
+          "bound": 7.021736301391363e-05
+        },
+        {
+          "radius": 4,
+          "modes": 202,
+          "bound": 1.8657581665549096e-07
+        },
+        {
+          "radius": 6,
+          "modes": 474,
+          "bound": 5.561473181813109e-10
+        }
+      ],
+      "exterior_modes_checked": 178,
+      "route": "cost_to_direct",
+      "fallback_reason": "model_screen",
+      "retained_nodes": 476,
+      "retained_nodes_by_gamma_degree": {
+        "0": 476
+      },
+      "field_modes": 474,
+      "bank_bytes": 8293968,
+      "state_bytes": 1094400,
+      "reachability_entries": 29066,
+      "retained_graph_nodes": 5980,
+      "total_s": 0.7642668999033049,
+      "process_peak_bytes": 124149760,
+      "relative_error": 5.033260493852693e-12,
+      "ideal_omission_error": 0.012660703903700265,
+      "passed": true
+    }
+  ],
+  "prediction_match": true,
+  "passed": true
+}

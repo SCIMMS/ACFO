@@ -37,3 +37,8 @@ jobs:
 
       - name: Verify operator-synthesis distribution and focused CPU tests
         run: python validation/operator_synthesis_v0_3_0/verify.py --smoke
+
+      - name: Verify structure-reuse distribution and focused CPU tests
+        run: |
+          python -m pip install psutil
+          python validation/structure_reuse_v0_4_0/verify.py --smoke

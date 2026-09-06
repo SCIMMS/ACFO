@@ -1,0 +1,10 @@
+{
+  "hashes_verified": 25,
+  "local_links_verified": 7,
+  "max_errors": {
+    "agreement_relative": 5.904993531625113e-16,
+    "hermitian_error": 2.7177352751836866e-15,
+    "core_error": 3.668615631825603e-15,
+    "energy_error": 2.507146622916898e-16
+  }
+}
